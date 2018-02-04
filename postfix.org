@@ -1,0 +1,47 @@
+#+TITLE: postfix
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-04 
+
+* Prerequisites
+- [[./update.org][update]]
+
+* Install
+
+** Ubuntu
+
+#+NAME: ubuntu-install_postfix
+#+BEGIN_SRC sh
+$ sudo apt-get install postfix
+#+END_SRC
+
+* Setup
+- 2. Internet Site
+- domain.example.com
+
+* Check
+#+NAME: ubuntu-check_postfix
+#+BEGIN_SRC sh
+$ sudo postfix start
+postfix: Postfix is running with backwards-compatible default settings
+postfix: See http://www.postfix.org/COMPATIBILITY_README.html for details
+postfix: To disable backwards compatibility use "postconf compatibility_level=2" and "postfix reload"
+postfix/postfix-script: fatal: the Postfix mail system is already running
+
+$ sudo postfix status
+postfix: Postfix is running with backwards-compatible default settings
+postfix: See http://www.postfix.org/COMPATIBILITY_README.html for details
+postfix: To disable backwards compatibility use "postconf compatibility_level=2" and "postfix reload"
+postfix/postfix-script: the Postfix mail system is running: PID: 10909
+
+$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+220 gitlab.me ESMTP Postfix (Ubuntu)
+
+quit
+#+END_SRC
+
+* Seealso
+- [[./sendmail.org][sendmail]]
