@@ -1,0 +1,47 @@
+#+TITLE: emacs
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-04 
+
+* Prerequisites
+- [[./docker.org][docker]]
+
+* Install
+** Ubuntu
+
+#+NAME: ubuntu-install_docker_compose
+#+BEGIN_SRC sh
+# Download latest docker compose
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+# Add execution permission
+$ sudo chmod +x /usr/local/bin/docker-compose
+#+END_SRC
+
+** Mac
+Involed in Docker for MacOS.
+
+* Uninstall
+
+#+NAME: uninstall_docker_compose
+#+BEGIN_SRC sh
+$ sudo rm /usr/local/bin/docker-compose
+# or
+$ pip uninstall docker-compose
+#+END_SRC
+
+* Check
+
+#+NAME: check_docker_compose
+#+BEGIN_SRC sh
+$ docker-compose --version
+docker-compose version 1.18.0, build 8dd22a9
+#+END_SRC
+
+
+* Seealso
+- [[./docker-command-completion.org][docker-command-completion]]
+
+
+* References
+- [[https://docs.docker.com/compose/install/#install-compose][Docker Compose Install(Offical)]]
