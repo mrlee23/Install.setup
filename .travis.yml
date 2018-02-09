@@ -1,12 +1,13 @@
 sudo: true
-
 services:
-  - docker
-
+- docker
 install:
-  - echo "install nothing!"
+- echo "install nothing!"
 
-script:
-  - docker --version
-  - docker build -t dev .
-  - docker images
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "release-docker" ]; then
+    docker --version;
+    docker build -t dev .
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push dongsoolee/ubuntu-development
+    fi
