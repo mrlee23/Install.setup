@@ -9,6 +9,8 @@ install:
   - sudo apt-add-repository -y ppa:adrozdoff/emacs
   - sudo apt update
   - sudo apt install emacs25
+  - git clone https://github.com/hniksic/emacs-htmlize.git emacs-htmlize
+  - emacs -Q --batch --eval "(add-to-list 'load-path \"emacs-htmlize\")"
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "release-docker" ]; then

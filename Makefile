@@ -3,6 +3,9 @@
 EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
 
+test:
+	echo "No tests."
+
 get-deps:
 	echo "No dependencies."
 
