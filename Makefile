@@ -1,7 +1,10 @@
-.PHONY: pages
+.PHONY: get-deps pages
 
 EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
+
+get-deps:
+	echo "No dependencies."
 
 pages:
 	@$(BATCH) --eval "(progn\
