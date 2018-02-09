@@ -5,14 +5,14 @@ LABEL name="dev" \
 	  description="Container for develop environement on ubuntu"
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -y \ # update
+RUN apt-get update -y \
     && apt-get upgrade -y \
-	&& software-properties-common python-software-properties \ # apt-add-repository
-	&& apt-add-repository -y ppa:adrozdoff/emacs \ # for emacs
-	&& apt update
+	&& apt-get install -y software-properties-common python-software-properties \
+	&& apt-add-repository -y ppa:adrozdoff/emacs \
+	&& apt update \
     && apt-get install sudo -y \
 	&& apt-get install -y \
-	   build-essential \ # gcc, g++, make, perl, ...
+	   build-essential \
 	   wget \
 	   curl \
 	   vim \
