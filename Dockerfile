@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER Dongsoo Lee <dongsoolee8@gmail.com>
-LABEL name="dev" \
+LABEL name="ubuntu-development" \
 	  version="0.1" \
 	  description="Container for develop environement on ubuntu"
 
