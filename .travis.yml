@@ -1,0 +1,12 @@
+sudo: true
+
+services:
+  - docker
+
+install:
+  - echo "install nothing!"
+
+script:
+  - docker --version
+  - docker build -t dev .
+  - docker images
