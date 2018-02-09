@@ -3,14 +3,18 @@ language: generic
 services:
   - docker
 install:
+  - git config --global user.email "mrlee_23@naver.com"
+  - git config --global user.name "mrlee23"
   - git submodule update
   - sudo apt update
   - sudo apt-get install -y software-properties-common python-software-properties
   - sudo apt-add-repository -y ppa:adrozdoff/emacs
   - sudo apt update
   - sudo apt install emacs25
-  - git clone https://github.com/hniksic/emacs-htmlize.git emacs-htmlize
-  - emacs -Q --batch --eval "(add-to-list 'load-path \"emacs-htmlize\")"
+  - mkdir $emacs_deps
+  - cd $emacs_deps
+  - git clone https://github.com/hniksic/emacs-htmlize.git
+  - cd ..
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "release-docker" ]; then
@@ -26,4 +30,5 @@ after_success:
     fi
 env:
   global:
+    emacs_deps: .emacs-dependencies
     secure: RZ9gC5b6LDlTyWN0mmdUFWo0nzV8TuXw7Vr4t0pXsXcuQMQwlvpvif/FRgWmtpzeKFamXnyZv9KR9WidM6FCfq2v6nX2Dix4D03XU1hWRt2HX3p4Ba9wc/qoYZM+ZkMGuhG1Fy7C4LpNIykg+D3Cv0p6He8lVjl5ZpxsAR7+DzHZqclwhLE6NU8y4X4ApwzWI54dP4LCtiSChI6HqF6l5DWt1uBir6ubuzWyxO2FtjCEJxW1lzEHM7RTWob4rqBOzgIblxco5XkEEyNmKtt0Kva+G9cMFE/w02KDwA2UXPoV+hBDyhimNf35ZBZZrbv3N4E2Y59e+UfUrfmntw2N+3ryunBbriUAnlPFuzLElWnXerPczLAl2urz0X9fczFr9TFIifKlpUzWdfj9kzCglky9HBpRjaExrwA3xWdyRcuQLe3mI+mLpJoT6adeKi91zKK9ErDkIC4ZvRLlapTEzyQQdKoI1XFfiEk7M3KC3hmhte+X9O51ob2CTTQAiWonac564+N8kwpHiK+e9Kqgu/l0J767mxqPDZVEkAuxbElLG+lNB6car3OLCpfUvnAAUlxGVViJJsf5T+w3WVSvH/7it/SAKMjd8S9gqnioLfkSmgfxOIcTbQ6uJpV6N5JJopVAx68W6Ev92wSkxCTCod0ElQ2ZBHR5GFHSvxqM8kg=

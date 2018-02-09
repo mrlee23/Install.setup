@@ -2,6 +2,7 @@
 
 EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
+EMACS_DEPS = $(shell echo $$emacs_deps)
 
 test:
 	echo "No tests."
@@ -19,5 +20,6 @@ pages:
 
 define load_paths
 (add-to-list 'load-path "./")
+(add-to-list 'load-path "$(EMACS_DEPS)/emacs-htmlize")
 endef
 export load_paths
