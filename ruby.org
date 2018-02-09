@@ -1,0 +1,38 @@
+#+TITLE: ruby
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+
+* Prerequisites
+- [[./apt-add-repository.org][apt-add-repository]]
+
+* Install
+
+#+NAME: install_ruby
+#+BEGIN_SRC sh
+$ sudo apt-add-repository ppa:brightbox/ruby-ng
+$ sudo apt-get update
+$ sudo apt-get install ruby2.5 ruby-switch
+$ sudo ruby-switch --set ruby2.5
+$ sudo apt-get install ruby2.5-dev
+#+END_SRC
+
+* Packages
+- ruby
+- gem
+- rake
+
+* Check
+
+#+NAME: check_ruby
+#+BEGIN_SRC sh
+$ ruby -v
+ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-linux-gnu]
+$ gem -v
+2.7.3
+$ rake --version
+rake, version 10.5.0
+#+END_SRC
+
+* References
+- [[https://github.com/travis-ci/travis.rb/issues/391]]
+- [[https://www.ruby-lang.org/en/downloads/]]
