@@ -13,8 +13,8 @@ pages:
 	@$(BATCH) --eval "(progn\
 	$$load_paths\
 	(load-file \"pages.el\")\
-	(pages-init \"./\" \".gh-pages\")
-	(pages-publish)
+	(pages-init \"./\" \".gh-pages\")\
+	(pages-publish)\
 	)"
 
 define load_paths
