@@ -27,7 +27,7 @@ test:
 	echo "No tests."
 	echo "HI"
 
-pages:
+pages: pages-deps
 	rm -rf .org-timestamps
 	@$(BATCH) --eval "(progn\
 	$$load_paths\
@@ -39,6 +39,9 @@ pages:
 	)"
 	rm -rf .gh-pages/$(EMACS_DEPS_DIR)
 	rm -rf $(EMACS_DEPS_DIR)
+
+pages-deps:
+	git clone https://github.com/mrlee23/org-html-themes.git dist/org-html-themes
 
 define load_paths
 (add-to-list 'load-path "./")
