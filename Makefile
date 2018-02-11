@@ -44,6 +44,7 @@ pages: pages-deps
 
 pages-deps:
 	git clone https://github.com/mrlee23/org-html-themes.git dist/org-html-themes
+	rm -rf dist/org-html-themes/.git
 
 define load_paths
 (add-to-list 'load-path "./")
