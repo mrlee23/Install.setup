@@ -42,7 +42,7 @@ pages: pages-deps
 	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
 	rm -rf "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)"
 	rm -rf "$(EMACS_DEPS_DIR)"
-	if [ -d "$(DIST_DIR)" ]; then mv "$(GH_PAGES_DIR)/$(DIST_DIR)" 
+	if [ -d "$(DIST_DIR)" ]; then mv "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
 
 pages-deps:
 	git clone https://github.com/mrlee23/org-html-themes.git dist/org-html-themes
