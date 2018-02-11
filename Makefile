@@ -4,6 +4,7 @@ EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
 GH_PAGES_DIR=.gh-pages
 EMACS_DEPS_DIR=.emacs-dependencies
+DIST_DIR=dist
 
 install: setup-git get-deps
 
@@ -38,9 +39,10 @@ pages: pages-deps
 	(pages-publish)\
 	$$delete_pages_deps\
 	)"
-	if [ -f "CNAME" ]; then cp CNAME $(GH_PAGES_DIR)/CNAME; fi
-	rm -rf $(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)
-	rm -rf $(EMACS_DEPS_DIR)
+	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
+	rm -rf "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)"
+	rm -rf "$(EMACS_DEPS_DIR)"
+	if [ -d "$(DIST_DIR)" ]; then mv "$(GH_PAGES_DIR)/$(DIST_DIR)" 
 
 pages-deps:
 	git clone https://github.com/mrlee23/org-html-themes.git dist/org-html-themes
