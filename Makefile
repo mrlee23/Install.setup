@@ -2,6 +2,7 @@
 
 EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
+GH_PAGES_DIR=.gh-pages
 EMACS_DEPS_DIR=.emacs-dependencies
 
 install: setup-git get-deps
@@ -33,11 +34,12 @@ pages: pages-deps
 	$$load_paths\
 	(message \"%s\" load-path)\
 	(load-file \"pages.el\")\
-	(pages-init \"./\" \".gh-pages/\")\
+	(pages-init \"./\" \"$(GH_PAGES_DIR)/\")\
 	(pages-publish)\
 	$$delete_pages_deps\
 	)"
-	rm -rf .gh-pages/$(EMACS_DEPS_DIR)
+	if [ -f "CNAME" ]; then cp CNAME $(GH_PAGES_DIR)/CNAME; fi
+	rm -rf $(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)
 	rm -rf $(EMACS_DEPS_DIR)
 
 pages-deps:
@@ -49,8 +51,8 @@ define load_paths
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
 endef
 define delete_pages_deps
-(when (file-directory-p ".gh-pages/$(EMACS_DEPS_DIR)")
-	(delete-directory ".gh-pages/$(EMACS_DEPS_DIR)" t))
+(when (file-directory-p "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)")
+	(delete-directory "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)" t))
 (when (file-directory-p "$(EMACS_DEPS_DIR)")
 	(delete-directory "$(EMACS_DEPS_DIR)" t))
 endef
