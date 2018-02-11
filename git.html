@@ -6,7 +6,7 @@
 <!-- 2018-02-11 Sun 05:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>wget</title>
+<title>git</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Dongsoo Lee" />
 <style type="text/css">
@@ -228,28 +228,124 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">wget</h1>
+<h1 class="title">git</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org820bfd3">1. Ubuntu</a></li>
+<li><a href="#org40154cb">1. Prerequisites</a></li>
+<li><a href="#org379784c">2. Install</a>
+<ul>
+<li><a href="#orgada3606">2.1. Ubuntu</a></li>
+<li><a href="#org64101cb">2.2. CentOS</a></li>
+<li><a href="#org2022937">2.3. Fedora</a></li>
+<li><a href="#org36769aa">2.4. Arch Linux</a></li>
+<li><a href="#org5d4bd8d">2.5. Gentoo</a></li>
+<li><a href="#orge6dc222">2.6. macOS</a></li>
+</ul>
+</li>
+<li><a href="#org2935084">3. Check</a></li>
+<li><a href="#org3cd4ae4">4. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org820bfd3" class="outline-2">
-<h2 id="org820bfd3"><span class="section-number-2">1</span> Ubuntu</h2>
+<div id="outline-container-org40154cb" class="outline-2">
+<h2 id="org40154cb"><span class="section-number-2">1</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org379784c" class="outline-2">
+<h2 id="org379784c"><span class="section-number-2">2</span> Install</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgada3606" class="outline-3">
+<h3 id="orgada3606"><span class="section-number-3">2.1</span> Ubuntu</h3>
+<div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgd238ab0">$ sudo apt-get install wget
+<pre class="src src-sh" id="org89abfdd">$ sudo apt-get install git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org64101cb" class="outline-3">
+<h3 id="org64101cb"><span class="section-number-3">2.2</span> CentOS</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-sh" id="org51951a5">$ sudo yum install git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2022937" class="outline-3">
+<h3 id="org2022937"><span class="section-number-3">2.3</span> Fedora</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgd47ab19">$ sudo yum install git-core
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org36769aa" class="outline-3">
+<h3 id="org36769aa"><span class="section-number-3">2.4</span> Arch Linux</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgdef899a">$ sudo pacman -Sy git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5d4bd8d" class="outline-3">
+<h3 id="org5d4bd8d"><span class="section-number-3">2.5</span> Gentoo</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-sh" id="org148e22b">$ sudo emerge --ask --verbose dev-vcs/git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6dc222" class="outline-3">
+<h3 id="orge6dc222"><span class="section-number-3">2.6</span> macOS</h3>
+<div class="outline-text-3" id="text-2-6">
+<div class="org-src-container">
+<pre class="src src-sh" id="org2a1c2ed">$ brew install git
 </pre>
 </div>
 </div>
 </div>
 </div>
+
+<div id="outline-container-org2935084" class="outline-2">
+<h2 id="org2935084"><span class="section-number-2">3</span> Check</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-sh" id="org3c4ed4e">$ git --version
+git version 2.7.4
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3cd4ae4" class="outline-2">
+<h2 id="org3cd4ae4"><span class="section-number-2">4</span> References</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
+</ul>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-10</p>
+<p class="date">Date: 2018-02-03</p>
 <p class="author">Author: Dongsoo Lee</p>
 <p class="date">Created: 2018-02-11 Sun 05:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
