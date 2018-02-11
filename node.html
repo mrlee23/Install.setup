@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-11 Sun 05:32 -->
+<!-- 2018-02-11 Sun 06:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>node</title>
@@ -179,6 +179,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -233,28 +239,28 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0293b9f">1. Prerequisites</a></li>
-<li><a href="#org35a66e3">2. Prepare</a>
+<li><a href="#orgfd1b88a">1. Prerequisites</a></li>
+<li><a href="#org0b3ec87">2. Prepare</a>
 <ul>
-<li><a href="#org4928ed3">2.1. 4.x</a></li>
-<li><a href="#orgc3e5fac">2.2. 6.x</a></li>
-<li><a href="#orgc9cbfe9">2.3. 7.x</a></li>
-<li><a href="#org2358a92">2.4. 9.x</a></li>
+<li><a href="#orgf160a01">2.1. 4.x</a></li>
+<li><a href="#org47d6284">2.2. 6.x</a></li>
+<li><a href="#org03f7834">2.3. 7.x</a></li>
+<li><a href="#org071a073">2.4. 9.x</a></li>
 </ul>
 </li>
-<li><a href="#org2b50601">3. Install</a>
+<li><a href="#org141ee8c">3. Install</a>
 <ul>
-<li><a href="#orgb754390">3.1. Ubuntu</a></li>
+<li><a href="#orgad8291c">3.1. Ubuntu</a></li>
 </ul>
 </li>
-<li><a href="#org3713643">4. Check</a></li>
-<li><a href="#org28cfae9">5. References</a></li>
+<li><a href="#org47d5351">4. Check</a></li>
+<li><a href="#orgf6383bc">5. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0293b9f" class="outline-2">
-<h2 id="org0293b9f"><span class="section-number-2">1</span> Prerequisites</h2>
+<div id="outline-container-orgfd1b88a" class="outline-2">
+<h2 id="orgfd1b88a"><span class="section-number-2">1</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="./sudo.html">sudo</a></li>
@@ -263,58 +269,58 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org35a66e3" class="outline-2">
-<h2 id="org35a66e3"><span class="section-number-2">2</span> Prepare</h2>
+<div id="outline-container-org0b3ec87" class="outline-2">
+<h2 id="org0b3ec87"><span class="section-number-2">2</span> Prepare</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org4928ed3" class="outline-3">
-<h3 id="org4928ed3"><span class="section-number-3">2.1</span> 4.x</h3>
+</div><div id="outline-container-orgf160a01" class="outline-3">
+<h3 id="orgf160a01"><span class="section-number-3">2.1</span> 4.x</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgd0ed8bd">$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+<pre class="src src-sh" id="orgaf190a0">$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc3e5fac" class="outline-3">
-<h3 id="orgc3e5fac"><span class="section-number-3">2.2</span> 6.x</h3>
+<div id="outline-container-org47d6284" class="outline-3">
+<h3 id="org47d6284"><span class="section-number-3">2.2</span> 6.x</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
-<pre class="src src-sh" id="org1dffdb4">$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+<pre class="src src-sh" id="org97f9322">$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc9cbfe9" class="outline-3">
-<h3 id="orgc9cbfe9"><span class="section-number-3">2.3</span> 7.x</h3>
+<div id="outline-container-org03f7834" class="outline-3">
+<h3 id="org03f7834"><span class="section-number-3">2.3</span> 7.x</h3>
 <div class="outline-text-3" id="text-2-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="org7f2f070">$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+<pre class="src src-sh" id="org5eb45e5">$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2358a92" class="outline-3">
-<h3 id="org2358a92"><span class="section-number-3">2.4</span> 9.x</h3>
+<div id="outline-container-org071a073" class="outline-3">
+<h3 id="org071a073"><span class="section-number-3">2.4</span> 9.x</h3>
 <div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgd0f26be">$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+<pre class="src src-sh" id="org0f8a42f">$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2b50601" class="outline-2">
-<h2 id="org2b50601"><span class="section-number-2">3</span> Install</h2>
+<div id="outline-container-org141ee8c" class="outline-2">
+<h2 id="org141ee8c"><span class="section-number-2">3</span> Install</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgb754390" class="outline-3">
-<h3 id="orgb754390"><span class="section-number-3">3.1</span> Ubuntu</h3>
+</div><div id="outline-container-orgad8291c" class="outline-3">
+<h3 id="orgad8291c"><span class="section-number-3">3.1</span> Ubuntu</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb32bc2a">$ sudo apt-get install nodejs
+<pre class="src src-sh" id="org78576f7">$ sudo apt-get install nodejs
 $ sudo apt-get install build-essential
 </pre>
 </div>
@@ -322,11 +328,11 @@ $ sudo apt-get install build-essential
 </div>
 </div>
 
-<div id="outline-container-org3713643" class="outline-2">
-<h2 id="org3713643"><span class="section-number-2">4</span> Check</h2>
+<div id="outline-container-org47d5351" class="outline-2">
+<h2 id="org47d5351"><span class="section-number-2">4</span> Check</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-sh" id="org6b94474">$ node -v
+<pre class="src src-sh" id="org26083b8">$ node -v
 v9.5.0
 $ npm -v
 5.6.0
@@ -335,8 +341,8 @@ $ npm -v
 </div>
 </div>
 
-<div id="outline-container-org28cfae9" class="outline-2">
-<h2 id="org28cfae9"><span class="section-number-2">5</span> References</h2>
+<div id="outline-container-orgf6383bc" class="outline-2">
+<h2 id="orgf6383bc"><span class="section-number-2">5</span> References</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <a href="https://kr.godaddy.com/help/install-nodejs-ubuntu-17395">https://kr.godaddy.com/help/install-nodejs-ubuntu-17395</a>
@@ -347,7 +353,7 @@ $ npm -v
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-10</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-11 Sun 05:32</p>
+<p class="date">Created: 2018-02-11 Sun 06:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
