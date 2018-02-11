@@ -6,7 +6,7 @@
   (setq org-publish-use-timestamps-flag nil)
   (setq org-publish-timestamp-directory pages-timestamp)
   (unless EXCLUDE_DIR
-	(setq EXCLUDE_DIR "\\.git"))
+	(setq EXCLUDE_DIR "\\.git\\|CNAME"))
   (setq org-publish-project-alist
 		`(("Install.setup-static"
 		   :base-directory ,BASE_DIR
