@@ -26,7 +26,7 @@ after_success:
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push dongsoolee/ubuntu-development;
     fi
-  - if [ "$TRAVIS_BRANCH" == "pages2" ]; then
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
     mv README.org index.org;
     DOCKER_RUN "make pages";
     sudo bash Build.sh/build.sh gh-pages;
