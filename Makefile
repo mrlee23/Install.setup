@@ -35,6 +35,7 @@ pages:
 	(load-file \"pages.el\")\
 	(pages-init \"./\" \".gh-pages/\")\
 	(pages-publish)\
+	$$delete_pages_deps\
 	)"
 	rm -rf .gh-pages/$(EMACS_DEPS_DIR)
 	rm -rf $(EMACS_DEPS_DIR)
@@ -44,4 +45,12 @@ define load_paths
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
 endef
+define delete_pages_deps
+(when (file-directory-p ".gh-pages/$(EMACS_DEPS_DIR)")
+	(delete-directory ".gh-pages/$(EMACS_DEPS_DIR)" t))
+(when (file-directory-p "$(EMACS_DEPS_DIR)")
+	(delete-directory "$(EMACS_DEPS_DIR)" t))
+endef
+
 export load_paths
+export delete_pages_deps

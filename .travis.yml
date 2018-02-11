@@ -25,11 +25,14 @@ after_success:
     docker build -t ubuntu-development . ;
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push dongsoolee/ubuntu-development;
+    else;
+    echo "This branch($TRAVIS_BRANCH) is not available";
     fi
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     mv README.org index.org;
-    DOCKER_RUN "make pages";
-    sudo bash Build.sh/build.sh gh-pages;
+    DOCKER_RUN "make pages" && sudo bash Build.sh/build.sh gh-pages;
+    else;
+    echo "This branch($TRAVIS_BRANCH) is not available";
     fi
   - ls -alh
 env:
