@@ -46,12 +46,17 @@ pages: pages-deps
 
 pages-deps:
 	git clone https://github.com/mrlee23/org-html-themes.git dist/org-html-themes
+	git clone https://github.com/mrlee23/org-multilingual.git dist/org-multilingual
 	rm -rf dist/org-html-themes/.git
 
 define load_paths
 (add-to-list 'load-path "./")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
+endef
+define publish_pages
+
 endef
 define delete_pages_deps
 (when (file-directory-p "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)")
@@ -61,4 +66,5 @@ define delete_pages_deps
 endef
 
 export load_paths
+export publish_pages
 export delete_pages_deps
