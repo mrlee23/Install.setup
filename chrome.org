@@ -1,0 +1,21 @@
+#+INCLUDE: ./main.setup
+#+TITLE: chrome
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-09
+
+* Prerequisites
+- [[./wget.org][wget]]
+
+* Ubuntu Server
+
+[[https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04][askubuntu 참고]]
+
+=gdebi= 를 이용해 dependencies 한번에 해결한다.
+
+#+NAME: chrome-ubuntu
+#+BEGIN_SRC sh
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+$ sudo apt-get install gdebi
+$ gdebi google-chrome-stable_current_amd64.deb
+#+END_SRC
