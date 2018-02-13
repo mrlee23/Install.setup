@@ -39,11 +39,11 @@ pages:
 	(load-file \"pages.el\")\
 	(pages-publish \"./\" \"$(GH_PAGES_DIR)/\" \"$(PUBLISH_PAGES_DIR)\")\
 	)"
-	# if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
+	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
 	# rm -rf "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)"
 	# rm -rf "$(EMACS_DEPS_DIR)"
-	# if [ -d "$(DIST_DIR)" ]; then mv "$(DIST_DIR)" "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
-	# find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
+	if [ -d "$(DIST_DIR)" ]; then mv "$(DIST_DIR)" "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
+	find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
 	git clone https://github.com/mrlee23/org-html-themes.git $(DIST_DIR)/org-html-themes
