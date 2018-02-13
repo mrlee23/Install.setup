@@ -77,14 +77,6 @@
 (defun pages--multilingual-cleanup (dir)
   (message "Cleanup unnecessary files in %s..." dir)
   (shell-command-to-string (format "find \"%s\" -d -name \".*\" -not -path \"%s\" -not -path \"*.git/*\" -exec rm -rf {} \\;" dir dir))
-  (shell-command-to-string
-   (format "find \"%s\" -maxdepth 1 -d -not -path \"%s\" \"%s\" -exec rm -rf {} \\"
-		   (expand-file-name "../" dir)
-		   (expand-file-name "../" dir)
-		   (mapconcat (lambda (code)
-						(format "-not -name \"%s\"" code))
-					  org-multilingual-lang-codes
-					  " ")))
   )
 
 (defun pages-publish (BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR)
@@ -95,8 +87,6 @@
 	(make-directory orig-dir t)
 	(message "Coping contents %s to %s..." BASE_DIR orig-dir)
 	(shell-command-to-string (format "find %s -maxdepth 1 -not -path \"*.git/*\" -not -path \"%s\" -not -path \"%s\" -not -path \"%s\" -exec cp -rf {} \"%s\" \\;" BASE_DIR BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR orig-dir))
-	;; (copy-directory BASE_DIR orig-dir t t)
-	;; (delete-directory (expand-file-name ".git" orig-dir) t)
 	(mapcar
 	 (lambda (lang)
 	   (setq lang (org-multilingual-normalize-code lang))
@@ -106,7 +96,8 @@
 		 (copy-directory orig-dir orig-lang-dir t t)
 		 (pages--multilingual-init orig-lang-dir lang-dir nil lang)
 		 (org-publish "LinuxCommands")
-		 (pages--multilingual-cleanup orig-lang-dir lang-dir)
+		 (pages--multilingual-cleanup orig-lang-dir)
+		 (pages--multilingual-cleanup lang-dir)
 		 ))
 	 langs)
 	))
