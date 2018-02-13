@@ -2,7 +2,11 @@ sudo: true
 language: generic
 services:
   - docker
-      
+branches:
+  only:
+  - master
+  - 1-support-multilingual
+  - release-docker
 before_install:
   - >
     DOCKER_RUN () {
@@ -19,7 +23,7 @@ before_install:
 install:
   - DOCKER_RUN "make install"
 
-after_success:
+script:
   - if [ "$TRAVIS_BRANCH" == "release-docker" ]; then
     docker --version;
     docker build -t ubuntu-development . ;
