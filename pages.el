@@ -26,7 +26,7 @@
 (defvar pages-timestamp "./org-timestamps/")
 
 (defun pages-publish-to-html (plist filename pub-dir)
-  (setq filename (org-multilingual-publish plist filename pub-dir))
+  (setq filename (org-multilingual-publish plist filename (file-name-directory filename)))
   (org-html-publish-to-html plist filename pub-dir)
   )
 
@@ -39,21 +39,22 @@
 		  (setq data (split-string contents "\n"))))
 	'()))
 
-(defun pages-init (BASE_DIR TARGET_DIR &optional EXCLUDE_DIR LANG)
+(defvar pages--multilingual-static-extensions '(html css js png jpg gif mp3 m4a mp4 woff2 woff svg eot ttf otf vcf))
+(defun pages--multilingual-init (BASE_DIR TARGET_DIR &optional EXCLUDE_DIR LANG)
   (setq org-publish-use-timestamps-flag nil)
   (setq org-publish-timestamp-directory pages-timestamp)
   (unless EXCLUDE_DIR
 	(setq EXCLUDE_DIR "\\.git"))
   (setq org-publish-project-alist
-		`(("Install.setup-static"
+		`(("LinuxCommands-static"
 		   :base-directory ,BASE_DIR
-		   :base-extension "html\\|css\\|js\\|png\\|jpg\\|gif\\|mp3\\|m4a\\|mp4\\|woff2\\|woff\\|svg\\|eot\\|ttf\\|otf\\|vcf"
+		   :base-extension ,(mapconcat 'symbol-name pages--multilingual-static-extensions "\\|")
 		   :recursive t
 		   :exclude: ,EXCLUDE_DIR
 		   :publishing-directory ,(expand-file-name TARGET_DIR)
 		   :publishing-function org-publish-attachment
 		   )
-		  ("Install.setup-org"
+		  ("LinuxCommands-org"
 		   :base-directory ,BASE_DIR
 		   :base-extension "org"
 		   :auto-index nil
@@ -64,18 +65,51 @@
 		   :publishing-directory ,TARGET_DIR
 		   :publishing-function pages-publish-to-html
 		   :language ,LANG
+		   :override t
 		   :headline-levels 4
 		   :recursive nil
 		   :auto-preamble nil
 		   )
-		  ("Install.setup" :components ("Install.setup-static" "Install.setup-org"))
+		  ("LinuxCommands"
+		   :components ("LinuxCommands-static" "LinuxCommands-org"))
 		  )))
 
-(defun pages-publish ()
-  (org-publish "Install.setup")
-  (when (and pages-timestamp (file-directory-p pages-timestamp))
-	(delete-directory pages-timestamp t)))
+(defun pages--multilingual-cleanup (dir)
+  (message "Cleanup unnecessary files in %s..." dir)
+  (shell-command-to-string (format "find \"%s\" -d -name \".*\" -not -path \"%s\" -not -path \"*.git/*\" -exec rm -rf {} \\;" dir dir))
+  (shell-command-to-string
+   (format "find \"%s\" -maxdepth 1 -d -not -path \"%s\" \"%s\" -exec rm -rf {} \\"
+		   (expand-file-name "../" dir)
+		   (expand-file-name "../" dir)
+		   (mapconcat (lambda (code)
+						(format "-not -name \"%s\"" code))
+					  org-multilingual-lang-codes
+					  " ")))
+  )
 
+(defun pages-publish (BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR)
+  (let ((langs (pages-support-languages))
+		(orig-dir (expand-file-name "orignal" PUBLISH_TARGET_DIR))
+		)
+	(when (file-directory-p orig-dir) (delete-directory orig-dir t))
+	(make-directory orig-dir t)
+	(message "Coping contents %s to %s..." BASE_DIR orig-dir)
+	(shell-command-to-string (format "find %s -maxdepth 1 -not -path \"*.git/*\" -not -path \"%s\" -not -path \"%s\" -not -path \"%s\" -exec cp -rf {} \"%s\" \\;" BASE_DIR BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR orig-dir))
+	;; (copy-directory BASE_DIR orig-dir t t)
+	;; (delete-directory (expand-file-name ".git" orig-dir) t)
+	(mapcar
+	 (lambda (lang)
+	   (setq lang (org-multilingual-normalize-code lang))
+	   (let* ((orig-lang-dir (expand-file-name (symbol-name lang) PUBLISH_TARGET_DIR))
+			  (lang-dir (expand-file-name  (symbol-name lang) PAGES_TARGET_DIR)))
+		 (message "Coping contents %s to %s..." orig-dir orig-lang-dir)
+		 (copy-directory orig-dir orig-lang-dir t t)
+		 (pages--multilingual-init orig-lang-dir lang-dir nil lang)
+		 (org-publish "LinuxCommands")
+		 (pages--multilingual-cleanup orig-lang-dir lang-dir)
+		 ))
+	 langs)
+	))
 
 (provide 'pages)
 
