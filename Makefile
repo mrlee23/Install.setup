@@ -42,7 +42,14 @@ pages:
 	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
 	# rm -rf "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)"
 	# rm -rf "$(EMACS_DEPS_DIR)"
-	if [ -d "$(DIST_DIR)" ]; then mv "$(DIST_DIR)" "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
+	for lang in `cat .supportLanguages`; \
+	do \
+		if [ -d "$(DIST_DIR)" ]; \
+		then \
+			cp -rf "$(DIST_DIR)" "$(GH_PAGES_DIR)/$${lang}/$(DIST_DIR)"; \
+		fi; \
+		echo "$$lang" > "$(PUBLISH_PAGES_DIR)/$${lang}/.language"; \
+	done;
 	find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
