@@ -1,0 +1,85 @@
+#+INCLUDE: ./main.setup
+#+TITLE: docker
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-04 
+
+* Prerequisites
+- [[./update.org][update]]
+- [[./curl.org][curl]]
+
+* Install
+** Ubuntu 16.04 ~
+
+*** Update repository
+#+NAME: ubuntu_update-install_docker
+#+BEGIN_SRC sh
+# Remove old version
+$ sudo apt-get remove docker docker-engine docker.io
+
+# Install packages
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
+# Add Docker's official GPG key
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+$ sudo apt-key fingerprint 0EBFCD88
+#+END_SRC
+
+*** Based on architectures
+**** x86_64 / amd64
+#+NAME: ubuntu_amd64-install_docker
+#+BEGIN_SRC sh
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+#+END_SRC
+
+**** armhf
+#+NAME: ubuntu_amd64-install_docker
+#+BEGIN_SRC sh
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+#+END_SRC
+
+**** IBM Power
+#+NAME: ubuntu_amd64-install_docker
+#+BEGIN_SRC sh
+$ sudo add-apt-repository \
+   "deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+#+END_SRC
+
+**** IBM Z (s390x)
+#+NAME: ubuntu_amd64-install_docker
+#+BEGIN_SRC sh
+$ sudo add-apt-repository \
+   "deb [arch=s390x] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+#+END_SRC
+*** Install Docker-CE
+#+NAME: ubuntu-install_docker
+#+BEGIN_SRC sh
+$ sudo apt-get install docker-ce
+#+END_SRC
+
+** Mac
+- [[https://download.docker.com/mac/stable/Docker.dmg][Docker.dmg(Official)]]
+* Check
+#+NAME: check_docker
+#+BEGIN_SRC sh
+$ sudo docker run hello-world
+#+END_SRC
+
+* References
+- [[https://docs.docker.com/docker-for-mac/install/][Install Docker for Mac(Official)]]
+- [[https://docs.docker.com/install/][Install Docker(Offical)]]
