@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-14 Wed 07:02 -->
+<!-- 2018-02-14 Wed 07:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker-compose</title>
@@ -181,12 +181,14 @@
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
-<link rel="stylesheet" type="text/css" href="dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
-<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
-<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/my.css"/>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -241,23 +243,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org87448f0">1. Prerequisites</a></li>
-<li><a href="#orgee516f9">2. Install</a>
+<li><a href="#org9159306">1. Prerequisites</a></li>
+<li><a href="#orgae98b77">2. Install</a>
 <ul>
-<li><a href="#org9e6fd58">2.1. Ubuntu</a></li>
-<li><a href="#org2137357">2.2. Mac</a></li>
+<li><a href="#org1bc887a">2.1. Ubuntu</a></li>
+<li><a href="#org234af96">2.2. Mac</a></li>
 </ul>
 </li>
-<li><a href="#org418ada6">3. Uninstall</a></li>
-<li><a href="#org8a0da92">4. Check</a></li>
-<li><a href="#org06317c4">5. Seealso</a></li>
-<li><a href="#org50c0acf">6. References</a></li>
+<li><a href="#orge13c708">3. Uninstall</a></li>
+<li><a href="#orgf9284df">4. Check</a></li>
+<li><a href="#org5876584">5. Seealso</a></li>
+<li><a href="#org5ded556">6. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org87448f0" class="outline-2">
-<h2 id="org87448f0"><span class="section-number-2">1</span> Prerequisites</h2>
+<div id="outline-container-org9159306" class="outline-2">
+<h2 id="org9159306"><span class="section-number-2">1</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="./docker.html">docker</a></li>
@@ -265,14 +267,14 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgee516f9" class="outline-2">
-<h2 id="orgee516f9"><span class="section-number-2">2</span> Install</h2>
+<div id="outline-container-orgae98b77" class="outline-2">
+<h2 id="orgae98b77"><span class="section-number-2">2</span> Install</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org9e6fd58" class="outline-3">
-<h3 id="org9e6fd58"><span class="section-number-3">2.1</span> Ubuntu</h3>
+</div><div id="outline-container-org1bc887a" class="outline-3">
+<h3 id="org1bc887a"><span class="section-number-3">2.1</span> Ubuntu</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgc3ec8ad"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
+<pre class="src src-sh" id="orgc7b1b80"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
@@ -282,8 +284,8 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 </div>
 </div>
 
-<div id="outline-container-org2137357" class="outline-3">
-<h3 id="org2137357"><span class="section-number-3">2.2</span> Mac</h3>
+<div id="outline-container-org234af96" class="outline-3">
+<h3 id="org234af96"><span class="section-number-3">2.2</span> Mac</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Involed in Docker for MacOS.
@@ -292,11 +294,11 @@ Involed in Docker for MacOS.
 </div>
 </div>
 
-<div id="outline-container-org418ada6" class="outline-2">
-<h2 id="org418ada6"><span class="section-number-2">3</span> Uninstall</h2>
+<div id="outline-container-orge13c708" class="outline-2">
+<h2 id="orge13c708"><span class="section-number-2">3</span> Uninstall</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="org0a44754">$ sudo rm /usr/local/bin/docker-compose
+<pre class="src src-sh" id="orgb7c6f33">$ sudo rm /usr/local/bin/docker-compose
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
 $ pip uninstall docker-compose
 </pre>
@@ -304,11 +306,11 @@ $ pip uninstall docker-compose
 </div>
 </div>
 
-<div id="outline-container-org8a0da92" class="outline-2">
-<h2 id="org8a0da92"><span class="section-number-2">4</span> Check</h2>
+<div id="outline-container-orgf9284df" class="outline-2">
+<h2 id="orgf9284df"><span class="section-number-2">4</span> Check</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-sh" id="org4519d3d">$ docker-compose --version
+<pre class="src src-sh" id="org947db5a">$ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 </pre>
 </div>
@@ -316,8 +318,8 @@ docker-compose version 1.18.0, build 8dd22a9
 </div>
 
 
-<div id="outline-container-org06317c4" class="outline-2">
-<h2 id="org06317c4"><span class="section-number-2">5</span> Seealso</h2>
+<div id="outline-container-org5876584" class="outline-2">
+<h2 id="org5876584"><span class="section-number-2">5</span> Seealso</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="./docker-command-completion.html">docker-command-completion</a></li>
@@ -326,8 +328,8 @@ docker-compose version 1.18.0, build 8dd22a9
 </div>
 
 
-<div id="outline-container-org50c0acf" class="outline-2">
-<h2 id="org50c0acf"><span class="section-number-2">6</span> References</h2>
+<div id="outline-container-org5ded556" class="outline-2">
+<h2 id="org5ded556"><span class="section-number-2">6</span> References</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/compose/install/#install-compose">Docker Compose Install(Offical)</a></li>
@@ -338,7 +340,7 @@ docker-compose version 1.18.0, build 8dd22a9
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-04</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-14 Wed 07:02</p>
+<p class="date">Created: 2018-02-14 Wed 07:28</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

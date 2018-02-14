@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2018-02-14 Wed 07:03 -->
+<!-- 2018-02-14 Wed 07:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker</title>
@@ -181,12 +181,14 @@
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
-<link rel="stylesheet" type="text/css" href="dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
-<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
-<script type="text/javascript" src="dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/my.css"/>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -241,34 +243,34 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org48288d2">1. Prerequisites</a></li>
-<li><a href="#orgc68d6b3">2. Install</a>
+<li><a href="#org12475c1">1. Prerequisites</a></li>
+<li><a href="#org445da55">2. Install</a>
 <ul>
-<li><a href="#orgf343c3f">2.1. Ubuntu 16.04 ~</a>
+<li><a href="#orgaa37b31">2.1. Ubuntu 16.04 ~</a>
 <ul>
-<li><a href="#org6e7c83d">2.1.1. Update repository</a></li>
-<li><a href="#orgfeca2c6">2.1.2. Based on architectures</a>
+<li><a href="#org859172f">2.1.1. Update repository</a></li>
+<li><a href="#org6830c45">2.1.2. Based on architectures</a>
 <ul>
-<li><a href="#org8adb2d7">2.1.2.1. x86<sub>64</sub> / amd64</a></li>
-<li><a href="#orge03f6a9">2.1.2.2. armhf</a></li>
-<li><a href="#orga6479ec">2.1.2.3. IBM Power</a></li>
-<li><a href="#org404b640">2.1.2.4. IBM Z (s390x)</a></li>
+<li><a href="#orgdaad71a">2.1.2.1. x86<sub>64</sub> / amd64</a></li>
+<li><a href="#org0b462dd">2.1.2.2. armhf</a></li>
+<li><a href="#org698a05c">2.1.2.3. IBM Power</a></li>
+<li><a href="#org48053a6">2.1.2.4. IBM Z (s390x)</a></li>
 </ul>
 </li>
-<li><a href="#orgb47557c">2.1.3. Install Docker-CE</a></li>
+<li><a href="#org52ae52c">2.1.3. Install Docker-CE</a></li>
 </ul>
 </li>
-<li><a href="#orgaec3217">2.2. Mac</a></li>
+<li><a href="#orga9cea5e">2.2. Mac</a></li>
 </ul>
 </li>
-<li><a href="#org2305194">3. Check</a></li>
-<li><a href="#org82d93bb">4. References</a></li>
+<li><a href="#org0b95e83">3. Check</a></li>
+<li><a href="#orga002ac7">4. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org48288d2" class="outline-2">
-<h2 id="org48288d2"><span class="section-number-2">1</span> Prerequisites</h2>
+<div id="outline-container-org12475c1" class="outline-2">
+<h2 id="org12475c1"><span class="section-number-2">1</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -277,17 +279,17 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc68d6b3" class="outline-2">
-<h2 id="orgc68d6b3"><span class="section-number-2">2</span> Install</h2>
+<div id="outline-container-org445da55" class="outline-2">
+<h2 id="org445da55"><span class="section-number-2">2</span> Install</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgf343c3f" class="outline-3">
-<h3 id="orgf343c3f"><span class="section-number-3">2.1</span> Ubuntu 16.04 ~</h3>
+</div><div id="outline-container-orgaa37b31" class="outline-3">
+<h3 id="orgaa37b31"><span class="section-number-3">2.1</span> Ubuntu 16.04 ~</h3>
 <div class="outline-text-3" id="text-2-1">
-</div><div id="outline-container-org6e7c83d" class="outline-4">
-<h4 id="org6e7c83d"><span class="section-number-4">2.1.1</span> Update repository</h4>
+</div><div id="outline-container-org859172f" class="outline-4">
+<h4 id="org859172f"><span class="section-number-4">2.1.1</span> Update repository</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgf1c3aa5"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+<pre class="src src-sh" id="org4b52286"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
 $ sudo apt-get remove docker docker-engine docker.io
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
@@ -306,14 +308,14 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orgfeca2c6" class="outline-4">
-<h4 id="orgfeca2c6"><span class="section-number-4">2.1.2</span> Based on architectures</h4>
+<div id="outline-container-org6830c45" class="outline-4">
+<h4 id="org6830c45"><span class="section-number-4">2.1.2</span> Based on architectures</h4>
 <div class="outline-text-4" id="text-2-1-2">
-</div><div id="outline-container-org8adb2d7" class="outline-5">
-<h5 id="org8adb2d7"><span class="section-number-5">2.1.2.1</span> x86<sub>64</sub> / amd64</h5>
+</div><div id="outline-container-orgdaad71a" class="outline-5">
+<h5 id="orgdaad71a"><span class="section-number-5">2.1.2.1</span> x86<sub>64</sub> / amd64</h5>
 <div class="outline-text-5" id="text-2-1-2-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgcde07db">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org9aa960e">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -322,11 +324,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orge03f6a9" class="outline-5">
-<h5 id="orge03f6a9"><span class="section-number-5">2.1.2.2</span> armhf</h5>
+<div id="outline-container-org0b462dd" class="outline-5">
+<h5 id="org0b462dd"><span class="section-number-5">2.1.2.2</span> armhf</h5>
 <div class="outline-text-5" id="text-2-1-2-2">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgcaca058">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org8353bc3">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -335,11 +337,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orga6479ec" class="outline-5">
-<h5 id="orga6479ec"><span class="section-number-5">2.1.2.3</span> IBM Power</h5>
+<div id="outline-container-org698a05c" class="outline-5">
+<h5 id="org698a05c"><span class="section-number-5">2.1.2.3</span> IBM Power</h5>
 <div class="outline-text-5" id="text-2-1-2-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="org11cf081">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org7dc5535">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -348,11 +350,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-org404b640" class="outline-5">
-<h5 id="org404b640"><span class="section-number-5">2.1.2.4</span> IBM Z (s390x)</h5>
+<div id="outline-container-org48053a6" class="outline-5">
+<h5 id="org48053a6"><span class="section-number-5">2.1.2.4</span> IBM Z (s390x)</h5>
 <div class="outline-text-5" id="text-2-1-2-4">
 <div class="org-src-container">
-<pre class="src src-sh" id="orge7835a0">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="orgd98f138">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=s390x] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -361,19 +363,19 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 </div>
-<div id="outline-container-orgb47557c" class="outline-4">
-<h4 id="orgb47557c"><span class="section-number-4">2.1.3</span> Install Docker-CE</h4>
+<div id="outline-container-org52ae52c" class="outline-4">
+<h4 id="org52ae52c"><span class="section-number-4">2.1.3</span> Install Docker-CE</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgcb3790f">$ sudo apt-get install docker-ce
+<pre class="src src-sh" id="orge245e99">$ sudo apt-get install docker-ce
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgaec3217" class="outline-3">
-<h3 id="orgaec3217"><span class="section-number-3">2.2</span> Mac</h3>
+<div id="outline-container-orga9cea5e" class="outline-3">
+<h3 id="orga9cea5e"><span class="section-number-3">2.2</span> Mac</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
@@ -381,18 +383,18 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 </div>
-<div id="outline-container-org2305194" class="outline-2">
-<h2 id="org2305194"><span class="section-number-2">3</span> Check</h2>
+<div id="outline-container-org0b95e83" class="outline-2">
+<h2 id="org0b95e83"><span class="section-number-2">3</span> Check</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb6778af">$ sudo docker run hello-world
+<pre class="src src-sh" id="org107ed58">$ sudo docker run hello-world
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org82d93bb" class="outline-2">
-<h2 id="org82d93bb"><span class="section-number-2">4</span> References</h2>
+<div id="outline-container-orga002ac7" class="outline-2">
+<h2 id="orga002ac7"><span class="section-number-2">4</span> References</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
@@ -404,7 +406,7 @@ $ sudo apt-key fingerprint 0EBFCD88
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-04</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-14 Wed 07:03</p>
+<p class="date">Created: 2018-02-14 Wed 07:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
