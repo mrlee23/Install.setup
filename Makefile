@@ -3,6 +3,7 @@
 EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
 GH_PAGES_DIR=.gh-pages
+PUBLISH_PAGES_DIR=.publish
 EMACS_DEPS_DIR=.emacs-dependencies
 DIST_DIR=dist
 
@@ -22,6 +23,7 @@ get-deps:
 	sudo apt-get install -y texinfo
 	mkdir "$(EMACS_DEPS_DIR)"
 	git clone https://github.com/hniksic/emacs-htmlize.git "$(EMACS_DEPS_DIR)/emacs-htmlize"
+	git clone https://github.com/mrlee23/org-multilingual.git "$(EMACS_DEPS_DIR)/org-multilingual"
 	git clone -b release_9.0.10 https://code.orgmode.org/bzg/org-mode.git "$(EMACS_DEPS_DIR)/org-mode"
 	cd "$(EMACS_DEPS_DIR)/org-mode" && make
 
@@ -29,29 +31,32 @@ test:
 	echo "No tests."
 	echo "HI"
 
-pages: pages-deps
+pages:
 	rm -rf .org-timestamps
 	@$(BATCH) --eval "(progn\
 	$$load_paths\
 	(message \"%s\" load-path)\
 	(load-file \"pages.el\")\
-	(pages-init \"./\" \"$(GH_PAGES_DIR)/\")\
-	(pages-publish)\
-	$$delete_pages_deps\
+	(pages-publish \"./\" \"$(GH_PAGES_DIR)/\" \"$(PUBLISH_PAGES_DIR)\")\
 	)"
 	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
-	rm -rf "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)"
-	rm -rf "$(EMACS_DEPS_DIR)"
+	# rm -rf "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)"
+	# rm -rf "$(EMACS_DEPS_DIR)"
 	if [ -d "$(DIST_DIR)" ]; then mv "$(DIST_DIR)" "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
+	find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
-	git clone https://github.com/mrlee23/org-html-themes.git dist/org-html-themes
+	git clone https://github.com/mrlee23/org-html-themes.git $(DIST_DIR)/org-html-themes
 	rm -rf dist/org-html-themes/.git
 
 define load_paths
 (add-to-list 'load-path "./")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
+endef
+define publish_pages
+
 endef
 define delete_pages_deps
 (when (file-directory-p "$(GH_PAGES_DIR)/$(EMACS_DEPS_DIR)")
@@ -61,4 +66,5 @@ define delete_pages_deps
 endef
 
 export load_paths
+export publish_pages
 export delete_pages_deps
