@@ -36,6 +36,12 @@ test:
 	echo "No tests."
 	echo "HI"
 
+index: mkdirs
+	if [ -f "index.org" ]; then mv -f index.org "$(GH_PAGES_DIR)/index.org"; fi
+	emacs -Q --batch README.org -f org-org-export-to-opg
+	mv -f README.org.org index.org
+	rm -f README.org
+
 pages: mkdirs pages-deps
 	if [ -d .org-timestamps ]; then rm -rf .org-timestamps; fi
 	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
