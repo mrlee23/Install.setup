@@ -37,10 +37,18 @@ test:
 	echo "HI"
 
 index: mkdirs
-	if [ -f "index.org" ]; then mv -f index.org "$(GH_PAGES_DIR)/index.org"; fi
-	emacs -Q --batch README.org -l seq -f org-org-export-to-org
-	mv -f README.org.org index.org
-	rm -f README.org
+	if [ -f "index.org" ]; \
+	then \
+		emacs -Q --batch index.org -f org-html-export-to-html; \
+		mv -f index.html "$(GH_PAGES_DIR)/index.html"; \
+		rm -f index.org; \
+	fi;
+	if [ -f "README.org" ]; \
+	then \
+		emacs -Q --batch README.org -l seq -f org-org-export-to-org; \
+		mv -f README.org.org index.org; \
+		rm -f README.org; \
+	fi;
 
 pages: mkdirs pages-deps
 	if [ -d .org-timestamps ]; then rm -rf .org-timestamps; fi
