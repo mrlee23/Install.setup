@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-14 Wed 09:25 -->
+<!-- 2018-02-14 Wed 09:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker-compose</title>
@@ -243,23 +243,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4649785">1. Prerequisites</a></li>
-<li><a href="#orgc497cd4">2. Install</a>
+<li><a href="#org0222160">1. Prerequisites</a></li>
+<li><a href="#orgfa58ec2">2. Install</a>
 <ul>
-<li><a href="#org2581605">2.1. Ubuntu</a></li>
-<li><a href="#org1dccc96">2.2. Mac</a></li>
+<li><a href="#orgdf663a6">2.1. Ubuntu</a></li>
+<li><a href="#orgb0cab3f">2.2. Mac</a></li>
 </ul>
 </li>
-<li><a href="#org5c6ae5f">3. Uninstall</a></li>
-<li><a href="#org4ebda95">4. Check</a></li>
-<li><a href="#org594d3dd">5. Seealso</a></li>
-<li><a href="#orgaf6fda1">6. References</a></li>
+<li><a href="#org21779ce">3. Uninstall</a></li>
+<li><a href="#org0812f02">4. Check</a></li>
+<li><a href="#orgafed7e4">5. Seealso</a></li>
+<li><a href="#orgff99f66">6. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4649785" class="outline-2">
-<h2 id="org4649785"><span class="section-number-2">1</span> Prerequisites</h2>
+<div id="outline-container-org0222160" class="outline-2">
+<h2 id="org0222160"><span class="section-number-2">1</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="./docker.html">docker</a></li>
@@ -267,14 +267,14 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc497cd4" class="outline-2">
-<h2 id="orgc497cd4"><span class="section-number-2">2</span> Install</h2>
+<div id="outline-container-orgfa58ec2" class="outline-2">
+<h2 id="orgfa58ec2"><span class="section-number-2">2</span> Install</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org2581605" class="outline-3">
-<h3 id="org2581605"><span class="section-number-3">2.1</span> Ubuntu</h3>
+</div><div id="outline-container-orgdf663a6" class="outline-3">
+<h3 id="orgdf663a6"><span class="section-number-3">2.1</span> Ubuntu</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="org7b182c6"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
+<pre class="src src-sh" id="org6ecde86"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
@@ -284,8 +284,8 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 </div>
 </div>
 
-<div id="outline-container-org1dccc96" class="outline-3">
-<h3 id="org1dccc96"><span class="section-number-3">2.2</span> Mac</h3>
+<div id="outline-container-orgb0cab3f" class="outline-3">
+<h3 id="orgb0cab3f"><span class="section-number-3">2.2</span> Mac</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Involed in Docker for MacOS.
@@ -294,11 +294,11 @@ Involed in Docker for MacOS.
 </div>
 </div>
 
-<div id="outline-container-org5c6ae5f" class="outline-2">
-<h2 id="org5c6ae5f"><span class="section-number-2">3</span> Uninstall</h2>
+<div id="outline-container-org21779ce" class="outline-2">
+<h2 id="org21779ce"><span class="section-number-2">3</span> Uninstall</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgbc6409b">$ sudo rm /usr/local/bin/docker-compose
+<pre class="src src-sh" id="orgf96d18a">$ sudo rm /usr/local/bin/docker-compose
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
 $ pip uninstall docker-compose
 </pre>
@@ -306,11 +306,11 @@ $ pip uninstall docker-compose
 </div>
 </div>
 
-<div id="outline-container-org4ebda95" class="outline-2">
-<h2 id="org4ebda95"><span class="section-number-2">4</span> Check</h2>
+<div id="outline-container-org0812f02" class="outline-2">
+<h2 id="org0812f02"><span class="section-number-2">4</span> Check</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-sh" id="org5a94772">$ docker-compose --version
+<pre class="src src-sh" id="orgff27442">$ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 </pre>
 </div>
@@ -318,8 +318,8 @@ docker-compose version 1.18.0, build 8dd22a9
 </div>
 
 
-<div id="outline-container-org594d3dd" class="outline-2">
-<h2 id="org594d3dd"><span class="section-number-2">5</span> Seealso</h2>
+<div id="outline-container-orgafed7e4" class="outline-2">
+<h2 id="orgafed7e4"><span class="section-number-2">5</span> Seealso</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="./docker-command-completion.html">docker-command-completion</a></li>
@@ -328,8 +328,8 @@ docker-compose version 1.18.0, build 8dd22a9
 </div>
 
 
-<div id="outline-container-orgaf6fda1" class="outline-2">
-<h2 id="orgaf6fda1"><span class="section-number-2">6</span> References</h2>
+<div id="outline-container-orgff99f66" class="outline-2">
+<h2 id="orgff99f66"><span class="section-number-2">6</span> References</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/compose/install/#install-compose">Docker Compose Install(Offical)</a></li>
@@ -340,7 +340,7 @@ docker-compose version 1.18.0, build 8dd22a9
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-04</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-14 Wed 09:25</p>
+<p class="date">Created: 2018-02-14 Wed 09:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
