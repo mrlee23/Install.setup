@@ -38,7 +38,7 @@ test:
 
 index: mkdirs
 	if [ -f "index.org" ]; then mv -f index.org "$(GH_PAGES_DIR)/index.org"; fi
-	emacs -Q --batch README.org -f org-org-export-to-org
+	emacs -Q --batch README.org -l seq -f org-org-export-to-org
 	mv -f README.org.org index.org
 	rm -f README.org
 
