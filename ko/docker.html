@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-14 Wed 06:08 -->
+<!-- 2018-02-14 Wed 06:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker</title>
@@ -241,34 +241,34 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8e25872">1. Prerequisites</a></li>
-<li><a href="#org45f7ba3">2. Install</a>
+<li><a href="#org20a2239">1. Prerequisites</a></li>
+<li><a href="#org7030815">2. Install</a>
 <ul>
-<li><a href="#orgd7613bb">2.1. Ubuntu 16.04 ~</a>
+<li><a href="#orga6eb5dd">2.1. Ubuntu 16.04 ~</a>
 <ul>
-<li><a href="#org7ed5f27">2.1.1. Update repository</a></li>
-<li><a href="#org51534df">2.1.2. Based on architectures</a>
+<li><a href="#orgc0ec3e2">2.1.1. Update repository</a></li>
+<li><a href="#org7981750">2.1.2. Based on architectures</a>
 <ul>
-<li><a href="#org78bd8c0">2.1.2.1. x86<sub>64</sub> / amd64</a></li>
-<li><a href="#orgfde6cba">2.1.2.2. armhf</a></li>
-<li><a href="#orga7b6e4b">2.1.2.3. IBM Power</a></li>
-<li><a href="#orge2ba413">2.1.2.4. IBM Z (s390x)</a></li>
+<li><a href="#orgd464e3b">2.1.2.1. x86<sub>64</sub> / amd64</a></li>
+<li><a href="#org4b01597">2.1.2.2. armhf</a></li>
+<li><a href="#org54984ef">2.1.2.3. IBM Power</a></li>
+<li><a href="#orga4eb8e3">2.1.2.4. IBM Z (s390x)</a></li>
 </ul>
 </li>
-<li><a href="#org5abdf02">2.1.3. Install Docker-CE</a></li>
+<li><a href="#org38fa31d">2.1.3. Install Docker-CE</a></li>
 </ul>
 </li>
-<li><a href="#org54fab75">2.2. Mac</a></li>
+<li><a href="#org5e39ade">2.2. Mac</a></li>
 </ul>
 </li>
-<li><a href="#org54e4dfc">3. Check</a></li>
-<li><a href="#org91be7b4">4. References</a></li>
+<li><a href="#org6b0e218">3. Check</a></li>
+<li><a href="#orgb41574a">4. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8e25872" class="outline-2">
-<h2 id="org8e25872"><span class="section-number-2">1</span> Prerequisites</h2>
+<div id="outline-container-org20a2239" class="outline-2">
+<h2 id="org20a2239"><span class="section-number-2">1</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -277,17 +277,17 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org45f7ba3" class="outline-2">
-<h2 id="org45f7ba3"><span class="section-number-2">2</span> Install</h2>
+<div id="outline-container-org7030815" class="outline-2">
+<h2 id="org7030815"><span class="section-number-2">2</span> Install</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgd7613bb" class="outline-3">
-<h3 id="orgd7613bb"><span class="section-number-3">2.1</span> Ubuntu 16.04 ~</h3>
+</div><div id="outline-container-orga6eb5dd" class="outline-3">
+<h3 id="orga6eb5dd"><span class="section-number-3">2.1</span> Ubuntu 16.04 ~</h3>
 <div class="outline-text-3" id="text-2-1">
-</div><div id="outline-container-org7ed5f27" class="outline-4">
-<h4 id="org7ed5f27"><span class="section-number-4">2.1.1</span> Update repository</h4>
+</div><div id="outline-container-orgc0ec3e2" class="outline-4">
+<h4 id="orgc0ec3e2"><span class="section-number-4">2.1.1</span> Update repository</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="org8630add"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+<pre class="src src-sh" id="org9de3afa"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
 $ sudo apt-get remove docker docker-engine docker.io
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
@@ -306,14 +306,14 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-org51534df" class="outline-4">
-<h4 id="org51534df"><span class="section-number-4">2.1.2</span> Based on architectures</h4>
+<div id="outline-container-org7981750" class="outline-4">
+<h4 id="org7981750"><span class="section-number-4">2.1.2</span> Based on architectures</h4>
 <div class="outline-text-4" id="text-2-1-2">
-</div><div id="outline-container-org78bd8c0" class="outline-5">
-<h5 id="org78bd8c0"><span class="section-number-5">2.1.2.1</span> x86<sub>64</sub> / amd64</h5>
+</div><div id="outline-container-orgd464e3b" class="outline-5">
+<h5 id="orgd464e3b"><span class="section-number-5">2.1.2.1</span> x86<sub>64</sub> / amd64</h5>
 <div class="outline-text-5" id="text-2-1-2-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgbfa287b">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org366c228">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -322,11 +322,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orgfde6cba" class="outline-5">
-<h5 id="orgfde6cba"><span class="section-number-5">2.1.2.2</span> armhf</h5>
+<div id="outline-container-org4b01597" class="outline-5">
+<h5 id="org4b01597"><span class="section-number-5">2.1.2.2</span> armhf</h5>
 <div class="outline-text-5" id="text-2-1-2-2">
 <div class="org-src-container">
-<pre class="src src-sh" id="org757c0f2">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org787a468">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -335,11 +335,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orga7b6e4b" class="outline-5">
-<h5 id="orga7b6e4b"><span class="section-number-5">2.1.2.3</span> IBM Power</h5>
+<div id="outline-container-org54984ef" class="outline-5">
+<h5 id="org54984ef"><span class="section-number-5">2.1.2.3</span> IBM Power</h5>
 <div class="outline-text-5" id="text-2-1-2-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgba4fb46">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org8041f08">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -348,11 +348,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orge2ba413" class="outline-5">
-<h5 id="orge2ba413"><span class="section-number-5">2.1.2.4</span> IBM Z (s390x)</h5>
+<div id="outline-container-orga4eb8e3" class="outline-5">
+<h5 id="orga4eb8e3"><span class="section-number-5">2.1.2.4</span> IBM Z (s390x)</h5>
 <div class="outline-text-5" id="text-2-1-2-4">
 <div class="org-src-container">
-<pre class="src src-sh" id="org0581ecb">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org21c6a16">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=s390x] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -361,19 +361,19 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 </div>
-<div id="outline-container-org5abdf02" class="outline-4">
-<h4 id="org5abdf02"><span class="section-number-4">2.1.3</span> Install Docker-CE</h4>
+<div id="outline-container-org38fa31d" class="outline-4">
+<h4 id="org38fa31d"><span class="section-number-4">2.1.3</span> Install Docker-CE</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="org738ac4d">$ sudo apt-get install docker-ce
+<pre class="src src-sh" id="org5fb1cc9">$ sudo apt-get install docker-ce
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org54fab75" class="outline-3">
-<h3 id="org54fab75"><span class="section-number-3">2.2</span> Mac</h3>
+<div id="outline-container-org5e39ade" class="outline-3">
+<h3 id="org5e39ade"><span class="section-number-3">2.2</span> Mac</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
@@ -381,18 +381,18 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 </div>
-<div id="outline-container-org54e4dfc" class="outline-2">
-<h2 id="org54e4dfc"><span class="section-number-2">3</span> Check</h2>
+<div id="outline-container-org6b0e218" class="outline-2">
+<h2 id="org6b0e218"><span class="section-number-2">3</span> Check</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-sh" id="orge1956b6">$ sudo docker run hello-world
+<pre class="src src-sh" id="org9698c78">$ sudo docker run hello-world
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org91be7b4" class="outline-2">
-<h2 id="org91be7b4"><span class="section-number-2">4</span> References</h2>
+<div id="outline-container-orgb41574a" class="outline-2">
+<h2 id="orgb41574a"><span class="section-number-2">4</span> References</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
@@ -404,7 +404,7 @@ $ sudo apt-key fingerprint 0EBFCD88
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-04</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-14 Wed 06:08</p>
+<p class="date">Created: 2018-02-14 Wed 06:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
