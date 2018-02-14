@@ -1,0 +1,60 @@
+#+INCLUDE: ./main.setup
+#+TITLE: node
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-10 
+
+* Prerequisites
+- [[./sudo.org][sudo]]
+- [[./curl.org][curl]]
+
+* Prepare
+** 4.x
+#+NAME: prepare-node_4_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+#+END_SRC
+
+** 6.x
+#+NAME: prepare-node_6_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+#+END_SRC
+
+** 7.x
+#+NAME: prepare-node_7_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+#+END_SRC
+
+** 9.x
+#+NAME: prepare-node_9_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+#+END_SRC
+
+* Install
+
+** Ubuntu
+#+NAME: ubuntu-node_install
+#+BEGIN_SRC sh
+$ sudo apt-get install nodejs
+$ sudo apt-get install build-essential
+#+END_SRC
+
+* Packages
+
+- node
+- [[./npm.org][npm]]
+
+* Check
+#+NAME: node_check
+#+BEGIN_SRC sh
+$ node -v
+v9.5.0
+$ npm -v
+5.6.0
+#+END_SRC
+
+* References
+[[https://kr.godaddy.com/help/install-nodejs-ubuntu-17395]]
