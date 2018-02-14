@@ -38,16 +38,11 @@ test:
 
 index: mkdirs
 	if [ -f "index.org" ]; then mv -f index.org "$(GH_PAGES_DIR)/index.org"; fi
-	@$(BATCH) README.org --eval "(progn\
-	$$load_paths\
-	(require 'org)\
-	(org-org-export-to-org)\
-	(message \"README.org export to org.\")\
-	)"
+	emacs -Q --batch README.org -f org-org-export-to-opg
 	mv -f README.org.org index.org
 	rm -f README.org
 
-pages: mkdirs pages-deps index
+pages: mkdirs pages-deps
 	if [ -d .org-timestamps ]; then rm -rf .org-timestamps; fi
 	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
 	if [ -d "$(DIST_DIR)" ]; then mv -f "$(DIST_DIR)" "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
