@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-14 Wed 03:00 -->
+<!-- 2018-02-14 Wed 03:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux Commands</title>
@@ -241,48 +241,100 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge96cd82">1. 개요</a>
+<li><a href="#org405ace2">1. 개요</a>
 <ul>
-<li><a href="#orgf6cda3e">1.1. 진행 상황</a></li>
-<li><a href="#orgd4e1519">1.2. 상태 설명</a></li>
+<li><a href="#org92344a0">1.1. 진행 상황</a></li>
+<li><a href="#org7029a0d">1.2. 상태 설명</a></li>
 </ul>
 </li>
-<li><a href="#org5cd7699">2. 명령어</a>
+<li><a href="#org1707f28">2. 명령어</a>
 <ul>
-<li><a href="#org5cfc1d9">2.1. apt-add-repository</a></li>
-<li><a href="#orgd8d168c">2.2. autoconf</a></li>
-<li><a href="#org894bc88">2.3. brew</a></li>
-<li><a href="#orgad62f7c">2.4. build-essential</a></li>
-<li><a href="#org52d0b6d">2.5. chrome</a></li>
-<li><a href="#org876c033">2.6. curl</a></li>
-<li><a href="#orga09d7bb">2.7. dh-autoreconf</a></li>
-<li><a href="#org2f5f0f7">2.8. docker-compose</a></li>
-<li><a href="#org7c0f2c6">2.9. docker</a></li>
-<li><a href="#orgcb8c51e">2.10. emacs</a></li>
-<li><a href="#orgd5bf9c9">2.11. gcc</a></li>
-<li><a href="#orgb0255c7">2.12. gem</a></li>
-<li><a href="#org21c3e64">2.13. git</a></li>
-<li><a href="#org1d97242">2.14. index</a></li>
-<li><a href="#orgff0680d">2.15. make</a></li>
-<li><a href="#orgf38c1d7">2.16. node</a></li>
-<li><a href="#orgcda645f">2.17. postfix</a></li>
-<li><a href="#org748b88f">2.18. rsync</a></li>
-<li><a href="#orga904f61">2.19. ruby</a></li>
-<li><a href="#org290b496">2.20. sendmail</a></li>
-<li><a href="#orgc04f650">2.21. ssh</a></li>
-<li><a href="#orgbe69ac5">2.22. sudo</a></li>
-<li><a href="#org6f55d4c">2.23. travis</a></li>
-<li><a href="#org708cb65">2.24. update</a></li>
-<li><a href="#org3165d2c">2.25. vim</a></li>
-<li><a href="#org99fe909">2.26. wget</a></li>
+<li><a href="#orga5e7cdf">2.1. DNS</a></li>
+<li><a href="#org5a4b18a">2.2. NIS</a></li>
+<li><a href="#org72ff26d">2.3. SELinux</a></li>
+<li><a href="#org5b19f0f">2.4. addbib</a></li>
+<li><a href="#org4efa609">2.5. alias</a></li>
+<li><a href="#org4236a57">2.6. apt-add-repository</a></li>
+<li><a href="#orgc87aa1d">2.7. apt</a></li>
+<li><a href="#org60d6011">2.8. autoconf</a></li>
+<li><a href="#org5d303b0">2.9. bash</a></li>
+<li><a href="#org47be807">2.10. brew</a></li>
+<li><a href="#org0a7ddf5">2.11. build-essential</a></li>
+<li><a href="#org028d628">2.12. cat</a></li>
+<li><a href="#org4ce5dab">2.13. chatter</a></li>
+<li><a href="#org16aced9">2.14. chfn</a></li>
+<li><a href="#orgec54a30">2.15. chgrp</a></li>
+<li><a href="#org10d5af1">2.16. chmod</a></li>
+<li><a href="#org44ef169">2.17. chown</a></li>
+<li><a href="#orgfdee5ef">2.18. chrome</a></li>
+<li><a href="#orgacfcee1">2.19. chsh</a></li>
+<li><a href="#orgd6398ae">2.20. curl</a></li>
+<li><a href="#orgb15a15b">2.21. dh-autoreconf</a></li>
+<li><a href="#org791966a">2.22. diff</a></li>
+<li><a href="#org59c9af0">2.23. docker-compose</a></li>
+<li><a href="#org8085b61">2.24. docker</a></li>
+<li><a href="#org4dd4056">2.25. dpkg</a></li>
+<li><a href="#org03b7690">2.26. echo</a></li>
+<li><a href="#org6294133">2.27. emacs</a></li>
+<li><a href="#orgba32f00">2.28. find</a></li>
+<li><a href="#org9660a27">2.29. finger</a></li>
+<li><a href="#org2fec269">2.30. fsck</a></li>
+<li><a href="#org37cde50">2.31. gcc</a></li>
+<li><a href="#orge12f587">2.32. gem</a></li>
+<li><a href="#org9f46a00">2.33. git</a></li>
+<li><a href="#org9ecceee">2.34. groupadd</a></li>
+<li><a href="#org60af457">2.35. hcitool</a></li>
+<li><a href="#org69089ce">2.36. hdparm</a></li>
+<li><a href="#orgc4f01e7">2.37. index</a></li>
+<li><a href="#org0a01ce8">2.38. insmod</a></li>
+<li><a href="#org1bb3c3f">2.39. iperf</a></li>
+<li><a href="#org3e51fb7">2.40. iptables</a></li>
+<li><a href="#orgc3e712d">2.41. java</a></li>
+<li><a href="#org8a6cbc5">2.42. javac</a></li>
+<li><a href="#org316f224">2.43. lilo</a></li>
+<li><a href="#org42f560e">2.44. lp</a></li>
+<li><a href="#org50bfd9b">2.45. lpc</a></li>
+<li><a href="#orge02383a">2.46. lpq</a></li>
+<li><a href="#org0df85db">2.47. lpr</a></li>
+<li><a href="#org4593b93">2.48. lprm</a></li>
+<li><a href="#org0549a43">2.49. lsattr</a></li>
+<li><a href="#org9b69cfb">2.50. lsof</a></li>
+<li><a href="#orga1f3c69">2.51. make</a></li>
+<li><a href="#orgf731136">2.52. modprobe</a></li>
+<li><a href="#org4ea06ee">2.53. node</a></li>
+<li><a href="#org7048061">2.54. npm</a></li>
+<li><a href="#org189a341">2.55. passwd</a></li>
+<li><a href="#org3693a21">2.56. pip</a></li>
+<li><a href="#org5470b0a">2.57. postfix</a></li>
+<li><a href="#orgae5459a">2.58. rpm</a></li>
+<li><a href="#org21382bd">2.59. rsync</a></li>
+<li><a href="#orgaf0f337">2.60. ruby</a></li>
+<li><a href="#org3bcf701">2.61. samba</a></li>
+<li><a href="#orgb72612a">2.62. sendmail</a></li>
+<li><a href="#org1c212b6">2.63. shutdown</a></li>
+<li><a href="#orgbee1a92">2.64. squid</a></li>
+<li><a href="#orgcd1aa6f">2.65. ssh</a></li>
+<li><a href="#orgef5be17">2.66. sudo</a></li>
+<li><a href="#org188a974">2.67. tail</a></li>
+<li><a href="#org4328c9a">2.68. tar</a></li>
+<li><a href="#orgc9d38c7">2.69. travis</a></li>
+<li><a href="#org62db0ad">2.70. tripwire</a></li>
+<li><a href="#orgd2499b5">2.71. update</a></li>
+<li><a href="#orgf76b7b1">2.72. useradd</a></li>
+<li><a href="#org833e418">2.73. userdel</a></li>
+<li><a href="#orgbb31ac3">2.74. usermod</a></li>
+<li><a href="#org2821d8a">2.75. vim</a></li>
+<li><a href="#org11cfec7">2.76. wget</a></li>
+<li><a href="#orgc5fc576">2.77. xinetd</a></li>
+<li><a href="#org016a651">2.78. xmodmap</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge96cd82" class="outline-2">
-<h2 id="orge96cd82"><span class="section-number-2">1</span> 개요</h2>
+<div id="outline-container-org405ace2" class="outline-2">
+<h2 id="org405ace2"><span class="section-number-2">1</span> 개요</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 운영체제 별 소프트웨어 설치 방법을 문서화하는 프로젝트입니다.
@@ -293,8 +345,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 
-<div id="outline-container-orgf6cda3e" class="outline-3">
-<h3 id="orgf6cda3e"><span class="section-number-3">1.1</span> 진행 상황</h3>
+<div id="outline-container-org92344a0" class="outline-3">
+<h3 id="org92344a0"><span class="section-number-3">1.1</span> 진행 상황</h3>
 <div class="outline-text-3" id="text-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -608,8 +660,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd4e1519" class="outline-3">
-<h3 id="orgd4e1519"><span class="section-number-3">1.2</span> 상태 설명</h3>
+<div id="outline-container-org7029a0d" class="outline-3">
+<h3 id="org7029a0d"><span class="section-number-3">1.2</span> 상태 설명</h3>
 <div class="outline-text-3" id="text-1-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -640,137 +692,397 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org5cd7699" class="outline-2">
-<h2 id="org5cd7699"><span class="section-number-2">2</span> 명령어</h2>
+<div id="outline-container-org1707f28" class="outline-2">
+<h2 id="org1707f28"><span class="section-number-2">2</span> 명령어</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org5cfc1d9" class="outline-3">
-<h3 id="org5cfc1d9"><span class="section-number-3">2.1</span> apt-add-repository</h3>
+</div><div id="outline-container-orga5e7cdf" class="outline-3">
+<h3 id="orga5e7cdf"><span class="section-number-3">2.1</span> DNS</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
 </div>
-<div id="outline-container-orgd8d168c" class="outline-3">
-<h3 id="orgd8d168c"><span class="section-number-3">2.2</span> autoconf</h3>
+<div id="outline-container-org5a4b18a" class="outline-3">
+<h3 id="org5a4b18a"><span class="section-number-3">2.2</span> NIS</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
 </div>
-<div id="outline-container-org894bc88" class="outline-3">
-<h3 id="org894bc88"><span class="section-number-3">2.3</span> brew</h3>
+<div id="outline-container-org72ff26d" class="outline-3">
+<h3 id="org72ff26d"><span class="section-number-3">2.3</span> SELinux</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
 </div>
-<div id="outline-container-orgad62f7c" class="outline-3">
-<h3 id="orgad62f7c"><span class="section-number-3">2.4</span> build-essential</h3>
+<div id="outline-container-org5b19f0f" class="outline-3">
+<h3 id="org5b19f0f"><span class="section-number-3">2.4</span> addbib</h3>
 <div class="outline-text-3" id="text-2-4">
 </div>
 </div>
-<div id="outline-container-org52d0b6d" class="outline-3">
-<h3 id="org52d0b6d"><span class="section-number-3">2.5</span> chrome</h3>
+<div id="outline-container-org4efa609" class="outline-3">
+<h3 id="org4efa609"><span class="section-number-3">2.5</span> alias</h3>
 <div class="outline-text-3" id="text-2-5">
 </div>
 </div>
-<div id="outline-container-org876c033" class="outline-3">
-<h3 id="org876c033"><span class="section-number-3">2.6</span> curl</h3>
+<div id="outline-container-org4236a57" class="outline-3">
+<h3 id="org4236a57"><span class="section-number-3">2.6</span> apt-add-repository</h3>
 <div class="outline-text-3" id="text-2-6">
 </div>
 </div>
-<div id="outline-container-orga09d7bb" class="outline-3">
-<h3 id="orga09d7bb"><span class="section-number-3">2.7</span> dh-autoreconf</h3>
+<div id="outline-container-orgc87aa1d" class="outline-3">
+<h3 id="orgc87aa1d"><span class="section-number-3">2.7</span> apt</h3>
 <div class="outline-text-3" id="text-2-7">
 </div>
 </div>
-<div id="outline-container-org2f5f0f7" class="outline-3">
-<h3 id="org2f5f0f7"><span class="section-number-3">2.8</span> docker-compose</h3>
+<div id="outline-container-org60d6011" class="outline-3">
+<h3 id="org60d6011"><span class="section-number-3">2.8</span> autoconf</h3>
 <div class="outline-text-3" id="text-2-8">
 </div>
 </div>
-<div id="outline-container-org7c0f2c6" class="outline-3">
-<h3 id="org7c0f2c6"><span class="section-number-3">2.9</span> docker</h3>
+<div id="outline-container-org5d303b0" class="outline-3">
+<h3 id="org5d303b0"><span class="section-number-3">2.9</span> bash</h3>
 <div class="outline-text-3" id="text-2-9">
 </div>
 </div>
-<div id="outline-container-orgcb8c51e" class="outline-3">
-<h3 id="orgcb8c51e"><span class="section-number-3">2.10</span> emacs</h3>
+<div id="outline-container-org47be807" class="outline-3">
+<h3 id="org47be807"><span class="section-number-3">2.10</span> brew</h3>
 <div class="outline-text-3" id="text-2-10">
 </div>
 </div>
-<div id="outline-container-orgd5bf9c9" class="outline-3">
-<h3 id="orgd5bf9c9"><span class="section-number-3">2.11</span> gcc</h3>
+<div id="outline-container-org0a7ddf5" class="outline-3">
+<h3 id="org0a7ddf5"><span class="section-number-3">2.11</span> build-essential</h3>
 <div class="outline-text-3" id="text-2-11">
 </div>
 </div>
-<div id="outline-container-orgb0255c7" class="outline-3">
-<h3 id="orgb0255c7"><span class="section-number-3">2.12</span> gem</h3>
+<div id="outline-container-org028d628" class="outline-3">
+<h3 id="org028d628"><span class="section-number-3">2.12</span> cat</h3>
 <div class="outline-text-3" id="text-2-12">
 </div>
 </div>
-<div id="outline-container-org21c3e64" class="outline-3">
-<h3 id="org21c3e64"><span class="section-number-3">2.13</span> git</h3>
+<div id="outline-container-org4ce5dab" class="outline-3">
+<h3 id="org4ce5dab"><span class="section-number-3">2.13</span> chatter</h3>
 <div class="outline-text-3" id="text-2-13">
 </div>
 </div>
-<div id="outline-container-org1d97242" class="outline-3">
-<h3 id="org1d97242"><span class="section-number-3">2.14</span> index</h3>
+<div id="outline-container-org16aced9" class="outline-3">
+<h3 id="org16aced9"><span class="section-number-3">2.14</span> chfn</h3>
 <div class="outline-text-3" id="text-2-14">
 </div>
 </div>
-<div id="outline-container-orgff0680d" class="outline-3">
-<h3 id="orgff0680d"><span class="section-number-3">2.15</span> make</h3>
+<div id="outline-container-orgec54a30" class="outline-3">
+<h3 id="orgec54a30"><span class="section-number-3">2.15</span> chgrp</h3>
 <div class="outline-text-3" id="text-2-15">
 </div>
 </div>
-<div id="outline-container-orgf38c1d7" class="outline-3">
-<h3 id="orgf38c1d7"><span class="section-number-3">2.16</span> node</h3>
+<div id="outline-container-org10d5af1" class="outline-3">
+<h3 id="org10d5af1"><span class="section-number-3">2.16</span> chmod</h3>
 <div class="outline-text-3" id="text-2-16">
 </div>
 </div>
-<div id="outline-container-orgcda645f" class="outline-3">
-<h3 id="orgcda645f"><span class="section-number-3">2.17</span> postfix</h3>
+<div id="outline-container-org44ef169" class="outline-3">
+<h3 id="org44ef169"><span class="section-number-3">2.17</span> chown</h3>
 <div class="outline-text-3" id="text-2-17">
 </div>
 </div>
-<div id="outline-container-org748b88f" class="outline-3">
-<h3 id="org748b88f"><span class="section-number-3">2.18</span> rsync</h3>
+<div id="outline-container-orgfdee5ef" class="outline-3">
+<h3 id="orgfdee5ef"><span class="section-number-3">2.18</span> chrome</h3>
 <div class="outline-text-3" id="text-2-18">
 </div>
 </div>
-<div id="outline-container-orga904f61" class="outline-3">
-<h3 id="orga904f61"><span class="section-number-3">2.19</span> ruby</h3>
+<div id="outline-container-orgacfcee1" class="outline-3">
+<h3 id="orgacfcee1"><span class="section-number-3">2.19</span> chsh</h3>
 <div class="outline-text-3" id="text-2-19">
 </div>
 </div>
-<div id="outline-container-org290b496" class="outline-3">
-<h3 id="org290b496"><span class="section-number-3">2.20</span> sendmail</h3>
+<div id="outline-container-orgd6398ae" class="outline-3">
+<h3 id="orgd6398ae"><span class="section-number-3">2.20</span> curl</h3>
 <div class="outline-text-3" id="text-2-20">
 </div>
 </div>
-<div id="outline-container-orgc04f650" class="outline-3">
-<h3 id="orgc04f650"><span class="section-number-3">2.21</span> ssh</h3>
+<div id="outline-container-orgb15a15b" class="outline-3">
+<h3 id="orgb15a15b"><span class="section-number-3">2.21</span> dh-autoreconf</h3>
 <div class="outline-text-3" id="text-2-21">
 </div>
 </div>
-<div id="outline-container-orgbe69ac5" class="outline-3">
-<h3 id="orgbe69ac5"><span class="section-number-3">2.22</span> sudo</h3>
+<div id="outline-container-org791966a" class="outline-3">
+<h3 id="org791966a"><span class="section-number-3">2.22</span> diff</h3>
 <div class="outline-text-3" id="text-2-22">
 </div>
 </div>
-<div id="outline-container-org6f55d4c" class="outline-3">
-<h3 id="org6f55d4c"><span class="section-number-3">2.23</span> travis</h3>
+<div id="outline-container-org59c9af0" class="outline-3">
+<h3 id="org59c9af0"><span class="section-number-3">2.23</span> docker-compose</h3>
 <div class="outline-text-3" id="text-2-23">
 </div>
 </div>
-<div id="outline-container-org708cb65" class="outline-3">
-<h3 id="org708cb65"><span class="section-number-3">2.24</span> update</h3>
+<div id="outline-container-org8085b61" class="outline-3">
+<h3 id="org8085b61"><span class="section-number-3">2.24</span> docker</h3>
 <div class="outline-text-3" id="text-2-24">
 </div>
 </div>
-<div id="outline-container-org3165d2c" class="outline-3">
-<h3 id="org3165d2c"><span class="section-number-3">2.25</span> vim</h3>
+<div id="outline-container-org4dd4056" class="outline-3">
+<h3 id="org4dd4056"><span class="section-number-3">2.25</span> dpkg</h3>
 <div class="outline-text-3" id="text-2-25">
 </div>
 </div>
-<div id="outline-container-org99fe909" class="outline-3">
-<h3 id="org99fe909"><span class="section-number-3">2.26</span> wget</h3>
+<div id="outline-container-org03b7690" class="outline-3">
+<h3 id="org03b7690"><span class="section-number-3">2.26</span> echo</h3>
 <div class="outline-text-3" id="text-2-26">
+</div>
+</div>
+<div id="outline-container-org6294133" class="outline-3">
+<h3 id="org6294133"><span class="section-number-3">2.27</span> emacs</h3>
+<div class="outline-text-3" id="text-2-27">
+</div>
+</div>
+<div id="outline-container-orgba32f00" class="outline-3">
+<h3 id="orgba32f00"><span class="section-number-3">2.28</span> find</h3>
+<div class="outline-text-3" id="text-2-28">
+</div>
+</div>
+<div id="outline-container-org9660a27" class="outline-3">
+<h3 id="org9660a27"><span class="section-number-3">2.29</span> finger</h3>
+<div class="outline-text-3" id="text-2-29">
+</div>
+</div>
+<div id="outline-container-org2fec269" class="outline-3">
+<h3 id="org2fec269"><span class="section-number-3">2.30</span> fsck</h3>
+<div class="outline-text-3" id="text-2-30">
+</div>
+</div>
+<div id="outline-container-org37cde50" class="outline-3">
+<h3 id="org37cde50"><span class="section-number-3">2.31</span> gcc</h3>
+<div class="outline-text-3" id="text-2-31">
+</div>
+</div>
+<div id="outline-container-orge12f587" class="outline-3">
+<h3 id="orge12f587"><span class="section-number-3">2.32</span> gem</h3>
+<div class="outline-text-3" id="text-2-32">
+</div>
+</div>
+<div id="outline-container-org9f46a00" class="outline-3">
+<h3 id="org9f46a00"><span class="section-number-3">2.33</span> git</h3>
+<div class="outline-text-3" id="text-2-33">
+</div>
+</div>
+<div id="outline-container-org9ecceee" class="outline-3">
+<h3 id="org9ecceee"><span class="section-number-3">2.34</span> groupadd</h3>
+<div class="outline-text-3" id="text-2-34">
+</div>
+</div>
+<div id="outline-container-org60af457" class="outline-3">
+<h3 id="org60af457"><span class="section-number-3">2.35</span> hcitool</h3>
+<div class="outline-text-3" id="text-2-35">
+</div>
+</div>
+<div id="outline-container-org69089ce" class="outline-3">
+<h3 id="org69089ce"><span class="section-number-3">2.36</span> hdparm</h3>
+<div class="outline-text-3" id="text-2-36">
+</div>
+</div>
+<div id="outline-container-orgc4f01e7" class="outline-3">
+<h3 id="orgc4f01e7"><span class="section-number-3">2.37</span> index</h3>
+<div class="outline-text-3" id="text-2-37">
+</div>
+</div>
+<div id="outline-container-org0a01ce8" class="outline-3">
+<h3 id="org0a01ce8"><span class="section-number-3">2.38</span> insmod</h3>
+<div class="outline-text-3" id="text-2-38">
+</div>
+</div>
+<div id="outline-container-org1bb3c3f" class="outline-3">
+<h3 id="org1bb3c3f"><span class="section-number-3">2.39</span> iperf</h3>
+<div class="outline-text-3" id="text-2-39">
+</div>
+</div>
+<div id="outline-container-org3e51fb7" class="outline-3">
+<h3 id="org3e51fb7"><span class="section-number-3">2.40</span> iptables</h3>
+<div class="outline-text-3" id="text-2-40">
+</div>
+</div>
+<div id="outline-container-orgc3e712d" class="outline-3">
+<h3 id="orgc3e712d"><span class="section-number-3">2.41</span> java</h3>
+<div class="outline-text-3" id="text-2-41">
+</div>
+</div>
+<div id="outline-container-org8a6cbc5" class="outline-3">
+<h3 id="org8a6cbc5"><span class="section-number-3">2.42</span> javac</h3>
+<div class="outline-text-3" id="text-2-42">
+</div>
+</div>
+<div id="outline-container-org316f224" class="outline-3">
+<h3 id="org316f224"><span class="section-number-3">2.43</span> lilo</h3>
+<div class="outline-text-3" id="text-2-43">
+</div>
+</div>
+<div id="outline-container-org42f560e" class="outline-3">
+<h3 id="org42f560e"><span class="section-number-3">2.44</span> lp</h3>
+<div class="outline-text-3" id="text-2-44">
+</div>
+</div>
+<div id="outline-container-org50bfd9b" class="outline-3">
+<h3 id="org50bfd9b"><span class="section-number-3">2.45</span> lpc</h3>
+<div class="outline-text-3" id="text-2-45">
+</div>
+</div>
+<div id="outline-container-orge02383a" class="outline-3">
+<h3 id="orge02383a"><span class="section-number-3">2.46</span> lpq</h3>
+<div class="outline-text-3" id="text-2-46">
+</div>
+</div>
+<div id="outline-container-org0df85db" class="outline-3">
+<h3 id="org0df85db"><span class="section-number-3">2.47</span> lpr</h3>
+<div class="outline-text-3" id="text-2-47">
+</div>
+</div>
+<div id="outline-container-org4593b93" class="outline-3">
+<h3 id="org4593b93"><span class="section-number-3">2.48</span> lprm</h3>
+<div class="outline-text-3" id="text-2-48">
+</div>
+</div>
+<div id="outline-container-org0549a43" class="outline-3">
+<h3 id="org0549a43"><span class="section-number-3">2.49</span> lsattr</h3>
+<div class="outline-text-3" id="text-2-49">
+</div>
+</div>
+<div id="outline-container-org9b69cfb" class="outline-3">
+<h3 id="org9b69cfb"><span class="section-number-3">2.50</span> lsof</h3>
+<div class="outline-text-3" id="text-2-50">
+</div>
+</div>
+<div id="outline-container-orga1f3c69" class="outline-3">
+<h3 id="orga1f3c69"><span class="section-number-3">2.51</span> make</h3>
+<div class="outline-text-3" id="text-2-51">
+</div>
+</div>
+<div id="outline-container-orgf731136" class="outline-3">
+<h3 id="orgf731136"><span class="section-number-3">2.52</span> modprobe</h3>
+<div class="outline-text-3" id="text-2-52">
+</div>
+</div>
+<div id="outline-container-org4ea06ee" class="outline-3">
+<h3 id="org4ea06ee"><span class="section-number-3">2.53</span> node</h3>
+<div class="outline-text-3" id="text-2-53">
+</div>
+</div>
+<div id="outline-container-org7048061" class="outline-3">
+<h3 id="org7048061"><span class="section-number-3">2.54</span> npm</h3>
+<div class="outline-text-3" id="text-2-54">
+</div>
+</div>
+<div id="outline-container-org189a341" class="outline-3">
+<h3 id="org189a341"><span class="section-number-3">2.55</span> passwd</h3>
+<div class="outline-text-3" id="text-2-55">
+</div>
+</div>
+<div id="outline-container-org3693a21" class="outline-3">
+<h3 id="org3693a21"><span class="section-number-3">2.56</span> pip</h3>
+<div class="outline-text-3" id="text-2-56">
+</div>
+</div>
+<div id="outline-container-org5470b0a" class="outline-3">
+<h3 id="org5470b0a"><span class="section-number-3">2.57</span> postfix</h3>
+<div class="outline-text-3" id="text-2-57">
+</div>
+</div>
+<div id="outline-container-orgae5459a" class="outline-3">
+<h3 id="orgae5459a"><span class="section-number-3">2.58</span> rpm</h3>
+<div class="outline-text-3" id="text-2-58">
+</div>
+</div>
+<div id="outline-container-org21382bd" class="outline-3">
+<h3 id="org21382bd"><span class="section-number-3">2.59</span> rsync</h3>
+<div class="outline-text-3" id="text-2-59">
+</div>
+</div>
+<div id="outline-container-orgaf0f337" class="outline-3">
+<h3 id="orgaf0f337"><span class="section-number-3">2.60</span> ruby</h3>
+<div class="outline-text-3" id="text-2-60">
+</div>
+</div>
+<div id="outline-container-org3bcf701" class="outline-3">
+<h3 id="org3bcf701"><span class="section-number-3">2.61</span> samba</h3>
+<div class="outline-text-3" id="text-2-61">
+</div>
+</div>
+<div id="outline-container-orgb72612a" class="outline-3">
+<h3 id="orgb72612a"><span class="section-number-3">2.62</span> sendmail</h3>
+<div class="outline-text-3" id="text-2-62">
+</div>
+</div>
+<div id="outline-container-org1c212b6" class="outline-3">
+<h3 id="org1c212b6"><span class="section-number-3">2.63</span> shutdown</h3>
+<div class="outline-text-3" id="text-2-63">
+</div>
+</div>
+<div id="outline-container-orgbee1a92" class="outline-3">
+<h3 id="orgbee1a92"><span class="section-number-3">2.64</span> squid</h3>
+<div class="outline-text-3" id="text-2-64">
+</div>
+</div>
+<div id="outline-container-orgcd1aa6f" class="outline-3">
+<h3 id="orgcd1aa6f"><span class="section-number-3">2.65</span> ssh</h3>
+<div class="outline-text-3" id="text-2-65">
+</div>
+</div>
+<div id="outline-container-orgef5be17" class="outline-3">
+<h3 id="orgef5be17"><span class="section-number-3">2.66</span> sudo</h3>
+<div class="outline-text-3" id="text-2-66">
+</div>
+</div>
+<div id="outline-container-org188a974" class="outline-3">
+<h3 id="org188a974"><span class="section-number-3">2.67</span> tail</h3>
+<div class="outline-text-3" id="text-2-67">
+</div>
+</div>
+<div id="outline-container-org4328c9a" class="outline-3">
+<h3 id="org4328c9a"><span class="section-number-3">2.68</span> tar</h3>
+<div class="outline-text-3" id="text-2-68">
+</div>
+</div>
+<div id="outline-container-orgc9d38c7" class="outline-3">
+<h3 id="orgc9d38c7"><span class="section-number-3">2.69</span> travis</h3>
+<div class="outline-text-3" id="text-2-69">
+</div>
+</div>
+<div id="outline-container-org62db0ad" class="outline-3">
+<h3 id="org62db0ad"><span class="section-number-3">2.70</span> tripwire</h3>
+<div class="outline-text-3" id="text-2-70">
+</div>
+</div>
+<div id="outline-container-orgd2499b5" class="outline-3">
+<h3 id="orgd2499b5"><span class="section-number-3">2.71</span> update</h3>
+<div class="outline-text-3" id="text-2-71">
+</div>
+</div>
+<div id="outline-container-orgf76b7b1" class="outline-3">
+<h3 id="orgf76b7b1"><span class="section-number-3">2.72</span> useradd</h3>
+<div class="outline-text-3" id="text-2-72">
+</div>
+</div>
+<div id="outline-container-org833e418" class="outline-3">
+<h3 id="org833e418"><span class="section-number-3">2.73</span> userdel</h3>
+<div class="outline-text-3" id="text-2-73">
+</div>
+</div>
+<div id="outline-container-orgbb31ac3" class="outline-3">
+<h3 id="orgbb31ac3"><span class="section-number-3">2.74</span> usermod</h3>
+<div class="outline-text-3" id="text-2-74">
+</div>
+</div>
+<div id="outline-container-org2821d8a" class="outline-3">
+<h3 id="org2821d8a"><span class="section-number-3">2.75</span> vim</h3>
+<div class="outline-text-3" id="text-2-75">
+</div>
+</div>
+<div id="outline-container-org11cfec7" class="outline-3">
+<h3 id="org11cfec7"><span class="section-number-3">2.76</span> wget</h3>
+<div class="outline-text-3" id="text-2-76">
+</div>
+</div>
+<div id="outline-container-orgc5fc576" class="outline-3">
+<h3 id="orgc5fc576"><span class="section-number-3">2.77</span> xinetd</h3>
+<div class="outline-text-3" id="text-2-77">
+</div>
+</div>
+<div id="outline-container-org016a651" class="outline-3">
+<h3 id="org016a651"><span class="section-number-3">2.78</span> xmodmap</h3>
+<div class="outline-text-3" id="text-2-78">
 </div>
 </div>
 </div>
@@ -778,7 +1090,7 @@ for the JavaScript code in this tag.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-11</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-14 Wed 03:00</p>
+<p class="date">Created: 2018-02-14 Wed 03:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
