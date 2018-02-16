@@ -38,7 +38,44 @@
   :PROPERTIES: 
   :LANG: en
   :END:      
-
+  - find . -type f -name *jpg -exec cp {} . \;
+	- 현재 디렉토리로 부터 *.jpg 를 찾아 현재 디렉토리에 복사하기
+  - find . -type f -size +10000 -exec ls -alh {} \;
+	- 현재 디렉토리로 부터 10M 이상의 파일을 찾아서 출력하기
+  - find . -atime +1 -type f -exec mv {} imsi\;
+	- 현재 디렉토리로 부터 하루 이상 경과한 파일을 imsi 디렉토리로 이동 시키기
+  - find . -name "-F" -exec rm {} \;
+	- "-F" 라는 파일을 찾아 삭제하기
+  - find . -exec grep -i "찾는 문자열" {} \;
+	- 현재 디렉토리에서 대소문자에 상관없이 "찾는 문자열" 을 포함한 라인을 출력하기.
+  - find . \! -name "*.Z" -exec compress -f {} \;
+	- 현재 디렉토리로 부터 *.Z 파일을 제외한 나머지 파일들을 *.Z으로 압축하기
+  - find . -type f \! -name "*.Z" \! -name "제외할파일명" -print | tee -a /tmp/list
+	- 현재 디렉토리로부터 *.Z 파일을 제외하고 또한 "제외할 파일명" 외의 파일들을 터미널로 출력과 동시에 /tmp/list 에 추가하기
+  - find . -name "*.ini"
+	- 현재 디렉토리로부터 이름이 *.ini인 파일을 출력하기
+  - find . -exec chmod 755 {} \; or chmod -R 755 ./;
+	- 현재 디렉토리 이하 서브 디렉토리를 포함한 모든 파일들에 대해 퍼미션 755로 변경하기
+  - find . -user xuser1 -exec chown -R user2 {} \; or chown -R user2 ./
+	- 현재 디렉토리로 부터 user1 소유자로 표시된 파일들을 모두 user2의 사용자 권한으로 변경하기
+  - find . -atime +6
+	- 6일 이전의 파일들을 찾아 출력하기
+  - find . -atime +30 -exec ls \; | wc -l
+	- 30일 이전 업데이트된 파일들의 라인수를 알아보기
+  - find /raid -type d -name "디렉토리명" -ok cp /복사할경로 {} \;
+	- /raid 디렉토리로 부터 "디렉토리명"을 가진 파일이 존재하면 / 복사할 경로로 복사하기
+  - find . -name "찾을 파일" -print 2 > /dev/null
+	- 찾을 파일 검색 도중 에러 및 경고 메시지는 표시하지 않게 하기
+  - find . -perm 700 -print
+	- 파일 권한이 700인 파일을 찾기
+  - find . \ ( -perm 400 -o -perm 200 \) -print
+	- 파일 권한이 400인 파일과 200인 파일을 찾아준다.
+  - find . -size +1024 -print
+	- 파일의 블럭 크기가 1024 이상인 파일을 찾아준다.
+  - find . -name core -size +2048 -print
+	- 파일 이름이 core이고 크기가 2048블럭 이상인 파일을 찾아준다.
+  - find . -mtime -7 -print
+	- 7일 이내에 수정된 적이 있는 파일을 찾는다.
 * References
   :PROPERTIES: 
   :LANG: en
