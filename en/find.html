@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-15 Thu 06:00 -->
+<!-- 2018-02-16 Fri 13:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>find</title>
@@ -243,62 +243,139 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf7689c3">1. Introduction</a></li>
-<li><a href="#org02d578e">2. Prerequisites</a></li>
-<li><a href="#org714278e">3. Installation</a></li>
-<li><a href="#orge2081de">4. Installed Packages</a></li>
-<li><a href="#org5b3de8b">5. Check</a></li>
-<li><a href="#org1754138">6. Configuration</a></li>
-<li><a href="#org579cd6b">7. Usage</a></li>
-<li><a href="#orgdd51c7c">8. References</a></li>
+<li><a href="#orgd208d97">1. Introduction</a></li>
+<li><a href="#org2beba25">2. Prerequisites</a></li>
+<li><a href="#orge9b9197">3. Installation</a></li>
+<li><a href="#org342bb84">4. Installed Packages</a></li>
+<li><a href="#orgbaefe22">5. Check</a></li>
+<li><a href="#orgfbcc342">6. Configuration</a></li>
+<li><a href="#org2b0c63e">7. Usage</a></li>
+<li><a href="#org9abd450">8. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf7689c3" class="outline-2">
-<h2 id="orgf7689c3"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-orgd208d97" class="outline-2">
+<h2 id="orgd208d97"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 </div>
 
-<div id="outline-container-org02d578e" class="outline-2">
-<h2 id="org02d578e"><span class="section-number-2">2</span> Prerequisites</h2>
+<div id="outline-container-org2beba25" class="outline-2">
+<h2 id="org2beba25"><span class="section-number-2">2</span> Prerequisites</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 </div>
 
-<div id="outline-container-org714278e" class="outline-2">
-<h2 id="org714278e"><span class="section-number-2">3</span> Installation</h2>
+<div id="outline-container-orge9b9197" class="outline-2">
+<h2 id="orge9b9197"><span class="section-number-2">3</span> Installation</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 </div>
 
-<div id="outline-container-orge2081de" class="outline-2">
-<h2 id="orge2081de"><span class="section-number-2">4</span> Installed Packages</h2>
+<div id="outline-container-org342bb84" class="outline-2">
+<h2 id="org342bb84"><span class="section-number-2">4</span> Installed Packages</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 </div>
 
-<div id="outline-container-org5b3de8b" class="outline-2">
-<h2 id="org5b3de8b"><span class="section-number-2">5</span> Check</h2>
+<div id="outline-container-orgbaefe22" class="outline-2">
+<h2 id="orgbaefe22"><span class="section-number-2">5</span> Check</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 </div>
 
-<div id="outline-container-org1754138" class="outline-2">
-<h2 id="org1754138"><span class="section-number-2">6</span> Configuration</h2>
+<div id="outline-container-orgfbcc342" class="outline-2">
+<h2 id="orgfbcc342"><span class="section-number-2">6</span> Configuration</h2>
 <div class="outline-text-2" id="text-6">
 </div>
 </div>
 
-<div id="outline-container-org579cd6b" class="outline-2">
-<h2 id="org579cd6b"><span class="section-number-2">7</span> Usage</h2>
+<div id="outline-container-org2b0c63e" class="outline-2">
+<h2 id="org2b0c63e"><span class="section-number-2">7</span> Usage</h2>
 <div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>find . -type f -name *jpg -exec cp {} . \;
+<ul class="org-ul">
+<li>현재 디렉토리로 부터 *.jpg 를 찾아 현재 디렉토리에 복사하기</li>
+</ul></li>
+<li>find . -type f -size +10000 -exec ls -alh {} \;
+<ul class="org-ul">
+<li>현재 디렉토리로 부터 10M 이상의 파일을 찾아서 출력하기</li>
+</ul></li>
+<li>find . -atime +1 -type f -exec mv {} imsi\;
+<ul class="org-ul">
+<li>현재 디렉토리로 부터 하루 이상 경과한 파일을 imsi 디렉토리로 이동 시키기</li>
+</ul></li>
+<li>find . -name "-F" -exec rm {} \;
+<ul class="org-ul">
+<li>"-F" 라는 파일을 찾아 삭제하기</li>
+</ul></li>
+<li>find . -exec grep -i "찾는 문자열" {} \;
+<ul class="org-ul">
+<li>현재 디렉토리에서 대소문자에 상관없이 "찾는 문자열" 을 포함한 라인을 출력하기.</li>
+</ul></li>
+<li>find . \! -name "*.Z" -exec compress -f {} \;
+<ul class="org-ul">
+<li>현재 디렉토리로 부터 *.Z 파일을 제외한 나머지 파일들을 *.Z으로 압축하기</li>
+</ul></li>
+<li>find . -type f \! -name "*.Z" \! -name "제외할파일명" -print | tee -a /tmp/list
+<ul class="org-ul">
+<li>현재 디렉토리로부터 *.Z 파일을 제외하고 또한 "제외할 파일명" 외의 파일들을 터미널로 출력과 동시에 /tmp/list 에 추가하기</li>
+</ul></li>
+<li>find . -name "*.ini"
+<ul class="org-ul">
+<li>현재 디렉토리로부터 이름이 *.ini인 파일을 출력하기</li>
+</ul></li>
+<li>find . -exec chmod 755 {} \; or chmod -R 755 ./;
+<ul class="org-ul">
+<li>현재 디렉토리 이하 서브 디렉토리를 포함한 모든 파일들에 대해 퍼미션 755로 변경하기</li>
+</ul></li>
+<li>find . -user xuser1 -exec chown -R user2 {} \; or chown -R user2 ./
+<ul class="org-ul">
+<li>현재 디렉토리로 부터 user1 소유자로 표시된 파일들을 모두 user2의 사용자 권한으로 변경하기</li>
+</ul></li>
+<li>find . -atime +6
+<ul class="org-ul">
+<li>6일 이전의 파일들을 찾아 출력하기</li>
+</ul></li>
+<li>find . -atime +30 -exec ls \; | wc -l
+<ul class="org-ul">
+<li>30일 이전 업데이트된 파일들의 라인수를 알아보기</li>
+</ul></li>
+<li>find /raid -type d -name "디렉토리명" -ok cp /복사할경로 {} \;
+<ul class="org-ul">
+<li>/raid 디렉토리로 부터 "디렉토리명"을 가진 파일이 존재하면 / 복사할 경로로 복사하기</li>
+</ul></li>
+<li>find . -name "찾을 파일" -print 2 &gt; /dev/null
+<ul class="org-ul">
+<li>찾을 파일 검색 도중 에러 및 경고 메시지는 표시하지 않게 하기</li>
+</ul></li>
+<li>find . -perm 700 -print
+<ul class="org-ul">
+<li>파일 권한이 700인 파일을 찾기</li>
+</ul></li>
+<li>find . \ ( -perm 400 -o -perm 200 \) -print
+<ul class="org-ul">
+<li>파일 권한이 400인 파일과 200인 파일을 찾아준다.</li>
+</ul></li>
+<li>find . -size +1024 -print
+<ul class="org-ul">
+<li>파일의 블럭 크기가 1024 이상인 파일을 찾아준다.</li>
+</ul></li>
+<li>find . -name core -size +2048 -print
+<ul class="org-ul">
+<li>파일 이름이 core이고 크기가 2048블럭 이상인 파일을 찾아준다.</li>
+</ul></li>
+<li>find . -mtime -7 -print
+<ul class="org-ul">
+<li>7일 이내에 수정된 적이 있는 파일을 찾는다.</li>
+</ul></li>
+</ul>
 </div>
 </div>
-
-<div id="outline-container-orgdd51c7c" class="outline-2">
-<h2 id="orgdd51c7c"><span class="section-number-2">8</span> References</h2>
+<div id="outline-container-org9abd450" class="outline-2">
+<h2 id="org9abd450"><span class="section-number-2">8</span> References</h2>
 <div class="outline-text-2" id="text-8">
 </div>
 </div>
@@ -306,7 +383,7 @@ for the JavaScript code in this tag.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-14</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-15 Thu 06:00</p>
+<p class="date">Created: 2018-02-16 Fri 13:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
