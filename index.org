@@ -1,5 +1,16 @@
 
 
+#+MACRO: class @@html:<span class="lc-class">$1</span>@@
+#+MACRO: func @@html:<span class="lc-func">$1</span>@@
+#+MACRO: ret @@html:<span class="lc-ret">$1</span>@@
+#+MACRO: arg @@html:<span class="lc-arg">$1</span>@@
+#+MACRO: kwd @@html:<span class="lc-kwd">$1</span>@@
+#+MACRO: type @@html:<span class="lc-type">$1</span>@@
+#+MACRO: var @@html:<span class="lc-var">$1</span>@@
+#+MACRO: const @@html:<span class="lc-const">$1</span>@@
+#+MACRO: path @@html:<span class="lc-path">$1</span>@@
+#+MACRO: file @@html:<span class="lc-file">$1</span>@@
+
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
 #+MACRO: INCLUDE_DOCS (eval (mapconcat (lambda (dir-name) (let ((name (substring dir-name 0 -4))) (format "** %s\n#+INCLUDE: %s :lines \"6-\"" name dir-name))) (seq-filter (lambda (dir) (and (string-match "^\\([a-zA-Z0-9-_]+\\)\\.org$" dir) (not (equal dir "README.org")))) (directory-files "./")) "\n"))
 
@@ -15,6 +26,8 @@
 #+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+
+#+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
