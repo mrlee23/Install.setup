@@ -23,7 +23,7 @@
 
 (defun lc-macro/include-progress ()
   (concat
-   "|Name|Overview|Install|Usage|See also|\n"
+   "|Name|Overview|Install|Usage|Options|See also|\n"
    (mapconcat (lambda (file-name)
 				(let ((name (substring file-name 0 -4))
 					  (flags '())
@@ -36,7 +36,7 @@
 				  (and (string-match "^\* Usage\n" contents) (push 'usage flags))
 				  (and (string-match "^\*\* Options\n" contents) (push 'options flags))
 				  (and (string-match "^\* See also\n" contents) (push 'seealso flags))
-				  (format "|[[./%s][%s]]|%s|%s|%s|%s|"
+				  (format "|[[./%s][%s]]|%s|%s|%s|%s|%s"
 						  file-name
 						  name
 						  (if (member 'overview flags) (format "[[./%s#%s][Yes]]" file-name "overview") "No")
