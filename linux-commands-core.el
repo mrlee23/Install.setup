@@ -29,7 +29,7 @@
 
 (defun lc-core/set-site-name (lang)
   (setq lc-core/site-name
-		(case (intern (downcase lang))
+		(case lang
 		  (en
 		   "Linux Commands"
 		   )
