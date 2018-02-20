@@ -15,13 +15,41 @@
 
 (require 'seq)
 
+(defun lc-macro/collect-files ()
+  (seq-filter
+   (lambda (file)
+	 (and (string-match "^\\([a-zA-Z0-9-_]+\\)\\.org$" file) (not (equal file "README.org"))))
+   (directory-files "./")))
+
+(defun lc-macro/include-progress ()
+  (concat
+   "|Name|Overview|Install|Usage|See also|\n"
+   (mapconcat (lambda (file-name)
+				(let ((name (substring file-name 0 -4))
+					  (flags '())
+					  contents)
+				  (with-temp-buffer
+					(insert-file-contents file-name)
+					(setq contents (buffer-substring-no-properties 1 (point-max))))
+				  (and (string-match "^\* Overview\n" contents) (push 'overview flags))
+				  (and (string-match "^\* How to Install\n" contents) (push 'install flags))
+				  (and (string-match "^\* Usage\n" contents) (push 'usage flags))
+				  (and (string-match "^\*\* See also\n" contents) (push 'seealso flags))
+				  (format "|[[./%s][%s]]|%s|%s|%s|%s|"
+						  file-name
+						  name
+						  (if (member 'overview flags) (format "[[./%s#*%s][Yes]]" file-name "overview") "No")
+						  (if (member 'install flags) (format "[[./%s#*%s][Yes]]" file-name "how-to-install") "No")
+						  (if (member 'usage flags) (format "[[./%s#*%s][Yes]]" file-name "usage") "No")
+						  (if (member 'seealso flags) (format "[[./%s#*%s][Yes]]" file-name "seealso") "No"))
+				  ))
+			  (lc-macro/collect-files)
+			  "\n")))
+
 (defun lc-macro/include-docs ()
-  (mapconcat (lambda (dir-name)
-			   (let ((name (substring dir-name 0 -4)))
-				 (format "** %s\n#+INCLUDE: %s :lines \"7-\"" name dir-name)
+  (mapconcat (lambda (file-name)
+			   (let ((name (substring file-name 0 -4)))
+				 (format "** %s\n#+INCLUDE: %s :lines \"7-\"" name file-name)
 				 ))
-			 (seq-filter
-			  (lambda (dir)
-				(and (string-match "^\\([a-zA-Z0-9-_]+\\)\\.org$" dir) (not (equal dir "README.org"))))
-			  (directory-files "./"))
+			 (lc-macro/collect-files)
 			 "\n"))
