@@ -13,6 +13,8 @@
 
 ;;; Code:
 
+(require 'linux-commands-core)
+(require 'linux-commands-pages)
+(require 'linux-commands-macro)
 
-(load-file "pages.el")
-(load-file "macro.el")
+(provide 'linux-commands)

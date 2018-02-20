@@ -18,6 +18,8 @@
 
 ;;; Code:
 
+(require 'linux-commands-core)
+
 (require 'ox-publish)
 (require 'htmlize)
 (require 'org-multilingual)
@@ -31,6 +33,9 @@
 	  (copy-file filename (setq source-filename (expand-file-name "index.org" (file-name-directory filename))))
 	  (setq filename source-filename))
 	(setq source-filename (org-multilingual-publish plist filename (file-name-directory filename)))
+	(lc-core/init-contents source-filename)
+	(message "%s" lc-core/current-contents-filename)
+	(message "%s" (not (lc-core/get-current-contents)))
 	(org-html-publish-to-html plist source-filename pub-dir)
 	))
 
@@ -106,6 +111,6 @@
 	 langs)
 	))
 
-(provide 'pages)
+(provide 'linux-commands-pages)
 
 ;;; pages.el ends here
