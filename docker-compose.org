@@ -2,15 +2,34 @@
 #+TITLE: docker-compose
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-04 
+#+DATE: 2018-02-20
 
-* Prerequisites
+* Visión de conjunto
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: es
+  :END:      
+
+* Cómo instalar
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: es
+  :END:      
+
+** Requisitos previos
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: es
+   :END:      
+
 - [[./docker.org][docker]]
 
-* Install
-** Ubuntu
+** Instalar
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: es
+  :END:      
 
-#+NAME: ubuntu-install_docker_compose
 #+BEGIN_SRC sh
 # Download latest docker compose
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -19,30 +38,74 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 #+END_SRC
 
-** Mac
-Involed in Docker for MacOS.
+** Desinstalar
+  :PROPERTIES: 
+  :CUSTOM_ID: uninstall
+  :LANG: es
+  :END:      
 
-* Uninstall
-
-#+NAME: uninstall_docker_compose
 #+BEGIN_SRC sh
 $ sudo rm /usr/local/bin/docker-compose
 # or
 $ pip uninstall docker-compose
 #+END_SRC
 
-* Check
+** Paquetes instalados
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: es
+   :END:      
 
-#+NAME: check_docker_compose
+** Comprobar
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: es
+   :END:      
+
 #+BEGIN_SRC sh
 $ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 #+END_SRC
 
+* Uso
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: es
+  :END:      
 
-* Seealso
+** Sintaxis
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: es
+   :END:      
+
+** Configuración
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: es
+   :END:      
+
+** Opciones
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: es
+   :END:      
+
+** Ejemplos
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: es
+   :END:      
+
+* Ver también
+  :PROPERTIES: 
+  :LANG: es
+  :END:      
+
+* Referencias
+  :PROPERTIES: 
+  :LANG: es
+  :END:      
+
 - [[./docker-command-completion.org][docker-command-completion]]
-
-
-* References
 - [[https://docs.docker.com/compose/install/#install-compose][Docker Compose Install(Offical)]]

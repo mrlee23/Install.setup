@@ -2,30 +2,50 @@
 #+TITLE: ruby
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-10 
+#+DATE: 2018-02-20
 
-* Prerequisites
+* Visión de conjunto
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: es
+  :END:      
+
+* Cómo instalar
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: es
+  :END:      
+
+** Requisitos previos
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: es
+   :END:      
+
 - [[./apt-add-repository.org][apt-add-repository]]
 
-* Install
+** Instalar
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: es
+  :END:      
 
-#+NAME: install_ruby
-#+BEGIN_SRC sh
-$ sudo apt-add-repository ppa:brightbox/ruby-ng
-$ sudo apt-get update
-$ sudo apt-get install ruby2.5 ruby-switch
-$ sudo ruby-switch --set ruby2.5
-$ sudo apt-get install ruby2.5-dev
-#+END_SRC
+** Paquetes instalados
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: es
+   :END:      
 
-* Packages
 - ruby
 - [[./gem.org][gem]]
 - rake
 
-* Check
+** Comprobar
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: es
+   :END:      
 
-#+NAME: check_ruby
 #+BEGIN_SRC sh
 $ ruby -v
 ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-linux-gnu]
@@ -35,6 +55,45 @@ $ rake --version
 rake, version 10.5.0
 #+END_SRC
 
-* References
+* Uso
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: es
+  :END:      
+
+** Sintaxis
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: es
+   :END:      
+
+** Configuración
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: es
+   :END:      
+
+** Opciones
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: es
+   :END:      
+
+** Ejemplos
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: es
+   :END:      
+
+* Ver también
+  :PROPERTIES: 
+  :LANG: es
+  :END:      
+
+* Referencias
+  :PROPERTIES: 
+  :LANG: es
+  :END:      
+
 - [[https://github.com/travis-ci/travis.rb/issues/391]]
 - [[https://www.ruby-lang.org/en/downloads/]]
