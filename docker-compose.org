@@ -2,15 +2,34 @@
 #+TITLE: docker-compose
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-04 
+#+DATE: 2018-02-20
 
-* Prerequisites
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+** 先决条件
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: zh
+   :END:      
+
 - [[./docker.org][docker]]
 
-* Install
-** Ubuntu
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
 
-#+NAME: ubuntu-install_docker_compose
 #+BEGIN_SRC sh
 # Download latest docker compose
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -19,30 +38,74 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 #+END_SRC
 
-** Mac
-Involed in Docker for MacOS.
+** 卸载
+  :PROPERTIES: 
+  :CUSTOM_ID: uninstall
+  :LANG: zh
+  :END:      
 
-* Uninstall
-
-#+NAME: uninstall_docker_compose
 #+BEGIN_SRC sh
 $ sudo rm /usr/local/bin/docker-compose
 # or
 $ pip uninstall docker-compose
 #+END_SRC
 
-* Check
+** 安装的软件包
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: zh
+   :END:      
 
-#+NAME: check_docker_compose
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
 #+BEGIN_SRC sh
 $ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 #+END_SRC
 
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
 
-* Seealso
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+** 组态
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: zh
+   :END:      
+
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
+
+** 例子
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: zh
+   :END:      
+
+* 相关主题
+  :PROPERTIES: 
+  :LANG: zh
+  :END:      
+
+* 参考
+  :PROPERTIES: 
+  :LANG: zh
+  :END:      
+
 - [[./docker-command-completion.org][docker-command-completion]]
-
-
-* References
 - [[https://docs.docker.com/compose/install/#install-compose][Docker Compose Install(Offical)]]
