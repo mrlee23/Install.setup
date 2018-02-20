@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2018-02-20 Tue 13:25 -->
+<!-- 2018-02-20 Tue 14:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux Commands</title>
@@ -243,471 +243,109 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc77c823">介绍</a>
+<li><a href="#org0f24bb7">介绍</a>
 <ul>
 <li><a href="#progress">进度</a></li>
 </ul>
 </li>
 <li><a href="#commands">命令</a>
 <ul>
-<li><a href="#org7f1c69e">DNS</a></li>
-<li><a href="#org115bc11">NIS</a></li>
-<li><a href="#orga692760">SELinux</a></li>
-<li><a href="#org5069c30">addbib</a></li>
-<li><a href="#orgcec5cf4">alias</a></li>
-<li><a href="#org60c4ddc">apt-add-repository</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgc176527">apt</a></li>
-<li><a href="#org15643f2">autoconf</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org1d0eeee">bash</a></li>
-<li><a href="#org9a71398">brew</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org80dab3a">build-essential</a>
-<ul>
-<li><a href="#overview">摘要</a></li>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#usage">如何使用</a>
-<ul>
-<li><a href="#syntax">结构</a></li>
-<li><a href="#configuration">组态</a></li>
-<li><a href="#options">选项</a></li>
-<li><a href="#examples">例子</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgc3676d1">cat</a></li>
-<li><a href="#orgf470917">chatter</a></li>
-<li><a href="#org9ccad1d">chfn</a></li>
-<li><a href="#org5e0c595">chgrp</a></li>
-<li><a href="#orga850c6e">chmod</a></li>
-<li><a href="#org672b3ae">chown</a></li>
-<li><a href="#org8fe2b47">chrome</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org702a9d1">chsh</a></li>
-<li><a href="#orgd32f78d">curl</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgd75760f">dh-autoreconf</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgda703f1">diff</a></li>
-<li><a href="#org462a373">docker-compose</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#uninstall">卸载</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#orgca650a9">docker</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#orgda70f24">Ubuntu 16.04 ~</a></li>
-<li><a href="#org827815a">Mac</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org11ee327">dpkg</a></li>
-<li><a href="#org2176ae9">echo</a></li>
-<li><a href="#orgee30490">emacs</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org8ceec00">find</a>
-<ul>
-<li><a href="#usage">如何使用</a>
-<ul>
-<li><a href="#syntax">结构</a></li>
-<li><a href="#configuration">组态</a></li>
-<li><a href="#options">选项</a></li>
-<li><a href="#examples">例子</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2e10ced">finger</a></li>
-<li><a href="#org5ab1b7d">fsck</a></li>
-<li><a href="#org9a319d4">gcc</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgba80945">gem</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org8c8f374">git</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org2bdc74e">groupadd</a></li>
-<li><a href="#orge6e73e6">hcitool</a></li>
-<li><a href="#orga26006c">hdparm</a></li>
-<li><a href="#org908f13d">insmod</a></li>
-<li><a href="#orgdfaeaaa">iperf</a></li>
-<li><a href="#orgec09d74">iptables</a></li>
-<li><a href="#orgbe61f5f">java</a></li>
-<li><a href="#orgb86e42b">javac</a></li>
-<li><a href="#orgd9e4e24">lilo</a></li>
-<li><a href="#org76a4e74">lp</a></li>
-<li><a href="#orga30ce03">lpc</a></li>
-<li><a href="#org630d452">lpq</a></li>
-<li><a href="#orgdb74dfc">lpr</a></li>
-<li><a href="#org1755870">lprm</a></li>
-<li><a href="#orgaeba7bc">lsattr</a></li>
-<li><a href="#orgf71eebb">lsof</a></li>
-<li><a href="#org669ba7a">make</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgc4d61f1">modprobe</a></li>
-<li><a href="#orge516776">node</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org1323b3f">npm</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org7f59b9f">passwd</a></li>
-<li><a href="#orgbd5e27e">pip</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgbaf7120">postfix</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#org7c65951">Setup</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#seealso">相关主题</a></li>
-</ul>
-</li>
-<li><a href="#org1dcab3a">rpm</a></li>
-<li><a href="#orgfc87381">rsync</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org433df8e">ruby</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#orgaa70e69">samba</a></li>
-<li><a href="#orgaebcb1a">sendmail</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2fa5814">shutdown</a></li>
-<li><a href="#orgc3f6237">squid</a></li>
-<li><a href="#orgfc3b706">ssh</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org5cd2b14">sudo</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org87f1107">tail</a></li>
-<li><a href="#orgd171324">tar</a></li>
-<li><a href="#org9b343f2">template</a>
-<ul>
-<li><a href="#overview">摘要</a></li>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#usage">如何使用</a>
-<ul>
-<li><a href="#syntax">结构</a></li>
-<li><a href="#configuration">组态</a></li>
-<li><a href="#options">选项</a></li>
-<li><a href="#examples">例子</a></li>
-</ul>
-</li>
-<li><a href="#seealso">相关主题</a></li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#orgaf0b0b6">travis</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org81be75b">tripwire</a></li>
-<li><a href="#org350c7b9">update</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#seealso">相关主题</a></li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#orgcc7df43">useradd</a></li>
-<li><a href="#org06620e2">userdel</a></li>
-<li><a href="#orgdf6469a">usermod</a></li>
-<li><a href="#orge92d675">vim</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-<li><a href="#references">参考</a></li>
-</ul>
-</li>
-<li><a href="#org39930a8">wget</a>
-<ul>
-<li><a href="#how-to-install">如何安装</a>
-<ul>
-<li><a href="#prerequisites">先决条件</a></li>
-<li><a href="#install">安装</a></li>
-<li><a href="#packages">安装的软件包</a></li>
-<li><a href="#check">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org929a0ba">xinetd</a></li>
-<li><a href="#org0667666">xmodmap</a></li>
+<li><a href="#orge0d08a8">DNS</a></li>
+<li><a href="#org7a50f77">NIS</a></li>
+<li><a href="#orgab712e6">SELinux</a></li>
+<li><a href="#org4c43d50">addbib</a></li>
+<li><a href="#orgb6dc647">alias</a></li>
+<li><a href="#org2daec2f">apt-add-repository</a></li>
+<li><a href="#org8af4930">apt</a></li>
+<li><a href="#org617f468">autoconf</a></li>
+<li><a href="#orge0e90b9">bash</a></li>
+<li><a href="#orgd6c1970">brew</a></li>
+<li><a href="#orgd8e7ce5">build-essential</a></li>
+<li><a href="#org33db70d">cat</a></li>
+<li><a href="#org78c7ed8">chatter</a></li>
+<li><a href="#orgcf76f23">chfn</a></li>
+<li><a href="#org064f40f">chgrp</a></li>
+<li><a href="#org309696e">chmod</a></li>
+<li><a href="#orgbddffed">chown</a></li>
+<li><a href="#org144b2c5">chrome</a></li>
+<li><a href="#org728ea78">chsh</a></li>
+<li><a href="#orgd7c2fd2">curl</a></li>
+<li><a href="#orgfbd09c2">dh-autoreconf</a></li>
+<li><a href="#orgddadd50">diff</a></li>
+<li><a href="#orga0e5d4e">docker-compose</a></li>
+<li><a href="#org0a978a3">docker</a></li>
+<li><a href="#orgfc2d9f2">dpkg</a></li>
+<li><a href="#org26fd80b">echo</a></li>
+<li><a href="#orgf72aed8">emacs</a></li>
+<li><a href="#org1e375d2">find</a></li>
+<li><a href="#orgb5a8ca2">finger</a></li>
+<li><a href="#org01dd6aa">fsck</a></li>
+<li><a href="#orgb9bb410">gcc</a></li>
+<li><a href="#org81f2fda">gem</a></li>
+<li><a href="#orgbd5f3fb">git</a></li>
+<li><a href="#org46c9ba0">groupadd</a></li>
+<li><a href="#org535f23d">hcitool</a></li>
+<li><a href="#org4e998a6">hdparm</a></li>
+<li><a href="#orgc723628">index</a></li>
+<li><a href="#org3df7afa">insmod</a></li>
+<li><a href="#orgcbc5eee">iperf</a></li>
+<li><a href="#org21c7d2c">iptables</a></li>
+<li><a href="#org288b1cc">java</a></li>
+<li><a href="#orgd6c91ee">javac</a></li>
+<li><a href="#org940f451">lilo</a></li>
+<li><a href="#org5ba92a3">lp</a></li>
+<li><a href="#org19d40b4">lpc</a></li>
+<li><a href="#orge084b2e">lpq</a></li>
+<li><a href="#orgfe5511c">lpr</a></li>
+<li><a href="#orgc0b866b">lprm</a></li>
+<li><a href="#org1fae0fe">lsattr</a></li>
+<li><a href="#orge77d207">lsof</a></li>
+<li><a href="#org0abcf73">make</a></li>
+<li><a href="#org3040cb7">modprobe</a></li>
+<li><a href="#orgf2cd596">node</a></li>
+<li><a href="#org7d5fa00">npm</a></li>
+<li><a href="#orgc0d9a0e">passwd</a></li>
+<li><a href="#orgca4fa07">pip</a></li>
+<li><a href="#orgd9f1c45">postfix</a></li>
+<li><a href="#orgeda21cc">rpm</a></li>
+<li><a href="#orgc38a300">rsync</a></li>
+<li><a href="#org8f7fb02">ruby</a></li>
+<li><a href="#org4e6d36d">samba</a></li>
+<li><a href="#org29a56aa">sendmail</a></li>
+<li><a href="#orgc48188f">shutdown</a></li>
+<li><a href="#org0d18e29">squid</a></li>
+<li><a href="#orgbed51d0">ssh</a></li>
+<li><a href="#orgaf16b48">sudo</a></li>
+<li><a href="#org703ee4e">tail</a></li>
+<li><a href="#orgb29c395">tar</a></li>
+<li><a href="#orgf9ebe47">template</a></li>
+<li><a href="#org9e15133">travis</a></li>
+<li><a href="#orgedabd68">tripwire</a></li>
+<li><a href="#org3083b82">update</a></li>
+<li><a href="#org5f7ba12">useradd</a></li>
+<li><a href="#org6180f71">userdel</a></li>
+<li><a href="#org66b4987">usermod</a></li>
+<li><a href="#orgf1bbcaf">vim</a></li>
+<li><a href="#org9d52c5b">wget</a></li>
+<li><a href="#org18ad1c4">xinetd</a></li>
+<li><a href="#org6248996">xmodmap</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orgc77c823" class="outline-2">
-<h2 id="orgc77c823">介绍</h2>
-<div class="outline-text-2" id="text-orgc77c823">
-<div class="LANG">
 <p>
-운영체제 별 소프트웨어 설치 방법을 문서화하는 프로젝트입니다.
+nil
 </p>
 
-<p>
-각 소프트웨어 별로 설치하기 전해 진행해야 하는 것 부터 설치 방법, 설치 후 간단한 설정 및 실행 방법 및 옵션 설명 까지가 이 프로젝트의 기술 범위입니다.
-</p>
-
-</div>
+<div id="outline-container-org0f24bb7" class="outline-2">
+<h2 id="org0f24bb7">介绍</h2>
+<div class="outline-text-2" id="text-org0f24bb7">
 </div>
 
-<div id="outline-container-org3230e51" class="outline-3">
-<h3 id="progress"><a id="org3230e51"></a>进度</h3>
+
+<div id="outline-container-org7d61921" class="outline-3">
+<h3 id="progress"><a id="org7d61921"></a>进度</h3>
 <div class="outline-text-3" id="text-progress">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -783,7 +421,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./apt-add-repository.html">apt-add-repository</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="apt-add-repository.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -801,7 +439,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./autoconf.html">autoconf</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="autoconf.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -819,7 +457,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./brew.html">brew</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="brew.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -827,10 +465,10 @@ for the JavaScript code in this tag.
 
 <tr>
 <td class="org-left"><a href="./build-essential.html">build-essential</a></td>
-<td class="org-left"><a href="build-essential.html#overview">Yes</a></td>
-<td class="org-left"><a href="build-essential.html#install">Yes</a></td>
-<td class="org-left"><a href="build-essential.html#usage">Yes</a></td>
-<td class="org-left"><a href="build-essential.html#options">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 </tr>
 
@@ -891,7 +529,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./chrome.html">chrome</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="chrome.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -909,7 +547,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./curl.html">curl</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="curl.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -918,7 +556,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./dh-autoreconf.html">dh-autoreconf</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="dh-autoreconf.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -936,7 +574,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./docker-compose.html">docker-compose</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="docker-compose.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -945,7 +583,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./docker.html">docker</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="docker.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -972,7 +610,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./emacs.html">emacs</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="emacs.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -982,8 +620,8 @@ for the JavaScript code in this tag.
 <td class="org-left"><a href="./find.html">find</a></td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="find.html#usage">Yes</a></td>
-<td class="org-left"><a href="find.html#options">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 </tr>
 
@@ -1008,7 +646,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./gcc.html">gcc</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="gcc.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1017,7 +655,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./gem.html">gem</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="gem.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1026,7 +664,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./git.html">git</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="git.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1052,6 +690,15 @@ for the JavaScript code in this tag.
 
 <tr>
 <td class="org-left"><a href="./hdparm.html">hdparm</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./index.html">index</a></td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1179,7 +826,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./make.html">make</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="make.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1197,7 +844,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./node.html">node</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="node.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1206,7 +853,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./npm.html">npm</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="npm.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1224,7 +871,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./pip.html">pip</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="pip.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1233,10 +880,10 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./postfix.html">postfix</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="postfix.html#install">Yes</a></td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="postfix.html#seealso">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
 </tr>
 
 <tr>
@@ -1251,7 +898,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./rsync.html">rsync</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="rsync.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1260,7 +907,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./ruby.html">ruby</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="ruby.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1278,7 +925,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./sendmail.html">sendmail</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="sendmail.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1305,7 +952,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./ssh.html">ssh</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="ssh.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1314,7 +961,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./sudo.html">sudo</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="sudo.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1340,17 +987,17 @@ for the JavaScript code in this tag.
 
 <tr>
 <td class="org-left"><a href="./template.html">template</a></td>
-<td class="org-left"><a href="template.html#overview">Yes</a></td>
-<td class="org-left"><a href="template.html#install">Yes</a></td>
-<td class="org-left"><a href="template.html#usage">Yes</a></td>
-<td class="org-left"><a href="template.html#options">Yes</a></td>
-<td class="org-left"><a href="template.html#seealso">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
 </tr>
 
 <tr>
 <td class="org-left"><a href="./travis.html">travis</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="travis.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1368,10 +1015,10 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./update.html">update</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="update.html#install">Yes</a></td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="update.html#seealso">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
 </tr>
 
 <tr>
@@ -1404,7 +1051,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./vim.html">vim</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="vim.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1413,7 +1060,7 @@ for the JavaScript code in this tag.
 <tr>
 <td class="org-left"><a href="./wget.html">wget</a></td>
 <td class="org-left">No</td>
-<td class="org-left"><a href="wget.html#install">Yes</a></td>
+<td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
 <td class="org-left">No</td>
@@ -1442,2146 +1089,404 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgaa233bd" class="outline-2">
-<h2 id="commands"><a id="orgaa233bd"></a>命令</h2>
+<div id="outline-container-org23fe465" class="outline-2">
+<h2 id="commands"><a id="org23fe465"></a>命令</h2>
 <div class="outline-text-2" id="text-commands">
 </div>
 
-<div id="outline-container-org7f1c69e" class="outline-3">
-<h3 id="org7f1c69e">DNS</h3>
-<div class="outline-text-3" id="text-org7f1c69e">
+<div id="outline-container-orge0d08a8" class="outline-3">
+<h3 id="orge0d08a8">DNS</h3>
+<div class="outline-text-3" id="text-orge0d08a8">
 </div>
 </div>
-<div id="outline-container-org115bc11" class="outline-3">
-<h3 id="org115bc11">NIS</h3>
-<div class="outline-text-3" id="text-org115bc11">
+<div id="outline-container-org7a50f77" class="outline-3">
+<h3 id="org7a50f77">NIS</h3>
+<div class="outline-text-3" id="text-org7a50f77">
 </div>
 </div>
-<div id="outline-container-orga692760" class="outline-3">
-<h3 id="orga692760">SELinux</h3>
-<div class="outline-text-3" id="text-orga692760">
+<div id="outline-container-orgab712e6" class="outline-3">
+<h3 id="orgab712e6">SELinux</h3>
+<div class="outline-text-3" id="text-orgab712e6">
 </div>
 </div>
-<div id="outline-container-org5069c30" class="outline-3">
-<h3 id="org5069c30">addbib</h3>
-<div class="outline-text-3" id="text-org5069c30">
+<div id="outline-container-org4c43d50" class="outline-3">
+<h3 id="org4c43d50">addbib</h3>
+<div class="outline-text-3" id="text-org4c43d50">
 </div>
 </div>
-<div id="outline-container-orgcec5cf4" class="outline-3">
-<h3 id="orgcec5cf4">alias</h3>
-<div class="outline-text-3" id="text-orgcec5cf4">
+<div id="outline-container-orgb6dc647" class="outline-3">
+<h3 id="orgb6dc647">alias</h3>
+<div class="outline-text-3" id="text-orgb6dc647">
 </div>
 </div>
-<div id="outline-container-org60c4ddc" class="outline-3">
-<h3 id="org60c4ddc">apt-add-repository</h3>
-<div class="outline-text-3" id="text-org60c4ddc">
+<div id="outline-container-org2daec2f" class="outline-3">
+<h3 id="org2daec2f">apt-add-repository</h3>
+<div class="outline-text-3" id="text-org2daec2f">
 </div>
-
-<div id="outline-container-org869ab92" class="outline-4">
-<h4 id="how-to-install"><a id="org869ab92"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
 </div>
-
-<div id="outline-container-orgb9886d9" class="outline-5">
-<h5 id="prerequisites"><a id="orgb9886d9"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-</ul>
+<div id="outline-container-org8af4930" class="outline-3">
+<h3 id="org8af4930">apt</h3>
+<div class="outline-text-3" id="text-org8af4930">
 </div>
 </div>
-
-<div id="outline-container-org2c153ab" class="outline-5">
-<h5 id="install"><a id="org2c153ab"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ apt-get install -y software-properties-common python-software-properties
-</pre>
+<div id="outline-container-org617f468" class="outline-3">
+<h3 id="org617f468">autoconf</h3>
+<div class="outline-text-3" id="text-org617f468">
 </div>
 </div>
+<div id="outline-container-orge0e90b9" class="outline-3">
+<h3 id="orge0e90b9">bash</h3>
+<div class="outline-text-3" id="text-orge0e90b9">
 </div>
-
-<div id="outline-container-org9abd736" class="outline-5">
-<h5 id="packages"><a id="org9abd736"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
 </div>
+<div id="outline-container-orgd6c1970" class="outline-3">
+<h3 id="orgd6c1970">brew</h3>
+<div class="outline-text-3" id="text-orgd6c1970">
 </div>
-
-<div id="outline-container-org0046f2f" class="outline-5">
-<h5 id="check"><a id="org0046f2f"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
 </div>
+<div id="outline-container-orgd8e7ce5" class="outline-3">
+<h3 id="orgd8e7ce5">build-essential</h3>
+<div class="outline-text-3" id="text-orgd8e7ce5">
 </div>
 </div>
+<div id="outline-container-org33db70d" class="outline-3">
+<h3 id="org33db70d">cat</h3>
+<div class="outline-text-3" id="text-org33db70d">
 </div>
-<div id="outline-container-orgc176527" class="outline-3">
-<h3 id="orgc176527">apt</h3>
-<div class="outline-text-3" id="text-orgc176527">
 </div>
+<div id="outline-container-org78c7ed8" class="outline-3">
+<h3 id="org78c7ed8">chatter</h3>
+<div class="outline-text-3" id="text-org78c7ed8">
 </div>
-<div id="outline-container-org15643f2" class="outline-3">
-<h3 id="org15643f2">autoconf</h3>
-<div class="outline-text-3" id="text-org15643f2">
 </div>
-
-<div id="outline-container-org0fcdfc6" class="outline-4">
-<h4 id="how-to-install"><a id="org0fcdfc6"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
+<div id="outline-container-orgcf76f23" class="outline-3">
+<h3 id="orgcf76f23">chfn</h3>
+<div class="outline-text-3" id="text-orgcf76f23">
 </div>
-
-<div id="outline-container-orgaa84146" class="outline-5">
-<h5 id="prerequisites"><a id="orgaa84146"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
 </div>
+<div id="outline-container-org064f40f" class="outline-3">
+<h3 id="org064f40f">chgrp</h3>
+<div class="outline-text-3" id="text-org064f40f">
 </div>
-
-<div id="outline-container-orgddf468e" class="outline-5">
-<h5 id="install"><a id="orgddf468e"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install autoconf
-</pre>
 </div>
+<div id="outline-container-org309696e" class="outline-3">
+<h3 id="org309696e">chmod</h3>
+<div class="outline-text-3" id="text-org309696e">
 </div>
 </div>
-
-<div id="outline-container-orge1ded6b" class="outline-5">
-<h5 id="packages"><a id="orge1ded6b"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
+<div id="outline-container-orgbddffed" class="outline-3">
+<h3 id="orgbddffed">chown</h3>
+<div class="outline-text-3" id="text-orgbddffed">
 </div>
 </div>
-
-<div id="outline-container-orgd06f0ce" class="outline-5">
-<h5 id="check"><a id="orgd06f0ce"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
+<div id="outline-container-org144b2c5" class="outline-3">
+<h3 id="org144b2c5">chrome</h3>
+<div class="outline-text-3" id="text-org144b2c5">
 </div>
 </div>
+<div id="outline-container-org728ea78" class="outline-3">
+<h3 id="org728ea78">chsh</h3>
+<div class="outline-text-3" id="text-org728ea78">
 </div>
 </div>
-<div id="outline-container-org1d0eeee" class="outline-3">
-<h3 id="org1d0eeee">bash</h3>
-<div class="outline-text-3" id="text-org1d0eeee">
+<div id="outline-container-orgd7c2fd2" class="outline-3">
+<h3 id="orgd7c2fd2">curl</h3>
+<div class="outline-text-3" id="text-orgd7c2fd2">
 </div>
 </div>
-<div id="outline-container-org9a71398" class="outline-3">
-<h3 id="org9a71398">brew</h3>
-<div class="outline-text-3" id="text-org9a71398">
+<div id="outline-container-orgfbd09c2" class="outline-3">
+<h3 id="orgfbd09c2">dh-autoreconf</h3>
+<div class="outline-text-3" id="text-orgfbd09c2">
 </div>
-
-<div id="outline-container-orga40e663" class="outline-4">
-<h4 id="how-to-install"><a id="orga40e663"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
 </div>
-
-<div id="outline-container-org816f645" class="outline-5">
-<h5 id="prerequisites"><a id="org816f645"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-orgdaf1707" class="outline-5">
-<h5 id="install"><a id="orgdaf1707"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="orgffc2fb0"></a>Mac OS<br /><div class="outline-text-6" id="text-orgffc2fb0">
-<div class="org-src-container">
-<pre class="src src-sh">$ /usr/bin/ruby -e <span style="font-style: italic;">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span>
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-orgacca416" class="outline-5">
-<h5 id="packages"><a id="orgacca416"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org415f069" class="outline-5">
-<h5 id="check"><a id="org415f069"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-
-<div id="outline-container-org91c233b" class="outline-4">
-<h4 id="references"><a id="org91c233b"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="https://brew.sh/">https://brew.sh/</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org80dab3a" class="outline-3">
-<h3 id="org80dab3a">build-essential</h3>
-<div class="outline-text-3" id="text-org80dab3a">
-</div><div id="outline-container-org8074152" class="outline-4">
-<h4 id="overview"><a id="org8074152"></a>摘要</h4>
-<div class="outline-text-4" id="text-overview">
-</div>
-</div>
-
-<div id="outline-container-org589ab0e" class="outline-4">
-<h4 id="how-to-install"><a id="org589ab0e"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-orgf60d5b7" class="outline-5">
-<h5 id="prerequisites"><a id="orgf60d5b7"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orga84ab73" class="outline-5">
-<h5 id="install"><a id="orga84ab73"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install -y build-essential
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4797ce7" class="outline-5">
-<h5 id="packages"><a id="org4797ce7"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-<ul class="org-ul">
-<li>binutils</li>
-<li>bzip2</li>
-<li>cpp</li>
-<li>cpp-5</li>
-<li>dpkg-dev</li>
-<li>fakeroot</li>
-<li>g++</li>
-<li>g++-5</li>
-<li><a href="./gcc.html">gcc</a></li>
-<li>gcc-5</li>
-<li>ifupdown</li>
-<li>iproute2</li>
-<li>isc-dhcp-client</li>
-<li>isc-dhcp-common</li>
-<li>libalgorithm-diff-perl</li>
-<li>libalgorithm-diff-xs-perl</li>
-<li>libalgorithm-merge-perl</li>
-<li>libasan2</li>
-<li>libatm1</li>
-<li>libatomic1</li>
-<li>libc-dev-bin</li>
-<li>libc6-dev</li>
-<li>libcc1-0</li>
-<li>libcilkrts5</li>
-<li>libdns-export162</li>
-<li>libdpkg-perl</li>
-<li>libfakeroot</li>
-<li>libfile-fcntllock-perl</li>
-<li>libgcc-5-dev</li>
-<li>libgdbm3</li>
-<li>libisc-export160</li>
-<li>libisl15</li>
-<li>libitm1</li>
-<li>liblsan0</li>
-<li>libmnl0</li>
-<li>libmpc3</li>
-<li>libmpfr4</li>
-<li>libmpx0</li>
-<li>libperl5.22</li>
-<li>libquadmath0</li>
-<li>libstdc++-5-dev</li>
-<li>libtsan0</li>
-<li>libubsan0</li>
-<li>libxtables11</li>
-<li>linux-libc-dev</li>
-<li><a href="./make.html">make</a></li>
-<li>manpages</li>
-<li>manpages-dev</li>
-<li>netbase</li>
-<li>patch</li>
-<li>perl</li>
-<li>perl-modules-5.22</li>
-<li>rename</li>
-</ul>
+<div id="outline-container-orgddadd50" class="outline-3">
+<h3 id="orgddadd50">diff</h3>
+<div class="outline-text-3" id="text-orgddadd50">
 </div>
 </div>
-
-<div id="outline-container-orgbaf3f63" class="outline-5">
-<h5 id="check"><a id="orgbaf3f63"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
+<div id="outline-container-orga0e5d4e" class="outline-3">
+<h3 id="orga0e5d4e">docker-compose</h3>
+<div class="outline-text-3" id="text-orga0e5d4e">
 </div>
 </div>
+<div id="outline-container-org0a978a3" class="outline-3">
+<h3 id="org0a978a3">docker</h3>
+<div class="outline-text-3" id="text-org0a978a3">
 </div>
-
-<div id="outline-container-org4e61415" class="outline-4">
-<h4 id="usage"><a id="org4e61415"></a>如何使用</h4>
-<div class="outline-text-4" id="text-usage">
 </div>
-
-<div id="outline-container-org4359240" class="outline-5">
-<h5 id="syntax"><a id="org4359240"></a>结构</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgfc2d9f2" class="outline-3">
+<h3 id="orgfc2d9f2">dpkg</h3>
+<div class="outline-text-3" id="text-orgfc2d9f2">
 </div>
 </div>
-
-<div id="outline-container-org53f1b55" class="outline-5">
-<h5 id="configuration"><a id="org53f1b55"></a>组态</h5>
-<div class="outline-text-5" id="text-configuration">
+<div id="outline-container-org26fd80b" class="outline-3">
+<h3 id="org26fd80b">echo</h3>
+<div class="outline-text-3" id="text-org26fd80b">
 </div>
 </div>
-
-<div id="outline-container-orga3467f0" class="outline-5">
-<h5 id="options"><a id="orga3467f0"></a>选项</h5>
-<div class="outline-text-5" id="text-options">
+<div id="outline-container-orgf72aed8" class="outline-3">
+<h3 id="orgf72aed8">emacs</h3>
+<div class="outline-text-3" id="text-orgf72aed8">
 </div>
 </div>
-
-<div id="outline-container-org4e978fc" class="outline-5">
-<h5 id="examples"><a id="org4e978fc"></a>例子</h5>
-<div class="outline-text-5" id="text-examples">
+<div id="outline-container-org1e375d2" class="outline-3">
+<h3 id="org1e375d2">find</h3>
+<div class="outline-text-3" id="text-org1e375d2">
 </div>
 </div>
+<div id="outline-container-orgb5a8ca2" class="outline-3">
+<h3 id="orgb5a8ca2">finger</h3>
+<div class="outline-text-3" id="text-orgb5a8ca2">
 </div>
 </div>
-<div id="outline-container-orgc3676d1" class="outline-3">
-<h3 id="orgc3676d1">cat</h3>
-<div class="outline-text-3" id="text-orgc3676d1">
+<div id="outline-container-org01dd6aa" class="outline-3">
+<h3 id="org01dd6aa">fsck</h3>
+<div class="outline-text-3" id="text-org01dd6aa">
 </div>
 </div>
-<div id="outline-container-orgf470917" class="outline-3">
-<h3 id="orgf470917">chatter</h3>
-<div class="outline-text-3" id="text-orgf470917">
+<div id="outline-container-orgb9bb410" class="outline-3">
+<h3 id="orgb9bb410">gcc</h3>
+<div class="outline-text-3" id="text-orgb9bb410">
 </div>
 </div>
-<div id="outline-container-org9ccad1d" class="outline-3">
-<h3 id="org9ccad1d">chfn</h3>
-<div class="outline-text-3" id="text-org9ccad1d">
+<div id="outline-container-org81f2fda" class="outline-3">
+<h3 id="org81f2fda">gem</h3>
+<div class="outline-text-3" id="text-org81f2fda">
 </div>
 </div>
-<div id="outline-container-org5e0c595" class="outline-3">
-<h3 id="org5e0c595">chgrp</h3>
-<div class="outline-text-3" id="text-org5e0c595">
+<div id="outline-container-orgbd5f3fb" class="outline-3">
+<h3 id="orgbd5f3fb">git</h3>
+<div class="outline-text-3" id="text-orgbd5f3fb">
 </div>
 </div>
-<div id="outline-container-orga850c6e" class="outline-3">
-<h3 id="orga850c6e">chmod</h3>
-<div class="outline-text-3" id="text-orga850c6e">
+<div id="outline-container-org46c9ba0" class="outline-3">
+<h3 id="org46c9ba0">groupadd</h3>
+<div class="outline-text-3" id="text-org46c9ba0">
 </div>
 </div>
-<div id="outline-container-org672b3ae" class="outline-3">
-<h3 id="org672b3ae">chown</h3>
-<div class="outline-text-3" id="text-org672b3ae">
+<div id="outline-container-org535f23d" class="outline-3">
+<h3 id="org535f23d">hcitool</h3>
+<div class="outline-text-3" id="text-org535f23d">
 </div>
 </div>
-<div id="outline-container-org8fe2b47" class="outline-3">
-<h3 id="org8fe2b47">chrome</h3>
-<div class="outline-text-3" id="text-org8fe2b47">
+<div id="outline-container-org4e998a6" class="outline-3">
+<h3 id="org4e998a6">hdparm</h3>
+<div class="outline-text-3" id="text-org4e998a6">
 </div>
-
-<div id="outline-container-org1d8da1b" class="outline-4">
-<h4 id="how-to-install"><a id="org1d8da1b"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
 </div>
-
-<div id="outline-container-org4839cf3" class="outline-5">
-<h5 id="prerequisites"><a id="org4839cf3"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./wget.html">wget</a></li>
-</ul>
+<div id="outline-container-orgc723628" class="outline-3">
+<h3 id="orgc723628">index</h3>
+<div class="outline-text-3" id="text-orgc723628">
 </div>
 </div>
-
-<div id="outline-container-org12eba12" class="outline-5">
-<h5 id="install"><a id="org12eba12"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-$ sudo apt-get install gdebi
-$ gdebi google-chrome-stable_current_amd64.deb
-</pre>
+<div id="outline-container-org3df7afa" class="outline-3">
+<h3 id="org3df7afa">insmod</h3>
+<div class="outline-text-3" id="text-org3df7afa">
 </div>
 </div>
+<div id="outline-container-orgcbc5eee" class="outline-3">
+<h3 id="orgcbc5eee">iperf</h3>
+<div class="outline-text-3" id="text-orgcbc5eee">
 </div>
-
-<div id="outline-container-orgf5d6047" class="outline-5">
-<h5 id="packages"><a id="orgf5d6047"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
 </div>
+<div id="outline-container-org21c7d2c" class="outline-3">
+<h3 id="org21c7d2c">iptables</h3>
+<div class="outline-text-3" id="text-org21c7d2c">
 </div>
-
-<div id="outline-container-orgd47f5e2" class="outline-5">
-<h5 id="check"><a id="orgd47f5e2"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
 </div>
+<div id="outline-container-org288b1cc" class="outline-3">
+<h3 id="org288b1cc">java</h3>
+<div class="outline-text-3" id="text-org288b1cc">
 </div>
 </div>
-
-<div id="outline-container-orgb2188ab" class="outline-4">
-<h4 id="references"><a id="orgb2188ab"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04">askubuntu 참고</a></li>
-</ul>
+<div id="outline-container-orgd6c91ee" class="outline-3">
+<h3 id="orgd6c91ee">javac</h3>
+<div class="outline-text-3" id="text-orgd6c91ee">
 </div>
 </div>
+<div id="outline-container-org940f451" class="outline-3">
+<h3 id="org940f451">lilo</h3>
+<div class="outline-text-3" id="text-org940f451">
 </div>
-<div id="outline-container-org702a9d1" class="outline-3">
-<h3 id="org702a9d1">chsh</h3>
-<div class="outline-text-3" id="text-org702a9d1">
 </div>
+<div id="outline-container-org5ba92a3" class="outline-3">
+<h3 id="org5ba92a3">lp</h3>
+<div class="outline-text-3" id="text-org5ba92a3">
 </div>
-<div id="outline-container-orgd32f78d" class="outline-3">
-<h3 id="orgd32f78d">curl</h3>
-<div class="outline-text-3" id="text-orgd32f78d">
 </div>
-
-<div id="outline-container-orgec0a806" class="outline-4">
-<h4 id="how-to-install"><a id="orgec0a806"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
+<div id="outline-container-org19d40b4" class="outline-3">
+<h3 id="org19d40b4">lpc</h3>
+<div class="outline-text-3" id="text-org19d40b4">
 </div>
-
-<div id="outline-container-orgc8f05d8" class="outline-5">
-<h5 id="prerequisites"><a id="orgc8f05d8"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
 </div>
+<div id="outline-container-orge084b2e" class="outline-3">
+<h3 id="orge084b2e">lpq</h3>
+<div class="outline-text-3" id="text-orge084b2e">
 </div>
-
-<div id="outline-container-org32401ee" class="outline-5">
-<h5 id="install"><a id="org32401ee"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install curl
-</pre>
 </div>
+<div id="outline-container-orgfe5511c" class="outline-3">
+<h3 id="orgfe5511c">lpr</h3>
+<div class="outline-text-3" id="text-orgfe5511c">
 </div>
 </div>
-
-<div id="outline-container-orgf16dc7b" class="outline-5">
-<h5 id="packages"><a id="orgf16dc7b"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
+<div id="outline-container-orgc0b866b" class="outline-3">
+<h3 id="orgc0b866b">lprm</h3>
+<div class="outline-text-3" id="text-orgc0b866b">
 </div>
 </div>
-
-<div id="outline-container-org53d13f7" class="outline-5">
-<h5 id="check"><a id="org53d13f7"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
+<div id="outline-container-org1fae0fe" class="outline-3">
+<h3 id="org1fae0fe">lsattr</h3>
+<div class="outline-text-3" id="text-org1fae0fe">
 </div>
 </div>
+<div id="outline-container-orge77d207" class="outline-3">
+<h3 id="orge77d207">lsof</h3>
+<div class="outline-text-3" id="text-orge77d207">
 </div>
 </div>
-<div id="outline-container-orgd75760f" class="outline-3">
-<h3 id="orgd75760f">dh-autoreconf</h3>
-<div class="outline-text-3" id="text-orgd75760f">
+<div id="outline-container-org0abcf73" class="outline-3">
+<h3 id="org0abcf73">make</h3>
+<div class="outline-text-3" id="text-org0abcf73">
 </div>
-
-<div id="outline-container-org0e2c4e2" class="outline-4">
-<h4 id="how-to-install"><a id="org0e2c4e2"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
 </div>
-
-<div id="outline-container-org4b9a754" class="outline-5">
-<h5 id="prerequisites"><a id="org4b9a754"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./autoconf.html">autoconf</a></li>
-</ul>
+<div id="outline-container-org3040cb7" class="outline-3">
+<h3 id="org3040cb7">modprobe</h3>
+<div class="outline-text-3" id="text-org3040cb7">
 </div>
 </div>
-
-<div id="outline-container-org67a4102" class="outline-5">
-<h5 id="install"><a id="org67a4102"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install dh-autoreconf
-</pre>
+<div id="outline-container-orgf2cd596" class="outline-3">
+<h3 id="orgf2cd596">node</h3>
+<div class="outline-text-3" id="text-orgf2cd596">
 </div>
 </div>
+<div id="outline-container-org7d5fa00" class="outline-3">
+<h3 id="org7d5fa00">npm</h3>
+<div class="outline-text-3" id="text-org7d5fa00">
 </div>
-
-<div id="outline-container-org41bdb93" class="outline-5">
-<h5 id="packages"><a id="org41bdb93"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
 </div>
+<div id="outline-container-orgc0d9a0e" class="outline-3">
+<h3 id="orgc0d9a0e">passwd</h3>
+<div class="outline-text-3" id="text-orgc0d9a0e">
 </div>
-
-<div id="outline-container-orgb3727a0" class="outline-5">
-<h5 id="check"><a id="orgb3727a0"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
 </div>
+<div id="outline-container-orgca4fa07" class="outline-3">
+<h3 id="orgca4fa07">pip</h3>
+<div class="outline-text-3" id="text-orgca4fa07">
 </div>
 </div>
+<div id="outline-container-orgd9f1c45" class="outline-3">
+<h3 id="orgd9f1c45">postfix</h3>
+<div class="outline-text-3" id="text-orgd9f1c45">
 </div>
-<div id="outline-container-orgda703f1" class="outline-3">
-<h3 id="orgda703f1">diff</h3>
-<div class="outline-text-3" id="text-orgda703f1">
 </div>
+<div id="outline-container-orgeda21cc" class="outline-3">
+<h3 id="orgeda21cc">rpm</h3>
+<div class="outline-text-3" id="text-orgeda21cc">
 </div>
-<div id="outline-container-org462a373" class="outline-3">
-<h3 id="org462a373">docker-compose</h3>
-<div class="outline-text-3" id="text-org462a373">
 </div>
-
-<div id="outline-container-org1c3011a" class="outline-4">
-<h4 id="how-to-install"><a id="org1c3011a"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
+<div id="outline-container-orgc38a300" class="outline-3">
+<h3 id="orgc38a300">rsync</h3>
+<div class="outline-text-3" id="text-orgc38a300">
 </div>
-
-<div id="outline-container-org5fc1929" class="outline-5">
-<h5 id="prerequisites"><a id="org5fc1929"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./docker.html">docker</a></li>
-</ul>
 </div>
+<div id="outline-container-org8f7fb02" class="outline-3">
+<h3 id="org8f7fb02">ruby</h3>
+<div class="outline-text-3" id="text-org8f7fb02">
 </div>
-
-<div id="outline-container-orgdda2c30" class="outline-5">
-<h5 id="install"><a id="orgdda2c30"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
-$ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
-$ sudo chmod +x /usr/local/bin/docker-compose
-</pre>
 </div>
+<div id="outline-container-org4e6d36d" class="outline-3">
+<h3 id="org4e6d36d">samba</h3>
+<div class="outline-text-3" id="text-org4e6d36d">
 </div>
 </div>
-
-<div id="outline-container-orge71b4a3" class="outline-5">
-<h5 id="uninstall"><a id="orge71b4a3"></a>卸载</h5>
-<div class="outline-text-5" id="text-uninstall">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo rm /usr/local/bin/docker-compose
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
-$ pip uninstall docker-compose
-</pre>
+<div id="outline-container-org29a56aa" class="outline-3">
+<h3 id="org29a56aa">sendmail</h3>
+<div class="outline-text-3" id="text-org29a56aa">
 </div>
 </div>
+<div id="outline-container-orgc48188f" class="outline-3">
+<h3 id="orgc48188f">shutdown</h3>
+<div class="outline-text-3" id="text-orgc48188f">
 </div>
-
-<div id="outline-container-orgfaf2761" class="outline-5">
-<h5 id="packages"><a id="orgfaf2761"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
 </div>
+<div id="outline-container-org0d18e29" class="outline-3">
+<h3 id="org0d18e29">squid</h3>
+<div class="outline-text-3" id="text-org0d18e29">
 </div>
-
-<div id="outline-container-orgd192b90" class="outline-5">
-<h5 id="check"><a id="orgd192b90"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ docker-compose --version
-docker-compose version 1.18.0, build 8dd22a9
-</pre>
 </div>
+<div id="outline-container-orgbed51d0" class="outline-3">
+<h3 id="orgbed51d0">ssh</h3>
+<div class="outline-text-3" id="text-orgbed51d0">
 </div>
 </div>
+<div id="outline-container-orgaf16b48" class="outline-3">
+<h3 id="orgaf16b48">sudo</h3>
+<div class="outline-text-3" id="text-orgaf16b48">
 </div>
-
-<div id="outline-container-org7282a05" class="outline-4">
-<h4 id="references"><a id="org7282a05"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="./docker-command-completion.html">docker-command-completion</a></li>
-<li><a href="https://docs.docker.com/compose/install/#install-compose">Docker Compose Install(Offical)</a></li>
-</ul>
 </div>
+<div id="outline-container-org703ee4e" class="outline-3">
+<h3 id="org703ee4e">tail</h3>
+<div class="outline-text-3" id="text-org703ee4e">
 </div>
 </div>
-<div id="outline-container-orgca650a9" class="outline-3">
-<h3 id="orgca650a9">docker</h3>
-<div class="outline-text-3" id="text-orgca650a9">
+<div id="outline-container-orgb29c395" class="outline-3">
+<h3 id="orgb29c395">tar</h3>
+<div class="outline-text-3" id="text-orgb29c395">
 </div>
-
-<div id="outline-container-orgcd3bee8" class="outline-4">
-<h4 id="how-to-install"><a id="orgcd3bee8"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
 </div>
-
-<div id="outline-container-org3d6e29b" class="outline-5">
-<h5 id="prerequisites"><a id="org3d6e29b"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
+<div id="outline-container-orgf9ebe47" class="outline-3">
+<h3 id="orgf9ebe47">template</h3>
+<div class="outline-text-3" id="text-orgf9ebe47">
 </div>
 </div>
-
-<div id="outline-container-orgc38ed5d" class="outline-5">
-<h5 id="install"><a id="orgc38ed5d"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
+<div id="outline-container-org9e15133" class="outline-3">
+<h3 id="org9e15133">travis</h3>
+<div class="outline-text-3" id="text-org9e15133">
 </div>
 </div>
-
-<div id="outline-container-orgda70f24" class="outline-5">
-<h5 id="orgda70f24">Ubuntu 16.04 ~</h5>
-<div class="outline-text-5" id="text-orgda70f24">
-</div><ul class="org-ul"><li><a id="org85d5e6b"></a>Update repository<br /><div class="outline-text-6" id="text-org85d5e6b">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgaf682f1"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
-$ sudo apt-get remove docker docker-engine docker.io
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
-$ sudo apt-get install <span style="font-style: italic;">\</span>
-    apt-transport-https <span style="font-style: italic;">\</span>
-    ca-certificates <span style="font-style: italic;">\</span>
-    curl <span style="font-style: italic;">\</span>
-    software-properties-common
-
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add Docker's official GPG key</span>
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-$ sudo apt-key fingerprint 0EBFCD88
-</pre>
+<div id="outline-container-orgedabd68" class="outline-3">
+<h3 id="orgedabd68">tripwire</h3>
+<div class="outline-text-3" id="text-orgedabd68">
 </div>
-</div></li>
-
-<li><a id="orgb82393f"></a>Based on architectures<br /><ul class="org-ul"><li><a id="org192f330"></a>x86_64 / amd64<br /><div class="outline-text-7" id="text-org192f330">
-<div class="org-src-container">
-<pre class="src src-sh" id="org347cf8e">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
-   <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
-<span style="font-style: italic;">   $(lsb_release -cs) \</span>
-<span style="font-style: italic;">   stable"</span>
-</pre>
 </div>
-</div></li>
-
-<li><a id="org378404f"></a>armhf<br /><div class="outline-text-7" id="text-org378404f">
-<div class="org-src-container">
-<pre class="src src-sh" id="org8733bed">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
-   <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
-<span style="font-style: italic;">   $(lsb_release -cs) \</span>
-<span style="font-style: italic;">   stable"</span>
-</pre>
+<div id="outline-container-org3083b82" class="outline-3">
+<h3 id="org3083b82">update</h3>
+<div class="outline-text-3" id="text-org3083b82">
 </div>
-</div></li>
-
-<li><a id="org846752a"></a>IBM Power<br /><div class="outline-text-7" id="text-org846752a">
-<div class="org-src-container">
-<pre class="src src-sh" id="org835087d">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
-   <span style="font-style: italic;">"deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \</span>
-<span style="font-style: italic;">   $(lsb_release -cs) \</span>
-<span style="font-style: italic;">   stable"</span>
-</pre>
 </div>
-</div></li>
-
-<li><a id="org1da60db"></a>IBM Z (s390x)<br /><div class="outline-text-7" id="text-org1da60db">
-<div class="org-src-container">
-<pre class="src src-sh" id="orge3e9c8b">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
-   <span style="font-style: italic;">"deb [arch=s390x] https://download.docker.com/linux/ubuntu \</span>
-<span style="font-style: italic;">   $(lsb_release -cs) \</span>
-<span style="font-style: italic;">   stable"</span>
-</pre>
+<div id="outline-container-org5f7ba12" class="outline-3">
+<h3 id="org5f7ba12">useradd</h3>
+<div class="outline-text-3" id="text-org5f7ba12">
 </div>
-</div></li></ul></li>
-<li><a id="orgfa5c65e"></a>Install Docker-CE<br /><div class="outline-text-6" id="text-orgfa5c65e">
-<div class="org-src-container">
-<pre class="src src-sh" id="org33f4758">$ sudo apt-get install docker-ce
-</pre>
 </div>
-</div></li></ul>
+<div id="outline-container-org6180f71" class="outline-3">
+<h3 id="org6180f71">userdel</h3>
+<div class="outline-text-3" id="text-org6180f71">
 </div>
-
-<div id="outline-container-org827815a" class="outline-5">
-<h5 id="org827815a">Mac</h5>
-<div class="outline-text-5" id="text-org827815a">
-<ul class="org-ul">
-<li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org9cfce12" class="outline-5">
-<h5 id="packages"><a id="org9cfce12"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org9e4d71b" class="outline-5">
-<h5 id="check"><a id="org9e4d71b"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo docker run hello-world
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org80d29a1" class="outline-4">
-<h4 id="references"><a id="org80d29a1"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
-<li><a href="https://docs.docker.com/install/">Install Docker(Offical)</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org11ee327" class="outline-3">
-<h3 id="org11ee327">dpkg</h3>
-<div class="outline-text-3" id="text-org11ee327">
-</div>
-</div>
-<div id="outline-container-org2176ae9" class="outline-3">
-<h3 id="org2176ae9">echo</h3>
-<div class="outline-text-3" id="text-org2176ae9">
-</div>
-</div>
-<div id="outline-container-orgee30490" class="outline-3">
-<h3 id="orgee30490">emacs</h3>
-<div class="outline-text-3" id="text-orgee30490">
-</div>
-
-<div id="outline-container-org3b514e2" class="outline-4">
-<h4 id="how-to-install"><a id="org3b514e2"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-orgbfd8a87" class="outline-5">
-<h5 id="prerequisites"><a id="orgbfd8a87"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-
-<ul class="org-ul"><li><a id="org26142af"></a>Ubuntu<br /><div class="outline-text-6" id="text-org26142af">
-<ul class="org-ul">
-<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
-</ul>
-</div></li>
-
-<li><a id="orgcfc24c0"></a>Mac OS<br /><div class="outline-text-6" id="text-orgcfc24c0">
-<ul class="org-ul">
-<li><a href="./brew.html">brew</a></li>
-</ul>
-</div></li></ul>
-</div>
-
-<div id="outline-container-org27e77da" class="outline-5">
-<h5 id="install"><a id="org27e77da"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="orgbb076ee"></a>Ubuntu<br /><ul class="org-ul"><li><a id="org47522d9"></a>Emacs 25<br /><div class="outline-text-7" id="text-org47522d9">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgf05f027">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
-$ sudo apt update
-$ sudo apt install emacs25
-</pre>
-</div>
-</div></li></ul></li>
-
-<li><a id="org946973f"></a>Mac OS<br /><div class="outline-text-6" id="text-org946973f">
-<div class="org-src-container">
-<pre class="src src-sh" id="org52d834e">$ brew install emacs
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-org9670a5d" class="outline-5">
-<h5 id="packages"><a id="org9670a5d"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-<ul class="org-ul">
-<li>aspell</li>
-<li>aspell-en</li>
-<li>dictionaries-common</li>
-<li>emacs25-bin-common</li>
-<li>emacs25-common</li>
-<li>emacs25-el</li>
-<li>emacsen-common</li>
-<li>enchant</li>
-<li>ghostscript</li>
-<li>gsfonts</li>
-<li>gstreamer1.0-plugins-base</li>
-<li>gstreamer1.0-plugins-good</li>
-<li>gstreamer1.0-x</li>
-<li>hunspell-en-us</li>
-<li>imagemagick-common</li>
-<li>libaa1</li>
-<li>libasound2</li>
-<li>libasound2-data</li>
-<li>libaspell15</li>
-<li>libavc1394-0</li>
-<li>libcaca0</li>
-<li>libcdparanoia0</li>
-<li>libcupsfilters1</li>
-<li>libcupsimage2</li>
-<li>libdv4</li>
-<li>libenchant1c2a</li>
-<li>libfftw3-double3</li>
-<li>libflac8</li>
-<li>libfribidi0</li>
-<li>libgeoclue0</li>
-<li>libgif7</li>
-<li>libgl1-mesa-glx</li>
-<li>libgpm2</li>
-<li>libgs9</li>
-<li>libgs9-common</li>
-<li>libgstreamer-plugins-base1.0-0</li>
-<li>libgstreamer-plugins-good1.0-0</li>
-<li>libgstreamer1.0-0</li>
-<li>libharfbuzz-icu0</li>
-<li>libhunspell-1.3-0</li>
-<li>libice6</li>
-<li>libiec61883-0</li>
-<li>libijs-0.35</li>
-<li>libjack-jackd2-0</li>
-<li>libjavascriptcoregtk-3.0-0</li>
-<li>libjbig2dec0</li>
-<li>liblockfile-bin</li>
-<li>liblockfile1</li>
-<li>liblqr-1-0</li>
-<li>libm17n-0</li>
-<li>libmagickcore-6.q16-2</li>
-<li>libmagickwand-6.q16-2</li>
-<li>libogg0</li>
-<li>libopus0</li>
-<li>liborc-0.4-0</li>
-<li>libotf0</li>
-<li>libpaper-utils</li>
-<li>libpaper1</li>
-<li>libraw1394-11</li>
-<li>libsamplerate0</li>
-<li>libshout3</li>
-<li>libslang2</li>
-<li>libsm6</li>
-<li>libspeex1</li>
-<li>libtag1v5</li>
-<li>libtag1v5-vanilla</li>
-<li>libtext-iconv-perl</li>
-<li>libtheora0</li>
-<li>libv4l-0</li>
-<li>libv4lconvert0</li>
-<li>libvisual-0.4-0</li>
-<li>libvorbis0a</li>
-<li>libvorbisenc2</li>
-<li>libwavpack1</li>
-<li>libwebkitgtk-3.0-0</li>
-<li>libwebkitgtk-3.0-common</li>
-<li>libwebp5</li>
-<li>libxcb-glx0</li>
-<li>libxslt1.1</li>
-<li>libxt6</li>
-<li>libxv1</li>
-<li>libxxf86vm1</li>
-<li>m17n-db</li>
-<li>poppler-data</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org126d0ab" class="outline-5">
-<h5 id="check"><a id="org126d0ab"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ emacs --version
-25.3
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org113833c" class="outline-4">
-<h4 id="references"><a id="org113833c"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org8ceec00" class="outline-3">
-<h3 id="org8ceec00">find</h3>
-<div class="outline-text-3" id="text-org8ceec00">
-</div>
-
-<div id="outline-container-orge21028c" class="outline-4">
-<h4 id="usage"><a id="orge21028c"></a>如何使用</h4>
-<div class="outline-text-4" id="text-usage">
-</div>
-
-<div id="outline-container-orgbe1f1bf" class="outline-5">
-<h5 id="syntax"><a id="orgbe1f1bf"></a>结构</h5>
-<div class="outline-text-5" id="text-syntax">
-</div>
-</div>
-
-<div id="outline-container-org501684d" class="outline-5">
-<h5 id="configuration"><a id="org501684d"></a>组态</h5>
-<div class="outline-text-5" id="text-configuration">
-</div>
-</div>
-
-<div id="outline-container-org74e661e" class="outline-5">
-<h5 id="options"><a id="org74e661e"></a>选项</h5>
-<div class="outline-text-5" id="text-options">
-</div>
-</div>
-
-<div id="outline-container-orgdb7bad2" class="outline-5">
-<h5 id="examples"><a id="orgdb7bad2"></a>例子</h5>
-<div class="outline-text-5" id="text-examples">
-<ul class="org-ul">
-<li>find . -type f -name *jpg -exec cp {} . \;</li>
-<li>find . -type f -size +10000 -exec ls -alh {} \;</li>
-<li>find . -atime +1 -type f -exec mv {} imsi\;</li>
-<li>find . -name "-F" -exec rm {} \;</li>
-<li>find . -exec grep -i "찾는 문자열" {} \;</li>
-<li>find . \! -name "*.Z" -exec compress -f {} \;</li>
-<li>find . -type f \! -name "*.Z" \! -name "제외할파일명" -print | tee -a /tmp/list</li>
-<li>find . -name "*.ini"</li>
-<li>find . -exec chmod 755 {} \; or chmod -R 755 ./;</li>
-<li>find . -user xuser1 -exec chown -R user2 {} \; or chown -R user2 ./</li>
-<li>find . -atime +6</li>
-<li>find . -atime +30 -exec ls \; | wc -l</li>
-<li>find /raid -type d -name "디렉토리명" -ok cp /복사할경로 {} \;</li>
-<li>find . -name "찾을 파일" -print 2 &gt; /dev/null</li>
-<li>find . -perm 700 -print</li>
-<li>find . \ ( -perm 400 -o -perm 200 \) -print</li>
-<li>find . -size +1024 -print</li>
-<li>find . -name core -size +2048 -print</li>
-<li>find . -mtime -7 -print</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org2e10ced" class="outline-3">
-<h3 id="org2e10ced">finger</h3>
-<div class="outline-text-3" id="text-org2e10ced">
-</div>
-</div>
-<div id="outline-container-org5ab1b7d" class="outline-3">
-<h3 id="org5ab1b7d">fsck</h3>
-<div class="outline-text-3" id="text-org5ab1b7d">
-</div>
-</div>
-<div id="outline-container-org9a319d4" class="outline-3">
-<h3 id="org9a319d4">gcc</h3>
-<div class="outline-text-3" id="text-org9a319d4">
-</div>
-
-<div id="outline-container-orgef924dd" class="outline-4">
-<h4 id="how-to-install"><a id="orgef924dd"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org263a30b" class="outline-5">
-<h5 id="prerequisites"><a id="org263a30b"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org0b4970a" class="outline-5">
-<h5 id="install"><a id="org0b4970a"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<p>
-See <a href="./build-essential.html">build-essential</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org0b693bf" class="outline-5">
-<h5 id="packages"><a id="org0b693bf"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org97134fb" class="outline-5">
-<h5 id="check"><a id="org97134fb"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-orgba80945" class="outline-3">
-<h3 id="orgba80945">gem</h3>
-<div class="outline-text-3" id="text-orgba80945">
-</div>
-
-<div id="outline-container-orgd0fa484" class="outline-4">
-<h4 id="how-to-install"><a id="orgd0fa484"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org333ebff" class="outline-5">
-<h5 id="prerequisites"><a id="org333ebff"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-orgaaf507e" class="outline-5">
-<h5 id="install"><a id="orgaaf507e"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<p>
-See <a href="./ruby.html">ruby</a>
-</p>
-</div>
-</div>
-<div id="outline-container-orge69b755" class="outline-5">
-<h5 id="packages"><a id="orge69b755"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org83118b0" class="outline-5">
-<h5 id="check"><a id="org83118b0"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ gem -v
-2.7.3
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org8c8f374" class="outline-3">
-<h3 id="org8c8f374">git</h3>
-<div class="outline-text-3" id="text-org8c8f374">
-</div>
-
-<div id="outline-container-orga822b17" class="outline-4">
-<h4 id="how-to-install"><a id="orga822b17"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org4171dfe" class="outline-5">
-<h5 id="prerequisites"><a id="org4171dfe"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgc5e0af3" class="outline-5">
-<h5 id="install"><a id="orgc5e0af3"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="orgceac968"></a>Ubuntu<br /><div class="outline-text-6" id="text-orgceac968">
-<div class="org-src-container">
-<pre class="src src-sh" id="org496825e">$ sudo apt-get install git
-</pre>
-</div>
-</div></li>
-
-<li><a id="orge95e0b7"></a>CentOS<br /><div class="outline-text-6" id="text-orge95e0b7">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgc53c447">$ sudo yum install git
-</pre>
-</div>
-</div></li>
-
-<li><a id="orge49f40f"></a>Fedora<br /><div class="outline-text-6" id="text-orge49f40f">
-<div class="org-src-container">
-<pre class="src src-sh" id="org6812a28">$ sudo yum install git-core
-</pre>
-</div>
-</div></li>
-
-<li><a id="orgf10fd3e"></a>Arch Linux<br /><div class="outline-text-6" id="text-orgf10fd3e">
-<div class="org-src-container">
-<pre class="src src-sh" id="org4a9708b">$ sudo pacman -Sy git
-</pre>
-</div>
-</div></li>
-
-<li><a id="org672f315"></a>Gentoo<br /><div class="outline-text-6" id="text-org672f315">
-<div class="org-src-container">
-<pre class="src src-sh" id="org8980e97">$ sudo emerge --ask --verbose dev-vcs/git
-</pre>
-</div>
-</div></li>
-
-<li><a id="org24ab5c8"></a>macOS<br /><div class="outline-text-6" id="text-org24ab5c8">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgb76b77f">$ brew install git
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-
-<div id="outline-container-orga8bc74a" class="outline-5">
-<h5 id="packages"><a id="orga8bc74a"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-orge277ede" class="outline-5">
-<h5 id="check"><a id="orge277ede"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-
-<div id="outline-container-org3551926" class="outline-4">
-<h4 id="references"><a id="org3551926"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org2bdc74e" class="outline-3">
-<h3 id="org2bdc74e">groupadd</h3>
-<div class="outline-text-3" id="text-org2bdc74e">
-</div>
-</div>
-<div id="outline-container-orge6e73e6" class="outline-3">
-<h3 id="orge6e73e6">hcitool</h3>
-<div class="outline-text-3" id="text-orge6e73e6">
-</div>
-</div>
-<div id="outline-container-orga26006c" class="outline-3">
-<h3 id="orga26006c">hdparm</h3>
-<div class="outline-text-3" id="text-orga26006c">
-</div>
-</div>
-<div id="outline-container-org908f13d" class="outline-3">
-<h3 id="org908f13d">insmod</h3>
-<div class="outline-text-3" id="text-org908f13d">
-</div>
-</div>
-<div id="outline-container-orgdfaeaaa" class="outline-3">
-<h3 id="orgdfaeaaa">iperf</h3>
-<div class="outline-text-3" id="text-orgdfaeaaa">
-</div>
-</div>
-<div id="outline-container-orgec09d74" class="outline-3">
-<h3 id="orgec09d74">iptables</h3>
-<div class="outline-text-3" id="text-orgec09d74">
-</div>
-</div>
-<div id="outline-container-orgbe61f5f" class="outline-3">
-<h3 id="orgbe61f5f">java</h3>
-<div class="outline-text-3" id="text-orgbe61f5f">
-</div>
-</div>
-<div id="outline-container-orgb86e42b" class="outline-3">
-<h3 id="orgb86e42b">javac</h3>
-<div class="outline-text-3" id="text-orgb86e42b">
-</div>
-</div>
-<div id="outline-container-orgd9e4e24" class="outline-3">
-<h3 id="orgd9e4e24">lilo</h3>
-<div class="outline-text-3" id="text-orgd9e4e24">
-</div>
-</div>
-<div id="outline-container-org76a4e74" class="outline-3">
-<h3 id="org76a4e74">lp</h3>
-<div class="outline-text-3" id="text-org76a4e74">
-</div>
-</div>
-<div id="outline-container-orga30ce03" class="outline-3">
-<h3 id="orga30ce03">lpc</h3>
-<div class="outline-text-3" id="text-orga30ce03">
-</div>
-</div>
-<div id="outline-container-org630d452" class="outline-3">
-<h3 id="org630d452">lpq</h3>
-<div class="outline-text-3" id="text-org630d452">
-</div>
-</div>
-<div id="outline-container-orgdb74dfc" class="outline-3">
-<h3 id="orgdb74dfc">lpr</h3>
-<div class="outline-text-3" id="text-orgdb74dfc">
-</div>
-</div>
-<div id="outline-container-org1755870" class="outline-3">
-<h3 id="org1755870">lprm</h3>
-<div class="outline-text-3" id="text-org1755870">
-</div>
-</div>
-<div id="outline-container-orgaeba7bc" class="outline-3">
-<h3 id="orgaeba7bc">lsattr</h3>
-<div class="outline-text-3" id="text-orgaeba7bc">
-</div>
-</div>
-<div id="outline-container-orgf71eebb" class="outline-3">
-<h3 id="orgf71eebb">lsof</h3>
-<div class="outline-text-3" id="text-orgf71eebb">
-</div>
-</div>
-<div id="outline-container-org669ba7a" class="outline-3">
-<h3 id="org669ba7a">make</h3>
-<div class="outline-text-3" id="text-org669ba7a">
-</div>
-
-<div id="outline-container-org90304a3" class="outline-4">
-<h4 id="how-to-install"><a id="org90304a3"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-orgde5c9de" class="outline-5">
-<h5 id="prerequisites"><a id="orgde5c9de"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-orgb2c2c6d" class="outline-5">
-<h5 id="install"><a id="orgb2c2c6d"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<p>
-See <a href="./build-essential.html">build-essential</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org933cd88" class="outline-5">
-<h5 id="packages"><a id="org933cd88"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org2c5aac9" class="outline-5">
-<h5 id="check"><a id="org2c5aac9"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-orgc4d61f1" class="outline-3">
-<h3 id="orgc4d61f1">modprobe</h3>
-<div class="outline-text-3" id="text-orgc4d61f1">
-</div>
-</div>
-<div id="outline-container-orge516776" class="outline-3">
-<h3 id="orge516776">node</h3>
-<div class="outline-text-3" id="text-orge516776">
-</div>
-
-<div id="outline-container-orgdbcc0b1" class="outline-4">
-<h4 id="how-to-install"><a id="orgdbcc0b1"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org75d7cef" class="outline-5">
-<h5 id="prerequisites"><a id="org75d7cef"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./sudo.html">sudo</a></li>
-<li><a href="./curl.html">curl</a></li>
-</ul>
-</div>
-
-<ul class="org-ul"><li><a id="orgb7b8650"></a>4.x<br /><div class="outline-text-6" id="text-orgb7b8650">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgcca9a72">$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-</pre>
-</div>
-</div></li>
-
-<li><a id="org97540b2"></a>6.x<br /><div class="outline-text-6" id="text-org97540b2">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgc34cb78">$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-</pre>
-</div>
-</div></li>
-
-<li><a id="orgaf1eb71"></a>7.x<br /><div class="outline-text-6" id="text-orgaf1eb71">
-<div class="org-src-container">
-<pre class="src src-sh" id="org72e9d8e">$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-</pre>
-</div>
-</div></li>
-
-<li><a id="orgce6ba38"></a>9.x<br /><div class="outline-text-6" id="text-orgce6ba38">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgadfdb52">$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-
-<div id="outline-container-org4ab9d89" class="outline-5">
-<h5 id="install"><a id="org4ab9d89"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="org4244db7"></a>Ubuntu<br /><div class="outline-text-6" id="text-org4244db7">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install nodejs
-$ sudo apt-get install build-essential
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-orgeffff2a" class="outline-5">
-<h5 id="packages"><a id="orgeffff2a"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-<ul class="org-ul">
-<li>node</li>
-<li><a href="./npm.html">npm</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org501d0d0" class="outline-5">
-<h5 id="check"><a id="org501d0d0"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ node -v
-v9.5.0
-$ npm -v
-5.6.0
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5e10c4a" class="outline-4">
-<h4 id="references"><a id="org5e10c4a"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="https://kr.godaddy.com/help/install-nodejs-ubuntu-17395">https://kr.godaddy.com/help/install-nodejs-ubuntu-17395</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org1323b3f" class="outline-3">
-<h3 id="org1323b3f">npm</h3>
-<div class="outline-text-3" id="text-org1323b3f">
-</div>
-
-<div id="outline-container-org663ae08" class="outline-4">
-<h4 id="how-to-install"><a id="org663ae08"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org44848a8" class="outline-5">
-<h5 id="prerequisites"><a id="org44848a8"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org4ecd33e" class="outline-5">
-<h5 id="install"><a id="org4ecd33e"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<p>
-See <a href="./node.html">node</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgb7ff73e" class="outline-5">
-<h5 id="packages"><a id="orgb7ff73e"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org963865c" class="outline-5">
-<h5 id="check"><a id="org963865c"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org7f59b9f" class="outline-3">
-<h3 id="org7f59b9f">passwd</h3>
-<div class="outline-text-3" id="text-org7f59b9f">
-</div>
-</div>
-<div id="outline-container-orgbd5e27e" class="outline-3">
-<h3 id="orgbd5e27e">pip</h3>
-<div class="outline-text-3" id="text-orgbd5e27e">
-</div>
-
-<div id="outline-container-orgf6b7984" class="outline-4">
-<h4 id="how-to-install"><a id="orgf6b7984"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org5a1a2c2" class="outline-5">
-<h5 id="prerequisites"><a id="org5a1a2c2"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./upate.html">update</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org7bf83d5" class="outline-5">
-<h5 id="install"><a id="org7bf83d5"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="orgbdd234f"></a>Ubuntu<br /><div class="outline-text-6" id="text-orgbdd234f">
-<div class="org-src-container">
-<pre class="src src-sh">sudo apt-get install python3-pip
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-org5dd74f0" class="outline-5">
-<h5 id="packages"><a id="org5dd74f0"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-<ul class="org-ul">
-<li>libexpat1-dev</li>
-<li>libpython3-dev</li>
-<li>libpython3.5-dev</li>
-<li>python-pip-whl</li>
-<li>python3-dev</li>
-<li>python3-setuptools</li>
-<li>python3-wheel</li>
-<li>python3.5-dev</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org5ff60a9" class="outline-5">
-<h5 id="check"><a id="org5ff60a9"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-orgbaf7120" class="outline-3">
-<h3 id="orgbaf7120">postfix</h3>
-<div class="outline-text-3" id="text-orgbaf7120">
-</div>
-
-<div id="outline-container-orge7c1b98" class="outline-4">
-<h4 id="how-to-install"><a id="orge7c1b98"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org22f837b" class="outline-5">
-<h5 id="prerequisites"><a id="org22f837b"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orga4e87f9" class="outline-5">
-<h5 id="install"><a id="orga4e87f9"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="org65afb49"></a>Ubuntu<br /><div class="outline-text-6" id="text-org65afb49">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install postfix
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-org7c65951" class="outline-5">
-<h5 id="org7c65951">Setup</h5>
-<div class="outline-text-5" id="text-org7c65951">
-<ul class="org-ul">
-<li>2. Internet Site</li>
-<li>domain.example.com</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org3916bbb" class="outline-5">
-<h5 id="packages"><a id="org3916bbb"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-orgc9fd60d" class="outline-5">
-<h5 id="check"><a id="orgc9fd60d"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo postfix start
-postfix: Postfix is running with backwards-compatible default settings
-postfix: See http://www.postfix.org/COMPATIBILITY_README.html for details
-postfix: To disable backwards compatibility use <span style="font-style: italic;">"postconf compatibility_level=2"</span> and <span style="font-style: italic;">"postfix reload"</span>
-postfix/postfix-script: fatal: the Postfix mail system is already running
-
-$ sudo postfix status
-postfix: Postfix is running with backwards-compatible default settings
-postfix: See http://www.postfix.org/COMPATIBILITY_README.html for details
-postfix: To disable backwards compatibility use <span style="font-style: italic;">"postconf compatibility_level=2"</span> and <span style="font-style: italic;">"postfix reload"</span>
-postfix/postfix-script: the Postfix mail system is running: PID: 10909
-
-$ telnet localhost 25
-Trying 127.0.0.1...
-Connected to 127.0.0.1.
-Escape character is <span style="font-style: italic;">'^]'</span>.
-220 gitlab.me ESMTP Postfix (Ubuntu)
-
-quit
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org268a6f7" class="outline-4">
-<h4 id="seealso"><a id="org268a6f7"></a>相关主题</h4>
-<div class="outline-text-4" id="text-seealso">
-<ul class="org-ul">
-<li><a href="./sendmail.html">sendmail</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org1dcab3a" class="outline-3">
-<h3 id="org1dcab3a">rpm</h3>
-<div class="outline-text-3" id="text-org1dcab3a">
-</div>
-</div>
-<div id="outline-container-orgfc87381" class="outline-3">
-<h3 id="orgfc87381">rsync</h3>
-<div class="outline-text-3" id="text-orgfc87381">
-</div>
-
-<div id="outline-container-org9477ade" class="outline-4">
-<h4 id="how-to-install"><a id="org9477ade"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-orgd9d3caa" class="outline-5">
-<h5 id="prerequisites"><a id="orgd9d3caa"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org88d1f4d" class="outline-5">
-<h5 id="install"><a id="org88d1f4d"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-
-<ul class="org-ul"><li><a id="orgea29802"></a>Ubuntu<br /><div class="outline-text-6" id="text-orgea29802">
-<div class="org-src-container">
-<pre class="src src-sh" id="org162a805">$ sudo apt-get install rsync
-</pre>
-</div>
-</div></li>
-
-<li><a id="orgac8799d"></a>CentOS<br /><div class="outline-text-6" id="text-orgac8799d">
-<div class="org-src-container">
-<pre class="src src-sh" id="orgee303ad">$ sudo yum install rsync
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-org0a78da2" class="outline-5">
-<h5 id="packages"><a id="org0a78da2"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-orgb437570" class="outline-5">
-<h5 id="check"><a id="orgb437570"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-
-<div id="outline-container-org740d456" class="outline-4">
-<h4 id="references"><a id="org740d456"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="http://oral.o-r.kr/oral/index.php/pclinuxos/?pageid=1&amp;mod=document&amp;uid=272&amp;kboard_comments_sort=oldest">rsync로 백업하기</a></li>
-<li><a href="http://kkamagistory.tistory.com/365">rsync 옵션 및 사용법</a></li>
-<li><a href="https://askubuntu.com/questions/939659/ubuntu-16-04-how-to-install-rsync-server-for-other-systems-to-access-via-ssh-usi">https://askubuntu.com/questions/939659/ubuntu-16-04-how-to-install-rsync-server-for-other-systems-to-access-via-ssh-usi</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org433df8e" class="outline-3">
-<h3 id="org433df8e">ruby</h3>
-<div class="outline-text-3" id="text-org433df8e">
-</div>
-
-<div id="outline-container-org9ce1af4" class="outline-4">
-<h4 id="how-to-install"><a id="org9ce1af4"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org804fa4e" class="outline-5">
-<h5 id="prerequisites"><a id="org804fa4e"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org50adece" class="outline-5">
-<h5 id="install"><a id="org50adece"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-</div>
-
-<div id="outline-container-org3e45067" class="outline-5">
-<h5 id="packages"><a id="org3e45067"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-<ul class="org-ul">
-<li>ruby</li>
-<li><a href="./gem.html">gem</a></li>
-<li>rake</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org71de6af" class="outline-5">
-<h5 id="check"><a id="org71de6af"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ ruby -v
-ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-linux-gnu]
-$ gem -v
-2.7.3
-$ rake --version
-rake, version 10.5.0
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbca5dfa" class="outline-4">
-<h4 id="references"><a id="orgbca5dfa"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="https://github.com/travis-ci/travis.rb/issues/391">https://github.com/travis-ci/travis.rb/issues/391</a></li>
-<li><a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgaa70e69" class="outline-3">
-<h3 id="orgaa70e69">samba</h3>
-<div class="outline-text-3" id="text-orgaa70e69">
 </div>
+<div id="outline-container-org66b4987" class="outline-3">
+<h3 id="org66b4987">usermod</h3>
+<div class="outline-text-3" id="text-org66b4987">
 </div>
-<div id="outline-container-orgaebcb1a" class="outline-3">
-<h3 id="orgaebcb1a">sendmail</h3>
-<div class="outline-text-3" id="text-orgaebcb1a">
 </div>
-
-<div id="outline-container-orgc453cf1" class="outline-4">
-<h4 id="how-to-install"><a id="orgc453cf1"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
+<div id="outline-container-orgf1bbcaf" class="outline-3">
+<h3 id="orgf1bbcaf">vim</h3>
+<div class="outline-text-3" id="text-orgf1bbcaf">
 </div>
-
-<div id="outline-container-org6d21622" class="outline-5">
-<h5 id="prerequisites"><a id="org6d21622"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-</ul>
 </div>
+<div id="outline-container-org9d52c5b" class="outline-3">
+<h3 id="org9d52c5b">wget</h3>
+<div class="outline-text-3" id="text-org9d52c5b">
 </div>
-
-<div id="outline-container-orgb5c602f" class="outline-5">
-<h5 id="install"><a id="orgb5c602f"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install sendmail
-</pre>
 </div>
+<div id="outline-container-org18ad1c4" class="outline-3">
+<h3 id="org18ad1c4">xinetd</h3>
+<div class="outline-text-3" id="text-org18ad1c4">
 </div>
 </div>
-
-<div id="outline-container-orga010b05" class="outline-5">
-<h5 id="packages"><a id="orga010b05"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org81e2a37" class="outline-5">
-<h5 id="check"><a id="org81e2a37"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org2fa5814" class="outline-3">
-<h3 id="org2fa5814">shutdown</h3>
-<div class="outline-text-3" id="text-org2fa5814">
-</div>
-</div>
-<div id="outline-container-orgc3f6237" class="outline-3">
-<h3 id="orgc3f6237">squid</h3>
-<div class="outline-text-3" id="text-orgc3f6237">
-</div>
-</div>
-<div id="outline-container-orgfc3b706" class="outline-3">
-<h3 id="orgfc3b706">ssh</h3>
-<div class="outline-text-3" id="text-orgfc3b706">
-</div>
-
-<div id="outline-container-org3926d4d" class="outline-4">
-<h4 id="how-to-install"><a id="org3926d4d"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org0c88b82" class="outline-5">
-<h5 id="prerequisites"><a id="org0c88b82"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orga363f5b" class="outline-5">
-<h5 id="install"><a id="orga363f5b"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install openssh-server
-$ sudo service ssh restart
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgd32a28e" class="outline-5">
-<h5 id="packages"><a id="orgd32a28e"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org8c808cb" class="outline-5">
-<h5 id="check"><a id="org8c808cb"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo service ssh status
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org7cc2ad0" class="outline-4">
-<h4 id="references"><a id="org7cc2ad0"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="http://linux-sys-adm.com/how-to-install-and-configure-ssh-on-ubuntu-server-14.04-lts-step-by-step/">How to install and configure SSH on Ubuntu 14.04</a></li>
-<li><a href="http://ubuntuhandbook.org/index.php/2016/04/enable-ssh-ubuntu-16-04-lts/">How to Enable SSH in Ubuntu 16.04 LTS</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org5cd2b14" class="outline-3">
-<h3 id="org5cd2b14">sudo</h3>
-<div class="outline-text-3" id="text-org5cd2b14">
-</div>
-
-<div id="outline-container-orge003252" class="outline-4">
-<h4 id="how-to-install"><a id="orge003252"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org893ad71" class="outline-5">
-<h5 id="prerequisites"><a id="org893ad71"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org141bf7b" class="outline-5">
-<h5 id="install"><a id="org141bf7b"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<p>
-只能在root用户的情况下安装。
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">$ apt-get install sudo -y
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org0e45cba" class="outline-5">
-<h5 id="packages"><a id="org0e45cba"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org6d8be48" class="outline-5">
-<h5 id="check"><a id="org6d8be48"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org87f1107" class="outline-3">
-<h3 id="org87f1107">tail</h3>
-<div class="outline-text-3" id="text-org87f1107">
-</div>
-</div>
-<div id="outline-container-orgd171324" class="outline-3">
-<h3 id="orgd171324">tar</h3>
-<div class="outline-text-3" id="text-orgd171324">
-</div>
-</div>
-<div id="outline-container-org9b343f2" class="outline-3">
-<h3 id="org9b343f2">template</h3>
-<div class="outline-text-3" id="text-org9b343f2">
-</div><div id="outline-container-org28b5ba8" class="outline-4">
-<h4 id="overview"><a id="org28b5ba8"></a>摘要</h4>
-<div class="outline-text-4" id="text-overview">
-</div>
-</div>
-
-<div id="outline-container-org21b548c" class="outline-4">
-<h4 id="how-to-install"><a id="org21b548c"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org9f48996" class="outline-5">
-<h5 id="prerequisites"><a id="org9f48996"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-orgcb07335" class="outline-5">
-<h5 id="install"><a id="orgcb07335"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-</div>
-
-<div id="outline-container-org2309583" class="outline-5">
-<h5 id="packages"><a id="org2309583"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org364f18c" class="outline-5">
-<h5 id="check"><a id="org364f18c"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-
-<div id="outline-container-org9072971" class="outline-4">
-<h4 id="usage"><a id="org9072971"></a>如何使用</h4>
-<div class="outline-text-4" id="text-usage">
-</div>
-
-<div id="outline-container-orgede49a1" class="outline-5">
-<h5 id="syntax"><a id="orgede49a1"></a>结构</h5>
-<div class="outline-text-5" id="text-syntax">
-</div>
-</div>
-
-<div id="outline-container-org7e2231a" class="outline-5">
-<h5 id="configuration"><a id="org7e2231a"></a>组态</h5>
-<div class="outline-text-5" id="text-configuration">
-</div>
-</div>
-
-<div id="outline-container-org1696132" class="outline-5">
-<h5 id="options"><a id="org1696132"></a>选项</h5>
-<div class="outline-text-5" id="text-options">
-</div>
-</div>
-
-<div id="outline-container-org462896a" class="outline-5">
-<h5 id="examples"><a id="org462896a"></a>例子</h5>
-<div class="outline-text-5" id="text-examples">
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5eb0c04" class="outline-4">
-<h4 id="seealso"><a id="org5eb0c04"></a>相关主题</h4>
-<div class="outline-text-4" id="text-seealso">
-</div>
-</div>
-
-<div id="outline-container-orge87ec82" class="outline-4">
-<h4 id="references"><a id="orge87ec82"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-</div>
-</div>
-</div>
-<div id="outline-container-orgaf0b0b6" class="outline-3">
-<h3 id="orgaf0b0b6">travis</h3>
-<div class="outline-text-3" id="text-orgaf0b0b6">
-</div>
-
-<div id="outline-container-org6ef9c9a" class="outline-4">
-<h4 id="how-to-install"><a id="org6ef9c9a"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org9269d6a" class="outline-5">
-<h5 id="prerequisites"><a id="org9269d6a"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./gem.html">gem</a></li>
-<li><a href="./make.html">make</a></li>
-<li><a href="./dh-autoreconf.html">dh-autoreconf</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgb5214a7" class="outline-5">
-<h5 id="install"><a id="orgb5214a7"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo gem install travis
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4428c38" class="outline-5">
-<h5 id="packages"><a id="org4428c38"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-org679b12d" class="outline-5">
-<h5 id="check"><a id="org679b12d"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ travis -v
-1.8.8
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org81be75b" class="outline-3">
-<h3 id="org81be75b">tripwire</h3>
-<div class="outline-text-3" id="text-org81be75b">
-</div>
-</div>
-<div id="outline-container-org350c7b9" class="outline-3">
-<h3 id="org350c7b9">update</h3>
-<div class="outline-text-3" id="text-org350c7b9">
-</div>
-
-<div id="outline-container-orga87754e" class="outline-4">
-<h4 id="how-to-install"><a id="orga87754e"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-orga167547" class="outline-5">
-<h5 id="prerequisites"><a id="orga167547"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org0342f07" class="outline-5">
-<h5 id="install"><a id="org0342f07"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt update &amp;&amp; sudo apt upgrade
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org260bb95" class="outline-5">
-<h5 id="packages"><a id="org260bb95"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-orgb80a20b" class="outline-5">
-<h5 id="check"><a id="orgb80a20b"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgeebd6a6" class="outline-4">
-<h4 id="seealso"><a id="orgeebd6a6"></a>相关主题</h4>
-<div class="outline-text-4" id="text-seealso">
-</div>
-</div>
-
-<div id="outline-container-org15a2cfe" class="outline-4">
-<h4 id="references"><a id="org15a2cfe"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-</div>
-</div>
-</div>
-<div id="outline-container-orgcc7df43" class="outline-3">
-<h3 id="orgcc7df43">useradd</h3>
-<div class="outline-text-3" id="text-orgcc7df43">
-</div>
-</div>
-<div id="outline-container-org06620e2" class="outline-3">
-<h3 id="org06620e2">userdel</h3>
-<div class="outline-text-3" id="text-org06620e2">
-</div>
-</div>
-<div id="outline-container-orgdf6469a" class="outline-3">
-<h3 id="orgdf6469a">usermod</h3>
-<div class="outline-text-3" id="text-orgdf6469a">
-</div>
-</div>
-<div id="outline-container-orge92d675" class="outline-3">
-<h3 id="orge92d675">vim</h3>
-<div class="outline-text-3" id="text-orge92d675">
-</div>
-
-<div id="outline-container-orgc2ccabc" class="outline-4">
-<h4 id="how-to-install"><a id="orgc2ccabc"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-orgdffa0e8" class="outline-5">
-<h5 id="prerequisites"><a id="orgdffa0e8"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-<ul class="org-ul">
-<li><a href="./update.html">update</a></li>
-<li><a href="./git.html">git</a></li>
-</ul>
-</div>
-
-<ul class="org-ul"><li><a id="org2dfcc9c"></a>from Source Code<br /><div class="outline-text-6" id="text-org2dfcc9c">
-<div class="org-src-container">
-<pre class="src src-sh">$ git clone https://github.com/vim/vim.git
-$ cd vim/src
-$ make
-</pre>
-</div>
-</div></li>
-
-<li><a id="org1e27d07"></a>Ubuntu<br /><div class="outline-text-6" id="text-org1e27d07">
-<div class="org-src-container">
-<pre class="src src-sh">$ apt-get install vim
-</pre>
-</div>
-</div></li></ul>
-</div>
-
-<div id="outline-container-orgb1a413c" class="outline-5">
-<h5 id="install"><a id="orgb1a413c"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-</div>
-</div>
-
-<div id="outline-container-orgac4d34e" class="outline-5">
-<h5 id="packages"><a id="orgac4d34e"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-orgb390cb7" class="outline-5">
-<h5 id="check"><a id="orgb390cb7"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-<div class="org-src-container">
-<pre class="src src-sh">$ vim --version
-</pre>
-</div>
-
-<pre class="example">
-Huge version without GUI.  Features included (+) or not (-):
-+acl             +farsi           +mouse_netterm   +tag_binary
-+arabic          +file_in_path    +mouse_sgr       +tag_old_static
-+autocmd         +find_in_path    -mouse_sysmouse  -tag_any_white
--balloon_eval    +float           +mouse_urxvt     -tcl
--browse          +folding         +mouse_xterm     +terminfo
-++builtin_terms  -footer          +multi_byte      +termresponse
-+byte_offset     +fork()          +multi_lang      +textobjects
-+channel         +gettext         -mzscheme        +timers
-+cindent         -hangul_input    +netbeans_intg   +title
--clientserver    +iconv           +packages        -toolbar
--clipboard       +insert_expand   +path_extra      +user_commands
-+cmdline_compl   +job             -perl            +vertsplit
-+cmdline_hist    +jumplist        +persistent_undo +virtualedit
-+cmdline_info    +keymap          +postscript      +visual
-+comments        +langmap         +printer         +visualextra
-+conceal         +libcall         +profile         +viminfo
-+cryptv          +linebreak       -python          +vreplace
-+cscope          +lispindent      +python3         +wildignore
-+cursorbind      +listcmds        +quickfix        +wildmenu
-+cursorshape     +localmap        +reltime         +windows
-+dialog_con      -lua             +rightleft       +writebackup
-+diff            +menu            -ruby            -X11
-+digraphs        +mksession       +scrollbind      -xfontset
--dnd             +modify_fname    +signs           -xim
--ebcdic          +mouse           +smartindent     -xsmp
-+emacs_tags      -mouseshape      +startuptime     -xterm_clipboard
-+eval            +mouse_dec       +statusline      -xterm_save
-+ex_extra        +mouse_gpm       -sun_workshop    -xpm
-+extra_search    -mouse_jsbterm   +syntax
-   system vimrc file: "$VIM/vimrc"
-     user vimrc file: "$HOME/.vimrc"
- 2nd user vimrc file: "~/.vim/vimrc"
-      user exrc file: "$HOME/.exrc"
-  fall-back for $VIM: "/usr/share/vim"
-Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -Wdate-time  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1
-Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf9308f6" class="outline-4">
-<h4 id="references"><a id="orgf9308f6"></a>参考</h4>
-<div class="outline-text-4" id="text-references">
-<ul class="org-ul">
-<li><a href="http://www.vim.org/download.php">http://www.vim.org/download.php</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org39930a8" class="outline-3">
-<h3 id="org39930a8">wget</h3>
-<div class="outline-text-3" id="text-org39930a8">
-</div>
-
-<div id="outline-container-org0a32e70" class="outline-4">
-<h4 id="how-to-install"><a id="org0a32e70"></a>如何安装</h4>
-<div class="outline-text-4" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org1df029e" class="outline-5">
-<h5 id="prerequisites"><a id="org1df029e"></a>先决条件</h5>
-<div class="outline-text-5" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org3021550" class="outline-5">
-<h5 id="install"><a id="org3021550"></a>安装</h5>
-<div class="outline-text-5" id="text-install">
-<div class="org-src-container">
-<pre class="src src-sh">$ sudo apt-get install wget
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org3fb1ddb" class="outline-5">
-<h5 id="packages"><a id="org3fb1ddb"></a>安装的软件包</h5>
-<div class="outline-text-5" id="text-packages">
-</div>
-</div>
-
-<div id="outline-container-orgfc5e958" class="outline-5">
-<h5 id="check"><a id="orgfc5e958"></a>检查</h5>
-<div class="outline-text-5" id="text-check">
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org929a0ba" class="outline-3">
-<h3 id="org929a0ba">xinetd</h3>
-<div class="outline-text-3" id="text-org929a0ba">
-</div>
-</div>
-<div id="outline-container-org0667666" class="outline-3">
-<h3 id="org0667666">xmodmap</h3>
-<div class="outline-text-3" id="text-org0667666">
+<div id="outline-container-org6248996" class="outline-3">
+<h3 id="org6248996">xmodmap</h3>
+<div class="outline-text-3" id="text-org6248996">
 </div>
 </div>
 </div>
@@ -3589,7 +1494,7 @@ Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,-
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-11</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 13:25</p>
+<p class="date">Created: 2018-02-20 Tue 14:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
