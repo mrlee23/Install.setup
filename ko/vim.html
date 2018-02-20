@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-20 Tue 01:50 -->
+<!-- 2018-02-20 Tue 03:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>vim</title>
@@ -243,38 +243,59 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org675e208">필요조건</a></li>
-<li><a href="#orga14d5f3">설치 방법</a>
+<li><a href="#overview">개요</a></li>
+<li><a href="#how-to-install">설치 방법</a>
 <ul>
-<li><a href="#org69d5a99">Git</a></li>
-<li><a href="#org978b039">Ubuntu</a></li>
+<li><a href="#prerequisites">필요 사항</a>
+<ul>
+<li><a href="#org6174e56">from Source Code</a></li>
+<li><a href="#orga12def2">Ubuntu</a></li>
 </ul>
 </li>
-<li><a href="#org9ac1e50">확인 방법</a></li>
-<li><a href="#org597ac83">참고</a></li>
+<li><a href="#install">설치</a></li>
+<li><a href="#packages">설치된 패키지</a></li>
+<li><a href="#check">확인</a></li>
+</ul>
+</li>
+<li><a href="#usage">사용법</a>
+<ul>
+<li><a href="#syntax">구조</a></li>
+<li><a href="#configuration">설정</a></li>
+<li><a href="#options">옵션</a></li>
+<li><a href="#examples">사용 예</a></li>
+</ul>
+</li>
+<li><a href="#org23eb456">관련 항목</a></li>
+<li><a href="#org7f1f8fd">참고자료</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org675e208" class="outline-2">
-<h2 id="org675e208">필요조건</h2>
-<div class="outline-text-2" id="text-org675e208">
+<div id="outline-container-org786c0ab" class="outline-2">
+<h2 id="overview"><a id="org786c0ab"></a>개요</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-org29fe952" class="outline-2">
+<h2 id="how-to-install"><a id="org29fe952"></a>설치 방법</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgfa2d200" class="outline-3">
+<h3 id="prerequisites"><a id="orgfa2d200"></a>필요 사항</h3>
+<div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
 <li><a href="./git.html">git</a></li>
 </ul>
 </div>
-</div>
 
-<div id="outline-container-orga14d5f3" class="outline-2">
-<h2 id="orga14d5f3">설치 방법</h2>
-<div class="outline-text-2" id="text-orga14d5f3">
-</div>
-<div id="outline-container-org69d5a99" class="outline-3">
-<h3 id="org69d5a99">Git</h3>
-<div class="outline-text-3" id="text-org69d5a99">
+<div id="outline-container-org6174e56" class="outline-4">
+<h4 id="org6174e56">from Source Code</h4>
+<div class="outline-text-4" id="text-org6174e56">
 <div class="org-src-container">
-<pre class="src src-sh" id="org33af273">$ git clone https://github.com/vim/vim.git
+<pre class="src src-sh">$ git clone https://github.com/vim/vim.git
 $ cd vim/src
 $ make
 </pre>
@@ -282,20 +303,32 @@ $ make
 </div>
 </div>
 
-<div id="outline-container-org978b039" class="outline-3">
-<h3 id="org978b039">Ubuntu</h3>
-<div class="outline-text-3" id="text-org978b039">
+<div id="outline-container-orga12def2" class="outline-4">
+<h4 id="orga12def2">Ubuntu</h4>
+<div class="outline-text-4" id="text-orga12def2">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb212945">$ apt-get install vim
+<pre class="src src-sh">$ apt-get install vim
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9ac1e50" class="outline-2">
-<h2 id="org9ac1e50">확인 방법</h2>
-<div class="outline-text-2" id="text-org9ac1e50">
+<div id="outline-container-org3c7dd3f" class="outline-3">
+<h3 id="install"><a id="org3c7dd3f"></a>설치</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+</div>
+
+<div id="outline-container-org8c00da5" class="outline-3">
+<h3 id="packages"><a id="org8c00da5"></a>설치된 패키지</h3>
+<div class="outline-text-3" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org8a2607e" class="outline-3">
+<h3 id="check"><a id="org8a2607e"></a>확인</h3>
+<div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ vim --version
 </pre>
@@ -342,10 +375,47 @@ Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,-
 </pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org597ac83" class="outline-2">
-<h2 id="org597ac83">참고</h2>
-<div class="outline-text-2" id="text-org597ac83">
+<div id="outline-container-orgcd1fbde" class="outline-2">
+<h2 id="usage"><a id="orgcd1fbde"></a>사용법</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org0b1642c" class="outline-3">
+<h3 id="syntax"><a id="org0b1642c"></a>구조</h3>
+<div class="outline-text-3" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org45789d4" class="outline-3">
+<h3 id="configuration"><a id="org45789d4"></a>설정</h3>
+<div class="outline-text-3" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org729a730" class="outline-3">
+<h3 id="options"><a id="org729a730"></a>옵션</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org6414cfa" class="outline-3">
+<h3 id="examples"><a id="org6414cfa"></a>사용 예</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23eb456" class="outline-2">
+<h2 id="org23eb456">관련 항목</h2>
+<div class="outline-text-2" id="text-org23eb456">
+</div>
+</div>
+
+<div id="outline-container-org7f1f8fd" class="outline-2">
+<h2 id="org7f1f8fd">참고자료</h2>
+<div class="outline-text-2" id="text-org7f1f8fd">
 <ul class="org-ul">
 <li><a href="http://www.vim.org/download.php">http://www.vim.org/download.php</a></li>
 </ul>
@@ -353,9 +423,9 @@ Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,-
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-03</p>
+<p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 01:50</p>
+<p class="date">Created: 2018-02-20 Tue 03:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

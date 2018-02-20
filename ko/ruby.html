@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-20 Tue 01:50 -->
+<!-- 2018-02-20 Tue 03:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ruby</title>
@@ -243,41 +243,58 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2aec670">Prerequisites</a></li>
-<li><a href="#org982c850">Install</a></li>
-<li><a href="#org9375155">Packages</a></li>
-<li><a href="#org0f50220">Check</a></li>
-<li><a href="#org6c953d4">References</a></li>
+<li><a href="#overview">개요</a></li>
+<li><a href="#how-to-install">설치 방법</a>
+<ul>
+<li><a href="#prerequisites">필요 사항</a></li>
+<li><a href="#install">설치</a></li>
+<li><a href="#packages">설치된 패키지</a></li>
+<li><a href="#check">확인</a></li>
+</ul>
+</li>
+<li><a href="#usage">사용법</a>
+<ul>
+<li><a href="#syntax">구조</a></li>
+<li><a href="#configuration">설정</a></li>
+<li><a href="#options">옵션</a></li>
+<li><a href="#examples">사용 예</a></li>
+</ul>
+</li>
+<li><a href="#org5f3c049">관련 항목</a></li>
+<li><a href="#orgb4b4f42">참고자료</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2aec670" class="outline-2">
-<h2 id="org2aec670">Prerequisites</h2>
-<div class="outline-text-2" id="text-org2aec670">
+<div id="outline-container-orgf3bc2c8" class="outline-2">
+<h2 id="overview"><a id="orgf3bc2c8"></a>개요</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-org6cb0f69" class="outline-2">
+<h2 id="how-to-install"><a id="org6cb0f69"></a>설치 방법</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgb962b19" class="outline-3">
+<h3 id="prerequisites"><a id="orgb962b19"></a>필요 사항</h3>
+<div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org982c850" class="outline-2">
-<h2 id="org982c850">Install</h2>
-<div class="outline-text-2" id="text-org982c850">
-<div class="org-src-container">
-<pre class="src src-sh" id="org4118019">$ sudo apt-add-repository ppa:brightbox/ruby-ng
-$ sudo apt-get update
-$ sudo apt-get install ruby2.5 ruby-switch
-$ sudo ruby-switch --set ruby2.5
-$ sudo apt-get install ruby2.5-dev
-</pre>
-</div>
+<div id="outline-container-orgd4d1f54" class="outline-3">
+<h3 id="install"><a id="orgd4d1f54"></a>설치</h3>
+<div class="outline-text-3" id="text-install">
 </div>
 </div>
 
-<div id="outline-container-org9375155" class="outline-2">
-<h2 id="org9375155">Packages</h2>
-<div class="outline-text-2" id="text-org9375155">
+<div id="outline-container-orgecb796c" class="outline-3">
+<h3 id="packages"><a id="orgecb796c"></a>설치된 패키지</h3>
+<div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>ruby</li>
 <li><a href="./gem.html">gem</a></li>
@@ -286,11 +303,11 @@ $ sudo apt-get install ruby2.5-dev
 </div>
 </div>
 
-<div id="outline-container-org0f50220" class="outline-2">
-<h2 id="org0f50220">Check</h2>
-<div class="outline-text-2" id="text-org0f50220">
+<div id="outline-container-org308da59" class="outline-3">
+<h3 id="check"><a id="org308da59"></a>확인</h3>
+<div class="outline-text-3" id="text-check">
 <div class="org-src-container">
-<pre class="src src-sh" id="org575f88a">$ ruby -v
+<pre class="src src-sh">$ ruby -v
 ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-linux-gnu]
 $ gem -v
 2.7.3
@@ -300,10 +317,47 @@ rake, version 10.5.0
 </div>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org6c953d4" class="outline-2">
-<h2 id="org6c953d4">References</h2>
-<div class="outline-text-2" id="text-org6c953d4">
+<div id="outline-container-org2da837b" class="outline-2">
+<h2 id="usage"><a id="org2da837b"></a>사용법</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org3030b90" class="outline-3">
+<h3 id="syntax"><a id="org3030b90"></a>구조</h3>
+<div class="outline-text-3" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org3048c52" class="outline-3">
+<h3 id="configuration"><a id="org3048c52"></a>설정</h3>
+<div class="outline-text-3" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org3daaf20" class="outline-3">
+<h3 id="options"><a id="org3daaf20"></a>옵션</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org059a457" class="outline-3">
+<h3 id="examples"><a id="org059a457"></a>사용 예</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5f3c049" class="outline-2">
+<h2 id="org5f3c049">관련 항목</h2>
+<div class="outline-text-2" id="text-org5f3c049">
+</div>
+</div>
+
+<div id="outline-container-orgb4b4f42" class="outline-2">
+<h2 id="orgb4b4f42">참고자료</h2>
+<div class="outline-text-2" id="text-orgb4b4f42">
 <ul class="org-ul">
 <li><a href="https://github.com/travis-ci/travis.rb/issues/391">https://github.com/travis-ci/travis.rb/issues/391</a></li>
 <li><a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></li>
@@ -312,9 +366,9 @@ rake, version 10.5.0
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-10</p>
+<p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 01:50</p>
+<p class="date">Created: 2018-02-20 Tue 03:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

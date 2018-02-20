@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2018-02-20 Tue 01:51 -->
+<!-- 2018-02-20 Tue 03:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker-compose</title>
@@ -243,38 +243,55 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2993ffb">Prerequisites</a></li>
-<li><a href="#org5b6f8c8">Install</a>
+<li><a href="#overview">摘要</a></li>
+<li><a href="#how-to-install">如何安装</a>
 <ul>
-<li><a href="#org7483e97">Ubuntu</a></li>
-<li><a href="#org53d58b4">Mac</a></li>
+<li><a href="#prerequisites">先决条件</a></li>
+<li><a href="#install">安装</a></li>
+<li><a href="#uninstall">卸载</a></li>
+<li><a href="#packages">安装的软件包</a></li>
+<li><a href="#check">检查</a></li>
 </ul>
 </li>
-<li><a href="#orgdda1f1e">Uninstall</a></li>
-<li><a href="#org979785d">Check</a></li>
-<li><a href="#org003d6c6">Seealso</a></li>
-<li><a href="#orgfce4d24">References</a></li>
+<li><a href="#usage">如何使用</a>
+<ul>
+<li><a href="#syntax">结构</a></li>
+<li><a href="#configuration">组态</a></li>
+<li><a href="#options">选项</a></li>
+<li><a href="#examples">例子</a></li>
+</ul>
+</li>
+<li><a href="#org452d6b2">相关主题</a></li>
+<li><a href="#org216b9f0">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2993ffb" class="outline-2">
-<h2 id="org2993ffb">Prerequisites</h2>
-<div class="outline-text-2" id="text-org2993ffb">
+<div id="outline-container-org61c1638" class="outline-2">
+<h2 id="overview"><a id="org61c1638"></a>摘要</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-orgf7fc64d" class="outline-2">
+<h2 id="how-to-install"><a id="orgf7fc64d"></a>如何安装</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgdd44909" class="outline-3">
+<h3 id="prerequisites"><a id="orgdd44909"></a>先决条件</h3>
+<div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./docker.html">docker</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5b6f8c8" class="outline-2">
-<h2 id="org5b6f8c8">Install</h2>
-<div class="outline-text-2" id="text-org5b6f8c8">
-</div><div id="outline-container-org7483e97" class="outline-3">
-<h3 id="org7483e97">Ubuntu</h3>
-<div class="outline-text-3" id="text-org7483e97">
+<div id="outline-container-org73a32d6" class="outline-3">
+<h3 id="install"><a id="org73a32d6"></a>安装</h3>
+<div class="outline-text-3" id="text-install">
 <div class="org-src-container">
-<pre class="src src-sh" id="org40f28cb"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
@@ -284,21 +301,11 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 </div>
 </div>
 
-<div id="outline-container-org53d58b4" class="outline-3">
-<h3 id="org53d58b4">Mac</h3>
-<div class="outline-text-3" id="text-org53d58b4">
-<p>
-Involed in Docker for MacOS.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgdda1f1e" class="outline-2">
-<h2 id="orgdda1f1e">Uninstall</h2>
-<div class="outline-text-2" id="text-orgdda1f1e">
+<div id="outline-container-org62c97de" class="outline-3">
+<h3 id="uninstall"><a id="org62c97de"></a>卸载</h3>
+<div class="outline-text-3" id="text-uninstall">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgdfb5158">$ sudo rm /usr/local/bin/docker-compose
+<pre class="src src-sh">$ sudo rm /usr/local/bin/docker-compose
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
 $ pip uninstall docker-compose
 </pre>
@@ -306,41 +313,74 @@ $ pip uninstall docker-compose
 </div>
 </div>
 
-<div id="outline-container-org979785d" class="outline-2">
-<h2 id="org979785d">Check</h2>
-<div class="outline-text-2" id="text-org979785d">
+<div id="outline-container-orgff10f1f" class="outline-3">
+<h3 id="packages"><a id="orgff10f1f"></a>安装的软件包</h3>
+<div class="outline-text-3" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org2d6c9d3" class="outline-3">
+<h3 id="check"><a id="org2d6c9d3"></a>检查</h3>
+<div class="outline-text-3" id="text-check">
 <div class="org-src-container">
-<pre class="src src-sh" id="org14d50a6">$ docker-compose --version
+<pre class="src src-sh">$ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 </pre>
 </div>
 </div>
 </div>
+</div>
 
+<div id="outline-container-orgf41b00d" class="outline-2">
+<h2 id="usage"><a id="orgf41b00d"></a>如何使用</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
 
-<div id="outline-container-org003d6c6" class="outline-2">
-<h2 id="org003d6c6">Seealso</h2>
-<div class="outline-text-2" id="text-org003d6c6">
+<div id="outline-container-org7f16dab" class="outline-3">
+<h3 id="syntax"><a id="org7f16dab"></a>结构</h3>
+<div class="outline-text-3" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org1d7b8be" class="outline-3">
+<h3 id="configuration"><a id="org1d7b8be"></a>组态</h3>
+<div class="outline-text-3" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org1bfb45a" class="outline-3">
+<h3 id="options"><a id="org1bfb45a"></a>选项</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org7ef7a81" class="outline-3">
+<h3 id="examples"><a id="org7ef7a81"></a>例子</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org452d6b2" class="outline-2">
+<h2 id="org452d6b2">相关主题</h2>
+<div class="outline-text-2" id="text-org452d6b2">
+</div>
+</div>
+
+<div id="outline-container-org216b9f0" class="outline-2">
+<h2 id="org216b9f0">参考</h2>
+<div class="outline-text-2" id="text-org216b9f0">
 <ul class="org-ul">
 <li><a href="./docker-command-completion.html">docker-command-completion</a></li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-orgfce4d24" class="outline-2">
-<h2 id="orgfce4d24">References</h2>
-<div class="outline-text-2" id="text-orgfce4d24">
-<ul class="org-ul">
 <li><a href="https://docs.docker.com/compose/install/#install-compose">Docker Compose Install(Offical)</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-04</p>
+<p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 01:51</p>
+<p class="date">Created: 2018-02-20 Tue 03:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

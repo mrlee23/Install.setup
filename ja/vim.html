@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<!-- 2018-02-20 Tue 01:50 -->
+<!-- 2018-02-20 Tue 03:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>vim</title>
@@ -243,38 +243,59 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org183e443">Prerequisites</a></li>
-<li><a href="#org78b5d5f">Install</a>
+<li><a href="#overview">概要</a></li>
+<li><a href="#how-to-install">インストール方法</a>
 <ul>
-<li><a href="#org0b8139a">Git</a></li>
-<li><a href="#org84fdb1f">Ubuntu</a></li>
+<li><a href="#prerequisites">前準備</a>
+<ul>
+<li><a href="#org2f08807">from Source Code</a></li>
+<li><a href="#org5861e72">Ubuntu</a></li>
 </ul>
 </li>
-<li><a href="#org8f4d5f9">Check</a></li>
-<li><a href="#orgd36852a">References</a></li>
+<li><a href="#install">インストール</a></li>
+<li><a href="#packages">インストールされたパッケージ</a></li>
+<li><a href="#check">チェック</a></li>
+</ul>
+</li>
+<li><a href="#usage">命令説明</a>
+<ul>
+<li><a href="#syntax">構造</a></li>
+<li><a href="#configuration">設定</a></li>
+<li><a href="#options">オプション</a></li>
+<li><a href="#examples">例</a></li>
+</ul>
+</li>
+<li><a href="#org768a5ef">関連項目</a></li>
+<li><a href="#orgd6a95f2">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org183e443" class="outline-2">
-<h2 id="org183e443">Prerequisites</h2>
-<div class="outline-text-2" id="text-org183e443">
+<div id="outline-container-org3bbccca" class="outline-2">
+<h2 id="overview"><a id="org3bbccca"></a>概要</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-org1156c24" class="outline-2">
+<h2 id="how-to-install"><a id="org1156c24"></a>インストール方法</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org66cc238" class="outline-3">
+<h3 id="prerequisites"><a id="org66cc238"></a>前準備</h3>
+<div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
 <li><a href="./git.html">git</a></li>
 </ul>
 </div>
-</div>
 
-<div id="outline-container-org78b5d5f" class="outline-2">
-<h2 id="org78b5d5f">Install</h2>
-<div class="outline-text-2" id="text-org78b5d5f">
-</div>
-<div id="outline-container-org0b8139a" class="outline-3">
-<h3 id="org0b8139a">Git</h3>
-<div class="outline-text-3" id="text-org0b8139a">
+<div id="outline-container-org2f08807" class="outline-4">
+<h4 id="org2f08807">from Source Code</h4>
+<div class="outline-text-4" id="text-org2f08807">
 <div class="org-src-container">
-<pre class="src src-sh" id="org38ac05b">$ git clone https://github.com/vim/vim.git
+<pre class="src src-sh">$ git clone https://github.com/vim/vim.git
 $ cd vim/src
 $ make
 </pre>
@@ -282,20 +303,32 @@ $ make
 </div>
 </div>
 
-<div id="outline-container-org84fdb1f" class="outline-3">
-<h3 id="org84fdb1f">Ubuntu</h3>
-<div class="outline-text-3" id="text-org84fdb1f">
+<div id="outline-container-org5861e72" class="outline-4">
+<h4 id="org5861e72">Ubuntu</h4>
+<div class="outline-text-4" id="text-org5861e72">
 <div class="org-src-container">
-<pre class="src src-sh" id="org88c75f5">$ apt-get install vim
+<pre class="src src-sh">$ apt-get install vim
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8f4d5f9" class="outline-2">
-<h2 id="org8f4d5f9">Check</h2>
-<div class="outline-text-2" id="text-org8f4d5f9">
+<div id="outline-container-org947e752" class="outline-3">
+<h3 id="install"><a id="org947e752"></a>インストール</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+</div>
+
+<div id="outline-container-orgb9ccdd7" class="outline-3">
+<h3 id="packages"><a id="orgb9ccdd7"></a>インストールされたパッケージ</h3>
+<div class="outline-text-3" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org1aad1c0" class="outline-3">
+<h3 id="check"><a id="org1aad1c0"></a>チェック</h3>
+<div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ vim --version
 </pre>
@@ -342,10 +375,47 @@ Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,-
 </pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orgd36852a" class="outline-2">
-<h2 id="orgd36852a">References</h2>
-<div class="outline-text-2" id="text-orgd36852a">
+<div id="outline-container-org556513c" class="outline-2">
+<h2 id="usage"><a id="org556513c"></a>命令説明</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-orga883ba6" class="outline-3">
+<h3 id="syntax"><a id="orga883ba6"></a>構造</h3>
+<div class="outline-text-3" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-orgbd3200b" class="outline-3">
+<h3 id="configuration"><a id="orgbd3200b"></a>設定</h3>
+<div class="outline-text-3" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org6805406" class="outline-3">
+<h3 id="options"><a id="org6805406"></a>オプション</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org134c54e" class="outline-3">
+<h3 id="examples"><a id="org134c54e"></a>例</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org768a5ef" class="outline-2">
+<h2 id="org768a5ef">関連項目</h2>
+<div class="outline-text-2" id="text-org768a5ef">
+</div>
+</div>
+
+<div id="outline-container-orgd6a95f2" class="outline-2">
+<h2 id="orgd6a95f2">参考</h2>
+<div class="outline-text-2" id="text-orgd6a95f2">
 <ul class="org-ul">
 <li><a href="http://www.vim.org/download.php">http://www.vim.org/download.php</a></li>
 </ul>
@@ -353,9 +423,9 @@ Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,-
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-03</p>
+<p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 01:50</p>
+<p class="date">Created: 2018-02-20 Tue 03:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

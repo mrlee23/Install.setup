@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-20 Tue 01:50 -->
+<!-- 2018-02-20 Tue 03:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -243,45 +243,91 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7593454">Install</a>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#how-to-install">How to Install</a>
 <ul>
-<li><a href="#org4793969">Ubuntu</a>
+<li><a href="#prerequisites">Prerequisites</a>
 <ul>
-<li><a href="#org1705757">prerequisites</a></li>
-<li><a href="#orgda6e57d">Emacs 25</a></li>
+<li><a href="#org050200f">Ubuntu</a></li>
+<li><a href="#org17f9013">Mac OS</a></li>
 </ul>
 </li>
-<li><a href="#org41ec96a">macos</a></li>
-<li><a href="#org21bf7e2">Windows</a></li>
+<li><a href="#install">Install</a>
+<ul>
+<li><a href="#orgec333a2">Ubuntu</a>
+<ul>
+<li><a href="#orgd9e1508">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#org803d709">Installed Packages</a></li>
-<li><a href="#org69d7ee8">Check</a></li>
-<li><a href="#orgf0a5f71">References</a></li>
+<li><a href="#org464f36e">Mac OS</a></li>
+</ul>
+</li>
+<li><a href="#packages">Installed Packages</a></li>
+<li><a href="#check">Check</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a href="#org67775e8">See also</a></li>
+<li><a href="#org237d240">References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7593454" class="outline-2">
-<h2 id="org7593454">Install</h2>
-<div class="outline-text-2" id="text-org7593454">
-</div><div id="outline-container-org4793969" class="outline-3">
-<h3 id="org4793969">Ubuntu</h3>
-<div class="outline-text-3" id="text-org4793969">
-</div><div id="outline-container-org1705757" class="outline-4">
-<h4 id="org1705757">prerequisites</h4>
-<div class="outline-text-4" id="text-org1705757">
+<div id="outline-container-org70e0988" class="outline-2">
+<h2 id="overview"><a id="org70e0988"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-orgd7b2031" class="outline-2">
+<h2 id="how-to-install"><a id="orgd7b2031"></a>How to Install</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org1745363" class="outline-3">
+<h3 id="prerequisites"><a id="org1745363"></a>Prerequisites</h3>
+<div class="outline-text-3" id="text-prerequisites">
+</div>
+
+<div id="outline-container-org050200f" class="outline-4">
+<h4 id="org050200f">Ubuntu</h4>
+<div class="outline-text-4" id="text-org050200f">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgda6e57d" class="outline-4">
-<h4 id="orgda6e57d">Emacs 25</h4>
-<div class="outline-text-4" id="text-orgda6e57d">
+<div id="outline-container-org17f9013" class="outline-4">
+<h4 id="org17f9013">Mac OS</h4>
+<div class="outline-text-4" id="text-org17f9013">
+<ul class="org-ul">
+<li><a href="./brew.html">brew</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org58cc9eb" class="outline-3">
+<h3 id="install"><a id="org58cc9eb"></a>Install</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-orgec333a2" class="outline-4">
+<h4 id="orgec333a2">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgec333a2">
+</div><div id="outline-container-orgd9e1508" class="outline-5">
+<h5 id="orgd9e1508">Emacs 25</h5>
+<div class="outline-text-5" id="text-orgd9e1508">
 <div class="org-src-container">
-<pre class="src src-sh" id="org5a09643">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+<pre class="src src-sh" id="org9fbb5c5">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
 </pre>
@@ -290,24 +336,20 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org41ec96a" class="outline-3">
-<h3 id="org41ec96a">macos</h3>
-<div class="outline-text-3" id="text-org41ec96a">
+<div id="outline-container-org464f36e" class="outline-4">
+<h4 id="org464f36e">Mac OS</h4>
+<div class="outline-text-4" id="text-org464f36e">
 <div class="org-src-container">
-<pre class="src src-sh" id="org505dbab">$ brew install emacs
+<pre class="src src-sh" id="org2a30439">$ brew install emacs
 </pre>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org21bf7e2" class="outline-3">
-<h3 id="org21bf7e2">Windows</h3>
-</div>
 </div>
 
-<div id="outline-container-org803d709" class="outline-2">
-<h2 id="org803d709">Installed Packages</h2>
-<div class="outline-text-2" id="text-org803d709">
+<div id="outline-container-orgff916b9" class="outline-3">
+<h3 id="packages"><a id="orgff916b9"></a>Installed Packages</h3>
+<div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>aspell</li>
 <li>aspell-en</li>
@@ -397,20 +439,56 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org69d7ee8" class="outline-2">
-<h2 id="org69d7ee8">Check</h2>
-<div class="outline-text-2" id="text-org69d7ee8">
+<div id="outline-container-orgb9d6408" class="outline-3">
+<h3 id="check"><a id="orgb9d6408"></a>Check</h3>
+<div class="outline-text-3" id="text-check">
 <div class="org-src-container">
-<pre class="src src-sh" id="org1d845a9">$ emacs --version
+<pre class="src src-sh">$ emacs --version
 25.3
 </pre>
 </div>
 </div>
 </div>
+</div>
+<div id="outline-container-orga3d5fd5" class="outline-2">
+<h2 id="usage"><a id="orga3d5fd5"></a>Usage</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
 
-<div id="outline-container-orgf0a5f71" class="outline-2">
-<h2 id="orgf0a5f71">References</h2>
-<div class="outline-text-2" id="text-orgf0a5f71">
+<div id="outline-container-org4a40e42" class="outline-3">
+<h3 id="syntax"><a id="org4a40e42"></a>Syntax</h3>
+<div class="outline-text-3" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org7070927" class="outline-3">
+<h3 id="configuration"><a id="org7070927"></a>Configuration</h3>
+<div class="outline-text-3" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-orgee666f9" class="outline-3">
+<h3 id="options"><a id="orgee666f9"></a>Options</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-orgb42b303" class="outline-3">
+<h3 id="examples"><a id="orgb42b303"></a>Examples</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org67775e8" class="outline-2">
+<h2 id="org67775e8">See also</h2>
+<div class="outline-text-2" id="text-org67775e8">
+</div>
+</div>
+
+<div id="outline-container-org237d240" class="outline-2">
+<h2 id="org237d240">References</h2>
+<div class="outline-text-2" id="text-org237d240">
 <ul class="org-ul">
 <li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
 </ul>
@@ -418,9 +496,9 @@ $ sudo apt install emacs25
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-10</p>
+<p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 01:50</p>
+<p class="date">Created: 2018-02-20 Tue 03:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

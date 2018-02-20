@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-20 Tue 01:50 -->
+<!-- 2018-02-20 Tue 03:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker-compose</title>
@@ -243,38 +243,55 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org87690b8">Prerequisites</a></li>
-<li><a href="#org84b1d8d">Install</a>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#how-to-install">How to Install</a>
 <ul>
-<li><a href="#orgb630544">Ubuntu</a></li>
-<li><a href="#orga9bb53f">Mac</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#uninstall">Uninstall</a></li>
+<li><a href="#packages">Installed Packages</a></li>
+<li><a href="#check">Check</a></li>
 </ul>
 </li>
-<li><a href="#org471b9b3">Uninstall</a></li>
-<li><a href="#org5d9b72b">Check</a></li>
-<li><a href="#org2a07f8f">Seealso</a></li>
-<li><a href="#org33ea066">References</a></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a href="#org4b206af">See also</a></li>
+<li><a href="#org83e1954">References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org87690b8" class="outline-2">
-<h2 id="org87690b8">Prerequisites</h2>
-<div class="outline-text-2" id="text-org87690b8">
+<div id="outline-container-org092a6b3" class="outline-2">
+<h2 id="overview"><a id="org092a6b3"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-orgd02e232" class="outline-2">
+<h2 id="how-to-install"><a id="orgd02e232"></a>How to Install</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orga791205" class="outline-3">
+<h3 id="prerequisites"><a id="orga791205"></a>Prerequisites</h3>
+<div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./docker.html">docker</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org84b1d8d" class="outline-2">
-<h2 id="org84b1d8d">Install</h2>
-<div class="outline-text-2" id="text-org84b1d8d">
-</div><div id="outline-container-orgb630544" class="outline-3">
-<h3 id="orgb630544">Ubuntu</h3>
-<div class="outline-text-3" id="text-orgb630544">
+<div id="outline-container-org7e84e15" class="outline-3">
+<h3 id="install"><a id="org7e84e15"></a>Install</h3>
+<div class="outline-text-3" id="text-install">
 <div class="org-src-container">
-<pre class="src src-sh" id="org5d7af06"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
@@ -284,21 +301,11 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 </div>
 </div>
 
-<div id="outline-container-orga9bb53f" class="outline-3">
-<h3 id="orga9bb53f">Mac</h3>
-<div class="outline-text-3" id="text-orga9bb53f">
-<p>
-Involed in Docker for MacOS.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org471b9b3" class="outline-2">
-<h2 id="org471b9b3">Uninstall</h2>
-<div class="outline-text-2" id="text-org471b9b3">
+<div id="outline-container-orgf21beee" class="outline-3">
+<h3 id="uninstall"><a id="orgf21beee"></a>Uninstall</h3>
+<div class="outline-text-3" id="text-uninstall">
 <div class="org-src-container">
-<pre class="src src-sh" id="org435af06">$ sudo rm /usr/local/bin/docker-compose
+<pre class="src src-sh">$ sudo rm /usr/local/bin/docker-compose
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
 $ pip uninstall docker-compose
 </pre>
@@ -306,41 +313,74 @@ $ pip uninstall docker-compose
 </div>
 </div>
 
-<div id="outline-container-org5d9b72b" class="outline-2">
-<h2 id="org5d9b72b">Check</h2>
-<div class="outline-text-2" id="text-org5d9b72b">
+<div id="outline-container-orgb587b3f" class="outline-3">
+<h3 id="packages"><a id="orgb587b3f"></a>Installed Packages</h3>
+<div class="outline-text-3" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgb587081" class="outline-3">
+<h3 id="check"><a id="orgb587081"></a>Check</h3>
+<div class="outline-text-3" id="text-check">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgd89364b">$ docker-compose --version
+<pre class="src src-sh">$ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 </pre>
 </div>
 </div>
 </div>
+</div>
 
+<div id="outline-container-org20e7587" class="outline-2">
+<h2 id="usage"><a id="org20e7587"></a>Usage</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
 
-<div id="outline-container-org2a07f8f" class="outline-2">
-<h2 id="org2a07f8f">Seealso</h2>
-<div class="outline-text-2" id="text-org2a07f8f">
+<div id="outline-container-org451fb46" class="outline-3">
+<h3 id="syntax"><a id="org451fb46"></a>Syntax</h3>
+<div class="outline-text-3" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org7b4fa1f" class="outline-3">
+<h3 id="configuration"><a id="org7b4fa1f"></a>Configuration</h3>
+<div class="outline-text-3" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org10a805d" class="outline-3">
+<h3 id="options"><a id="org10a805d"></a>Options</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org8e286de" class="outline-3">
+<h3 id="examples"><a id="org8e286de"></a>Examples</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b206af" class="outline-2">
+<h2 id="org4b206af">See also</h2>
+<div class="outline-text-2" id="text-org4b206af">
+</div>
+</div>
+
+<div id="outline-container-org83e1954" class="outline-2">
+<h2 id="org83e1954">References</h2>
+<div class="outline-text-2" id="text-org83e1954">
 <ul class="org-ul">
 <li><a href="./docker-command-completion.html">docker-command-completion</a></li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-org33ea066" class="outline-2">
-<h2 id="org33ea066">References</h2>
-<div class="outline-text-2" id="text-org33ea066">
-<ul class="org-ul">
 <li><a href="https://docs.docker.com/compose/install/#install-compose">Docker Compose Install(Offical)</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-04</p>
+<p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-20 Tue 01:50</p>
+<p class="date">Created: 2018-02-20 Tue 03:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
