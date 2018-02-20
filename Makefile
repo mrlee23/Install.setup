@@ -56,7 +56,7 @@ pages: mkdirs pages-deps
 	@$(BATCH) --eval "(progn\
 	$$load_paths\
 	(message \"%s\" load-path)\
-	(require 'linux-commands-main)\
+	(require 'linux-commands)\
 	(pages-publish \"./\" \"$(GH_PAGES_DIR)/\" \"$(PUBLISH_PAGES_DIR)\")\
 	)"
 	for lang in `cat .supportLanguages`; \
