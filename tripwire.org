@@ -1,135 +1,42 @@
-#+INCLUDE: ./main.setup
+# Created 2018-02-20 Tue 16:56
+#+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: tripwire
-#+AUTHOR: Dongsoo Lee
-#+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
+#+AUTHOR: Dongsoo Lee
+#+MACRO: class @@html:<span class="lc-class">$1</span>@@
+#+MACRO: func @@html:<span class="lc-func">$1</span>@@
+#+MACRO: ret @@html:<span class="lc-ret">$1</span>@@
+#+MACRO: arg @@html:<span class="lc-arg">$1</span>@@
+#+MACRO: kwd @@html:<span class="lc-kwd">$1</span>@@
+#+MACRO: type @@html:<span class="lc-type">$1</span>@@
+#+MACRO: var @@html:<span class="lc-var">$1</span>@@
+#+MACRO: const @@html:<span class="lc-const">$1</span>@@
+#+MACRO: path @@html:<span class="lc-path">$1</span>@@
+#+MACRO: file @@html:<span class="lc-file">$1</span>@@
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+#+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
+#+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
+#+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
+#+MACRO: META (eval (lc-macro/meta))
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+#+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+#+HTML_HEAD: <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
 
-# ** Prerequisites
-#    :PROPERTIES: 
-#    :CUSTOM_ID: prerequisites
-#    :LANG_EN:  Prerequisites
-#    :LANG_ES:  Requisitos previos
-#    :LANG_KO:  필요 사항
-#    :LANG_ZH:  先决条件
-#    :LANG_JA:  前準備
-#    :END:      
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/my.css"/>
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 
-# ** Installed Packages
-#    :PROPERTIES: 
-#    :CUSTOM_ID: packages
-#    :LANG_EN:  Installed Packages
-#    :LANG_ES:  Paquetes instalados
-#    :LANG_KO:  설치된 패키지
-#    :LANG_ZH:  安装的软件包
-#    :LANG_JA:  インストールされたパッケージ
-#    :END:      
-
-# ** Check
-#    :PROPERTIES: 
-#    :CUSTOM_ID: check
-#    :LANG_EN:  Check
-#    :LANG_ES:  Comprobar
-#    :LANG_KO:  확인
-#    :LANG_ZH:  检查
-#    :LANG_JA:  チェック
-#    :END:      
-
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
-
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
-
-# ** Configuration
-#    :PROPERTIES: 
-#    :CUSTOM_ID: configuration
-#    :LANG_EN:  Configuration
-#    :LANG_ES:  Configuración
-#    :LANG_KO:  설정
-#    :LANG_ZH:  组态
-#    :LANG_JA:  設定
-#    :END:      
-
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
-
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
-
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
-
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+#+HTML_HEAD: <meta name="title" content="tripwire - Linuxコマンド">
+#+HTML_HEAD: <meta name="description" content="">
+#+HTML_HEAD: <meta name="by" content="Dongsoo Lee">
+#+HTML_HEAD: <meta property="og:type" content="article">
+#+HTML_HEAD: <meta property="og:title" content="tripwire - Linuxコマンド">
+#+HTML_HEAD: <meta property="og:description" content="">
+#+HTML_HEAD: <meta name="twitter:title" content="tripwire - Linuxコマンド">
+#+HTML_HEAD: <meta name="twitter:description" content="">
