@@ -36,14 +36,14 @@
 				  (and (string-match "^\* Usage\n" contents) (push 'usage flags))
 				  (and (string-match "^\*\* Options\n" contents) (push 'options flags))
 				  (and (string-match "^\* See also\n" contents) (push 'seealso flags))
-				  (format "|[[./%s][%s]]|%s|%s|%s|%s|%s"
+				  (format "|[[./%s][%s]]|%s|%s|%s|%s|%s|"
 						  file-name
 						  name
-						  (if (member 'overview flags) (format "[[file:%s::*%s][Yes]]" file-name "Overview") "No")
-						  (if (member 'install flags) (format "[[file:%s::*%s][Yes]]" file-name "Install") "No")
-						  (if (member 'usage flags) (format "[[file:%s::*%s][Yes]]" file-name "Usage") "No")
-						  (if (member 'options flags) (format "[[file:%s::*%s][Yes]]" file-name "Options") "No")
-						  (if (member 'seealso flags) (format "[[file:%s::*%s][Yes]]" file-name "See also") "No"))
+						  (if (member 'overview flags) (format "[[file:%s#%s][Yes]]" file-name "overview") "No")
+						  (if (member 'install flags) (format "[[file:%s#%s][Yes]]" file-name "install") "No")
+						  (if (member 'usage flags) (format "[[file:%s#%s][Yes]]" file-name "usage") "No")
+						  (if (member 'options flags) (format "[[file:%s#%s][Yes]]" file-name "options") "No")
+						  (if (member 'seealso flags) (format "[[file:%s#%s][Yes]]" file-name "seealso") "No"))
 				  ))
 			  (lc-macro/collect-files)
 			  "\n")))
