@@ -12,7 +12,7 @@
 #+MACRO: file @@html:<span class="lc-file">$1</span>@@
 
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
-#+MACRO: INCLUDE_DOCS (eval (mapconcat (lambda (dir-name) (let ((name (substring dir-name 0 -4))) (format "** %s\n#+INCLUDE: %s :lines \"7-\"" name dir-name))) (seq-filter (lambda (dir) (and (string-match "^\\([a-zA-Z0-9-_]+\\)\\.org$" dir) (not (equal dir "README.org")))) (directory-files "./")) "\n"))
+#+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
 
 #+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
 #+HTML_HEAD: <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
