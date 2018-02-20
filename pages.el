@@ -26,9 +26,14 @@
 (defvar pages-timestamp "./org-timestamps/")
 
 (defun pages-publish-to-html (plist filename pub-dir)
-  (setq filename (org-multilingual-publish plist filename (file-name-directory filename)))
-  (org-html-publish-to-html plist filename pub-dir)
-  )
+  (let (source-filename)
+	(when (equal (file-name-base filename) "README")
+	  (copy-file filename (setq source-filename (expand-file-name "index.org" (file-name-directory filename))))
+	  (delete-file filename)
+	  (setq filename source-filename))
+	(setq source-filename (org-multilingual-publish plist filename (file-name-directory filename)))
+	(org-html-publish-to-html plist source-filename pub-dir)
+	))
 
 (defun pages-support-languages ()
   (if (file-exists-p ".supportLanguages")
