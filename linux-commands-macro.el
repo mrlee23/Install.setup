@@ -13,6 +13,8 @@
 
 ;;; Code:
 
+(require 'linux-commands-core)
+
 (require 'seq)
 
 (defun lc-macro/collect-files ()
@@ -55,5 +57,9 @@
 				 ))
 			 (lc-macro/collect-files)
 			 "\n"))
+
+(defun lc-macro/meta ()
+  (message buffer-file-name)
+  (message "%s" (not (lc-core/get-current-contents))))
 
 (provide 'linux-commands-macro)
