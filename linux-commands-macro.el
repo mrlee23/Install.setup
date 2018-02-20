@@ -64,6 +64,8 @@
 		list-data (replace-regexp-in-string "[ ]+" " " list-data)))
 
 (defun lc-macro/meta ()
+  (unless (fboundp 'lc-core/get-current-contents)
+	(load-file "./linux-commands-core.el"))
   (let ((contents (lc-core/get-current-contents)
 				  )
 		(keywords '("TITLE" "AUTHOR" "DATE" "DESCRIPTION"))
