@@ -46,8 +46,7 @@ index: mkdirs
 	if [ -f "README.org" ]; \
 	then \
 		emacs -Q --batch README.org -l ./macro.el -f org-org-export-to-org; \
-		mv -f README.org.org index.org; \
-		rm -f README.org; \
+		mv -f README.org.org README.org; \
 	fi;
 
 pages: mkdirs pages-deps
