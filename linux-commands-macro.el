@@ -13,9 +13,8 @@
 
 ;;; Code:
 
-(require 'linux-commands-core)
-
 (require 'seq)
+(require 'cl)
 
 (defun lc-macro/collect-files ()
   (seq-filter
@@ -58,8 +57,80 @@
 			 (lc-macro/collect-files)
 			 "\n"))
 
+(defun lc-macro/join-oneline (list-data)
+  (setq list-data (reverse list-data)
+		list-data (mapconcat (lambda (str) str) list-data " ")
+		list-data (replace-regexp-in-string "\n" " " list-data)
+		list-data (replace-regexp-in-string "[ ]+" " " list-data)))
+
 (defun lc-macro/meta ()
-  (message buffer-file-name)
-  (message "%s" (not (lc-core/get-current-contents))))
+  (let ((contents (lc-core/get-current-contents)
+				  )
+		(keywords '("TITLE" "AUTHOR" "DATE" "DESCRIPTION"))
+		(title '())
+		(desc '())
+		(author '())
+		(meta '()))
+	(when contents
+	  (org-element-map contents 'keyword
+		(lambda (keyword)
+		  (let ((key (org-element-property :key keyword))
+				(value (org-element-property :value keyword)))
+			(when (member key keywords)
+			  (case (intern key)
+				(TITLE
+				 (push value title)
+				 )
+				(DESCRIPTION
+				 (push value desc)
+				 )
+				(AUTHOR
+				 (push value author)))
+			  ))
+		  keyword))
+	  (org-element-map contents 'paragraph
+		(lambda (paragraph)
+		  (let ((custom-id (ignore-errors (org-element-property :CUSTOM_ID (org-element-property :parent (org-element-property :parent paragraph)))))
+				)
+			(when (equal custom-id "introduction")
+			  (push (car (org-element-contents paragraph)) desc))
+			)))
+	  (push "-" title)
+	  (push lc-core/site-name title)
+	  (setq title (lc-macro/join-oneline title))
+	  (setq desc (lc-macro/join-oneline desc))
+	  (setq author (lc-macro/join-oneline author))
+	  
+	  (push (format "<meta name=\"title\" content=\"%s\">" title) meta)
+	  (push (format "<meta name=\"description\" content=\"%s\">" desc) meta)
+	  (push (format "<meta name=\"by\" content=\"%s\">" author) meta)
+	  (push (format "<meta property=\"og:type\" content=\"article\">") meta)
+	  (push (format "<meta property=\"og:title\" content=\"%s\">" title) meta)
+	  (push (format "<meta property=\"og:description\" content=\"%s\">" desc) meta)
+	  (push (format "<meta name=\"twitter:title\" content=\"%s\">" title) meta)
+	  (push (format "<meta name=\"twitter:description\" content=\"%s\">" desc) meta)
+
+	  (when (and (boundp 'lc-core/language)
+				 (stringp 'lc-core/language))
+		(push (format "<meta http-equiv=\"Content-Language\" content=\"%s\">" lc-core/language) meta))
+
+	  (when (and (boundp 'lc-core/site-name)
+				 (stringp 'lc-core/site-name))
+		(push (format "<meta name=\"article:media_name\" content=\"%s\">" lc-core/site-name) meta)
+		(push (format "<meta property=\"og:site_name\" content=\"%s\">" lc-core/site-name) meta)
+		(push (format "<meta name=\"twitter:site\" content=\"%s\">" lc-core/site-name) meta))
+	  
+	  (when (and (boundp 'lc-core/base-url)
+				 (stringp 'lc-core/base-url))
+		(push (format "<meta name=\"article:pc_service_home\" content=\"%s\">" lc-core/base-url) meta)
+		(push (format "<meta name=\"article:mobile_service_home\" content=\"%s\">" lc-core/base-url) meta))
+
+	  (concat "\n"
+			  (mapconcat (lambda (metadata)
+						   (format "#+HTML_HEAD: %s" metadata))
+						 (reverse meta)
+						 "\n")
+			  "\n")
+	  )))
 
 (provide 'linux-commands-macro)

@@ -32,8 +32,18 @@
 	(when (equal (file-name-base filename) "README")
 	  (copy-file filename (setq source-filename (expand-file-name "index.org" (file-name-directory filename))))
 	  (setq filename source-filename))
+	;; .publish/lang/xxx.org -> .publish/lang/xxx.org multilingual preprocessing
 	(setq source-filename (org-multilingual-publish plist filename (file-name-directory filename)))
 	(lc-core/init-contents source-filename)
+	;; .publish/lang/xxx.org -> .publish/lang/xxx.org.org macro preprocessing
+	(org-org-publish-to-org plist source-filename (file-name-directory source-filename))
+	;; .publish/lang/xxx.org.org -> .publish/lang/xxx.org move file
+	(copy-file (concat source-filename ".org") source-filename)
+	(delete-file (concat source-filename ".org"))
+	
+	;; .publish/lang/xxx.org -> .publish/lang/xxx.org multilingual preprocessing
+	(setq source-filename (org-multilingual-publish plist source-filename (file-name-directory source-filename)))
+	;; .publish/lang/xxx.org -> .gh-pages/lang/xxx.html export to html
 	(org-html-publish-to-html plist source-filename pub-dir)
 	))
 
@@ -52,6 +62,7 @@
   (setq org-publish-timestamp-directory pages-timestamp)
   (unless EXCLUDE_DIR
 	(setq EXCLUDE_DIR "\\.git"))
+  (lc-core/init-lang LANG)
   (setq org-publish-project-alist
 		`(("LinuxCommands-static"
 		   :base-directory ,BASE_DIR
