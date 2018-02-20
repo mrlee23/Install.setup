@@ -38,7 +38,7 @@
 	;; .publish/lang/xxx.org -> .publish/lang/xxx.org.org macro preprocessing
 	(org-org-publish-to-org plist source-filename (file-name-directory source-filename))
 	;; .publish/lang/xxx.org.org -> .publish/lang/xxx.org move file
-	(shell-command-to-string "mv -f \"%s\" \"%s\"" (concat source-filename ".org") source-filename)
+	(shell-command-to-string (format "mv -f \"%s\" \"%s\"" (concat source-filename ".org") source-filename))
 	
 	;; .publish/lang/xxx.org -> .publish/lang/xxx.org multilingual preprocessing
 	(setq source-filename (org-multilingual-publish plist source-filename (file-name-directory source-filename)))
