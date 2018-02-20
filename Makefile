@@ -39,13 +39,13 @@ test:
 index: mkdirs
 	if [ -f "index.org" ]; \
 	then \
-		emacs -Q --batch index.org -f org-html-export-to-html; \
+		emacs -Q --batch index.org -l ./macro.el -f org-html-export-to-html; \
 		mv -f index.html "$(GH_PAGES_DIR)/index.html"; \
 		rm -f index.org; \
 	fi;
 	if [ -f "README.org" ]; \
 	then \
-		emacs -Q --batch README.org -l seq -f org-org-export-to-org; \
+		emacs -Q --batch README.org -l ./macro.el -f org-org-export-to-org; \
 		mv -f README.org.org index.org; \
 		rm -f README.org; \
 	fi;
@@ -57,7 +57,7 @@ pages: mkdirs pages-deps
 	@$(BATCH) --eval "(progn\
 	$$load_paths\
 	(message \"%s\" load-path)\
-	(load-file \"pages.el\")\
+	(load-file \"main.el\")\
 	(pages-publish \"./\" \"$(GH_PAGES_DIR)/\" \"$(PUBLISH_PAGES_DIR)\")\
 	)"
 	for lang in `cat .supportLanguages`; \
