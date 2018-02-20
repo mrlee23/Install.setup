@@ -1,14 +1,47 @@
-#+INCLUDE: ./main.setup
+# Created 2018-02-20 Tue 16:54
+#+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: build-essential
-#+AUTHOR: Dongsoo Lee
-#+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
+#+AUTHOR: Dongsoo Lee
+#+MACRO: class @@html:<span class="lc-class">$1</span>@@
+#+MACRO: func @@html:<span class="lc-func">$1</span>@@
+#+MACRO: ret @@html:<span class="lc-ret">$1</span>@@
+#+MACRO: arg @@html:<span class="lc-arg">$1</span>@@
+#+MACRO: kwd @@html:<span class="lc-kwd">$1</span>@@
+#+MACRO: type @@html:<span class="lc-type">$1</span>@@
+#+MACRO: var @@html:<span class="lc-var">$1</span>@@
+#+MACRO: const @@html:<span class="lc-const">$1</span>@@
+#+MACRO: path @@html:<span class="lc-path">$1</span>@@
+#+MACRO: file @@html:<span class="lc-file">$1</span>@@
+
+#+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
+#+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
+#+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
+#+MACRO: META (eval (lc-macro/meta))
+
+#+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+#+HTML_HEAD: <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/my.css"/>
+
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+
+#+HTML_HEAD: <meta name="title" content="build-essential - 리눅스 명령어">
+#+HTML_HEAD: <meta name="description" content="">
+#+HTML_HEAD: <meta name="by" content="Dongsoo Lee">
+#+HTML_HEAD: <meta property="og:type" content="article">
+#+HTML_HEAD: <meta property="og:title" content="build-essential - 리눅스 명령어">
+#+HTML_HEAD: <meta property="og:description" content="">
+#+HTML_HEAD: <meta name="twitter:title" content="build-essential - 리눅스 명령어">
+#+HTML_HEAD: <meta name="twitter:description" content="">
 
 * 개요
-  :PROPERTIES: 
-  :CUSTOM_ID: overview
-  :LANG: ko
-  :END:      
 *build-essential* 은 소스코드 빌드 시 필요한 기본적인 패키지들을 다운로드 합니다.
 
 설치 후에는 gcc, g++, make, perl 등과 각종 라이브러리들이 설치됩니다.
@@ -16,35 +49,16 @@
 설치되는 패키지는 아래 *Installed packages* 를 참고하세요.
 
 * 설치 방법
-  :PROPERTIES: 
-  :CUSTOM_ID: how-to-install
-  :LANG: ko
-  :END:      
 
 ** 필요 사항
-   :PROPERTIES: 
-   :CUSTOM_ID: prerequisites
-   :LANG: ko
-   :END:      
-
-- [[./update.org][update]]
+- [[file:./update.org][update]]
 
 ** 설치
-  :PROPERTIES: 
-  :CUSTOM_ID: install
-  :LANG: ko
-  :END:      
-
 #+BEGIN_SRC sh
-$ sudo apt-get install -y build-essential
+  $ sudo apt-get install -y build-essential
 #+END_SRC
 
 ** 설치된 패키지
-   :PROPERTIES: 
-   :CUSTOM_ID: packages
-   :LANG: ko
-   :END:      
-
 - binutils
 - bzip2
 - cpp
@@ -53,7 +67,7 @@ $ sudo apt-get install -y build-essential
 - fakeroot
 - g++
 - g++-5
-- [[./gcc.org][gcc]]
+- [[file:./gcc.org][gcc]]
 - gcc-5
 - ifupdown
 - iproute2
@@ -90,7 +104,7 @@ $ sudo apt-get install -y build-essential
 - libubsan0
 - libxtables11
 - linux-libc-dev
-- [[./make.org][make]]
+- [[file:./make.org][make]]
 - manpages
 - manpages-dev
 - netbase
@@ -100,57 +114,13 @@ $ sudo apt-get install -y build-essential
 - rename
 
 ** 확인
-   :PROPERTIES: 
-   :CUSTOM_ID: check
-   :LANG: ko
-   :END:      
 
 * 사용법
-  :PROPERTIES: 
-  :CUSTOM_ID: usage
-  :LANG: ko
-  :END:      
 
 ** 구조
-   :PROPERTIES: 
-   :CUSTOM_ID: syntax
-   :LANG: ko
-   :END:      
 
 ** 설정
-   :PROPERTIES: 
-   :CUSTOM_ID: configuration
-   :LANG: ko
-   :END:      
 
 ** 옵션
-   :PROPERTIES: 
-   :CUSTOM_ID: options
-   :LANG: ko
-   :END:      
 
 ** 사용 예
-   :PROPERTIES: 
-   :CUSTOM_ID: examples
-   :LANG: ko
-   :END:      
-
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
-
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
