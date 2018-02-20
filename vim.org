@@ -2,38 +2,60 @@
 #+TITLE: vim
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-03 
+#+DATE: 2018-02-20
 
-* 필요조건
-  :PROPERTIES:
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
   :LANG: ko
-  :END:
+  :END:      
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
 - [[./update.org][update]]
 - [[./git.org][git]]
 
-* 설치 방법
-  :PROPERTIES:
-  :LANG: ko
-  :END:
-** Git
+*** from Source Code
 
-#+NAME: git-install_vim
 #+BEGIN_SRC sh
 $ git clone https://github.com/vim/vim.git
 $ cd vim/src
 $ make
 #+END_SRC
 
-** Ubuntu
-#+NAME: ubuntu-install_vim
+*** Ubuntu
 #+BEGIN_SRC sh
 $ apt-get install vim
 #+END_SRC
 
-* 확인 방법
-  :PROPERTIES:
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
   :LANG: ko
-  :END:
+  :END:      
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
 #+BEGIN_SRC sh
 $ vim --version
 #+END_SRC
@@ -78,8 +100,44 @@ Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -Wdate-time  -g -O2 -fPIE -fst
 Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm
 #+END_EXAMPLE
 
-* 참고
-  :PROPERTIES:
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
   :LANG: ko
-  :END:
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+** 설정
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: ko
+   :END:      
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+** 사용 예
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ko
+   :END:      
+
+* 관련 항목
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
+
+* 참고자료
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
+
 - [[http://www.vim.org/download.php]]

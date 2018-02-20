@@ -2,30 +2,50 @@
 #+TITLE: ruby
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-10 
+#+DATE: 2018-02-20
 
-* Prerequisites
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
 - [[./apt-add-repository.org][apt-add-repository]]
 
-* Install
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
 
-#+NAME: install_ruby
-#+BEGIN_SRC sh
-$ sudo apt-add-repository ppa:brightbox/ruby-ng
-$ sudo apt-get update
-$ sudo apt-get install ruby2.5 ruby-switch
-$ sudo ruby-switch --set ruby2.5
-$ sudo apt-get install ruby2.5-dev
-#+END_SRC
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
 
-* Packages
 - ruby
 - [[./gem.org][gem]]
 - rake
 
-* Check
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
 
-#+NAME: check_ruby
 #+BEGIN_SRC sh
 $ ruby -v
 ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-linux-gnu]
@@ -35,6 +55,45 @@ $ rake --version
 rake, version 10.5.0
 #+END_SRC
 
-* References
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+** 설정
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: ko
+   :END:      
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+** 사용 예
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ko
+   :END:      
+
+* 관련 항목
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
+
+* 참고자료
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
+
 - [[https://github.com/travis-ci/travis.rb/issues/391]]
 - [[https://www.ruby-lang.org/en/downloads/]]
