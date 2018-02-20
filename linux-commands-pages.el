@@ -34,8 +34,6 @@
 	  (setq filename source-filename))
 	(setq source-filename (org-multilingual-publish plist filename (file-name-directory filename)))
 	(lc-core/init-contents source-filename)
-	(message "%s" lc-core/current-contents-filename)
-	(message "%s" (not (lc-core/get-current-contents)))
 	(org-html-publish-to-html plist source-filename pub-dir)
 	))
 
