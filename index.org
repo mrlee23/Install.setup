@@ -1,8 +1,5 @@
-# Created 2018-02-20 Tue 17:12
-#+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
-#+TITLE: Linux Commands
-#+DATE: 2018-02-11
-#+AUTHOR: Dongsoo Lee
+
+
 #+MACRO: class @@html:<span class="lc-class">$1</span>@@
 #+MACRO: func @@html:<span class="lc-func">$1</span>@@
 #+MACRO: ret @@html:<span class="lc-ret">$1</span>@@
@@ -32,7 +29,19 @@
 #+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 
+#+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
+
+
+#+TITLE: Linux Commands
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-11
+
 * 소개
+:PROPERTIES:
+:LANG: ko
+:END:
+
 #+BEGIN_LANG
 운영체제 별 소프트웨어 설치 방법을 문서화하는 프로젝트입니다.
 
@@ -40,82 +49,87 @@
 #+END_LANG
 
 * 진행 상황
-| Name                                                  | Overview                                     | Install                                        | Usage                                     | Options                                     | See also                             |
-| [[file:./DNS.org][DNS]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./NIS.org][NIS]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./SELinux.org][SELinux]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./addbib.org][addbib]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./alias.org][alias]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./apt-add-repository.org][apt-add-repository]] | No                                           | [[file:apt-add-repository.org::#install][Yes]] | No                                        | No                                          | No                                   |
-| [[file:./apt.org][apt]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./autoconf.org][autoconf]]                     | No                                           | [[file:autoconf.org::#install][Yes]]           | No                                        | No                                          | No                                   |
-| [[file:./bash.org][bash]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./brew.org][brew]]                             | No                                           | [[file:brew.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./build-essential.org][build-essential]]       | [[file:build-essential.org::#overview][Yes]] | [[file:build-essential.org::#install][Yes]]    | [[file:build-essential.org::#usage][Yes]] | [[file:build-essential.org::#options][Yes]] | No                                   |
-| [[file:./cat.org][cat]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./chatter.org][chatter]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./chfn.org][chfn]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./chgrp.org][chgrp]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./chmod.org][chmod]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./chown.org][chown]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./chrome.org][chrome]]                         | No                                           | [[file:chrome.org::#install][Yes]]             | No                                        | No                                          | No                                   |
-| [[file:./chsh.org][chsh]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./curl.org][curl]]                             | No                                           | [[file:curl.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./dh-autoreconf.org][dh-autoreconf]]           | No                                           | [[file:dh-autoreconf.org::#install][Yes]]      | No                                        | No                                          | No                                   |
-| [[file:./diff.org][diff]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./docker-compose.org][docker-compose]]         | No                                           | [[file:docker-compose.org::#install][Yes]]     | No                                        | No                                          | No                                   |
-| [[file:./docker.org][docker]]                         | No                                           | [[file:docker.org::#install][Yes]]             | No                                        | No                                          | No                                   |
-| [[file:./dpkg.org][dpkg]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./echo.org][echo]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./emacs.org][emacs]]                           | No                                           | [[file:emacs.org::#install][Yes]]              | No                                        | No                                          | No                                   |
-| [[file:./find.org][find]]                             | No                                           | No                                             | [[file:find.org::#usage][Yes]]            | [[file:find.org::#options][Yes]]            | No                                   |
-| [[file:./finger.org][finger]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./fsck.org][fsck]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./gcc.org][gcc]]                               | No                                           | [[file:gcc.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./gem.org][gem]]                               | No                                           | [[file:gem.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./git.org][git]]                               | No                                           | [[file:git.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./groupadd.org][groupadd]]                     | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./hcitool.org][hcitool]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./hdparm.org][hdparm]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./insmod.org][insmod]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./iperf.org][iperf]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./iptables.org][iptables]]                     | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./java.org][java]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./javac.org][javac]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lilo.org][lilo]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lp.org][lp]]                                 | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lpc.org][lpc]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lpq.org][lpq]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lpr.org][lpr]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lprm.org][lprm]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lsattr.org][lsattr]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./lsof.org][lsof]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./make.org][make]]                             | No                                           | [[file:make.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./modprobe.org][modprobe]]                     | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./node.org][node]]                             | No                                           | [[file:node.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./npm.org][npm]]                               | No                                           | [[file:npm.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./passwd.org][passwd]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./pip.org][pip]]                               | No                                           | [[file:pip.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./postfix.org][postfix]]                       | No                                           | [[file:postfix.org::#install][Yes]]            | No                                        | No                                          | [[file:postfix.org::#seealso][Yes]]  |
-| [[file:./rpm.org][rpm]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./rsync.org][rsync]]                           | No                                           | [[file:rsync.org::#install][Yes]]              | No                                        | No                                          | No                                   |
-| [[file:./ruby.org][ruby]]                             | No                                           | [[file:ruby.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./samba.org][samba]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./sendmail.org][sendmail]]                     | No                                           | [[file:sendmail.org::#install][Yes]]           | No                                        | No                                          | No                                   |
-| [[file:./shutdown.org][shutdown]]                     | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./squid.org][squid]]                           | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./ssh.org][ssh]]                               | No                                           | [[file:ssh.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./sudo.org][sudo]]                             | No                                           | [[file:sudo.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./tail.org][tail]]                             | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./tar.org][tar]]                               | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./template.org][template]]                     | [[file:template.org::#overview][Yes]]        | [[file:template.org::#install][Yes]]           | [[file:template.org::#usage][Yes]]        | [[file:template.org::#options][Yes]]        | [[file:template.org::#seealso][Yes]] |
-| [[file:./travis.org][travis]]                         | No                                           | [[file:travis.org::#install][Yes]]             | No                                        | No                                          | No                                   |
-| [[file:./tripwire.org][tripwire]]                     | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./update.org][update]]                         | No                                           | [[file:update.org::#install][Yes]]             | No                                        | No                                          | [[file:update.org::#seealso][Yes]]   |
-| [[file:./useradd.org][useradd]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./userdel.org][userdel]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./usermod.org][usermod]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./vim.org][vim]]                               | No                                           | [[file:vim.org::#install][Yes]]                | No                                        | No                                          | No                                   |
-| [[file:./wget.org][wget]]                             | No                                           | [[file:wget.org::#install][Yes]]               | No                                        | No                                          | No                                   |
-| [[file:./xinetd.org][xinetd]]                         | No                                           | No                                             | No                                        | No                                          | No                                   |
-| [[file:./xmodmap.org][xmodmap]]                       | No                                           | No                                             | No                                        | No                                          | No                                   |
+:PROPERTIES:
+:CUSTOM_ID: progress
+:LANG: ko
+:END:
+
+| Name               | Overview | Install | Usage | Options | See also |
+| [[./DNS.org][DNS]]                | No       | No      | No    | No      | No       |
+| [[./NIS.org][NIS]]                | No       | No      | No    | No      | No       |
+| [[./SELinux.org][SELinux]]            | No       | No      | No    | No      | No       |
+| [[./addbib.org][addbib]]             | No       | No      | No    | No      | No       |
+| [[./alias.org][alias]]              | No       | No      | No    | No      | No       |
+| [[./apt-add-repository.org][apt-add-repository]] | No       | [[file:apt-add-repository.org::#install][Yes]]     | No    | No      | No       |
+| [[./apt.org][apt]]                | No       | No      | No    | No      | No       |
+| [[./autoconf.org][autoconf]]           | No       | [[file:autoconf.org::#install][Yes]]     | No    | No      | No       |
+| [[./bash.org][bash]]               | No       | No      | No    | No      | No       |
+| [[./brew.org][brew]]               | No       | [[file:brew.org::#install][Yes]]     | No    | No      | No       |
+| [[./build-essential.org][build-essential]]    | [[file:build-essential.org::#overview][Yes]]      | [[file:build-essential.org::#install][Yes]]     | [[file:build-essential.org::#usage][Yes]]   | [[file:build-essential.org::#options][Yes]]     | No       |
+| [[./cat.org][cat]]                | No       | No      | No    | No      | No       |
+| [[./chatter.org][chatter]]            | No       | No      | No    | No      | No       |
+| [[./chfn.org][chfn]]               | No       | No      | No    | No      | No       |
+| [[./chgrp.org][chgrp]]              | No       | No      | No    | No      | No       |
+| [[./chmod.org][chmod]]              | No       | No      | No    | No      | No       |
+| [[./chown.org][chown]]              | No       | No      | No    | No      | No       |
+| [[./chrome.org][chrome]]             | No       | [[file:chrome.org::#install][Yes]]     | No    | No      | No       |
+| [[./chsh.org][chsh]]               | No       | No      | No    | No      | No       |
+| [[./curl.org][curl]]               | No       | [[file:curl.org::#install][Yes]]     | No    | No      | No       |
+| [[./dh-autoreconf.org][dh-autoreconf]]      | No       | [[file:dh-autoreconf.org::#install][Yes]]     | No    | No      | No       |
+| [[./diff.org][diff]]               | No       | No      | No    | No      | No       |
+| [[./docker-compose.org][docker-compose]]     | No       | [[file:docker-compose.org::#install][Yes]]     | No    | No      | No       |
+| [[./docker.org][docker]]             | No       | [[file:docker.org::#install][Yes]]     | No    | No      | No       |
+| [[./dpkg.org][dpkg]]               | No       | No      | No    | No      | No       |
+| [[./echo.org][echo]]               | No       | No      | No    | No      | No       |
+| [[./emacs.org][emacs]]              | No       | [[file:emacs.org::#install][Yes]]     | No    | No      | No       |
+| [[./find.org][find]]               | No       | No      | [[file:find.org::#usage][Yes]]   | [[file:find.org::#options][Yes]]     | No       |
+| [[./finger.org][finger]]             | No       | No      | No    | No      | No       |
+| [[./fsck.org][fsck]]               | No       | No      | No    | No      | No       |
+| [[./gcc.org][gcc]]                | No       | [[file:gcc.org::#install][Yes]]     | No    | No      | No       |
+| [[./gem.org][gem]]                | No       | [[file:gem.org::#install][Yes]]     | No    | No      | No       |
+| [[./git.org][git]]                | No       | [[file:git.org::#install][Yes]]     | No    | No      | No       |
+| [[./groupadd.org][groupadd]]           | No       | No      | No    | No      | No       |
+| [[./hcitool.org][hcitool]]            | No       | No      | No    | No      | No       |
+| [[./hdparm.org][hdparm]]             | No       | No      | No    | No      | No       |
+| [[./insmod.org][insmod]]             | No       | No      | No    | No      | No       |
+| [[./iperf.org][iperf]]              | No       | No      | No    | No      | No       |
+| [[./iptables.org][iptables]]           | No       | No      | No    | No      | No       |
+| [[./java.org][java]]               | No       | No      | No    | No      | No       |
+| [[./javac.org][javac]]              | No       | No      | No    | No      | No       |
+| [[./lilo.org][lilo]]               | No       | No      | No    | No      | No       |
+| [[./lp.org][lp]]                 | No       | No      | No    | No      | No       |
+| [[./lpc.org][lpc]]                | No       | No      | No    | No      | No       |
+| [[./lpq.org][lpq]]                | No       | No      | No    | No      | No       |
+| [[./lpr.org][lpr]]                | No       | No      | No    | No      | No       |
+| [[./lprm.org][lprm]]               | No       | No      | No    | No      | No       |
+| [[./lsattr.org][lsattr]]             | No       | No      | No    | No      | No       |
+| [[./lsof.org][lsof]]               | No       | No      | No    | No      | No       |
+| [[./make.org][make]]               | No       | [[file:make.org::#install][Yes]]     | No    | No      | No       |
+| [[./modprobe.org][modprobe]]           | No       | No      | No    | No      | No       |
+| [[./node.org][node]]               | No       | [[file:node.org::#install][Yes]]     | No    | No      | No       |
+| [[./npm.org][npm]]                | No       | [[file:npm.org::#install][Yes]]     | No    | No      | No       |
+| [[./passwd.org][passwd]]             | No       | No      | No    | No      | No       |
+| [[./pip.org][pip]]                | No       | [[file:pip.org::#install][Yes]]     | No    | No      | No       |
+| [[./postfix.org][postfix]]            | No       | [[file:postfix.org::#install][Yes]]     | No    | No      | [[file:postfix.org::#seealso][Yes]]      |
+| [[./rpm.org][rpm]]                | No       | No      | No    | No      | No       |
+| [[./rsync.org][rsync]]              | No       | [[file:rsync.org::#install][Yes]]     | No    | No      | No       |
+| [[./ruby.org][ruby]]               | No       | [[file:ruby.org::#install][Yes]]     | No    | No      | No       |
+| [[./samba.org][samba]]              | No       | No      | No    | No      | No       |
+| [[./sendmail.org][sendmail]]           | No       | [[file:sendmail.org::#install][Yes]]     | No    | No      | No       |
+| [[./shutdown.org][shutdown]]           | No       | No      | No    | No      | No       |
+| [[./squid.org][squid]]              | No       | No      | No    | No      | No       |
+| [[./ssh.org][ssh]]                | No       | [[file:ssh.org::#install][Yes]]     | No    | No      | No       |
+| [[./sudo.org][sudo]]               | No       | [[file:sudo.org::#install][Yes]]     | No    | No      | No       |
+| [[./tail.org][tail]]               | No       | No      | No    | No      | No       |
+| [[./tar.org][tar]]                | No       | No      | No    | No      | No       |
+| [[./template.org][template]]           | [[file:template.org::#overview][Yes]]      | [[file:template.org::#install][Yes]]     | [[file:template.org::#usage][Yes]]   | [[file:template.org::#options][Yes]]     | [[file:template.org::#seealso][Yes]]      |
+| [[./travis.org][travis]]             | No       | [[file:travis.org::#install][Yes]]     | No    | No      | No       |
+| [[./tripwire.org][tripwire]]           | No       | No      | No    | No      | No       |
+| [[./update.org][update]]             | No       | [[file:update.org::#install][Yes]]     | No    | No      | [[file:update.org::#seealso][Yes]]      |
+| [[./useradd.org][useradd]]            | No       | No      | No    | No      | No       |
+| [[./userdel.org][userdel]]            | No       | No      | No    | No      | No       |
+| [[./usermod.org][usermod]]            | No       | No      | No    | No      | No       |
+| [[./vim.org][vim]]                | No       | [[file:vim.org::#install][Yes]]     | No    | No      | No       |
+| [[./wget.org][wget]]               | No       | [[file:wget.org::#install][Yes]]     | No    | No      | No       |
+| [[./xinetd.org][xinetd]]             | No       | No      | No    | No      | No       |
+| [[./xmodmap.org][xmodmap]]            | No       | No      | No    | No      | No       |
