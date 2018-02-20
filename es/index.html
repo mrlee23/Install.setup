@@ -1,0 +1,3596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2018-02-20 Tue 13:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux Commands</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/my.css"/>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linux Commands</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1963327">Introducción</a>
+<ul>
+<li><a href="#progress">Progreso</a></li>
+</ul>
+</li>
+<li><a href="#commands">Comando</a>
+<ul>
+<li><a href="#org4bf579c">DNS</a></li>
+<li><a href="#orgcd8b434">NIS</a></li>
+<li><a href="#orge816062">SELinux</a></li>
+<li><a href="#orgac5c515">addbib</a></li>
+<li><a href="#orgb2855dc">alias</a></li>
+<li><a href="#org5f7fe32">apt-add-repository</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfda08f3">apt</a></li>
+<li><a href="#org760360c">autoconf</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org47d0fb9">bash</a></li>
+<li><a href="#org30d1d81">brew</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#orga4bdeab">build-essential</a>
+<ul>
+<li><a href="#overview">Visión de conjunto</a></li>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#usage">Uso</a>
+<ul>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#configuration">Configuración</a></li>
+<li><a href="#options">Opciones</a></li>
+<li><a href="#examples">Ejemplos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org614c151">cat</a></li>
+<li><a href="#org8859da7">chatter</a></li>
+<li><a href="#orgf40ec5d">chfn</a></li>
+<li><a href="#org90b5eb8">chgrp</a></li>
+<li><a href="#org0dd58c0">chmod</a></li>
+<li><a href="#org1e5ed65">chown</a></li>
+<li><a href="#org1ab0c10">chrome</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org584000a">chsh</a></li>
+<li><a href="#org7d808e8">curl</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org61d66f1">dh-autoreconf</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7d6f87c">diff</a></li>
+<li><a href="#orgfe037d2">docker-compose</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#uninstall">Desinstalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org75fd3c1">docker</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#org7f5d3d5">Ubuntu 16.04 ~</a></li>
+<li><a href="#orgcd4ae59">Mac</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#orgf7df2c1">dpkg</a></li>
+<li><a href="#org567bfc2">echo</a></li>
+<li><a href="#orgb37fd02">emacs</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org5788424">find</a>
+<ul>
+<li><a href="#usage">Uso</a>
+<ul>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#configuration">Configuración</a></li>
+<li><a href="#options">Opciones</a></li>
+<li><a href="#examples">Ejemplos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org24adfb3">finger</a></li>
+<li><a href="#org47b6a5e">fsck</a></li>
+<li><a href="#org36fdb78">gcc</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org024ea22">gem</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org57a1245">git</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#orga15c9e2">groupadd</a></li>
+<li><a href="#orgdafb8c0">hcitool</a></li>
+<li><a href="#org5f555d6">hdparm</a></li>
+<li><a href="#org495d7a6">insmod</a></li>
+<li><a href="#orge1b2226">iperf</a></li>
+<li><a href="#org7190368">iptables</a></li>
+<li><a href="#org436b940">java</a></li>
+<li><a href="#orgd64f860">javac</a></li>
+<li><a href="#org2a7e6a3">lilo</a></li>
+<li><a href="#org0467f6a">lp</a></li>
+<li><a href="#org43b0f48">lpc</a></li>
+<li><a href="#org6d00ac0">lpq</a></li>
+<li><a href="#orgceb63dc">lpr</a></li>
+<li><a href="#org6f6d0aa">lprm</a></li>
+<li><a href="#orgd359490">lsattr</a></li>
+<li><a href="#orgccb632c">lsof</a></li>
+<li><a href="#orgab158c1">make</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfac2f76">modprobe</a></li>
+<li><a href="#org4b886f5">node</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org90040d5">npm</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8627f47">passwd</a></li>
+<li><a href="#org7b1b934">pip</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6fee52e">postfix</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#orge28e961">Setup</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#seealso">Ver también</a></li>
+</ul>
+</li>
+<li><a href="#orgd6cd24a">rpm</a></li>
+<li><a href="#org32ac11b">rsync</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#orgc189941">ruby</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#orga8a24c8">samba</a></li>
+<li><a href="#org8fe3b78">sendmail</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgcae3605">shutdown</a></li>
+<li><a href="#org6f37618">squid</a></li>
+<li><a href="#orgfc3c908">ssh</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org69b3343">sudo</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org28d83c5">tail</a></li>
+<li><a href="#org6353cce">tar</a></li>
+<li><a href="#org9c3b277">template</a>
+<ul>
+<li><a href="#overview">Visión de conjunto</a></li>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#usage">Uso</a>
+<ul>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#configuration">Configuración</a></li>
+<li><a href="#options">Opciones</a></li>
+<li><a href="#examples">Ejemplos</a></li>
+</ul>
+</li>
+<li><a href="#seealso">Ver también</a></li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org36a3408">travis</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8b14b20">tripwire</a></li>
+<li><a href="#org7bc8af2">update</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#seealso">Ver también</a></li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org37b679d">useradd</a></li>
+<li><a href="#org0af9c8c">userdel</a></li>
+<li><a href="#orgc7042a5">usermod</a></li>
+<li><a href="#orgf4105e9">vim</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</li>
+<li><a href="#org9002943">wget</a>
+<ul>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#install">instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf5a0c41">xinetd</a></li>
+<li><a href="#org65ad469">xmodmap</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1963327" class="outline-2">
+<h2 id="org1963327">Introducción</h2>
+<div class="outline-text-2" id="text-org1963327">
+<div class="LANG">
+<p>
+운영체제 별 소프트웨어 설치 방법을 문서화하는 프로젝트입니다.
+</p>
+
+<p>
+각 소프트웨어 별로 설치하기 전해 진행해야 하는 것 부터 설치 방법, 설치 후 간단한 설정 및 실행 방법 및 옵션 설명 까지가 이 프로젝트의 기술 범위입니다.
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org77fc40d" class="outline-3">
+<h3 id="progress"><a id="org77fc40d"></a>Progreso</h3>
+<div class="outline-text-3" id="text-progress">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Name</td>
+<td class="org-left">Overview</td>
+<td class="org-left">Install</td>
+<td class="org-left">Usage</td>
+<td class="org-left">Options</td>
+<td class="org-left">See also</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./DNS.html">DNS</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./NIS.html">NIS</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./SELinux.html">SELinux</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./addbib.html">addbib</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./alias.html">alias</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./apt-add-repository.html">apt-add-repository</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="apt-add-repository.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./apt.html">apt</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./autoconf.html">autoconf</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="autoconf.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./bash.html">bash</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./brew.html">brew</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="brew.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./build-essential.html">build-essential</a></td>
+<td class="org-left"><a href="build-essential.html#overview">Yes</a></td>
+<td class="org-left"><a href="build-essential.html#install">Yes</a></td>
+<td class="org-left"><a href="build-essential.html#usage">Yes</a></td>
+<td class="org-left"><a href="build-essential.html#options">Yes</a></td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./cat.html">cat</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chatter.html">chatter</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chfn.html">chfn</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chgrp.html">chgrp</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chmod.html">chmod</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chown.html">chown</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chrome.html">chrome</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="chrome.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./chsh.html">chsh</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./curl.html">curl</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="curl.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./dh-autoreconf.html">dh-autoreconf</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="dh-autoreconf.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./diff.html">diff</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./docker-compose.html">docker-compose</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="docker-compose.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./docker.html">docker</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="docker.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./dpkg.html">dpkg</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./echo.html">echo</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./emacs.html">emacs</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="emacs.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./find.html">find</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="find.html#usage">Yes</a></td>
+<td class="org-left"><a href="find.html#options">Yes</a></td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./finger.html">finger</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./fsck.html">fsck</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./gcc.html">gcc</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="gcc.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./gem.html">gem</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="gem.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./git.html">git</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="git.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./groupadd.html">groupadd</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./hcitool.html">hcitool</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./hdparm.html">hdparm</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./insmod.html">insmod</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./iperf.html">iperf</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./iptables.html">iptables</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./java.html">java</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./javac.html">javac</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lilo.html">lilo</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lp.html">lp</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lpc.html">lpc</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lpq.html">lpq</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lpr.html">lpr</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lprm.html">lprm</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lsattr.html">lsattr</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./lsof.html">lsof</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./make.html">make</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="make.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./modprobe.html">modprobe</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./node.html">node</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="node.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./npm.html">npm</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="npm.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./passwd.html">passwd</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./pip.html">pip</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="pip.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./postfix.html">postfix</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="postfix.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="postfix.html#seealso">Yes</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./rpm.html">rpm</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./rsync.html">rsync</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="rsync.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./ruby.html">ruby</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="ruby.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./samba.html">samba</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./sendmail.html">sendmail</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="sendmail.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./shutdown.html">shutdown</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./squid.html">squid</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./ssh.html">ssh</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="ssh.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./sudo.html">sudo</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="sudo.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./tail.html">tail</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./tar.html">tar</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./template.html">template</a></td>
+<td class="org-left"><a href="template.html#overview">Yes</a></td>
+<td class="org-left"><a href="template.html#install">Yes</a></td>
+<td class="org-left"><a href="template.html#usage">Yes</a></td>
+<td class="org-left"><a href="template.html#options">Yes</a></td>
+<td class="org-left"><a href="template.html#seealso">Yes</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./travis.html">travis</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="travis.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./tripwire.html">tripwire</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./update.html">update</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="update.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="update.html#seealso">Yes</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./useradd.html">useradd</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./userdel.html">userdel</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./usermod.html">usermod</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./vim.html">vim</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="vim.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./wget.html">wget</a></td>
+<td class="org-left">No</td>
+<td class="org-left"><a href="wget.html#install">Yes</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./xinetd.html">xinetd</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="./xmodmap.html">xmodmap</a></td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5adabf1" class="outline-2">
+<h2 id="commands"><a id="org5adabf1"></a>Comando</h2>
+<div class="outline-text-2" id="text-commands">
+</div>
+
+<div id="outline-container-org4bf579c" class="outline-3">
+<h3 id="org4bf579c">DNS</h3>
+<div class="outline-text-3" id="text-org4bf579c">
+</div>
+</div>
+<div id="outline-container-orgcd8b434" class="outline-3">
+<h3 id="orgcd8b434">NIS</h3>
+<div class="outline-text-3" id="text-orgcd8b434">
+</div>
+</div>
+<div id="outline-container-orge816062" class="outline-3">
+<h3 id="orge816062">SELinux</h3>
+<div class="outline-text-3" id="text-orge816062">
+</div>
+</div>
+<div id="outline-container-orgac5c515" class="outline-3">
+<h3 id="orgac5c515">addbib</h3>
+<div class="outline-text-3" id="text-orgac5c515">
+</div>
+</div>
+<div id="outline-container-orgb2855dc" class="outline-3">
+<h3 id="orgb2855dc">alias</h3>
+<div class="outline-text-3" id="text-orgb2855dc">
+</div>
+</div>
+<div id="outline-container-org5f7fe32" class="outline-3">
+<h3 id="org5f7fe32">apt-add-repository</h3>
+<div class="outline-text-3" id="text-org5f7fe32">
+</div>
+
+<div id="outline-container-orgf986806" class="outline-4">
+<h4 id="how-to-install"><a id="orgf986806"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org06481d9" class="outline-5">
+<h5 id="prerequisites"><a id="org06481d9"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf5c74f8" class="outline-5">
+<h5 id="install"><a id="orgf5c74f8"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ apt-get install -y software-properties-common python-software-properties
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org06872a2" class="outline-5">
+<h5 id="packages"><a id="org06872a2"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org2f5b7f0" class="outline-5">
+<h5 id="check"><a id="org2f5b7f0"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfda08f3" class="outline-3">
+<h3 id="orgfda08f3">apt</h3>
+<div class="outline-text-3" id="text-orgfda08f3">
+</div>
+</div>
+<div id="outline-container-org760360c" class="outline-3">
+<h3 id="org760360c">autoconf</h3>
+<div class="outline-text-3" id="text-org760360c">
+</div>
+
+<div id="outline-container-org2ae0715" class="outline-4">
+<h4 id="how-to-install"><a id="org2ae0715"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org3dc2ba2" class="outline-5">
+<h5 id="prerequisites"><a id="org3dc2ba2"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgc674a43" class="outline-5">
+<h5 id="install"><a id="orgc674a43"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install autoconf
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf348fb3" class="outline-5">
+<h5 id="packages"><a id="orgf348fb3"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orga311244" class="outline-5">
+<h5 id="check"><a id="orga311244"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org47d0fb9" class="outline-3">
+<h3 id="org47d0fb9">bash</h3>
+<div class="outline-text-3" id="text-org47d0fb9">
+</div>
+</div>
+<div id="outline-container-org30d1d81" class="outline-3">
+<h3 id="org30d1d81">brew</h3>
+<div class="outline-text-3" id="text-org30d1d81">
+</div>
+
+<div id="outline-container-orgd68168d" class="outline-4">
+<h4 id="how-to-install"><a id="orgd68168d"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgd1ad2cc" class="outline-5">
+<h5 id="prerequisites"><a id="orgd1ad2cc"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-org2135ecc" class="outline-5">
+<h5 id="install"><a id="org2135ecc"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="org597ef46"></a>Mac OS<br /><div class="outline-text-6" id="text-org597ef46">
+<div class="org-src-container">
+<pre class="src src-sh">$ /usr/bin/ruby -e <span style="font-style: italic;">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span>
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-orgb6b0856" class="outline-5">
+<h5 id="packages"><a id="orgb6b0856"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org9806179" class="outline-5">
+<h5 id="check"><a id="org9806179"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org28bb6be" class="outline-4">
+<h4 id="references"><a id="org28bb6be"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="https://brew.sh/">https://brew.sh/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga4bdeab" class="outline-3">
+<h3 id="orga4bdeab">build-essential</h3>
+<div class="outline-text-3" id="text-orga4bdeab">
+</div><div id="outline-container-orgcc7d8c0" class="outline-4">
+<h4 id="overview"><a id="orgcc7d8c0"></a>Visión de conjunto</h4>
+<div class="outline-text-4" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-org2f26aa5" class="outline-4">
+<h4 id="how-to-install"><a id="org2f26aa5"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org2638c75" class="outline-5">
+<h5 id="prerequisites"><a id="org2638c75"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4437c94" class="outline-5">
+<h5 id="install"><a id="org4437c94"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install -y build-essential
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf5fbb8" class="outline-5">
+<h5 id="packages"><a id="orgdf5fbb8"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+<ul class="org-ul">
+<li>binutils</li>
+<li>bzip2</li>
+<li>cpp</li>
+<li>cpp-5</li>
+<li>dpkg-dev</li>
+<li>fakeroot</li>
+<li>g++</li>
+<li>g++-5</li>
+<li><a href="./gcc.html">gcc</a></li>
+<li>gcc-5</li>
+<li>ifupdown</li>
+<li>iproute2</li>
+<li>isc-dhcp-client</li>
+<li>isc-dhcp-common</li>
+<li>libalgorithm-diff-perl</li>
+<li>libalgorithm-diff-xs-perl</li>
+<li>libalgorithm-merge-perl</li>
+<li>libasan2</li>
+<li>libatm1</li>
+<li>libatomic1</li>
+<li>libc-dev-bin</li>
+<li>libc6-dev</li>
+<li>libcc1-0</li>
+<li>libcilkrts5</li>
+<li>libdns-export162</li>
+<li>libdpkg-perl</li>
+<li>libfakeroot</li>
+<li>libfile-fcntllock-perl</li>
+<li>libgcc-5-dev</li>
+<li>libgdbm3</li>
+<li>libisc-export160</li>
+<li>libisl15</li>
+<li>libitm1</li>
+<li>liblsan0</li>
+<li>libmnl0</li>
+<li>libmpc3</li>
+<li>libmpfr4</li>
+<li>libmpx0</li>
+<li>libperl5.22</li>
+<li>libquadmath0</li>
+<li>libstdc++-5-dev</li>
+<li>libtsan0</li>
+<li>libubsan0</li>
+<li>libxtables11</li>
+<li>linux-libc-dev</li>
+<li><a href="./make.html">make</a></li>
+<li>manpages</li>
+<li>manpages-dev</li>
+<li>netbase</li>
+<li>patch</li>
+<li>perl</li>
+<li>perl-modules-5.22</li>
+<li>rename</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge2b4e2b" class="outline-5">
+<h5 id="check"><a id="orge2b4e2b"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45564fb" class="outline-4">
+<h4 id="usage"><a id="org45564fb"></a>Uso</h4>
+<div class="outline-text-4" id="text-usage">
+</div>
+
+<div id="outline-container-org596896f" class="outline-5">
+<h5 id="syntax"><a id="org596896f"></a>Sintaxis</h5>
+<div class="outline-text-5" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-orgeb70739" class="outline-5">
+<h5 id="configuration"><a id="orgeb70739"></a>Configuración</h5>
+<div class="outline-text-5" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org42074e8" class="outline-5">
+<h5 id="options"><a id="org42074e8"></a>Opciones</h5>
+<div class="outline-text-5" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org6008217" class="outline-5">
+<h5 id="examples"><a id="org6008217"></a>Ejemplos</h5>
+<div class="outline-text-5" id="text-examples">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org614c151" class="outline-3">
+<h3 id="org614c151">cat</h3>
+<div class="outline-text-3" id="text-org614c151">
+</div>
+</div>
+<div id="outline-container-org8859da7" class="outline-3">
+<h3 id="org8859da7">chatter</h3>
+<div class="outline-text-3" id="text-org8859da7">
+</div>
+</div>
+<div id="outline-container-orgf40ec5d" class="outline-3">
+<h3 id="orgf40ec5d">chfn</h3>
+<div class="outline-text-3" id="text-orgf40ec5d">
+</div>
+</div>
+<div id="outline-container-org90b5eb8" class="outline-3">
+<h3 id="org90b5eb8">chgrp</h3>
+<div class="outline-text-3" id="text-org90b5eb8">
+</div>
+</div>
+<div id="outline-container-org0dd58c0" class="outline-3">
+<h3 id="org0dd58c0">chmod</h3>
+<div class="outline-text-3" id="text-org0dd58c0">
+</div>
+</div>
+<div id="outline-container-org1e5ed65" class="outline-3">
+<h3 id="org1e5ed65">chown</h3>
+<div class="outline-text-3" id="text-org1e5ed65">
+</div>
+</div>
+<div id="outline-container-org1ab0c10" class="outline-3">
+<h3 id="org1ab0c10">chrome</h3>
+<div class="outline-text-3" id="text-org1ab0c10">
+</div>
+
+<div id="outline-container-orgb5e5356" class="outline-4">
+<h4 id="how-to-install"><a id="orgb5e5356"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orga36d36c" class="outline-5">
+<h5 id="prerequisites"><a id="orga36d36c"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./wget.html">wget</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcdcb29d" class="outline-5">
+<h5 id="install"><a id="orgcdcb29d"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+$ sudo apt-get install gdebi
+$ gdebi google-chrome-stable_current_amd64.deb
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60a81ff" class="outline-5">
+<h5 id="packages"><a id="org60a81ff"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org55f0c3e" class="outline-5">
+<h5 id="check"><a id="org55f0c3e"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org895fb49" class="outline-4">
+<h4 id="references"><a id="org895fb49"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="https://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04">askubuntu 참고</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org584000a" class="outline-3">
+<h3 id="org584000a">chsh</h3>
+<div class="outline-text-3" id="text-org584000a">
+</div>
+</div>
+<div id="outline-container-org7d808e8" class="outline-3">
+<h3 id="org7d808e8">curl</h3>
+<div class="outline-text-3" id="text-org7d808e8">
+</div>
+
+<div id="outline-container-orgc518e25" class="outline-4">
+<h4 id="how-to-install"><a id="orgc518e25"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org9d404d4" class="outline-5">
+<h5 id="prerequisites"><a id="org9d404d4"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-org79f7675" class="outline-5">
+<h5 id="install"><a id="org79f7675"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install curl
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6f9cf5" class="outline-5">
+<h5 id="packages"><a id="orge6f9cf5"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orga4c4984" class="outline-5">
+<h5 id="check"><a id="orga4c4984"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org61d66f1" class="outline-3">
+<h3 id="org61d66f1">dh-autoreconf</h3>
+<div class="outline-text-3" id="text-org61d66f1">
+</div>
+
+<div id="outline-container-org1bc9da7" class="outline-4">
+<h4 id="how-to-install"><a id="org1bc9da7"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org8580eb8" class="outline-5">
+<h5 id="prerequisites"><a id="org8580eb8"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./autoconf.html">autoconf</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org247af6b" class="outline-5">
+<h5 id="install"><a id="org247af6b"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install dh-autoreconf
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7059dbe" class="outline-5">
+<h5 id="packages"><a id="org7059dbe"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgdbe8f45" class="outline-5">
+<h5 id="check"><a id="orgdbe8f45"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7d6f87c" class="outline-3">
+<h3 id="org7d6f87c">diff</h3>
+<div class="outline-text-3" id="text-org7d6f87c">
+</div>
+</div>
+<div id="outline-container-orgfe037d2" class="outline-3">
+<h3 id="orgfe037d2">docker-compose</h3>
+<div class="outline-text-3" id="text-orgfe037d2">
+</div>
+
+<div id="outline-container-org1dbb2e3" class="outline-4">
+<h4 id="how-to-install"><a id="org1dbb2e3"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orge50a71d" class="outline-5">
+<h5 id="prerequisites"><a id="orge50a71d"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./docker.html">docker</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6567e73" class="outline-5">
+<h5 id="install"><a id="org6567e73"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
+$ sudo chmod +x /usr/local/bin/docker-compose
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org631b33d" class="outline-5">
+<h5 id="uninstall"><a id="org631b33d"></a>Desinstalar</h5>
+<div class="outline-text-5" id="text-uninstall">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo rm /usr/local/bin/docker-compose
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
+$ pip uninstall docker-compose
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbdf768d" class="outline-5">
+<h5 id="packages"><a id="orgbdf768d"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgfd58c09" class="outline-5">
+<h5 id="check"><a id="orgfd58c09"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ docker-compose --version
+docker-compose version 1.18.0, build 8dd22a9
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org80b11e3" class="outline-4">
+<h4 id="references"><a id="org80b11e3"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="./docker-command-completion.html">docker-command-completion</a></li>
+<li><a href="https://docs.docker.com/compose/install/#install-compose">Docker Compose Install(Offical)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org75fd3c1" class="outline-3">
+<h3 id="org75fd3c1">docker</h3>
+<div class="outline-text-3" id="text-org75fd3c1">
+</div>
+
+<div id="outline-container-org6606701" class="outline-4">
+<h4 id="how-to-install"><a id="org6606701"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org8b6eb9d" class="outline-5">
+<h5 id="prerequisites"><a id="org8b6eb9d"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgdfbc011" class="outline-5">
+<h5 id="install"><a id="orgdfbc011"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+</div>
+
+<div id="outline-container-org7f5d3d5" class="outline-5">
+<h5 id="org7f5d3d5">Ubuntu 16.04 ~</h5>
+<div class="outline-text-5" id="text-org7f5d3d5">
+</div><ul class="org-ul"><li><a id="org38481c2"></a>Update repository<br /><div class="outline-text-6" id="text-org38481c2">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgca96502"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+$ sudo apt-get remove docker docker-engine docker.io
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
+$ sudo apt-get install <span style="font-style: italic;">\</span>
+    apt-transport-https <span style="font-style: italic;">\</span>
+    ca-certificates <span style="font-style: italic;">\</span>
+    curl <span style="font-style: italic;">\</span>
+    software-properties-common
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add Docker's official GPG key</span>
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+$ sudo apt-key fingerprint 0EBFCD88
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgdd036fe"></a>Based on architectures<br /><ul class="org-ul"><li><a id="orgc10f48b"></a>x86_64 / amd64<br /><div class="outline-text-7" id="text-orgc10f48b">
+<div class="org-src-container">
+<pre class="src src-sh" id="org5f9aec0">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+   <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
+<span style="font-style: italic;">   $(lsb_release -cs) \</span>
+<span style="font-style: italic;">   stable"</span>
+</pre>
+</div>
+</div></li>
+
+<li><a id="org69a504e"></a>armhf<br /><div class="outline-text-7" id="text-org69a504e">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgb9cd9d4">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+   <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
+<span style="font-style: italic;">   $(lsb_release -cs) \</span>
+<span style="font-style: italic;">   stable"</span>
+</pre>
+</div>
+</div></li>
+
+<li><a id="org7dc8706"></a>IBM Power<br /><div class="outline-text-7" id="text-org7dc8706">
+<div class="org-src-container">
+<pre class="src src-sh" id="org7d72d7d">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+   <span style="font-style: italic;">"deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \</span>
+<span style="font-style: italic;">   $(lsb_release -cs) \</span>
+<span style="font-style: italic;">   stable"</span>
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgdeac96e"></a>IBM Z (s390x)<br /><div class="outline-text-7" id="text-orgdeac96e">
+<div class="org-src-container">
+<pre class="src src-sh" id="org3caa053">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+   <span style="font-style: italic;">"deb [arch=s390x] https://download.docker.com/linux/ubuntu \</span>
+<span style="font-style: italic;">   $(lsb_release -cs) \</span>
+<span style="font-style: italic;">   stable"</span>
+</pre>
+</div>
+</div></li></ul></li>
+<li><a id="org2603c51"></a>Install Docker-CE<br /><div class="outline-text-6" id="text-org2603c51">
+<div class="org-src-container">
+<pre class="src src-sh" id="org7e0c7c5">$ sudo apt-get install docker-ce
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-orgcd4ae59" class="outline-5">
+<h5 id="orgcd4ae59">Mac</h5>
+<div class="outline-text-5" id="text-orgcd4ae59">
+<ul class="org-ul">
+<li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc15c381" class="outline-5">
+<h5 id="packages"><a id="orgc15c381"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgb07a26c" class="outline-5">
+<h5 id="check"><a id="orgb07a26c"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo docker run hello-world
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ca5da3" class="outline-4">
+<h4 id="references"><a id="org5ca5da3"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
+<li><a href="https://docs.docker.com/install/">Install Docker(Offical)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf7df2c1" class="outline-3">
+<h3 id="orgf7df2c1">dpkg</h3>
+<div class="outline-text-3" id="text-orgf7df2c1">
+</div>
+</div>
+<div id="outline-container-org567bfc2" class="outline-3">
+<h3 id="org567bfc2">echo</h3>
+<div class="outline-text-3" id="text-org567bfc2">
+</div>
+</div>
+<div id="outline-container-orgb37fd02" class="outline-3">
+<h3 id="orgb37fd02">emacs</h3>
+<div class="outline-text-3" id="text-orgb37fd02">
+</div>
+
+<div id="outline-container-org4b1af17" class="outline-4">
+<h4 id="how-to-install"><a id="org4b1af17"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org0186a82" class="outline-5">
+<h5 id="prerequisites"><a id="org0186a82"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+
+<ul class="org-ul"><li><a id="org1e1ddd6"></a>Ubuntu<br /><div class="outline-text-6" id="text-org1e1ddd6">
+<ul class="org-ul">
+<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
+</ul>
+</div></li>
+
+<li><a id="orgc5ddea8"></a>Mac OS<br /><div class="outline-text-6" id="text-orgc5ddea8">
+<ul class="org-ul">
+<li><a href="./brew.html">brew</a></li>
+</ul>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org5dcb78c" class="outline-5">
+<h5 id="install"><a id="org5dcb78c"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="org3837534"></a>Ubuntu<br /><ul class="org-ul"><li><a id="org1e3fe96"></a>Emacs 25<br /><div class="outline-text-7" id="text-org1e3fe96">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgde138cd">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+$ sudo apt update
+$ sudo apt install emacs25
+</pre>
+</div>
+</div></li></ul></li>
+
+<li><a id="orgb9545d1"></a>Mac OS<br /><div class="outline-text-6" id="text-orgb9545d1">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgaa7cdb0">$ brew install emacs
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org6faf403" class="outline-5">
+<h5 id="packages"><a id="org6faf403"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+<ul class="org-ul">
+<li>aspell</li>
+<li>aspell-en</li>
+<li>dictionaries-common</li>
+<li>emacs25-bin-common</li>
+<li>emacs25-common</li>
+<li>emacs25-el</li>
+<li>emacsen-common</li>
+<li>enchant</li>
+<li>ghostscript</li>
+<li>gsfonts</li>
+<li>gstreamer1.0-plugins-base</li>
+<li>gstreamer1.0-plugins-good</li>
+<li>gstreamer1.0-x</li>
+<li>hunspell-en-us</li>
+<li>imagemagick-common</li>
+<li>libaa1</li>
+<li>libasound2</li>
+<li>libasound2-data</li>
+<li>libaspell15</li>
+<li>libavc1394-0</li>
+<li>libcaca0</li>
+<li>libcdparanoia0</li>
+<li>libcupsfilters1</li>
+<li>libcupsimage2</li>
+<li>libdv4</li>
+<li>libenchant1c2a</li>
+<li>libfftw3-double3</li>
+<li>libflac8</li>
+<li>libfribidi0</li>
+<li>libgeoclue0</li>
+<li>libgif7</li>
+<li>libgl1-mesa-glx</li>
+<li>libgpm2</li>
+<li>libgs9</li>
+<li>libgs9-common</li>
+<li>libgstreamer-plugins-base1.0-0</li>
+<li>libgstreamer-plugins-good1.0-0</li>
+<li>libgstreamer1.0-0</li>
+<li>libharfbuzz-icu0</li>
+<li>libhunspell-1.3-0</li>
+<li>libice6</li>
+<li>libiec61883-0</li>
+<li>libijs-0.35</li>
+<li>libjack-jackd2-0</li>
+<li>libjavascriptcoregtk-3.0-0</li>
+<li>libjbig2dec0</li>
+<li>liblockfile-bin</li>
+<li>liblockfile1</li>
+<li>liblqr-1-0</li>
+<li>libm17n-0</li>
+<li>libmagickcore-6.q16-2</li>
+<li>libmagickwand-6.q16-2</li>
+<li>libogg0</li>
+<li>libopus0</li>
+<li>liborc-0.4-0</li>
+<li>libotf0</li>
+<li>libpaper-utils</li>
+<li>libpaper1</li>
+<li>libraw1394-11</li>
+<li>libsamplerate0</li>
+<li>libshout3</li>
+<li>libslang2</li>
+<li>libsm6</li>
+<li>libspeex1</li>
+<li>libtag1v5</li>
+<li>libtag1v5-vanilla</li>
+<li>libtext-iconv-perl</li>
+<li>libtheora0</li>
+<li>libv4l-0</li>
+<li>libv4lconvert0</li>
+<li>libvisual-0.4-0</li>
+<li>libvorbis0a</li>
+<li>libvorbisenc2</li>
+<li>libwavpack1</li>
+<li>libwebkitgtk-3.0-0</li>
+<li>libwebkitgtk-3.0-common</li>
+<li>libwebp5</li>
+<li>libxcb-glx0</li>
+<li>libxslt1.1</li>
+<li>libxt6</li>
+<li>libxv1</li>
+<li>libxxf86vm1</li>
+<li>m17n-db</li>
+<li>poppler-data</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5704311" class="outline-5">
+<h5 id="check"><a id="org5704311"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ emacs --version
+25.3
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org67f0288" class="outline-4">
+<h4 id="references"><a id="org67f0288"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5788424" class="outline-3">
+<h3 id="org5788424">find</h3>
+<div class="outline-text-3" id="text-org5788424">
+</div>
+
+<div id="outline-container-orge070455" class="outline-4">
+<h4 id="usage"><a id="orge070455"></a>Uso</h4>
+<div class="outline-text-4" id="text-usage">
+</div>
+
+<div id="outline-container-org0b61648" class="outline-5">
+<h5 id="syntax"><a id="org0b61648"></a>Sintaxis</h5>
+<div class="outline-text-5" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org0a73017" class="outline-5">
+<h5 id="configuration"><a id="org0a73017"></a>Configuración</h5>
+<div class="outline-text-5" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org52bfb19" class="outline-5">
+<h5 id="options"><a id="org52bfb19"></a>Opciones</h5>
+<div class="outline-text-5" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-org0a9df35" class="outline-5">
+<h5 id="examples"><a id="org0a9df35"></a>Ejemplos</h5>
+<div class="outline-text-5" id="text-examples">
+<ul class="org-ul">
+<li>find . -type f -name *jpg -exec cp {} . \;</li>
+<li>find . -type f -size +10000 -exec ls -alh {} \;</li>
+<li>find . -atime +1 -type f -exec mv {} imsi\;</li>
+<li>find . -name "-F" -exec rm {} \;</li>
+<li>find . -exec grep -i "찾는 문자열" {} \;</li>
+<li>find . \! -name "*.Z" -exec compress -f {} \;</li>
+<li>find . -type f \! -name "*.Z" \! -name "제외할파일명" -print | tee -a /tmp/list</li>
+<li>find . -name "*.ini"</li>
+<li>find . -exec chmod 755 {} \; or chmod -R 755 ./;</li>
+<li>find . -user xuser1 -exec chown -R user2 {} \; or chown -R user2 ./</li>
+<li>find . -atime +6</li>
+<li>find . -atime +30 -exec ls \; | wc -l</li>
+<li>find /raid -type d -name "디렉토리명" -ok cp /복사할경로 {} \;</li>
+<li>find . -name "찾을 파일" -print 2 &gt; /dev/null</li>
+<li>find . -perm 700 -print</li>
+<li>find . \ ( -perm 400 -o -perm 200 \) -print</li>
+<li>find . -size +1024 -print</li>
+<li>find . -name core -size +2048 -print</li>
+<li>find . -mtime -7 -print</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org24adfb3" class="outline-3">
+<h3 id="org24adfb3">finger</h3>
+<div class="outline-text-3" id="text-org24adfb3">
+</div>
+</div>
+<div id="outline-container-org47b6a5e" class="outline-3">
+<h3 id="org47b6a5e">fsck</h3>
+<div class="outline-text-3" id="text-org47b6a5e">
+</div>
+</div>
+<div id="outline-container-org36fdb78" class="outline-3">
+<h3 id="org36fdb78">gcc</h3>
+<div class="outline-text-3" id="text-org36fdb78">
+</div>
+
+<div id="outline-container-orgb81c463" class="outline-4">
+<h4 id="how-to-install"><a id="orgb81c463"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org3fbc8ee" class="outline-5">
+<h5 id="prerequisites"><a id="org3fbc8ee"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgc54c766" class="outline-5">
+<h5 id="install"><a id="orgc54c766"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<p>
+See <a href="./build-essential.html">build-essential</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgadb73fc" class="outline-5">
+<h5 id="packages"><a id="orgadb73fc"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orga150a9a" class="outline-5">
+<h5 id="check"><a id="orga150a9a"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org024ea22" class="outline-3">
+<h3 id="org024ea22">gem</h3>
+<div class="outline-text-3" id="text-org024ea22">
+</div>
+
+<div id="outline-container-org06889f4" class="outline-4">
+<h4 id="how-to-install"><a id="org06889f4"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org6ad10e0" class="outline-5">
+<h5 id="prerequisites"><a id="org6ad10e0"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgd53f473" class="outline-5">
+<h5 id="install"><a id="orgd53f473"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<p>
+See <a href="./ruby.html">ruby</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgee40328" class="outline-5">
+<h5 id="packages"><a id="orgee40328"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgde89843" class="outline-5">
+<h5 id="check"><a id="orgde89843"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ gem -v
+2.7.3
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org57a1245" class="outline-3">
+<h3 id="org57a1245">git</h3>
+<div class="outline-text-3" id="text-org57a1245">
+</div>
+
+<div id="outline-container-orgde6af4d" class="outline-4">
+<h4 id="how-to-install"><a id="orgde6af4d"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org2ab6979" class="outline-5">
+<h5 id="prerequisites"><a id="org2ab6979"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1575788" class="outline-5">
+<h5 id="install"><a id="org1575788"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="org5dab412"></a>Ubuntu<br /><div class="outline-text-6" id="text-org5dab412">
+<div class="org-src-container">
+<pre class="src src-sh" id="org71d7fdc">$ sudo apt-get install git
+</pre>
+</div>
+</div></li>
+
+<li><a id="org02702bb"></a>CentOS<br /><div class="outline-text-6" id="text-org02702bb">
+<div class="org-src-container">
+<pre class="src src-sh" id="org45a7705">$ sudo yum install git
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgf350bc7"></a>Fedora<br /><div class="outline-text-6" id="text-orgf350bc7">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgbc06f72">$ sudo yum install git-core
+</pre>
+</div>
+</div></li>
+
+<li><a id="org5b4b5b5"></a>Arch Linux<br /><div class="outline-text-6" id="text-org5b4b5b5">
+<div class="org-src-container">
+<pre class="src src-sh" id="org04ef9a2">$ sudo pacman -Sy git
+</pre>
+</div>
+</div></li>
+
+<li><a id="org57ca0c1"></a>Gentoo<br /><div class="outline-text-6" id="text-org57ca0c1">
+<div class="org-src-container">
+<pre class="src src-sh" id="orge49821d">$ sudo emerge --ask --verbose dev-vcs/git
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgd9ae9b8"></a>macOS<br /><div class="outline-text-6" id="text-orgd9ae9b8">
+<div class="org-src-container">
+<pre class="src src-sh" id="org3a88597">$ brew install git
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+
+<div id="outline-container-orged04005" class="outline-5">
+<h5 id="packages"><a id="orged04005"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgf40d18e" class="outline-5">
+<h5 id="check"><a id="orgf40d18e"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge54ccb7" class="outline-4">
+<h4 id="references"><a id="orge54ccb7"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga15c9e2" class="outline-3">
+<h3 id="orga15c9e2">groupadd</h3>
+<div class="outline-text-3" id="text-orga15c9e2">
+</div>
+</div>
+<div id="outline-container-orgdafb8c0" class="outline-3">
+<h3 id="orgdafb8c0">hcitool</h3>
+<div class="outline-text-3" id="text-orgdafb8c0">
+</div>
+</div>
+<div id="outline-container-org5f555d6" class="outline-3">
+<h3 id="org5f555d6">hdparm</h3>
+<div class="outline-text-3" id="text-org5f555d6">
+</div>
+</div>
+<div id="outline-container-org495d7a6" class="outline-3">
+<h3 id="org495d7a6">insmod</h3>
+<div class="outline-text-3" id="text-org495d7a6">
+</div>
+</div>
+<div id="outline-container-orge1b2226" class="outline-3">
+<h3 id="orge1b2226">iperf</h3>
+<div class="outline-text-3" id="text-orge1b2226">
+</div>
+</div>
+<div id="outline-container-org7190368" class="outline-3">
+<h3 id="org7190368">iptables</h3>
+<div class="outline-text-3" id="text-org7190368">
+</div>
+</div>
+<div id="outline-container-org436b940" class="outline-3">
+<h3 id="org436b940">java</h3>
+<div class="outline-text-3" id="text-org436b940">
+</div>
+</div>
+<div id="outline-container-orgd64f860" class="outline-3">
+<h3 id="orgd64f860">javac</h3>
+<div class="outline-text-3" id="text-orgd64f860">
+</div>
+</div>
+<div id="outline-container-org2a7e6a3" class="outline-3">
+<h3 id="org2a7e6a3">lilo</h3>
+<div class="outline-text-3" id="text-org2a7e6a3">
+</div>
+</div>
+<div id="outline-container-org0467f6a" class="outline-3">
+<h3 id="org0467f6a">lp</h3>
+<div class="outline-text-3" id="text-org0467f6a">
+</div>
+</div>
+<div id="outline-container-org43b0f48" class="outline-3">
+<h3 id="org43b0f48">lpc</h3>
+<div class="outline-text-3" id="text-org43b0f48">
+</div>
+</div>
+<div id="outline-container-org6d00ac0" class="outline-3">
+<h3 id="org6d00ac0">lpq</h3>
+<div class="outline-text-3" id="text-org6d00ac0">
+</div>
+</div>
+<div id="outline-container-orgceb63dc" class="outline-3">
+<h3 id="orgceb63dc">lpr</h3>
+<div class="outline-text-3" id="text-orgceb63dc">
+</div>
+</div>
+<div id="outline-container-org6f6d0aa" class="outline-3">
+<h3 id="org6f6d0aa">lprm</h3>
+<div class="outline-text-3" id="text-org6f6d0aa">
+</div>
+</div>
+<div id="outline-container-orgd359490" class="outline-3">
+<h3 id="orgd359490">lsattr</h3>
+<div class="outline-text-3" id="text-orgd359490">
+</div>
+</div>
+<div id="outline-container-orgccb632c" class="outline-3">
+<h3 id="orgccb632c">lsof</h3>
+<div class="outline-text-3" id="text-orgccb632c">
+</div>
+</div>
+<div id="outline-container-orgab158c1" class="outline-3">
+<h3 id="orgab158c1">make</h3>
+<div class="outline-text-3" id="text-orgab158c1">
+</div>
+
+<div id="outline-container-org30c153e" class="outline-4">
+<h4 id="how-to-install"><a id="org30c153e"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgba21845" class="outline-5">
+<h5 id="prerequisites"><a id="orgba21845"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-org5ea6dcb" class="outline-5">
+<h5 id="install"><a id="org5ea6dcb"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<p>
+See <a href="./build-essential.html">build-essential</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf7bbcad" class="outline-5">
+<h5 id="packages"><a id="orgf7bbcad"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org0487535" class="outline-5">
+<h5 id="check"><a id="org0487535"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfac2f76" class="outline-3">
+<h3 id="orgfac2f76">modprobe</h3>
+<div class="outline-text-3" id="text-orgfac2f76">
+</div>
+</div>
+<div id="outline-container-org4b886f5" class="outline-3">
+<h3 id="org4b886f5">node</h3>
+<div class="outline-text-3" id="text-org4b886f5">
+</div>
+
+<div id="outline-container-orgb7e4d0e" class="outline-4">
+<h4 id="how-to-install"><a id="orgb7e4d0e"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgcaafad6" class="outline-5">
+<h5 id="prerequisites"><a id="orgcaafad6"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./sudo.html">sudo</a></li>
+<li><a href="./curl.html">curl</a></li>
+</ul>
+</div>
+
+<ul class="org-ul"><li><a id="org2c71709"></a>4.x<br /><div class="outline-text-6" id="text-org2c71709">
+<div class="org-src-container">
+<pre class="src src-sh" id="orga6ea06b">$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+</pre>
+</div>
+</div></li>
+
+<li><a id="org818924a"></a>6.x<br /><div class="outline-text-6" id="text-org818924a">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgc01b1fe">$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgbf10122"></a>7.x<br /><div class="outline-text-6" id="text-orgbf10122">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgaa2d30a">$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgf48ed1d"></a>9.x<br /><div class="outline-text-6" id="text-orgf48ed1d">
+<div class="org-src-container">
+<pre class="src src-sh" id="orga4199ba">$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+
+<div id="outline-container-org2281430" class="outline-5">
+<h5 id="install"><a id="org2281430"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="orga927dc5"></a>Ubuntu<br /><div class="outline-text-6" id="text-orga927dc5">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install nodejs
+$ sudo apt-get install build-essential
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org337e512" class="outline-5">
+<h5 id="packages"><a id="org337e512"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+<ul class="org-ul">
+<li>node</li>
+<li><a href="./npm.html">npm</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga45e11b" class="outline-5">
+<h5 id="check"><a id="orga45e11b"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ node -v
+v9.5.0
+$ npm -v
+5.6.0
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae32373" class="outline-4">
+<h4 id="references"><a id="orgae32373"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="https://kr.godaddy.com/help/install-nodejs-ubuntu-17395">https://kr.godaddy.com/help/install-nodejs-ubuntu-17395</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org90040d5" class="outline-3">
+<h3 id="org90040d5">npm</h3>
+<div class="outline-text-3" id="text-org90040d5">
+</div>
+
+<div id="outline-container-org030429c" class="outline-4">
+<h4 id="how-to-install"><a id="org030429c"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org6491f3b" class="outline-5">
+<h5 id="prerequisites"><a id="org6491f3b"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-org6f55aba" class="outline-5">
+<h5 id="install"><a id="org6f55aba"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<p>
+See <a href="./node.html">node</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0f239e7" class="outline-5">
+<h5 id="packages"><a id="org0f239e7"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org29dd844" class="outline-5">
+<h5 id="check"><a id="org29dd844"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8627f47" class="outline-3">
+<h3 id="org8627f47">passwd</h3>
+<div class="outline-text-3" id="text-org8627f47">
+</div>
+</div>
+<div id="outline-container-org7b1b934" class="outline-3">
+<h3 id="org7b1b934">pip</h3>
+<div class="outline-text-3" id="text-org7b1b934">
+</div>
+
+<div id="outline-container-orgd57e120" class="outline-4">
+<h4 id="how-to-install"><a id="orgd57e120"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orga41f672" class="outline-5">
+<h5 id="prerequisites"><a id="orga41f672"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./upate.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcdb2a13" class="outline-5">
+<h5 id="install"><a id="orgcdb2a13"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="org7754d09"></a>Ubuntu<br /><div class="outline-text-6" id="text-org7754d09">
+<div class="org-src-container">
+<pre class="src src-sh">sudo apt-get install python3-pip
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org0bec4ff" class="outline-5">
+<h5 id="packages"><a id="org0bec4ff"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+<ul class="org-ul">
+<li>libexpat1-dev</li>
+<li>libpython3-dev</li>
+<li>libpython3.5-dev</li>
+<li>python-pip-whl</li>
+<li>python3-dev</li>
+<li>python3-setuptools</li>
+<li>python3-wheel</li>
+<li>python3.5-dev</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org78d2a2e" class="outline-5">
+<h5 id="check"><a id="org78d2a2e"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6fee52e" class="outline-3">
+<h3 id="org6fee52e">postfix</h3>
+<div class="outline-text-3" id="text-org6fee52e">
+</div>
+
+<div id="outline-container-orgae3199f" class="outline-4">
+<h4 id="how-to-install"><a id="orgae3199f"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org58867f8" class="outline-5">
+<h5 id="prerequisites"><a id="org58867f8"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org76b7f8a" class="outline-5">
+<h5 id="install"><a id="org76b7f8a"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="orgedb0173"></a>Ubuntu<br /><div class="outline-text-6" id="text-orgedb0173">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install postfix
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-orge28e961" class="outline-5">
+<h5 id="orge28e961">Setup</h5>
+<div class="outline-text-5" id="text-orge28e961">
+<ul class="org-ul">
+<li>2. Internet Site</li>
+<li>domain.example.com</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org71f4a8b" class="outline-5">
+<h5 id="packages"><a id="org71f4a8b"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org7e0295a" class="outline-5">
+<h5 id="check"><a id="org7e0295a"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo postfix start
+postfix: Postfix is running with backwards-compatible default settings
+postfix: See http://www.postfix.org/COMPATIBILITY_README.html for details
+postfix: To disable backwards compatibility use <span style="font-style: italic;">"postconf compatibility_level=2"</span> and <span style="font-style: italic;">"postfix reload"</span>
+postfix/postfix-script: fatal: the Postfix mail system is already running
+
+$ sudo postfix status
+postfix: Postfix is running with backwards-compatible default settings
+postfix: See http://www.postfix.org/COMPATIBILITY_README.html for details
+postfix: To disable backwards compatibility use <span style="font-style: italic;">"postconf compatibility_level=2"</span> and <span style="font-style: italic;">"postfix reload"</span>
+postfix/postfix-script: the Postfix mail system is running: PID: 10909
+
+$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is <span style="font-style: italic;">'^]'</span>.
+220 gitlab.me ESMTP Postfix (Ubuntu)
+
+quit
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d64d09" class="outline-4">
+<h4 id="seealso"><a id="org9d64d09"></a>Ver también</h4>
+<div class="outline-text-4" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./sendmail.html">sendmail</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6cd24a" class="outline-3">
+<h3 id="orgd6cd24a">rpm</h3>
+<div class="outline-text-3" id="text-orgd6cd24a">
+</div>
+</div>
+<div id="outline-container-org32ac11b" class="outline-3">
+<h3 id="org32ac11b">rsync</h3>
+<div class="outline-text-3" id="text-org32ac11b">
+</div>
+
+<div id="outline-container-org4af4b65" class="outline-4">
+<h4 id="how-to-install"><a id="org4af4b65"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgdc73ca0" class="outline-5">
+<h5 id="prerequisites"><a id="orgdc73ca0"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgfe016a9" class="outline-5">
+<h5 id="install"><a id="orgfe016a9"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+
+<ul class="org-ul"><li><a id="org9aa37ca"></a>Ubuntu<br /><div class="outline-text-6" id="text-org9aa37ca">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgf2e51c8">$ sudo apt-get install rsync
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgbb6db81"></a>CentOS<br /><div class="outline-text-6" id="text-orgbb6db81">
+<div class="org-src-container">
+<pre class="src src-sh" id="org7a83e73">$ sudo yum install rsync
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-orgffc2ce6" class="outline-5">
+<h5 id="packages"><a id="orgffc2ce6"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org7ac93c6" class="outline-5">
+<h5 id="check"><a id="org7ac93c6"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5d57415" class="outline-4">
+<h4 id="references"><a id="org5d57415"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="http://oral.o-r.kr/oral/index.php/pclinuxos/?pageid=1&amp;mod=document&amp;uid=272&amp;kboard_comments_sort=oldest">rsync로 백업하기</a></li>
+<li><a href="http://kkamagistory.tistory.com/365">rsync 옵션 및 사용법</a></li>
+<li><a href="https://askubuntu.com/questions/939659/ubuntu-16-04-how-to-install-rsync-server-for-other-systems-to-access-via-ssh-usi">https://askubuntu.com/questions/939659/ubuntu-16-04-how-to-install-rsync-server-for-other-systems-to-access-via-ssh-usi</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc189941" class="outline-3">
+<h3 id="orgc189941">ruby</h3>
+<div class="outline-text-3" id="text-orgc189941">
+</div>
+
+<div id="outline-container-org4832392" class="outline-4">
+<h4 id="how-to-install"><a id="org4832392"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org63e9cfb" class="outline-5">
+<h5 id="prerequisites"><a id="org63e9cfb"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6774de5" class="outline-5">
+<h5 id="install"><a id="org6774de5"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+</div>
+
+<div id="outline-container-orgb6f2f4b" class="outline-5">
+<h5 id="packages"><a id="orgb6f2f4b"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+<ul class="org-ul">
+<li>ruby</li>
+<li><a href="./gem.html">gem</a></li>
+<li>rake</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5f670cd" class="outline-5">
+<h5 id="check"><a id="org5f670cd"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ ruby -v
+ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-linux-gnu]
+$ gem -v
+2.7.3
+$ rake --version
+rake, version 10.5.0
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1e68296" class="outline-4">
+<h4 id="references"><a id="org1e68296"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="https://github.com/travis-ci/travis.rb/issues/391">https://github.com/travis-ci/travis.rb/issues/391</a></li>
+<li><a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga8a24c8" class="outline-3">
+<h3 id="orga8a24c8">samba</h3>
+<div class="outline-text-3" id="text-orga8a24c8">
+</div>
+</div>
+<div id="outline-container-org8fe3b78" class="outline-3">
+<h3 id="org8fe3b78">sendmail</h3>
+<div class="outline-text-3" id="text-org8fe3b78">
+</div>
+
+<div id="outline-container-org379381f" class="outline-4">
+<h4 id="how-to-install"><a id="org379381f"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgf9705e3" class="outline-5">
+<h5 id="prerequisites"><a id="orgf9705e3"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2dc2d5b" class="outline-5">
+<h5 id="install"><a id="org2dc2d5b"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install sendmail
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org09d8a76" class="outline-5">
+<h5 id="packages"><a id="org09d8a76"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgf602ac2" class="outline-5">
+<h5 id="check"><a id="orgf602ac2"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcae3605" class="outline-3">
+<h3 id="orgcae3605">shutdown</h3>
+<div class="outline-text-3" id="text-orgcae3605">
+</div>
+</div>
+<div id="outline-container-org6f37618" class="outline-3">
+<h3 id="org6f37618">squid</h3>
+<div class="outline-text-3" id="text-org6f37618">
+</div>
+</div>
+<div id="outline-container-orgfc3c908" class="outline-3">
+<h3 id="orgfc3c908">ssh</h3>
+<div class="outline-text-3" id="text-orgfc3c908">
+</div>
+
+<div id="outline-container-org772ae5a" class="outline-4">
+<h4 id="how-to-install"><a id="org772ae5a"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orga6ae438" class="outline-5">
+<h5 id="prerequisites"><a id="orga6ae438"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org90c6a20" class="outline-5">
+<h5 id="install"><a id="org90c6a20"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install openssh-server
+$ sudo service ssh restart
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd9f9519" class="outline-5">
+<h5 id="packages"><a id="orgd9f9519"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgf9e2eb1" class="outline-5">
+<h5 id="check"><a id="orgf9e2eb1"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo service ssh status
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org087826c" class="outline-4">
+<h4 id="references"><a id="org087826c"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="http://linux-sys-adm.com/how-to-install-and-configure-ssh-on-ubuntu-server-14.04-lts-step-by-step/">How to install and configure SSH on Ubuntu 14.04</a></li>
+<li><a href="http://ubuntuhandbook.org/index.php/2016/04/enable-ssh-ubuntu-16-04-lts/">How to Enable SSH in Ubuntu 16.04 LTS</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org69b3343" class="outline-3">
+<h3 id="org69b3343">sudo</h3>
+<div class="outline-text-3" id="text-org69b3343">
+</div>
+
+<div id="outline-container-org73a3f29" class="outline-4">
+<h4 id="how-to-install"><a id="org73a3f29"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org3aefd76" class="outline-5">
+<h5 id="prerequisites"><a id="org3aefd76"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgdba94f5" class="outline-5">
+<h5 id="install"><a id="orgdba94f5"></a>instalar</h5>
+<div class="outline-text-5" id="text-install">
+<p>
+Solo funciona para usuarios root.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">$ apt-get install sudo -y
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b319a7" class="outline-5">
+<h5 id="packages"><a id="org4b319a7"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orga17d039" class="outline-5">
+<h5 id="check"><a id="orga17d039"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org28d83c5" class="outline-3">
+<h3 id="org28d83c5">tail</h3>
+<div class="outline-text-3" id="text-org28d83c5">
+</div>
+</div>
+<div id="outline-container-org6353cce" class="outline-3">
+<h3 id="org6353cce">tar</h3>
+<div class="outline-text-3" id="text-org6353cce">
+</div>
+</div>
+<div id="outline-container-org9c3b277" class="outline-3">
+<h3 id="org9c3b277">template</h3>
+<div class="outline-text-3" id="text-org9c3b277">
+</div><div id="outline-container-org87f8052" class="outline-4">
+<h4 id="overview"><a id="org87f8052"></a>Visión de conjunto</h4>
+<div class="outline-text-4" id="text-overview">
+</div>
+</div>
+
+<div id="outline-container-org6cffd93" class="outline-4">
+<h4 id="how-to-install"><a id="org6cffd93"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgbd86dfa" class="outline-5">
+<h5 id="prerequisites"><a id="orgbd86dfa"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-orgca4af0c" class="outline-5">
+<h5 id="install"><a id="orgca4af0c"></a>Instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+</div>
+
+<div id="outline-container-org9172b88" class="outline-5">
+<h5 id="packages"><a id="org9172b88"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org03be8c7" class="outline-5">
+<h5 id="check"><a id="org03be8c7"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org06aba12" class="outline-4">
+<h4 id="usage"><a id="org06aba12"></a>Uso</h4>
+<div class="outline-text-4" id="text-usage">
+</div>
+
+<div id="outline-container-org1b96210" class="outline-5">
+<h5 id="syntax"><a id="org1b96210"></a>Sintaxis</h5>
+<div class="outline-text-5" id="text-syntax">
+</div>
+</div>
+
+<div id="outline-container-org0e8910b" class="outline-5">
+<h5 id="configuration"><a id="org0e8910b"></a>Configuración</h5>
+<div class="outline-text-5" id="text-configuration">
+</div>
+</div>
+
+<div id="outline-container-org232b5f3" class="outline-5">
+<h5 id="options"><a id="org232b5f3"></a>Opciones</h5>
+<div class="outline-text-5" id="text-options">
+</div>
+</div>
+
+<div id="outline-container-orga524fd9" class="outline-5">
+<h5 id="examples"><a id="orga524fd9"></a>Ejemplos</h5>
+<div class="outline-text-5" id="text-examples">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf6c6c6f" class="outline-4">
+<h4 id="seealso"><a id="orgf6c6c6f"></a>Ver también</h4>
+<div class="outline-text-4" id="text-seealso">
+</div>
+</div>
+
+<div id="outline-container-org67c0fce" class="outline-4">
+<h4 id="references"><a id="org67c0fce"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+</div>
+</div>
+</div>
+<div id="outline-container-org36a3408" class="outline-3">
+<h3 id="org36a3408">travis</h3>
+<div class="outline-text-3" id="text-org36a3408">
+</div>
+
+<div id="outline-container-orga8373a6" class="outline-4">
+<h4 id="how-to-install"><a id="orga8373a6"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org352bfc4" class="outline-5">
+<h5 id="prerequisites"><a id="org352bfc4"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./gem.html">gem</a></li>
+<li><a href="./make.html">make</a></li>
+<li><a href="./dh-autoreconf.html">dh-autoreconf</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7bc7c8f" class="outline-5">
+<h5 id="install"><a id="org7bc7c8f"></a>instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo gem install travis
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org500d0a6" class="outline-5">
+<h5 id="packages"><a id="org500d0a6"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org1823690" class="outline-5">
+<h5 id="check"><a id="org1823690"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ travis -v
+1.8.8
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b14b20" class="outline-3">
+<h3 id="org8b14b20">tripwire</h3>
+<div class="outline-text-3" id="text-org8b14b20">
+</div>
+</div>
+<div id="outline-container-org7bc8af2" class="outline-3">
+<h3 id="org7bc8af2">update</h3>
+<div class="outline-text-3" id="text-org7bc8af2">
+</div>
+
+<div id="outline-container-orgbe87c36" class="outline-4">
+<h4 id="how-to-install"><a id="orgbe87c36"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org793e0af" class="outline-5">
+<h5 id="prerequisites"><a id="org793e0af"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-org058bc45" class="outline-5">
+<h5 id="install"><a id="org058bc45"></a>instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt update &amp;&amp; sudo apt upgrade
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org993c3cc" class="outline-5">
+<h5 id="packages"><a id="org993c3cc"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org8b47132" class="outline-5">
+<h5 id="check"><a id="org8b47132"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org151656f" class="outline-4">
+<h4 id="seealso"><a id="org151656f"></a>Ver también</h4>
+<div class="outline-text-4" id="text-seealso">
+</div>
+</div>
+
+<div id="outline-container-org92eaace" class="outline-4">
+<h4 id="references"><a id="org92eaace"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+</div>
+</div>
+</div>
+<div id="outline-container-org37b679d" class="outline-3">
+<h3 id="org37b679d">useradd</h3>
+<div class="outline-text-3" id="text-org37b679d">
+</div>
+</div>
+<div id="outline-container-org0af9c8c" class="outline-3">
+<h3 id="org0af9c8c">userdel</h3>
+<div class="outline-text-3" id="text-org0af9c8c">
+</div>
+</div>
+<div id="outline-container-orgc7042a5" class="outline-3">
+<h3 id="orgc7042a5">usermod</h3>
+<div class="outline-text-3" id="text-orgc7042a5">
+</div>
+</div>
+<div id="outline-container-orgf4105e9" class="outline-3">
+<h3 id="orgf4105e9">vim</h3>
+<div class="outline-text-3" id="text-orgf4105e9">
+</div>
+
+<div id="outline-container-org14140b9" class="outline-4">
+<h4 id="how-to-install"><a id="org14140b9"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org259dd03" class="outline-5">
+<h5 id="prerequisites"><a id="org259dd03"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+<li><a href="./git.html">git</a></li>
+</ul>
+</div>
+
+<ul class="org-ul"><li><a id="org370acb7"></a>from Source Code<br /><div class="outline-text-6" id="text-org370acb7">
+<div class="org-src-container">
+<pre class="src src-sh">$ git clone https://github.com/vim/vim.git
+$ cd vim/src
+$ make
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgb62479e"></a>Ubuntu<br /><div class="outline-text-6" id="text-orgb62479e">
+<div class="org-src-container">
+<pre class="src src-sh">$ apt-get install vim
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org1fb37d1" class="outline-5">
+<h5 id="install"><a id="org1fb37d1"></a>instalar</h5>
+<div class="outline-text-5" id="text-install">
+</div>
+</div>
+
+<div id="outline-container-orge77e8af" class="outline-5">
+<h5 id="packages"><a id="orge77e8af"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgdc830bd" class="outline-5">
+<h5 id="check"><a id="orgdc830bd"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ vim --version
+</pre>
+</div>
+
+<pre class="example">
+Huge version without GUI.  Features included (+) or not (-):
++acl             +farsi           +mouse_netterm   +tag_binary
++arabic          +file_in_path    +mouse_sgr       +tag_old_static
++autocmd         +find_in_path    -mouse_sysmouse  -tag_any_white
+-balloon_eval    +float           +mouse_urxvt     -tcl
+-browse          +folding         +mouse_xterm     +terminfo
+++builtin_terms  -footer          +multi_byte      +termresponse
++byte_offset     +fork()          +multi_lang      +textobjects
++channel         +gettext         -mzscheme        +timers
++cindent         -hangul_input    +netbeans_intg   +title
+-clientserver    +iconv           +packages        -toolbar
+-clipboard       +insert_expand   +path_extra      +user_commands
++cmdline_compl   +job             -perl            +vertsplit
++cmdline_hist    +jumplist        +persistent_undo +virtualedit
++cmdline_info    +keymap          +postscript      +visual
++comments        +langmap         +printer         +visualextra
++conceal         +libcall         +profile         +viminfo
++cryptv          +linebreak       -python          +vreplace
++cscope          +lispindent      +python3         +wildignore
++cursorbind      +listcmds        +quickfix        +wildmenu
++cursorshape     +localmap        +reltime         +windows
++dialog_con      -lua             +rightleft       +writebackup
++diff            +menu            -ruby            -X11
++digraphs        +mksession       +scrollbind      -xfontset
+-dnd             +modify_fname    +signs           -xim
+-ebcdic          +mouse           +smartindent     -xsmp
++emacs_tags      -mouseshape      +startuptime     -xterm_clipboard
++eval            +mouse_dec       +statusline      -xterm_save
++ex_extra        +mouse_gpm       -sun_workshop    -xpm
++extra_search    -mouse_jsbterm   +syntax
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -Wdate-time  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1
+Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org49bdfa5" class="outline-4">
+<h4 id="references"><a id="org49bdfa5"></a>Referencias</h4>
+<div class="outline-text-4" id="text-references">
+<ul class="org-ul">
+<li><a href="http://www.vim.org/download.php">http://www.vim.org/download.php</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9002943" class="outline-3">
+<h3 id="org9002943">wget</h3>
+<div class="outline-text-3" id="text-org9002943">
+</div>
+
+<div id="outline-container-org29b96b2" class="outline-4">
+<h4 id="how-to-install"><a id="org29b96b2"></a>Cómo instalar</h4>
+<div class="outline-text-4" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgc4d9fab" class="outline-5">
+<h5 id="prerequisites"><a id="orgc4d9fab"></a>Requisitos previos</h5>
+<div class="outline-text-5" id="text-prerequisites">
+</div>
+</div>
+
+<div id="outline-container-org4f228bc" class="outline-5">
+<h5 id="install"><a id="org4f228bc"></a>instalar</h5>
+<div class="outline-text-5" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install wget
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a75121" class="outline-5">
+<h5 id="packages"><a id="org1a75121"></a>Paquetes instalados</h5>
+<div class="outline-text-5" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-org45a833e" class="outline-5">
+<h5 id="check"><a id="org45a833e"></a>Comprobar</h5>
+<div class="outline-text-5" id="text-check">
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf5a0c41" class="outline-3">
+<h3 id="orgf5a0c41">xinetd</h3>
+<div class="outline-text-3" id="text-orgf5a0c41">
+</div>
+</div>
+<div id="outline-container-org65ad469" class="outline-3">
+<h3 id="org65ad469">xmodmap</h3>
+<div class="outline-text-3" id="text-org65ad469">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-11</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-02-20 Tue 13:24</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
