@@ -35,13 +35,6 @@
 	;; .publish/lang/xxx.org -> .publish/lang/xxx.org multilingual preprocessing
 	(setq source-filename (org-multilingual-publish plist filename (file-name-directory filename)))
 	(lc-core/init-contents source-filename)
-	;; .publish/lang/xxx.org -> .publish/lang/xxx.org.org macro preprocessing
-	(org-org-publish-to-org plist source-filename (file-name-directory source-filename))
-	;; .publish/lang/xxx.org.org -> .publish/lang/xxx.org move file
-	(shell-command-to-string (format "mv -f \"%s\" \"%s\"" (concat source-filename ".org") source-filename))
-	
-	;; .publish/lang/xxx.org -> .publish/lang/xxx.org multilingual preprocessing
-	(setq source-filename (org-multilingual-publish plist source-filename (file-name-directory source-filename)))
 	;; .publish/lang/xxx.org -> .gh-pages/lang/xxx.html export to html
 	(org-html-publish-to-html plist source-filename pub-dir)
 	))

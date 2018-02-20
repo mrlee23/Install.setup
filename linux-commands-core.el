@@ -14,7 +14,7 @@
 ;;; Code:
 
 (defvar lc-core/url "http://linux-command.org")
-(defvar lc-core/site-name "@@LANG_EN:Linux Commands@@@@LANG_ES:Comandos de Linux@@@@LANG_KO:리눅스 명령어@@@@LANG_ZH:Linux命令@@@@LANG_JA:Linuxコマンド@@")
+(defvar lc-core/site-name "Linux Commands")
 
 (defvar lc-core/base-url nil)
 (defvar lc-core/language nil)
@@ -24,7 +24,29 @@
 
 (defun lc-core/init-lang (lang)
   (setq lc-core/language (format "%s" lang))
-  (setq lc-core/base-url (format "%s/%s" lc-core/url lc-core/language)))
+  (setq lc-core/base-url (format "%s/%s" lc-core/url lc-core/language))
+  (lc-core/set-site-name lang))
+
+(defun lc-core/set-site-name (lang)
+  (setq lc-core/site-name
+		(case (intern (downcase lang))
+		  (en
+		   "Linux Commands"
+		   )
+		  (es
+		   "Comandos de Linux"
+		   )
+		  (ko
+		   "리눅스 명령어"
+		   )
+		  (zh
+		   "Linux命令"
+		   )
+		  (ja
+		   "Linuxコマンド"
+		   )
+		  (t
+		   "Linux Commands"))))
 
 (defun lc-core/init-contents (filename)
   (setq filename (expand-file-name filename))
