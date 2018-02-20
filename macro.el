@@ -32,15 +32,17 @@
 					(insert-file-contents file-name)
 					(setq contents (buffer-substring-no-properties 1 (point-max))))
 				  (and (string-match "^\* Overview\n" contents) (push 'overview flags))
-				  (and (string-match "^\* How to Install\n" contents) (push 'install flags))
+				  (and (string-match "^\*\* Install\n" contents) (push 'install flags))
 				  (and (string-match "^\* Usage\n" contents) (push 'usage flags))
-				  (and (string-match "^\*\* See also\n" contents) (push 'seealso flags))
+				  (and (string-match "^\*\* Options\n" contents) (push 'options flags))
+				  (and (string-match "^\* See also\n" contents) (push 'seealso flags))
 				  (format "|[[./%s][%s]]|%s|%s|%s|%s|"
 						  file-name
 						  name
 						  (if (member 'overview flags) (format "[[./%s#%s][Yes]]" file-name "overview") "No")
-						  (if (member 'install flags) (format "[[./%s#%s][Yes]]" file-name "how-to-install") "No")
+						  (if (member 'install flags) (format "[[./%s#%s][Yes]]" file-name "install") "No")
 						  (if (member 'usage flags) (format "[[./%s#%s][Yes]]" file-name "usage") "No")
+						  (if (member 'options flags) (format "[[./%s#%s][Yes]]" file-name "options") "No")
 						  (if (member 'seealso flags) (format "[[./%s#%s][Yes]]" file-name "seealso") "No"))
 				  ))
 			  (lc-macro/collect-files)
