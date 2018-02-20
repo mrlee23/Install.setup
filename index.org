@@ -12,6 +12,7 @@
 #+MACRO: file @@html:<span class="lc-file">$1</span>@@
 
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
+#+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
 #+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
 
 #+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
@@ -38,50 +39,101 @@
 :LANG: ja
 :END:
 
+#+BEGIN_LANG
 운영체제 별 소프트웨어 설치 방법을 문서화하는 프로젝트입니다.
 
 각 소프트웨어 별로 설치하기 전해 진행해야 하는 것 부터 설치 방법, 설치 후 간단한 설정 및 실행 방법 및 옵션 설명 까지가 이 프로젝트의 기술 범위입니다.
+#+END_LANG
 
-** Progress
+** 進行状況
 :PROPERTIES:
+:CUSTOM_ID: progress
 :LANG: ja
 :END:
 
-| Name               | Prerequisites | Install       | Check | Setup | Usage | Description | References |
-|--------------------+---------------+---------------+-------+-------+-------+-------------+------------|
-| [[./apt-add-repository.org][apt-add-repository]] | Yes           | Yes           | No    | -     | -     | No          | -          |
-| [[./autoconf.org][autoconf]]           | -             | Yes           | No    | -     | No    | No          | No         |
-| [[./brew.org][brew]]               | -             | Yes(mac only) | No    | -     | No    | No          | Yes        |
-| [[./build-essential.org][build-essential]]    | Yes           | Yes           | No    | -     | -     | Yes         | -          |
-| [[./chrome.org][chrome]]             | Yes           | Yes           | No    | -     | No    | No          | -          |
-| [[./curl.org][curl]]               | -             | Yes           | No    | -     | No    | No          | -          |
-| [[./dh-autoreconf.org][dh-autoreconf]]      | Yes           | Yes           | No    | -     | No    | No          | -          |
-| [[./docker-compose.org][docker-compose]]     | Yes           | Yes           | Yes   | -     | No    | No          | -          |
-| [[./docker.org][docker]]             | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./emacs.org][emacs]]              | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./gcc.org][gcc]]                | Yes           | Yes           | No    | -     | No    | No          | No         |
-| [[./gem.org][gem]]                | -             | Yes           | Yes   | -     | No    | No          | No         |
-| [[./git.org][git]]                | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./make.org][make]]               | Yes           | Yes           | No    | -     | No    | No          | No         |
-| [[./node.org][node]]               | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./postfix.org][postfix]]            | Yes           | Yes           | Yes   | Yes   | No    | No          | -          |
-| [[./rsync.org][rsync]]              | -             | Yes           | No    | -     | No    | No          | Yes        |
-| [[./ruby.org][ruby]]               | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./sendmail.org][sendmail]]           | Yes           | Yes           | No    | -     | No    | No          | -          |
-| [[./ssh.org][ssh]]                | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./sudo.org][sudo]]               | No            | Yes           | No    | -     | No    | No          | -          |
-| [[./travis.org][travis]]             | Yes           | Yes           | Yes   | -     | No    | No          | -          |
-| [[./update.org][update]]             | No            | Yes           | No    | -     | No    | No          | -          |
-| [[./vim.org][vim]]                | Yes           | Yes           | Yes   | -     | No    | No          | Yes        |
-| [[./wget.org][wget]]               | No            | Yes           | No    | -     | No    | No          | -          |
+| Name               | Overview | Install | Usage | See also |
+| [[./DNS.org][DNS]]                | [[./DNS.org#*overview][Yes]]      | [[./DNS.org#*how-to-install][Yes]]     | [[./DNS.org#*usage][Yes]]   | [[./DNS.org#*seealso][Yes]]      |
+| [[./NIS.org][NIS]]                | [[./NIS.org#*overview][Yes]]      | [[./NIS.org#*how-to-install][Yes]]     | [[./NIS.org#*usage][Yes]]   | [[./NIS.org#*seealso][Yes]]      |
+| [[./SELinux.org][SELinux]]            | [[./SELinux.org#*overview][Yes]]      | [[./SELinux.org#*how-to-install][Yes]]     | [[./SELinux.org#*usage][Yes]]   | [[./SELinux.org#*seealso][Yes]]      |
+| [[./addbib.org][addbib]]             | [[./addbib.org#*overview][Yes]]      | [[./addbib.org#*how-to-install][Yes]]     | [[./addbib.org#*usage][Yes]]   | [[./addbib.org#*seealso][Yes]]      |
+| [[./alias.org][alias]]              | [[./alias.org#*overview][Yes]]      | [[./alias.org#*how-to-install][Yes]]     | [[./alias.org#*usage][Yes]]   | [[./alias.org#*seealso][Yes]]      |
+| [[./apt-add-repository.org][apt-add-repository]] | [[./apt-add-repository.org#*overview][Yes]]      | [[./apt-add-repository.org#*how-to-install][Yes]]     | [[./apt-add-repository.org#*usage][Yes]]   | [[./apt-add-repository.org#*seealso][Yes]]      |
+| [[./apt.org][apt]]                | [[./apt.org#*overview][Yes]]      | [[./apt.org#*how-to-install][Yes]]     | [[./apt.org#*usage][Yes]]   | [[./apt.org#*seealso][Yes]]      |
+| [[./autoconf.org][autoconf]]           | [[./autoconf.org#*overview][Yes]]      | [[./autoconf.org#*how-to-install][Yes]]     | [[./autoconf.org#*usage][Yes]]   | [[./autoconf.org#*seealso][Yes]]      |
+| [[./bash.org][bash]]               | [[./bash.org#*overview][Yes]]      | [[./bash.org#*how-to-install][Yes]]     | [[./bash.org#*usage][Yes]]   | [[./bash.org#*seealso][Yes]]      |
+| [[./brew.org][brew]]               | [[./brew.org#*overview][Yes]]      | [[./brew.org#*how-to-install][Yes]]     | [[./brew.org#*usage][Yes]]   | [[./brew.org#*seealso][Yes]]      |
+| [[./build-essential.org][build-essential]]    | [[./build-essential.org#*overview][Yes]]      | [[./build-essential.org#*how-to-install][Yes]]     | [[./build-essential.org#*usage][Yes]]   | [[./build-essential.org#*seealso][Yes]]      |
+| [[./cat.org][cat]]                | [[./cat.org#*overview][Yes]]      | [[./cat.org#*how-to-install][Yes]]     | [[./cat.org#*usage][Yes]]   | [[./cat.org#*seealso][Yes]]      |
+| [[./chatter.org][chatter]]            | [[./chatter.org#*overview][Yes]]      | [[./chatter.org#*how-to-install][Yes]]     | [[./chatter.org#*usage][Yes]]   | [[./chatter.org#*seealso][Yes]]      |
+| [[./chfn.org][chfn]]               | [[./chfn.org#*overview][Yes]]      | [[./chfn.org#*how-to-install][Yes]]     | [[./chfn.org#*usage][Yes]]   | [[./chfn.org#*seealso][Yes]]      |
+| [[./chgrp.org][chgrp]]              | [[./chgrp.org#*overview][Yes]]      | [[./chgrp.org#*how-to-install][Yes]]     | [[./chgrp.org#*usage][Yes]]   | [[./chgrp.org#*seealso][Yes]]      |
+| [[./chmod.org][chmod]]              | [[./chmod.org#*overview][Yes]]      | [[./chmod.org#*how-to-install][Yes]]     | [[./chmod.org#*usage][Yes]]   | [[./chmod.org#*seealso][Yes]]      |
+| [[./chown.org][chown]]              | [[./chown.org#*overview][Yes]]      | [[./chown.org#*how-to-install][Yes]]     | [[./chown.org#*usage][Yes]]   | [[./chown.org#*seealso][Yes]]      |
+| [[./chrome.org][chrome]]             | [[./chrome.org#*overview][Yes]]      | [[./chrome.org#*how-to-install][Yes]]     | [[./chrome.org#*usage][Yes]]   | [[./chrome.org#*seealso][Yes]]      |
+| [[./chsh.org][chsh]]               | [[./chsh.org#*overview][Yes]]      | [[./chsh.org#*how-to-install][Yes]]     | [[./chsh.org#*usage][Yes]]   | [[./chsh.org#*seealso][Yes]]      |
+| [[./curl.org][curl]]               | [[./curl.org#*overview][Yes]]      | [[./curl.org#*how-to-install][Yes]]     | [[./curl.org#*usage][Yes]]   | [[./curl.org#*seealso][Yes]]      |
+| [[./dh-autoreconf.org][dh-autoreconf]]      | [[./dh-autoreconf.org#*overview][Yes]]      | [[./dh-autoreconf.org#*how-to-install][Yes]]     | [[./dh-autoreconf.org#*usage][Yes]]   | [[./dh-autoreconf.org#*seealso][Yes]]      |
+| [[./diff.org][diff]]               | [[./diff.org#*overview][Yes]]      | [[./diff.org#*how-to-install][Yes]]     | [[./diff.org#*usage][Yes]]   | [[./diff.org#*seealso][Yes]]      |
+| [[./docker-compose.org][docker-compose]]     | [[./docker-compose.org#*overview][Yes]]      | [[./docker-compose.org#*how-to-install][Yes]]     | [[./docker-compose.org#*usage][Yes]]   | [[./docker-compose.org#*seealso][Yes]]      |
+| [[./docker.org][docker]]             | [[./docker.org#*overview][Yes]]      | [[./docker.org#*how-to-install][Yes]]     | [[./docker.org#*usage][Yes]]   | [[./docker.org#*seealso][Yes]]      |
+| [[./dpkg.org][dpkg]]               | [[./dpkg.org#*overview][Yes]]      | [[./dpkg.org#*how-to-install][Yes]]     | [[./dpkg.org#*usage][Yes]]   | [[./dpkg.org#*seealso][Yes]]      |
+| [[./echo.org][echo]]               | [[./echo.org#*overview][Yes]]      | [[./echo.org#*how-to-install][Yes]]     | [[./echo.org#*usage][Yes]]   | [[./echo.org#*seealso][Yes]]      |
+| [[./emacs.org][emacs]]              | [[./emacs.org#*overview][Yes]]      | [[./emacs.org#*how-to-install][Yes]]     | [[./emacs.org#*usage][Yes]]   | [[./emacs.org#*seealso][Yes]]      |
+| [[./find.org][find]]               | [[./find.org#*overview][Yes]]      | [[./find.org#*how-to-install][Yes]]     | [[./find.org#*usage][Yes]]   | [[./find.org#*seealso][Yes]]      |
+| [[./finger.org][finger]]             | [[./finger.org#*overview][Yes]]      | [[./finger.org#*how-to-install][Yes]]     | [[./finger.org#*usage][Yes]]   | [[./finger.org#*seealso][Yes]]      |
+| [[./fsck.org][fsck]]               | [[./fsck.org#*overview][Yes]]      | [[./fsck.org#*how-to-install][Yes]]     | [[./fsck.org#*usage][Yes]]   | [[./fsck.org#*seealso][Yes]]      |
+| [[./gcc.org][gcc]]                | [[./gcc.org#*overview][Yes]]      | [[./gcc.org#*how-to-install][Yes]]     | [[./gcc.org#*usage][Yes]]   | [[./gcc.org#*seealso][Yes]]      |
+| [[./gem.org][gem]]                | [[./gem.org#*overview][Yes]]      | [[./gem.org#*how-to-install][Yes]]     | [[./gem.org#*usage][Yes]]   | [[./gem.org#*seealso][Yes]]      |
+| [[./git.org][git]]                | [[./git.org#*overview][Yes]]      | [[./git.org#*how-to-install][Yes]]     | [[./git.org#*usage][Yes]]   | [[./git.org#*seealso][Yes]]      |
+| [[./groupadd.org][groupadd]]           | [[./groupadd.org#*overview][Yes]]      | [[./groupadd.org#*how-to-install][Yes]]     | [[./groupadd.org#*usage][Yes]]   | [[./groupadd.org#*seealso][Yes]]      |
+| [[./hcitool.org][hcitool]]            | [[./hcitool.org#*overview][Yes]]      | [[./hcitool.org#*how-to-install][Yes]]     | [[./hcitool.org#*usage][Yes]]   | [[./hcitool.org#*seealso][Yes]]      |
+| [[./hdparm.org][hdparm]]             | [[./hdparm.org#*overview][Yes]]      | [[./hdparm.org#*how-to-install][Yes]]     | [[./hdparm.org#*usage][Yes]]   | [[./hdparm.org#*seealso][Yes]]      |
+| [[./insmod.org][insmod]]             | [[./insmod.org#*overview][Yes]]      | [[./insmod.org#*how-to-install][Yes]]     | [[./insmod.org#*usage][Yes]]   | [[./insmod.org#*seealso][Yes]]      |
+| [[./iperf.org][iperf]]              | [[./iperf.org#*overview][Yes]]      | [[./iperf.org#*how-to-install][Yes]]     | [[./iperf.org#*usage][Yes]]   | [[./iperf.org#*seealso][Yes]]      |
+| [[./iptables.org][iptables]]           | [[./iptables.org#*overview][Yes]]      | [[./iptables.org#*how-to-install][Yes]]     | [[./iptables.org#*usage][Yes]]   | [[./iptables.org#*seealso][Yes]]      |
+| [[./java.org][java]]               | [[./java.org#*overview][Yes]]      | [[./java.org#*how-to-install][Yes]]     | [[./java.org#*usage][Yes]]   | [[./java.org#*seealso][Yes]]      |
+| [[./javac.org][javac]]              | [[./javac.org#*overview][Yes]]      | [[./javac.org#*how-to-install][Yes]]     | [[./javac.org#*usage][Yes]]   | [[./javac.org#*seealso][Yes]]      |
+| [[./lilo.org][lilo]]               | [[./lilo.org#*overview][Yes]]      | [[./lilo.org#*how-to-install][Yes]]     | [[./lilo.org#*usage][Yes]]   | [[./lilo.org#*seealso][Yes]]      |
+| [[./lp.org][lp]]                 | [[./lp.org#*overview][Yes]]      | [[./lp.org#*how-to-install][Yes]]     | [[./lp.org#*usage][Yes]]   | [[./lp.org#*seealso][Yes]]      |
+| [[./lpc.org][lpc]]                | [[./lpc.org#*overview][Yes]]      | [[./lpc.org#*how-to-install][Yes]]     | [[./lpc.org#*usage][Yes]]   | [[./lpc.org#*seealso][Yes]]      |
+| [[./lpq.org][lpq]]                | [[./lpq.org#*overview][Yes]]      | [[./lpq.org#*how-to-install][Yes]]     | [[./lpq.org#*usage][Yes]]   | [[./lpq.org#*seealso][Yes]]      |
+| [[./lpr.org][lpr]]                | [[./lpr.org#*overview][Yes]]      | [[./lpr.org#*how-to-install][Yes]]     | [[./lpr.org#*usage][Yes]]   | [[./lpr.org#*seealso][Yes]]      |
+| [[./lprm.org][lprm]]               | [[./lprm.org#*overview][Yes]]      | [[./lprm.org#*how-to-install][Yes]]     | [[./lprm.org#*usage][Yes]]   | [[./lprm.org#*seealso][Yes]]      |
+| [[./lsattr.org][lsattr]]             | [[./lsattr.org#*overview][Yes]]      | [[./lsattr.org#*how-to-install][Yes]]     | [[./lsattr.org#*usage][Yes]]   | [[./lsattr.org#*seealso][Yes]]      |
+| [[./lsof.org][lsof]]               | [[./lsof.org#*overview][Yes]]      | [[./lsof.org#*how-to-install][Yes]]     | [[./lsof.org#*usage][Yes]]   | [[./lsof.org#*seealso][Yes]]      |
+| [[./make.org][make]]               | [[./make.org#*overview][Yes]]      | [[./make.org#*how-to-install][Yes]]     | [[./make.org#*usage][Yes]]   | [[./make.org#*seealso][Yes]]      |
+| [[./modprobe.org][modprobe]]           | [[./modprobe.org#*overview][Yes]]      | [[./modprobe.org#*how-to-install][Yes]]     | [[./modprobe.org#*usage][Yes]]   | [[./modprobe.org#*seealso][Yes]]      |
+| [[./node.org][node]]               | [[./node.org#*overview][Yes]]      | [[./node.org#*how-to-install][Yes]]     | [[./node.org#*usage][Yes]]   | [[./node.org#*seealso][Yes]]      |
+| [[./npm.org][npm]]                | [[./npm.org#*overview][Yes]]      | [[./npm.org#*how-to-install][Yes]]     | [[./npm.org#*usage][Yes]]   | [[./npm.org#*seealso][Yes]]      |
+| [[./passwd.org][passwd]]             | [[./passwd.org#*overview][Yes]]      | [[./passwd.org#*how-to-install][Yes]]     | [[./passwd.org#*usage][Yes]]   | [[./passwd.org#*seealso][Yes]]      |
+| [[./pip.org][pip]]                | [[./pip.org#*overview][Yes]]      | [[./pip.org#*how-to-install][Yes]]     | [[./pip.org#*usage][Yes]]   | [[./pip.org#*seealso][Yes]]      |
+| [[./postfix.org][postfix]]            | [[./postfix.org#*overview][Yes]]      | [[./postfix.org#*how-to-install][Yes]]     | [[./postfix.org#*usage][Yes]]   | [[./postfix.org#*seealso][Yes]]      |
+| [[./rpm.org][rpm]]                | [[./rpm.org#*overview][Yes]]      | [[./rpm.org#*how-to-install][Yes]]     | [[./rpm.org#*usage][Yes]]   | [[./rpm.org#*seealso][Yes]]      |
+| [[./rsync.org][rsync]]              | [[./rsync.org#*overview][Yes]]      | [[./rsync.org#*how-to-install][Yes]]     | [[./rsync.org#*usage][Yes]]   | [[./rsync.org#*seealso][Yes]]      |
+| [[./ruby.org][ruby]]               | [[./ruby.org#*overview][Yes]]      | [[./ruby.org#*how-to-install][Yes]]     | [[./ruby.org#*usage][Yes]]   | [[./ruby.org#*seealso][Yes]]      |
+| [[./samba.org][samba]]              | [[./samba.org#*overview][Yes]]      | [[./samba.org#*how-to-install][Yes]]     | [[./samba.org#*usage][Yes]]   | [[./samba.org#*seealso][Yes]]      |
+| [[./sendmail.org][sendmail]]           | [[./sendmail.org#*overview][Yes]]      | [[./sendmail.org#*how-to-install][Yes]]     | [[./sendmail.org#*usage][Yes]]   | [[./sendmail.org#*seealso][Yes]]      |
+| [[./shutdown.org][shutdown]]           | [[./shutdown.org#*overview][Yes]]      | [[./shutdown.org#*how-to-install][Yes]]     | [[./shutdown.org#*usage][Yes]]   | [[./shutdown.org#*seealso][Yes]]      |
+| [[./squid.org][squid]]              | [[./squid.org#*overview][Yes]]      | [[./squid.org#*how-to-install][Yes]]     | [[./squid.org#*usage][Yes]]   | [[./squid.org#*seealso][Yes]]      |
+| [[./ssh.org][ssh]]                | [[./ssh.org#*overview][Yes]]      | [[./ssh.org#*how-to-install][Yes]]     | [[./ssh.org#*usage][Yes]]   | [[./ssh.org#*seealso][Yes]]      |
+| [[./sudo.org][sudo]]               | [[./sudo.org#*overview][Yes]]      | [[./sudo.org#*how-to-install][Yes]]     | [[./sudo.org#*usage][Yes]]   | [[./sudo.org#*seealso][Yes]]      |
+| [[./tail.org][tail]]               | [[./tail.org#*overview][Yes]]      | [[./tail.org#*how-to-install][Yes]]     | [[./tail.org#*usage][Yes]]   | [[./tail.org#*seealso][Yes]]      |
+| [[./tar.org][tar]]                | [[./tar.org#*overview][Yes]]      | [[./tar.org#*how-to-install][Yes]]     | [[./tar.org#*usage][Yes]]   | [[./tar.org#*seealso][Yes]]      |
+| [[./template.org][template]]           | [[./template.org#*overview][Yes]]      | [[./template.org#*how-to-install][Yes]]     | [[./template.org#*usage][Yes]]   | [[./template.org#*seealso][Yes]]      |
+| [[./travis.org][travis]]             | [[./travis.org#*overview][Yes]]      | [[./travis.org#*how-to-install][Yes]]     | [[./travis.org#*usage][Yes]]   | [[./travis.org#*seealso][Yes]]      |
+| [[./tripwire.org][tripwire]]           | [[./tripwire.org#*overview][Yes]]      | [[./tripwire.org#*how-to-install][Yes]]     | [[./tripwire.org#*usage][Yes]]   | [[./tripwire.org#*seealso][Yes]]      |
+| [[./update.org][update]]             | [[./update.org#*overview][Yes]]      | [[./update.org#*how-to-install][Yes]]     | [[./update.org#*usage][Yes]]   | [[./update.org#*seealso][Yes]]      |
+| [[./useradd.org][useradd]]            | [[./useradd.org#*overview][Yes]]      | [[./useradd.org#*how-to-install][Yes]]     | [[./useradd.org#*usage][Yes]]   | [[./useradd.org#*seealso][Yes]]      |
+| [[./userdel.org][userdel]]            | [[./userdel.org#*overview][Yes]]      | [[./userdel.org#*how-to-install][Yes]]     | [[./userdel.org#*usage][Yes]]   | [[./userdel.org#*seealso][Yes]]      |
+| [[./usermod.org][usermod]]            | [[./usermod.org#*overview][Yes]]      | [[./usermod.org#*how-to-install][Yes]]     | [[./usermod.org#*usage][Yes]]   | [[./usermod.org#*seealso][Yes]]      |
+| [[./vim.org][vim]]                | [[./vim.org#*overview][Yes]]      | [[./vim.org#*how-to-install][Yes]]     | [[./vim.org#*usage][Yes]]   | [[./vim.org#*seealso][Yes]]      |
+| [[./wget.org][wget]]               | [[./wget.org#*overview][Yes]]      | [[./wget.org#*how-to-install][Yes]]     | [[./wget.org#*usage][Yes]]   | [[./wget.org#*seealso][Yes]]      |
+| [[./xinetd.org][xinetd]]             | [[./xinetd.org#*overview][Yes]]      | [[./xinetd.org#*how-to-install][Yes]]     | [[./xinetd.org#*usage][Yes]]   | [[./xinetd.org#*seealso][Yes]]      |
+| [[./xmodmap.org][xmodmap]]            | [[./xmodmap.org#*overview][Yes]]      | [[./xmodmap.org#*how-to-install][Yes]]     | [[./xmodmap.org#*usage][Yes]]   | [[./xmodmap.org#*seealso][Yes]]      |
 
-** 상태 설명
-| Yes | Completed |
-| No  | Not yet   |
-| -   | No need   |
-
-* Commands
+* コマンド
 :PROPERTIES:
+:CUSTOM_ID: commands
 :LANG: ja
 :END:
 
