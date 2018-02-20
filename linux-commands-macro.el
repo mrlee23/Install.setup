@@ -55,3 +55,5 @@
 				 ))
 			 (lc-macro/collect-files)
 			 "\n"))
+
+(provide 'linux-commands-macro)
