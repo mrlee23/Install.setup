@@ -2,35 +2,60 @@
 #+TITLE: vim
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-03 
+#+DATE: 2018-02-20
 
-* Prerequisites
-  :PROPERTIES:
-  :END:
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
+
+* インストール方法
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ja
+  :END:      
+
+** 前準備
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ja
+   :END:      
+
 - [[./update.org][update]]
 - [[./git.org][git]]
 
-* Install
-  :PROPERTIES:
-  :END:
-** Git
+*** from Source Code
 
-#+NAME: git-install_vim
 #+BEGIN_SRC sh
 $ git clone https://github.com/vim/vim.git
 $ cd vim/src
 $ make
 #+END_SRC
 
-** Ubuntu
-#+NAME: ubuntu-install_vim
+*** Ubuntu
 #+BEGIN_SRC sh
 $ apt-get install vim
 #+END_SRC
 
-* Check
-  :PROPERTIES:
-  :END:
+** インストール
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ja
+  :END:      
+
+** インストールされたパッケージ
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ja
+   :END:      
+
+** チェック
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ja
+   :END:      
+
 #+BEGIN_SRC sh
 $ vim --version
 #+END_SRC
@@ -75,7 +100,44 @@ Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -Wdate-time  -g -O2 -fPIE -fst
 Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm
 #+END_EXAMPLE
 
-* References
-  :PROPERTIES:
-  :END:
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
+
+** 構造
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ja
+   :END:      
+
+** 設定
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: ja
+   :END:      
+
+** オプション
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ja
+   :END:      
+
+** 例
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ja
+   :END:      
+
+* 関連項目
+  :PROPERTIES: 
+  :LANG: ja
+  :END:      
+
+* 参考
+  :PROPERTIES: 
+  :LANG: ja
+  :END:      
+
 - [[http://www.vim.org/download.php]]
