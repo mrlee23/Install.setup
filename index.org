@@ -1,295 +1,30 @@
-
-
-#+MACRO: class @@html:<span class="lc-class">$1</span>@@
-#+MACRO: func @@html:<span class="lc-func">$1</span>@@
-#+MACRO: ret @@html:<span class="lc-ret">$1</span>@@
-#+MACRO: arg @@html:<span class="lc-arg">$1</span>@@
-#+MACRO: kwd @@html:<span class="lc-kwd">$1</span>@@
-#+MACRO: type @@html:<span class="lc-type">$1</span>@@
-#+MACRO: var @@html:<span class="lc-var">$1</span>@@
-#+MACRO: const @@html:<span class="lc-const">$1</span>@@
-#+MACRO: path @@html:<span class="lc-path">$1</span>@@
-#+MACRO: file @@html:<span class="lc-file">$1</span>@@
-
-#+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
-#+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
-#+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
-
-#+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
-#+HTML_HEAD: <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
-
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../dist/org-html-themes/styles/readtheorg/css/my.css"/>
-
-#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
-
-#+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
+#+INCLUDE: main.setup
 #+TITLE: Linux Commands
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-11
 
 * 소개
-:PROPERTIES:
-:LANG: ko
-:END:
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
 
-#+BEGIN_LANG
 운영체제 별 소프트웨어 설치 방법을 문서화하는 프로젝트입니다.
 
 각 소프트웨어 별로 설치하기 전해 진행해야 하는 것 부터 설치 방법, 설치 후 간단한 설정 및 실행 방법 및 옵션 설명 까지가 이 프로젝트의 기술 범위입니다.
-#+END_LANG
 
 ** 진행 상황
-:PROPERTIES:
-:CUSTOM_ID: progress
-:LANG: ko
-:END:
+  :PROPERTIES: 
+  :CUSTOM_ID: progress
+  :LANG: ko
+  :END:      
 
-| Name               | Overview | Install | Usage | Options | See also |
-| [[./DNS.org][DNS]]                | No       | No      | No    | No      | No       |
-| [[./NIS.org][NIS]]                | No       | No      | No    | No      | No       |
-| [[./SELinux.org][SELinux]]            | No       | No      | No    | No      | No       |
-| [[./addbib.org][addbib]]             | No       | No      | No    | No      | No       |
-| [[./alias.org][alias]]              | No       | No      | No    | No      | No       |
-| [[./apt-add-repository.org][apt-add-repository]] | No       | [[file:apt-add-repository.org::#install][Yes]]     | No    | No      | No       |
-| [[./apt.org][apt]]                | No       | No      | No    | No      | No       |
-| [[./autoconf.org][autoconf]]           | No       | [[file:autoconf.org::#install][Yes]]     | No    | No      | No       |
-| [[./bash.org][bash]]               | No       | No      | No    | No      | No       |
-| [[./brew.org][brew]]               | No       | [[file:brew.org::#install][Yes]]     | No    | No      | No       |
-| [[./build-essential.org][build-essential]]    | [[file:build-essential.org::#overview][Yes]]      | [[file:build-essential.org::#install][Yes]]     | [[file:build-essential.org::#usage][Yes]]   | [[file:build-essential.org::#options][Yes]]     | No       |
-| [[./cat.org][cat]]                | No       | No      | No    | No      | No       |
-| [[./chatter.org][chatter]]            | No       | No      | No    | No      | No       |
-| [[./chfn.org][chfn]]               | No       | No      | No    | No      | No       |
-| [[./chgrp.org][chgrp]]              | No       | No      | No    | No      | No       |
-| [[./chmod.org][chmod]]              | No       | No      | No    | No      | No       |
-| [[./chown.org][chown]]              | No       | No      | No    | No      | No       |
-| [[./chrome.org][chrome]]             | No       | [[file:chrome.org::#install][Yes]]     | No    | No      | No       |
-| [[./chsh.org][chsh]]               | No       | No      | No    | No      | No       |
-| [[./curl.org][curl]]               | No       | [[file:curl.org::#install][Yes]]     | No    | No      | No       |
-| [[./dh-autoreconf.org][dh-autoreconf]]      | No       | [[file:dh-autoreconf.org::#install][Yes]]     | No    | No      | No       |
-| [[./diff.org][diff]]               | No       | No      | No    | No      | No       |
-| [[./docker-compose.org][docker-compose]]     | No       | [[file:docker-compose.org::#install][Yes]]     | No    | No      | No       |
-| [[./docker.org][docker]]             | No       | [[file:docker.org::#install][Yes]]     | No    | No      | No       |
-| [[./dpkg.org][dpkg]]               | No       | No      | No    | No      | No       |
-| [[./echo.org][echo]]               | No       | No      | No    | No      | No       |
-| [[./emacs.org][emacs]]              | No       | [[file:emacs.org::#install][Yes]]     | No    | No      | No       |
-| [[./find.org][find]]               | No       | No      | [[file:find.org::#usage][Yes]]   | [[file:find.org::#options][Yes]]     | No       |
-| [[./finger.org][finger]]             | No       | No      | No    | No      | No       |
-| [[./fsck.org][fsck]]               | No       | No      | No    | No      | No       |
-| [[./gcc.org][gcc]]                | No       | [[file:gcc.org::#install][Yes]]     | No    | No      | No       |
-| [[./gem.org][gem]]                | No       | [[file:gem.org::#install][Yes]]     | No    | No      | No       |
-| [[./git.org][git]]                | No       | [[file:git.org::#install][Yes]]     | No    | No      | No       |
-| [[./groupadd.org][groupadd]]           | No       | No      | No    | No      | No       |
-| [[./hcitool.org][hcitool]]            | No       | No      | No    | No      | No       |
-| [[./hdparm.org][hdparm]]             | No       | No      | No    | No      | No       |
-| [[./insmod.org][insmod]]             | No       | No      | No    | No      | No       |
-| [[./iperf.org][iperf]]              | No       | No      | No    | No      | No       |
-| [[./iptables.org][iptables]]           | No       | No      | No    | No      | No       |
-| [[./java.org][java]]               | No       | No      | No    | No      | No       |
-| [[./javac.org][javac]]              | No       | No      | No    | No      | No       |
-| [[./lilo.org][lilo]]               | No       | No      | No    | No      | No       |
-| [[./lp.org][lp]]                 | No       | No      | No    | No      | No       |
-| [[./lpc.org][lpc]]                | No       | No      | No    | No      | No       |
-| [[./lpq.org][lpq]]                | No       | No      | No    | No      | No       |
-| [[./lpr.org][lpr]]                | No       | No      | No    | No      | No       |
-| [[./lprm.org][lprm]]               | No       | No      | No    | No      | No       |
-| [[./lsattr.org][lsattr]]             | No       | No      | No    | No      | No       |
-| [[./lsof.org][lsof]]               | No       | No      | No    | No      | No       |
-| [[./make.org][make]]               | No       | [[file:make.org::#install][Yes]]     | No    | No      | No       |
-| [[./modprobe.org][modprobe]]           | No       | No      | No    | No      | No       |
-| [[./node.org][node]]               | No       | [[file:node.org::#install][Yes]]     | No    | No      | No       |
-| [[./npm.org][npm]]                | No       | [[file:npm.org::#install][Yes]]     | No    | No      | No       |
-| [[./passwd.org][passwd]]             | No       | No      | No    | No      | No       |
-| [[./pip.org][pip]]                | No       | [[file:pip.org::#install][Yes]]     | No    | No      | No       |
-| [[./postfix.org][postfix]]            | No       | [[file:postfix.org::#install][Yes]]     | No    | No      | [[file:postfix.org::#seealso][Yes]]      |
-| [[./rpm.org][rpm]]                | No       | No      | No    | No      | No       |
-| [[./rsync.org][rsync]]              | No       | [[file:rsync.org::#install][Yes]]     | No    | No      | No       |
-| [[./ruby.org][ruby]]               | No       | [[file:ruby.org::#install][Yes]]     | No    | No      | No       |
-| [[./samba.org][samba]]              | No       | No      | No    | No      | No       |
-| [[./sendmail.org][sendmail]]           | No       | [[file:sendmail.org::#install][Yes]]     | No    | No      | No       |
-| [[./shutdown.org][shutdown]]           | No       | No      | No    | No      | No       |
-| [[./squid.org][squid]]              | No       | No      | No    | No      | No       |
-| [[./ssh.org][ssh]]                | No       | [[file:ssh.org::#install][Yes]]     | No    | No      | No       |
-| [[./sudo.org][sudo]]               | No       | [[file:sudo.org::#install][Yes]]     | No    | No      | No       |
-| [[./tail.org][tail]]               | No       | No      | No    | No      | No       |
-| [[./tar.org][tar]]                | No       | No      | No    | No      | No       |
-| [[./template.org][template]]           | [[file:template.org::#overview][Yes]]      | [[file:template.org::#install][Yes]]     | [[file:template.org::#usage][Yes]]   | [[file:template.org::#options][Yes]]     | [[file:template.org::#seealso][Yes]]      |
-| [[./travis.org][travis]]             | No       | [[file:travis.org::#install][Yes]]     | No    | No      | No       |
-| [[./tripwire.org][tripwire]]           | No       | No      | No    | No      | No       |
-| [[./update.org][update]]             | No       | [[file:update.org::#install][Yes]]     | No    | No      | [[file:update.org::#seealso][Yes]]      |
-| [[./useradd.org][useradd]]            | No       | No      | No    | No      | No       |
-| [[./userdel.org][userdel]]            | No       | No      | No    | No      | No       |
-| [[./usermod.org][usermod]]            | No       | No      | No    | No      | No       |
-| [[./vim.org][vim]]                | No       | [[file:vim.org::#install][Yes]]     | No    | No      | No       |
-| [[./wget.org][wget]]               | No       | [[file:wget.org::#install][Yes]]     | No    | No      | No       |
-| [[./xinetd.org][xinetd]]             | No       | No      | No    | No      | No       |
-| [[./xmodmap.org][xmodmap]]            | No       | No      | No    | No      | No       |
+{{{INCLUDE_PROGRESS}}}
 
 * 명령어
-:PROPERTIES:
-:CUSTOM_ID: commands
-:LANG: ko
-:END:
+  :PROPERTIES: 
+  :CUSTOM_ID: commands
+  :LANG: ko
+  :END:      
 
-** DNS
-#+INCLUDE: DNS.org :lines "7-"
-** NIS
-#+INCLUDE: NIS.org :lines "7-"
-** SELinux
-#+INCLUDE: SELinux.org :lines "7-"
-** addbib
-#+INCLUDE: addbib.org :lines "7-"
-** alias
-#+INCLUDE: alias.org :lines "7-"
-** apt-add-repository
-#+INCLUDE: apt-add-repository.org :lines "7-"
-** apt
-#+INCLUDE: apt.org :lines "7-"
-** autoconf
-#+INCLUDE: autoconf.org :lines "7-"
-** bash
-#+INCLUDE: bash.org :lines "7-"
-** brew
-#+INCLUDE: brew.org :lines "7-"
-** build-essential
-#+INCLUDE: build-essential.org :lines "7-"
-** cat
-#+INCLUDE: cat.org :lines "7-"
-** chatter
-#+INCLUDE: chatter.org :lines "7-"
-** chfn
-#+INCLUDE: chfn.org :lines "7-"
-** chgrp
-#+INCLUDE: chgrp.org :lines "7-"
-** chmod
-#+INCLUDE: chmod.org :lines "7-"
-** chown
-#+INCLUDE: chown.org :lines "7-"
-** chrome
-#+INCLUDE: chrome.org :lines "7-"
-** chsh
-#+INCLUDE: chsh.org :lines "7-"
-** curl
-#+INCLUDE: curl.org :lines "7-"
-** dh-autoreconf
-#+INCLUDE: dh-autoreconf.org :lines "7-"
-** diff
-#+INCLUDE: diff.org :lines "7-"
-** docker-compose
-#+INCLUDE: docker-compose.org :lines "7-"
-** docker
-#+INCLUDE: docker.org :lines "7-"
-** dpkg
-#+INCLUDE: dpkg.org :lines "7-"
-** echo
-#+INCLUDE: echo.org :lines "7-"
-** emacs
-#+INCLUDE: emacs.org :lines "7-"
-** find
-#+INCLUDE: find.org :lines "7-"
-** finger
-#+INCLUDE: finger.org :lines "7-"
-** fsck
-#+INCLUDE: fsck.org :lines "7-"
-** gcc
-#+INCLUDE: gcc.org :lines "7-"
-** gem
-#+INCLUDE: gem.org :lines "7-"
-** git
-#+INCLUDE: git.org :lines "7-"
-** groupadd
-#+INCLUDE: groupadd.org :lines "7-"
-** hcitool
-#+INCLUDE: hcitool.org :lines "7-"
-** hdparm
-#+INCLUDE: hdparm.org :lines "7-"
-** insmod
-#+INCLUDE: insmod.org :lines "7-"
-** iperf
-#+INCLUDE: iperf.org :lines "7-"
-** iptables
-#+INCLUDE: iptables.org :lines "7-"
-** java
-#+INCLUDE: java.org :lines "7-"
-** javac
-#+INCLUDE: javac.org :lines "7-"
-** lilo
-#+INCLUDE: lilo.org :lines "7-"
-** lp
-#+INCLUDE: lp.org :lines "7-"
-** lpc
-#+INCLUDE: lpc.org :lines "7-"
-** lpq
-#+INCLUDE: lpq.org :lines "7-"
-** lpr
-#+INCLUDE: lpr.org :lines "7-"
-** lprm
-#+INCLUDE: lprm.org :lines "7-"
-** lsattr
-#+INCLUDE: lsattr.org :lines "7-"
-** lsof
-#+INCLUDE: lsof.org :lines "7-"
-** make
-#+INCLUDE: make.org :lines "7-"
-** modprobe
-#+INCLUDE: modprobe.org :lines "7-"
-** node
-#+INCLUDE: node.org :lines "7-"
-** npm
-#+INCLUDE: npm.org :lines "7-"
-** passwd
-#+INCLUDE: passwd.org :lines "7-"
-** pip
-#+INCLUDE: pip.org :lines "7-"
-** postfix
-#+INCLUDE: postfix.org :lines "7-"
-** rpm
-#+INCLUDE: rpm.org :lines "7-"
-** rsync
-#+INCLUDE: rsync.org :lines "7-"
-** ruby
-#+INCLUDE: ruby.org :lines "7-"
-** samba
-#+INCLUDE: samba.org :lines "7-"
-** sendmail
-#+INCLUDE: sendmail.org :lines "7-"
-** shutdown
-#+INCLUDE: shutdown.org :lines "7-"
-** squid
-#+INCLUDE: squid.org :lines "7-"
-** ssh
-#+INCLUDE: ssh.org :lines "7-"
-** sudo
-#+INCLUDE: sudo.org :lines "7-"
-** tail
-#+INCLUDE: tail.org :lines "7-"
-** tar
-#+INCLUDE: tar.org :lines "7-"
-** template
-#+INCLUDE: template.org :lines "7-"
-** travis
-#+INCLUDE: travis.org :lines "7-"
-** tripwire
-#+INCLUDE: tripwire.org :lines "7-"
-** update
-#+INCLUDE: update.org :lines "7-"
-** useradd
-#+INCLUDE: useradd.org :lines "7-"
-** userdel
-#+INCLUDE: userdel.org :lines "7-"
-** usermod
-#+INCLUDE: usermod.org :lines "7-"
-** vim
-#+INCLUDE: vim.org :lines "7-"
-** wget
-#+INCLUDE: wget.org :lines "7-"
-** xinetd
-#+INCLUDE: xinetd.org :lines "7-"
-** xmodmap
-#+INCLUDE: xmodmap.org :lines "7-"
+{{{INCLUDE_DOCS}}}
