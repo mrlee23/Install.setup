@@ -2,15 +2,50 @@
 #+TITLE: docker-compose
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-04 
+#+DATE: 2018-02-20
 
-* Prerequisites
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
+
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG_EN:  Prerequisites
+   :LANG_ES:  Requisitos previos
+   :LANG_KO:  필요 사항
+   :LANG_ZH:  先决条件
+   :LANG_JA:  前準備
+   :END:      
+
 - [[./docker.org][docker]]
 
-* Install
-** Ubuntu
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
 
-#+NAME: ubuntu-install_docker_compose
 #+BEGIN_SRC sh
 # Download latest docker compose
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -19,30 +54,114 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker
 $ sudo chmod +x /usr/local/bin/docker-compose
 #+END_SRC
 
-** Mac
-Involed in Docker for MacOS.
+** Uninstall
+  :PROPERTIES: 
+  :CUSTOM_ID: uninstall
+  :LANG_EN:  Uninstall
+  :LANG_ES:  Desinstalar
+  :LANG_KO:  제거
+  :LANG_ZH:  卸载
+  :LANG_JA:  アンインストール
+  :END:      
 
-* Uninstall
-
-#+NAME: uninstall_docker_compose
 #+BEGIN_SRC sh
 $ sudo rm /usr/local/bin/docker-compose
 # or
 $ pip uninstall docker-compose
 #+END_SRC
 
-* Check
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG_EN:  Installed Packages
+   :LANG_ES:  Paquetes instalados
+   :LANG_KO:  설치된 패키지
+   :LANG_ZH:  安装的软件包
+   :LANG_JA:  インストールされたパッケージ
+   :END:      
 
-#+NAME: check_docker_compose
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG_EN:  Check
+   :LANG_ES:  Comprobar
+   :LANG_KO:  확인
+   :LANG_ZH:  检查
+   :LANG_JA:  チェック
+   :END:      
+
 #+BEGIN_SRC sh
 $ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
 #+END_SRC
 
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
 
-* Seealso
-- [[./docker-command-completion.org][docker-command-completion]]
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
 
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG_EN:  Configuration
+   :LANG_ES:  Configuración
+   :LANG_KO:  설정
+   :LANG_ZH:  组态
+   :LANG_JA:  設定
+   :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG_EN:  Examples
+   :LANG_ES:  Ejemplos
+   :LANG_KO:  사용 예
+   :LANG_ZH:  例子
+   :LANG_JA:  例
+   :END:      
+
+* See also
+  :PROPERTIES: 
+  :LANG_EN:  See also
+  :LANG_ES:  Ver también
+  :LANG_KO:  관련 항목
+  :LANG_ZH:  相关主题
+  :LANG_JA:  関連項目
+  :END:      
 
 * References
+  :PROPERTIES: 
+  :LANG_EN:  References
+  :LANG_ES:  Referencias
+  :LANG_KO:  참고자료
+  :LANG_ZH:  参考
+  :LANG_JA:  参考
+  :END:      
+
+- [[./docker-command-completion.org][docker-command-completion]]
 - [[https://docs.docker.com/compose/install/#install-compose][Docker Compose Install(Offical)]]
