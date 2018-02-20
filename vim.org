@@ -2,35 +2,60 @@
 #+TITLE: vim
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-03 
+#+DATE: 2018-02-20
 
-* Prerequisites
-  :PROPERTIES:
-  :END:
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: en
+   :END:      
+
 - [[./update.org][update]]
 - [[./git.org][git]]
 
-* Install
-  :PROPERTIES:
-  :END:
-** Git
+*** from Source Code
 
-#+NAME: git-install_vim
 #+BEGIN_SRC sh
 $ git clone https://github.com/vim/vim.git
 $ cd vim/src
 $ make
 #+END_SRC
 
-** Ubuntu
-#+NAME: ubuntu-install_vim
+*** Ubuntu
 #+BEGIN_SRC sh
 $ apt-get install vim
 #+END_SRC
 
-* Check
-  :PROPERTIES:
-  :END:
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: en
+   :END:      
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: en
+   :END:      
+
 #+BEGIN_SRC sh
 $ vim --version
 #+END_SRC
@@ -75,7 +100,44 @@ Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -Wdate-time  -g -O2 -fPIE -fst
 Linking: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm
 #+END_EXAMPLE
 
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: en
+   :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: en
+   :END:      
+
+* See also
+  :PROPERTIES: 
+  :LANG: en
+  :END:      
+
 * References
-  :PROPERTIES:
-  :END:
+  :PROPERTIES: 
+  :LANG: en
+  :END:      
+
 - [[http://www.vim.org/download.php]]
