@@ -32,11 +32,11 @@
 				  (with-temp-buffer
 					(insert-file-contents file-name)
 					(setq contents (buffer-substring-no-properties 1 (point-max))))
-				  (and (string-match "^\* Overview\n" contents) (push 'overview flags))
-				  (and (string-match "^\*\* Install\n" contents) (push 'install flags))
-				  (and (string-match "^\* Usage\n" contents) (push 'usage flags))
-				  (and (string-match "^\*\* Options\n" contents) (push 'options flags))
-				  (and (string-match "^\* See also\n" contents) (push 'seealso flags))
+				  (and (string-match "^\* \\(Overview\\|Visión de conjunto\\|개요\\|摘要\\|概要\\)\n" contents) (push 'overview flags))
+				  (and (string-match "^\*\* \\(Install\\|Instalar\\|설치\\|安装\\|インストール\\)\n" contents) (push 'install flags))
+				  (and (string-match "^\* \\(Usage\\|Uso\\|사용법\\|如何使用\\|命令説明\\)\n" contents) (push 'usage flags))
+				  (and (string-match "^\*\* \\(Options\\|Opciones\\|옵션\\|选项\\|オプション\\)\n" contents) (push 'options flags))
+				  (and (string-match "^\* \\(See also\\|Ver también\\|관련 항목\\|相关主题\\|関連項目\\)\n" contents) (push 'seealso flags))
 				  (format "|[[./%s][%s]]|%s|%s|%s|%s|%s|"
 						  file-name
 						  name
