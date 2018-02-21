@@ -4,25 +4,19 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+줄 단위로 파일들을 비교합니다.
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +28,13 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+{{{BUILTIN}}}
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,25 +56,21 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+diff [options]... files
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +82,73 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(--normal)}}} :
+  (기본값) 일반적인 출력으로 보여줍니다.
+- {{{option(-q)}}}, {{{option(--brief)}}} :
+  파일이 다를 경우만 기록합니다.
+- {{{option(-c)}}}, {{{option(-C)}}} {{{argument(NUM)}}}, {{{option(--context)}}} {{{argument([=NUM])}}} :
+  복사된 문맥을 {{{arg(NUM)}}} 수(기본 값 3)만 큼 출력합니다.
+- {{{option(-u)}}}, {{{option(-U)}}} {{{argument(NUM)}}}, {{{option(--unified)}}} {{{argument([=NUM])}}} :
+  통일된 문맥을 {{{arg(NUM)}}} 수(기본 값 3)만 큼 출력합니다.
+- {{{option(-e)}}}, {{{option(--ed)}}} :
+  ed 스크립트로 출력합니다.
+- {{{option(-n)}}}, {{{option(--rcs)}}} :
+  RCS 포맷으로 출력합니다.
+- {{{option(-y)}}}, {{{option(--side-by-side)}}} :
+  2개의 열로 출력합니다.
+- {{{option(-W)}}}, {{{option(--width)}}} {{{argument(=NUM)}}} :
+  {{{arg(NUM)}}}으로 최대 출력 열 수를 정합니다. (기본값 130)
+- {{{option(--left-column)}}} :
+  같은 줄의 왼쪽 열만 출력합니다.
+- {{{option(--supress-common-lines)}}} :
+  같은 줄은 출력하지 않습니다.
+- {{{option(-p)}}}, {{{option(--show-c-function)}}} :
+  각 차이를 포함하는 C 함수를 출력합니다.
+- {{{option(-F)}}}, {{{option(--show-function-line)}}} {{{argument(=RE)}}} :
+  {{{arg(RE)}}}와 가장 최근에 매칭된 줄을 출력합니다.
+- {{{option(--label)}}} {{{argument(LABEL)}}}
+- {{{option(-t)}}}, {{{option(--expand-tabs)}}}
+- {{{option(-T)}}}, {{{option(--initial-tab)}}}
+- {{{option(--tabsize)}}} {{{argument(=NUM)}}}
+- {{{option(--suppress-blank-empty)}}}
+- {{{option(-l)}}}, {{{option(--paginate)}}}
+- {{{option(-r)}}}, {{{option(--recursive)}}}
+- {{{option(--no-dereference)}}}
+- {{{option(-N)}}}, {{{option(--new-file)}}}
+- {{{option(--unindirectional-new-file)}}}
+- {{{option(--ignore-file-name-case)}}}
+- {{{option(--no-ignore-file-name-case)}}}
+- {{{option(-x)}}}, {{{option(--exclude)}}} {{{argument(=PAT)}}}
+- {{{option(-X)}}}, {{{option(--exclude-from)}}} {{{argument(=FILE)}}}
+- {{{option(-S)}}}, {{{option(--starting-file)}}} {{{argument(=FILE)}}}
+- {{{option(--from-file)}}} {{{argument(=FILE1)}}}
+- {{{option(--to-file)}}} {{{argument(=FILE2)}}}
+- {{{option(-i)}}}, {{{option(--ignore-case)}}}
+- {{{option(-E)}}}, {{{option(--ignore-tab-expansion)}}}
+- {{{option(-z)}}}, {{{option(--ignore-trailing-space)}}}
+- {{{option(-b)}}}, {{{option(--ignore-space-change)}}}
+- {{{option(-w)}}}, {{{option(--ignore-all-space)}}}
+- {{{option(-B)}}}, {{{option(--ignore-blank-lines)}}}
+- {{{option(-I)}}}, {{{option(--ignore-matching-lines)}}} {{{argument(=RE)}}}
+- {{{option(-a)}}}, {{{option(--text)}}}
+- {{{option(--strip-trailing-cr)}}}
+- {{{option(-D)}}}, {{{option(--ifdef)}}} {{{argument(=NAME)}}}
+- {{{option(--GTYPE-group-format)}}} {{{argument(=GFMT)}}}
+- {{{option(--line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(--LTYPE-line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(-d)}}}, {{{option(--minimal)}}}
+- {{{option(--horizon-lines)}}} {{{argument(=NUM)}}}
+- {{{option(--speed-large-files)}}}
+- {{{option(--color)}}} {{{argument([=WHEN])}}}
+- {{{option(--palette)}}} {{{argument(=PALETTE)}}}
+- {{{option(--help)}}}
+- {{{option(-v)}}}, {{{option(--version)}}}
 
 # ** Examples
 #    :PROPERTIES: 
@@ -114,15 +160,15 @@
 #    :LANG_JA:  例
 #    :END:      
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(wdiff)}}}
+- {{{link(cmp)}}}
+- {{{link(sdiff)}}}
 
 # * References
 #   :PROPERTIES: 

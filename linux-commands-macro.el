@@ -140,9 +140,9 @@
 		   (stringp lc-core/language))
 	  (case (intern lc-core/language)
 		(en
-		 "This command is builtin.")
+		 "This is builtin command.")
 		(es
-		 "Este comando está incorporado.")
+		 "Este es el comando integrado.")
 		(ko
 		 "기본으로 내장되어 있는 명령어입니다.")
 		(zh
@@ -150,7 +150,7 @@
 		(ja
 		 "基本的に内蔵されているコマンドです。")
 		(t
-		 "This command is builtin."))
-	"This command is builtin."))
+		 "This is builtin command."))
+	"This is builtin command."))
 
 (provide 'linux-commands-macro)

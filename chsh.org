@@ -4,25 +4,28 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+로그인 쉘을 변경합니다.
+
+** 특징
+  :PROPERTIES: 
+  :LANG: ko
+  :END:    
+
+- 사용자의 로그인 쉘을 변경합니다.
+- 일반 사용자는 자신의 로그인 쉘만 변경 가능합니다.
+- 슈퍼 유저는 모든 사용자의 로그인 쉘을 변경할 수 있습니다.
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +37,13 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+{{{BUILTIN}}}
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,25 +65,21 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+chsh [options] [LOGIN]
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +91,27 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(-r)}}}, {{{option(--root)}}} {{{argument(CHROOT_DIR)}}} : 설정 파일을 읽어들일 루트 디렉토리를 변경합니다.
+- {{{option(-s)}}}, {{{option(--shell)}}} {{{argument(SHELL)}}} : 변경할 로그인 쉘을 설정합니다.
+- 시스템 기본 쉘을 설정하려면 {{{arg(SHELL)}}} 필드를 비워둡니다.
+- 만약 이 옵션이 설정이 되지 않으면, 인터렉티브 하게 쉘을 변경합니다.
+
+** 주의
+- 슈퍼 유저가 아니라면 쉘을 변경할 때에는 {{{path(/etc/shells)}}} 에 정의되어 있는 쉘만 사용 가능합니다.
+- 슈퍼 유저는 {{{path(/etc/shells)}}} 에 쉘을 추가해서 다른 쉘을 사용 하게 만들 수 있습니다.
+- 로그인에 제한이 걸린 사용자는 로그인 쉘을 변경할 수 없습니다.
+- 위와 같은 이유로 {{{path(/etc/shells)}}} 에 있는 {{{arg(/bin/rsh)}}} 는 남겨둡니다.
+
+** 파일
+- {{{path(/etc/passwd)}}} : 사용자 계정 정보
+- {{{path(/etc/shells)}}} : 사용 가능한 로그인 쉘 리스트
+- {{{path(/etc/login.defs)}}} : 쉐도우 패스워드 관련 설정
 
 # ** Examples
 #    :PROPERTIES: 
@@ -114,15 +123,15 @@
 #    :LANG_JA:  例
 #    :END:      
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(chfn)}}}
+- {{{link(passwd)}}}
+- {{{link(bash)}}}
 
 # * References
 #   :PROPERTIES: 
