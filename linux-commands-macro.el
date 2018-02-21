@@ -94,7 +94,7 @@
 		(lambda (paragraph)
 		  (let ((custom-id (ignore-errors (org-element-property :CUSTOM_ID (org-element-property :parent (org-element-property :parent paragraph)))))
 				)
-			(when (equal custom-id "overview")
+			(when (equal custom-id "introduction")
 			  (push (car (org-element-contents paragraph)) desc))
 			)))
 	  (push "-" title)
@@ -102,8 +102,6 @@
 	  (setq title (lc-macro/join-oneline title))
 	  (setq desc (lc-macro/join-oneline desc))
 	  (setq author (lc-macro/join-oneline author))
-	  (message "%s" buffer-file-name)
-	  (message "%s" desc)
 	  
 	  (push (format "<meta name=\"title\" content=\"%s\">" title) meta)
 	  (push (format "<meta name=\"description\" content=\"%s\">" desc) meta)
