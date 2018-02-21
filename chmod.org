@@ -2,27 +2,21 @@
 #+TITLE: chmod
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-20
+#+DATE: 2018-02-21
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+更改文件和目录的权限。
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +28,13 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+{{{BUILTIN}}}
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,25 +56,49 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+chmod [OPTION]... MODE[,MODE]... FILE...)}}}
+chmod [OPTION]... OCTAL-MODE FILE...)}}}    
+chmod [OPTION]... --reference=RFILE FILE...)
+#+END_SRC
+
+
+** 说明
+   :PROPERTIES: 
+   :CUSTOM_ID: description
+   :LANG: zh
+   :END:      
+
+*** Reference
+
+*** Operator
+
+*** 8 Bits mode
+|---+-------------------------+-----+-----|
+| # | Permission              | rwx | bin |
+|---+-------------------------+-----+-----|
+| 0 | none                    | --- | 000 |
+| 1 | execute only            | --x | 001 |
+| 2 | write only              | -w- | 010 |
+| 3 | write and execute       | -wx | 011 |
+| 4 | read only               | r-- | 100 |
+| 5 | read and execute        | r-x | 101 |
+| 6 | read and write          | rw- | 110 |
+| 7 | read, write and execute | rwx | 111 |
+
+*** Symbol mode
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +110,21 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
+
+- {{{option(-c)}}}, {{{option(--changes)}}} :
+- {{{option(-f)}}}, {{{option(--silent)}}}, {{{option(--quiet)}}} :
+- {{{option(-v)}}}, {{{option(--verbose)}}} :
+- {{{option(--no-preserve-root)}}} :
+- {{{option(--preserve-root)}}}
+- {{{option(--reference)}}} {{{argument(=RFILE)}}} :
+- {{{option(-R)}}}, {{{option(--recursive)}}} :
+- {{{option(--help)}}} :
+- {{{option(--version)}}} :
 
 # ** Examples
 #    :PROPERTIES: 
