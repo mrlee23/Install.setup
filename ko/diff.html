@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-21 Wed 14:25 -->
+<!-- 2018-02-21 Wed 15:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>diff</title>
@@ -247,11 +247,151 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">diff</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">개요</a></li>
+<li><a href="#how-to-install">설치 방법</a>
+<ul>
+<li><a href="#install">설치</a></li>
+</ul>
+</li>
+<li><a href="#usage">사용법</a>
+<ul>
+<li><a href="#syntax">구조</a></li>
+<li><a href="#options">옵션</a></li>
+</ul>
+</li>
+<li><a href="#seealso">관련 항목</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4c582e8" class="outline-2">
+<h2 id="overview"><a id="org4c582e8"></a>개요</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+줄 단위로 파일들을 비교합니다.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfcc592e" class="outline-2">
+<h2 id="how-to-install"><a id="orgfcc592e"></a>설치 방법</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org45ac874" class="outline-3">
+<h3 id="install"><a id="org45ac874"></a>설치</h3>
+<div class="outline-text-3" id="text-install">
+<p>
+기본으로 내장되어 있는 명령어입니다.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd657918" class="outline-2">
+<h2 id="usage"><a id="orgd657918"></a>사용법</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org28fa722" class="outline-3">
+<h3 id="syntax"><a id="org28fa722"></a>구조</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">diff [options]... files
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7c73b69" class="outline-3">
+<h3 id="options"><a id="org7c73b69"></a>옵션</h3>
+<div class="outline-text-3" id="text-options">
+<ul class="org-ul">
+<li><span class="org-programming-option">--normal</span> :
+(기본값) 일반적인 출력으로 보여줍니다.</li>
+<li><span class="org-programming-option">-q</span>, <span class="org-programming-option">--brief</span> :
+파일이 다를 경우만 기록합니다.</li>
+<li><span class="org-programming-option">-c</span>, <span class="org-programming-option">-C</span> <span class="org-programming-argument">NUM</span>, <span class="org-programming-option">--context</span> <span class="org-programming-argument">[=NUM]</span> :
+복사된 문맥을 <span class="org-programming-arg">NUM</span> 수(기본 값 3)만 큼 출력합니다.</li>
+<li><span class="org-programming-option">-u</span>, <span class="org-programming-option">-U</span> <span class="org-programming-argument">NUM</span>, <span class="org-programming-option">--unified</span> <span class="org-programming-argument">[=NUM]</span> :
+통일된 문맥을 <span class="org-programming-arg">NUM</span> 수(기본 값 3)만 큼 출력합니다.</li>
+<li><span class="org-programming-option">-e</span>, <span class="org-programming-option">--ed</span> :
+ed 스크립트로 출력합니다.</li>
+<li><span class="org-programming-option">-n</span>, <span class="org-programming-option">--rcs</span> :
+RCS 포맷으로 출력합니다.</li>
+<li><span class="org-programming-option">-y</span>, <span class="org-programming-option">--side-by-side</span> :
+2개의 열로 출력합니다.</li>
+<li><span class="org-programming-option">-W</span>, <span class="org-programming-option">--width</span> <span class="org-programming-argument">=NUM</span> :
+<span class="org-programming-arg">NUM</span>으로 최대 출력 열 수를 정합니다. (기본값 130)</li>
+<li><span class="org-programming-option">--left-column</span> :
+같은 줄의 왼쪽 열만 출력합니다.</li>
+<li><span class="org-programming-option">--supress-common-lines</span> :
+같은 줄은 출력하지 않습니다.</li>
+<li><span class="org-programming-option">-p</span>, <span class="org-programming-option">--show-c-function</span> :
+각 차이를 포함하는 C 함수를 출력합니다.</li>
+<li><span class="org-programming-option">-F</span>, <span class="org-programming-option">--show-function-line</span> <span class="org-programming-argument">=RE</span> :
+<span class="org-programming-arg">RE</span>와 가장 최근에 매칭된 줄을 출력합니다.</li>
+<li><span class="org-programming-option">--label</span> <span class="org-programming-argument">LABEL</span></li>
+<li><span class="org-programming-option">-t</span>, <span class="org-programming-option">--expand-tabs</span></li>
+<li><span class="org-programming-option">-T</span>, <span class="org-programming-option">--initial-tab</span></li>
+<li><span class="org-programming-option">--tabsize</span> <span class="org-programming-argument">=NUM</span></li>
+<li><span class="org-programming-option">--suppress-blank-empty</span></li>
+<li><span class="org-programming-option">-l</span>, <span class="org-programming-option">--paginate</span></li>
+<li><span class="org-programming-option">-r</span>, <span class="org-programming-option">--recursive</span></li>
+<li><span class="org-programming-option">--no-dereference</span></li>
+<li><span class="org-programming-option">-N</span>, <span class="org-programming-option">--new-file</span></li>
+<li><span class="org-programming-option">--unindirectional-new-file</span></li>
+<li><span class="org-programming-option">--ignore-file-name-case</span></li>
+<li><span class="org-programming-option">--no-ignore-file-name-case</span></li>
+<li><span class="org-programming-option">-x</span>, <span class="org-programming-option">--exclude</span> <span class="org-programming-argument">=PAT</span></li>
+<li><span class="org-programming-option">-X</span>, <span class="org-programming-option">--exclude-from</span> <span class="org-programming-argument">=FILE</span></li>
+<li><span class="org-programming-option">-S</span>, <span class="org-programming-option">--starting-file</span> <span class="org-programming-argument">=FILE</span></li>
+<li><span class="org-programming-option">--from-file</span> <span class="org-programming-argument">=FILE1</span></li>
+<li><span class="org-programming-option">--to-file</span> <span class="org-programming-argument">=FILE2</span></li>
+<li><span class="org-programming-option">-i</span>, <span class="org-programming-option">--ignore-case</span></li>
+<li><span class="org-programming-option">-E</span>, <span class="org-programming-option">--ignore-tab-expansion</span></li>
+<li><span class="org-programming-option">-z</span>, <span class="org-programming-option">--ignore-trailing-space</span></li>
+<li><span class="org-programming-option">-b</span>, <span class="org-programming-option">--ignore-space-change</span></li>
+<li><span class="org-programming-option">-w</span>, <span class="org-programming-option">--ignore-all-space</span></li>
+<li><span class="org-programming-option">-B</span>, <span class="org-programming-option">--ignore-blank-lines</span></li>
+<li><span class="org-programming-option">-I</span>, <span class="org-programming-option">--ignore-matching-lines</span> <span class="org-programming-argument">=RE</span></li>
+<li><span class="org-programming-option">-a</span>, <span class="org-programming-option">--text</span></li>
+<li><span class="org-programming-option">--strip-trailing-cr</span></li>
+<li><span class="org-programming-option">-D</span>, <span class="org-programming-option">--ifdef</span> <span class="org-programming-argument">=NAME</span></li>
+<li><span class="org-programming-option">--GTYPE-group-format</span> <span class="org-programming-argument">=GFMT</span></li>
+<li><span class="org-programming-option">--line-format</span> <span class="org-programming-argument">=LFMT</span></li>
+<li><span class="org-programming-option">--LTYPE-line-format</span> <span class="org-programming-argument">=LFMT</span></li>
+<li><span class="org-programming-option">-d</span>, <span class="org-programming-option">--minimal</span></li>
+<li><span class="org-programming-option">--horizon-lines</span> <span class="org-programming-argument">=NUM</span></li>
+<li><span class="org-programming-option">--speed-large-files</span></li>
+<li><span class="org-programming-option">--color</span> <span class="org-programming-argument">[=WHEN]</span></li>
+<li><span class="org-programming-option">--palette</span> <span class="org-programming-argument">=PALETTE</span></li>
+<li><span class="org-programming-option">--help</span></li>
+<li><span class="org-programming-option">-v</span>, <span class="org-programming-option">--version</span></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbb61388" class="outline-2">
+<h2 id="seealso"><a id="orgbb61388"></a>관련 항목</h2>
+<div class="outline-text-2" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./wdiff.html">wdiff</a></li>
+<li><a href="./cmp.html">cmp</a></li>
+<li><a href="./sdiff.html">sdiff</a></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-21 Wed 14:25</p>
+<p class="date">Created: 2018-02-21 Wed 15:20</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
