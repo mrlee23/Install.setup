@@ -4,15 +4,12 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
+
 
 # * How to Install
 #   :PROPERTIES: 
@@ -64,15 +61,11 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
 
 # ** Syntax
 #    :PROPERTIES: 
@@ -94,25 +87,33 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** オプション
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ja
+   :END:      
+- {{{option(-c)}}} .debfile :
+- {{{option(-l)}}} .debfile :
+- {{{option(-p)}}} package :
+- {{{option(-S)}}} filename :
+- {{{option(-l)}}} :
+- {{{option(-L)}}} package :
+- {{{option(-s)}}} package :
 
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
+** 例
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ja
+   :END:      
+
+- dpkg -i deb_filename:
+- dpkg -l [commands]:
+- dpkg -r 패키지명:
+- sudo dpkg -i .debfile:
+- sudo dpkg -r package:
+- sudo dpkg -P package:
+- sudo dpkg -x .debfile directory:
+- sudo dpkg -e .debfile directory:
 
 # * See also
 #   :PROPERTIES: 

@@ -4,25 +4,19 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+行単位でファイルを比較します。
+
+* インストール方法
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ja
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +28,13 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** インストール
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ja
+  :END:      
+
+{{{BUILTIN}}}
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,25 +56,21 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 構造
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+diff [options]... files
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +82,61 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** オプション
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ja
+   :END:      
+
+- {{{option(--normal)}}} :
+- {{{option(-q)}}}, {{{option(--brief)}}} :
+- {{{option(-c)}}}, {{{option(-C)}}} {{{argument(NUM)}}}, {{{option(--context)}}} {{{argument([=NUM])}}} :
+- {{{option(-u)}}}, {{{option(-U)}}} {{{argument(NUM)}}}, {{{option(--unified)}}} {{{argument([=NUM])}}} :
+- {{{option(-e)}}}, {{{option(--ed)}}} :
+- {{{option(-n)}}}, {{{option(--rcs)}}} :
+- {{{option(-y)}}}, {{{option(--side-by-side)}}} :
+- {{{option(-W)}}}, {{{option(--width)}}} {{{argument(=NUM)}}} :
+- {{{option(--left-column)}}} :
+- {{{option(--supress-common-lines)}}} :
+- {{{option(-p)}}}, {{{option(--show-c-function)}}} :
+- {{{option(-F)}}}, {{{option(--show-function-line)}}} {{{argument(=RE)}}} :
+- {{{option(--label)}}} {{{argument(LABEL)}}}
+- {{{option(-t)}}}, {{{option(--expand-tabs)}}}
+- {{{option(-T)}}}, {{{option(--initial-tab)}}}
+- {{{option(--tabsize)}}} {{{argument(=NUM)}}}
+- {{{option(--suppress-blank-empty)}}}
+- {{{option(-l)}}}, {{{option(--paginate)}}}
+- {{{option(-r)}}}, {{{option(--recursive)}}}
+- {{{option(--no-dereference)}}}
+- {{{option(-N)}}}, {{{option(--new-file)}}}
+- {{{option(--unindirectional-new-file)}}}
+- {{{option(--ignore-file-name-case)}}}
+- {{{option(--no-ignore-file-name-case)}}}
+- {{{option(-x)}}}, {{{option(--exclude)}}} {{{argument(=PAT)}}}
+- {{{option(-X)}}}, {{{option(--exclude-from)}}} {{{argument(=FILE)}}}
+- {{{option(-S)}}}, {{{option(--starting-file)}}} {{{argument(=FILE)}}}
+- {{{option(--from-file)}}} {{{argument(=FILE1)}}}
+- {{{option(--to-file)}}} {{{argument(=FILE2)}}}
+- {{{option(-i)}}}, {{{option(--ignore-case)}}}
+- {{{option(-E)}}}, {{{option(--ignore-tab-expansion)}}}
+- {{{option(-z)}}}, {{{option(--ignore-trailing-space)}}}
+- {{{option(-b)}}}, {{{option(--ignore-space-change)}}}
+- {{{option(-w)}}}, {{{option(--ignore-all-space)}}}
+- {{{option(-B)}}}, {{{option(--ignore-blank-lines)}}}
+- {{{option(-I)}}}, {{{option(--ignore-matching-lines)}}} {{{argument(=RE)}}}
+- {{{option(-a)}}}, {{{option(--text)}}}
+- {{{option(--strip-trailing-cr)}}}
+- {{{option(-D)}}}, {{{option(--ifdef)}}} {{{argument(=NAME)}}}
+- {{{option(--GTYPE-group-format)}}} {{{argument(=GFMT)}}}
+- {{{option(--line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(--LTYPE-line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(-d)}}}, {{{option(--minimal)}}}
+- {{{option(--horizon-lines)}}} {{{argument(=NUM)}}}
+- {{{option(--speed-large-files)}}}
+- {{{option(--color)}}} {{{argument([=WHEN])}}}
+- {{{option(--palette)}}} {{{argument(=PALETTE)}}}
+- {{{option(--help)}}}
+- {{{option(-v)}}}, {{{option(--version)}}}
 
 # ** Examples
 #    :PROPERTIES: 
@@ -114,15 +148,15 @@
 #    :LANG_JA:  例
 #    :END:      
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* 関連項目
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ja
+  :END:      
+
+- {{{link(wdiff)}}}
+- {{{link(cmp)}}}
+- {{{link(sdiff)}}}
 
 # * References
 #   :PROPERTIES: 

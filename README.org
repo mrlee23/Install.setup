@@ -1,4 +1,4 @@
-# Created 2018-02-21 Wed 14:26
+# Created 2018-02-21 Wed 15:22
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -11,9 +11,11 @@
 #+MACRO: kwd @@html:<span class="org-programming-keyword">$1</span>@@
 #+MACRO: type @@html:<span class="org-programming-type">$1</span>@@
 #+MACRO: var @@html:<span class="org-programming-variable">$1</span>@@
+#+MACRO: variable @@html:<span class="org-programming-variable">$1</span>@@
 #+MACRO: const @@html:<span class="org-programming-constant">$1</span>@@
 #+MACRO: path @@html:<span class="org-programming-path">$1</span>@@
 #+MACRO: file @@html:<span class="org-programming-file">$1</span>@@
+#+MACRO: opt @@html:<span class="org-programming-option">$1</span>@@
 #+MACRO: option @@html:<span class="org-programming-option">$1</span>@@
 #+MACRO: see See [[./$1.org][$1]]
 #+MACRO: link [[./$1.org][$1]]
@@ -50,7 +52,7 @@
 
 * 進行状況
 | Name                                                  | Overview                                     | Install                                        | Usage                              | Options                              | See also                             |
-| [[file:./DNS.org][DNS]]                               | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./DNS.org][DNS]]                               | [[file:DNS.org::#overview][Yes]]             | No                                             | No                                 | No                                   | [[file:DNS.org::#seealso][Yes]]      |
 | [[file:./NIS.org][NIS]]                               | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./SELinux.org][SELinux]]                       | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./addbib.org][addbib]]                         | No                                           | No                                             | No                                 | No                                   | No                                   |
@@ -63,18 +65,18 @@
 | [[file:./build-essential.org][build-essential]]       | [[file:build-essential.org::#overview][Yes]] | [[file:build-essential.org::#install][Yes]]    | No                                 | No                                   | No                                   |
 | [[file:./cat.org][cat]]                               | [[file:cat.org::#overview][Yes]]             | No                                             | [[file:cat.org::#usage][Yes]]      | [[file:cat.org::#options][Yes]]      | No                                   |
 | [[file:./chattr.org][chattr]]                         | [[file:chattr.org::#overview][Yes]]          | No                                             | [[file:chattr.org::#usage][Yes]]   | [[file:chattr.org::#options][Yes]]   | No                                   |
-| [[file:./chfn.org][chfn]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./chfn.org][chfn]]                             | [[file:chfn.org::#overview][Yes]]            | No                                             | [[file:chfn.org::#usage][Yes]]     | [[file:chfn.org::#options][Yes]]     | [[file:chfn.org::#seealso][Yes]]     |
 | [[file:./chgrp.org][chgrp]]                           | [[file:chgrp.org::#overview][Yes]]           | [[file:chgrp.org::#install][Yes]]              | [[file:chgrp.org::#usage][Yes]]    | [[file:chgrp.org::#options][Yes]]    | No                                   |
 | [[file:./chmod.org][chmod]]                           | [[file:chmod.org::#overview][Yes]]           | [[file:chmod.org::#install][Yes]]              | [[file:chmod.org::#usage][Yes]]    | [[file:chmod.org::#options][Yes]]    | No                                   |
 | [[file:./chown.org][chown]]                           | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./chrome.org][chrome]]                         | No                                           | [[file:chrome.org::#install][Yes]]             | No                                 | No                                   | No                                   |
-| [[file:./chsh.org][chsh]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./chsh.org][chsh]]                             | [[file:chsh.org::#overview][Yes]]            | [[file:chsh.org::#install][Yes]]               | [[file:chsh.org::#usage][Yes]]     | [[file:chsh.org::#options][Yes]]     | [[file:chsh.org::#seealso][Yes]]     |
 | [[file:./curl.org][curl]]                             | No                                           | [[file:curl.org::#install][Yes]]               | No                                 | No                                   | No                                   |
 | [[file:./dh-autoreconf.org][dh-autoreconf]]           | No                                           | [[file:dh-autoreconf.org::#install][Yes]]      | No                                 | No                                   | No                                   |
-| [[file:./diff.org][diff]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./diff.org][diff]]                             | [[file:diff.org::#overview][Yes]]            | [[file:diff.org::#install][Yes]]               | [[file:diff.org::#usage][Yes]]     | [[file:diff.org::#options][Yes]]     | [[file:diff.org::#seealso][Yes]]     |
 | [[file:./docker-compose.org][docker-compose]]         | No                                           | [[file:docker-compose.org::#install][Yes]]     | No                                 | No                                   | No                                   |
 | [[file:./docker.org][docker]]                         | No                                           | [[file:docker.org::#install][Yes]]             | No                                 | No                                   | No                                   |
-| [[file:./dpkg.org][dpkg]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./dpkg.org][dpkg]]                             | [[file:dpkg.org::#overview][Yes]]            | No                                             | [[file:dpkg.org::#usage][Yes]]     | [[file:dpkg.org::#options][Yes]]     | No                                   |
 | [[file:./echo.org][echo]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./emacs.org][emacs]]                           | No                                           | [[file:emacs.org::#install][Yes]]              | No                                 | No                                   | No                                   |
 | [[file:./find.org][find]]                             | No                                           | No                                             | [[file:find.org::#usage][Yes]]     | [[file:find.org::#options][Yes]]     | No                                   |
