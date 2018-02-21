@@ -4,15 +4,22 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+** Introduction
+  :PROPERTIES: 
+  :LANG: en
+  :END:    
+
+
+** Feature
+  :PROPERTIES: 
+  :LANG: en
+  :END:    
 
 # * How to Install
 #   :PROPERTIES: 
@@ -64,65 +71,75 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
 
-# ** Configuration
-#    :PROPERTIES: 
-#    :CUSTOM_ID: configuration
-#    :LANG_EN:  Configuration
-#    :LANG_ES:  Configuración
-#    :LANG_KO:  설정
-#    :LANG_ZH:  组态
-#    :LANG_JA:  設定
-#    :END:      
+	#+BEGIN_SRC sh
+alias [-p] [name[=value] ...]
+	#+END_SRC
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: en
+   :END:      
 
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
+You can configure at {{{file(~/.bash_profile)}}} or {{{file(~/.bashrc)}}}
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+- {{{option(-p)}}}
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: en
+   :END:      
+
+
+	#+BEGIN_SRC sh
+$ alias cl='clear'
+$ alias ll='ls -l'
+$ alias rm='rm -i'
+	#+END_SRC
+
+	#+BEGIN_SRC sh
+$ ll
+	#+END_SRC
+
+#+BEGIN_RESULT
+-rw-r--r--  1 dongsoolee  wheel     17  2 21 12:43 CNAME
+-rw-r--r--  1 dongsoolee  wheel   2870  2 21 12:43 DNS.org
+-rw-r--r--  1 dongsoolee  wheel    984  2 21 12:43 Dockerfile
+-rw-r--r--  1 dongsoolee  wheel   2821  2 21 12:43 Makefile
+-rw-r--r--  1 dongsoolee  wheel   2870  2 21 12:43 NIS.org
+-rw-r--r--  1 dongsoolee  wheel    278  2 21 12:48 README.en.org
+-rw-r--r--  1 dongsoolee  wheel    578  2 21 12:49 README.ko.org
+-rw-r--r--  1 dongsoolee  wheel    814  2 21 12:43 README.org
+-rw-r--r--  1 dongsoolee  wheel  11259  2 21 12:46 README.org.org
+-rw-r--r--  1 dongsoolee  wheel   2874  2 21 12:43 SELinux.org
+#+END_RESULT
+
+* See also
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: en
+  :END:      
+
+- {{{link(bash)}}}
 
 # * References
 #   :PROPERTIES: 
