@@ -32,7 +32,8 @@ script:
     echo "This branch($TRAVIS_BRANCH) is not available";
     fi
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    DOCKER_RUN "make index";
+    DOCKER_RUN "make index" && INDEX_NON_ERROR=TRUE;
+    if [ "$INDEX_NON_ERROR" != TRUE ]; then echo "Error occured on make index..."; exit 1; fi;
     DOCKER_RUN "make pages" && PAGES_NON_ERROR=TRUE;
     if [ "$PAGES_NON_ERROR" == TRUE ]; then
     for lang in `cat .supportLanguages`; do
@@ -44,7 +45,7 @@ script:
     done;
     sudo bash .Build.sh/build.sh gh-pages;
     else
-    echo "Error occured during make pages...";
+    echo "Error occured on make pages...";
     exit 1;
     fi;
     else
