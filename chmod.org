@@ -2,27 +2,33 @@
 #+TITLE: chmod
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-20
+#+DATE: 2018-02-21
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+#+LANG_EN:Change the permission of file or directory.
+#+LANG_ES:Cambiar el permiso de archivo o directorio.
+#+LANG_KO:파일 및 디렉토리의 권한을 변경합니다.
+#+LANG_ZH:更改文件和目录的权限。
+#+LANG_JA:ファイルおよびディレクトリのアクセス権を変更します。
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +40,17 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
+
+{{{BUILTIN}}}
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,25 +72,112 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
+
+#+BEGIN_SRC sh
+chmod [OPTION]... MODE[,MODE]... FILE...)}}}
+chmod [OPTION]... OCTAL-MODE FILE...)}}}    
+chmod [OPTION]... --reference=RFILE FILE...)
+#+END_SRC
+
+#+LANG_KO:파일 및 디렉토리의 권한을 변경합니다. 쓰기, 읽기, 실행 권한에 각각 1비트를 할당하여 총 3비트로 권한을 나타냅니다.
+
+** Description
+   :PROPERTIES: 
+   :CUSTOM_ID: description
+   :LANG_EN:  Description
+   :LANG_ES:  Descripción
+   :LANG_KO:  설명
+   :LANG_ZH:  说明
+   :LANG_JA:  説明
+   :END:      
+
+*** Reference
+#+BEGIN_LANG en
+| Reference | Class  | Description                  |
+|-----------+--------+------------------------------|
+| u         | Use    | Owner of file   |
+| g         | Group  | Group member of file |
+| o         | Others |  |
+| a         | All    | Same with "ugo" |
+#+END_LANG
+#+BEGIN_LANG ko
+| 레퍼런스 | 클래스  | 설명                         |
+|--------+---------+------------------------------|
+| u      | 사용자  | 파일의 소유자                |
+| g      | 그룹    | 그 파일의 그룹 멤버인 사용자 |
+| o      | 다른 사람 |  |
+| a      | 모든 사람 | 셋 모두, "ugo" 와 같다.      |
+#+END_LANG
+
+*** Operator
+#+BEGIN_LANG en
+| Operator | Description                                           |
+|----------+-------------------------------------------------------|
+| +        | Add modes to exists class                             |
+| -        | Remove modes from exists class                        |
+| =        | Set modes                                             |
+#+END_LANG
+#+BEGIN_LANG ko
+| 연산자 | 설명                                                  |
+|------+-------------------------------------------------------|
+| +    | 모드들은 지정된 클래스들에 더한다                     |
+| -    | 지정된 클래스들로부터 지정된 모드들은 지운다          |
+| =    | 지정된 클래스들을 위해서 지정된 모드들이 정확한 모드들로 만들어지게 된다. |
+#+END_LANG
+
+*** 8 Bits mode
+|---+-------------------------+-----+-----|
+| # | Permission              | rwx | bin |
+|---+-------------------------+-----+-----|
+| 0 | none                    | --- | 000 |
+| 1 | execute only            | --x | 001 |
+| 2 | write only              | -w- | 010 |
+| 3 | write and execute       | -wx | 011 |
+| 4 | read only               | r-- | 100 |
+| 5 | read and execute        | r-x | 101 |
+| 6 | read and write          | rw- | 110 |
+| 7 | read, write and execute | rwx | 111 |
+
+*** Symbol mode
+#+BEGIN_LANG en
+| mode | name            | description                         |
+|------+-----------------+-------------------------------------|
+| r    | read            | Read file or access directory list. |
+| w    | write           | Write file or directory.            |
+| x    | execute         | Execute.                            |
+| X    | special execute |                                     |
+| s    | setuid/gid      |                                     |
+| t    | sticky bit      |                                     |
+#+END_LANG
+#+BEGIN_LANG ko
+| 모드 | 이름         | 설명                                      |
+|------+--------------+--------------------------------------------------|
+| r    | 읽기         | 읽거나 디렉토리 안 내용물의 리스트를 보여준다.   |
+| w    | 쓰기         | 파일이나 디렉토리에 쓴다.                        |
+| x    | 실행         | 실행하거나 디렉토리 트리로 되돌아간다.           |
+| X    | 특수실행     | 실행은 불가하지만 디렉토리 접근은 가능하도록 설정한다. |
+| s    | setuid/gid   | 실행시 소유자 혹은 그룹의 권한으로 실행된다.     |
+| t    | 스티키(sticky) | 해당 파일의 소유자가 아니면 수퍼유저를 제외하고는 삭제가 불가하다. |
+#+END_LANG
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +189,34 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+- {{{option(-c)}}}, {{{option(--changes)}}} :
+#+BEGIN_KO: verbose와 비슷하지만 변경되었을 때만 리포트한다.
+- {{{option(-f)}}}, {{{option(--silent)}}}, {{{option(--quiet)}}} :
+#+BEGIN_KO: 에러 메세지를 보여주지 않는다.
+- {{{option(-v)}}}, {{{option(--verbose)}}} :
+#+BEGIN_KO: 처리된 모든 파일의 진단 결과를 출력한다.
+- {{{option(--no-preserve-root)}}} :
+#+BEGIN_KO: (기본설정) '/'를 사용하지 않는다.
+- {{{option(--preserve-root)}}}
+- {{{option(--reference)}}} {{{argument(=RFILE)}}} :
+#+BEGIN_KO: RFILE의 모드를 사용한다.
+- {{{option(-R)}}}, {{{option(--recursive)}}} :
+#+BEGIN_KO: 파일들과 디렉토리를 재귀적으로 변경한다.
+- {{{option(--help)}}} :
+#+BEGIN_KO: 도움말
+- {{{option(--version)}}} :
+#+BEGIN_KO: 버전
+- MODE 형태 : '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'
 
 # ** Examples
 #    :PROPERTIES: 
