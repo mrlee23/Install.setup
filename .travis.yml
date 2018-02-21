@@ -42,8 +42,11 @@ script:
     export PUBLISH_DIR=".publish/$lang";
     sudo bash .Build.sh/build.sh publish;
     done;
-    fi;
     sudo bash .Build.sh/build.sh gh-pages;
+    else
+    echo "Error occured during make pages...";
+    exit 1;
+    fi;
     else
     echo "This branch($TRAVIS_BRANCH) is not available";
     fi
