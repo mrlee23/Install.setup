@@ -29,9 +29,15 @@
 
 (defun pages-publish-to-html (plist filename pub-dir)
   (let (source-filename)
-	(when (equal (file-name-base filename) "README")
-	  (copy-file filename (setq source-filename (expand-file-name "index.org" (file-name-directory filename))))
-	  (setq filename source-filename))
+	(when (equal (file-name-base filename) "README") ;; README.org handling
+	  (let (tmp-readme tmp-index)
+		(setq tmp-readme (org-multilingual-publish plist filename (file-name-directory filename)))
+		(org-org-publish-to-org plist tmp-readme (file-name-directory tmp-readme))
+		(when (file-exists-p (concat tmp-readme ".org"))
+		  (shell-command-to-string (format "mv -f \"%s\" \"%s\"" (concat tmp-readme ".org") filename)))
+		
+		(copy-file filename (setq tmp-index (expand-file-name "index.org" (file-name-directory filename))))
+		(setq filename tmp-index)))
 	;; .publish/lang/xxx.org -> .publish/lang/xxx.org multilingual preprocessing
 	(setq source-filename (org-multilingual-publish plist filename (file-name-directory filename)))
 	(lc-core/init-contents source-filename)
