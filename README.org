@@ -1,23 +1,25 @@
-# Created 2018-02-21 Wed 08:49
+# Created 2018-02-21 Wed 13:40
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
 #+AUTHOR: Dongsoo Lee
-#+MACRO: class @@html:<span class="lc-class">$1</span>@@
-#+MACRO: func @@html:<span class="lc-func">$1</span>@@
-#+MACRO: ret @@html:<span class="lc-ret">$1</span>@@
-#+MACRO: arg @@html:<span class="lc-arg">$1</span>@@
-#+MACRO: kwd @@html:<span class="lc-kwd">$1</span>@@
-#+MACRO: type @@html:<span class="lc-type">$1</span>@@
-#+MACRO: var @@html:<span class="lc-var">$1</span>@@
-#+MACRO: const @@html:<span class="lc-const">$1</span>@@
-#+MACRO: path @@html:<span class="lc-path">$1</span>@@
-#+MACRO: file @@html:<span class="lc-file">$1</span>@@
-#+MACRO: option @@html:<span class="lc-option">$1</span>@@
+#+MACRO: class @@html:<span class="org-programming-class">$1</span>@@
+#+MACRO: func @@html:<span class="org-programming-function">$1</span>@@
+#+MACRO: ret @@html:<span class="org-programming-return">$1</span>@@
+#+MACRO: arg @@html:<span class="org-programming-arg">$1</span>@@
+#+MACRO: argument @@html:<span class="org-programming-argument">$1</span>@@
+#+MACRO: kwd @@html:<span class="org-programming-keyword">$1</span>@@
+#+MACRO: type @@html:<span class="org-programming-type">$1</span>@@
+#+MACRO: var @@html:<span class="org-programming-variable">$1</span>@@
+#+MACRO: const @@html:<span class="org-programming-constant">$1</span>@@
+#+MACRO: path @@html:<span class="org-programming-path">$1</span>@@
+#+MACRO: file @@html:<span class="org-programming-file">$1</span>@@
+#+MACRO: option @@html:<span class="org-programming-option">$1</span>@@
 #+MACRO: see See [[./$1.org][$1]]
 #+MACRO: link [[./$1.org][$1]]
 
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
+#+MACRO: BUILTIN (eval (lc-macro/builtin))
 #+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
 #+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
 #+MACRO: META (eval (lc-macro/meta))
@@ -62,8 +64,8 @@
 | [[file:./cat.org][cat]]                               | [[file:cat.org::#overview][Yes]]             | No                                             | [[file:cat.org::#usage][Yes]]      | [[file:cat.org::#options][Yes]]      | No                                   |
 | [[file:./chattr.org][chattr]]                         | [[file:chattr.org::#overview][Yes]]          | No                                             | [[file:chattr.org::#usage][Yes]]   | [[file:chattr.org::#options][Yes]]   | No                                   |
 | [[file:./chfn.org][chfn]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
-| [[file:./chgrp.org][chgrp]]                           | No                                           | No                                             | No                                 | No                                   | No                                   |
-| [[file:./chmod.org][chmod]]                           | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./chgrp.org][chgrp]]                           | [[file:chgrp.org::#overview][Yes]]           | [[file:chgrp.org::#install][Yes]]              | [[file:chgrp.org::#usage][Yes]]    | [[file:chgrp.org::#options][Yes]]    | No                                   |
+| [[file:./chmod.org][chmod]]                           | [[file:chmod.org::#overview][Yes]]           | [[file:chmod.org::#install][Yes]]              | [[file:chmod.org::#usage][Yes]]    | [[file:chmod.org::#options][Yes]]    | No                                   |
 | [[file:./chown.org][chown]]                           | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./chrome.org][chrome]]                         | No                                           | [[file:chrome.org::#install][Yes]]             | No                                 | No                                   | No                                   |
 | [[file:./chsh.org][chsh]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
