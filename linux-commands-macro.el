@@ -137,10 +137,10 @@
 
 (defun lc-macro/builtin ()
   (if (and (boundp 'lc-core/language)
-		   (stringp 'lc-core/language))
+		   (stringp lc-core/language))
 	  (case (intern lc-core/language)
 		(en
-		 "his command is builtin.")
+		 "This command is builtin.")
 		(es
 		 "Este comando está incorporado.")
 		(ko
@@ -150,7 +150,7 @@
 		(ja
 		 "基本的に内蔵されているコマンドです。")
 		(t
-		 "his command is builtin."))
-	"his command is builtin."))
+		 "This command is builtin."))
+	"This command is builtin."))
 
 (provide 'linux-commands-macro)
