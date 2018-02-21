@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-21 Wed 08:48 -->
+<!-- 2018-02-21 Wed 13:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>chmod</title>
@@ -247,11 +247,335 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">chmod</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#how-to-install">How to Install</a>
+<ul>
+<li><a href="#install">Install</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#description">Description</a>
+<ul>
+<li><a href="#org30e9916">Reference</a></li>
+<li><a href="#orge7a8de0">Operator</a></li>
+<li><a href="#orgeeb2727">8 Bits mode</a></li>
+<li><a href="#org6a11424">Symbol mode</a></li>
+</ul>
+</li>
+<li><a href="#options">Options</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5c14566" class="outline-2">
+<h2 id="overview"><a id="org5c14566"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Change the permission of file or directory.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2da25ad" class="outline-2">
+<h2 id="how-to-install"><a id="org2da25ad"></a>How to Install</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org87063d4" class="outline-3">
+<h3 id="install"><a id="org87063d4"></a>Install</h3>
+<div class="outline-text-3" id="text-install">
+<p>
+his command is builtin.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ecc2b8" class="outline-2">
+<h2 id="usage"><a id="org6ecc2b8"></a>Usage</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org6b22c8b" class="outline-3">
+<h3 id="syntax"><a id="org6b22c8b"></a>Syntax</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">chmod [OPTION]... MODE[,MODE]... FILE...)}}}
+chmod [OPTION]... OCTAL-MODE FILE...)}}}    
+chmod [OPTION]... --reference=RFILE FILE...)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3646ea9" class="outline-3">
+<h3 id="description"><a id="org3646ea9"></a>Description</h3>
+<div class="outline-text-3" id="text-description">
+</div>
+
+<div id="outline-container-org30e9916" class="outline-4">
+<h4 id="org30e9916">Reference</h4>
+<div class="outline-text-4" id="text-org30e9916">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Reference</th>
+<th scope="col" class="org-left">Class</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">u</td>
+<td class="org-left">Use</td>
+<td class="org-left">Owner of file</td>
+</tr>
+
+<tr>
+<td class="org-left">g</td>
+<td class="org-left">Group</td>
+<td class="org-left">Group member of file</td>
+</tr>
+
+<tr>
+<td class="org-left">o</td>
+<td class="org-left">Others</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">All</td>
+<td class="org-left">Same with "ugo"</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orge7a8de0" class="outline-4">
+<h4 id="orge7a8de0">Operator</h4>
+<div class="outline-text-4" id="text-orge7a8de0">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operator</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">Add modes to exists class</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">Remove modes from exists class</td>
+</tr>
+
+<tr>
+<td class="org-left">=</td>
+<td class="org-left">Set modes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgeeb2727" class="outline-4">
+<h4 id="orgeeb2727">8 Bits mode</h4>
+<div class="outline-text-4" id="text-orgeeb2727">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">#</th>
+<th scope="col" class="org-left">Permission</th>
+<th scope="col" class="org-left">rwx</th>
+<th scope="col" class="org-right">bin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">none</td>
+<td class="org-left">---</td>
+<td class="org-right">000</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">execute only</td>
+<td class="org-left">--x</td>
+<td class="org-right">001</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">write only</td>
+<td class="org-left">-w-</td>
+<td class="org-right">010</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">write and execute</td>
+<td class="org-left">-wx</td>
+<td class="org-right">011</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">read only</td>
+<td class="org-left">r--</td>
+<td class="org-right">100</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">read and execute</td>
+<td class="org-left">r-x</td>
+<td class="org-right">101</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">read and write</td>
+<td class="org-left">rw-</td>
+<td class="org-right">110</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-left">read, write and execute</td>
+<td class="org-left">rwx</td>
+<td class="org-right">111</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org6a11424" class="outline-4">
+<h4 id="org6a11424">Symbol mode</h4>
+<div class="outline-text-4" id="text-org6a11424">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">mode</th>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">r</td>
+<td class="org-left">read</td>
+<td class="org-left">Read file or access directory list.</td>
+</tr>
+
+<tr>
+<td class="org-left">w</td>
+<td class="org-left">write</td>
+<td class="org-left">Write file or directory.</td>
+</tr>
+
+<tr>
+<td class="org-left">x</td>
+<td class="org-left">execute</td>
+<td class="org-left">Execute.</td>
+</tr>
+
+<tr>
+<td class="org-left">X</td>
+<td class="org-left">special execute</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">setuid/gid</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">t</td>
+<td class="org-left">sticky bit</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org53f7bc5" class="outline-3">
+<h3 id="options"><a id="org53f7bc5"></a>Options</h3>
+<div class="outline-text-3" id="text-options">
+<ul class="org-ul">
+<li><span class="org-programming-option">-c</span>, <span class="org-programming-option">--changes</span> :</li>
+<li><span class="org-programming-option">-f</span>, <span class="org-programming-option">--silent</span>, <span class="org-programming-option">--quiet</span> :</li>
+<li><span class="org-programming-option">-v</span>, <span class="org-programming-option">--verbose</span> :</li>
+<li><span class="org-programming-option">--no-preserve-root</span> :</li>
+<li><span class="org-programming-option">--preserve-root</span></li>
+<li><span class="org-programming-option">--reference</span> <span class="org-programming-argument">=RFILE</span> :</li>
+<li><span class="org-programming-option">-R</span>, <span class="org-programming-option">--recursive</span> :</li>
+<li><span class="org-programming-option">--help</span> :</li>
+<li><span class="org-programming-option">--version</span> :</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-20</p>
+<p class="date">Date: 2018-02-21</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-21 Wed 08:48</p>
+<p class="date">Created: 2018-02-21 Wed 13:38</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
