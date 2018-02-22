@@ -2,27 +2,21 @@
 #+TITLE: finger
 #+AUTHOR: Dongsoo Lee
 #+EMAIL: dongsoolee8@gmail.com
-#+DATE: 2018-02-20
+#+DATE: 2018-02-22
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+ Display user's information.
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +28,15 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install finger
+#+END_SRC
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,45 +58,58 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
 
-# ** Configuration
-#    :PROPERTIES: 
-#    :CUSTOM_ID: configuration
-#    :LANG_EN:  Configuration
-#    :LANG_ES:  Configuración
-#    :LANG_KO:  설정
-#    :LANG_ZH:  组态
-#    :LANG_JA:  設定
-#    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+#+BEGIN_SRC sh
+finger [-lmsp] [user ...] [user@host ...]
+#+END_SRC
+
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: en
+   :END:      
+
+- {{{file(~/.nofinger)}}} :
+ If finger finds this file in a user's home directory, it will, for finger requests originating outside the local host, firmly deny the existence of that
+ user.  For this to work, the finger program, as started by fingerd(8), must be able to see the .nofinger file. This generally means that the home direc‐
+ tory containing the file must have the other-users-execute bit set (o+x). See chmod(1).  If you use this feature for privacy, please test it with ``finger
+ @localhost'' before relying on it, just in case.
+- {{{file(~/.plan)}}}
+- {{{file(~/.project)}}}
+- {{{file(~/.pgpkey)}}} :
+ These files are printed as part of a long-format request. The .plan file may be arbitrarily long.
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+- {{{option(-s)}}} :
+ Finger displays the user's login name, real name, terminal name and write status (as a ``*'' after the terminal name if write permission is denied), idle time, login time, office location and office phone number.
+  - Login time is displayed as month, day, hours and minutes, unless more than six months ago, in which case the year is displayed rather than the hours and minutes.
+  - Unknown devices as well as nonexistent idle and login times are displayed as single asterisks.
+- {{{option(-l)}}} :
+ Produces a multi-line format displaying all of the information described for the -s option as well as the user's home directory, home phone number, login shell, mail status, and the contents of the files “.plan”, “.project”, “.pgpkey” and “.forward” from the user's home directory.
+  - Phone numbers specified as eleven digits are printed as ``+N-NNN-NNN-NNNN''.  Numbers specified as ten or seven digits are printed as the appropriate subset of that string.  Numbers specified as five digits are printed as ``xN-NNNN''.  Numbers specified as four digits are printed as ``xNNNN''.
+  - If write permission is denied to the device, the phrase ``(messages off)'' is appended to the line containing the device name.  One entry per user is displayed with the -l option; if a user is logged on multiple times, terminal information is repeated once per login.
+  - Mail status is shown as ``No Mail.'' if there is no mail at all, ``Mail last read DDD MMM ## HH:MM YYYY (TZ)'' if the person has looked at their mailbox since new mail arriving, or ``New mail received ...'', ``  Unread since ...'' if they have new mail.
+- {{{option(-p)}}} :
+ Prevents the -l option of finger from displaying the contents of the “.plan”, “.project” and “.pgpkey” files.
+- {{{option(-m)}}} :
+ Prevent matching of user names.  User is usually a login name; however, matching will also be done on the users' real names, unless the -m option is supplied.  All name matching performed by finger is case insensitive.
 
 # ** Examples
 #    :PROPERTIES: 
@@ -114,15 +121,16 @@
 #    :LANG_JA:  例
 #    :END:      
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* See also
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: en
+  :END:      
+
+- {{{link(chfn)}}}
+- {{{link(passwd)}}}
+- {{{link(w)}}}
+- {{{link(who)}}}
 
 # * References
 #   :PROPERTIES: 
