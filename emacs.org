@@ -4,15 +4,50 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
+
+#+LANG_EN: This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code.
+#+LANG_KO: Lisp을 기반으로 만들어진 프로그래밍 가능한 에디터로 기본적인 에디터 기능은 물론 기본적인 프로그래밍 언어 지원과 플러그인 추가 학은 Lisp 코드를 수정하여 쉽게 확장 및 변경이 가능합니다.
+
+** Introduction
+  :PROPERTIES: 
+  :LANG_EN:  Introduction
+  :LANG_ES:  Introducción
+  :LANG_KO:  소개
+  :LANG_ZH:  介绍
+  :LANG_JA:  はじめに
+  :END:    
+
+#+BEGIN_LANG en
+GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses
+everything other editors do, and it is easily extensible since its editing commands are written in Lisp.
+
+The primary documentation of GNU Emacs is in the GNU Emacs Manual, which you can read using Info, either from Emacs or as a standalone program.  Please
+look there for complete and up-to-date documentation. This man page is updated only when someone volunteers to do so.
+
+Emacs has an extensive interactive help facility, but the facility assumes that you know how to manipulate Emacs windows and buffers. CTRL-h or F1 enters
+the Help facility. Help Tutorial (CTRL-h t) starts an interactive tutorial to quickly teach beginners the fundamentals of Emacs. Help Apropos (CTRL-h a)
+helps you find a command with a name matching a given pattern, Help Key (CTRL-h k) describes a given key sequence, and Help Function (CTRL-h f) describes a
+given Lisp function.
+
+GNU Emacs's many special packages handle mail reading (RMail) and sending (Mail), outline editing (Outline), compiling (Compile), running subshells within
+Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy (Doctor), and much more.
+#+END_LANG
+#+BEGIN_LANG ko
+GNU Emacs는 원본 (PDP-10) Emacs, 리처드 스톨만이 작성한 Emacs의 한 버전입니다.
+GNU Emacs 다른 에디터 들이 가지고 있는 기능은 물론, 모든 명령이 Lisp으로 작성되었기 때문에 쉽게 확장 및 변경이 가능합니다.
+
+사용자가 버퍼 및 윈도우를 사용할 수 있다면 이맥스의 광범위한 도움말 기능을 쉽게 사용할 수 있습니다.
+CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다.
+#+END_LANG
 
 * How to Install
   :PROPERTIES: 
@@ -189,15 +224,19 @@ $ emacs --version
 #   :LANG_JA:  命令説明
 #   :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
+
+	#+BEGIN_SRC sh
+emacs [ command-line switches ] [ files ... ]
+	#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -219,50 +258,169 @@ $ emacs --version
    :LANG_JA:  オプション
    :END:      
 
+{{{VERSION(25.3)}}}
+
+*** General
+   :PROPERTIES: 
+   :LANG_KO:  일반 옵션
+   :END:      
 - {{{option(--file)}}} {{{argument(file)}}}, {{{option(--find-file)}}} {{{argument(file)}}}, {{{option(--visit)}}} {{{argument(file)}}} :
 #+LANG_EN:  The same as specifying file directly as an argument.
+#+LANG_KO:  파일을 여는 것과 동일합니다.
 - +number :
-#+LANG_EN: Go  to  the line specified by number (do not insert a space between the "+" sign and the number).  This applies only to the next file specified.
+#+LANG_EN: Go to the line specified by number (do not insert a space between the "+" sign and the number).  This applies only to the next file specified.
+#+LANG_KO: 현재 파일에서 {{{arg(number)}}}와 동일한 줄로 이동합니다.
 - +line:column :
 #+LANG_EN: Go to the specified line and column.
+#+LANG_KO: 현재 파일에서 {{{arg(line)}}}과 {{{arg(column)}}}에 해당하는 위치로 이동합니다.
 - {{{option(--chdir)}}} {{{argument(directory)}}} :
 #+LANG_EN: Change to directory.
+#+LANG_KO: 디렉토리를 변경합니다.
 - {{{option(-q)}}}, {{{option(--no-init-file)}}} :
-#+LANG_EN: Do not load an init file.
+#+LANG_EN: Do not load an init file. (eg. {{{file(~/.emacs.d/init.el)}}})
+#+LANG_EN: init file을 로드하지 않습니다. (예. {{{file(~/.emacs.d/init.el)}}})
 - {{{option(-nl)}}}, {{{option(--no-shared-memory)}}} :
 #+LANG_EN: Do not use shared memory.
+#+LANG_KO: 공유 메모리를 사용하지 않습니다.
 - {{{option(--no-site-file)}}} :
 #+LANG_EN: Do not load the site-wide startup file.
+#+LANG_KO: site-wide 파일들을 로드하지 않습니다.
 - {{{option(-nsl)}}}, {{{option(--no-site-lisp)}}} :
 #+LANG_EN: Do not add site-lisp directories to load-path.
+#+LANG_KO: site-lisp 디렉토리를 load-path로 사용하지 않습니다.
 - {{{option(--no-desktop)}}} :
-#+LANG_EN: Do not load a saved desktop.
+Do not load a saved desktop.
 - {{{option(-Q)}}}, {{{option(--quick)}}} :
 #+LANG_EN: Similar to "-q --no-site-file --no-splash".  Also, avoid processing X resources.
+#+LANG_KO: {{{opt(-q)}}}, {{{opt(--no-site-file)}}}, {{{opt(--no-splash)}}} 등의 옵션과 동일합니다. 또한 X 리소스를 실행하지 않습니다.
 - {{{option(--no-splash)}}} :
-#+LANG_EN: Do not display a splash screen during start-up.
+Do not display a splash screen during start-up.
 - {{{option(--debug-init)}}} :
 #+LANG_EN: Enable Emacs Lisp debugger during the processing of the user init file ~/.emacs.  This is useful for debugging problems in the init file.
+#+LANG_KO: init 파일을 로드하는 동안 Emacs Lisp debugger를 활성화합니다. 이 옵션은 init 파일을 디버깅하는데 유용합니다.
 - {{{option(-u)}}} {{{argument(user)}}}, {{{option(--user)}}} {{{argument(user)}}} :
 #+LANG_EN: Load user's init file.
+#+LANG_KO: 특정 사용자의 init 파일을 로드합니다.
 - {{{option(-t)}}} {{{argument(file)}}}, {{{option(--terminal)}}} {{{argument(file)}}} :
 #+LANG_EN: Use specified file as the terminal instead of using stdin/stdout.  This must be the first argument specified in the command line.
+#+LANG_KO: 터미널 표준입출력 대신 사용할 파일을 정합니다. 이 인자를 사용하려면 반드시 첫번째 인자로 입력되어야합니다.
 - {{{option(--daemon)}}} :
 #+LANG_EN: Start Emacs as a daemon, enabling the Emacs server and disconnecting from the terminal.  You can then use the emacsclient command to connect to the server (see emacsclient(1)).
+#+LANG_KO: 이맥스를 데몬으로 실행합니다. emacsclient 명령어를 이용해서 실행한 이맥스 데몬과 연결할 수 있습니다.
 - {{{option(--version)}}} :
 #+LANG_EN: Display Emacs version information and exit.
+#+LANG_KO: 이맥스 버전 정보를 보여주고 종료합니다.
 - {{{option(--help)}}} :
 #+LANG_EN: Display this help and exit.
+#+LANG_KO: 도움말을 보여주고 종료합니다.
 
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
+*** Emacs Lisp
+   :PROPERTIES: 
+   :LANG_KO:  Emacs Lisp 관련 옵션
+   :END:      
+
+- {{{option(-f)}}} {{{argument(function)}}}, {{{option(--funcall)}}} {{{argument(function)}}} :
+#+LANG_EN: Execute the lisp function function.
+#+LANG_KO: Lisp 함수를 실행합니다.
+- {{{option(-l)}}} {{{argument(file)}}}, {{{option(--load)}}} {{{argument(file)}}} :
+#+LANG_EN: Load the lisp code in the file.
+#+LANG_KO: Emacs Lisp 파일내 코드를 로드합니다.
+- {{{option(--eval)}}} {{{argument(expr)}}}, {{{option(--execute)}}} {{{argument(expr)}}} :
+#+LANG_EN: Evaluate the Lisp expression expr.
+#+LANG_KO: {{{arg(expr)}}}에 작성된 Emacs Lisp 코드를 실행합니다. 여러 함수를 실행하기 위해서는 =progn= 과 함께 사용해야합니다.
+
+*** Batch mode
+   :PROPERTIES: 
+   :LANG_KO:  Batch 모드 관련 옵션
+   :END:      
+
+- {{{option(--batch)}}} :
+#+LANG_EN: Edit in batch mode. The editor will send messages to stderr. You must use -l and -f options to specify files to execute and functions to call.
+#+LANG_KO: 배치 모드를 사용합니다. Emacs Lisp 내에서 실행된 message 들은 stderr로 보내집니다. {{{opt(-l)}}}, {{{opt(-f)}}} 옵션등을 통해 로드할 파일과 실행할 함수를 인자로 입력받을 수 있습니다.
+- {{{option(--script)}}} {{{argument(file)}}} :
+#+LANG_EN: Run file as an Emacs Lisp script.
+#+LANG_KO: Emacs Lisp 스크립트를 파일로 실행합니다.
+- {{{option(--insert)}}} {{{argument(file)}}} :
+#+LANG_EN: Insert contents of file into the current buffer.
+#+LANG_KO: 파일 데이터를 현재 버퍼에 입력합니다.
+- {{{option(--kill)}}} :
+#+LANG_EN: Exit Emacs while in batch mode.
+#+LANG_KO: 이맥스가 배치 모드일 경우 종료합니다.
+- {{{option(-L)}}} {{{argument(dir)}}}, {{{option(--directory)}}} {{{argument(dir)}}} :
+#+LANG_EN: Add dir to the list of directories Emacs searches for Lisp files
+#+LANG_KO: 이맥스가 Lisp 파일을 검색할 디렉토리를 입력받습니다.
+
+*** with X
+
+- {{{option(--name)}}} {{{argument(name)}}} :
+#+LANG_EN: Specify the name which should be assigned to the initial Emacs window.  This controls looking up X resources as well as the window title.
+- {{{option(-T)}}} {{{argument(name)}}}, --title {{{argument(name)}}} :
+#+LANG_EN: Specify the title for the initial X window.
+- {{{option(-r)}}}, {{{option(-rv)}}}, {{{option(--reverse-video)}}} :
+#+LANG_EN: Display the Emacs window in reverse video.
+- {{{option(-fn)}}} {{{argument(font)}}}, {{{option(--font)}}} {{{argument(font)}}} :
+#+LANG_EN: Set  the  Emacs  window's font to that specified by font.  You will find the various X fonts in the /usr/lib/X11/fonts directory.  Note that Emacs will only accept fixed width fonts.  Under the X11 Release 4 font-naming conventions, any font with  the  value  "m"  or  "c"  in  the eleventh  field  of  the  font  name  is a fixed width font.  Furthermore, fonts whose name are of the form widthxheight are generally fixed width, as is the font fixed.  See xlsfonts(1) for more information. When you specify a font, be sure to put a space between the switch and the font name.
+- {{{option(--xrm)}}} {{{argument(resources)}}} :
+#+LANG_EN: Set additional X resources.
+- {{{option(--color)}}}, {{{option(--color)}}}={{{argument(mode)}}} :
+#+LANG_EN: Override color mode for character terminals; mode defaults to "auto", and can also be  "never",  "auto",  "always",  or  a  mode  name  like "ansi8".
+- {{{option(-bw)}}} {{{argument(pixels)}}}, {{{option(--border-width)}}} {{{argument(pixels)}}} :
+#+LANG_EN: Set the Emacs window's border width to the number of pixels specified by pixels.  Defaults to one pixel on each side of the window.
+- {{{option(-ib)}}} {{{argument(pixels)}}}, {{{option(--internal-border)}}} {{{argument(pixels)}}} :
+#+LANG_EN: Set  the  window's  internal border width to the number of pixels specified by pixels.  Defaults to one pixel of padding on each side of the window.
+- {{{option(-g)}}} {{{argument(geometry)}}}, {{{option(--geometry)}}} {{{argument(geometry)}}} :
+#+LANG_EN: Set the Emacs window's width, height, and position as specified.  The geometry specification is in the standard X format; see X(7) for  more information.   The width and height are specified in characters; the default is 80 by 24.  See the Emacs manual, section "Options for Window Size and Position", for information on how window sizes interact with selecting or deselecting the tool bar and menu bar.
+- {{{option(-lsp)}}} {{{argument(pixels)}}}, {{{option(--line-spacing)}}} {{{argument(pixels)}}} :
+#+LANG_EN: Additional space to put between lines.
+- {{{option(-vb)}}}, {{{option(--vertical-scroll-bars)}}} :
+#+LANG_EN: Enable vertical scrollbars.
+- {{{option(-fh)}}}, {{{option(--fullheight)}}} :
+#+LANG_EN: Make the first frame as high as the screen.
+- {{{option(-fs)}}}, {{{option(--fullscreen)}}} :
+#+LANG_EN: Make the first frame fullscreen.
+- {{{option(-fw)}}}, {{{option(--fullwidth)}}} :
+#+LANG_EN: Make the first frame as wide as the screen.
+- {{{option(-mm)}}}, {{{option(--maximized)}}} :
+#+LANG_EN: Maximize the first frame, like "-fw -fh".
+- {{{option(-fg)}}} {{{argument(color)}}}, {{{option(--foreground-color)}}} {{{argument(color)}}} :
+#+LANG_EN: On color displays, set the color of the text. Use the command M-x list-colors-display for a list of valid color names.
+- {{{option(-bg)}}} {{{argument(color)}}}, {{{option(--background-color)}}} {{{argument(color)}}} :
+#+LANG_EN: On color displays, set the color of the window's background.
+- {{{option(-bd)}}} {{{argument(color)}}}, {{{option(--border-color)}}} {{{argument(color)}}} :
+#+LANG_EN: On color displays, set the color of the window's border.
+- {{{option(-cr)}}} {{{argument(color)}}}, {{{option(--cursor-color)}}} {{{argument(color)}}} :
+#+LANG_EN: On color displays, set the color of the window's text cursor.
+- {{{option(-ms)}}} {{{argument(color)}}}, {{{option(--mouse-color)}}} {{{argument(color)}}} :
+#+LANG_EN: On color displays, set the color of the window's mouse cursor.
+- {{{option(-d)}}} {{{argument(displayname)}}}, {{{option(--display)}}} {{{argument(displayname)}}} :
+#+LANG_EN: Create the Emacs window on the display specified by displayname.  Must be the first option specified in the command line.
+- {{{option(-nbi)}}}, {{{option(--no-bitmap-icon)}}} :
+#+LANG_EN: Do not use picture of gnu for Emacs icon.
+- {{{option(--iconic)}}} :
+#+LANG_EN: Start Emacs in iconified state.
+- {{{option(-nbc)}}}, {{{option(--no-blinking-cursor)}}} :
+#+LANG_EN: Disable blinking cursor.
+- {{{option(--parent-id)}}} {{{argument(xid)}}} :
+#+LANG_EN: Set parent window.
+- {{{option(-nw)}}}, {{{option(--no-window-system)}}} :
+#+LANG_EN: Tell Emacs not to create a graphical frame.  If you use this switch when invoking Emacs from an xterm(1) window, display  is  done  in  that window.
+- {{{option(-D)}}}, {{{option(--basic-display)}}} :
+#+LANG_EN: This option disables many display features; use it for debugging Emacs.
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG_EN:  Examples
+   :LANG_ES:  Ejemplos
+   :LANG_KO:  사용 예
+   :LANG_ZH:  例子
+   :LANG_JA:  例
+   :END:      
+
+- emacs -Q --batch file.org -f org-html-export-to-html :
+#+LANG_KO: org 파일을 html로 export할 때 쓰입니다.
+- emacs -Q --batch --eval "(+ 1 2)" :
+#+LANG_KO: Emacs Lisp 코드를 바로 실행할 때 쓰입니다.
 
 # * See also
 #   :PROPERTIES: 
