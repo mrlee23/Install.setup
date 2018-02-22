@@ -103,11 +103,14 @@
 		  keyword))
 	  (org-element-map contents 'paragraph
 		(lambda (paragraph)
-		  (let ((custom-id (ignore-errors (org-element-property :CUSTOM_ID (org-element-property :parent (org-element-property :parent paragraph)))))
-				)
-			(when (equal custom-id "introduction")
-			  (push (car (org-element-contents paragraph)) desc))
-			)))
+		  (let* ((parent (org-element-property :parent paragraph))
+				 (custom-id (ignore-errors (org-element-property :CUSTOM_ID (org-element-property :parent parent))))
+				 )
+			(and (eq (org-element-type parent) 'section)
+				 (and (stringp custom-id) (string-match "\\(overview\\|introduction\\)" custom-id))
+				 (and (stringp (caddr paragraph)) (push (caddr paragraph) desc))
+				 ))
+		  paragraph))
 	  (push "-" title)
 	  (push lc-core/site-name title)
 	  (setq title (lc-macro/join-oneline title))
@@ -169,7 +172,7 @@
 			(es
 			 "Esto se actualiza para la versión %s.")
 			(ko
-			 "버전 %s를 기준으로 작성되었습니다.")
+			 "%s 버전을 기준으로 작성되었습니다.")
 			(zh
 			 "基于版本％s创建。")
 			(ja
