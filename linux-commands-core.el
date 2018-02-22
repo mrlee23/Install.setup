@@ -66,4 +66,10 @@
 		 (equal lc-core/current-contents-filename buffer-file-name))
 	lc-core/current-contents))
 
+(defun lc-core/get-current-language ()
+  (if (and (boundp 'lc-core/language)
+		   (stringp lc-core/language))
+	  (intern lc-core/language)
+	nil))
+
 (provide 'linux-commands-core)

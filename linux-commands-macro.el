@@ -14,7 +14,18 @@
 ;;; Code:
 
 (require 'seq)
+(require 'subr-x)
 (require 'cl)
+
+(defun lc-macro/arg-trim (arg)
+  (when (stringp arg)
+	(setq arg (string-trim arg))
+	(when (equal arg "t")
+	  (setq arg t))
+	(when (equal arg "")
+	  (setq arg nil)))
+  arg
+  )
 
 (defun lc-macro/collect-files ()
   (seq-filter
@@ -136,21 +147,35 @@
 	  )))
 
 (defun lc-macro/builtin ()
-  (if (and (boundp 'lc-core/language)
-		   (stringp lc-core/language))
-	  (case (intern lc-core/language)
-		(en
-		 "This is builtin command.")
-		(es
-		 "Este es el comando integrado.")
-		(ko
-		 "기본으로 내장되어 있는 명령어입니다.")
-		(zh
-		 "它是内置命令。")
-		(ja
-		 "基本的に内蔵されているコマンドです。")
-		(t
-		 "This is builtin command."))
-	"This is builtin command."))
+  (case (lc-core/get-current-language)
+	(en
+	 "This is builtin command.")
+	(es
+	 "Este es el comando integrado.")
+	(ko
+	 "기본으로 내장되어 있는 명령어입니다.")
+	(zh
+	 "它是内置命令。")
+	(ja
+	 "基本的に内蔵されているコマンドです。")
+	(t
+	 "This is builtin command.")))
+
+(defun lc-macro/version (ver)
+  (setq ver (lc-macro/arg-trim ver))
+  (format (case (lc-core/get-current-language)
+			(en
+			 "This is updated for version %s.")
+			(es
+			 "Esto se actualiza para la versión %s.")
+			(ko
+			 "버전 %s를 기준으로 작성되었습니다.")
+			(zh
+			 "基于版本％s创建。")
+			(ja
+			 "バージョン％sを基準に作成されました。")
+			(t
+			 "This is builtin command."))
+		  ver))
 
 (provide 'linux-commands-macro)
