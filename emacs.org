@@ -4,15 +4,32 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+ This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code.
+
+** Introduction
+  :PROPERTIES: 
+  :LANG: en
+  :END:    
+
+GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses
+everything other editors do, and it is easily extensible since its editing commands are written in Lisp.
+
+The primary documentation of GNU Emacs is in the GNU Emacs Manual, which you can read using Info, either from Emacs or as a standalone program.  Please
+look there for complete and up-to-date documentation. This man page is updated only when someone volunteers to do so.
+
+Emacs has an extensive interactive help facility, but the facility assumes that you know how to manipulate Emacs windows and buffers. CTRL-h or F1 enters
+the Help facility. Help Tutorial (CTRL-h t) starts an interactive tutorial to quickly teach beginners the fundamentals of Emacs. Help Apropos (CTRL-h a)
+helps you find a command with a name matching a given pattern, Help Key (CTRL-h k) describes a given key sequence, and Help Function (CTRL-h f) describes a
+given Lisp function.
+
+GNU Emacs's many special packages handle mail reading (RMail) and sending (Mail), outline editing (Outline), compiling (Compile), running subshells within
+Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy (Doctor), and much more.
 
 * How to Install
   :PROPERTIES: 
@@ -169,15 +186,15 @@ $ emacs --version
 #   :LANG_JA:  命令説明
 #   :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+	#+BEGIN_SRC sh
+emacs [ command-line switches ] [ files ... ]
+	#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -189,25 +206,144 @@ $ emacs --version
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
 
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
+{{{VERSION(25.3)}}}
+
+*** General
+   :PROPERTIES: 
+   :END:      
+- {{{option(--file)}}} {{{argument(file)}}}, {{{option(--find-file)}}} {{{argument(file)}}}, {{{option(--visit)}}} {{{argument(file)}}} :
+  The same as specifying file directly as an argument.
+- +number :
+ Go to the line specified by number (do not insert a space between the "+" sign and the number).  This applies only to the next file specified.
+- +line:column :
+ Go to the specified line and column.
+- {{{option(--chdir)}}} {{{argument(directory)}}} :
+ Change to directory.
+- {{{option(-q)}}}, {{{option(--no-init-file)}}} :
+ Do not load an init file. (eg. {{{file(~/.emacs.d/init.el)}}})
+ init file을 로드하지 않습니다. (예. {{{file(~/.emacs.d/init.el)}}})
+- {{{option(-nl)}}}, {{{option(--no-shared-memory)}}} :
+ Do not use shared memory.
+- {{{option(--no-site-file)}}} :
+ Do not load the site-wide startup file.
+- {{{option(-nsl)}}}, {{{option(--no-site-lisp)}}} :
+ Do not add site-lisp directories to load-path.
+- {{{option(--no-desktop)}}} :
+Do not load a saved desktop.
+- {{{option(-Q)}}}, {{{option(--quick)}}} :
+ Similar to "-q --no-site-file --no-splash".  Also, avoid processing X resources.
+- {{{option(--no-splash)}}} :
+Do not display a splash screen during start-up.
+- {{{option(--debug-init)}}} :
+ Enable Emacs Lisp debugger during the processing of the user init file ~/.emacs.  This is useful for debugging problems in the init file.
+- {{{option(-u)}}} {{{argument(user)}}}, {{{option(--user)}}} {{{argument(user)}}} :
+ Load user's init file.
+- {{{option(-t)}}} {{{argument(file)}}}, {{{option(--terminal)}}} {{{argument(file)}}} :
+ Use specified file as the terminal instead of using stdin/stdout.  This must be the first argument specified in the command line.
+- {{{option(--daemon)}}} :
+ Start Emacs as a daemon, enabling the Emacs server and disconnecting from the terminal.  You can then use the emacsclient command to connect to the server (see emacsclient(1)).
+- {{{option(--version)}}} :
+ Display Emacs version information and exit.
+- {{{option(--help)}}} :
+ Display this help and exit.
+
+*** Emacs Lisp
+   :PROPERTIES: 
+   :END:      
+
+- {{{option(-f)}}} {{{argument(function)}}}, {{{option(--funcall)}}} {{{argument(function)}}} :
+ Execute the lisp function function.
+- {{{option(-l)}}} {{{argument(file)}}}, {{{option(--load)}}} {{{argument(file)}}} :
+ Load the lisp code in the file.
+- {{{option(--eval)}}} {{{argument(expr)}}}, {{{option(--execute)}}} {{{argument(expr)}}} :
+ Evaluate the Lisp expression expr.
+
+*** Batch mode
+   :PROPERTIES: 
+   :END:      
+
+- {{{option(--batch)}}} :
+ Edit in batch mode. The editor will send messages to stderr. You must use -l and -f options to specify files to execute and functions to call.
+- {{{option(--script)}}} {{{argument(file)}}} :
+ Run file as an Emacs Lisp script.
+- {{{option(--insert)}}} {{{argument(file)}}} :
+ Insert contents of file into the current buffer.
+- {{{option(--kill)}}} :
+ Exit Emacs while in batch mode.
+- {{{option(-L)}}} {{{argument(dir)}}}, {{{option(--directory)}}} {{{argument(dir)}}} :
+ Add dir to the list of directories Emacs searches for Lisp files
+
+*** with X
+
+- {{{option(--name)}}} {{{argument(name)}}} :
+ Specify the name which should be assigned to the initial Emacs window.  This controls looking up X resources as well as the window title.
+- {{{option(-T)}}} {{{argument(name)}}}, --title {{{argument(name)}}} :
+ Specify the title for the initial X window.
+- {{{option(-r)}}}, {{{option(-rv)}}}, {{{option(--reverse-video)}}} :
+ Display the Emacs window in reverse video.
+- {{{option(-fn)}}} {{{argument(font)}}}, {{{option(--font)}}} {{{argument(font)}}} :
+ Set  the  Emacs  window's font to that specified by font.  You will find the various X fonts in the /usr/lib/X11/fonts directory.  Note that Emacs will only accept fixed width fonts.  Under the X11 Release 4 font-naming conventions, any font with  the  value  "m"  or  "c"  in  the eleventh  field  of  the  font  name  is a fixed width font.  Furthermore, fonts whose name are of the form widthxheight are generally fixed width, as is the font fixed.  See xlsfonts(1) for more information. When you specify a font, be sure to put a space between the switch and the font name.
+- {{{option(--xrm)}}} {{{argument(resources)}}} :
+ Set additional X resources.
+- {{{option(--color)}}}, {{{option(--color)}}}={{{argument(mode)}}} :
+ Override color mode for character terminals; mode defaults to "auto", and can also be  "never",  "auto",  "always",  or  a  mode  name  like "ansi8".
+- {{{option(-bw)}}} {{{argument(pixels)}}}, {{{option(--border-width)}}} {{{argument(pixels)}}} :
+ Set the Emacs window's border width to the number of pixels specified by pixels.  Defaults to one pixel on each side of the window.
+- {{{option(-ib)}}} {{{argument(pixels)}}}, {{{option(--internal-border)}}} {{{argument(pixels)}}} :
+ Set  the  window's  internal border width to the number of pixels specified by pixels.  Defaults to one pixel of padding on each side of the window.
+- {{{option(-g)}}} {{{argument(geometry)}}}, {{{option(--geometry)}}} {{{argument(geometry)}}} :
+ Set the Emacs window's width, height, and position as specified.  The geometry specification is in the standard X format; see X(7) for  more information.   The width and height are specified in characters; the default is 80 by 24.  See the Emacs manual, section "Options for Window Size and Position", for information on how window sizes interact with selecting or deselecting the tool bar and menu bar.
+- {{{option(-lsp)}}} {{{argument(pixels)}}}, {{{option(--line-spacing)}}} {{{argument(pixels)}}} :
+ Additional space to put between lines.
+- {{{option(-vb)}}}, {{{option(--vertical-scroll-bars)}}} :
+ Enable vertical scrollbars.
+- {{{option(-fh)}}}, {{{option(--fullheight)}}} :
+ Make the first frame as high as the screen.
+- {{{option(-fs)}}}, {{{option(--fullscreen)}}} :
+ Make the first frame fullscreen.
+- {{{option(-fw)}}}, {{{option(--fullwidth)}}} :
+ Make the first frame as wide as the screen.
+- {{{option(-mm)}}}, {{{option(--maximized)}}} :
+ Maximize the first frame, like "-fw -fh".
+- {{{option(-fg)}}} {{{argument(color)}}}, {{{option(--foreground-color)}}} {{{argument(color)}}} :
+ On color displays, set the color of the text. Use the command M-x list-colors-display for a list of valid color names.
+- {{{option(-bg)}}} {{{argument(color)}}}, {{{option(--background-color)}}} {{{argument(color)}}} :
+ On color displays, set the color of the window's background.
+- {{{option(-bd)}}} {{{argument(color)}}}, {{{option(--border-color)}}} {{{argument(color)}}} :
+ On color displays, set the color of the window's border.
+- {{{option(-cr)}}} {{{argument(color)}}}, {{{option(--cursor-color)}}} {{{argument(color)}}} :
+ On color displays, set the color of the window's text cursor.
+- {{{option(-ms)}}} {{{argument(color)}}}, {{{option(--mouse-color)}}} {{{argument(color)}}} :
+ On color displays, set the color of the window's mouse cursor.
+- {{{option(-d)}}} {{{argument(displayname)}}}, {{{option(--display)}}} {{{argument(displayname)}}} :
+ Create the Emacs window on the display specified by displayname.  Must be the first option specified in the command line.
+- {{{option(-nbi)}}}, {{{option(--no-bitmap-icon)}}} :
+ Do not use picture of gnu for Emacs icon.
+- {{{option(--iconic)}}} :
+ Start Emacs in iconified state.
+- {{{option(-nbc)}}}, {{{option(--no-blinking-cursor)}}} :
+ Disable blinking cursor.
+- {{{option(--parent-id)}}} {{{argument(xid)}}} :
+ Set parent window.
+- {{{option(-nw)}}}, {{{option(--no-window-system)}}} :
+ Tell Emacs not to create a graphical frame.  If you use this switch when invoking Emacs from an xterm(1) window, display  is  done  in  that window.
+- {{{option(-D)}}}, {{{option(--basic-display)}}} :
+ This option disables many display features; use it for debugging Emacs.
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: en
+   :END:      
+
+- emacs -Q --batch file.org -f org-html-export-to-html :
+- emacs -Q --batch --eval "(+ 1 2)" :
 
 # * See also
 #   :PROPERTIES: 
