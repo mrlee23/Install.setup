@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2018-02-21 Wed 16:35 -->
+<!-- 2018-02-22 Thu 02:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -252,26 +252,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#overview">Visión de conjunto</a>
+<ul>
+<li><a href="#org1eee728">Introducción</a></li>
+</ul>
+</li>
 <li><a href="#how-to-install">Cómo instalar</a>
 <ul>
 <li><a href="#prerequisites">Requisitos previos</a>
 <ul>
-<li><a href="#orgcb07356">Ubuntu</a></li>
-<li><a href="#org396f3a9">Mac OS</a></li>
+<li><a href="#org8d6eee3">Ubuntu</a></li>
+<li><a href="#orgbc59e1d">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#install">Instalar</a>
 <ul>
-<li><a href="#orgd9883ac">Ubuntu</a>
+<li><a href="#org89df527">Ubuntu</a>
 <ul>
-<li><a href="#org6b4ef6c">Emacs 25</a></li>
+<li><a href="#org45e2b04">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#org526022e">Mac OS</a></li>
+<li><a href="#org7f51de2">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#packages">Paquetes instalados</a></li>
 <li><a href="#check">Comprobar</a></li>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#options">Opciones</a>
+<ul>
+<li><a href="#org4de2a9a">General</a></li>
+<li><a href="#org5868854">Emacs Lisp</a></li>
+<li><a href="#org1359dd6">Batch mode</a></li>
+<li><a href="#orgde5bd0f">with X</a></li>
+</ul>
+</li>
+<li><a href="#examples">Ejemplos</a></li>
 </ul>
 </li>
 <li><a href="#references">Referencias</a></li>
@@ -279,28 +294,42 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgcd904c4" class="outline-2">
-<h2 id="how-to-install"><a id="orgcd904c4"></a>Cómo instalar</h2>
+<div id="outline-container-orgd349c7d" class="outline-2">
+<h2 id="overview"><a id="orgd349c7d"></a>Visión de conjunto</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+
+
+<div id="outline-container-org1eee728" class="outline-3">
+<h3 id="org1eee728">Introducción</h3>
+<div class="outline-text-3" id="text-org1eee728">
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd4e46ec" class="outline-2">
+<h2 id="how-to-install"><a id="orgd4e46ec"></a>Cómo instalar</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orgc4bcf5c" class="outline-3">
-<h3 id="prerequisites"><a id="orgc4bcf5c"></a>Requisitos previos</h3>
+<div id="outline-container-org4b8e295" class="outline-3">
+<h3 id="prerequisites"><a id="org4b8e295"></a>Requisitos previos</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-orgcb07356" class="outline-4">
-<h4 id="orgcb07356">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgcb07356">
+<div id="outline-container-org8d6eee3" class="outline-4">
+<h4 id="org8d6eee3">Ubuntu</h4>
+<div class="outline-text-4" id="text-org8d6eee3">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org396f3a9" class="outline-4">
-<h4 id="org396f3a9">Mac OS</h4>
-<div class="outline-text-4" id="text-org396f3a9">
+<div id="outline-container-orgbc59e1d" class="outline-4">
+<h4 id="orgbc59e1d">Mac OS</h4>
+<div class="outline-text-4" id="text-orgbc59e1d">
 <ul class="org-ul">
 <li><a href="./brew.html">brew</a></li>
 </ul>
@@ -308,19 +337,19 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4fff42a" class="outline-3">
-<h3 id="install"><a id="org4fff42a"></a>Instalar</h3>
+<div id="outline-container-org488d89a" class="outline-3">
+<h3 id="install"><a id="org488d89a"></a>Instalar</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-orgd9883ac" class="outline-4">
-<h4 id="orgd9883ac">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgd9883ac">
-</div><div id="outline-container-org6b4ef6c" class="outline-5">
-<h5 id="org6b4ef6c">Emacs 25</h5>
-<div class="outline-text-5" id="text-org6b4ef6c">
+<div id="outline-container-org89df527" class="outline-4">
+<h4 id="org89df527">Ubuntu</h4>
+<div class="outline-text-4" id="text-org89df527">
+</div><div id="outline-container-org45e2b04" class="outline-5">
+<h5 id="org45e2b04">Emacs 25</h5>
+<div class="outline-text-5" id="text-org45e2b04">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb213c09">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+<pre class="src src-sh" id="orgca0e70b">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
 </pre>
@@ -329,19 +358,19 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org526022e" class="outline-4">
-<h4 id="org526022e">Mac OS</h4>
-<div class="outline-text-4" id="text-org526022e">
+<div id="outline-container-org7f51de2" class="outline-4">
+<h4 id="org7f51de2">Mac OS</h4>
+<div class="outline-text-4" id="text-org7f51de2">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgdcc42ad">$ brew install emacs
+<pre class="src src-sh" id="org78c14d8">$ brew install emacs
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org65178fb" class="outline-3">
-<h3 id="packages"><a id="org65178fb"></a>Paquetes instalados</h3>
+<div id="outline-container-orgf1db3a1" class="outline-3">
+<h3 id="packages"><a id="orgf1db3a1"></a>Paquetes instalados</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>aspell</li>
@@ -432,8 +461,8 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-orgfe1a760" class="outline-3">
-<h3 id="check"><a id="orgfe1a760"></a>Comprobar</h3>
+<div id="outline-container-orgfb4faa0" class="outline-3">
+<h3 id="check"><a id="orgfb4faa0"></a>Comprobar</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ emacs --version
@@ -442,10 +471,133 @@ $ sudo apt install emacs25
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgd5d348a" class="outline-3">
+<h3 id="syntax"><a id="orgd5d348a"></a>Sintaxis</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
+</pre>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org5d5dafd" class="outline-2">
-<h2 id="references"><a id="org5d5dafd"></a>Referencias</h2>
+<div id="outline-container-org6fbaf0c" class="outline-3">
+<h3 id="options"><a id="org6fbaf0c"></a>Opciones</h3>
+<div class="outline-text-3" id="text-options">
+<p>
+Esto se actualiza para la versión 25.3.
+</p>
+</div>
+
+<div id="outline-container-org4de2a9a" class="outline-4">
+<h4 id="org4de2a9a">General</h4>
+<div class="outline-text-4" id="text-org4de2a9a">
+<ul class="org-ul">
+<li><span class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :</li>
+<li>+number :</li>
+<li>+line:column :</li>
+<li><span class="org-programming-option">--chdir</span> <span class="org-programming-argument">directory</span> :</li>
+<li><span class="org-programming-option">-q</span>, <span class="org-programming-option">--no-init-file</span> :</li>
+<li><span class="org-programming-option">-nl</span>, <span class="org-programming-option">--no-shared-memory</span> :</li>
+<li><span class="org-programming-option">--no-site-file</span> :</li>
+<li><span class="org-programming-option">-nsl</span>, <span class="org-programming-option">--no-site-lisp</span> :</li>
+<li><span class="org-programming-option">--no-desktop</span> :</li>
+</ul>
+<p>
+Do not load a saved desktop.
+</p>
+<ul class="org-ul">
+<li><span class="org-programming-option">-Q</span>, <span class="org-programming-option">--quick</span> :</li>
+<li><span class="org-programming-option">--no-splash</span> :</li>
+</ul>
+<p>
+Do not display a splash screen during start-up.
+</p>
+<ul class="org-ul">
+<li><span class="org-programming-option">--debug-init</span> :</li>
+<li><span class="org-programming-option">-u</span> <span class="org-programming-argument">user</span>, <span class="org-programming-option">--user</span> <span class="org-programming-argument">user</span> :</li>
+<li><span class="org-programming-option">-t</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--terminal</span> <span class="org-programming-argument">file</span> :</li>
+<li><span class="org-programming-option">--daemon</span> :</li>
+<li><span class="org-programming-option">--version</span> :</li>
+<li><span class="org-programming-option">--help</span> :</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5868854" class="outline-4">
+<h4 id="org5868854">Emacs Lisp</h4>
+<div class="outline-text-4" id="text-org5868854">
+<ul class="org-ul">
+<li><span class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :</li>
+<li><span class="org-programming-option">-l</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--load</span> <span class="org-programming-argument">file</span> :</li>
+<li><span class="org-programming-option">--eval</span> <span class="org-programming-argument">expr</span>, <span class="org-programming-option">--execute</span> <span class="org-programming-argument">expr</span> :</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1359dd6" class="outline-4">
+<h4 id="org1359dd6">Batch mode</h4>
+<div class="outline-text-4" id="text-org1359dd6">
+<ul class="org-ul">
+<li><span class="org-programming-option">--batch</span> :</li>
+<li><span class="org-programming-option">--script</span> <span class="org-programming-argument">file</span> :</li>
+<li><span class="org-programming-option">--insert</span> <span class="org-programming-argument">file</span> :</li>
+<li><span class="org-programming-option">--kill</span> :</li>
+<li><span class="org-programming-option">-L</span> <span class="org-programming-argument">dir</span>, <span class="org-programming-option">--directory</span> <span class="org-programming-argument">dir</span> :</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgde5bd0f" class="outline-4">
+<h4 id="orgde5bd0f">with X</h4>
+<div class="outline-text-4" id="text-orgde5bd0f">
+<ul class="org-ul">
+<li><span class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :</li>
+<li><span class="org-programming-option">-T</span> <span class="org-programming-argument">name</span>, --title <span class="org-programming-argument">name</span> :</li>
+<li><span class="org-programming-option">-r</span>, <span class="org-programming-option">-rv</span>, <span class="org-programming-option">--reverse-video</span> :</li>
+<li><span class="org-programming-option">-fn</span> <span class="org-programming-argument">font</span>, <span class="org-programming-option">--font</span> <span class="org-programming-argument">font</span> :</li>
+<li><span class="org-programming-option">--xrm</span> <span class="org-programming-argument">resources</span> :</li>
+<li><span class="org-programming-option">--color</span>, <span class="org-programming-option">--color</span>=<span class="org-programming-argument">mode</span> :</li>
+<li><span class="org-programming-option">-bw</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--border-width</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span class="org-programming-option">-ib</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--internal-border</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span class="org-programming-option">-g</span> <span class="org-programming-argument">geometry</span>, <span class="org-programming-option">--geometry</span> <span class="org-programming-argument">geometry</span> :</li>
+<li><span class="org-programming-option">-lsp</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--line-spacing</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span class="org-programming-option">-vb</span>, <span class="org-programming-option">--vertical-scroll-bars</span> :</li>
+<li><span class="org-programming-option">-fh</span>, <span class="org-programming-option">--fullheight</span> :</li>
+<li><span class="org-programming-option">-fs</span>, <span class="org-programming-option">--fullscreen</span> :</li>
+<li><span class="org-programming-option">-fw</span>, <span class="org-programming-option">--fullwidth</span> :</li>
+<li><span class="org-programming-option">-mm</span>, <span class="org-programming-option">--maximized</span> :</li>
+<li><span class="org-programming-option">-fg</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--foreground-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-bg</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--background-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-bd</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--border-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-cr</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--cursor-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-ms</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--mouse-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-d</span> <span class="org-programming-argument">displayname</span>, <span class="org-programming-option">--display</span> <span class="org-programming-argument">displayname</span> :</li>
+<li><span class="org-programming-option">-nbi</span>, <span class="org-programming-option">--no-bitmap-icon</span> :</li>
+<li><span class="org-programming-option">--iconic</span> :</li>
+<li><span class="org-programming-option">-nbc</span>, <span class="org-programming-option">--no-blinking-cursor</span> :</li>
+<li><span class="org-programming-option">--parent-id</span> <span class="org-programming-argument">xid</span> :</li>
+<li><span class="org-programming-option">-nw</span>, <span class="org-programming-option">--no-window-system</span> :</li>
+<li><span class="org-programming-option">-D</span>, <span class="org-programming-option">--basic-display</span> :</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org28d91cc" class="outline-3">
+<h3 id="examples"><a id="org28d91cc"></a>Ejemplos</h3>
+<div class="outline-text-3" id="text-examples">
+<ul class="org-ul">
+<li>emacs -Q --batch file.org -f org-html-export-to-html :</li>
+<li>emacs -Q --batch --eval "(+ 1 2)" :</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04ee3d2" class="outline-2">
+<h2 id="references"><a id="org04ee3d2"></a>Referencias</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
@@ -456,7 +608,7 @@ $ sudo apt install emacs25
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-21 Wed 16:35</p>
+<p class="date">Created: 2018-02-22 Thu 02:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

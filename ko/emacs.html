@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-21 Wed 16:33 -->
+<!-- 2018-02-22 Thu 02:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -252,26 +252,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#overview">개요</a>
+<ul>
+<li><a href="#orgdf58a84">소개</a></li>
+</ul>
+</li>
 <li><a href="#how-to-install">설치 방법</a>
 <ul>
 <li><a href="#prerequisites">필요 사항</a>
 <ul>
-<li><a href="#org5765007">Ubuntu</a></li>
-<li><a href="#org6ab9605">Mac OS</a></li>
+<li><a href="#org516a249">Ubuntu</a></li>
+<li><a href="#org04f4e81">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#install">설치</a>
 <ul>
-<li><a href="#org5b3ba6f">Ubuntu</a>
+<li><a href="#orgfdbae69">Ubuntu</a>
 <ul>
-<li><a href="#orgab161ea">Emacs 25</a></li>
+<li><a href="#orge6301a7">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#orgab2e4ca">Mac OS</a></li>
+<li><a href="#orgd46cf10">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#packages">설치된 패키지</a></li>
 <li><a href="#check">확인</a></li>
+<li><a href="#syntax">구조</a></li>
+<li><a href="#options">옵션</a>
+<ul>
+<li><a href="#org93cad65">일반 옵션</a></li>
+<li><a href="#org998f0fe">Emacs Lisp 관련 옵션</a></li>
+<li><a href="#org22318b5">Batch 모드 관련 옵션</a></li>
+<li><a href="#org02300af">with X</a></li>
+</ul>
+</li>
+<li><a href="#examples">사용 예</a></li>
 </ul>
 </li>
 <li><a href="#references">참고자료</a></li>
@@ -279,28 +294,52 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org3028367" class="outline-2">
-<h2 id="how-to-install"><a id="org3028367"></a>설치 방법</h2>
+<div id="outline-container-org5d92819" class="outline-2">
+<h2 id="overview"><a id="org5d92819"></a>개요</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Lisp을 기반으로 만들어진 프로그래밍 가능한 에디터로 기본적인 에디터 기능은 물론 기본적인 프로그래밍 언어 지원과 플러그인 추가 학은 Lisp 코드를 수정하여 쉽게 확장 및 변경이 가능합니다.
+</p>
+</div>
+
+<div id="outline-container-orgdf58a84" class="outline-3">
+<h3 id="orgdf58a84">소개</h3>
+<div class="outline-text-3" id="text-orgdf58a84">
+<p>
+GNU Emacs는 원본 (PDP-10) Emacs, 리처드 스톨만이 작성한 Emacs의 한 버전입니다.
+GNU Emacs 다른 에디터 들이 가지고 있는 기능은 물론, 모든 명령이 Lisp으로 작성되었기 때문에 쉽게 확장 및 변경이 가능합니다.
+</p>
+
+<p>
+사용자가 버퍼 및 윈도우를 사용할 수 있다면 이맥스의 광범위한 도움말 기능을 쉽게 사용할 수 있습니다.
+CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd396444" class="outline-2">
+<h2 id="how-to-install"><a id="orgd396444"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org9f018c5" class="outline-3">
-<h3 id="prerequisites"><a id="org9f018c5"></a>필요 사항</h3>
+<div id="outline-container-org4b44227" class="outline-3">
+<h3 id="prerequisites"><a id="org4b44227"></a>필요 사항</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-org5765007" class="outline-4">
-<h4 id="org5765007">Ubuntu</h4>
-<div class="outline-text-4" id="text-org5765007">
+<div id="outline-container-org516a249" class="outline-4">
+<h4 id="org516a249">Ubuntu</h4>
+<div class="outline-text-4" id="text-org516a249">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6ab9605" class="outline-4">
-<h4 id="org6ab9605">Mac OS</h4>
-<div class="outline-text-4" id="text-org6ab9605">
+<div id="outline-container-org04f4e81" class="outline-4">
+<h4 id="org04f4e81">Mac OS</h4>
+<div class="outline-text-4" id="text-org04f4e81">
 <ul class="org-ul">
 <li><a href="./brew.html">brew</a></li>
 </ul>
@@ -308,19 +347,19 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org58104dc" class="outline-3">
-<h3 id="install"><a id="org58104dc"></a>설치</h3>
+<div id="outline-container-org9cc87f6" class="outline-3">
+<h3 id="install"><a id="org9cc87f6"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org5b3ba6f" class="outline-4">
-<h4 id="org5b3ba6f">Ubuntu</h4>
-<div class="outline-text-4" id="text-org5b3ba6f">
-</div><div id="outline-container-orgab161ea" class="outline-5">
-<h5 id="orgab161ea">Emacs 25</h5>
-<div class="outline-text-5" id="text-orgab161ea">
+<div id="outline-container-orgfdbae69" class="outline-4">
+<h4 id="orgfdbae69">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgfdbae69">
+</div><div id="outline-container-orge6301a7" class="outline-5">
+<h5 id="orge6301a7">Emacs 25</h5>
+<div class="outline-text-5" id="text-orge6301a7">
 <div class="org-src-container">
-<pre class="src src-sh" id="org9ec7549">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+<pre class="src src-sh" id="org7182fb3">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
 </pre>
@@ -329,19 +368,19 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-orgab2e4ca" class="outline-4">
-<h4 id="orgab2e4ca">Mac OS</h4>
-<div class="outline-text-4" id="text-orgab2e4ca">
+<div id="outline-container-orgd46cf10" class="outline-4">
+<h4 id="orgd46cf10">Mac OS</h4>
+<div class="outline-text-4" id="text-orgd46cf10">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgef07b3b">$ brew install emacs
+<pre class="src src-sh" id="orgea60a12">$ brew install emacs
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1e90119" class="outline-3">
-<h3 id="packages"><a id="org1e90119"></a>설치된 패키지</h3>
+<div id="outline-container-org3f95558" class="outline-3">
+<h3 id="packages"><a id="org3f95558"></a>설치된 패키지</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>aspell</li>
@@ -432,8 +471,8 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org047130c" class="outline-3">
-<h3 id="check"><a id="org047130c"></a>확인</h3>
+<div id="outline-container-org2b0033d" class="outline-3">
+<h3 id="check"><a id="org2b0033d"></a>확인</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ emacs --version
@@ -442,10 +481,157 @@ $ sudo apt install emacs25
 </div>
 </div>
 </div>
+
+<div id="outline-container-org393b797" class="outline-3">
+<h3 id="syntax"><a id="org393b797"></a>구조</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
+</pre>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org9745f82" class="outline-2">
-<h2 id="references"><a id="org9745f82"></a>참고자료</h2>
+<div id="outline-container-org20d61eb" class="outline-3">
+<h3 id="options"><a id="org20d61eb"></a>옵션</h3>
+<div class="outline-text-3" id="text-options">
+<p>
+버전 25.3를 기준으로 작성되었습니다.
+</p>
+</div>
+
+<div id="outline-container-org93cad65" class="outline-4">
+<h4 id="org93cad65">일반 옵션</h4>
+<div class="outline-text-4" id="text-org93cad65">
+<ul class="org-ul">
+<li><span class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :
+파일을 여는 것과 동일합니다.</li>
+<li>+number :
+현재 파일에서 <span class="org-programming-arg">number</span>와 동일한 줄로 이동합니다.</li>
+<li>+line:column :
+현재 파일에서 <span class="org-programming-arg">line</span>과 <span class="org-programming-arg">column</span>에 해당하는 위치로 이동합니다.</li>
+<li><span class="org-programming-option">--chdir</span> <span class="org-programming-argument">directory</span> :
+디렉토리를 변경합니다.</li>
+<li><span class="org-programming-option">-q</span>, <span class="org-programming-option">--no-init-file</span> :</li>
+<li><span class="org-programming-option">-nl</span>, <span class="org-programming-option">--no-shared-memory</span> :
+공유 메모리를 사용하지 않습니다.</li>
+<li><span class="org-programming-option">--no-site-file</span> :
+site-wide 파일들을 로드하지 않습니다.</li>
+<li><span class="org-programming-option">-nsl</span>, <span class="org-programming-option">--no-site-lisp</span> :
+site-lisp 디렉토리를 load-path로 사용하지 않습니다.</li>
+<li><span class="org-programming-option">--no-desktop</span> :</li>
+</ul>
+<p>
+Do not load a saved desktop.
+</p>
+<ul class="org-ul">
+<li><span class="org-programming-option">-Q</span>, <span class="org-programming-option">--quick</span> :
+<span class="org-programming-option">-q</span>, <span class="org-programming-option">--no-site-file</span>, <span class="org-programming-option">--no-splash</span> 등의 옵션과 동일합니다. 또한 X 리소스를 실행하지 않습니다.</li>
+<li><span class="org-programming-option">--no-splash</span> :</li>
+</ul>
+<p>
+Do not display a splash screen during start-up.
+</p>
+<ul class="org-ul">
+<li><span class="org-programming-option">--debug-init</span> :
+init 파일을 로드하는 동안 Emacs Lisp debugger를 활성화합니다. 이 옵션은 init 파일을 디버깅하는데 유용합니다.</li>
+<li><span class="org-programming-option">-u</span> <span class="org-programming-argument">user</span>, <span class="org-programming-option">--user</span> <span class="org-programming-argument">user</span> :
+특정 사용자의 init 파일을 로드합니다.</li>
+<li><span class="org-programming-option">-t</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--terminal</span> <span class="org-programming-argument">file</span> :
+터미널 표준입출력 대신 사용할 파일을 정합니다. 이 인자를 사용하려면 반드시 첫번째 인자로 입력되어야합니다.</li>
+<li><span class="org-programming-option">--daemon</span> :
+이맥스를 데몬으로 실행합니다. emacsclient 명령어를 이용해서 실행한 이맥스 데몬과 연결할 수 있습니다.</li>
+<li><span class="org-programming-option">--version</span> :
+이맥스 버전 정보를 보여주고 종료합니다.</li>
+<li><span class="org-programming-option">--help</span> :
+도움말을 보여주고 종료합니다.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org998f0fe" class="outline-4">
+<h4 id="org998f0fe">Emacs Lisp 관련 옵션</h4>
+<div class="outline-text-4" id="text-org998f0fe">
+<ul class="org-ul">
+<li><span class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :
+Lisp 함수를 실행합니다.</li>
+<li><span class="org-programming-option">-l</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--load</span> <span class="org-programming-argument">file</span> :
+Emacs Lisp 파일내 코드를 로드합니다.</li>
+<li><span class="org-programming-option">--eval</span> <span class="org-programming-argument">expr</span>, <span class="org-programming-option">--execute</span> <span class="org-programming-argument">expr</span> :
+<span class="org-programming-arg">expr</span>에 작성된 Emacs Lisp 코드를 실행합니다. 여러 함수를 실행하기 위해서는 <code>progn</code> 과 함께 사용해야합니다.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org22318b5" class="outline-4">
+<h4 id="org22318b5">Batch 모드 관련 옵션</h4>
+<div class="outline-text-4" id="text-org22318b5">
+<ul class="org-ul">
+<li><span class="org-programming-option">--batch</span> :
+배치 모드를 사용합니다. Emacs Lisp 내에서 실행된 message 들은 stderr로 보내집니다. <span class="org-programming-option">-l</span>, <span class="org-programming-option">-f</span> 옵션등을 통해 로드할 파일과 실행할 함수를 인자로 입력받을 수 있습니다.</li>
+<li><span class="org-programming-option">--script</span> <span class="org-programming-argument">file</span> :
+Emacs Lisp 스크립트를 파일로 실행합니다.</li>
+<li><span class="org-programming-option">--insert</span> <span class="org-programming-argument">file</span> :
+파일 데이터를 현재 버퍼에 입력합니다.</li>
+<li><span class="org-programming-option">--kill</span> :
+이맥스가 배치 모드일 경우 종료합니다.</li>
+<li><span class="org-programming-option">-L</span> <span class="org-programming-argument">dir</span>, <span class="org-programming-option">--directory</span> <span class="org-programming-argument">dir</span> :
+이맥스가 Lisp 파일을 검색할 디렉토리를 입력받습니다.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org02300af" class="outline-4">
+<h4 id="org02300af">with X</h4>
+<div class="outline-text-4" id="text-org02300af">
+<ul class="org-ul">
+<li><span class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :</li>
+<li><span class="org-programming-option">-T</span> <span class="org-programming-argument">name</span>, --title <span class="org-programming-argument">name</span> :</li>
+<li><span class="org-programming-option">-r</span>, <span class="org-programming-option">-rv</span>, <span class="org-programming-option">--reverse-video</span> :</li>
+<li><span class="org-programming-option">-fn</span> <span class="org-programming-argument">font</span>, <span class="org-programming-option">--font</span> <span class="org-programming-argument">font</span> :</li>
+<li><span class="org-programming-option">--xrm</span> <span class="org-programming-argument">resources</span> :</li>
+<li><span class="org-programming-option">--color</span>, <span class="org-programming-option">--color</span>=<span class="org-programming-argument">mode</span> :</li>
+<li><span class="org-programming-option">-bw</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--border-width</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span class="org-programming-option">-ib</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--internal-border</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span class="org-programming-option">-g</span> <span class="org-programming-argument">geometry</span>, <span class="org-programming-option">--geometry</span> <span class="org-programming-argument">geometry</span> :</li>
+<li><span class="org-programming-option">-lsp</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--line-spacing</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span class="org-programming-option">-vb</span>, <span class="org-programming-option">--vertical-scroll-bars</span> :</li>
+<li><span class="org-programming-option">-fh</span>, <span class="org-programming-option">--fullheight</span> :</li>
+<li><span class="org-programming-option">-fs</span>, <span class="org-programming-option">--fullscreen</span> :</li>
+<li><span class="org-programming-option">-fw</span>, <span class="org-programming-option">--fullwidth</span> :</li>
+<li><span class="org-programming-option">-mm</span>, <span class="org-programming-option">--maximized</span> :</li>
+<li><span class="org-programming-option">-fg</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--foreground-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-bg</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--background-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-bd</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--border-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-cr</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--cursor-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-ms</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--mouse-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span class="org-programming-option">-d</span> <span class="org-programming-argument">displayname</span>, <span class="org-programming-option">--display</span> <span class="org-programming-argument">displayname</span> :</li>
+<li><span class="org-programming-option">-nbi</span>, <span class="org-programming-option">--no-bitmap-icon</span> :</li>
+<li><span class="org-programming-option">--iconic</span> :</li>
+<li><span class="org-programming-option">-nbc</span>, <span class="org-programming-option">--no-blinking-cursor</span> :</li>
+<li><span class="org-programming-option">--parent-id</span> <span class="org-programming-argument">xid</span> :</li>
+<li><span class="org-programming-option">-nw</span>, <span class="org-programming-option">--no-window-system</span> :</li>
+<li><span class="org-programming-option">-D</span>, <span class="org-programming-option">--basic-display</span> :</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org80ec193" class="outline-3">
+<h3 id="examples"><a id="org80ec193"></a>사용 예</h3>
+<div class="outline-text-3" id="text-examples">
+<ul class="org-ul">
+<li>emacs -Q --batch file.org -f org-html-export-to-html :
+org 파일을 html로 export할 때 쓰입니다.</li>
+<li>emacs -Q --batch --eval "(+ 1 2)" :
+Emacs Lisp 코드를 바로 실행할 때 쓰입니다.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3efbab3" class="outline-2">
+<h2 id="references"><a id="org3efbab3"></a>참고자료</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
@@ -456,7 +642,7 @@ $ sudo apt install emacs25
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-21 Wed 16:33</p>
+<p class="date">Created: 2018-02-22 Thu 02:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
