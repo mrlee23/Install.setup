@@ -209,15 +209,50 @@ $ emacs --version
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+- {{{option(--file)}}} {{{argument(file)}}}, {{{option(--find-file)}}} {{{argument(file)}}}, {{{option(--visit)}}} {{{argument(file)}}} :
+#+LANG_EN:  The same as specifying file directly as an argument.
+- +number :
+#+LANG_EN: Go  to  the line specified by number (do not insert a space between the "+" sign and the number).  This applies only to the next file specified.
+- +line:column :
+#+LANG_EN: Go to the specified line and column.
+- {{{option(--chdir)}}} {{{argument(directory)}}} :
+#+LANG_EN: Change to directory.
+- {{{option(-q)}}}, {{{option(--no-init-file)}}} :
+#+LANG_EN: Do not load an init file.
+- {{{option(-nl)}}}, {{{option(--no-shared-memory)}}} :
+#+LANG_EN: Do not use shared memory.
+- {{{option(--no-site-file)}}} :
+#+LANG_EN: Do not load the site-wide startup file.
+- {{{option(-nsl)}}}, {{{option(--no-site-lisp)}}} :
+#+LANG_EN: Do not add site-lisp directories to load-path.
+- {{{option(--no-desktop)}}} :
+#+LANG_EN: Do not load a saved desktop.
+- {{{option(-Q)}}}, {{{option(--quick)}}} :
+#+LANG_EN: Similar to "-q --no-site-file --no-splash".  Also, avoid processing X resources.
+- {{{option(--no-splash)}}} :
+#+LANG_EN: Do not display a splash screen during start-up.
+- {{{option(--debug-init)}}} :
+#+LANG_EN: Enable Emacs Lisp debugger during the processing of the user init file ~/.emacs.  This is useful for debugging problems in the init file.
+- {{{option(-u)}}} {{{argument(user)}}}, {{{option(--user)}}} {{{argument(user)}}} :
+#+LANG_EN: Load user's init file.
+- {{{option(-t)}}} {{{argument(file)}}}, {{{option(--terminal)}}} {{{argument(file)}}} :
+#+LANG_EN: Use specified file as the terminal instead of using stdin/stdout.  This must be the first argument specified in the command line.
+- {{{option(--daemon)}}} :
+#+LANG_EN: Start Emacs as a daemon, enabling the Emacs server and disconnecting from the terminal.  You can then use the emacsclient command to connect to the server (see emacsclient(1)).
+- {{{option(--version)}}} :
+#+LANG_EN: Display Emacs version information and exit.
+- {{{option(--help)}}} :
+#+LANG_EN: Display this help and exit.
 
 # ** Examples
 #    :PROPERTIES: 
