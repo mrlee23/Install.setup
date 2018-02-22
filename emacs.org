@@ -4,15 +4,18 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Visión de conjunto
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: es
+  :END:      
+
+
+** Introducción
+  :PROPERTIES: 
+  :LANG: es
+  :END:    
+
 
 * Cómo instalar
   :PROPERTIES: 
@@ -169,15 +172,15 @@ $ emacs --version
 #   :LANG_JA:  命令説明
 #   :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Sintaxis
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: es
+   :END:      
+
+	#+BEGIN_SRC sh
+emacs [ command-line switches ] [ files ... ]
+	#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -189,25 +192,93 @@ $ emacs --version
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Opciones
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: es
+   :END:      
 
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
+{{{VERSION(25.3)}}}
+
+*** General
+   :PROPERTIES: 
+   :END:      
+- {{{option(--file)}}} {{{argument(file)}}}, {{{option(--find-file)}}} {{{argument(file)}}}, {{{option(--visit)}}} {{{argument(file)}}} :
+- +number :
+- +line:column :
+- {{{option(--chdir)}}} {{{argument(directory)}}} :
+- {{{option(-q)}}}, {{{option(--no-init-file)}}} :
+- {{{option(-nl)}}}, {{{option(--no-shared-memory)}}} :
+- {{{option(--no-site-file)}}} :
+- {{{option(-nsl)}}}, {{{option(--no-site-lisp)}}} :
+- {{{option(--no-desktop)}}} :
+Do not load a saved desktop.
+- {{{option(-Q)}}}, {{{option(--quick)}}} :
+- {{{option(--no-splash)}}} :
+Do not display a splash screen during start-up.
+- {{{option(--debug-init)}}} :
+- {{{option(-u)}}} {{{argument(user)}}}, {{{option(--user)}}} {{{argument(user)}}} :
+- {{{option(-t)}}} {{{argument(file)}}}, {{{option(--terminal)}}} {{{argument(file)}}} :
+- {{{option(--daemon)}}} :
+- {{{option(--version)}}} :
+- {{{option(--help)}}} :
+
+*** Emacs Lisp
+   :PROPERTIES: 
+   :END:      
+
+- {{{option(-f)}}} {{{argument(function)}}}, {{{option(--funcall)}}} {{{argument(function)}}} :
+- {{{option(-l)}}} {{{argument(file)}}}, {{{option(--load)}}} {{{argument(file)}}} :
+- {{{option(--eval)}}} {{{argument(expr)}}}, {{{option(--execute)}}} {{{argument(expr)}}} :
+
+*** Batch mode
+   :PROPERTIES: 
+   :END:      
+
+- {{{option(--batch)}}} :
+- {{{option(--script)}}} {{{argument(file)}}} :
+- {{{option(--insert)}}} {{{argument(file)}}} :
+- {{{option(--kill)}}} :
+- {{{option(-L)}}} {{{argument(dir)}}}, {{{option(--directory)}}} {{{argument(dir)}}} :
+
+*** with X
+
+- {{{option(--name)}}} {{{argument(name)}}} :
+- {{{option(-T)}}} {{{argument(name)}}}, --title {{{argument(name)}}} :
+- {{{option(-r)}}}, {{{option(-rv)}}}, {{{option(--reverse-video)}}} :
+- {{{option(-fn)}}} {{{argument(font)}}}, {{{option(--font)}}} {{{argument(font)}}} :
+- {{{option(--xrm)}}} {{{argument(resources)}}} :
+- {{{option(--color)}}}, {{{option(--color)}}}={{{argument(mode)}}} :
+- {{{option(-bw)}}} {{{argument(pixels)}}}, {{{option(--border-width)}}} {{{argument(pixels)}}} :
+- {{{option(-ib)}}} {{{argument(pixels)}}}, {{{option(--internal-border)}}} {{{argument(pixels)}}} :
+- {{{option(-g)}}} {{{argument(geometry)}}}, {{{option(--geometry)}}} {{{argument(geometry)}}} :
+- {{{option(-lsp)}}} {{{argument(pixels)}}}, {{{option(--line-spacing)}}} {{{argument(pixels)}}} :
+- {{{option(-vb)}}}, {{{option(--vertical-scroll-bars)}}} :
+- {{{option(-fh)}}}, {{{option(--fullheight)}}} :
+- {{{option(-fs)}}}, {{{option(--fullscreen)}}} :
+- {{{option(-fw)}}}, {{{option(--fullwidth)}}} :
+- {{{option(-mm)}}}, {{{option(--maximized)}}} :
+- {{{option(-fg)}}} {{{argument(color)}}}, {{{option(--foreground-color)}}} {{{argument(color)}}} :
+- {{{option(-bg)}}} {{{argument(color)}}}, {{{option(--background-color)}}} {{{argument(color)}}} :
+- {{{option(-bd)}}} {{{argument(color)}}}, {{{option(--border-color)}}} {{{argument(color)}}} :
+- {{{option(-cr)}}} {{{argument(color)}}}, {{{option(--cursor-color)}}} {{{argument(color)}}} :
+- {{{option(-ms)}}} {{{argument(color)}}}, {{{option(--mouse-color)}}} {{{argument(color)}}} :
+- {{{option(-d)}}} {{{argument(displayname)}}}, {{{option(--display)}}} {{{argument(displayname)}}} :
+- {{{option(-nbi)}}}, {{{option(--no-bitmap-icon)}}} :
+- {{{option(--iconic)}}} :
+- {{{option(-nbc)}}}, {{{option(--no-blinking-cursor)}}} :
+- {{{option(--parent-id)}}} {{{argument(xid)}}} :
+- {{{option(-nw)}}}, {{{option(--no-window-system)}}} :
+- {{{option(-D)}}}, {{{option(--basic-display)}}} :
+
+** Ejemplos
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: es
+   :END:      
+
+- emacs -Q --batch file.org -f org-html-export-to-html :
+- emacs -Q --batch --eval "(+ 1 2)" :
 
 # * See also
 #   :PROPERTIES: 
