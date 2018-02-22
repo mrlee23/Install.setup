@@ -4,15 +4,24 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+ Lisp을 기반으로 만들어진 프로그래밍 가능한 에디터로 기본적인 에디터 기능은 물론 기본적인 프로그래밍 언어 지원과 플러그인 추가 학은 Lisp 코드를 수정하여 쉽게 확장 및 변경이 가능합니다.
+
+** 소개
+  :PROPERTIES: 
+  :LANG: ko
+  :END:    
+
+GNU Emacs는 원본 (PDP-10) Emacs, 리처드 스톨만이 작성한 Emacs의 한 버전입니다.
+GNU Emacs 다른 에디터 들이 가지고 있는 기능은 물론, 모든 명령이 Lisp으로 작성되었기 때문에 쉽게 확장 및 변경이 가능합니다.
+
+사용자가 버퍼 및 윈도우를 사용할 수 있다면 이맥스의 광범위한 도움말 기능을 쉽게 사용할 수 있습니다.
+CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다.
 
 * 설치 방법
   :PROPERTIES: 
@@ -169,15 +178,15 @@ $ emacs --version
 #   :LANG_JA:  命令説明
 #   :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+	#+BEGIN_SRC sh
+emacs [ command-line switches ] [ files ... ]
+	#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -189,25 +198,120 @@ $ emacs --version
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
 
-# ** Examples
-#    :PROPERTIES: 
-#    :CUSTOM_ID: examples
-#    :LANG_EN:  Examples
-#    :LANG_ES:  Ejemplos
-#    :LANG_KO:  사용 예
-#    :LANG_ZH:  例子
-#    :LANG_JA:  例
-#    :END:      
+{{{VERSION(25.3)}}}
+
+*** 일반 옵션
+   :PROPERTIES: 
+   :LANG: ko
+   :END:      
+- {{{option(--file)}}} {{{argument(file)}}}, {{{option(--find-file)}}} {{{argument(file)}}}, {{{option(--visit)}}} {{{argument(file)}}} :
+  파일을 여는 것과 동일합니다.
+- +number :
+ 현재 파일에서 {{{arg(number)}}}와 동일한 줄로 이동합니다.
+- +line:column :
+ 현재 파일에서 {{{arg(line)}}}과 {{{arg(column)}}}에 해당하는 위치로 이동합니다.
+- {{{option(--chdir)}}} {{{argument(directory)}}} :
+ 디렉토리를 변경합니다.
+- {{{option(-q)}}}, {{{option(--no-init-file)}}} :
+- {{{option(-nl)}}}, {{{option(--no-shared-memory)}}} :
+ 공유 메모리를 사용하지 않습니다.
+- {{{option(--no-site-file)}}} :
+ site-wide 파일들을 로드하지 않습니다.
+- {{{option(-nsl)}}}, {{{option(--no-site-lisp)}}} :
+ site-lisp 디렉토리를 load-path로 사용하지 않습니다.
+- {{{option(--no-desktop)}}} :
+Do not load a saved desktop.
+- {{{option(-Q)}}}, {{{option(--quick)}}} :
+ {{{opt(-q)}}}, {{{opt(--no-site-file)}}}, {{{opt(--no-splash)}}} 등의 옵션과 동일합니다. 또한 X 리소스를 실행하지 않습니다.
+- {{{option(--no-splash)}}} :
+Do not display a splash screen during start-up.
+- {{{option(--debug-init)}}} :
+ init 파일을 로드하는 동안 Emacs Lisp debugger를 활성화합니다. 이 옵션은 init 파일을 디버깅하는데 유용합니다.
+- {{{option(-u)}}} {{{argument(user)}}}, {{{option(--user)}}} {{{argument(user)}}} :
+ 특정 사용자의 init 파일을 로드합니다.
+- {{{option(-t)}}} {{{argument(file)}}}, {{{option(--terminal)}}} {{{argument(file)}}} :
+ 터미널 표준입출력 대신 사용할 파일을 정합니다. 이 인자를 사용하려면 반드시 첫번째 인자로 입력되어야합니다.
+- {{{option(--daemon)}}} :
+ 이맥스를 데몬으로 실행합니다. emacsclient 명령어를 이용해서 실행한 이맥스 데몬과 연결할 수 있습니다.
+- {{{option(--version)}}} :
+ 이맥스 버전 정보를 보여주고 종료합니다.
+- {{{option(--help)}}} :
+ 도움말을 보여주고 종료합니다.
+
+*** Emacs Lisp 관련 옵션
+   :PROPERTIES: 
+   :LANG: ko
+   :END:      
+
+- {{{option(-f)}}} {{{argument(function)}}}, {{{option(--funcall)}}} {{{argument(function)}}} :
+ Lisp 함수를 실행합니다.
+- {{{option(-l)}}} {{{argument(file)}}}, {{{option(--load)}}} {{{argument(file)}}} :
+ Emacs Lisp 파일내 코드를 로드합니다.
+- {{{option(--eval)}}} {{{argument(expr)}}}, {{{option(--execute)}}} {{{argument(expr)}}} :
+ {{{arg(expr)}}}에 작성된 Emacs Lisp 코드를 실행합니다. 여러 함수를 실행하기 위해서는 =progn= 과 함께 사용해야합니다.
+
+*** Batch 모드 관련 옵션
+   :PROPERTIES: 
+   :LANG: ko
+   :END:      
+
+- {{{option(--batch)}}} :
+ 배치 모드를 사용합니다. Emacs Lisp 내에서 실행된 message 들은 stderr로 보내집니다. {{{opt(-l)}}}, {{{opt(-f)}}} 옵션등을 통해 로드할 파일과 실행할 함수를 인자로 입력받을 수 있습니다.
+- {{{option(--script)}}} {{{argument(file)}}} :
+ Emacs Lisp 스크립트를 파일로 실행합니다.
+- {{{option(--insert)}}} {{{argument(file)}}} :
+ 파일 데이터를 현재 버퍼에 입력합니다.
+- {{{option(--kill)}}} :
+ 이맥스가 배치 모드일 경우 종료합니다.
+- {{{option(-L)}}} {{{argument(dir)}}}, {{{option(--directory)}}} {{{argument(dir)}}} :
+ 이맥스가 Lisp 파일을 검색할 디렉토리를 입력받습니다.
+
+*** with X
+
+- {{{option(--name)}}} {{{argument(name)}}} :
+- {{{option(-T)}}} {{{argument(name)}}}, --title {{{argument(name)}}} :
+- {{{option(-r)}}}, {{{option(-rv)}}}, {{{option(--reverse-video)}}} :
+- {{{option(-fn)}}} {{{argument(font)}}}, {{{option(--font)}}} {{{argument(font)}}} :
+- {{{option(--xrm)}}} {{{argument(resources)}}} :
+- {{{option(--color)}}}, {{{option(--color)}}}={{{argument(mode)}}} :
+- {{{option(-bw)}}} {{{argument(pixels)}}}, {{{option(--border-width)}}} {{{argument(pixels)}}} :
+- {{{option(-ib)}}} {{{argument(pixels)}}}, {{{option(--internal-border)}}} {{{argument(pixels)}}} :
+- {{{option(-g)}}} {{{argument(geometry)}}}, {{{option(--geometry)}}} {{{argument(geometry)}}} :
+- {{{option(-lsp)}}} {{{argument(pixels)}}}, {{{option(--line-spacing)}}} {{{argument(pixels)}}} :
+- {{{option(-vb)}}}, {{{option(--vertical-scroll-bars)}}} :
+- {{{option(-fh)}}}, {{{option(--fullheight)}}} :
+- {{{option(-fs)}}}, {{{option(--fullscreen)}}} :
+- {{{option(-fw)}}}, {{{option(--fullwidth)}}} :
+- {{{option(-mm)}}}, {{{option(--maximized)}}} :
+- {{{option(-fg)}}} {{{argument(color)}}}, {{{option(--foreground-color)}}} {{{argument(color)}}} :
+- {{{option(-bg)}}} {{{argument(color)}}}, {{{option(--background-color)}}} {{{argument(color)}}} :
+- {{{option(-bd)}}} {{{argument(color)}}}, {{{option(--border-color)}}} {{{argument(color)}}} :
+- {{{option(-cr)}}} {{{argument(color)}}}, {{{option(--cursor-color)}}} {{{argument(color)}}} :
+- {{{option(-ms)}}} {{{argument(color)}}}, {{{option(--mouse-color)}}} {{{argument(color)}}} :
+- {{{option(-d)}}} {{{argument(displayname)}}}, {{{option(--display)}}} {{{argument(displayname)}}} :
+- {{{option(-nbi)}}}, {{{option(--no-bitmap-icon)}}} :
+- {{{option(--iconic)}}} :
+- {{{option(-nbc)}}}, {{{option(--no-blinking-cursor)}}} :
+- {{{option(--parent-id)}}} {{{argument(xid)}}} :
+- {{{option(-nw)}}}, {{{option(--no-window-system)}}} :
+- {{{option(-D)}}}, {{{option(--basic-display)}}} :
+
+** 사용 예
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ko
+   :END:      
+
+- emacs -Q --batch file.org -f org-html-export-to-html :
+ org 파일을 html로 export할 때 쓰입니다.
+- emacs -Q --batch --eval "(+ 1 2)" :
+ Emacs Lisp 코드를 바로 실행할 때 쓰입니다.
 
 # * See also
 #   :PROPERTIES: 

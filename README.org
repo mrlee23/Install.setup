@@ -1,4 +1,4 @@
-# Created 2018-02-21 Wed 16:33
+# Created 2018-02-22 Thu 02:30
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -21,6 +21,7 @@
 #+MACRO: link [[./$1.org][$1]]
 
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
+#+MACRO: VERSION (eval (lc-macro/version $1))
 #+MACRO: BUILTIN (eval (lc-macro/builtin))
 #+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
 #+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
@@ -85,8 +86,8 @@
 | [[file:./docker-compose.org][docker-compose]]         | No                                           | [[file:docker-compose.org::#install][Yes]]     | No                                 | No                                   | No                                   |
 | [[file:./docker.org][docker]]                         | No                                           | [[file:docker.org::#install][Yes]]             | No                                 | No                                   | No                                   |
 | [[file:./dpkg.org][dpkg]]                             | [[file:dpkg.org::#overview][Yes]]            | No                                             | [[file:dpkg.org::#usage][Yes]]     | [[file:dpkg.org::#options][Yes]]     | No                                   |
-| [[file:./echo.org][echo]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
-| [[file:./emacs.org][emacs]]                           | No                                           | [[file:emacs.org::#install][Yes]]              | No                                 | No                                   | No                                   |
+| [[file:./echo.org][echo]]                             | No                                           | No                                             | [[file:echo.org::#usage][Yes]]     | [[file:echo.org::#options][Yes]]     | No                                   |
+| [[file:./emacs.org][emacs]]                           | [[file:emacs.org::#overview][Yes]]           | [[file:emacs.org::#install][Yes]]              | No                                 | [[file:emacs.org::#options][Yes]]    | No                                   |
 | [[file:./find.org][find]]                             | No                                           | No                                             | [[file:find.org::#usage][Yes]]     | [[file:find.org::#options][Yes]]     | No                                   |
 | [[file:./finger.org][finger]]                         | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./fsck.org][fsck]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
