@@ -77,7 +77,7 @@
 		   :exclude: ,EXCLUDE_DIR
 		   :index-filename nil
 		   :index-title nil
-		   :auto-sitemap t
+		   :auto-sitemap nil
 		   :publishing-directory ,TARGET_DIR
 		   :publishing-function pages-publish-to-html
 		   :language ,LANG
