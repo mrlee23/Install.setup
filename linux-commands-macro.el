@@ -181,4 +181,22 @@
 			 "This is builtin command."))
 		  ver))
 
+(defun lc-macro/latest-version (ver)
+  (setq ver (lc-macro/arg-trim ver))
+  (setq ver (format "@@html:<span class=\"org-programming-constant\">%s</span>@@" ver))
+  (format (case (lc-core/get-current-language)
+			(en
+			 "Currently latest version is %s.")
+			(es
+			 "Actualmente la última versión es %s.")
+			(ko
+			 "현재 최신 버전은 %s 입니다.")
+			(zh
+			 "目前最新版本是％s。")
+			(ja
+			 "現在の最新バージョンは％sです。")
+			(t
+			 "Currently latest version is %s."))
+		  ver))
+
 (provide 'linux-commands-macro)
