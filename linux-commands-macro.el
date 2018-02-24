@@ -35,7 +35,8 @@
 
 (defun lc-macro/include-progress ()
   (concat
-   "|Name|Overview|Install|Usage|Options|See also|\n"
+   "|Name|Overview|Install|Usage|Options|See also|
+|-+-+-+-+-+-|\n"
    (mapconcat (lambda (file-name)
 				(let ((name (substring file-name 0 -4))
 					  (flags '())
