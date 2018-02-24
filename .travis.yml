@@ -31,7 +31,7 @@ script:
     else
     echo "This branch($TRAVIS_BRANCH) is not available";
     fi
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - if [ "$TRAVIS_BRANCH" == "3-support-sub-directory-documents" ]; then
     DOCKER_RUN "make index" && INDEX_NON_ERROR=TRUE;
     if [ "$INDEX_NON_ERROR" != TRUE ]; then echo "Error occured on make index..."; exit 1; fi;
     DOCKER_RUN "make pages" && PAGES_NON_ERROR=TRUE;
