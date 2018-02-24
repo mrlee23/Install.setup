@@ -51,11 +51,13 @@ $( document ).ready(function() {
 	$('#toggle-sidebar').click(function () {
 		$('#table-of-contents').show();
 		$('#close-button').show();
+		$('#toggle-sidebar').hide();
 		$('#content').addClass('with-sidebar');
 	});
 	$('#close-button').click(function () {
 		$('#table-of-contents').hide();
 		$('#close-button').hide();
+		$('#toggle-sidebar').show();
 		$('#content').removeClass('with-sidebar');
 	});
 });
