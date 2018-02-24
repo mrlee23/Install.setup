@@ -4,25 +4,31 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+#+LANG_EN:Check and repair a Linux filesystem.
+#+LANG_ES:Verifique y repare un sistema de archivos Linux.
+#+LANG_KO:리눅스 파일 시스템을 점검하고 고칩니다.
+#+LANG_ZH:检查并修复Linux文件系统。
+#+LANG_JA:Linuxファイルシステムをチェックし、修復する。
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
 
 # ** Prerequisites
 #    :PROPERTIES: 
@@ -34,15 +40,17 @@
 #    :LANG_JA:  前準備
 #    :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
+
+{{{BUILTIN}}}
 
 # ** Installed Packages
 #    :PROPERTIES: 
@@ -64,45 +72,176 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
 
-# ** Configuration
-#    :PROPERTIES: 
-#    :CUSTOM_ID: configuration
-#    :LANG_EN:  Configuration
-#    :LANG_ES:  Configuración
-#    :LANG_KO:  설정
-#    :LANG_ZH:  组态
-#    :LANG_JA:  設定
-#    :END:      
+#+BEGIN_SRC sh
+fsck [-lrsAVRTMNP] [-C [fd]] [-t fstype] [filesystem ... ] [--] [fs-specific-options]
+#+END_SRC
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Description
+   :PROPERTIES: 
+   :CUSTOM_ID: description
+   :LANG_EN:  Description
+   :LANG_ES:  Descripción
+   :LANG_KO:  설명
+   :LANG_ZH:  详情
+   :LANG_JA:  说明
+   :END:      
+
+#+BEGIN_LANG en es zh ja
+- fsck  is  used  to  check  and optionally repair one or more Linux filesystems.
+- filesys can be a device name (e.g.  /dev/hdc1, /dev/sdb2), a mount point (e.g.  /, /usr,
+/home), or an ext2 label or UUID specifier (e.g.  UUID=8868abf6-88c5-4a83-98b8-bfc24057f7bd or LABEL=root).
+- Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of them.
+
+- If  no  filesystems  are  specified  on  the command line, and the -A option is not specified, fsck will default to checking filesystems in /etc/fstab serially.  This is
+equivalent to the -As options.
+
+- The exit code returned by fsck is the sum of the following conditions:
+  |   # |                                    |
+  |-----+------------------------------------|
+  |   0 | No errors                          |
+  |   1 | Filesystem errors corrected        |
+  |   2 | System should be rebooted          |
+  |   4 | Filesystem errors left uncorrected |
+  |   8 | Operational error                  |
+  |  16 | Usage or syntax error              |
+  |  32 | Checking canceled by user request  |
+  | 128 | Shared-library error               |
+
+- The exit code returned when multiple filesystems are checked is the bit-wise OR of the exit codes for each filesystem that is checked.
+- In actuality, fsck is simply a front-end for the various filesystem checkers (fsck.fstype) available under Linux.  The filesystem-specific checker is searched for in the PATH environment variable. If the PATH is undefined then fallback to "/sbin".
+
+Please see the filesystem-specific checker manual pages for further details.
+#+END_LANG
+#+BEGIN_LANG ko
+- 하나 이상의 리눅스 파일 시스템을 점검하거나 선택적으로 고칠 수 있습니다.
+- filesys 는 디바이스 명({{{path(/dev/hdc1)}}}, {{{path(/dev/sdb2)}}}), 마운트 포인트 경로({{{path(/)}}}, {{{path(/user)}}}, {{{path(/home)}}})
+  혹은 라벨이나 UUID 명(UUID=8868abf6-88c5-4a83-98b8-bfc24057f7bd 혹은 LABEL=root).
+- 기본적으로, fsck 명령어는 물리적으로 분리된 디스크를 병렬적으로 처리하여 시간을 절약할 수 있습니다.
+- 만약 파일 시스템명이 명시되지 않으면, fsck 는 /etc/fstab 을 이용해서 기본 파일 시스템을 확인할 수 있습니다.
+  - 이는 {{{opt(-As)}}} 옵션과 같습니다.
+- 종료 코드는 아래의 코드 조합으로 만들어집니다.
+  |   # | msg                          |
+  |-----+------------------------------|
+  |   0 | 에러 없음                   |
+  |   1 | 시스템 에러가 고쳐짐         |
+  |   2 | 시스템이 리부트 되어야 함    |
+  |   4 | 파일 시스템 에러가 고쳐지지 않음. |
+  |   8 | 작동 에러                    |
+  |  16 | 용법 및 문법 에러            |
+  |  32 | 사용자 요청으로 인한 체크 프로세스 취소 |
+  | 128 | 공유 라이브러리 에러         |
+#+END_LANG
+
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG_EN:  Configuration
+   :LANG_ES:  Configuración
+   :LANG_KO:  설정
+   :LANG_ZH:  组态
+   :LANG_JA:  設定
+   :END:      
+
+{{{file(/etc/fstab)}}}
+
+- FSCK_FORCE_ALL_PARALLEL
+- FSCK_MAX_INST          
+- PATH                   
+- FSTAB_FILE             
+- LIBBLKID_DEBUG=0xffff  
+- LIBMOUNT_DEBUG=0xffff  
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+#+BEGIN_LANG en
+- {{{option(-l)}}} : Create an exclusive flock(2) lock file (/run/fsck/<diskname>.lock) for whole-disk device.  This option can be used with one device only (this means that {{{opt(-A)}}} and {{{opt(-l)}}}
+  are mutually exclusive).  This option is recommended when more fsck(8) instances are executed in the same time.  The option is  ignored  when  used  for  multiple
+  devices or for non-rotating disks.  fsck does not lock underlying devices when executed to check stacked devices (e.g. MD or DM) – this feature is not implemented
+  yet.
+- {{{option(-r)}}} [{{{argument(fd)}}}] : 
+- {{{option(-s)}}} :
+- {{{option(-t)}}} {{{argument(fslist)}}} :
+- {{{option(-A)}}} :
+- {{{option(-C)}}}  [{{{argument(fd)}}} ] :
+- {{{option(-M)}}} :
+- {{{option(-N)}}} :
+- {{{option(-P)}}} :
+- {{{option(-R)}}} :
+- {{{option(-T)}}} :
+- {{{option(-V)}}} :
+
+fs-specific-options
+- {{{option(-a)}}} :
+- {{{option(-n)}}} : 
+- {{{option(-r)}}} :
+- {{{option(-y)}}} :
+#+END_LANG
+
+#+BEGIN_LANG ko
+- {{{option(-l)}}} [{{{argument(fd)}}}] : 전체 디스크에 독점적인 flock 잠금 파일 (/run/fsck/.lock) 을 생성합니다.
+  - 이 옵션은 하나의 디스크만 사용 가능 합니다. 이 의미는 {{{opt(-l)}}} 옵션이 {{{opt(-A)}}} 옵션과 같이 작동할 수 없다는 뜻입니다.
+  - 이 옵션은 fsck 명령어가 동시에 여러번 사용될 때 유용합니다.
+  - 이 옵션은 두개 이상의 디스크 혹은 non-rotating disk 일때 무시됩니다.
+- {{{option(-r)}}} : fsck 명령이 끝났을 때 분석값을 리포트 합니다.
+  - 이 분석값은 종료 코드(exit code), 최대 run set size (KB), 경과된 시간과 사용자, 시스템 CPU 사용 시간 등을 나타냅니다.
+  - 예) {{{path(/dev/sda1)}}}: status 0, rss 92828, real 4.002804, user 2.677592, sys 0.86186
+- {{{option(-s)}}} : fsck 작업들을 직렬화(Serialize) 합니다.
+  - 인터렉티브 모드에서 여러 파일 시스템을 확인하기에 적절합니다.
+  - e2fsck 는 기본적으로 인터렉티브 모드로 작동합니다.
+  - e2fsck 의 인터렉티브 모드를 작동하지 않게 하기 위해서는 {{{opt(-p)}}}, {{{opt(-a)}}}, {{{opt(-n)}}} 중 하나의 옵션을 선택해야 합니다.
+  - 이중 {{{opt(-p)}}}, {{{opt(-a)}}} 옵션은 에러를 자동으로 고치지만, {{{opt(-n)}}} 옵션은 에러를 그대로 놔둡니다.
+- {{{option(-t)}}} {{{argument(fslist)}}} : 점검할 파일 시스템 타입들을 지정합니다.
+  - {{{opt(-A)}}} 플래그가 지정되면, 해당 옵션 내에서 fslist 와 매칭이 될 경우에만 해당합니다.
+  - fslist 의 각 인자는 ,(comma)로 구분합니다.
+  - =no= 혹은 =!= 플래그가 앞에 쓰이면 해당 파일 시스템을 제외하고 점검합니다.
+- {{{option(-A)}}} : 한번에 /etc/fstab 파일에 있는 모든 파일 시스템을 체크합니다.
+  - 이 옵션은 시스템 초기화 파일인 /etc/rc 에서 주로 사용합니다.
+- {{{option(-C)}}}  [{{{argument(fd)}}} ] : 파일 시스템 점검 진행 상태를 프로그레스 바를 통해 보여줍니다. (현재는 ext2, ext3 만 지원함.)
+  - GUI 상에서 front-end 로 구현할 떄, fd 파일 디스크립터 옵션을 사용해서 file descriptor 정보를 보낼 수 있습니다.
+- {{{option(-M)}}} : 현재 마운트 된 파일 시스템은 점검하지 않습니다. 그리고 코드 0을 리턴합니다.
+- {{{option(-N)}}} : 실행하지 않고 어떻게 작동할지만 보여줍니다.
+- {{{option(-P)}}} : {{{option(-A)}}} 옵션과 같이 사용하면 루트 파일 시스템과 다른 파일 시스템을 병행 처리합니다.
+  - 이 옵션은 루트 파일 시스템이 오류가 발생하면 매우 위험합니다!
+  - 이 옵션은 주로 파일 시스템을 줄이거나 작게 파티션 하기 귀찮을 때 사용합니다.
+- {{{option(-R)}}} : {{{option(-A)}}} 옵션과 같이 사용될 때, 루트 파일 시스템 점검을 하지 않습니다.
+  - 이 옵션은 루트 파일 시스템이 이미 rw로 마운트 되어 있을 때 유용합니다.
+- {{{option(-T)}}} : 검사시 타이틀을 보여주지 않습니다.
+- {{{option(-V)}}} : 실행하는 모든 파일 시스템 명령어 실행을 보여줍니다.
+
+fs-specific-options
+- {{{option(-a)}}} : 다른 메시지 없이 파일 시스템을 자동적으로 복구합니다.
+- {{{option(-n)}}} : 
+- {{{option(-r)}}} : 파일 시스템 복구를 인터렉티브하게 설정합니다.
+  - 2개 이상의 fsck 가 병렬적으로 작동할 때면 이 명령어는 사용하지 않는 것이 좋습니다.
+- {{{option(-y)}}} :
+#+END_LANG
 
 # ** Examples
 #    :PROPERTIES: 
