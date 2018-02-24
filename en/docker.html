@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-24 Sat 11:25 -->
+<!-- 2018-02-24 Sat 12:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker</title>
@@ -191,6 +191,7 @@
 <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
 <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="docker - Linux Commands">
 <meta name="description" content="">
@@ -258,21 +259,21 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#install">Install</a></li>
-<li><a href="#orgd8cd301">Ubuntu 16.04 ~</a>
+<li><a href="#org7e84ad9">Ubuntu 16.04 ~</a>
 <ul>
-<li><a href="#org40f7f85">Update repository</a></li>
-<li><a href="#org3b7d702">Based on architectures</a>
+<li><a href="#org4cf5d3a">Update repository</a></li>
+<li><a href="#orgfe32972">Based on architectures</a>
 <ul>
-<li><a href="#org0df2b44">x86_64 / amd64</a></li>
-<li><a href="#org7f4d2e1">armhf</a></li>
-<li><a href="#orgbf7eeb5">IBM Power</a></li>
-<li><a href="#orgdcd61f1">IBM Z (s390x)</a></li>
+<li><a href="#orgf532cd7">x86_64 / amd64</a></li>
+<li><a href="#orgfd73531">armhf</a></li>
+<li><a href="#org761b6ca">IBM Power</a></li>
+<li><a href="#org50b5f73">IBM Z (s390x)</a></li>
 </ul>
 </li>
-<li><a href="#org598cb02">Install Docker-CE</a></li>
+<li><a href="#orge29ea53">Install Docker-CE</a></li>
 </ul>
 </li>
-<li><a href="#org18b9a49">Mac</a></li>
+<li><a href="#org1338952">Mac</a></li>
 <li><a href="#packages">Installed Packages</a></li>
 <li><a href="#check">Check</a></li>
 </ul>
@@ -282,31 +283,31 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4c71d3c" class="outline-2">
-<h2 id="how-to-install"><a id="org4c71d3c"></a>How to Install</h2>
+<div id="outline-container-orgd88487b" class="outline-2">
+<h2 id="how-to-install"><a id="orgd88487b"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org988e0b4" class="outline-3">
-<h3 id="prerequisites"><a id="org988e0b4"></a>Prerequisites</h3>
+<div id="outline-container-org955f12c" class="outline-3">
+<h3 id="prerequisites"><a id="org955f12c"></a>Prerequisites</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 </div>
 
-<div id="outline-container-org72e8556" class="outline-3">
-<h3 id="install"><a id="org72e8556"></a>Install</h3>
+<div id="outline-container-orgf3299d9" class="outline-3">
+<h3 id="install"><a id="orgf3299d9"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 </div>
 
-<div id="outline-container-orgd8cd301" class="outline-3">
-<h3 id="orgd8cd301">Ubuntu 16.04 ~</h3>
-<div class="outline-text-3" id="text-orgd8cd301">
-</div><div id="outline-container-org40f7f85" class="outline-4">
-<h4 id="org40f7f85">Update repository</h4>
-<div class="outline-text-4" id="text-org40f7f85">
+<div id="outline-container-org7e84ad9" class="outline-3">
+<h3 id="org7e84ad9">Ubuntu 16.04 ~</h3>
+<div class="outline-text-3" id="text-org7e84ad9">
+</div><div id="outline-container-org4cf5d3a" class="outline-4">
+<h4 id="org4cf5d3a">Update repository</h4>
+<div class="outline-text-4" id="text-org4cf5d3a">
 <div class="org-src-container">
-<pre class="src src-sh" id="org0582726"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+<pre class="src src-sh" id="orge884e6a"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
 $ sudo apt-get remove docker docker-engine docker.io
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
@@ -325,14 +326,14 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-org3b7d702" class="outline-4">
-<h4 id="org3b7d702">Based on architectures</h4>
-<div class="outline-text-4" id="text-org3b7d702">
-</div><div id="outline-container-org0df2b44" class="outline-5">
-<h5 id="org0df2b44">x86_64 / amd64</h5>
-<div class="outline-text-5" id="text-org0df2b44">
+<div id="outline-container-orgfe32972" class="outline-4">
+<h4 id="orgfe32972">Based on architectures</h4>
+<div class="outline-text-4" id="text-orgfe32972">
+</div><div id="outline-container-orgf532cd7" class="outline-5">
+<h5 id="orgf532cd7">x86_64 / amd64</h5>
+<div class="outline-text-5" id="text-orgf532cd7">
 <div class="org-src-container">
-<pre class="src src-sh" id="orga3ccd92">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org6689d50">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -341,11 +342,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-org7f4d2e1" class="outline-5">
-<h5 id="org7f4d2e1">armhf</h5>
-<div class="outline-text-5" id="text-org7f4d2e1">
+<div id="outline-container-orgfd73531" class="outline-5">
+<h5 id="orgfd73531">armhf</h5>
+<div class="outline-text-5" id="text-orgfd73531">
 <div class="org-src-container">
-<pre class="src src-sh" id="org91a4330">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org76ba0c9">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -354,11 +355,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orgbf7eeb5" class="outline-5">
-<h5 id="orgbf7eeb5">IBM Power</h5>
-<div class="outline-text-5" id="text-orgbf7eeb5">
+<div id="outline-container-org761b6ca" class="outline-5">
+<h5 id="org761b6ca">IBM Power</h5>
+<div class="outline-text-5" id="text-org761b6ca">
 <div class="org-src-container">
-<pre class="src src-sh" id="org8eddd72">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="orgf856a64">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -367,11 +368,11 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orgdcd61f1" class="outline-5">
-<h5 id="orgdcd61f1">IBM Z (s390x)</h5>
-<div class="outline-text-5" id="text-orgdcd61f1">
+<div id="outline-container-org50b5f73" class="outline-5">
+<h5 id="org50b5f73">IBM Z (s390x)</h5>
+<div class="outline-text-5" id="text-org50b5f73">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgf355310">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
+<pre class="src src-sh" id="org4b2a40d">$ sudo add-apt-repository <span style="font-style: italic;">\</span>
    <span style="font-style: italic;">"deb [arch=s390x] https://download.docker.com/linux/ubuntu \</span>
 <span style="font-style: italic;">   $(lsb_release -cs) \</span>
 <span style="font-style: italic;">   stable"</span>
@@ -380,34 +381,34 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 </div>
-<div id="outline-container-org598cb02" class="outline-4">
-<h4 id="org598cb02">Install Docker-CE</h4>
-<div class="outline-text-4" id="text-org598cb02">
+<div id="outline-container-orge29ea53" class="outline-4">
+<h4 id="orge29ea53">Install Docker-CE</h4>
+<div class="outline-text-4" id="text-orge29ea53">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgabef256">$ sudo apt-get install docker-ce
+<pre class="src src-sh" id="org92fe489">$ sudo apt-get install docker-ce
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org18b9a49" class="outline-3">
-<h3 id="org18b9a49">Mac</h3>
-<div class="outline-text-3" id="text-org18b9a49">
+<div id="outline-container-org1338952" class="outline-3">
+<h3 id="org1338952">Mac</h3>
+<div class="outline-text-3" id="text-org1338952">
 <ul class="org-ul">
 <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4d92cb4" class="outline-3">
-<h3 id="packages"><a id="org4d92cb4"></a>Installed Packages</h3>
+<div id="outline-container-org88ddba1" class="outline-3">
+<h3 id="packages"><a id="org88ddba1"></a>Installed Packages</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-orgb4cf3b1" class="outline-3">
-<h3 id="check"><a id="orgb4cf3b1"></a>Check</h3>
+<div id="outline-container-orgb115d7c" class="outline-3">
+<h3 id="check"><a id="orgb115d7c"></a>Check</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo docker run hello-world
@@ -417,8 +418,8 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orgb794dae" class="outline-2">
-<h2 id="references"><a id="orgb794dae"></a>References</h2>
+<div id="outline-container-orge7af483" class="outline-2">
+<h2 id="references"><a id="orge7af483"></a>References</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
@@ -430,7 +431,7 @@ $ sudo apt-key fingerprint 0EBFCD88
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-24 Sat 11:25</p>
+<p class="date">Created: 2018-02-24 Sat 12:27</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -406,7 +406,11 @@ table tr:nth-child(2n) td{
 
 #toggle-sidebar,
 #close-button {
+    z-index:1000;
+    color: #2980b9;
     display: none;
+    position: fixed;
+    top: 0.809em;
 }
 
 @media screen and (max-width: 768px) {
@@ -433,8 +437,6 @@ table tr:nth-child(2n) td{
 
     #toggle-sidebar {
 	display:block;
-        position: fixed;
-	top: 15px;
 	left: 15px;
 	margin: 0px;
     }
@@ -447,8 +449,6 @@ table tr:nth-child(2n) td{
     #close-button {
        left: 38%;
        margin-left: 15px;
-       top: 0.809em;
-       position: fixed;
     }
 
     .with-sidebar {
@@ -664,7 +664,6 @@ a:hover{
 
 a:visited{
     /* color:#9B59B6 */
-	color:none;
 }
 
 .left{

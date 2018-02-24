@@ -46,7 +46,7 @@ $( document ).ready(function() {
     $tableOfContents.css({paddingBottom: $postamble.outerHeight()});
 
     // add TOC button
-    var sidebarComponents = $('<div id="toggle-sidebar"><h2><i class="fa fa-align-justify fa-lg"></i></h2></div><div id="close-button"><i class="fa fa-close fa-lg"></i></div>');
+    var sidebarComponents = $('<div id="toggle-sidebar"><i class="fa fa-align-justify fa-lg"></i></div><div id="close-button"><i class="fa fa-close fa-lg"></i></div>');
     $('#content').prepend(sidebarComponents);
 	$('#toggle-sidebar').click(function () {
 		$('#table-of-contents').show();

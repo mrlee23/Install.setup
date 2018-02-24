@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-24 Sat 11:25 -->
+<!-- 2018-02-24 Sat 12:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -191,6 +191,7 @@
 <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
 <script type="text/javascript" src="../dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="../dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="emacs - 리눅스 명령어">
 <meta name="description" content=" Lisp을 기반으로 만들어진 프로그래밍 가능한 에디터로 기본적인 에디터 기능은 물론 기본적인 프로그래밍 언어 지원과 플러그인 추가 및 Lisp 코드를 수정하여 쉽게 확장 및 변경이 가능합니다. GNU Emacs는 원본 (PDP-10) Emacs, 리처드 스톨만이 작성한 Emacs의 한 버전입니다. GNU Emacs 다른 에디터 들이 가지고 있는 기능은 물론, 모든 명령이 Lisp으로 작성되었기 때문에 쉽게 확장 및 변경이 가능합니다. 사용자가 버퍼 및 윈도우를 사용할 수 있다면 이맥스의 광범위한 도움말 기능을 쉽게 사용할 수 있습니다. CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다. ">
@@ -263,18 +264,18 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#prerequisites">필요 사항</a>
 <ul>
-<li><a href="#org6bd1851">Ubuntu</a></li>
-<li><a href="#org3c28520">Mac OS</a></li>
+<li><a href="#org7885d41">Ubuntu</a></li>
+<li><a href="#orgce4e1ef">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#install">설치</a>
 <ul>
-<li><a href="#orgfe5b322">Ubuntu</a>
+<li><a href="#org02ed4d9">Ubuntu</a>
 <ul>
-<li><a href="#orgcd4f5da">Emacs 25</a></li>
+<li><a href="#org7949777">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#orgba95197">Mac OS</a></li>
+<li><a href="#org60a8d0a">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#packages">설치된 패키지</a></li>
@@ -282,10 +283,10 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">구조</a></li>
 <li><a href="#options">옵션</a>
 <ul>
-<li><a href="#org5a2d832">일반 옵션</a></li>
-<li><a href="#orge48d503">Emacs Lisp 관련 옵션</a></li>
-<li><a href="#org1ceac9a">Batch 모드 관련 옵션</a></li>
-<li><a href="#orgdb1a92a">with X</a></li>
+<li><a href="#orgabb9d72">일반 옵션</a></li>
+<li><a href="#org1261a49">Emacs Lisp 관련 옵션</a></li>
+<li><a href="#org3f1e349">Batch 모드 관련 옵션</a></li>
+<li><a href="#org460c08f">with X</a></li>
 </ul>
 </li>
 <li><a href="#examples">사용 예</a></li>
@@ -296,16 +297,16 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org1ff8a13" class="outline-2">
-<h2 id="overview"><a id="org1ff8a13"></a>개요</h2>
+<div id="outline-container-orgdccf2b3" class="outline-2">
+<h2 id="overview"><a id="orgdccf2b3"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 Lisp을 기반으로 만들어진 프로그래밍 가능한 에디터로 기본적인 에디터 기능은 물론 기본적인 프로그래밍 언어 지원과 플러그인 추가 및 Lisp 코드를 수정하여 쉽게 확장 및 변경이 가능합니다.
 </p>
 </div>
 
-<div id="outline-container-orgce2ce9e" class="outline-3">
-<h3 id="introduction"><a id="orgce2ce9e"></a>소개</h3>
+<div id="outline-container-orge95dab0" class="outline-3">
+<h3 id="introduction"><a id="orge95dab0"></a>소개</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 GNU Emacs는 원본 (PDP-10) Emacs, 리처드 스톨만이 작성한 Emacs의 한 버전입니다.
@@ -320,28 +321,28 @@ CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다.
 </div>
 </div>
 
-<div id="outline-container-orge27d2e7" class="outline-2">
-<h2 id="how-to-install"><a id="orge27d2e7"></a>설치 방법</h2>
+<div id="outline-container-org49ec2cf" class="outline-2">
+<h2 id="how-to-install"><a id="org49ec2cf"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orge4b6c13" class="outline-3">
-<h3 id="prerequisites"><a id="orge4b6c13"></a>필요 사항</h3>
+<div id="outline-container-org03759c8" class="outline-3">
+<h3 id="prerequisites"><a id="org03759c8"></a>필요 사항</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-org6bd1851" class="outline-4">
-<h4 id="org6bd1851">Ubuntu</h4>
-<div class="outline-text-4" id="text-org6bd1851">
+<div id="outline-container-org7885d41" class="outline-4">
+<h4 id="org7885d41">Ubuntu</h4>
+<div class="outline-text-4" id="text-org7885d41">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3c28520" class="outline-4">
-<h4 id="org3c28520">Mac OS</h4>
-<div class="outline-text-4" id="text-org3c28520">
+<div id="outline-container-orgce4e1ef" class="outline-4">
+<h4 id="orgce4e1ef">Mac OS</h4>
+<div class="outline-text-4" id="text-orgce4e1ef">
 <ul class="org-ul">
 <li><a href="./brew.html">brew</a></li>
 </ul>
@@ -349,19 +350,19 @@ CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다.
 </div>
 </div>
 
-<div id="outline-container-org452877c" class="outline-3">
-<h3 id="install"><a id="org452877c"></a>설치</h3>
+<div id="outline-container-org9b69b53" class="outline-3">
+<h3 id="install"><a id="org9b69b53"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-orgfe5b322" class="outline-4">
-<h4 id="orgfe5b322">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgfe5b322">
-</div><div id="outline-container-orgcd4f5da" class="outline-5">
-<h5 id="orgcd4f5da">Emacs 25</h5>
-<div class="outline-text-5" id="text-orgcd4f5da">
+<div id="outline-container-org02ed4d9" class="outline-4">
+<h4 id="org02ed4d9">Ubuntu</h4>
+<div class="outline-text-4" id="text-org02ed4d9">
+</div><div id="outline-container-org7949777" class="outline-5">
+<h5 id="org7949777">Emacs 25</h5>
+<div class="outline-text-5" id="text-org7949777">
 <div class="org-src-container">
-<pre class="src src-sh" id="org1c3ecb6">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+<pre class="src src-sh" id="org37c0b35">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
 </pre>
@@ -370,19 +371,19 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-orgba95197" class="outline-4">
-<h4 id="orgba95197">Mac OS</h4>
-<div class="outline-text-4" id="text-orgba95197">
+<div id="outline-container-org60a8d0a" class="outline-4">
+<h4 id="org60a8d0a">Mac OS</h4>
+<div class="outline-text-4" id="text-org60a8d0a">
 <div class="org-src-container">
-<pre class="src src-sh" id="org7543f0d">$ brew install emacs
+<pre class="src src-sh" id="org4bc6c40">$ brew install emacs
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7c71d2a" class="outline-3">
-<h3 id="packages"><a id="org7c71d2a"></a>설치된 패키지</h3>
+<div id="outline-container-org568f4f9" class="outline-3">
+<h3 id="packages"><a id="org568f4f9"></a>설치된 패키지</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>aspell</li>
@@ -473,8 +474,8 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org8d75b9d" class="outline-3">
-<h3 id="check"><a id="org8d75b9d"></a>확인</h3>
+<div id="outline-container-orgf27c65e" class="outline-3">
+<h3 id="check"><a id="orgf27c65e"></a>확인</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ emacs --version
@@ -484,8 +485,8 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org1376068" class="outline-3">
-<h3 id="syntax"><a id="org1376068"></a>구조</h3>
+<div id="outline-container-org33cc755" class="outline-3">
+<h3 id="syntax"><a id="org33cc755"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
@@ -494,17 +495,17 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org44a6cac" class="outline-3">
-<h3 id="options"><a id="org44a6cac"></a>옵션</h3>
+<div id="outline-container-org59fccc5" class="outline-3">
+<h3 id="options"><a id="org59fccc5"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
 <p>
 <span class="org-programming-version">25.3</span> 버전을 기준으로 작성되었습니다.
 </p>
 </div>
 
-<div id="outline-container-org5a2d832" class="outline-4">
-<h4 id="org5a2d832">일반 옵션</h4>
-<div class="outline-text-4" id="text-org5a2d832">
+<div id="outline-container-orgabb9d72" class="outline-4">
+<h4 id="orgabb9d72">일반 옵션</h4>
+<div class="outline-text-4" id="text-orgabb9d72">
 <ul class="org-ul">
 <li><span class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :
 파일을 여는 것과 동일합니다.</li>
@@ -551,9 +552,9 @@ init 파일을 로드하는 동안 Emacs Lisp debugger를 활성화합니다. �
 </div>
 </div>
 
-<div id="outline-container-orge48d503" class="outline-4">
-<h4 id="orge48d503">Emacs Lisp 관련 옵션</h4>
-<div class="outline-text-4" id="text-orge48d503">
+<div id="outline-container-org1261a49" class="outline-4">
+<h4 id="org1261a49">Emacs Lisp 관련 옵션</h4>
+<div class="outline-text-4" id="text-org1261a49">
 <ul class="org-ul">
 <li><span class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :
 Lisp 함수를 실행합니다.</li>
@@ -565,9 +566,9 @@ Emacs Lisp 파일내 코드를 로드합니다.</li>
 </div>
 </div>
 
-<div id="outline-container-org1ceac9a" class="outline-4">
-<h4 id="org1ceac9a">Batch 모드 관련 옵션</h4>
-<div class="outline-text-4" id="text-org1ceac9a">
+<div id="outline-container-org3f1e349" class="outline-4">
+<h4 id="org3f1e349">Batch 모드 관련 옵션</h4>
+<div class="outline-text-4" id="text-org3f1e349">
 <ul class="org-ul">
 <li><span class="org-programming-option">--batch</span> :
 배치 모드를 사용합니다. Emacs Lisp 내에서 실행된 message 들은 stderr로 보내집니다. <span class="org-programming-option">-l</span>, <span class="org-programming-option">-f</span> 옵션등을 통해 로드할 파일과 실행할 함수를 인자로 입력받을 수 있습니다.</li>
@@ -583,9 +584,9 @@ Emacs Lisp 스크립트를 파일로 실행합니다.</li>
 </div>
 </div>
 
-<div id="outline-container-orgdb1a92a" class="outline-4">
-<h4 id="orgdb1a92a">with X</h4>
-<div class="outline-text-4" id="text-orgdb1a92a">
+<div id="outline-container-org460c08f" class="outline-4">
+<h4 id="org460c08f">with X</h4>
+<div class="outline-text-4" id="text-org460c08f">
 <ul class="org-ul">
 <li><span class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :</li>
 <li><span class="org-programming-option">-T</span> <span class="org-programming-argument">name</span>, --title <span class="org-programming-argument">name</span> :</li>
@@ -619,8 +620,8 @@ Emacs Lisp 스크립트를 파일로 실행합니다.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb3fe6b4" class="outline-3">
-<h3 id="examples"><a id="orgb3fe6b4"></a>사용 예</h3>
+<div id="outline-container-org4225f24" class="outline-3">
+<h3 id="examples"><a id="org4225f24"></a>사용 예</h3>
 <div class="outline-text-3" id="text-examples">
 <ul class="org-ul">
 <li>emacs -Q --batch file.org -f org-html-export-to-html :
@@ -632,8 +633,8 @@ Emacs Lisp 코드를 바로 실행할 때 쓰입니다.</li>
 </div>
 </div>
 
-<div id="outline-container-org0938553" class="outline-2">
-<h2 id="references"><a id="org0938553"></a>참고자료</h2>
+<div id="outline-container-org36c90f1" class="outline-2">
+<h2 id="references"><a id="org36c90f1"></a>참고자료</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
@@ -644,7 +645,7 @@ Emacs Lisp 코드를 바로 실행할 때 쓰입니다.</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-24 Sat 11:25</p>
+<p class="date">Created: 2018-02-24 Sat 12:27</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
