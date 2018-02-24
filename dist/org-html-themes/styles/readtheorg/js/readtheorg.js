@@ -50,10 +50,12 @@ $( document ).ready(function() {
     $('#content').prepend(sidebarComponents);
 	$('#toggle-sidebar').click(function () {
 		$('#table-of-contents').show();
+		$('#close-button').show();
 		$('#content').addClass('with-sidebar');
 	});
 	$('#close-button').click(function () {
 		$('#table-of-contents').hide();
+		$('#close-button').hide();
 		$('#content').removeClass('with-sidebar');
 	});
 });
