@@ -61,6 +61,7 @@ pages: mkdirs pages-deps
 	find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
+	mv -f assets "$(DIST_DIR)/assets"
 	git clone https://github.com/mrlee23/org-html-themes.git $(DIST_DIR)/org-html-themes
 	rm -rf dist/org-html-themes/.git
 

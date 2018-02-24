@@ -180,11 +180,11 @@
 			(ko
 			 "%s 버전을 기준으로 작성되었습니다.")
 			(zh
-			 "基于版本％s创建。")
+			 "基于版本%s创建。")
 			(ja
-			 "バージョン％sを基準に作成されました。")
+			 "バージョン%sを基準に作成されました。")
 			(t
-			 "This is builtin command."))
+			 "This is updated for version %s."))
 		  ver))
 
 (defun lc-macro/latest-version (ver)
@@ -198,9 +198,9 @@
 			(ko
 			 "현재 최신 버전은 %s 입니다.")
 			(zh
-			 "目前最新版本是％s。")
+			 "目前最新版本是%s。")
 			(ja
-			 "現在の最新バージョンは％sです。")
+			 "現在の最新バージョンは%sです。")
 			(t
 			 "Currently latest version is %s."))
 		  ver))
