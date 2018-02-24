@@ -35,7 +35,8 @@
 
 (defun lc-macro/include-progress ()
   (concat
-   "|Name|Overview|Install|Usage|Options|See also|\n"
+   "|Name|Overview|Install|Usage|Options|See also|
+|-+-+-+-+-+-|\n"
    (mapconcat (lambda (file-name)
 				(let ((name (substring file-name 0 -4))
 					  (flags '())
@@ -164,8 +165,13 @@
 	(t
 	 "This is builtin command.")))
 
+(defun lc-macro/emphasis-version (ver)
+  (setq ver (lc-macro/arg-trim ver))
+  (setq ver (format "@@html:<span class=\"org-programming-version\">%s</span>@@" ver)))
+
 (defun lc-macro/version (ver)
   (setq ver (lc-macro/arg-trim ver))
+  (setq ver (lc-macro/emphasis-version ver))
   (format (case (lc-core/get-current-language)
 			(en
 			 "This is updated for version %s.")
@@ -183,7 +189,7 @@
 
 (defun lc-macro/latest-version (ver)
   (setq ver (lc-macro/arg-trim ver))
-  (setq ver (format "@@html:<span class=\"org-programming-constant\">%s</span>@@" ver))
+  (setq ver (lc-macro/emphasis-version ver))
   (format (case (lc-core/get-current-language)
 			(en
 			 "Currently latest version is %s.")
