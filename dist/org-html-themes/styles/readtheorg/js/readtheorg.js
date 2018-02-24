@@ -46,13 +46,16 @@ $( document ).ready(function() {
     $tableOfContents.css({paddingBottom: $postamble.outerHeight()});
 
     // add TOC button
-    var toggleSidebar = $('<div id="toggle-sidebar"><a href="#table-of-contents"><h2><i class="fa fa-align-justify fa-lg"></i></h2></a></div>');
-    $('#content').prepend(toggleSidebar);
-
-    // add close button when sidebar showed in mobile screen
-    var closeBtn = $('<a class="close-sidebar" href="#">Close</a>');
-    var tocTitle = $('#table-of-contents').find('h2');
-    tocTitle.append(closeBtn);
+    var sidebarComponents = $('<div id="toggle-sidebar"><h2><i class="fa fa-align-justify fa-lg"></i></h2></div><div id="close-button"><i class="fa fa-close fa-lg"></i></div>');
+    $('#content').prepend(sidebarComponents);
+	$('#toggle-sidebar').click(function () {
+		$('#table-of-contents').show();
+		$('#content').addClass('with-sidebar');
+	});
+	$('#close-button').click(function () {
+		$('#table-of-contents').hide();
+		$('#content').removeClass('with-sidebar');
+	});
 });
 
 window.SphinxRtdTheme = (function (jquery) {
