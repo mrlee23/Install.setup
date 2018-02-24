@@ -52,7 +52,7 @@ pages: mkdirs pages-deps
 	$$load_paths\
 	(message \"%s\" load-path)\
 	(require 'linux-commands)\
-	(pages-publish \"./\" \"$(GH_PAGES_DIR)/\" \"$(PUBLISH_PAGES_DIR)\")\
+	(pages-publish \"./\" \"$(GH_PAGES_DIR)/\" \"$(PUBLISH_PAGES_DIR)\" \"/$(DIST_DIR)/\\|/\\.")\
 	)"
 	for lang in `cat .supportLanguages`; \
 	do \

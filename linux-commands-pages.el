@@ -95,7 +95,7 @@
   (shell-command-to-string (format "find \"%s\" -d -name \".*\" -not -path \"%s\" -not -path \"*.git/*\" -exec rm -rf {} \\;" dir dir))
   )
 
-(defun pages-publish (BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR)
+(defun pages-publish (BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR EXCLUDE)
   (let ((langs (pages-support-languages))
 		(orig-dir (expand-file-name "orignal" PUBLISH_TARGET_DIR))
 		)
@@ -110,7 +110,7 @@
 			  (lang-dir (expand-file-name  (symbol-name lang) PAGES_TARGET_DIR)))
 		 (message "Coping contents %s to %s..." orig-dir orig-lang-dir)
 		 (copy-directory orig-dir orig-lang-dir t t)
-		 (pages--multilingual-init orig-lang-dir lang-dir nil lang)
+		 (pages--multilingual-init orig-lang-dir lang-dir EXCLUDE lang)
 		 (org-publish "LinuxCommands")
 		 (pages--multilingual-cleanup orig-lang-dir)
 		 (pages--multilingual-cleanup lang-dir)
