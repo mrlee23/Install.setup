@@ -1,4 +1,4 @@
-# Created 2018-02-24 Sat 04:20
+# Created 2018-02-24 Sat 08:13
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -21,7 +21,8 @@
 #+MACRO: link [[./$1.org][$1]]
 
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
-#+MACRO: VERSION (eval (lc-macro/version $1))
+#+MACRO: VERSION (eval (lc-macro/version "$1"))
+#+MACRO: LATEST_VERSION (eval (lc-macro/latest-version "$1"))
 #+MACRO: BUILTIN (eval (lc-macro/builtin))
 #+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
 #+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
@@ -92,7 +93,7 @@
 | [[file:./fsck.org][fsck]]                             | [[file:fsck.org::#overview][Yes]]            | [[file:fsck.org::#install][Yes]]               | [[file:fsck.org::#usage][Yes]]     | [[file:fsck.org::#options][Yes]]     | No                                   |
 | [[file:./gcc.org][gcc]]                               | No                                           | [[file:gcc.org::#install][Yes]]                | No                                 | No                                   | No                                   |
 | [[file:./gem.org][gem]]                               | No                                           | [[file:gem.org::#install][Yes]]                | No                                 | No                                   | No                                   |
-| [[file:./git.org][git]]                               | No                                           | [[file:git.org::#install][Yes]]                | No                                 | No                                   | No                                   |
+| [[file:./git.org][git]]                               | [[file:git.org::#overview][Yes]]             | [[file:git.org::#install][Yes]]                | [[file:git.org::#usage][Yes]]      | [[file:git.org::#options][Yes]]      | No                                   |
 | [[file:./groupadd.org][groupadd]]                     | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./hcitool.org][hcitool]]                       | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./hdparm.org][hdparm]]                         | No                                           | No                                             | No                                 | No                                   | No                                   |
