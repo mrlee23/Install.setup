@@ -83,7 +83,7 @@
 		   :language ,LANG
 		   :override t
 		   :headline-levels 4
-		   :recursive nil
+		   :recursive t
 		   :auto-preamble nil
 		   )
 		  ("LinuxCommands"
