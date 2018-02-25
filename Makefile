@@ -1,7 +1,7 @@
 .PHONY: install test pages
 
 EMACSBIN ?= emacs
-BATCH     = $(EMACSBIN) -Q --batch
+BATCH     = $(EMACSBIN) -Q --batch --no-site-lisp
 GH_PAGES_DIR=.gh-pages
 PUBLISH_PAGES_DIR=.publish
 PUBLISH_ORIGINAL_DIR=.publish/original
