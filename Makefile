@@ -76,6 +76,7 @@ define load_paths
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
 (load-file "$(EMACS_DEPS_DIR)/org-mode/lisp/requirements.el")
+(message "Org version: %s" org-version)
 endef
 define publish_pages
 
