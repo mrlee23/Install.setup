@@ -205,4 +205,27 @@
 			 "Currently latest version is %s."))
 		  ver))
 
+(defun lc-macro/see (name)
+  (setq name (lc-macro/link name))
+  (format (case (lc-core/get-current-language)
+			(en
+			 "See %s.")
+			(es
+			 "Ver %s.")
+			(ko
+			 "%s 문서를 참조하세요.")
+			(zh
+			 "请参阅%s文章。")
+			(ja
+			 "%sドキュメントを参照してください。")
+			(t
+			 "See %s."))
+		  name))
+
+(defun lc-macro/link (link &optional name)
+  (setq link (lc-macro/arg-trim link))
+  (setq name (or (lc-macro/arg-trim name) (replace-regexp-in-string "/" "-" link)))
+  (setq link (format "./%s.org" link))
+  (format "[[%s][%s]]" link name))
+
 (provide 'linux-commands-macro)
