@@ -1,4 +1,4 @@
-# Created 2018-02-25 Sun 13:58
+# Created 2018-02-25 Sun 14:12
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -32,8 +32,11 @@
 #+MACRO: META (eval (lc-macro/meta))
 #+MACRO: IMAGE (eval (lc-macro/image "$1" "$2" "$3"))
 #+MACRO: IMAGE_CENTER (eval (lc-macro/image "$1" "$2" "$3" "center"))
+#+MACRO: IMAGE_RIGHT (eval (lc-macro/image "$1" "$2" "$3" "right"))
 #+MACRO: IMAGE_MAIN (eval (lc-macro/image "main.jpg" "$1" "main" "right"))
 #+MACRO: IMAGE_LINK (eval (lc-macro/image-link "$1" "$2" "$3"))
+#+MACRO: IMAGE_LINK_CENTER (eval (lc-macro/image-link "$1" "$2" "$3" "center"))
+#+MACRO: IMAGE_LINK_RIGHT (eval (lc-macro/image-link "$1" "$2" "$3" "right"))
 
 #+HTML_HEAD: <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
 #+HTML_HEAD: <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
@@ -73,9 +76,11 @@
 * Progreso
 | Name                                                  | Overview                                     | Install                                        | Usage                              | Options                              | See also                             |
 |-------------------------------------------------------+----------------------------------------------+------------------------------------------------+------------------------------------+--------------------------------------+--------------------------------------|
+| [[file:./CONTRIBUTING.org][CONTRIBUTING]]             | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./DNS.org][DNS]]                               | [[file:DNS.org::#overview][Yes]]             | No                                             | No                                 | No                                   | [[file:DNS.org::#seealso][Yes]]      |
 | [[file:./NIS.org][NIS]]                               | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./SELinux.org][SELinux]]                       | No                                           | No                                             | No                                 | No                                   | No                                   |
+| [[file:./STANDARD.org][STANDARD]]                     | [[file:STANDARD.org::#overview][Yes]]        | [[file:STANDARD.org::#install][Yes]]           | [[file:STANDARD.org::#usage][Yes]] | [[file:STANDARD.org::#options][Yes]] | [[file:STANDARD.org::#seealso][Yes]] |
 | [[file:./addbib.org][addbib]]                         | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./alias.org][alias]]                           | [[file:alias.org::#overview][Yes]]           | No                                             | [[file:alias.org::#usage][Yes]]    | [[file:alias.org::#options][Yes]]    | [[file:alias.org::#seealso][Yes]]    |
 | [[file:./apt-add-repository.org][apt-add-repository]] | No                                           | [[file:apt-add-repository.org::#install][Yes]] | No                                 | No                                   | No                                   |
@@ -141,7 +146,6 @@
 | [[file:./sudo.org][sudo]]                             | No                                           | [[file:sudo.org::#install][Yes]]               | No                                 | No                                   | No                                   |
 | [[file:./tail.org][tail]]                             | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./tar.org][tar]]                               | No                                           | No                                             | No                                 | No                                   | No                                   |
-| [[file:./template.org][template]]                     | [[file:template.org::#overview][Yes]]        | [[file:template.org::#install][Yes]]           | [[file:template.org::#usage][Yes]] | [[file:template.org::#options][Yes]] | [[file:template.org::#seealso][Yes]] |
 | [[file:./travis.org][travis]]                         | No                                           | [[file:travis.org::#install][Yes]]             | No                                 | No                                   | No                                   |
 | [[file:./tripwire.org][tripwire]]                     | No                                           | No                                             | No                                 | No                                   | No                                   |
 | [[file:./update.org][update]]                         | No                                           | [[file:update.org::#install][Yes]]             | No                                 | No                                   | [[file:update.org::#seealso][Yes]]   |
