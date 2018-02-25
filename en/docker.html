@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-25 Sun 08:57 -->
+<!-- 2018-02-25 Sun 11:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker</title>
@@ -265,10 +265,10 @@ for the JavaScript code in this tag.
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#install">Install</a>
 <ul>
-<li><a href="#org588c504">Ubuntu 16.04 ~</a></li>
-<li><a href="#org8d96ade">Fedora</a></li>
-<li><a href="#org31c6a07">Redhat</a></li>
-<li><a href="#orgf22df5d">Mac</a></li>
+<li><a href="#org4f7d5c9">Ubuntu 16.04 ~</a></li>
+<li><a href="#org37f885a">Fedora</a></li>
+<li><a href="#orgbac4c18">Redhat</a></li>
+<li><a href="#orgaae2bf1">Mac</a></li>
 </ul>
 </li>
 <li><a href="#packages">Installed Packages</a></li>
@@ -288,8 +288,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org0ed4e31" class="outline-2">
-<h2 id="overview"><a id="org0ed4e31"></a>Overview</h2>
+<div id="outline-container-org48bc145" class="outline-2">
+<h2 id="overview"><a id="org48bc145"></a>Overview</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 Currently latest version is <span class="org-programming-version">17.12.0-ce</span>.
@@ -300,8 +300,8 @@ Docker image and container command line interface
 </p>
 </div>
 
-<div id="outline-container-org27e895c" class="outline-3">
-<h3 id="introduction"><a id="org27e895c"></a>Introduction</h3>
+<div id="outline-container-org4c2bf77" class="outline-3">
+<h3 id="introduction"><a id="org4c2bf77"></a>Introduction</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 is a client for interacting with the daemon (see dockerd(8)) through the CLI.
@@ -319,13 +319,13 @@ To see the man page for a command run man docker &lt;command&gt;.
 </div>
 
 
-<div id="outline-container-orgfc7a6fe" class="outline-2">
-<h2 id="how-to-install"><a id="orgfc7a6fe"></a>How to Install</h2>
+<div id="outline-container-org454e8e7" class="outline-2">
+<h2 id="how-to-install"><a id="org454e8e7"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orgbba9204" class="outline-3">
-<h3 id="prerequisites"><a id="orgbba9204"></a>Prerequisites</h3>
+<div id="outline-container-orgf294a07" class="outline-3">
+<h3 id="prerequisites"><a id="orgf294a07"></a>Prerequisites</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -336,16 +336,16 @@ To see the man page for a command run man docker &lt;command&gt;.
 </div>
 </div>
 
-<div id="outline-container-org4325937" class="outline-3">
-<h3 id="install"><a id="org4325937"></a>Install</h3>
+<div id="outline-container-orge225fd5" class="outline-3">
+<h3 id="install"><a id="orge225fd5"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org588c504" class="outline-4">
-<h4 id="org588c504">Ubuntu 16.04 ~</h4>
-<div class="outline-text-4" id="text-org588c504">
+<div id="outline-container-org4f7d5c9" class="outline-4">
+<h4 id="org4f7d5c9">Ubuntu 16.04 ~</h4>
+<div class="outline-text-4" id="text-org4f7d5c9">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgd5ca5cb"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+<pre class="src src-sh" id="orga8846f4"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
 $ sudo apt-get remove docker docker-engine docker.io
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
@@ -412,9 +412,9 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-org8d96ade" class="outline-4">
-<h4 id="org8d96ade">Fedora</h4>
-<div class="outline-text-4" id="text-org8d96ade">
+<div id="outline-container-org37f885a" class="outline-4">
+<h4 id="org37f885a">Fedora</h4>
+<div class="outline-text-4" id="text-org37f885a">
 <div class="org-src-container">
 <pre class="src src-sh">$ yum update
 $ yum install docker
@@ -426,9 +426,9 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-org31c6a07" class="outline-4">
-<h4 id="org31c6a07">Redhat</h4>
-<div class="outline-text-4" id="text-org31c6a07">
+<div id="outline-container-orgbac4c18" class="outline-4">
+<h4 id="orgbac4c18">Redhat</h4>
+<div class="outline-text-4" id="text-orgbac4c18">
 <div class="org-src-container">
 <pre class="src src-sh">$ subscription-manager register &#8211;<span style="font-weight: bold; font-style: italic;">username</span>=&lt;username&gt; &#8211;auto-attach
 $ subscription-manager repos &#8211;<span style="font-weight: bold; font-style: italic;">enable</span>=rhel-7-server-extras-rpms
@@ -444,9 +444,9 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-orgf22df5d" class="outline-4">
-<h4 id="orgf22df5d">Mac</h4>
-<div class="outline-text-4" id="text-orgf22df5d">
+<div id="outline-container-orgaae2bf1" class="outline-4">
+<h4 id="orgaae2bf1">Mac</h4>
+<div class="outline-text-4" id="text-orgaae2bf1">
 <ul class="org-ul">
 <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
 </ul>
@@ -454,14 +454,14 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-org97d506d" class="outline-3">
-<h3 id="packages"><a id="org97d506d"></a>Installed Packages</h3>
+<div id="outline-container-orgf942490" class="outline-3">
+<h3 id="packages"><a id="orgf942490"></a>Installed Packages</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-org40073e8" class="outline-3">
-<h3 id="check"><a id="org40073e8"></a>Check</h3>
+<div id="outline-container-orgc3a5b00" class="outline-3">
+<h3 id="check"><a id="orgc3a5b00"></a>Check</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo docker run hello-world
@@ -506,13 +506,13 @@ Docker version 17.12.0-ce, build c97c6d6
 </div>
 </div>
 
-<div id="outline-container-orgce07902" class="outline-2">
-<h2 id="usage"><a id="orgce07902"></a>Usage</h2>
+<div id="outline-container-orga9d6981" class="outline-2">
+<h2 id="usage"><a id="orga9d6981"></a>Usage</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org649502a" class="outline-3">
-<h3 id="syntax"><a id="org649502a"></a>Syntax</h3>
+<div id="outline-container-orgb2e1d9d" class="outline-3">
+<h3 id="syntax"><a id="orgb2e1d9d"></a>Syntax</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">docker [OPTIONS] COMMAND [ARG...]
@@ -523,8 +523,8 @@ docker [ --help | -v | --version ]
 </div>
 </div>
 
-<div id="outline-container-org1f3e1e4" class="outline-3">
-<h3 id="options"><a id="org1f3e1e4"></a>Options</h3>
+<div id="outline-container-org7ec62ff" class="outline-3">
+<h3 id="options"><a id="org7ec62ff"></a>Options</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">--config</span> <span class="org-programming-argument">string</span> :</li>
@@ -595,8 +595,8 @@ Print version information and quit
 </div>
 </div>
 
-<div id="outline-container-org8a14691" class="outline-3">
-<h3 id="environment-variables"><a id="org8a14691"></a>Variables</h3>
+<div id="outline-container-org9a9f23f" class="outline-3">
+<h3 id="environment-variables"><a id="org9a9f23f"></a>Variables</h3>
 <div class="outline-text-3" id="text-environment-variables">
 <ul class="org-ul">
 <li><span class="org-programming-variable">DOCKER_API_VERSION</span> :</li>
@@ -677,8 +677,8 @@ Location for temporary Docker files.
 </ul>
 </div>
 </div>
-<div id="outline-container-org55107d8" class="outline-3">
-<h3 id="commands"><a id="org55107d8"></a>Commands</h3>
+<div id="outline-container-org79f771a" class="outline-3">
+<h3 id="commands"><a id="org79f771a"></a>Commands</h3>
 <div class="outline-text-3" id="text-commands">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -876,7 +876,7 @@ Location for temporary Docker files.
 </tr>
 
 <tr>
-<td class="org-left"><a href="./docker/run.html">docker/run</a></td>
+<td class="org-left"><a href="./docker/run.html">docker-run</a></td>
 <td class="org-left">Run a command in a new container</td>
 </tr>
 
@@ -975,8 +975,8 @@ Location for temporary Docker files.
 </div>
 </div>
 
-<div id="outline-container-org31000ca" class="outline-2">
-<h2 id="references"><a id="org31000ca"></a>References</h2>
+<div id="outline-container-org69e66b7" class="outline-2">
+<h2 id="references"><a id="org69e66b7"></a>References</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
@@ -988,7 +988,7 @@ Location for temporary Docker files.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-25 Sun 08:57</p>
+<p class="date">Created: 2018-02-25 Sun 11:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
