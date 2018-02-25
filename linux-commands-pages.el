@@ -97,7 +97,7 @@
 
 (defun pages-publish (BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR)
   (let ((langs (pages-support-languages))
-		(orig-dir (expand-file-name "orignal" PUBLISH_TARGET_DIR))
+		(orig-dir (expand-file-name "original" PUBLISH_TARGET_DIR))
 		)
 	(mapcar
 	 (lambda (lang)
