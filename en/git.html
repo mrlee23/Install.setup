@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2018-02-25 Sun 08:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git</title>
-<!-- 2018-02-25 Sun 05:37 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Dongsoo Lee" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,110 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
@@ -115,7 +206,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -175,12 +266,12 @@ for the JavaScript code in this tag.
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#install">Install</a>
 <ul>
-<li><a href="#sec-2-2-1">Ubuntu</a></li>
-<li><a href="#sec-2-2-2">CentOS</a></li>
-<li><a href="#sec-2-2-3">Fedora</a></li>
-<li><a href="#sec-2-2-4">Arch Linux</a></li>
-<li><a href="#sec-2-2-5">Gentoo</a></li>
-<li><a href="#sec-2-2-6">macOS</a></li>
+<li><a href="#org58c6f83">Ubuntu</a></li>
+<li><a href="#orgf0fb3a9">CentOS</a></li>
+<li><a href="#org7d720c0">Fedora</a></li>
+<li><a href="#orgd5b82f4">Arch Linux</a></li>
+<li><a href="#org04c254a">Gentoo</a></li>
+<li><a href="#org5c87625">macOS</a></li>
 </ul>
 </li>
 <li><a href="#packages">Installed Packages</a></li>
@@ -193,27 +284,27 @@ for the JavaScript code in this tag.
 <li><a href="#options">Options</a></li>
 <li><a href="#commands">Commands</a>
 <ul>
-<li><a href="#sec-3-3-1">clone</a></li>
-<li><a href="#sec-3-3-2">init</a></li>
-<li><a href="#sec-3-3-3">add</a></li>
-<li><a href="#sec-3-3-4">mv</a></li>
-<li><a href="#sec-3-3-5">reset</a></li>
-<li><a href="#sec-3-3-6">rm</a></li>
-<li><a href="#sec-3-3-7">bisect</a></li>
-<li><a href="#sec-3-3-8">grep</a></li>
-<li><a href="#sec-3-3-9">log</a></li>
-<li><a href="#sec-3-3-10">show</a></li>
-<li><a href="#sec-3-3-11">status</a></li>
-<li><a href="#sec-3-3-12">branch</a></li>
-<li><a href="#sec-3-3-13">checkout</a></li>
-<li><a href="#sec-3-3-14">commit</a></li>
-<li><a href="#sec-3-3-15">diff</a></li>
-<li><a href="#sec-3-3-16">merge</a></li>
-<li><a href="#sec-3-3-17">rebase</a></li>
-<li><a href="#sec-3-3-18">tag</a></li>
-<li><a href="#sec-3-3-19">fetch</a></li>
-<li><a href="#sec-3-3-20">pull</a></li>
-<li><a href="#sec-3-3-21">push</a></li>
+<li><a href="#org01eb311">clone</a></li>
+<li><a href="#org06c7aa2">init</a></li>
+<li><a href="#org23a010f">add</a></li>
+<li><a href="#orgec8797d">mv</a></li>
+<li><a href="#orge274e7d">reset</a></li>
+<li><a href="#org2fac419">rm</a></li>
+<li><a href="#orgb63d4b9">bisect</a></li>
+<li><a href="#orgc9402fd">grep</a></li>
+<li><a href="#org80a071e">log</a></li>
+<li><a href="#org9c806e0">show</a></li>
+<li><a href="#org4b37aff">status</a></li>
+<li><a href="#org21812a3">branch</a></li>
+<li><a href="#orgf5fcace">checkout</a></li>
+<li><a href="#org3e9e725">commit</a></li>
+<li><a href="#org6292f0e">diff</a></li>
+<li><a href="#orgdcfa62e">merge</a></li>
+<li><a href="#org2984a97">rebase</a></li>
+<li><a href="#org750f838">tag</a></li>
+<li><a href="#orge707f61">fetch</a></li>
+<li><a href="#orgc888d90">pull</a></li>
+<li><a href="#orga59772c">push</a></li>
 </ul>
 </li>
 </ul>
@@ -227,19 +318,17 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-overview" class="outline-2">
-<h2 id="overview"><a id="sec-1" name="sec-1"></a>Overview</h2>
+<div id="outline-container-org31c647f" class="outline-2">
+<h2 id="overview"><a id="org31c647f"></a>Overview</h2>
 <div class="outline-text-2" id="text-overview">
-
 <p>
 The stupid content tracker
 </p>
 </div>
 
-<div id="outline-container-introduction" class="outline-3">
-<h3 id="introduction"><a id="sec-1-1" name="sec-1-1"></a>Introduction</h3>
+<div id="outline-container-org65b43e1" class="outline-3">
+<h3 id="introduction"><a id="org65b43e1"></a>Introduction</h3>
 <div class="outline-text-3" id="text-introduction">
-
 <p>
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
 </p>
@@ -259,10 +348,9 @@ A formatted and hyperlinked copy of the latest Git documentation can be viewed a
 </div>
 </div>
 
-<div id="outline-container-releases" class="outline-3">
-<h3 id="releases"><a id="sec-1-2" name="sec-1-2"></a>Releases</h3>
+<div id="outline-container-org8934c67" class="outline-3">
+<h3 id="releases"><a id="org8934c67"></a>Releases</h3>
 <div class="outline-text-3" id="text-releases">
-
 <p>
 Currently latest version is <span class="org-programming-version">2.16.2</span>.
 </p>
@@ -271,217 +359,217 @@ Currently latest version is <span class="org-programming-version">2.16.2</span>.
 
 
 <colgroup>
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="right">Version</th>
-<th scope="col" class="right">Original release date</th>
-<th scope="col" class="right">Latest version</th>
-<th scope="col" class="right">Release date</th>
+<th scope="col" class="org-right">Version</th>
+<th scope="col" class="org-right">Original release date</th>
+<th scope="col" class="org-right">Latest version</th>
+<th scope="col" class="org-right">Release date</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="right">0.99</td>
-<td class="right">2005-07-11</td>
-<td class="right">0.99.9n</td>
-<td class="right">2005-12-15</td>
+<td class="org-right">0.99</td>
+<td class="org-right">2005-07-11</td>
+<td class="org-right">0.99.9n</td>
+<td class="org-right">2005-12-15</td>
 </tr>
 
 <tr>
-<td class="right">1.0</td>
-<td class="right">2005-12-21</td>
-<td class="right">1.0.13</td>
-<td class="right">2006-01-27</td>
+<td class="org-right">1.0</td>
+<td class="org-right">2005-12-21</td>
+<td class="org-right">1.0.13</td>
+<td class="org-right">2006-01-27</td>
 </tr>
 
 <tr>
-<td class="right">1.1</td>
-<td class="right">2006-01-08</td>
-<td class="right">1.1.6</td>
-<td class="right">2006-01-30</td>
+<td class="org-right">1.1</td>
+<td class="org-right">2006-01-08</td>
+<td class="org-right">1.1.6</td>
+<td class="org-right">2006-01-30</td>
 </tr>
 
 <tr>
-<td class="right">1.2</td>
-<td class="right">2006-02-12</td>
-<td class="right">1.2.6</td>
-<td class="right">2006-04-08</td>
+<td class="org-right">1.2</td>
+<td class="org-right">2006-02-12</td>
+<td class="org-right">1.2.6</td>
+<td class="org-right">2006-04-08</td>
 </tr>
 
 <tr>
-<td class="right">1.3</td>
-<td class="right">2006-04-18</td>
-<td class="right">1.3.3</td>
-<td class="right">2006-05-16</td>
+<td class="org-right">1.3</td>
+<td class="org-right">2006-04-18</td>
+<td class="org-right">1.3.3</td>
+<td class="org-right">2006-05-16</td>
 </tr>
 
 <tr>
-<td class="right">1.4</td>
-<td class="right">2006-06-10</td>
-<td class="right">1.4.4.5</td>
-<td class="right">2008-07-16</td>
+<td class="org-right">1.4</td>
+<td class="org-right">2006-06-10</td>
+<td class="org-right">1.4.4.5</td>
+<td class="org-right">2008-07-16</td>
 </tr>
 
 <tr>
-<td class="right">1.5</td>
-<td class="right">2007-02-14</td>
-<td class="right">1.5.6.6</td>
-<td class="right">2008-12-17</td>
+<td class="org-right">1.5</td>
+<td class="org-right">2007-02-14</td>
+<td class="org-right">1.5.6.6</td>
+<td class="org-right">2008-12-17</td>
 </tr>
 
 <tr>
-<td class="right">1.6</td>
-<td class="right">2008-08-17</td>
-<td class="right">1.6.6.3</td>
-<td class="right">2010-12-15</td>
+<td class="org-right">1.6</td>
+<td class="org-right">2008-08-17</td>
+<td class="org-right">1.6.6.3</td>
+<td class="org-right">2010-12-15</td>
 </tr>
 
 <tr>
-<td class="right">1.7</td>
-<td class="right">2010-02-13</td>
-<td class="right">1.7.12.4</td>
-<td class="right">2012-10-17</td>
+<td class="org-right">1.7</td>
+<td class="org-right">2010-02-13</td>
+<td class="org-right">1.7.12.4</td>
+<td class="org-right">2012-10-17</td>
 </tr>
 
 <tr>
-<td class="right">1.8</td>
-<td class="right">2012-10-21</td>
-<td class="right">1.8.5.6</td>
-<td class="right">2014-12-17</td>
+<td class="org-right">1.8</td>
+<td class="org-right">2012-10-21</td>
+<td class="org-right">1.8.5.6</td>
+<td class="org-right">2014-12-17</td>
 </tr>
 
 <tr>
-<td class="right">1.9</td>
-<td class="right">2014-02-14</td>
-<td class="right">1.9.5</td>
-<td class="right">2014-12-17</td>
+<td class="org-right">1.9</td>
+<td class="org-right">2014-02-14</td>
+<td class="org-right">1.9.5</td>
+<td class="org-right">2014-12-17</td>
 </tr>
 
 <tr>
-<td class="right">2.0</td>
-<td class="right">2014-05-28</td>
-<td class="right">2.0.5</td>
-<td class="right">2014-12-17</td>
+<td class="org-right">2.0</td>
+<td class="org-right">2014-05-28</td>
+<td class="org-right">2.0.5</td>
+<td class="org-right">2014-12-17</td>
 </tr>
 
 <tr>
-<td class="right">2.1</td>
-<td class="right">2014-08-16</td>
-<td class="right">2.1.4</td>
-<td class="right">2014-12-17</td>
+<td class="org-right">2.1</td>
+<td class="org-right">2014-08-16</td>
+<td class="org-right">2.1.4</td>
+<td class="org-right">2014-12-17</td>
 </tr>
 
 <tr>
-<td class="right">2.2</td>
-<td class="right">2014-11-26</td>
-<td class="right">2.2.3</td>
-<td class="right">2015-09-04</td>
+<td class="org-right">2.2</td>
+<td class="org-right">2014-11-26</td>
+<td class="org-right">2.2.3</td>
+<td class="org-right">2015-09-04</td>
 </tr>
 
 <tr>
-<td class="right">2.3</td>
-<td class="right">2015-02-05</td>
-<td class="right">2.3.10</td>
-<td class="right">2015-09-29</td>
+<td class="org-right">2.3</td>
+<td class="org-right">2015-02-05</td>
+<td class="org-right">2.3.10</td>
+<td class="org-right">2015-09-29</td>
 </tr>
 
 <tr>
-<td class="right">2.4</td>
-<td class="right">2015-04-30</td>
-<td class="right">2.4.12</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.4</td>
+<td class="org-right">2015-04-30</td>
+<td class="org-right">2.4.12</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.5</td>
-<td class="right">2015-07-27</td>
-<td class="right">2.5.6</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.5</td>
+<td class="org-right">2015-07-27</td>
+<td class="org-right">2.5.6</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.6</td>
-<td class="right">2015-09-28</td>
-<td class="right">2.6.7</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.6</td>
+<td class="org-right">2015-09-28</td>
+<td class="org-right">2.6.7</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.7</td>
-<td class="right">2015-10-04</td>
-<td class="right">2.7.5</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.7</td>
+<td class="org-right">2015-10-04</td>
+<td class="org-right">2.7.5</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.8</td>
-<td class="right">2016-03-28</td>
-<td class="right">2.8.5</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.8</td>
+<td class="org-right">2016-03-28</td>
+<td class="org-right">2.8.5</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.9</td>
-<td class="right">2016-06-13</td>
-<td class="right">2.9.4</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.9</td>
+<td class="org-right">2016-06-13</td>
+<td class="org-right">2.9.4</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.10</td>
-<td class="right">2016-09-02</td>
-<td class="right">2.10.3</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.10</td>
+<td class="org-right">2016-09-02</td>
+<td class="org-right">2.10.3</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.11</td>
-<td class="right">2016-11-29</td>
-<td class="right">2.11.2</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.11</td>
+<td class="org-right">2016-11-29</td>
+<td class="org-right">2.11.2</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.12</td>
-<td class="right">2017-02-24</td>
-<td class="right">2.12.3</td>
-<td class="right">2017-05-05</td>
+<td class="org-right">2.12</td>
+<td class="org-right">2017-02-24</td>
+<td class="org-right">2.12.3</td>
+<td class="org-right">2017-05-05</td>
 </tr>
 
 <tr>
-<td class="right">2.13</td>
-<td class="right">2017-05-10</td>
-<td class="right">2.13.4</td>
-<td class="right">2017-08-01</td>
+<td class="org-right">2.13</td>
+<td class="org-right">2017-05-10</td>
+<td class="org-right">2.13.4</td>
+<td class="org-right">2017-08-01</td>
 </tr>
 
 <tr>
-<td class="right">2.14</td>
-<td class="right">2017-08-04</td>
-<td class="right">2.14.3</td>
-<td class="right">2017-10-24</td>
+<td class="org-right">2.14</td>
+<td class="org-right">2017-08-04</td>
+<td class="org-right">2.14.3</td>
+<td class="org-right">2017-10-24</td>
 </tr>
 
 <tr>
-<td class="right">2.15</td>
-<td class="right">2017-10-30</td>
-<td class="right">2.15.1</td>
-<td class="right">2017-11-28</td>
+<td class="org-right">2.15</td>
+<td class="org-right">2017-10-30</td>
+<td class="org-right">2.15.1</td>
+<td class="org-right">2017-11-28</td>
 </tr>
 
 <tr>
-<td class="right">2.16</td>
-<td class="right">2018-01-17</td>
-<td class="right">2.16.2</td>
-<td class="right">2018-02-15</td>
+<td class="org-right">2.16</td>
+<td class="org-right">2018-01-17</td>
+<td class="org-right">2.16.2</td>
+<td class="org-right">2018-02-15</td>
 </tr>
 </tbody>
 </table>
@@ -489,35 +577,31 @@ Currently latest version is <span class="org-programming-version">2.16.2</span>.
 </div>
 </div>
 
-<div id="outline-container-how-to-install" class="outline-2">
-<h2 id="how-to-install"><a id="sec-2" name="sec-2"></a>How to Install</h2>
+<div id="outline-container-orga4a811f" class="outline-2">
+<h2 id="how-to-install"><a id="orga4a811f"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-prerequisites" class="outline-3">
-<h3 id="prerequisites"><a id="sec-2-1" name="sec-2-1"></a>Prerequisites</h3>
+<div id="outline-container-org2d406b6" class="outline-3">
+<h3 id="prerequisites"><a id="org2d406b6"></a>Prerequisites</h3>
 <div class="outline-text-3" id="text-prerequisites">
-
 <ul class="org-ul">
-<li><a href="./apt-add-repository.html">apt-add-repository</a>
-</li>
-<li><a href="./update.html">update</a>
-</li>
+<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
+<li><a href="./update.html">update</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-install" class="outline-3">
-<h3 id="install"><a id="sec-2-2" name="sec-2-2"></a>Install</h3>
+<div id="outline-container-org68539a6" class="outline-3">
+<h3 id="install"><a id="org68539a6"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-sec-2-2-1" class="outline-4">
-<h4 id="sec-2-2-1">Ubuntu</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<div id="outline-container-org58c6f83" class="outline-4">
+<h4 id="org58c6f83">Ubuntu</h4>
+<div class="outline-text-4" id="text-org58c6f83">
 <div class="org-src-container">
-
-<pre class="src src-sh" id="ubuntu-install_git">$ sudo apt-add-repository ppa:git-core/ppa
+<pre class="src src-sh" id="org3ab9139">$ sudo apt-add-repository ppa:git-core/ppa
 $ sudo apt-get update
 $ sudo apt-get install git
 </pre>
@@ -525,56 +609,51 @@ $ sudo apt-get install git
 </div>
 </div>
 
-<div id="outline-container-sec-2-2-2" class="outline-4">
-<h4 id="sec-2-2-2">CentOS</h4>
-<div class="outline-text-4" id="text-2-2-2">
+<div id="outline-container-orgf0fb3a9" class="outline-4">
+<h4 id="orgf0fb3a9">CentOS</h4>
+<div class="outline-text-4" id="text-orgf0fb3a9">
 <div class="org-src-container">
-
-<pre class="src src-sh" id="centos-install_git">$ sudo yum install git
+<pre class="src src-sh" id="org15efdd7">$ sudo yum install git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2-2-3" class="outline-4">
-<h4 id="sec-2-2-3">Fedora</h4>
-<div class="outline-text-4" id="text-2-2-3">
+<div id="outline-container-org7d720c0" class="outline-4">
+<h4 id="org7d720c0">Fedora</h4>
+<div class="outline-text-4" id="text-org7d720c0">
 <div class="org-src-container">
-
-<pre class="src src-sh" id="fedora-install_git">$ sudo yum install git-core
+<pre class="src src-sh" id="orgd449fb1">$ sudo yum install git-core
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2-2-4" class="outline-4">
-<h4 id="sec-2-2-4">Arch Linux</h4>
-<div class="outline-text-4" id="text-2-2-4">
+<div id="outline-container-orgd5b82f4" class="outline-4">
+<h4 id="orgd5b82f4">Arch Linux</h4>
+<div class="outline-text-4" id="text-orgd5b82f4">
 <div class="org-src-container">
-
-<pre class="src src-sh" id="archlinux-install_git">$ sudo pacman -Sy git
+<pre class="src src-sh" id="orgf554074">$ sudo pacman -Sy git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2-2-5" class="outline-4">
-<h4 id="sec-2-2-5">Gentoo</h4>
-<div class="outline-text-4" id="text-2-2-5">
+<div id="outline-container-org04c254a" class="outline-4">
+<h4 id="org04c254a">Gentoo</h4>
+<div class="outline-text-4" id="text-org04c254a">
 <div class="org-src-container">
-
-<pre class="src src-sh" id="gentoo-install_git">$ sudo emerge --ask --verbose dev-vcs/git
+<pre class="src src-sh" id="org6b53ac0">$ sudo emerge --ask --verbose dev-vcs/git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2-2-6" class="outline-4">
-<h4 id="sec-2-2-6">macOS</h4>
-<div class="outline-text-4" id="text-2-2-6">
+<div id="outline-container-org5c87625" class="outline-4">
+<h4 id="org5c87625">macOS</h4>
+<div class="outline-text-4" id="text-org5c87625">
 <div class="org-src-container">
-
-<pre class="src src-sh" id="macos-install_git">$ brew install git
+<pre class="src src-sh" id="orga5387dc">$ brew install git
 </pre>
 </div>
 </div>
@@ -582,18 +661,16 @@ $ sudo apt-get install git
 </div>
 
 
-<div id="outline-container-packages" class="outline-3">
-<h3 id="packages"><a id="sec-2-3" name="sec-2-3"></a>Installed Packages</h3>
+<div id="outline-container-org695e51e" class="outline-3">
+<h3 id="packages"><a id="org695e51e"></a>Installed Packages</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-check" class="outline-3">
-<h3 id="check"><a id="sec-2-4" name="sec-2-4"></a>Check</h3>
+<div id="outline-container-org268c1f2" class="outline-3">
+<h3 id="check"><a id="org268c1f2"></a>Check</h3>
 <div class="outline-text-3" id="text-check">
-
 <div class="org-src-container">
-
 <pre class="src src-sh">$ git --version
 git version 2.16.2
 </pre>
@@ -602,17 +679,15 @@ git version 2.16.2
 </div>
 </div>
 
-<div id="outline-container-usage" class="outline-2">
-<h2 id="usage"><a id="sec-3" name="sec-3"></a>Usage</h2>
+<div id="outline-container-org8d03b0e" class="outline-2">
+<h2 id="usage"><a id="org8d03b0e"></a>Usage</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-syntax" class="outline-3">
-<h3 id="syntax"><a id="sec-3-1" name="sec-3-1"></a>Syntax</h3>
+<div id="outline-container-org1e4af9a" class="outline-3">
+<h3 id="syntax"><a id="org1e4af9a"></a>Syntax</h3>
 <div class="outline-text-3" id="text-syntax">
-
 <div class="org-src-container">
-
 <pre class="src src-sh">git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
     [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
     [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
@@ -624,24 +699,23 @@ git version 2.16.2
 </div>
 </div>
 
-<div id="outline-container-options" class="outline-3">
-<h3 id="options"><a id="sec-3-2" name="sec-3-2"></a>Options</h3>
+<div id="outline-container-org666a70e" class="outline-3">
+<h3 id="options"><a id="org666a70e"></a>Options</h3>
 <div class="outline-text-3" id="text-options">
-
 <p>
 This is updated for version <span class="org-programming-version">2.16.2</span>.
 </p>
 
 <ul class="org-ul">
 <li><span class="org-programming-option">--version</span> :
-Prints the Git suite version that the git program came from.
-</li>
+Prints the Git suite version that the git program came from.</li>
 <li><span class="org-programming-option">--help</span> : 
-Prints the synopsis and a list of the most commonly used commands. If the option --all or -a is given then all available commands are printed. If a Git command is named this option will bring up the manual page for that command. Other options are available to control how the manual page is displayed. See git-help for more information, because git --help ... is converted internally into git help ....
-</li>
-<li><span class="org-programming-option">-C</span> <span class="org-programming-argument"><path></span> :
+Prints the synopsis and a list of the most commonly used commands. If the option --all or -a is given then all available commands are printed. If a Git command is named this option will bring up the manual page for that command. Other options are available to control how the manual page is displayed. See git-help for more information, because git --help ... is converted internally into git help ....</li>
+<li><p>
+<span class="org-programming-option">-C</span> <span class="org-programming-argument"><path></span> :
 Run as if git was started in &lt;path&gt; instead of the current working directory. When multiple -C options are given, each subsequent non-absolute -C &lt;path&gt; is interpreted relative to the preceding -C &lt;path&gt;.
 This option affects options that expect path name like --git-dir and --work-tree in that their interpretations of the path names would be made relative to the working directory caused by the -C option. For example the following invocations are equivalent:
+</p>
 
 <p>
 git --git-dir=a.git --work-tree=b -C c status
@@ -649,274 +723,257 @@ git --git-dir=a.git --work-tree=b -C c status
 
 <p>
 git --git-dir=c/a.git --work-tree=c/b status
-</p>
-</li>
-<li><span class="org-programming-option">-c</span> <span class="org-programming-argument"><name></span>=<span class="org-programming-argument"><value></span> :
+</p></li>
+<li><p>
+<span class="org-programming-option">-c</span> <span class="org-programming-argument"><name></span>=<span class="org-programming-argument"><value></span> :
 Pass a configuration parameter to the command. The value given will override values from configuration files. The &lt;name&gt; is expected in the same format as listed by git config (subkeys separated by dots).
+</p>
 
 <p>
 Note that omitting the = in git -c foo.bar ... is allowed and sets foo.bar to the boolean true value (just like [foo]bar would in a config file). Including the equals but with an empty value (like git -c foo.bar= ...) sets foo.bar to the empty string which git config --bool will convert to false.
-</p>
-</li>
+</p></li>
 
 <li><span class="org-programming-option">--exec-path</span>[=<span class="org-programming-argument"><path></span>] : 
-Path to wherever your core Git programs are installed. This can also be controlled by setting the GIT_EXEC_PATH environment variable. If no path is given, git will print the current setting and then exit.
-</li>
+Path to wherever your core Git programs are installed. This can also be controlled by setting the GIT_EXEC_PATH environment variable. If no path is given, git will print the current setting and then exit.</li>
 <li><span class="org-programming-option">--html-path</span> : 
-Print the path, without trailing slash, where Git’s HTML documentation is installed and exit.
-</li>
+Print the path, without trailing slash, where Git’s HTML documentation is installed and exit.</li>
 
 <li><span class="org-programming-option">--man-path</span> :
-Print the manpath (see man(1)) for the man pages for this version of Git and exit.
-</li>
+Print the manpath (see man(1)) for the man pages for this version of Git and exit.</li>
 
 <li><span class="org-programming-option">--info-path</span> : 
-Print the path where the Info files documenting this version of Git are installed and exit.
-</li>
+Print the path where the Info files documenting this version of Git are installed and exit.</li>
 
 <li><span class="org-programming-option">-p</span>, <span class="org-programming-option">--paginate</span> : 
-Pipe all output into less (or if set, $PAGER) if standard output is a terminal. This overrides the pager.&lt;cmd&gt; configuration options (see the "Configuration Mechanism" section below).
-</li>
+Pipe all output into less (or if set, $PAGER) if standard output is a terminal. This overrides the pager.&lt;cmd&gt; configuration options (see the "Configuration Mechanism" section below).</li>
 
 <li><span class="org-programming-option">--no-pager</span> :
-Do not pipe Git output into a pager.
-</li>
+Do not pipe Git output into a pager.</li>
 
 <li><span class="org-programming-option">--git-dir</span>=<span class="org-programming-argument"><path></span> : 
-Set the path to the repository. This can also be controlled by setting the GIT_DIR environment variable. It can be an absolute path or relative path to current working directory.
-</li>
+Set the path to the repository. This can also be controlled by setting the GIT_DIR environment variable. It can be an absolute path or relative path to current working directory.</li>
 
 <li><span class="org-programming-option">--work-tree</span>=<span class="org-programming-argument"><path></span> :
-Set the path to the working tree. It can be an absolute path or a path relative to the current working directory. This can also be controlled by setting the GIT_WORK_TREE environment variable and the core.worktree configuration variable (see core.worktree in git-config for a more detailed discussion).
-</li>
+Set the path to the working tree. It can be an absolute path or a path relative to the current working directory. This can also be controlled by setting the GIT_WORK_TREE environment variable and the core.worktree configuration variable (see core.worktree in git-config for a more detailed discussion).</li>
 
 <li><span class="org-programming-option">--namespace</span>=<span class="org-programming-argument"><path></span> : 
-Set the Git namespace. See gitnamespaces for more details. Equivalent to setting the GIT_NAMESPACE environment variable.
-</li>
+Set the Git namespace. See gitnamespaces for more details. Equivalent to setting the GIT_NAMESPACE environment variable.</li>
 
 <li><span class="org-programming-option">--super-prefix</span>=<span class="org-programming-argument"><path></span> :
-Currently for internal use only. Set a prefix which gives a path from above a repository down to its root. One use is to give submodules context about the superproject that invoked it.
-</li>
+Currently for internal use only. Set a prefix which gives a path from above a repository down to its root. One use is to give submodules context about the superproject that invoked it.</li>
 
 <li><span class="org-programming-option">--bare</span> :
-Treat the repository as a bare repository. If GIT_DIR environment is not set, it is set to the current working directory.
-</li>
+Treat the repository as a bare repository. If GIT_DIR environment is not set, it is set to the current working directory.</li>
 
 <li><span class="org-programming-option">--no-replace-objects</span> :
-Do not use replacement refs to replace Git objects. See git-replace for more information.
-</li>
+Do not use replacement refs to replace Git objects. See git-replace for more information.</li>
 
 <li><span class="org-programming-option">--literal-pathspecs</span> :
-Treat pathspecs literally (i.e. no globbing, no pathspec magic). This is equivalent to setting the GIT_LITERAL_PATHSPECS environment variable to 1.
-</li>
+Treat pathspecs literally (i.e. no globbing, no pathspec magic). This is equivalent to setting the GIT_LITERAL_PATHSPECS environment variable to 1.</li>
 
 <li><span class="org-programming-option">--glob-pathspecs</span> :
-Add "glob" magic to all pathspec. This is equivalent to setting the GIT_GLOB_PATHSPECS environment variable to 1. Disabling globbing on individual pathspecs can be done using pathspec magic ":(literal)"
-</li>
+Add "glob" magic to all pathspec. This is equivalent to setting the GIT_GLOB_PATHSPECS environment variable to 1. Disabling globbing on individual pathspecs can be done using pathspec magic ":(literal)"</li>
 
 <li><span class="org-programming-option">--noglob-pathspecs</span> : 
-Add "literal" magic to all pathspec. This is equivalent to setting the GIT_NOGLOB_PATHSPECS environment variable to 1. Enabling globbing on individual pathspecs can be done using pathspec magic ":(glob)"
-</li>
+Add "literal" magic to all pathspec. This is equivalent to setting the GIT_NOGLOB_PATHSPECS environment variable to 1. Enabling globbing on individual pathspecs can be done using pathspec magic ":(glob)"</li>
 
 <li><span class="org-programming-option">--icase-pathspecs</span> : 
-Add "icase" magic to all pathspec. This is equivalent to setting the GIT_ICASE_PATHSPECS environment variable to 1.
-</li>
+Add "icase" magic to all pathspec. This is equivalent to setting the GIT_ICASE_PATHSPECS environment variable to 1.</li>
 
 <li><span class="org-programming-option">--no-optional-locks</span> :
-Do not perform optional operations that require locks. This is equivalent to setting the GIT_OPTIONAL_LOCKS to 0.
-</li>
+Do not perform optional operations that require locks. This is equivalent to setting the GIT_OPTIONAL_LOCKS to 0.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-commands" class="outline-3">
-<h3 id="commands"><a id="sec-3-3" name="sec-3-3"></a>Commands</h3>
+<div id="outline-container-orgb88916e" class="outline-3">
+<h3 id="commands"><a id="orgb88916e"></a>Commands</h3>
 <div class="outline-text-3" id="text-commands">
 </div>
 
-<div id="outline-container-sec-3-3-1" class="outline-4">
-<h4 id="sec-3-3-1">clone</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<div id="outline-container-org01eb311" class="outline-4">
+<h4 id="org01eb311">clone</h4>
+<div class="outline-text-4" id="text-org01eb311">
 <p>
 Clone a repository into a new directory
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-2" class="outline-4">
-<h4 id="sec-3-3-2">init</h4>
-<div class="outline-text-4" id="text-3-3-2">
+<div id="outline-container-org06c7aa2" class="outline-4">
+<h4 id="org06c7aa2">init</h4>
+<div class="outline-text-4" id="text-org06c7aa2">
 <p>
 Create an empty Git repository or reinitialize an existing one
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-3" class="outline-4">
-<h4 id="sec-3-3-3">add</h4>
-<div class="outline-text-4" id="text-3-3-3">
+<div id="outline-container-org23a010f" class="outline-4">
+<h4 id="org23a010f">add</h4>
+<div class="outline-text-4" id="text-org23a010f">
 <p>
 Add file contents to the index
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-4" class="outline-4">
-<h4 id="sec-3-3-4">mv</h4>
-<div class="outline-text-4" id="text-3-3-4">
+<div id="outline-container-orgec8797d" class="outline-4">
+<h4 id="orgec8797d">mv</h4>
+<div class="outline-text-4" id="text-orgec8797d">
 <p>
 Move or rename a file, a directory, or a symlink
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-5" class="outline-4">
-<h4 id="sec-3-3-5">reset</h4>
-<div class="outline-text-4" id="text-3-3-5">
+<div id="outline-container-orge274e7d" class="outline-4">
+<h4 id="orge274e7d">reset</h4>
+<div class="outline-text-4" id="text-orge274e7d">
 <p>
 Reset current HEAD to the specified state
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-6" class="outline-4">
-<h4 id="sec-3-3-6">rm</h4>
-<div class="outline-text-4" id="text-3-3-6">
+<div id="outline-container-org2fac419" class="outline-4">
+<h4 id="org2fac419">rm</h4>
+<div class="outline-text-4" id="text-org2fac419">
 <p>
 Remove files from the working tree and from the index
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-7" class="outline-4">
-<h4 id="sec-3-3-7">bisect</h4>
-<div class="outline-text-4" id="text-3-3-7">
+<div id="outline-container-orgb63d4b9" class="outline-4">
+<h4 id="orgb63d4b9">bisect</h4>
+<div class="outline-text-4" id="text-orgb63d4b9">
 <p>
 Use binary search to find the commit that introduced a bug
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-8" class="outline-4">
-<h4 id="sec-3-3-8">grep</h4>
-<div class="outline-text-4" id="text-3-3-8">
+<div id="outline-container-orgc9402fd" class="outline-4">
+<h4 id="orgc9402fd">grep</h4>
+<div class="outline-text-4" id="text-orgc9402fd">
 <p>
 Print lines matching a pattern
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-9" class="outline-4">
-<h4 id="sec-3-3-9">log</h4>
-<div class="outline-text-4" id="text-3-3-9">
+<div id="outline-container-org80a071e" class="outline-4">
+<h4 id="org80a071e">log</h4>
+<div class="outline-text-4" id="text-org80a071e">
 <p>
 Show commit logs
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-10" class="outline-4">
-<h4 id="sec-3-3-10">show</h4>
-<div class="outline-text-4" id="text-3-3-10">
+<div id="outline-container-org9c806e0" class="outline-4">
+<h4 id="org9c806e0">show</h4>
+<div class="outline-text-4" id="text-org9c806e0">
 <p>
 Show various types of objects
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-11" class="outline-4">
-<h4 id="sec-3-3-11">status</h4>
-<div class="outline-text-4" id="text-3-3-11">
+<div id="outline-container-org4b37aff" class="outline-4">
+<h4 id="org4b37aff">status</h4>
+<div class="outline-text-4" id="text-org4b37aff">
 <p>
 Show the working tree status
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-12" class="outline-4">
-<h4 id="sec-3-3-12">branch</h4>
-<div class="outline-text-4" id="text-3-3-12">
+<div id="outline-container-org21812a3" class="outline-4">
+<h4 id="org21812a3">branch</h4>
+<div class="outline-text-4" id="text-org21812a3">
 <p>
 List, create, or delete branches
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-13" class="outline-4">
-<h4 id="sec-3-3-13">checkout</h4>
-<div class="outline-text-4" id="text-3-3-13">
+<div id="outline-container-orgf5fcace" class="outline-4">
+<h4 id="orgf5fcace">checkout</h4>
+<div class="outline-text-4" id="text-orgf5fcace">
 <p>
 Switch branches or restore working tree files
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-14" class="outline-4">
-<h4 id="sec-3-3-14">commit</h4>
-<div class="outline-text-4" id="text-3-3-14">
+<div id="outline-container-org3e9e725" class="outline-4">
+<h4 id="org3e9e725">commit</h4>
+<div class="outline-text-4" id="text-org3e9e725">
 <p>
 Record changes to the repository
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-15" class="outline-4">
-<h4 id="sec-3-3-15">diff</h4>
-<div class="outline-text-4" id="text-3-3-15">
+<div id="outline-container-org6292f0e" class="outline-4">
+<h4 id="org6292f0e">diff</h4>
+<div class="outline-text-4" id="text-org6292f0e">
 <p>
 Show changes between commits, commit and working tree, etc
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-16" class="outline-4">
-<h4 id="sec-3-3-16">merge</h4>
-<div class="outline-text-4" id="text-3-3-16">
+<div id="outline-container-orgdcfa62e" class="outline-4">
+<h4 id="orgdcfa62e">merge</h4>
+<div class="outline-text-4" id="text-orgdcfa62e">
 <p>
 Join two or more development histories together
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-17" class="outline-4">
-<h4 id="sec-3-3-17">rebase</h4>
-<div class="outline-text-4" id="text-3-3-17">
+<div id="outline-container-org2984a97" class="outline-4">
+<h4 id="org2984a97">rebase</h4>
+<div class="outline-text-4" id="text-org2984a97">
 <p>
 Reapply commits on top of another base tip
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-18" class="outline-4">
-<h4 id="sec-3-3-18">tag</h4>
-<div class="outline-text-4" id="text-3-3-18">
+<div id="outline-container-org750f838" class="outline-4">
+<h4 id="org750f838">tag</h4>
+<div class="outline-text-4" id="text-org750f838">
 <p>
 Create, list, delete or verify a tag object signed with GPG
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-19" class="outline-4">
-<h4 id="sec-3-3-19">fetch</h4>
-<div class="outline-text-4" id="text-3-3-19">
+<div id="outline-container-orge707f61" class="outline-4">
+<h4 id="orge707f61">fetch</h4>
+<div class="outline-text-4" id="text-orge707f61">
 <p>
 Download objects and refs from another repository
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-20" class="outline-4">
-<h4 id="sec-3-3-20">pull</h4>
-<div class="outline-text-4" id="text-3-3-20">
+<div id="outline-container-orgc888d90" class="outline-4">
+<h4 id="orgc888d90">pull</h4>
+<div class="outline-text-4" id="text-orgc888d90">
 <p>
 Fetch from and integrate with another repository or a local branch
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3-21" class="outline-4">
-<h4 id="sec-3-3-21">push</h4>
-<div class="outline-text-4" id="text-3-3-21">
+<div id="outline-container-orga59772c" class="outline-4">
+<h4 id="orga59772c">push</h4>
+<div class="outline-text-4" id="text-orga59772c">
 <p>
 Update remote refs along with associated objects
 </p>
@@ -925,37 +982,27 @@ Update remote refs along with associated objects
 </div>
 </div>
 
-<div id="outline-container-references" class="outline-2">
-<h2 id="references"><a id="sec-4" name="sec-4"></a>References</h2>
+<div id="outline-container-orgc79d94f" class="outline-2">
+<h2 id="references"><a id="orgc79d94f"></a>References</h2>
 <div class="outline-text-2" id="text-references">
-
 <ul class="org-ul">
-<li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a>
-</li>
+<li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
 </ul>
 </div>
 
 
-<div id="outline-container-references" class="outline-3">
-<h3 id="references"><a id="sec-4-1" name="sec-4-1"></a>Git web hosting services</h3>
+<div id="outline-container-orgfe50149" class="outline-3">
+<h3 id="references"><a id="orgfe50149"></a>Git web hosting services</h3>
 <div class="outline-text-3" id="text-references">
 <ul class="org-ul">
-<li><a href="https://www.assembla.com">Assembla</a>
-</li>
-<li><a href="https://beanstalkapp.com/">beanstalk</a>
-</li>
-<li><a href="https://bitbucket.org">Bitbucket</a>
-</li>
-<li><a href="http://www.cloudforge.com/">CloudForge</a>
-</li>
-<li><a href="https://www.codebasehq.com/">Codebase</a>
-</li>
-<li><a href="https://github.com">GitHub</a>
-</li>
-<li><a href="https://gitlab.com">GitLab</a>
-</li>
-<li><a href="https://www.visualstudio.com/products/visual-studio-team-services-vs">Microsofe Visual Studio Team Services</a>
-</li>
+<li><a href="https://www.assembla.com">Assembla</a></li>
+<li><a href="https://beanstalkapp.com/">beanstalk</a></li>
+<li><a href="https://bitbucket.org">Bitbucket</a></li>
+<li><a href="http://www.cloudforge.com/">CloudForge</a></li>
+<li><a href="https://www.codebasehq.com/">Codebase</a></li>
+<li><a href="https://github.com">GitHub</a></li>
+<li><a href="https://gitlab.com">GitLab</a></li>
+<li><a href="https://www.visualstudio.com/products/visual-studio-team-services-vs">Microsofe Visual Studio Team Services</a></li>
 </ul>
 </div>
 </div>
@@ -964,8 +1011,7 @@ Update remote refs along with associated objects
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-24</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-25 Sun 05:37</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-02-25 Sun 08:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

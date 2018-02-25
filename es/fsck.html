@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
+<!-- 2018-02-25 Sun 08:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>fsck</title>
-<!-- 2018-02-25 Sun 05:39 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Dongsoo Lee" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,110 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
@@ -115,7 +206,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -182,26 +273,23 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-overview" class="outline-2">
-<h2 id="overview"><a id="sec-1" name="sec-1"></a>Visión de conjunto</h2>
+<div id="outline-container-org3b80f59" class="outline-2">
+<h2 id="overview"><a id="org3b80f59"></a>Visión de conjunto</h2>
 <div class="outline-text-2" id="text-overview">
-
 <p>
 Verifique y repare un sistema de archivos Linux.
 </p>
 </div>
 </div>
 
-<div id="outline-container-how-to-install" class="outline-2">
-<h2 id="how-to-install"><a id="sec-2" name="sec-2"></a>Cómo instalar</h2>
+<div id="outline-container-orged6e5c4" class="outline-2">
+<h2 id="how-to-install"><a id="orged6e5c4"></a>Cómo instalar</h2>
 <div class="outline-text-2" id="text-how-to-install">
-
 </div>
 
-<div id="outline-container-install" class="outline-3">
-<h3 id="install"><a id="sec-2-1" name="sec-2-1"></a>Instalar</h3>
+<div id="outline-container-org8555b13" class="outline-3">
+<h3 id="install"><a id="org8555b13"></a>Instalar</h3>
 <div class="outline-text-3" id="text-install">
-
 <p>
 Este es el comando integrado.
 </p>
@@ -209,111 +297,103 @@ Este es el comando integrado.
 </div>
 </div>
 
-<div id="outline-container-usage" class="outline-2">
-<h2 id="usage"><a id="sec-3" name="sec-3"></a>Uso</h2>
+<div id="outline-container-org2146efe" class="outline-2">
+<h2 id="usage"><a id="org2146efe"></a>Uso</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-syntax" class="outline-3">
-<h3 id="syntax"><a id="sec-3-1" name="sec-3-1"></a>Sintaxis</h3>
+<div id="outline-container-orgc713163" class="outline-3">
+<h3 id="syntax"><a id="orgc713163"></a>Sintaxis</h3>
 <div class="outline-text-3" id="text-syntax">
-
 <div class="org-src-container">
-
 <pre class="src src-sh">fsck [-lrsAVRTMNP] [-C [fd]] [-t fstype] [filesystem ... ] [--] [fs-specific-options]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-description" class="outline-3">
-<h3 id="description"><a id="sec-3-2" name="sec-3-2"></a>Descripción</h3>
+<div id="outline-container-org4816739" class="outline-3">
+<h3 id="description"><a id="org4816739"></a>Descripción</h3>
 <div class="outline-text-3" id="text-description">
-
 <ul class="org-ul">
-<li>fsck  is  used  to  check  and optionally repair one or more Linux filesystems.
-</li>
-<li>filesys can be a device name (e.g.  /dev/hdc1, /dev/sdb2), a mount point (e.g.  /, /usr,
-</li>
+<li>fsck  is  used  to  check  and optionally repair one or more Linux filesystems.</li>
+<li>filesys can be a device name (e.g.  /dev/hdc1, /dev/sdb2), a mount point (e.g.  /, /usr,</li>
 </ul>
 <p>
 /home), or an ext2 label or UUID specifier (e.g.  UUID=8868abf6-88c5-4a83-98b8-bfc24057f7bd or LABEL=root).
 </p>
 <ul class="org-ul">
-<li>Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of them.
-</li>
+<li>Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of them.</li>
 
-<li>If  no  filesystems  are  specified  on  the command line, and the -A option is not specified, fsck will default to checking filesystems in /etc/fstab serially.  This is
-</li>
+<li>If  no  filesystems  are  specified  on  the command line, and the -A option is not specified, fsck will default to checking filesystems in /etc/fstab serially.  This is</li>
 </ul>
 <p>
 equivalent to the -As options.
 </p>
 
 <ul class="org-ul">
-<li>The exit code returned by fsck is the sum of the following conditions:
+<li><p>
+The exit code returned by fsck is the sum of the following conditions:
+</p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="right">#</th>
-<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="org-right">#</th>
+<th scope="col" class="org-left">&#xa0;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="right">0</td>
-<td class="left">No errors</td>
+<td class="org-right">0</td>
+<td class="org-left">No errors</td>
 </tr>
 
 <tr>
-<td class="right">1</td>
-<td class="left">Filesystem errors corrected</td>
+<td class="org-right">1</td>
+<td class="org-left">Filesystem errors corrected</td>
 </tr>
 
 <tr>
-<td class="right">2</td>
-<td class="left">System should be rebooted</td>
+<td class="org-right">2</td>
+<td class="org-left">System should be rebooted</td>
 </tr>
 
 <tr>
-<td class="right">4</td>
-<td class="left">Filesystem errors left uncorrected</td>
+<td class="org-right">4</td>
+<td class="org-left">Filesystem errors left uncorrected</td>
 </tr>
 
 <tr>
-<td class="right">8</td>
-<td class="left">Operational error</td>
+<td class="org-right">8</td>
+<td class="org-left">Operational error</td>
 </tr>
 
 <tr>
-<td class="right">16</td>
-<td class="left">Usage or syntax error</td>
+<td class="org-right">16</td>
+<td class="org-left">Usage or syntax error</td>
 </tr>
 
 <tr>
-<td class="right">32</td>
-<td class="left">Checking canceled by user request</td>
+<td class="org-right">32</td>
+<td class="org-left">Checking canceled by user request</td>
 </tr>
 
 <tr>
-<td class="right">128</td>
-<td class="left">Shared-library error</td>
+<td class="org-right">128</td>
+<td class="org-left">Shared-library error</td>
 </tr>
 </tbody>
-</table>
-</li>
+</table></li>
 
-<li>The exit code returned when multiple filesystems are checked is the bit-wise OR of the exit codes for each filesystem that is checked.
-</li>
-<li>In actuality, fsck is simply a front-end for the various filesystem checkers (fsck.fstype) available under Linux.  The filesystem-specific checker is searched for in the PATH environment variable. If the PATH is undefined then fallback to "/sbin".
-</li>
+<li>The exit code returned when multiple filesystems are checked is the bit-wise OR of the exit codes for each filesystem that is checked.</li>
+<li>In actuality, fsck is simply a front-end for the various filesystem checkers (fsck.fstype) available under Linux.  The filesystem-specific checker is searched for in the PATH environment variable. If the PATH is undefined then fallback to "/sbin".</li>
 </ul>
 
 <p>
@@ -322,34 +402,26 @@ Please see the filesystem-specific checker manual pages for further details.
 </div>
 </div>
 
-<div id="outline-container-configuration" class="outline-3">
-<h3 id="configuration"><a id="sec-3-3" name="sec-3-3"></a>Configuración</h3>
+<div id="outline-container-org45500d6" class="outline-3">
+<h3 id="configuration"><a id="org45500d6"></a>Configuración</h3>
 <div class="outline-text-3" id="text-configuration">
-
 <p>
 <span class="org-programming-file">/etc/fstab</span>
 </p>
 
 <ul class="org-ul">
-<li>FSCK_FORCE_ALL_PARALLEL
-</li>
-<li>FSCK_MAX_INST          
-</li>
-<li>PATH                   
-</li>
-<li>FSTAB_FILE             
-</li>
-<li>LIBBLKID_DEBUG=0xffff  
-</li>
-<li>LIBMOUNT_DEBUG=0xffff  
-</li>
+<li>FSCK_FORCE_ALL_PARALLEL</li>
+<li>FSCK_MAX_INST</li>
+<li>PATH</li>
+<li>FSTAB_FILE</li>
+<li>LIBBLKID_DEBUG=0xffff</li>
+<li>LIBMOUNT_DEBUG=0xffff</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-options" class="outline-3">
-<h3 id="options"><a id="sec-3-4" name="sec-3-4"></a>Opciones</h3>
+<div id="outline-container-orgf0dfc7a" class="outline-3">
+<h3 id="options"><a id="orgf0dfc7a"></a>Opciones</h3>
 <div class="outline-text-3" id="text-options">
-
 </div>
 </div>
 </div>
@@ -357,8 +429,7 @@ Please see the filesystem-specific checker manual pages for further details.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-25 Sun 05:39</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-02-25 Sun 08:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

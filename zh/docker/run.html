@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
+<!-- 2018-02-25 Sun 09:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker run</title>
-<!-- 2018-02-25 Sun 05:40 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Dongsoo Lee" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,110 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
@@ -115,7 +206,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -175,250 +266,140 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-overview" class="outline-2">
-<h2 id="overview"><a id="sec-1" name="sec-1"></a>摘要</h2>
+<div id="outline-container-orgc1f0f25" class="outline-2">
+<h2 id="overview"><a id="orgc1f0f25"></a>摘要</h2>
 <div class="outline-text-2" id="text-overview">
-
 <p>
 Run a command in a new container
 </p>
 </div>
 </div>
 
-<div id="outline-container-usage" class="outline-2">
-<h2 id="usage"><a id="sec-2" name="sec-2"></a>如何使用</h2>
+<div id="outline-container-org99fe655" class="outline-2">
+<h2 id="usage"><a id="org99fe655"></a>如何使用</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-syntax" class="outline-3">
-<h3 id="syntax"><a id="sec-2-1" name="sec-2-1"></a>结构</h3>
+<div id="outline-container-org2917492" class="outline-3">
+<h3 id="syntax"><a id="org2917492"></a>结构</h3>
 <div class="outline-text-3" id="text-syntax">
-
 <div class="org-src-container">
-
 <pre class="src src-sh">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-options" class="outline-3">
-<h3 id="options"><a id="sec-2-2" name="sec-2-2"></a>选项</h3>
+<div id="outline-container-orga154a3c" class="outline-3">
+<h3 id="options"><a id="orga154a3c"></a>选项</h3>
 <div class="outline-text-3" id="text-options">
-
 <ul class="org-ul">
-<li>--add-host                Add a custom host-to-IP mapping (host:ip)
-</li>
-<li>--attach , -a                Attach to STDIN, STDOUT or STDERR
-</li>
-<li>--blkio-weight                Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
-</li>
-<li>--blkio-weight-device                Block IO weight (relative device weight)
-</li>
-<li>--cap-add                Add Linux capabilities
-</li>
-<li>--cap-drop                Drop Linux capabilities
-</li>
-<li>--cgroup-parent                Optional parent cgroup for the container
-</li>
-<li>--cidfile                Write the container ID to the file
-</li>
-<li>--cpu-count                CPU count (Windows only)
-</li>
-<li>--cpu-percent                CPU percent (Windows only)
-</li>
-<li>--cpu-period                Limit CPU CFS (Completely Fair Scheduler) period
-</li>
-<li>--cpu-quota                Limit CPU CFS (Completely Fair Scheduler) quota
-</li>
-<li>--cpu-rt-period                API 1.25+
-</li>
-<li>Limit CPU real-time period in microseconds
-</li>
-<li>--cpu-rt-runtime                API 1.25+
-</li>
-<li>Limit CPU real-time runtime in microseconds
-</li>
-<li>--cpu-shares , -c                CPU shares (relative weight)
-</li>
-<li>--cpus                API 1.25+
-</li>
-<li>Number of CPUs
-</li>
-<li>--cpuset-cpus                CPUs in which to allow execution (0-3, 0,1)
-</li>
-<li>--cpuset-mems                MEMs in which to allow execution (0-3, 0,1)
-</li>
-<li>--detach , -d                Run container in background and print container ID
-</li>
-<li>--detach-keys                Override the key sequence for detaching a container
-</li>
-<li>--device                Add a host device to the container
-</li>
-<li>--device-cgroup-rule                Add a rule to the cgroup allowed devices list
-</li>
-<li>--device-read-bps                Limit read rate (bytes per second) from a device
-</li>
-<li>--device-read-iops                Limit read rate (IO per second) from a device
-</li>
-<li>--device-write-bps                Limit write rate (bytes per second) to a device
-</li>
-<li>--device-write-iops                Limit write rate (IO per second) to a device
-</li>
-<li>--disable-content-trust        true        Skip image verification
-</li>
-<li>--dns                Set custom DNS servers
-</li>
-<li>--dns-opt                Set DNS options
-</li>
-<li>--dns-option                Set DNS options
-</li>
-<li>--dns-search                Set custom DNS search domains
-</li>
-<li>--entrypoint                Overwrite the default ENTRYPOINT of the image
-</li>
-<li>--env , -e                Set environment variables
-</li>
-<li>--env-file                Read in a file of environment variables
-</li>
-<li>--expose                Expose a port or a range of ports
-</li>
-<li>--group-add                Add additional groups to join
-</li>
-<li>--health-cmd                Command to run to check health
-</li>
-<li>--health-interval                Time between running the check (ms|s|m|h) (default 0s)
-</li>
-<li>--health-retries                Consecutive failures needed to report unhealthy
-</li>
-<li>--health-start-period                API 1.29+
-</li>
-<li>Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
-</li>
-<li>--health-timeout                Maximum time to allow one check to run (ms|s|m|h) (default 0s)
-</li>
-<li>--help                Print usage
-</li>
-<li>--hostname , -h                Container host name
-</li>
-<li>--init                API 1.25+
-</li>
-<li>Run an init inside the container that forwards signals and reaps processes
-</li>
-<li>--interactive , -i                Keep STDIN open even if not attached
-</li>
-<li>--io-maxbandwidth                Maximum IO bandwidth limit for the system drive (Windows only)
-</li>
-<li>--io-maxiops                Maximum IOps limit for the system drive (Windows only)
-</li>
-<li>--ip                IPv4 address (e.g., 172.30.100.104)
-</li>
-<li>--ip6                IPv6 address (e.g., 2001:db8::33)
-</li>
-<li>--ipc                IPC mode to use
-</li>
-<li>--isolation                Container isolation technology
-</li>
-<li>--kernel-memory                Kernel memory limit
-</li>
-<li>--label , -l                Set meta data on a container
-</li>
-<li>--label-file                Read in a line delimited file of labels
-</li>
-<li>--link                Add link to another container
-</li>
-<li>--link-local-ip                Container IPv4/IPv6 link-local addresses
-</li>
-<li>--log-driver                Logging driver for the container
-</li>
-<li>--log-opt                Log driver options
-</li>
-<li>--mac-address                Container MAC address (e.g., 92:d0:c6:0a:29:33)
-</li>
-<li>--memory , -m                Memory limit
-</li>
-<li>--memory-reservation                Memory soft limit
-</li>
-<li>--memory-swap                Swap limit equal to memory plus swap: ‘-1’ to enable unlimited swap
-</li>
-<li>--memory-swappiness        -1        Tune container memory swappiness (0 to 100)
-</li>
-<li>--mount                Attach a filesystem mount to the container
-</li>
-<li>--name                Assign a name to the container
-</li>
-<li>--net                Connect a container to a network
-</li>
-<li>--net-alias                Add network-scoped alias for the container
-</li>
-<li>--network                Connect a container to a network
-</li>
-<li>--network-alias                Add network-scoped alias for the container
-</li>
-<li>--no-healthcheck                Disable any container-specified HEALTHCHECK
-</li>
-<li>--oom-kill-disable                Disable OOM Killer
-</li>
-<li>--oom-score-adj                Tune host’s OOM preferences (-1000 to 1000)
-</li>
-<li>--pid                PID namespace to use
-</li>
-<li>--pids-limit                Tune container pids limit (set -1 for unlimited)
-</li>
-<li>--platform                experimental (daemon)API 1.32+
-</li>
-<li>Set platform if server is multi-platform capable
-</li>
-<li>--privileged                Give extended privileges to this container
-</li>
-<li>--publish , -p                Publish a container’s port(s) to the host
-</li>
-<li>--publish-all , -P                Publish all exposed ports to random ports
-</li>
-<li>--read-only                Mount the container’s root filesystem as read only
-</li>
-<li>--restart        no        Restart policy to apply when a container exits
-</li>
-<li>--rm                Automatically remove the container when it exits
-</li>
-<li>--runtime                Runtime to use for this container
-</li>
-<li>--security-opt                Security Options
-</li>
-<li>--shm-size                Size of /dev/shm
-</li>
-<li>--sig-proxy        true        Proxy received signals to the process
-</li>
-<li>--stop-signal        SIGTERM        Signal to stop a container
-</li>
-<li>--stop-timeout                API 1.25+
-</li>
-<li>Timeout (in seconds) to stop a container
-</li>
-<li>--storage-opt                Storage driver options for the container
-</li>
-<li>--sysctl                Sysctl options
-</li>
-<li>--tmpfs                Mount a tmpfs directory
-</li>
-<li>--tty , -t                Allocate a pseudo-TTY
-</li>
-<li>--ulimit                Ulimit options
-</li>
-<li>--user , -u                Username or UID (format: &lt;name|uid&gt;[:&lt;group|gid&gt;])
-</li>
-<li>--userns                User namespace to use
-</li>
-<li>--uts                UTS namespace to use
-</li>
-<li>--volume , -v                Bind mount a volume
-</li>
-<li>--volume-driver                Optional volume driver for the container
-</li>
-<li>--volumes-from                Mount volumes from the specified container(s)
-</li>
-<li>--workdir , -w                Working directory inside the container
-</li>
+<li>--add-host		Add a custom host-to-IP mapping (host:ip)</li>
+<li>--attach , -a		Attach to STDIN, STDOUT or STDERR</li>
+<li>--blkio-weight		Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)</li>
+<li>--blkio-weight-device		Block IO weight (relative device weight)</li>
+<li>--cap-add		Add Linux capabilities</li>
+<li>--cap-drop		Drop Linux capabilities</li>
+<li>--cgroup-parent		Optional parent cgroup for the container</li>
+<li>--cidfile		Write the container ID to the file</li>
+<li>--cpu-count		CPU count (Windows only)</li>
+<li>--cpu-percent		CPU percent (Windows only)</li>
+<li>--cpu-period		Limit CPU CFS (Completely Fair Scheduler) period</li>
+<li>--cpu-quota		Limit CPU CFS (Completely Fair Scheduler) quota</li>
+<li>--cpu-rt-period		API 1.25+</li>
+<li>Limit CPU real-time period in microseconds</li>
+<li>--cpu-rt-runtime		API 1.25+</li>
+<li>Limit CPU real-time runtime in microseconds</li>
+<li>--cpu-shares , -c		CPU shares (relative weight)</li>
+<li>--cpus		API 1.25+</li>
+<li>Number of CPUs</li>
+<li>--cpuset-cpus		CPUs in which to allow execution (0-3, 0,1)</li>
+<li>--cpuset-mems		MEMs in which to allow execution (0-3, 0,1)</li>
+<li>--detach , -d		Run container in background and print container ID</li>
+<li>--detach-keys		Override the key sequence for detaching a container</li>
+<li>--device		Add a host device to the container</li>
+<li>--device-cgroup-rule		Add a rule to the cgroup allowed devices list</li>
+<li>--device-read-bps		Limit read rate (bytes per second) from a device</li>
+<li>--device-read-iops		Limit read rate (IO per second) from a device</li>
+<li>--device-write-bps		Limit write rate (bytes per second) to a device</li>
+<li>--device-write-iops		Limit write rate (IO per second) to a device</li>
+<li>--disable-content-trust	true	Skip image verification</li>
+<li>--dns		Set custom DNS servers</li>
+<li>--dns-opt		Set DNS options</li>
+<li>--dns-option		Set DNS options</li>
+<li>--dns-search		Set custom DNS search domains</li>
+<li>--entrypoint		Overwrite the default ENTRYPOINT of the image</li>
+<li>--env , -e		Set environment variables</li>
+<li>--env-file		Read in a file of environment variables</li>
+<li>--expose		Expose a port or a range of ports</li>
+<li>--group-add		Add additional groups to join</li>
+<li>--health-cmd		Command to run to check health</li>
+<li>--health-interval		Time between running the check (ms|s|m|h) (default 0s)</li>
+<li>--health-retries		Consecutive failures needed to report unhealthy</li>
+<li>--health-start-period		API 1.29+</li>
+<li>Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)</li>
+<li>--health-timeout		Maximum time to allow one check to run (ms|s|m|h) (default 0s)</li>
+<li>--help		Print usage</li>
+<li>--hostname , -h		Container host name</li>
+<li>--init		API 1.25+</li>
+<li>Run an init inside the container that forwards signals and reaps processes</li>
+<li>--interactive , -i		Keep STDIN open even if not attached</li>
+<li>--io-maxbandwidth		Maximum IO bandwidth limit for the system drive (Windows only)</li>
+<li>--io-maxiops		Maximum IOps limit for the system drive (Windows only)</li>
+<li>--ip		IPv4 address (e.g., 172.30.100.104)</li>
+<li>--ip6		IPv6 address (e.g., 2001:db8::33)</li>
+<li>--ipc		IPC mode to use</li>
+<li>--isolation		Container isolation technology</li>
+<li>--kernel-memory		Kernel memory limit</li>
+<li>--label , -l		Set meta data on a container</li>
+<li>--label-file		Read in a line delimited file of labels</li>
+<li>--link		Add link to another container</li>
+<li>--link-local-ip		Container IPv4/IPv6 link-local addresses</li>
+<li>--log-driver		Logging driver for the container</li>
+<li>--log-opt		Log driver options</li>
+<li>--mac-address		Container MAC address (e.g., 92:d0:c6:0a:29:33)</li>
+<li>--memory , -m		Memory limit</li>
+<li>--memory-reservation		Memory soft limit</li>
+<li>--memory-swap		Swap limit equal to memory plus swap: ‘-1’ to enable unlimited swap</li>
+<li>--memory-swappiness	-1	Tune container memory swappiness (0 to 100)</li>
+<li>--mount		Attach a filesystem mount to the container</li>
+<li>--name		Assign a name to the container</li>
+<li>--net		Connect a container to a network</li>
+<li>--net-alias		Add network-scoped alias for the container</li>
+<li>--network		Connect a container to a network</li>
+<li>--network-alias		Add network-scoped alias for the container</li>
+<li>--no-healthcheck		Disable any container-specified HEALTHCHECK</li>
+<li>--oom-kill-disable		Disable OOM Killer</li>
+<li>--oom-score-adj		Tune host’s OOM preferences (-1000 to 1000)</li>
+<li>--pid		PID namespace to use</li>
+<li>--pids-limit		Tune container pids limit (set -1 for unlimited)</li>
+<li>--platform		experimental (daemon)API 1.32+</li>
+<li>Set platform if server is multi-platform capable</li>
+<li>--privileged		Give extended privileges to this container</li>
+<li>--publish , -p		Publish a container’s port(s) to the host</li>
+<li>--publish-all , -P		Publish all exposed ports to random ports</li>
+<li>--read-only		Mount the container’s root filesystem as read only</li>
+<li>--restart	no	Restart policy to apply when a container exits</li>
+<li>--rm		Automatically remove the container when it exits</li>
+<li>--runtime		Runtime to use for this container</li>
+<li>--security-opt		Security Options</li>
+<li>--shm-size		Size of /dev/shm</li>
+<li>--sig-proxy	true	Proxy received signals to the process</li>
+<li>--stop-signal	SIGTERM	Signal to stop a container</li>
+<li>--stop-timeout		API 1.25+</li>
+<li>Timeout (in seconds) to stop a container</li>
+<li>--storage-opt		Storage driver options for the container</li>
+<li>--sysctl		Sysctl options</li>
+<li>--tmpfs		Mount a tmpfs directory</li>
+<li>--tty , -t		Allocate a pseudo-TTY</li>
+<li>--ulimit		Ulimit options</li>
+<li>--user , -u		Username or UID (format: &lt;name|uid&gt;[:&lt;group|gid&gt;])</li>
+<li>--userns		User namespace to use</li>
+<li>--uts		UTS namespace to use</li>
+<li>--volume , -v		Bind mount a volume</li>
+<li>--volume-driver		Optional volume driver for the container</li>
+<li>--volumes-from		Mount volumes from the specified container(s)</li>
+<li>--workdir , -w		Working directory inside the container</li>
 </ul>
 </div>
 </div>
@@ -427,8 +408,7 @@ Run a command in a new container
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-24</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-25 Sun 05:40</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-02-25 Sun 09:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
