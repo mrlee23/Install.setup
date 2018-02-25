@@ -4,6 +4,7 @@ EMACSBIN ?= emacs
 BATCH     = $(EMACSBIN) -Q --batch
 GH_PAGES_DIR=.gh-pages
 PUBLISH_PAGES_DIR=.publish
+PUBLISH_ORIGINAL_DIR=.publish/original
 EMACS_DEPS_DIR=.emacs-dependencies
 DIST_DIR=dist
 
@@ -23,6 +24,7 @@ mkdirs:
 	if [ ! -d "$(EMACS_DEPS_DIR)" ]; then mkdir -p "$(EMACS_DEPS_DIR)"; fi
 	if [ ! -d "$(GH_PAGES_DIR)" ]; then mkdir -p "$(GH_PAGES_DIR)"; fi
 	if [ ! -d "$(PUBLISH_PAGES_DIR)" ]; then mkdir -p "$(PUBLISH_PAGES_DIR)"; fi
+	if [ ! -d "$(PUBLISH_ORIGINAL_DIR)" ]; then mkdir -p "$(PUBLISH_ORIGINAL_DIR)"; fi
 	if [ ! -d "$(DIST_DIR)" ]; then mkdir -p "$(DIST_DIR)"; fi
 
 get-deps:
@@ -48,6 +50,8 @@ pages: mkdirs pages-deps
 	if [ -d .org-timestamps ]; then rm -rf .org-timestamps; fi
 	if [ -f "CNAME" ]; then cp CNAME "$(GH_PAGES_DIR)/CNAME"; fi
 	if [ -d "$(DIST_DIR)" ]; then mv -f "$(DIST_DIR)" "$(GH_PAGES_DIR)/$(DIST_DIR)"; fi
+	if [ -d "$(PUBLISH_ORIGINAL_DIR)" ]; then rm -rf "$(PUBLISH_ORIGINAL_DIR)"; mkdir -p "$(PUBLISH_ORIGINAL_DIR)"; fi
+	find ./ -type f -not -path "*/.*" -exec cp --parents -rf {} "$(PUBLISH_ORIGINAL_DIR)" \;
 	@$(BATCH) --eval "(progn\
 	$$load_paths\
 	(message \"%s\" load-path)\
@@ -58,7 +62,7 @@ pages: mkdirs pages-deps
 	do \
 		echo "$$lang" > "$(PUBLISH_PAGES_DIR)/$${lang}/.language"; \
 	done;
-	find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
+	find . -type d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
 	mv -f assets "$(DIST_DIR)/assets"
@@ -66,10 +70,10 @@ pages-deps:
 	rm -rf dist/org-html-themes/.git
 
 define load_paths
-(add-to-list 'load-path "./")
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
+(add-to-list 'load-path "./" t)
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize" t)
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual" t)
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp" t)
 endef
 define publish_pages
 
