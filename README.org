@@ -1,4 +1,4 @@
-# Created 2018-02-25 Sun 08:59
+# Created 2018-02-25 Sun 11:36
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -18,8 +18,8 @@
 #+MACRO: opt @@html:<span class="org-programming-option">$1</span>@@
 #+MACRO: option @@html:<span class="org-programming-option">$1</span>@@
 #+MACRO: ver @@html:<span class="org-programming-version">$1</span>@@
-#+MACRO: see See [[./$1.org][$1]]
-#+MACRO: link [[./$1.org][$1]]
+#+MACRO: see (eval (lc-macro/see "$1"))
+#+MACRO: link (eval (lc-macro/link "$1" "$2"))
 
 #+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
 #+MACRO: VERSION (eval (lc-macro/version "$1"))
