@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-24 Sat 13:04 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>apt</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="Dongsoo Lee" />
+<!-- 2018-02-25 Sun 05:37 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Dongsoo Lee" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
@@ -206,7 +115,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -265,68 +174,93 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org8c995e7" class="outline-2">
-<h2 id="overview"><a id="org8c995e7"></a>개요</h2>
+<div id="outline-container-overview" class="outline-2">
+<h2 id="overview"><a id="sec-1" name="sec-1"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
+
 <p>
 실질적으로는 APT는 dpkg와 함께 동작하지만, 데비안 시스템에서 필요한 소프트웨어 검색, 다운로드, 설치, 업그레이드 그리고 확인 등 대부분의 패키지 관리 작업은 APT 유틸리티만으로도 충분하다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0a31bec" class="outline-2">
-<h2 id="usage"><a id="org0a31bec"></a>사용법</h2>
+<div id="outline-container-usage" class="outline-2">
+<h2 id="usage"><a id="sec-2" name="sec-2"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
+
 </div>
 
-<div id="outline-container-orgbff10cb" class="outline-3">
-<h3 id="examples"><a id="orgbff10cb"></a>사용 예</h3>
+<div id="outline-container-examples" class="outline-3">
+<h3 id="examples"><a id="sec-2-1" name="sec-2-1"></a>사용 예</h3>
 <div class="outline-text-3" id="text-examples">
+
 <ul class="org-ul">
 <li>apt-get update:
-/etc/apt/sources.list 를 참조해 사용할 수 있는 패키지 데이터베이스를 업데이트한다.(source.list 파일을 변경했다면 반드시 이 명령을 실행)</li>
+/etc/apt/sources.list 를 참조해 사용할 수 있는 패키지 데이터베이스를 업데이트한다.(source.list 파일을 변경했다면 반드시 이 명령을 실행)
+</li>
 <li>apt-get check:
-시스템 무결성 검사.</li>
+시스템 무결성 검사.
+</li>
 <li>sudo apt-get install &lt;package&gt;:
-주어진 패키지명을 데이터베이스에서 찾을 수 있다면, 해당 패키지를 다운로드받아 설치.(APT 버전 0.6부터 이 명령어는 자동적으로 GPG 키를 사용해 패키지의 신뢰성을 검증)</li>
+주어진 패키지명을 데이터베이스에서 찾을 수 있다면, 해당 패키지를 다운로드받아 설치.(APT 버전 0.6부터 이 명령어는 자동적으로 GPG 키를 사용해 패키지의 신뢰성을 검증)
+</li>
 <li>sudo apt-get -f install:
-깨진 패키지를 위해 정상여부를 검사(이 명령어는 의존성 문제애 대한 메시지 수정을 시도)</li>
+깨진 패키지를 위해 정상여부를 검사(이 명령어는 의존성 문제애 대한 메시지 수정을 시도)
+</li>
 <li>sudo apt-get -d install &lt;package&gt;:
-패키지를 설치하지 않고 /var/cache/apt/archives 디렉토리에 다운로드만 받음.</li>
+패키지를 설치하지 않고 /var/cache/apt/archives 디렉토리에 다운로드만 받음.
+</li>
 <li>sudo apt-get clean:
-디스크 공간확보를 위해 /var/cache/apt/archives 디렉토리에 캐시되어 있는 패키지들을 모두 삭제.</li>
+디스크 공간확보를 위해 /var/cache/apt/archives 디렉토리에 캐시되어 있는 패키지들을 모두 삭제.
+</li>
 <li>sudo apt-get autoclean:
-불완전하게 다운로드된 패키지나 오래된 패키지를 삭제하고자 할 때 실행.(부분적으로 디스크 공간을 절약할 수 있다.)</li>
+불완전하게 다운로드된 패키지나 오래된 패키지를 삭제하고자 할 때 실행.(부분적으로 디스크 공간을 절약할 수 있다.)
+</li>
 <li>sudo apt-get upgrade:
-설치되어 있는 모든 패키지에 대한 최신 업데이트를 검사한 후, 다운로드 받아 설치.</li>
+설치되어 있는 모든 패키지에 대한 최신 업데이트를 검사한 후, 다운로드 받아 설치.
+</li>
 <li>sudo apt-get dist-upgrade:
-전체 시스템을 새로운 버전으로 업그레이드한다. 여기에는 패키지 삭제도 포함되어 있다.(이 방법은 시스템을 업데이트하는 방법으로는 잘 사용되지 않음)</li>
+전체 시스템을 새로운 버전으로 업그레이드한다. 여기에는 패키지 삭제도 포함되어 있다.(이 방법은 시스템을 업데이트하는 방법으로는 잘 사용되지 않음)
+</li>
 <li>sudo apt-get --purge remove &lt;package&gt;:
-주어진 패키지와 그 설정파일을 삭제( --purge 옵션을 사용하면 설정파일까지 삭제)</li>
+주어진 패키지와 그 설정파일을 삭제( --purge 옵션을 사용하면 설정파일까지 삭제)
+</li>
 <li>apt-cache search &lt;keyword&gt;:
-패키지 데이터베이스에서 주어진 키워드를 대소문자 구분없이 검색.(결과로 키워드를 포함하고 있는 패키지명과 설명이 출력)</li>
+패키지 데이터베이스에서 주어진 키워드를 대소문자 구분없이 검색.(결과로 키워드를 포함하고 있는 패키지명과 설명이 출력)
+</li>
 <li>apt-cache showpkg &lt;package&gt;:
-단일 패키지에 대한 일반적인 정보 출력.</li>
+단일 패키지에 대한 일반적인 정보 출력.
+</li>
 <li>apt-cache show &lt;package&gt;:
-주어진 패키지명에 해야하는 소프트웨어에 대한 정보 출력.</li>
+주어진 패키지명에 해야하는 소프트웨어에 대한 정보 출력.
+</li>
 <li>apt-cache stats:
-설치된 모든 패키지에 대한 상태정보를 출력.</li>
+설치된 모든 패키지에 대한 상태정보를 출력.
+</li>
 <li>apt-cache dump:
-캐시에 있는 모든 패키지를 간단한 형식으로 출력.</li>
+캐시에 있는 모든 패키지를 간단한 형식으로 출력.
+</li>
 <li>apt-cache dumpvall:
-표준출력으로 유효한 파일들을 출력.</li>
+표준출력으로 유효한 파일들을 출력.
+</li>
 <li>apt-cache depends:
-패키지가 설치되어 있는지 여부에 관계없이, 패키지에 대한 의존성을 출력.</li>
+패키지가 설치되어 있는지 여부에 관계없이, 패키지에 대한 의존성을 출력.
+</li>
 <li>apt-cache pkgnames:
-시스템에 설치되어 있는 모든 패키지 목록을 보여줌.</li>
+시스템에 설치되어 있는 모든 패키지 목록을 보여줌.
+</li>
 <li>apt-config -v:
-설치된 APT 유틸리티의 버전정보 출력.</li>
+설치된 APT 유틸리티의 버전정보 출력.
+</li>
 <li>sudo apt-key list:
-APT가 알고 있는 gpg 키 목록을 출력.</li>
+APT가 알고 있는 gpg 키 목록을 출력.
+</li>
 <li>sudo apt-key add &lt;file&gt;:
-APT에 서명키 등록.</li>
+APT에 서명키 등록.
+</li>
 <li>sudo apt-key del &lt;keyid&gt;:
-신뢰할 수 있는 키 리스트에서 키를 제거.</li>
+신뢰할 수 있는 키 리스트에서 키를 제거.
+</li>
 </ul>
 </div>
 </div>
@@ -335,7 +269,8 @@ APT에 서명키 등록.</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-24 Sat 13:04</p>
+<p class="date">Created: 2018-02-25 Sun 05:37</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

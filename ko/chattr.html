@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-24 Sat 13:04 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>chatter</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="Dongsoo Lee" />
+<!-- 2018-02-25 Sun 05:37 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Dongsoo Lee" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
@@ -206,7 +115,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -261,8 +170,8 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">구조</a></li>
 <li><a href="#options">옵션</a>
 <ul>
-<li><a href="#orga66141c">Basic attributes</a></li>
-<li><a href="#org77e2dae">Readonly attributes</a></li>
+<li><a href="#sec-2-2-1">Basic attributes</a></li>
+<li><a href="#sec-2-2-2">Readonly attributes</a></li>
 </ul>
 </li>
 </ul>
@@ -271,97 +180,126 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org0f69b7b" class="outline-2">
-<h2 id="overview"><a id="org0f69b7b"></a>개요</h2>
+<div id="outline-container-overview" class="outline-2">
+<h2 id="overview"><a id="sec-1" name="sec-1"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
+
 <p>
 리눅스 시스템에서 파일 attribute를 변경한다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org96590a1" class="outline-2">
-<h2 id="usage"><a id="org96590a1"></a>사용법</h2>
+<div id="outline-container-usage" class="outline-2">
+<h2 id="usage"><a id="sec-2" name="sec-2"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-orgc45bfdf" class="outline-3">
-<h3 id="syntax"><a id="orgc45bfdf"></a>구조</h3>
+<div id="outline-container-syntax" class="outline-3">
+<h3 id="syntax"><a id="sec-2-1" name="sec-2-1"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
+
+
 <div class="org-src-container">
+
 <pre class="src src-sh">chattr [&#50741;&#49496;] [+-= &#49549;&#49457;] [&#54028;&#51068;&#47749;]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0813b5f" class="outline-3">
-<h3 id="options"><a id="org0813b5f"></a>옵션</h3>
+<div id="outline-container-options" class="outline-3">
+<h3 id="options"><a id="sec-2-2" name="sec-2-2"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
+
 <ul class="org-ul">
 <li><span class="org-programming-option">-R</span> :
-하위 디렉토리와 파일의 속성을 변경한다.</li>
+하위 디렉토리와 파일의 속성을 변경한다.
+</li>
 <li><span class="org-programming-option">-V</span> :
-프로그램 버전을 프린트한다.</li>
+프로그램 버전을 프린트한다.
+</li>
 <li><span class="org-programming-option">-f</span> :
-most 에러 메세지를 나오지 않게 한다.</li>
+most 에러 메세지를 나오지 않게 한다.
+</li>
 <li><span class="org-programming-option">-v</span> version :
-파일의 버전/생성 번호를 설정한다.</li>
+파일의 버전/생성 번호를 설정한다.
+</li>
 <li>- :
-속성을 제거한다.</li>
+속성을 제거한다.
+</li>
 <li>+ :
-속성을 추가한다.</li>
+속성을 추가한다.
+</li>
 <li>= :
-현재의 속성을 제거한다.</li>
+현재의 속성을 제거한다.
+</li>
 </ul>
 </div>
 
-<div id="outline-container-orga66141c" class="outline-4">
-<h4 id="orga66141c">Basic attributes</h4>
-<div class="outline-text-4" id="text-orga66141c">
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Basic attributes</h4>
+<div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>a :
-쓰기시에 오로지 추가모드로만 열 수 있다.</li>
+쓰기시에 오로지 추가모드로만 열 수 있다.
+</li>
 <li>c :
-커널에 의해 디스크 상에 압축 상태로 저장</li>
+커널에 의해 디스크 상에 압축 상태로 저장
+</li>
 <li>d :
-dump(8)명령 수행시 백업 되지 않는다. (덤프 방지)</li>
+dump(8)명령 수행시 백업 되지 않는다. (덤프 방지)
+</li>
 <li>i :
-삭제, 이름변경, 링크등 어떤 자료도 변경 불가. (root 조차 변경 불가)</li>
+삭제, 이름변경, 링크등 어떤 자료도 변경 불가. (root 조차 변경 불가)
+</li>
 <li>j :
-데이터 저널링</li>
+데이터 저널링
+</li>
 <li>s :
-지워질 때 블록들이 모두 0으로 되고 다시 디스크상에 씌여짐(안전한 삭제)</li>
+지워질 때 블록들이 모두 0으로 되고 다시 디스크상에 씌여짐(안전한 삭제)
+</li>
 <li>t :
-하단 결합 불가</li>
+하단 결합 불가
+</li>
 <li>u :
-삭제가 되었을 경우에는 그 내용이 저장 (데이터로 복구 가능)</li>
+삭제가 되었을 경우에는 그 내용이 저장 (데이터로 복구 가능)
+</li>
 <li>A :
-접근시간(atime) 갱신 안함</li>
+접근시간(atime) 갱신 안함
+</li>
 <li>D :
-동기화된 디렉토리 업데이트</li>
+동기화된 디렉토리 업데이트
+</li>
 <li>S :
-수정될 때 그 변화가 디스크 상에 동기화 (동기화된 업데이트)</li>
+수정될 때 그 변화가 디스크 상에 동기화 (동기화된 업데이트)
+</li>
 <li>T :
-디렉토리 계층구조의 최상위</li>
+디렉토리 계층구조의 최상위
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org77e2dae" class="outline-4">
-<h4 id="org77e2dae">Readonly attributes</h4>
-<div class="outline-text-4" id="text-org77e2dae">
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Readonly attributes</h4>
+<div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li>h :
-큰 파일(huge file)</li>
+큰 파일(huge file)
+</li>
 <li>E :
-압축 오류(compression error)</li>
+압축 오류(compression error)
+</li>
 <li>I :
-색인 디렉토리(indexed directory)</li>
+색인 디렉토리(indexed directory)
+</li>
 <li>X :
-압축 로우 엑세스(compression raw access)</li>
+압축 로우 엑세스(compression raw access)
+</li>
 <li>Z :
-compressed dirty file</li>
+compressed dirty file
+</li>
 </ul>
 </div>
 </div>
@@ -371,7 +309,8 @@ compressed dirty file</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-24 Sat 13:04</p>
+<p class="date">Created: 2018-02-25 Sun 05:37</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

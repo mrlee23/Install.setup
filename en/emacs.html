@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-24 Sat 13:04 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="Dongsoo Lee" />
+<!-- 2018-02-25 Sun 05:37 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Dongsoo Lee" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
@@ -206,7 +115,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -264,18 +173,18 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#prerequisites">Prerequisites</a>
 <ul>
-<li><a href="#orgc7f8b88">Ubuntu</a></li>
-<li><a href="#org4b58543">Mac OS</a></li>
+<li><a href="#sec-2-1-1">Ubuntu</a></li>
+<li><a href="#sec-2-1-2">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#install">Install</a>
 <ul>
-<li><a href="#org5879d65">Ubuntu</a>
+<li><a href="#sec-2-2-1">Ubuntu</a>
 <ul>
-<li><a href="#org62c71cc">Emacs 25</a></li>
+<li><a href="#sec-2-2-1-1">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#org402eaa6">Mac OS</a></li>
+<li><a href="#sec-2-2-2">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#packages">Installed Packages</a></li>
@@ -283,10 +192,10 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">Syntax</a></li>
 <li><a href="#options">Options</a>
 <ul>
-<li><a href="#org937d9bc">General</a></li>
-<li><a href="#orgc71777c">Emacs Lisp</a></li>
-<li><a href="#orgd3c6b83">Batch mode</a></li>
-<li><a href="#orgcf741c2">with X</a></li>
+<li><a href="#sec-2-6-1">General</a></li>
+<li><a href="#sec-2-6-2">Emacs Lisp</a></li>
+<li><a href="#sec-2-6-3">Batch mode</a></li>
+<li><a href="#sec-2-6-4">with X</a></li>
 </ul>
 </li>
 <li><a href="#examples">Examples</a></li>
@@ -297,17 +206,19 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4accd94" class="outline-2">
-<h2 id="overview"><a id="org4accd94"></a>Overview</h2>
+<div id="outline-container-overview" class="outline-2">
+<h2 id="overview"><a id="sec-1" name="sec-1"></a>Overview</h2>
 <div class="outline-text-2" id="text-overview">
+
 <p>
 This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code.
 </p>
 </div>
 
-<div id="outline-container-org4e792d7" class="outline-3">
-<h3 id="introduction"><a id="org4e792d7"></a>Introduction</h3>
+<div id="outline-container-introduction" class="outline-3">
+<h3 id="introduction"><a id="sec-1-1" name="sec-1-1"></a>Introduction</h3>
 <div class="outline-text-3" id="text-introduction">
+
 <p>
 GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses
 everything other editors do, and it is easily extensible since its editing commands are written in Lisp.
@@ -333,48 +244,51 @@ Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mod
 </div>
 </div>
 
-<div id="outline-container-org56f6a41" class="outline-2">
-<h2 id="how-to-install"><a id="org56f6a41"></a>How to Install</h2>
+<div id="outline-container-how-to-install" class="outline-2">
+<h2 id="how-to-install"><a id="sec-2" name="sec-2"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org30082c8" class="outline-3">
-<h3 id="prerequisites"><a id="org30082c8"></a>Prerequisites</h3>
+<div id="outline-container-prerequisites" class="outline-3">
+<h3 id="prerequisites"><a id="sec-2-1" name="sec-2-1"></a>Prerequisites</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-orgc7f8b88" class="outline-4">
-<h4 id="orgc7f8b88">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgc7f8b88">
+<div id="outline-container-sec-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Ubuntu</h4>
+<div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
-<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
+<li><a href="./apt-add-repository.html">apt-add-repository</a>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4b58543" class="outline-4">
-<h4 id="org4b58543">Mac OS</h4>
-<div class="outline-text-4" id="text-org4b58543">
+<div id="outline-container-sec-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">Mac OS</h4>
+<div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
-<li><a href="./brew.html">brew</a></li>
+<li><a href="./brew.html">brew</a>
+</li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc5324c6" class="outline-3">
-<h3 id="install"><a id="orgc5324c6"></a>Install</h3>
+<div id="outline-container-install" class="outline-3">
+<h3 id="install"><a id="sec-2-2" name="sec-2-2"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org5879d65" class="outline-4">
-<h4 id="org5879d65">Ubuntu</h4>
-<div class="outline-text-4" id="text-org5879d65">
-</div><div id="outline-container-org62c71cc" class="outline-5">
-<h5 id="org62c71cc">Emacs 25</h5>
-<div class="outline-text-5" id="text-org62c71cc">
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Ubuntu</h4>
+<div class="outline-text-4" id="text-2-2-1">
+</div><div id="outline-container-sec-2-2-1-1" class="outline-5">
+<h5 id="sec-2-2-1-1">Emacs 25</h5>
+<div class="outline-text-5" id="text-2-2-1-1">
 <div class="org-src-container">
-<pre class="src src-sh" id="orga9fdcad">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+
+<pre class="src src-sh" id="ubuntu-install_emacs25">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
 </pre>
@@ -383,113 +297,201 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org402eaa6" class="outline-4">
-<h4 id="org402eaa6">Mac OS</h4>
-<div class="outline-text-4" id="text-org402eaa6">
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Mac OS</h4>
+<div class="outline-text-4" id="text-2-2-2">
 <div class="org-src-container">
-<pre class="src src-sh" id="org3552992">$ brew install emacs
+
+<pre class="src src-sh" id="macos-install_emacs25">$ brew install emacs
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org249e0f7" class="outline-3">
-<h3 id="packages"><a id="org249e0f7"></a>Installed Packages</h3>
+<div id="outline-container-packages" class="outline-3">
+<h3 id="packages"><a id="sec-2-3" name="sec-2-3"></a>Installed Packages</h3>
 <div class="outline-text-3" id="text-packages">
+
 <ul class="org-ul">
-<li>aspell</li>
-<li>aspell-en</li>
-<li>dictionaries-common</li>
-<li>emacs25-bin-common</li>
-<li>emacs25-common</li>
-<li>emacs25-el</li>
-<li>emacsen-common</li>
-<li>enchant</li>
-<li>ghostscript</li>
-<li>gsfonts</li>
-<li>gstreamer1.0-plugins-base</li>
-<li>gstreamer1.0-plugins-good</li>
-<li>gstreamer1.0-x</li>
-<li>hunspell-en-us</li>
-<li>imagemagick-common</li>
-<li>libaa1</li>
-<li>libasound2</li>
-<li>libasound2-data</li>
-<li>libaspell15</li>
-<li>libavc1394-0</li>
-<li>libcaca0</li>
-<li>libcdparanoia0</li>
-<li>libcupsfilters1</li>
-<li>libcupsimage2</li>
-<li>libdv4</li>
-<li>libenchant1c2a</li>
-<li>libfftw3-double3</li>
-<li>libflac8</li>
-<li>libfribidi0</li>
-<li>libgeoclue0</li>
-<li>libgif7</li>
-<li>libgl1-mesa-glx</li>
-<li>libgpm2</li>
-<li>libgs9</li>
-<li>libgs9-common</li>
-<li>libgstreamer-plugins-base1.0-0</li>
-<li>libgstreamer-plugins-good1.0-0</li>
-<li>libgstreamer1.0-0</li>
-<li>libharfbuzz-icu0</li>
-<li>libhunspell-1.3-0</li>
-<li>libice6</li>
-<li>libiec61883-0</li>
-<li>libijs-0.35</li>
-<li>libjack-jackd2-0</li>
-<li>libjavascriptcoregtk-3.0-0</li>
-<li>libjbig2dec0</li>
-<li>liblockfile-bin</li>
-<li>liblockfile1</li>
-<li>liblqr-1-0</li>
-<li>libm17n-0</li>
-<li>libmagickcore-6.q16-2</li>
-<li>libmagickwand-6.q16-2</li>
-<li>libogg0</li>
-<li>libopus0</li>
-<li>liborc-0.4-0</li>
-<li>libotf0</li>
-<li>libpaper-utils</li>
-<li>libpaper1</li>
-<li>libraw1394-11</li>
-<li>libsamplerate0</li>
-<li>libshout3</li>
-<li>libslang2</li>
-<li>libsm6</li>
-<li>libspeex1</li>
-<li>libtag1v5</li>
-<li>libtag1v5-vanilla</li>
-<li>libtext-iconv-perl</li>
-<li>libtheora0</li>
-<li>libv4l-0</li>
-<li>libv4lconvert0</li>
-<li>libvisual-0.4-0</li>
-<li>libvorbis0a</li>
-<li>libvorbisenc2</li>
-<li>libwavpack1</li>
-<li>libwebkitgtk-3.0-0</li>
-<li>libwebkitgtk-3.0-common</li>
-<li>libwebp5</li>
-<li>libxcb-glx0</li>
-<li>libxslt1.1</li>
-<li>libxt6</li>
-<li>libxv1</li>
-<li>libxxf86vm1</li>
-<li>m17n-db</li>
-<li>poppler-data</li>
+<li>aspell
+</li>
+<li>aspell-en
+</li>
+<li>dictionaries-common
+</li>
+<li>emacs25-bin-common
+</li>
+<li>emacs25-common
+</li>
+<li>emacs25-el
+</li>
+<li>emacsen-common
+</li>
+<li>enchant
+</li>
+<li>ghostscript
+</li>
+<li>gsfonts
+</li>
+<li>gstreamer1.0-plugins-base
+</li>
+<li>gstreamer1.0-plugins-good
+</li>
+<li>gstreamer1.0-x
+</li>
+<li>hunspell-en-us
+</li>
+<li>imagemagick-common
+</li>
+<li>libaa1
+</li>
+<li>libasound2
+</li>
+<li>libasound2-data
+</li>
+<li>libaspell15
+</li>
+<li>libavc1394-0
+</li>
+<li>libcaca0
+</li>
+<li>libcdparanoia0
+</li>
+<li>libcupsfilters1
+</li>
+<li>libcupsimage2
+</li>
+<li>libdv4
+</li>
+<li>libenchant1c2a
+</li>
+<li>libfftw3-double3
+</li>
+<li>libflac8
+</li>
+<li>libfribidi0
+</li>
+<li>libgeoclue0
+</li>
+<li>libgif7
+</li>
+<li>libgl1-mesa-glx
+</li>
+<li>libgpm2
+</li>
+<li>libgs9
+</li>
+<li>libgs9-common
+</li>
+<li>libgstreamer-plugins-base1.0-0
+</li>
+<li>libgstreamer-plugins-good1.0-0
+</li>
+<li>libgstreamer1.0-0
+</li>
+<li>libharfbuzz-icu0
+</li>
+<li>libhunspell-1.3-0
+</li>
+<li>libice6
+</li>
+<li>libiec61883-0
+</li>
+<li>libijs-0.35
+</li>
+<li>libjack-jackd2-0
+</li>
+<li>libjavascriptcoregtk-3.0-0
+</li>
+<li>libjbig2dec0
+</li>
+<li>liblockfile-bin
+</li>
+<li>liblockfile1
+</li>
+<li>liblqr-1-0
+</li>
+<li>libm17n-0
+</li>
+<li>libmagickcore-6.q16-2
+</li>
+<li>libmagickwand-6.q16-2
+</li>
+<li>libogg0
+</li>
+<li>libopus0
+</li>
+<li>liborc-0.4-0
+</li>
+<li>libotf0
+</li>
+<li>libpaper-utils
+</li>
+<li>libpaper1
+</li>
+<li>libraw1394-11
+</li>
+<li>libsamplerate0
+</li>
+<li>libshout3
+</li>
+<li>libslang2
+</li>
+<li>libsm6
+</li>
+<li>libspeex1
+</li>
+<li>libtag1v5
+</li>
+<li>libtag1v5-vanilla
+</li>
+<li>libtext-iconv-perl
+</li>
+<li>libtheora0
+</li>
+<li>libv4l-0
+</li>
+<li>libv4lconvert0
+</li>
+<li>libvisual-0.4-0
+</li>
+<li>libvorbis0a
+</li>
+<li>libvorbisenc2
+</li>
+<li>libwavpack1
+</li>
+<li>libwebkitgtk-3.0-0
+</li>
+<li>libwebkitgtk-3.0-common
+</li>
+<li>libwebp5
+</li>
+<li>libxcb-glx0
+</li>
+<li>libxslt1.1
+</li>
+<li>libxt6
+</li>
+<li>libxv1
+</li>
+<li>libxxf86vm1
+</li>
+<li>m17n-db
+</li>
+<li>poppler-data
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgfaee3dc" class="outline-3">
-<h3 id="check"><a id="orgfaee3dc"></a>Check</h3>
+<div id="outline-container-check" class="outline-3">
+<h3 id="check"><a id="sec-2-4" name="sec-2-4"></a>Check</h3>
 <div class="outline-text-3" id="text-check">
+
 <div class="org-src-container">
+
 <pre class="src src-sh">$ emacs --version
 25.3
 </pre>
@@ -497,186 +499,248 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org6e32f16" class="outline-3">
-<h3 id="syntax"><a id="org6e32f16"></a>Syntax</h3>
+<div id="outline-container-syntax" class="outline-3">
+<h3 id="syntax"><a id="sec-2-5" name="sec-2-5"></a>Syntax</h3>
 <div class="outline-text-3" id="text-syntax">
+
 <div class="org-src-container">
+
 <pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org676c4c6" class="outline-3">
-<h3 id="options"><a id="org676c4c6"></a>Options</h3>
+<div id="outline-container-options" class="outline-3">
+<h3 id="options"><a id="sec-2-6" name="sec-2-6"></a>Options</h3>
 <div class="outline-text-3" id="text-options">
+
 <p>
 This is updated for version <span class="org-programming-version">25.3</span>.
 </p>
 </div>
 
-<div id="outline-container-org937d9bc" class="outline-4">
-<h4 id="org937d9bc">General</h4>
-<div class="outline-text-4" id="text-org937d9bc">
+<div id="outline-container-sec-2-6-1" class="outline-4">
+<h4 id="sec-2-6-1">General</h4>
+<div class="outline-text-4" id="text-2-6-1">
 <ul class="org-ul">
 <li><span class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :
-The same as specifying file directly as an argument.</li>
-<li><del>number :
-Go to the line specified by number (do not insert a space between the "</del>" sign and the number).  This applies only to the next file specified.</li>
+The same as specifying file directly as an argument.
+</li>
+<li>+number :
+Go to the line specified by number (do not insert a space between the "+" sign and the number).  This applies only to the next file specified.
+</li>
 <li>+line:column :
-Go to the specified line and column.</li>
+Go to the specified line and column.
+</li>
 <li><span class="org-programming-option">--chdir</span> <span class="org-programming-argument">directory</span> :
-Change to directory.</li>
+Change to directory.
+</li>
 <li><span class="org-programming-option">-q</span>, <span class="org-programming-option">--no-init-file</span> :
 Do not load an init file. (eg. <span class="org-programming-file">~/.emacs.d/init.el</span>)
-init file을 로드하지 않습니다. (예. <span class="org-programming-file">~/.emacs.d/init.el</span>)</li>
+init file을 로드하지 않습니다. (예. <span class="org-programming-file">~/.emacs.d/init.el</span>)
+</li>
 <li><span class="org-programming-option">-nl</span>, <span class="org-programming-option">--no-shared-memory</span> :
-Do not use shared memory.</li>
+Do not use shared memory.
+</li>
 <li><span class="org-programming-option">--no-site-file</span> :
-Do not load the site-wide startup file.</li>
+Do not load the site-wide startup file.
+</li>
 <li><span class="org-programming-option">-nsl</span>, <span class="org-programming-option">--no-site-lisp</span> :
-Do not add site-lisp directories to load-path.</li>
-<li><span class="org-programming-option">--no-desktop</span> :</li>
+Do not add site-lisp directories to load-path.
+</li>
+<li><span class="org-programming-option">--no-desktop</span> :
+</li>
 </ul>
 <p>
 Do not load a saved desktop.
 </p>
 <ul class="org-ul">
 <li><span class="org-programming-option">-Q</span>, <span class="org-programming-option">--quick</span> :
-Similar to "-q --no-site-file --no-splash".  Also, avoid processing X resources.</li>
-<li><span class="org-programming-option">--no-splash</span> :</li>
+Similar to "-q --no-site-file --no-splash".  Also, avoid processing X resources.
+</li>
+<li><span class="org-programming-option">--no-splash</span> :
+</li>
 </ul>
 <p>
 Do not display a splash screen during start-up.
 </p>
 <ul class="org-ul">
 <li><span class="org-programming-option">--debug-init</span> :
-Enable Emacs Lisp debugger during the processing of the user init file ~/.emacs.  This is useful for debugging problems in the init file.</li>
+Enable Emacs Lisp debugger during the processing of the user init file ~/.emacs.  This is useful for debugging problems in the init file.
+</li>
 <li><span class="org-programming-option">-u</span> <span class="org-programming-argument">user</span>, <span class="org-programming-option">--user</span> <span class="org-programming-argument">user</span> :
-Load user's init file.</li>
+Load user's init file.
+</li>
 <li><span class="org-programming-option">-t</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--terminal</span> <span class="org-programming-argument">file</span> :
-Use specified file as the terminal instead of using stdin/stdout.  This must be the first argument specified in the command line.</li>
+Use specified file as the terminal instead of using stdin/stdout.  This must be the first argument specified in the command line.
+</li>
 <li><span class="org-programming-option">--daemon</span> :
-Start Emacs as a daemon, enabling the Emacs server and disconnecting from the terminal.  You can then use the emacsclient command to connect to the server (see emacsclient(1)).</li>
+Start Emacs as a daemon, enabling the Emacs server and disconnecting from the terminal.  You can then use the emacsclient command to connect to the server (see emacsclient(1)).
+</li>
 <li><span class="org-programming-option">--version</span> :
-Display Emacs version information and exit.</li>
+Display Emacs version information and exit.
+</li>
 <li><span class="org-programming-option">--help</span> :
-Display this help and exit.</li>
+Display this help and exit.
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc71777c" class="outline-4">
-<h4 id="orgc71777c">Emacs Lisp</h4>
-<div class="outline-text-4" id="text-orgc71777c">
+<div id="outline-container-sec-2-6-2" class="outline-4">
+<h4 id="sec-2-6-2">Emacs Lisp</h4>
+<div class="outline-text-4" id="text-2-6-2">
+
 <ul class="org-ul">
 <li><span class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :
-Execute the lisp function function.</li>
+Execute the lisp function function.
+</li>
 <li><span class="org-programming-option">-l</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--load</span> <span class="org-programming-argument">file</span> :
-Load the lisp code in the file.</li>
+Load the lisp code in the file.
+</li>
 <li><span class="org-programming-option">--eval</span> <span class="org-programming-argument">expr</span>, <span class="org-programming-option">--execute</span> <span class="org-programming-argument">expr</span> :
-Evaluate the Lisp expression expr.</li>
+Evaluate the Lisp expression expr.
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd3c6b83" class="outline-4">
-<h4 id="orgd3c6b83">Batch mode</h4>
-<div class="outline-text-4" id="text-orgd3c6b83">
+<div id="outline-container-sec-2-6-3" class="outline-4">
+<h4 id="sec-2-6-3">Batch mode</h4>
+<div class="outline-text-4" id="text-2-6-3">
+
 <ul class="org-ul">
 <li><span class="org-programming-option">--batch</span> :
-Edit in batch mode. The editor will send messages to stderr. You must use -l and -f options to specify files to execute and functions to call.</li>
+Edit in batch mode. The editor will send messages to stderr. You must use -l and -f options to specify files to execute and functions to call.
+</li>
 <li><span class="org-programming-option">--script</span> <span class="org-programming-argument">file</span> :
-Run file as an Emacs Lisp script.</li>
+Run file as an Emacs Lisp script.
+</li>
 <li><span class="org-programming-option">--insert</span> <span class="org-programming-argument">file</span> :
-Insert contents of file into the current buffer.</li>
+Insert contents of file into the current buffer.
+</li>
 <li><span class="org-programming-option">--kill</span> :
-Exit Emacs while in batch mode.</li>
+Exit Emacs while in batch mode.
+</li>
 <li><span class="org-programming-option">-L</span> <span class="org-programming-argument">dir</span>, <span class="org-programming-option">--directory</span> <span class="org-programming-argument">dir</span> :
-Add dir to the list of directories Emacs searches for Lisp files</li>
+Add dir to the list of directories Emacs searches for Lisp files
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcf741c2" class="outline-4">
-<h4 id="orgcf741c2">with X</h4>
-<div class="outline-text-4" id="text-orgcf741c2">
+<div id="outline-container-sec-2-6-4" class="outline-4">
+<h4 id="sec-2-6-4">with X</h4>
+<div class="outline-text-4" id="text-2-6-4">
 <ul class="org-ul">
 <li><span class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :
-Specify the name which should be assigned to the initial Emacs window.  This controls looking up X resources as well as the window title.</li>
+Specify the name which should be assigned to the initial Emacs window.  This controls looking up X resources as well as the window title.
+</li>
 <li><span class="org-programming-option">-T</span> <span class="org-programming-argument">name</span>, --title <span class="org-programming-argument">name</span> :
-Specify the title for the initial X window.</li>
+Specify the title for the initial X window.
+</li>
 <li><span class="org-programming-option">-r</span>, <span class="org-programming-option">-rv</span>, <span class="org-programming-option">--reverse-video</span> :
-Display the Emacs window in reverse video.</li>
+Display the Emacs window in reverse video.
+</li>
 <li><span class="org-programming-option">-fn</span> <span class="org-programming-argument">font</span>, <span class="org-programming-option">--font</span> <span class="org-programming-argument">font</span> :
-Set  the  Emacs  window's font to that specified by font.  You will find the various X fonts in the /usr/lib/X11/fonts directory.  Note that Emacs will only accept fixed width fonts.  Under the X11 Release 4 font-naming conventions, any font with  the  value  "m"  or  "c"  in  the eleventh  field  of  the  font  name  is a fixed width font.  Furthermore, fonts whose name are of the form widthxheight are generally fixed width, as is the font fixed.  See xlsfonts(1) for more information. When you specify a font, be sure to put a space between the switch and the font name.</li>
+Set  the  Emacs  window's font to that specified by font.  You will find the various X fonts in the /usr/lib/X11/fonts directory.  Note that Emacs will only accept fixed width fonts.  Under the X11 Release 4 font-naming conventions, any font with  the  value  "m"  or  "c"  in  the eleventh  field  of  the  font  name  is a fixed width font.  Furthermore, fonts whose name are of the form widthxheight are generally fixed width, as is the font fixed.  See xlsfonts(1) for more information. When you specify a font, be sure to put a space between the switch and the font name.
+</li>
 <li><span class="org-programming-option">--xrm</span> <span class="org-programming-argument">resources</span> :
-Set additional X resources.</li>
+Set additional X resources.
+</li>
 <li><span class="org-programming-option">--color</span>, <span class="org-programming-option">--color</span>=<span class="org-programming-argument">mode</span> :
-Override color mode for character terminals; mode defaults to "auto", and can also be  "never",  "auto",  "always",  or  a  mode  name  like "ansi8".</li>
+Override color mode for character terminals; mode defaults to "auto", and can also be  "never",  "auto",  "always",  or  a  mode  name  like "ansi8".
+</li>
 <li><span class="org-programming-option">-bw</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--border-width</span> <span class="org-programming-argument">pixels</span> :
-Set the Emacs window's border width to the number of pixels specified by pixels.  Defaults to one pixel on each side of the window.</li>
+Set the Emacs window's border width to the number of pixels specified by pixels.  Defaults to one pixel on each side of the window.
+</li>
 <li><span class="org-programming-option">-ib</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--internal-border</span> <span class="org-programming-argument">pixels</span> :
-Set  the  window's  internal border width to the number of pixels specified by pixels.  Defaults to one pixel of padding on each side of the window.</li>
+Set  the  window's  internal border width to the number of pixels specified by pixels.  Defaults to one pixel of padding on each side of the window.
+</li>
 <li><span class="org-programming-option">-g</span> <span class="org-programming-argument">geometry</span>, <span class="org-programming-option">--geometry</span> <span class="org-programming-argument">geometry</span> :
-Set the Emacs window's width, height, and position as specified.  The geometry specification is in the standard X format; see X(7) for  more information.   The width and height are specified in characters; the default is 80 by 24.  See the Emacs manual, section "Options for Window Size and Position", for information on how window sizes interact with selecting or deselecting the tool bar and menu bar.</li>
+Set the Emacs window's width, height, and position as specified.  The geometry specification is in the standard X format; see X(7) for  more information.   The width and height are specified in characters; the default is 80 by 24.  See the Emacs manual, section "Options for Window Size and Position", for information on how window sizes interact with selecting or deselecting the tool bar and menu bar.
+</li>
 <li><span class="org-programming-option">-lsp</span> <span class="org-programming-argument">pixels</span>, <span class="org-programming-option">--line-spacing</span> <span class="org-programming-argument">pixels</span> :
-Additional space to put between lines.</li>
+Additional space to put between lines.
+</li>
 <li><span class="org-programming-option">-vb</span>, <span class="org-programming-option">--vertical-scroll-bars</span> :
-Enable vertical scrollbars.</li>
+Enable vertical scrollbars.
+</li>
 <li><span class="org-programming-option">-fh</span>, <span class="org-programming-option">--fullheight</span> :
-Make the first frame as high as the screen.</li>
+Make the first frame as high as the screen.
+</li>
 <li><span class="org-programming-option">-fs</span>, <span class="org-programming-option">--fullscreen</span> :
-Make the first frame fullscreen.</li>
+Make the first frame fullscreen.
+</li>
 <li><span class="org-programming-option">-fw</span>, <span class="org-programming-option">--fullwidth</span> :
-Make the first frame as wide as the screen.</li>
+Make the first frame as wide as the screen.
+</li>
 <li><span class="org-programming-option">-mm</span>, <span class="org-programming-option">--maximized</span> :
-Maximize the first frame, like "-fw -fh".</li>
+Maximize the first frame, like "-fw -fh".
+</li>
 <li><span class="org-programming-option">-fg</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--foreground-color</span> <span class="org-programming-argument">color</span> :
-On color displays, set the color of the text. Use the command M-x list-colors-display for a list of valid color names.</li>
+On color displays, set the color of the text. Use the command M-x list-colors-display for a list of valid color names.
+</li>
 <li><span class="org-programming-option">-bg</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--background-color</span> <span class="org-programming-argument">color</span> :
-On color displays, set the color of the window's background.</li>
+On color displays, set the color of the window's background.
+</li>
 <li><span class="org-programming-option">-bd</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--border-color</span> <span class="org-programming-argument">color</span> :
-On color displays, set the color of the window's border.</li>
+On color displays, set the color of the window's border.
+</li>
 <li><span class="org-programming-option">-cr</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--cursor-color</span> <span class="org-programming-argument">color</span> :
-On color displays, set the color of the window's text cursor.</li>
+On color displays, set the color of the window's text cursor.
+</li>
 <li><span class="org-programming-option">-ms</span> <span class="org-programming-argument">color</span>, <span class="org-programming-option">--mouse-color</span> <span class="org-programming-argument">color</span> :
-On color displays, set the color of the window's mouse cursor.</li>
+On color displays, set the color of the window's mouse cursor.
+</li>
 <li><span class="org-programming-option">-d</span> <span class="org-programming-argument">displayname</span>, <span class="org-programming-option">--display</span> <span class="org-programming-argument">displayname</span> :
-Create the Emacs window on the display specified by displayname.  Must be the first option specified in the command line.</li>
+Create the Emacs window on the display specified by displayname.  Must be the first option specified in the command line.
+</li>
 <li><span class="org-programming-option">-nbi</span>, <span class="org-programming-option">--no-bitmap-icon</span> :
-Do not use picture of gnu for Emacs icon.</li>
+Do not use picture of gnu for Emacs icon.
+</li>
 <li><span class="org-programming-option">--iconic</span> :
-Start Emacs in iconified state.</li>
+Start Emacs in iconified state.
+</li>
 <li><span class="org-programming-option">-nbc</span>, <span class="org-programming-option">--no-blinking-cursor</span> :
-Disable blinking cursor.</li>
+Disable blinking cursor.
+</li>
 <li><span class="org-programming-option">--parent-id</span> <span class="org-programming-argument">xid</span> :
-Set parent window.</li>
+Set parent window.
+</li>
 <li><span class="org-programming-option">-nw</span>, <span class="org-programming-option">--no-window-system</span> :
-Tell Emacs not to create a graphical frame.  If you use this switch when invoking Emacs from an xterm(1) window, display  is  done  in  that window.</li>
+Tell Emacs not to create a graphical frame.  If you use this switch when invoking Emacs from an xterm(1) window, display  is  done  in  that window.
+</li>
 <li><span class="org-programming-option">-D</span>, <span class="org-programming-option">--basic-display</span> :
-This option disables many display features; use it for debugging Emacs.</li>
+This option disables many display features; use it for debugging Emacs.
+</li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf22bd37" class="outline-3">
-<h3 id="examples"><a id="orgf22bd37"></a>Examples</h3>
+<div id="outline-container-examples" class="outline-3">
+<h3 id="examples"><a id="sec-2-7" name="sec-2-7"></a>Examples</h3>
 <div class="outline-text-3" id="text-examples">
+
 <ul class="org-ul">
-<li>emacs -Q --batch file.org -f org-html-export-to-html :</li>
-<li>emacs -Q --batch --eval "(+ 1 2)" :</li>
+<li>emacs -Q --batch file.org -f org-html-export-to-html :
+</li>
+<li>emacs -Q --batch --eval "(+ 1 2)" :
+</li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3898037" class="outline-2">
-<h2 id="references"><a id="org3898037"></a>References</h2>
+<div id="outline-container-references" class="outline-2">
+<h2 id="references"><a id="sec-3" name="sec-3"></a>References</h2>
 <div class="outline-text-2" id="text-references">
+
 <ul class="org-ul">
-<li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
+<li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a>
+</li>
 </ul>
 </div>
 </div>
@@ -684,7 +748,8 @@ This option disables many display features; use it for debugging Emacs.</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-24 Sat 13:04</p>
+<p class="date">Created: 2018-02-25 Sun 05:37</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
