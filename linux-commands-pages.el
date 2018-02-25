@@ -20,6 +20,7 @@
 
 (require 'linux-commands-core)
 
+(require 'org)
 (require 'ox-publish)
 (require 'htmlize)
 (require 'org-multilingual)
@@ -83,7 +84,7 @@
 		   :language ,LANG
 		   :override t
 		   :headline-levels 4
-		   :recursive nil
+		   :recursive t
 		   :auto-preamble nil
 		   )
 		  ("LinuxCommands"
@@ -97,12 +98,8 @@
 
 (defun pages-publish (BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR)
   (let ((langs (pages-support-languages))
-		(orig-dir (expand-file-name "orignal" PUBLISH_TARGET_DIR))
+		(orig-dir (expand-file-name "original" PUBLISH_TARGET_DIR))
 		)
-	(when (file-directory-p orig-dir) (delete-directory orig-dir t))
-	(make-directory orig-dir t)
-	(message "Coping contents %s to %s..." BASE_DIR orig-dir)
-	(shell-command-to-string (format "find %s -maxdepth 1 -not -path \"*.git/*\" -not -path \"%s\" -not -path \"%s\" -not -path \"%s\" -exec cp -rf {} \"%s\" \\;" BASE_DIR BASE_DIR PAGES_TARGET_DIR PUBLISH_TARGET_DIR orig-dir))
 	(mapcar
 	 (lambda (lang)
 	   (setq lang (org-multilingual-normalize-code lang))
