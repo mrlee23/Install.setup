@@ -225,24 +225,33 @@
 (defun lc-macro/link (link &optional name)
   (setq link (lc-macro/arg-trim link))
   (setq name (or (lc-macro/arg-trim name) (replace-regexp-in-string "/" "-" link)))
-  (setq link (format "./%s.org" link))
+  (setq link (format "%s%s.org"
+					 (file-relative-name lc-core/base-dir (file-name-directory (buffer-file-name)))
+					 link))
   (format "[[%s][%s]]" link name))
 
-
-(defun lc-macro/image (path &optional name classes)
+(defun lc-macro/image (path &optional name classes align)
   (setq path (lc-macro/arg-trim path))
   (setq name (or (lc-macro/arg-trim name) (file-name-base path)))
   (setq classes (lc-macro/arg-trim classes))
+  (setq align (lc-macro/arg-trim align))
   (when (stringp classes)
 	(setq classes (split-string classes "[\t ]+")))
   (unless (consp classes)
 	(setq classes '()))
+  (when (and (stringp align) (equal align "center"))
+	(push "center" classes)
+	(setq align nil))
   (let* ((cur-name (file-name-base (buffer-file-name)))
 		 (base-dir lc-core/base-dir)
 		 (dir-path (file-name-as-directory (file-relative-name cur-name base-dir)))
 		 (img-path (concat lc-core/url
 						   (replace-regexp-in-string "/+" "/" (format "/dist/assets/images/%s/%s" dir-path path))))
-		 (img-tag (format "@@html:<img class=\"org-img %s\" src=\"%s\" alt=\"%s\">@@" (mapconcat (lambda (cls) (format "%s" cls)) classes " ") img-path name))
+		 (img-tag (format "@@html:<img class=\"org-img %s\" src=\"%s\" alt=\"%s\" %s>@@"
+						  (mapconcat (lambda (cls) (format "%s" cls)) classes " ")
+						  img-path
+						  name
+						  (if align (format "align=\"%s\"" align) "")))
 		 )
 	(if (string-match "http[s]?://" name)
 		(format "@@html:<a href=\"%s\">@@%s@@html:</a>@@" name img-tag)
