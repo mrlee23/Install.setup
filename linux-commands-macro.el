@@ -225,7 +225,7 @@
 (defun lc-macro/link (link &optional name)
   (setq link (lc-macro/arg-trim link))
   (setq name (or (lc-macro/arg-trim name) (replace-regexp-in-string "/" "-" link)))
-  (setq link (format "%s%s.org"
+  (setq link (format "%s/%s.org"
 					 (file-relative-name lc-core/base-dir (file-name-directory (buffer-file-name)))
 					 link))
   (format "[[%s][%s]]" link name))
