@@ -75,7 +75,7 @@ define load_paths
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
-(load-path "$(EMACS_DEPS_DIR)/org-mode/lisp/requirements.el")
+(load-file "$(EMACS_DEPS_DIR)/org-mode/lisp/requirements.el")
 endef
 define publish_pages
 
