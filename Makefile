@@ -62,7 +62,7 @@ pages: mkdirs pages-deps
 	do \
 		echo "$$lang" > "$(PUBLISH_PAGES_DIR)/$${lang}/.language"; \
 	done;
-	find . -d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
+	find . -type d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
 	mv -f assets "$(DIST_DIR)/assets"
@@ -70,10 +70,10 @@ pages-deps:
 	rm -rf dist/org-html-themes/.git
 
 define load_paths
-(add-to-list 'load-path "./")
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
+(add-to-list 'load-path "./" t)
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize" t)
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual" t)
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp" t)
 endef
 define publish_pages
 
