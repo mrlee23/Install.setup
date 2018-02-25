@@ -241,7 +241,7 @@
 		 (base-dir lc-core/base-dir)
 		 (dir-path (file-name-as-directory (file-relative-name cur-name base-dir)))
 		 (img-path (concat lc-core/url
-						   (replace-regexp-in-string "/+" "/" (format "/assets/images/%s/%s" dir-path path))))
+						   (replace-regexp-in-string "/+" "/" (format "/dist/assets/images/%s/%s" dir-path path))))
 		 (img-tag (format "@@html:<img class=\"org-img %s\" src=\"%s\" alt=\"%s\">@@" (mapconcat (lambda (cls) (format "%s" cls)) classes " ") img-path name))
 		 )
 	(if (string-match "http[s]?://" name)
