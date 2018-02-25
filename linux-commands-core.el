@@ -23,8 +23,10 @@
 (defvar lc-core/current-contents nil)
 (defvar lc-core/current-contents-filename nil)
 
+(defun lc-core/init-base (base-dir)
+  (setq lc-core/base-dir base-dir))
+
 (defun lc-core/init-lang (lang)
-  (setq lc-core/base-dir (expand-file-name "./"))
   (setq lc-core/language (format "%s" lang))
   (setq lc-core/base-url (format "%s/%s" lc-core/url lc-core/language))
   (lc-core/set-site-name lang))

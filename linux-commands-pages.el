@@ -60,6 +60,7 @@
   (setq org-publish-timestamp-directory pages-timestamp)
   (unless EXCLUDE_DIR
 	(setq EXCLUDE_DIR "\\.git"))
+  (lc-core/init-base BASE_DIR)
   (lc-core/init-lang LANG)
   (setq org-publish-project-alist
 		`(("LinuxCommands-static"
