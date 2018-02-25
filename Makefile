@@ -33,6 +33,7 @@ get-deps:
 	git clone https://github.com/mrlee23/org-multilingual.git "$(EMACS_DEPS_DIR)/org-multilingual"
 	git clone -b release_9.0.10 https://code.orgmode.org/bzg/org-mode.git "$(EMACS_DEPS_DIR)/org-mode"
 	cd "$(EMACS_DEPS_DIR)/org-mode" && make
+	cd "$(EMACS_DEPS_DIR)/org-mode/lisp" && find . -name "*.el" | sed 's/.el$//g' | sed 's/.\///g' | sed "s/\(.*\)/(require '\1)/g" > requirements.el
 
 test:
 	echo "No tests."
@@ -74,6 +75,7 @@ define load_paths
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
+(load-path "$(EMACS_DEPS_DIR)/org-mode/lisp/requirements.el")
 endef
 define publish_pages
 

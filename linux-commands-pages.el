@@ -21,8 +21,6 @@
 (require 'linux-commands-core)
 
 (require 'org)
-(require 'org-compat)
-(require 'ox-publish)
 (require 'htmlize)
 (require 'org-multilingual)
 (require 'seq)
