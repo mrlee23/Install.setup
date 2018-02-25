@@ -228,4 +228,35 @@
   (setq link (format "./%s.org" link))
   (format "[[%s][%s]]" link name))
 
+
+(defun lc-macro/image (path &optional name classes)
+  (setq path (lc-macro/arg-trim path))
+  (setq name (or (lc-macro/arg-trim name) (file-name-base path)))
+  (setq classes (lc-macro/arg-trim classes))
+  (when (stringp classes)
+	(setq classes (split-string classes "[\t ]+")))
+  (unless (consp classes)
+	(setq classes '()))
+  (let* ((cur-name (file-name-base (buffer-file-name)))
+		 (base-dir lc-core/base-dir)
+		 (dir-path (file-name-as-directory (file-relative-name cur-name base-dir)))
+		 (img-path (concat lc-core/url
+						   (replace-regexp-in-string "/+" "/" (format "/assets/images/%s/%s" dir-path path))))
+		 (img-tag (format "@@html:<img class=\"org-img %s\" src=\"%s\" alt=\"%s\">@@" (mapconcat (lambda (cls) (format "%s" cls)) classes " ") img-path name))
+		 )
+	(if (string-match "http[s]?://" name)
+		(format "@@html:<a href=\"%s\">@@%s@@html:</a>@@" name img-tag)
+	  img-tag)
+	))
+
+(defun lc-macro/inline-image (path &optional name)
+  "If NAME has start http[s]?, treats as link with PATH image."
+  (lc-macro/image path name "org-inline-img"))
+
+(defun lc-macro/image-link (path &optional name classes)
+  (lc-macro/link name (lc-macro/image path nil classes)))
+
+(defun lc-macro/image-inline-link (path &optional name)
+  (lc-macro/image-link path name "org-inline-img"))
+
 (provide 'linux-commands-macro)
