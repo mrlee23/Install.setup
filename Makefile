@@ -70,10 +70,10 @@ pages-deps:
 	rm -rf dist/org-html-themes/.git
 
 define load_paths
-(add-to-list 'load-path "./" t)
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize" t)
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual" t)
-(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp" t)
+(add-to-list 'load-path "./")
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
 endef
 define publish_pages
 
