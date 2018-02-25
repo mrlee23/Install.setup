@@ -262,8 +262,8 @@
   "If NAME has start http[s]?, treats as link with PATH image."
   (lc-macro/image path name "org-inline-img"))
 
-(defun lc-macro/image-link (path &optional name classes)
-  (lc-macro/link name (lc-macro/image path nil classes)))
+(defun lc-macro/image-link (path &optional name classes align)
+  (lc-macro/link name (lc-macro/image path nil classes align)))
 
 (defun lc-macro/image-inline-link (path &optional name)
   (lc-macro/image-link path name "org-inline-img"))
