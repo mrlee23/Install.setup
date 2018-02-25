@@ -4,15 +4,28 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+{{{LATEST_VERSION(17.12.0-ce)}}}
+
+Docker image and container command line interface
+
+** 介绍
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: zh
+  :END:    
+
+is a client for interacting with the daemon (see dockerd(8)) through the CLI.
+
+The Docker CLI has over 30 commands. The commands are listed below and each has its own man page which explain usage and arguments.
+
+To see the man page for a command run man docker <command>.
+
 
 * 如何安装
   :PROPERTIES: 
@@ -26,15 +39,21 @@
    :LANG: zh
    :END:      
 
+- {{{link(update)}}}
+- {{{link(curl)}}}
+- {{{link(apt-add-repository)}}}
+- {{{link(ca-certificates)}}}
+
 ** 安装
   :PROPERTIES: 
   :CUSTOM_ID: install
   :LANG: zh
   :END:      
 
-** Ubuntu 16.04 ~
+*** Ubuntu 16.04 ~
+   	:PROPERTIES: 
+   	:END:      
 
-*** Update repository
 #+NAME: ubuntu_update-install_docker
 #+BEGIN_SRC sh
 # Remove old version
@@ -52,10 +71,7 @@ $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 $ sudo apt-key fingerprint 0EBFCD88
 #+END_SRC
-
-*** Based on architectures
-**** x86_64 / amd64
-#+NAME: ubuntu_amd64-install_docker
+- x86_64 / amd64
 #+BEGIN_SRC sh
 $ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -63,8 +79,7 @@ $ sudo add-apt-repository \
    stable"
 #+END_SRC
 
-**** armhf
-#+NAME: ubuntu_amd64-install_docker
+- armhf
 #+BEGIN_SRC sh
 $ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -72,8 +87,7 @@ $ sudo add-apt-repository \
    stable"
 #+END_SRC
 
-**** IBM Power
-#+NAME: ubuntu_amd64-install_docker
+- IBM Power
 #+BEGIN_SRC sh
 $ sudo add-apt-repository \
    "deb [arch=ppc64el] https://download.docker.com/linux/ubuntu \
@@ -81,21 +95,46 @@ $ sudo add-apt-repository \
    stable"
 #+END_SRC
 
-**** IBM Z (s390x)
-#+NAME: ubuntu_amd64-install_docker
+- IBM Z (s390x)
 #+BEGIN_SRC sh
 $ sudo add-apt-repository \
    "deb [arch=s390x] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 #+END_SRC
-*** Install Docker-CE
-#+NAME: ubuntu-install_docker
+
 #+BEGIN_SRC sh
 $ sudo apt-get install docker-ce
 #+END_SRC
 
-** Mac
+*** Fedora
+   	:PROPERTIES: 
+   	:END:      
+
+#+BEGIN_SRC sh
+$ yum update
+$ yum install docker
+$ systemctl enable docker.service
+$ systemctl start docker.service
+$ systemctl status docker.service
+#+END_SRC
+
+*** Redhat
+   	:PROPERTIES: 
+   	:END:      
+#+BEGIN_SRC sh
+$ subscription-manager register –username=<username> –auto-attach
+$ subscription-manager repos –enable=rhel-7-server-extras-rpms
+$ subscription-manager repos –enable=rhel-7-server-optimal-rpms
+$ yum update
+$ reboot
+$ yum install docker
+$ systemctl start docker.service
+$ systemctl enable docker.service
+$ systemctl status docker.service
+#+END_SRC
+
+*** Mac
 - [[https://download.docker.com/mac/stable/Docker.dmg][Docker.dmg(Official)]]
 
 ** 安装的软件包
@@ -114,25 +153,57 @@ $ sudo apt-get install docker-ce
 $ sudo docker run hello-world
 #+END_SRC
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+#+BEGIN_EXAMPLE
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull complete
+Digest: sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7
+Status: Downloaded newer image for hello-world:latest
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://cloud.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+#+END_EXAMPLE
+
+#+BEGIN_SRC sh
+$ sudo docker --version
+Docker version 17.12.0-ce, build c97c6d6
+#+END_SRC
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+docker [OPTIONS] COMMAND [ARG...]
+
+docker [ --help | -v | --version ]
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -144,16 +215,131 @@ $ sudo docker run hello-world
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
 
+- {{{option(--config)}}} {{{argument(string)}}} : 
+Location of client config files (default "/root/.docker")
+- {{{option(-D)}}}, {{{option(--debug)}}} :
+Enable debug mode
+- {{{option(--help)}}} :
+Print usage
+- {{{option(-H)}}}, {{{option(--host)}}} {{{argument(value)}}} :
+Daemon socket(s) to connect to (default [])
+- {{{option(-l)}}}, {{{option(--log-level)}}} {{{argument(string)}}} :
+Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+- {{{option(--tls)}}} :
+Use TLS; implied by --tlsverify
+- {{{option(--tlscacert)}}} {{{argument(string)}}} :
+Trust certs signed only by this CA (default "/root/.docker/ca.pem")
+- {{{option(--tlscert)}}} {{{argument(string)}}} :
+Path to TLS certificate file (default "/root/.docker/cert.pem")
+- {{{option(--tlskey)}}} {{{argument(string)}}} :
+Path to TLS key file (default "/root/.docker/key.pem")
+- {{{option(--tlsverify)}}} :
+Use TLS and verify the remote
+- {{{option(-v)}}}, {{{option(--version)}}} :
+Print version information and quit
+
+** 环境变量
+   :PROPERTIES: 
+   :CUSTOM_ID: environment-variables
+   :LANG: zh
+   :END:      
+
+- {{{variable(DOCKER_API_VERSION)}}} :
+The API version to use (e.g. 1.19)
+- {{{variable(DOCKER_CONFIG)}}} :
+The location of your client configuration files.
+- {{{variable(DOCKER_CERT_PATH)}}} :
+The location of your authentication keys.
+- {{{variable(DOCKER_DRIVER)}}} :
+The graph driver to use.
+- {{{variable(DOCKER_HOST)}}} :
+Daemon socket to connect to.
+- {{{variable(DOCKER_NOWARN_KERNEL_VERSION)}}} :
+Prevent warnings that your Linux kernel is unsuitable for Docker.
+- {{{variable(DOCKER_RAMDISK)}}} :
+If set this will disable ‘pivot_root’.
+- {{{variable(DOCKER_TLS_VERIFY)}}} :
+When set Docker uses TLS and verifies the remote.
+- {{{variable(DOCKER_CONTENT_TRUST)}}} :
+When set Docker uses notary to sign and verify images. Equates to --disable-content-trust=false for build, create, pull, push, run.
+- {{{variable(DOCKER_CONTENT_TRUST_SERVER)}}} :
+The URL of the Notary server to use. This defaults to the same URL as the registry.
+- {{{variable(DOCKER_HIDE_LEGACY_COMMANDS)}}} :
+When set, Docker hides “legacy” top-level commands (such as docker rm, and docker pull) in docker help output, and only Management commands per object-type (e.g., docker container) are printed. This may become the default in a future release, at which point this environment-variable is removed.
+- {{{variable(DOCKER_TMPDIR)}}} :
+Location for temporary Docker files.
+- {{{variable(HTTP_PROXY)}}}
+- {{{variable(HTTPS_PROXY)}}}
+- {{{variable(NO_PROXY)}}}
+** 命令
+   :PROPERTIES: 
+   :CUSTOM_ID: commands
+   :LANG: zh
+   :END:      
+
+| 命令| 说明|
+|------------------------+-------------------------------------------------------------------------------|
+| attach                 | Attach local standard input, output, and error streams to a running container |
+| build                  | Build an image from a Dockerfile                                              |
+| checkpoint             | Manage checkpoints                                                            |
+| commit                 | Create a new image from a container’s changes                                |
+| config                 | Manage Docker configs                                                         |
+| container              | Manage containers                                                             |
+| cp                     | Copy files/folders between a container and the local filesystem               |
+| create                 | Create a new container                                                        |
+| deploy                 | Deploy a new stack or update an existing stack                                |
+| diff                   | Inspect changes to files or directories on a container’s filesystem          |
+| events                 | Get real time events from the server                                          |
+| exec                   | Run a command in a running container                                          |
+| export                 | Export a container’s filesystem as a tar archive                             |
+| history                | Show the history of an image                                                  |
+| image                  | Manage images                                                                 |
+| images                 | List images                                                                   |
+| import                 | Import the contents from a tarball to create a filesystem image               |
+| info                   | Display system-wide information                                               |
+| inspect                | Return low-level information on Docker objects                                |
+| kill                   | Kill one or more running containers                                           |
+| load                   | Load an image from a tar archive or STDIN                                     |
+| login                  | Log in to a Docker registry                                                   |
+| logout                 | Log out from a Docker registry                                                |
+| logs                   | Fetch the logs of a container                                                 |
+| network                | Manage networks                                                               |
+| node                   | Manage Swarm nodes                                                            |
+| pause                  | Pause all processes within one or more containers                             |
+| plugin                 | Manage plugins                                                                |
+| port                   | List port mappings or a specific mapping for the container                    |
+| ps                     | List containers                                                               |
+| pull                   | Pull an image or a repository from a registry                                 |
+| push                   | Push an image or a repository to a registry                                   |
+| rename                 | Rename a container                                                            |
+| restart                | Restart one or more containers                                                |
+| rm                     | Remove one or more containers                                                 |
+| rmi                    | Remove one or more images                                                     |
+| {{{link(docker/run)}}} | Run a command in a new container                                              |
+| save                   | Save one or more images to a tar archive (streamed to STDOUT by default)      |
+| search                 | Search the Docker Hub for images                                              |
+| secret                 | Manage Docker secrets                                                         |
+| service                | Manage services                                                               |
+| stack                  | Manage Docker stacks                                                          |
+| start                  | Start one or more stopped containers                                          |
+| stats                  | Display a live stream of container(s) resource usage statistics               |
+| stop                   | Stop one or more running containers                                           |
+| swarm                  | Manage Swarm                                                                  |
+| system                 | Manage Docker                                                                 |
+| tag                    | Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE                         |
+| top                    | Display the running processes of a container                                  |
+| trust                  | Manage trust on Docker images (experimental)                                  |
+| unpause                | Unpause all processes within one or more containers                           |
+| update                 | Update configuration of one or more containers                                |
+| version                | Show the Docker version information                                           |
+| volume                 | Manage volumes                                                                |
+| wait                   | Block until one or more containers stop, then print their exit codes          |
 # ** Examples
 #    :PROPERTIES: 
 #    :CUSTOM_ID: examples
