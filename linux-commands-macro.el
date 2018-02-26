@@ -227,13 +227,13 @@
   (setq link (lc-macro/arg-trim link))
   (setq name (or (lc-macro/arg-trim name) (replace-regexp-in-string "/" "-" link)))
   (setq link (format "%s/%s.org"
-					 (file-relative-name lc-core/base-dir (file-name-directory (buffer-file-name)))
+					 (file-relative-name lc-core/base-dir (file-name-directory lc-core/current-filename))
 					 link))
   (format "[[%s][%s]]" link name))
 
 (defun lc-macro/image--get-local-path (path)
   (expand-file-name
-   (concat (file-name-as-directory (file-relative-name (file-name-base (buffer-file-name)) lc-core/base-dir)) "/" path)
+   (concat (file-name-as-directory (file-relative-name (file-name-base lc-core/current-filename) lc-core/base-dir)) "/" path)
    (expand-file-name "assets/images" lc-core/base-dir)))
 
 (defun lc-macro/image (path &optional name classes align with-meta)
@@ -249,7 +249,7 @@
   (when (and (stringp align) (equal align "center"))
 	(push "center" classes)
 	(setq align nil))
-  (let* ((cur-name (file-name-base (buffer-file-name)))
+  (let* ((cur-name (file-name-base lc-core/current-filename))
 		 (base-dir lc-core/base-dir)
 		 (dir-path (file-name-as-directory (file-relative-name cur-name base-dir)))
 		 (img-path (concat lc-core/url
