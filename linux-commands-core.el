@@ -19,6 +19,7 @@
 (defvar lc-core/base-dir nil)
 (defvar lc-core/base-url nil)
 (defvar lc-core/language nil)
+(defvar lc-core/support-languages nil)
 
 (defvar lc-core/current-filename nil)
 (defvar lc-core/current-contents nil)
