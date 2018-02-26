@@ -1,4 +1,4 @@
-# Created 2018-02-26 Mon 07:21
+# Created 2018-02-26 Mon 08:17
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -29,7 +29,7 @@
 #+MACRO: BUILTIN (eval (lc-macro/builtin))
 #+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
 #+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
-#+MACRO: META (eval (format "%s\n%s" (lc-macro/meta) (lc-macro/main-image)))
+#+MACRO: META (eval (format "%s\n%s\n%s" (lc-macro/meta) (lc-macro/hreflang) (lc-macro/main-image)))
 #+MACRO: IMAGE (eval (lc-macro/image "$1" "$2" "$3"))
 #+MACRO: IMAGE_CENTER (eval (lc-macro/image "$1" "$2" "$3" "center"))
 #+MACRO: IMAGE_RIGHT (eval (lc-macro/image "$1" "$2" "$3" "right"))
@@ -57,6 +57,15 @@
 #+HTML_HEAD: <script type="text/javascript" src="/dist/assets/js.js"></script>
 
 #+HTML_HEAD: <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/" hreflang="x-default" />
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/en/" hreflang="x-default" />
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/ko/" hreflang="ko" />
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/en/" hreflang="en" />
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/ja/" hreflang="ja" />
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/es/" hreflang="es" />
+#+HTML_HEAD: <link rel="alternate" href="http://linux-command.org/zh/" hreflang="zh" />
+
 
 [[https://travis-ci.org/mrlee23/LinuxCommands][https://travis-ci.org/mrlee23/LinuxCommands.svg]]
 [[https://github.com/mrlee23/LinuxCommands/blob/master/LICENSE][https://img.shields.io/github/license/mrlee23/LinuxCommands.svg]]
