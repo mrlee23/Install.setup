@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-26 Mon 08:18 -->
+<!-- 2018-02-26 Mon 08:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>fsck</title>
@@ -201,13 +201,11 @@
 <meta property="og:description" content="Check and repair a Linux filesystem. ">
 <meta name="twitter:title" content="fsck - Linux Commands">
 <meta name="twitter:description" content="Check and repair a Linux filesystem. ">
-<link rel="alternate" href="http://linux-command.org/" hreflang="x-default" />
-<link rel="alternate" href="http://linux-command.org/en/" hreflang="x-default" />
-<link rel="alternate" href="http://linux-command.org/ko/" hreflang="ko" />
-<link rel="alternate" href="http://linux-command.org/en/" hreflang="en" />
-<link rel="alternate" href="http://linux-command.org/ja/" hreflang="ja" />
-<link rel="alternate" href="http://linux-command.org/es/" hreflang="es" />
-<link rel="alternate" href="http://linux-command.org/zh/" hreflang="zh" />
+<link rel="alternate" href="http://linux-command.org/ko/fsck" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/en/fsck" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/ja/fsck" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/es/fsck" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/zh/fsck" hreflang="zh" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -280,8 +278,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org9d8c326" class="outline-2">
-<h2 id="overview"><a id="org9d8c326"></a>Overview</h2>
+<div id="outline-container-org26aa80b" class="outline-2">
+<h2 id="overview"><a id="org26aa80b"></a>Overview</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 Check and repair a Linux filesystem.
@@ -289,13 +287,13 @@ Check and repair a Linux filesystem.
 </div>
 </div>
 
-<div id="outline-container-org61a860f" class="outline-2">
-<h2 id="how-to-install"><a id="org61a860f"></a>How to Install</h2>
+<div id="outline-container-org3b27114" class="outline-2">
+<h2 id="how-to-install"><a id="org3b27114"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orgaacd6be" class="outline-3">
-<h3 id="install"><a id="orgaacd6be"></a>Install</h3>
+<div id="outline-container-org0e278f0" class="outline-3">
+<h3 id="install"><a id="org0e278f0"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 <p>
 This is builtin command.
@@ -304,13 +302,13 @@ This is builtin command.
 </div>
 </div>
 
-<div id="outline-container-orgb5cbb98" class="outline-2">
-<h2 id="usage"><a id="orgb5cbb98"></a>Usage</h2>
+<div id="outline-container-org46b4ab9" class="outline-2">
+<h2 id="usage"><a id="org46b4ab9"></a>Usage</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org5724b08" class="outline-3">
-<h3 id="syntax"><a id="org5724b08"></a>Syntax</h3>
+<div id="outline-container-org7ae9a9f" class="outline-3">
+<h3 id="syntax"><a id="org7ae9a9f"></a>Syntax</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">fsck [-lrsAVRTMNP] [-C [fd]] [-t fstype] [filesystem ... ] [--] [fs-specific-options]
@@ -319,8 +317,8 @@ This is builtin command.
 </div>
 </div>
 
-<div id="outline-container-orgf328b25" class="outline-3">
-<h3 id="description"><a id="orgf328b25"></a>Description</h3>
+<div id="outline-container-org5756887" class="outline-3">
+<h3 id="description"><a id="org5756887"></a>Description</h3>
 <div class="outline-text-3" id="text-description">
 <ul class="org-ul">
 <li>fsck  is  used  to  check  and optionally repair one or more Linux filesystems.</li>
@@ -409,8 +407,8 @@ Please see the filesystem-specific checker manual pages for further details.
 </div>
 </div>
 
-<div id="outline-container-orgf77e501" class="outline-3">
-<h3 id="configuration"><a id="orgf77e501"></a>Configuration</h3>
+<div id="outline-container-org48617ce" class="outline-3">
+<h3 id="configuration"><a id="org48617ce"></a>Configuration</h3>
 <div class="outline-text-3" id="text-configuration">
 <p>
 <span class="org-programming-file">/etc/fstab</span>
@@ -426,8 +424,8 @@ Please see the filesystem-specific checker manual pages for further details.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7541c2b" class="outline-3">
-<h3 id="options"><a id="org7541c2b"></a>Options</h3>
+<div id="outline-container-orgd7b065e" class="outline-3">
+<h3 id="options"><a id="orgd7b065e"></a>Options</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">-l</span> : Create an exclusive flock(2) lock file (/run/fsck/&lt;diskname&gt;.lock) for whole-disk device.  This option can be used with one device only (this means that <span class="org-programming-option">-A</span> and <span class="org-programming-option">-l</span>
@@ -463,7 +461,7 @@ fs-specific-options
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 08:18</p>
+<p class="date">Created: 2018-02-26 Mon 08:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
