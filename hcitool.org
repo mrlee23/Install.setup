@@ -4,15 +4,22 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
+
+Configure Bluetooth connections
+
+** はじめに
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ja
+  :END:    
+
+hcitool is used to configure Bluetooth connections and send some special command to Bluetooth devices.
+If no command is given, or if the option -h is used, hcitool prints some usage information and exits.
 
 # * How to Install
 #   :PROPERTIES: 
@@ -64,25 +71,22 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 構造
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+hcitool [-h]
+hcitool [-i <hciX>] [command [command parameters]]
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +98,379 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** オプション
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ja
+   :END:      
+
+- {{{option(-h)}}} :
+- {{{option(-i)}}} {{{argument(<hciX>)}}} :
+
+** コマンド
+   :PROPERTIES: 
+   :CUSTOM_ID: commands
+   :LANG: ja
+   :END:      
+
+*** dev
+Display local devices
+*** inq
+Inquire remote devices. For each discovered device, Bluetooth device address, clock offset and class are printed.
+*** scan
+Inquire remote devices. For each discovered device, device name are printed.
+*** name <bdaddr>
+
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+name <bdaddr>
+#+END_SRC
+
+
+Print device name of remote device with Bluetooth address bdaddr.
+*** info <bdaddr>
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+info <bdaddr>
+#+END_SRC
+
+ Print device name, version and supported features of remote device with Bluetooth address bdaddr.
+*** spinq 
+
+Start periodic inquiry process. No inquiry results are printed.
+*** epinq
+Exit periodic inquiry process.
+*** cmd
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+cmd <ogf> <ocf> [parameters]
+#+END_SRC
+
+ Submit an arbitrary HCI command to local device. ogf, ocf and parameters are hexadecimal bytes.
+*** con
+Display active baseband connections
+*** cc
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+cc [--role=m|s] [--pkt-type=<ptype>] <bdaddr>
+#+END_SRC
+
+ Create baseband connection to remote device with Bluetooth address bdaddr. Option --pkt-type specifies a list of allowed packet types. <ptype> is a comma-sepa‐
+ rated list of packet types, where the possible packet types are DM1, DM3, DM5, DH1, DH3, DH5, HV1, HV2, HV3. Default is to allow all packet types. Option --role
+ can have value m (do not allow role switch, stay master) or s (allow role switch, become slave if the peer asks to become master). Default is m.
+*** dc
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+dc <bdaddr> [reason]
+#+END_SRC
+
+ Delete baseband connection from remote device with Bluetooth address bdaddr. The reason can be one of the Bluetooth HCI error codes. Default is 19 for user ended
+ connections. The value must be given in decimal.
+*** sr
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+sr <bdaddr> <role>
+#+END_SRC
+
+ Switch role for the baseband connection from the remote device to master or slave.
+*** cpt
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+cpt <bdaddr> <packet types>
+#+END_SRC
+
+ Change packet types for baseband connection to device with Bluetooth address bdaddr. packet types is a comma-separated list of packet types, where the possible
+ packet types are DM1, DM3, DM5, DH1, DH3, DH5, HV1, HV2, HV3.
+*** rssi
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+rssi <bdaddr>
+#+END_SRC
+
+ Display received signal strength information for the connection to the device with Bluetooth address bdaddr.
+*** lq
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lq <bdaddr>
+#+END_SRC
+
+ Display link quality for the connection to the device with Bluetooth address bdaddr.
+*** tpl
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+tpl <bdaddr> [type]
+#+END_SRC
+
+ Display transmit power level for the connection to the device with Bluetooth address bdaddr. The type can be 0 for the current transmit power level (which is
+ default) or 1 for the maximum transmit power level.
+*** afh
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+afh <bdaddr>
+#+END_SRC
+
+ Display AFH channel map for the connection to the device with Bluetooth address bdaddr.
+*** lp
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lp <bdaddr> [value]
+#+END_SRC
+
+ With no value, displays link policy settings for the connection to the device with Bluetooth address bdaddr. If value is given, sets the link policy settings for
+ that connection to value. Possible values are RSWITCH, HOLD, SNIFF and PARK.
+*** lst
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lst <bdaddr> [value]
+#+END_SRC
+
+ With no value, displays link supervision timeout for the connection to the device with Bluetooth address bdaddr. If value is given, sets the link supervision
+ timeout for that connection to value slots, or to infinite if value is 0.
+*** auth
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+auth <bdaddr>
+#+END_SRC
+
+ Request authentication for the device with Bluetooth address bdaddr.
+*** enc
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+enc <bdaddr> [encrypt enable]
+#+END_SRC
+
+ Enable or disable the encryption for the device with Bluetooth address bdaddr.
+*** key
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+key <bdaddr>
+#+END_SRC
+
+ Change the connection link key for the device with Bluetooth address bdaddr.
+*** clkoff
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+clkoff <bdaddr>
+#+END_SRC
+
+ Read the clock offset for the device with Bluetooth address bdaddr.
+*** clock
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+clock [bdaddr] [which clock]
+#+END_SRC
+
+ Read the clock for the device with Bluetooth address bdaddr. The clock can be 0 for the local clock or 1 for the piconet clock (which is default).
+*** lescan
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lescan [--privacy] [--passive] [--whitelist] [--discovery=g|l] [--duplicates]
+#+END_SRC
+
+ Start LE scan
+*** leinfo
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+leinfo [--static] [--random] <bdaddr>
+#+END_SRC
+
+ Get LE remote information
+*** lewladd
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lewladd [--random] <bdaddr>
+#+END_SRC
+
+ Add device to LE White List
+*** lewlrm
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lewlrm <bdaddr>
+#+END_SRC
+
+ Remove device from LE White List
+*** lewlsz
+Read size of LE White List
+*** lewlclr
+ Clear LE White List
+*** lerladd
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lerladd [--local irk] [--peer irk] [--random] <bdaddr>
+#+END_SRC
+
+ Add device to LE Resolving List
+*** lerlrm
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lerlrm <bdaddr>
+#+END_SRC
+
+ Remove device from LE Resolving List
+*** lerlclr
+ Clear LE Resolving List
+*** lerlsz
+Read size of LE Resolving List
+*** lerlon
+Enable LE Address Resolution
+*** lerloff
+ Disable LE Address Resolution
+*** lecc
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lecc [--static] [--random] <bdaddr> | [--whitelist]
+#+END_SRC
+
+ Create a LE Connection
+*** ledc
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+ledc <handle> [reason]
+#+END_SRC
+
+ Disconnect a LE Connection
+*** lecup
+**** 構造
+   	 :PROPERTIES: 
+   	 :CUSTOM_ID: syntax
+   	 :LANG: ja
+   	 :END:      
+
+#+BEGIN_SRC sh
+lecup <handle> <min> <max> <latency> <timeout>
+#+END_SRC
+
+ LE Connection Update
 
 # ** Examples
 #    :PROPERTIES: 
