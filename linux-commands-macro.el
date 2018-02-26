@@ -151,6 +151,19 @@
 			  "\n")
 	  )))
 
+(defun lc-macro/hreflang ()
+  (concat
+   "\n"
+   (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/\" hreflang=\"x-default\" />\n" lc-core/url)
+   (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/en/\" hreflang=\"x-default\" />\n" lc-core/url)
+   (mapconcat
+	(lambda (lang)
+	  (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/\" hreflang=\"%s\" />" lc-core/url lang lang))
+	lc-core/support-languages
+	"\n")
+   "\n")
+  )
+
 (defun lc-macro/builtin ()
   (case (lc-core/get-current-language)
 	(en
