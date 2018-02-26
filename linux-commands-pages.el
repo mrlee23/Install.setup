@@ -77,9 +77,9 @@
 		   :base-extension "org"
 		   :auto-index nil
 		   :exclude: ,EXCLUDE_DIR
-		   :index-filename nil
+		   :index-filename "sitemap.html"
 		   :index-title nil
-		   :auto-sitemap nil
+		   :auto-sitemap t
 		   :publishing-directory ,TARGET_DIR
 		   :publishing-function pages-publish-to-html
 		   :language ,LANG
