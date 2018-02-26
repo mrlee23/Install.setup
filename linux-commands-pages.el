@@ -21,6 +21,7 @@
 (require 'linux-commands-core)
 
 (require 'org)
+(require 'ox-rss)
 (require 'htmlize)
 (require 'org-multilingual)
 (require 'seq)
@@ -64,7 +65,7 @@
   (lc-core/init-base BASE_DIR)
   (lc-core/init-lang LANG)
   (setq org-publish-project-alist
-		`(("LinuxCommands-static"
+		`(("Static"
 		   :base-directory ,BASE_DIR
 		   :base-extension ,(mapconcat 'symbol-name pages--multilingual-static-extensions "\\|")
 		   :recursive t
@@ -72,14 +73,13 @@
 		   :publishing-directory ,(expand-file-name TARGET_DIR)
 		   :publishing-function org-publish-attachment
 		   )
-		  ("LinuxCommands-org"
+		  ("Org"
 		   :base-directory ,BASE_DIR
 		   :base-extension "org"
 		   :auto-index nil
 		   :exclude: ,EXCLUDE_DIR
-		   :index-filename "sitemap.html"
-		   :index-title nil
 		   :auto-sitemap t
+		   :sitemap-title "Linux Command - Sitemap"
 		   :publishing-directory ,TARGET_DIR
 		   :publishing-function pages-publish-to-html
 		   :language ,LANG
@@ -88,8 +88,17 @@
 		   :recursive t
 		   :auto-preamble nil
 		   )
+		  ("RSS"
+		   :base-directory ,BASE_DIR
+		   :base-extension "org"
+		   :publishing-directory ,TARGET_DIR
+		   :publishing-function org-rss-publish-to-rss
+		   :rss-extension "xml"
+		   :include ("sitemap.org")
+		   :exclude ".*"
+		   )
 		  ("LinuxCommands"
-		   :components ("LinuxCommands-static" "LinuxCommands-org"))
+		   :components ("Static" "Org" "RSS"))
 		  )))
 
 (defun pages--multilingual-cleanup (dir)

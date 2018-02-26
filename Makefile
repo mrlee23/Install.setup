@@ -77,6 +77,7 @@ define load_paths
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
+(add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/contrib/lisp")
 (load-file "$(EMACS_DEPS_DIR)/org-mode/lisp/requirements.el")
 (message "Org version: %s" org-version)
 endef
