@@ -295,7 +295,6 @@
 	  (if (file-exists-p png)
 		  (setq path png)))
 	(message "%s" path)
-	(message "%s" (lc-macro/image (file-name-nondirectory path) "main" "main" "right" t))
 	(if (and (stringp path) (file-exists-p path))
 		(lc-macro/image (file-name-nondirectory path) "main" "main" "right" t) "")))
 
