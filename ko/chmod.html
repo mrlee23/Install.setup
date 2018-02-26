@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-26 Mon 09:26 -->
+<!-- 2018-02-26 Mon 11:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>chmod</title>
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -271,10 +272,10 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">구조</a></li>
 <li><a href="#description">설명</a>
 <ul>
-<li><a href="#orgb3b5669">Reference</a></li>
-<li><a href="#orgd1670da">Operator</a></li>
-<li><a href="#orge95eb47">8 Bits mode</a></li>
-<li><a href="#orga1363d2">Symbol mode</a></li>
+<li><a href="#org902791f">Reference</a></li>
+<li><a href="#orgc82257f">Operator</a></li>
+<li><a href="#orge45376e">8 Bits mode</a></li>
+<li><a href="#org5d41ddd">Symbol mode</a></li>
 </ul>
 </li>
 <li><a href="#options">옵션</a></li>
@@ -284,8 +285,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org9eb0f78" class="outline-2">
-<h2 id="overview"><a id="org9eb0f78"></a>개요</h2>
+<div id="outline-container-org30873d0" class="outline-2">
+<h2 id="overview"><a id="org30873d0"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 파일 및 디렉토리의 권한을 변경합니다.
@@ -293,13 +294,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org47ca99e" class="outline-2">
-<h2 id="how-to-install"><a id="org47ca99e"></a>설치 방법</h2>
+<div id="outline-container-orge74e4ed" class="outline-2">
+<h2 id="how-to-install"><a id="orge74e4ed"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orgf82c612" class="outline-3">
-<h3 id="install"><a id="orgf82c612"></a>설치</h3>
+<div id="outline-container-org3938f67" class="outline-3">
+<h3 id="install"><a id="org3938f67"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 <p>
 기본으로 내장되어 있는 명령어입니다.
@@ -308,19 +309,19 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org5d8404e" class="outline-2">
-<h2 id="usage"><a id="org5d8404e"></a>사용법</h2>
+<div id="outline-container-org923fa5a" class="outline-2">
+<h2 id="usage"><a id="org923fa5a"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-orgc14ee89" class="outline-3">
-<h3 id="syntax"><a id="orgc14ee89"></a>구조</h3>
+<div id="outline-container-orgf8f1340" class="outline-3">
+<h3 id="syntax"><a id="orgf8f1340"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
-<pre class="src src-sh">chmod [OPTION]... MODE[,MODE]... FILE...)}}}
+<pre><code class="src src-sh">chmod [OPTION]... MODE[,MODE]... FILE...)}}}
 chmod [OPTION]... OCTAL-MODE FILE...)}}}    
 chmod [OPTION]... --reference=RFILE FILE...)
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -329,14 +330,14 @@ chmod [OPTION]... --reference=RFILE FILE...)
 </div>
 </div>
 
-<div id="outline-container-org2e947d8" class="outline-3">
-<h3 id="description"><a id="org2e947d8"></a>설명</h3>
+<div id="outline-container-orgb764a90" class="outline-3">
+<h3 id="description"><a id="orgb764a90"></a>설명</h3>
 <div class="outline-text-3" id="text-description">
 </div>
 
-<div id="outline-container-orgb3b5669" class="outline-4">
-<h4 id="orgb3b5669">Reference</h4>
-<div class="outline-text-4" id="text-orgb3b5669">
+<div id="outline-container-org902791f" class="outline-4">
+<h4 id="org902791f">Reference</h4>
+<div class="outline-text-4" id="text-org902791f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -383,9 +384,9 @@ chmod [OPTION]... --reference=RFILE FILE...)
 </div>
 </div>
 
-<div id="outline-container-orgd1670da" class="outline-4">
-<h4 id="orgd1670da">Operator</h4>
-<div class="outline-text-4" id="text-orgd1670da">
+<div id="outline-container-orgc82257f" class="outline-4">
+<h4 id="orgc82257f">Operator</h4>
+<div class="outline-text-4" id="text-orgc82257f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -420,9 +421,9 @@ chmod [OPTION]... --reference=RFILE FILE...)
 </div>
 </div>
 
-<div id="outline-container-orge95eb47" class="outline-4">
-<h4 id="orge95eb47">8 Bits mode</h4>
-<div class="outline-text-4" id="text-orge95eb47">
+<div id="outline-container-orge45376e" class="outline-4">
+<h4 id="orge45376e">8 Bits mode</h4>
+<div class="outline-text-4" id="text-orge45376e">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -504,9 +505,9 @@ chmod [OPTION]... --reference=RFILE FILE...)
 </div>
 </div>
 
-<div id="outline-container-orga1363d2" class="outline-4">
-<h4 id="orga1363d2">Symbol mode</h4>
-<div class="outline-text-4" id="text-orga1363d2">
+<div id="outline-container-org5d41ddd" class="outline-4">
+<h4 id="org5d41ddd">Symbol mode</h4>
+<div class="outline-text-4" id="text-org5d41ddd">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -566,8 +567,8 @@ chmod [OPTION]... --reference=RFILE FILE...)
 </div>
 </div>
 
-<div id="outline-container-org3b3ed70" class="outline-3">
-<h3 id="options"><a id="org3b3ed70"></a>옵션</h3>
+<div id="outline-container-orgafa01e6" class="outline-3">
+<h3 id="options"><a id="orgafa01e6"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">-c</span>, <span class="org-programming-option">--changes</span> :
@@ -587,7 +588,7 @@ RFILE의 모드를 사용한다.</li>
 도움말</li>
 <li><span class="org-programming-option">--version</span> :
 버전</li>
-<li>MODE 형태 : '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'</li>
+<li>MODE 형태 : '[ugoa]*([-<del>=]([rwxXst]*|[ugo]))+|[-+=][0-7]</del>'</li>
 </ul>
 </div>
 </div>
@@ -596,7 +597,7 @@ RFILE의 모드를 사용한다.</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-21</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 09:26</p>
+<p class="date">Created: 2018-02-26 Mon 11:07</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

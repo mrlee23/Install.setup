@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-26 Mon 09:26 -->
+<!-- 2018-02-26 Mon 11:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>alias</title>
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -263,7 +264,7 @@ for the JavaScript code in this tag.
 <li><a href="#overview">Overview</a>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#org929edfd">Feature</a></li>
+<li><a href="#orgfbeff7e">Feature</a></li>
 </ul>
 </li>
 <li><a href="#usage">Usage</a>
@@ -279,42 +280,42 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org7b6ed7a" class="outline-2">
-<h2 id="overview"><a id="org7b6ed7a"></a>Overview</h2>
+<div id="outline-container-org52e0689" class="outline-2">
+<h2 id="overview"><a id="org52e0689"></a>Overview</h2>
 <div class="outline-text-2" id="text-overview">
 </div>
 
-<div id="outline-container-orgfc52744" class="outline-3">
-<h3 id="introduction"><a id="orgfc52744"></a>Introduction</h3>
+<div id="outline-container-org55028ca" class="outline-3">
+<h3 id="introduction"><a id="org55028ca"></a>Introduction</h3>
 <div class="outline-text-3" id="text-introduction">
 </div>
 </div>
 
 
-<div id="outline-container-org929edfd" class="outline-3">
-<h3 id="org929edfd">Feature</h3>
-<div class="outline-text-3" id="text-org929edfd">
+<div id="outline-container-orgfbeff7e" class="outline-3">
+<h3 id="orgfbeff7e">Feature</h3>
+<div class="outline-text-3" id="text-orgfbeff7e">
 </div>
 </div>
 </div>
 
-<div id="outline-container-org16e353b" class="outline-2">
-<h2 id="usage"><a id="org16e353b"></a>Usage</h2>
+<div id="outline-container-orga117883" class="outline-2">
+<h2 id="usage"><a id="orga117883"></a>Usage</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-orgd124faf" class="outline-3">
-<h3 id="syntax"><a id="orgd124faf"></a>Syntax</h3>
+<div id="outline-container-orgfe26e38" class="outline-3">
+<h3 id="syntax"><a id="orgfe26e38"></a>Syntax</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
-<pre class="src src-sh">alias [-p] [name[=value] ...]
-</pre>
+<pre><code class="src src-sh">alias [-p] [name[=value] ...]
+</code></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgabbfffa" class="outline-3">
-<h3 id="configuration"><a id="orgabbfffa"></a>Configuration</h3>
+<div id="outline-container-orgc15d79d" class="outline-3">
+<h3 id="configuration"><a id="orgc15d79d"></a>Configuration</h3>
 <div class="outline-text-3" id="text-configuration">
 <p>
 You can configure at <span class="org-programming-file">~/.bash_profile</span> or <span class="org-programming-file">~/.bashrc</span>
@@ -322,8 +323,8 @@ You can configure at <span class="org-programming-file">~/.bash_profile</span> o
 </div>
 </div>
 
-<div id="outline-container-org724aeac" class="outline-3">
-<h3 id="options"><a id="org724aeac"></a>Options</h3>
+<div id="outline-container-org7887c43" class="outline-3">
+<h3 id="options"><a id="org7887c43"></a>Options</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">-p</span></li>
@@ -331,19 +332,19 @@ You can configure at <span class="org-programming-file">~/.bash_profile</span> o
 </div>
 </div>
 
-<div id="outline-container-orgf1fd45b" class="outline-3">
-<h3 id="examples"><a id="orgf1fd45b"></a>Examples</h3>
+<div id="outline-container-orgd9e16f8" class="outline-3">
+<h3 id="examples"><a id="orgd9e16f8"></a>Examples</h3>
 <div class="outline-text-3" id="text-examples">
 <div class="org-src-container">
-<pre class="src src-sh">$ alias <span style="font-weight: bold; font-style: italic;">cl</span>=<span style="font-style: italic;">'clear'</span>
+<pre><code class="src src-sh">$ alias <span style="font-weight: bold; font-style: italic;">cl</span>=<span style="font-style: italic;">'clear'</span>
 $ alias <span style="font-weight: bold; font-style: italic;">ll</span>=<span style="font-style: italic;">'ls -l'</span>
 $ alias <span style="font-weight: bold; font-style: italic;">rm</span>=<span style="font-style: italic;">'rm -i'</span>
-</pre>
+</code></pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-sh"> $ ll
-</pre>
+<pre><code class="src src-sh"> $ ll
+</code></pre>
 </div>
 
 <pre class="example">
@@ -362,8 +363,8 @@ $ alias <span style="font-weight: bold; font-style: italic;">rm</span>=<span sty
 </div>
 </div>
 
-<div id="outline-container-org9ae9fb5" class="outline-2">
-<h2 id="seealso"><a id="org9ae9fb5"></a>See also</h2>
+<div id="outline-container-org13be580" class="outline-2">
+<h2 id="seealso"><a id="org13be580"></a>See also</h2>
 <div class="outline-text-2" id="text-seealso">
 <ul class="org-ul">
 <li><a href="./bash.html">bash</a></li>
@@ -374,7 +375,7 @@ $ alias <span style="font-weight: bold; font-style: italic;">rm</span>=<span sty
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 09:26</p>
+<p class="date">Created: 2018-02-26 Mon 11:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

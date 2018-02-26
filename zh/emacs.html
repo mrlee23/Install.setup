@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2018-02-26 Mon 09:29 -->
+<!-- 2018-02-26 Mon 11:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -272,18 +273,18 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#prerequisites">先决条件</a>
 <ul>
-<li><a href="#org3357bd2">Ubuntu</a></li>
-<li><a href="#orgf542caa">Mac OS</a></li>
+<li><a href="#org22385c0">Ubuntu</a></li>
+<li><a href="#org0f97140">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#install">安装</a>
 <ul>
-<li><a href="#orge57f04c">Ubuntu</a>
+<li><a href="#org9d5a77d">Ubuntu</a>
 <ul>
-<li><a href="#orgbed70e3">Emacs 25</a></li>
+<li><a href="#org871bd6f">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#orga322aa7">Mac OS</a></li>
+<li><a href="#org05fbe44">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#packages">安装的软件包</a></li>
@@ -291,10 +292,10 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">结构</a></li>
 <li><a href="#options">选项</a>
 <ul>
-<li><a href="#org14a11dc">General</a></li>
-<li><a href="#orgc20de1d">Emacs Lisp</a></li>
-<li><a href="#org6294145">Batch mode</a></li>
-<li><a href="#org1ca1eff">with X</a></li>
+<li><a href="#org0020c84">General</a></li>
+<li><a href="#org26935d5">Emacs Lisp</a></li>
+<li><a href="#org778bc72">Batch mode</a></li>
+<li><a href="#orgbf619ff">with X</a></li>
 </ul>
 </li>
 <li><a href="#examples">例子</a></li>
@@ -308,42 +309,42 @@ for the JavaScript code in this tag.
 <img class="org-img main" src="http://linux-command.org/dist/assets/images/emacs/main.png" alt="main" align="right">
 </p>
 
-<div id="outline-container-org4590b00" class="outline-2">
-<h2 id="overview"><a id="org4590b00"></a>摘要</h2>
+<div id="outline-container-orgc8c67a8" class="outline-2">
+<h2 id="overview"><a id="orgc8c67a8"></a>摘要</h2>
 <div class="outline-text-2" id="text-overview">
 </div>
 
 
-<div id="outline-container-orgb53ea43" class="outline-3">
-<h3 id="introduction"><a id="orgb53ea43"></a>介绍</h3>
+<div id="outline-container-org3c74fd5" class="outline-3">
+<h3 id="introduction"><a id="org3c74fd5"></a>介绍</h3>
 <div class="outline-text-3" id="text-introduction">
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org946fde3" class="outline-2">
-<h2 id="how-to-install"><a id="org946fde3"></a>如何安装</h2>
+<div id="outline-container-org4d11967" class="outline-2">
+<h2 id="how-to-install"><a id="org4d11967"></a>如何安装</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orgf63d4e5" class="outline-3">
-<h3 id="prerequisites"><a id="orgf63d4e5"></a>先决条件</h3>
+<div id="outline-container-org696f51d" class="outline-3">
+<h3 id="prerequisites"><a id="org696f51d"></a>先决条件</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-org3357bd2" class="outline-4">
-<h4 id="org3357bd2">Ubuntu</h4>
-<div class="outline-text-4" id="text-org3357bd2">
+<div id="outline-container-org22385c0" class="outline-4">
+<h4 id="org22385c0">Ubuntu</h4>
+<div class="outline-text-4" id="text-org22385c0">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf542caa" class="outline-4">
-<h4 id="orgf542caa">Mac OS</h4>
-<div class="outline-text-4" id="text-orgf542caa">
+<div id="outline-container-org0f97140" class="outline-4">
+<h4 id="org0f97140">Mac OS</h4>
+<div class="outline-text-4" id="text-org0f97140">
 <ul class="org-ul">
 <li><a href="./brew.html">brew</a></li>
 </ul>
@@ -351,40 +352,41 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf89bb52" class="outline-3">
-<h3 id="install"><a id="orgf89bb52"></a>安装</h3>
+<div id="outline-container-org542fbbb" class="outline-3">
+<h3 id="install"><a id="org542fbbb"></a>安装</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-orge57f04c" class="outline-4">
-<h4 id="orge57f04c">Ubuntu</h4>
-<div class="outline-text-4" id="text-orge57f04c">
-</div><div id="outline-container-orgbed70e3" class="outline-5">
-<h5 id="orgbed70e3">Emacs 25</h5>
-<div class="outline-text-5" id="text-orgbed70e3">
+<div id="outline-container-org9d5a77d" class="outline-4">
+<h4 id="org9d5a77d">Ubuntu</h4>
+<div class="outline-text-4" id="text-org9d5a77d">
+</div>
+<div id="outline-container-org871bd6f" class="outline-5">
+<h5 id="org871bd6f">Emacs 25</h5>
+<div class="outline-text-5" id="text-org871bd6f">
 <div class="org-src-container">
-<pre class="src src-sh" id="org8e53b57">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+<pre><code class="src src-sh" id="org47855cd">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
-</pre>
+</code></pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga322aa7" class="outline-4">
-<h4 id="orga322aa7">Mac OS</h4>
-<div class="outline-text-4" id="text-orga322aa7">
+<div id="outline-container-org05fbe44" class="outline-4">
+<h4 id="org05fbe44">Mac OS</h4>
+<div class="outline-text-4" id="text-org05fbe44">
 <div class="org-src-container">
-<pre class="src src-sh" id="orga6dde59">$ brew install emacs
-</pre>
+<pre><code class="src src-sh" id="org3050be2">$ brew install emacs
+</code></pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4c50119" class="outline-3">
-<h3 id="packages"><a id="org4c50119"></a>安装的软件包</h3>
+<div id="outline-container-org6749160" class="outline-3">
+<h3 id="packages"><a id="org6749160"></a>安装的软件包</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>aspell</li>
@@ -475,38 +477,38 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-orga464df6" class="outline-3">
-<h3 id="check"><a id="orga464df6"></a>检查</h3>
+<div id="outline-container-orgc298483" class="outline-3">
+<h3 id="check"><a id="orgc298483"></a>检查</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
-<pre class="src src-sh">$ emacs --version
+<pre><code class="src src-sh">$ emacs --version
 25.3
-</pre>
+</code></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org29e3e4e" class="outline-3">
-<h3 id="syntax"><a id="org29e3e4e"></a>结构</h3>
+<div id="outline-container-org779359d" class="outline-3">
+<h3 id="syntax"><a id="org779359d"></a>结构</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
-<pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
-</pre>
+<pre><code class="src src-sh">emacs [ command-line switches ] [ files ... ]
+</code></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3f117f4" class="outline-3">
-<h3 id="options"><a id="org3f117f4"></a>选项</h3>
+<div id="outline-container-org591b9b6" class="outline-3">
+<h3 id="options"><a id="org591b9b6"></a>选项</h3>
 <div class="outline-text-3" id="text-options">
 <p>
 基于版本<span class="org-programming-version">25.3</span>创建。
 </p>
 </div>
 
-<div id="outline-container-org14a11dc" class="outline-4">
-<h4 id="org14a11dc">General</h4>
-<div class="outline-text-4" id="text-org14a11dc">
+<div id="outline-container-org0020c84" class="outline-4">
+<h4 id="org0020c84">General</h4>
+<div class="outline-text-4" id="text-org0020c84">
 <ul class="org-ul">
 <li><span class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :</li>
 <li>+number :</li>
@@ -539,9 +541,9 @@ Do not display a splash screen during start-up.
 </div>
 </div>
 
-<div id="outline-container-orgc20de1d" class="outline-4">
-<h4 id="orgc20de1d">Emacs Lisp</h4>
-<div class="outline-text-4" id="text-orgc20de1d">
+<div id="outline-container-org26935d5" class="outline-4">
+<h4 id="org26935d5">Emacs Lisp</h4>
+<div class="outline-text-4" id="text-org26935d5">
 <ul class="org-ul">
 <li><span class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :</li>
 <li><span class="org-programming-option">-l</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--load</span> <span class="org-programming-argument">file</span> :</li>
@@ -550,9 +552,9 @@ Do not display a splash screen during start-up.
 </div>
 </div>
 
-<div id="outline-container-org6294145" class="outline-4">
-<h4 id="org6294145">Batch mode</h4>
-<div class="outline-text-4" id="text-org6294145">
+<div id="outline-container-org778bc72" class="outline-4">
+<h4 id="org778bc72">Batch mode</h4>
+<div class="outline-text-4" id="text-org778bc72">
 <ul class="org-ul">
 <li><span class="org-programming-option">--batch</span> :</li>
 <li><span class="org-programming-option">--script</span> <span class="org-programming-argument">file</span> :</li>
@@ -563,9 +565,9 @@ Do not display a splash screen during start-up.
 </div>
 </div>
 
-<div id="outline-container-org1ca1eff" class="outline-4">
-<h4 id="org1ca1eff">with X</h4>
-<div class="outline-text-4" id="text-org1ca1eff">
+<div id="outline-container-orgbf619ff" class="outline-4">
+<h4 id="orgbf619ff">with X</h4>
+<div class="outline-text-4" id="text-orgbf619ff">
 <ul class="org-ul">
 <li><span class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :</li>
 <li><span class="org-programming-option">-T</span> <span class="org-programming-argument">name</span>, --title <span class="org-programming-argument">name</span> :</li>
@@ -599,8 +601,8 @@ Do not display a splash screen during start-up.
 </div>
 </div>
 
-<div id="outline-container-org3cc5949" class="outline-3">
-<h3 id="examples"><a id="org3cc5949"></a>例子</h3>
+<div id="outline-container-org09301d3" class="outline-3">
+<h3 id="examples"><a id="org09301d3"></a>例子</h3>
 <div class="outline-text-3" id="text-examples">
 <ul class="org-ul">
 <li>emacs -Q --batch file.org -f org-html-export-to-html :</li>
@@ -610,8 +612,8 @@ Do not display a splash screen during start-up.
 </div>
 </div>
 
-<div id="outline-container-orgea2c560" class="outline-2">
-<h2 id="references"><a id="orgea2c560"></a>参考</h2>
+<div id="outline-container-orgb7586f6" class="outline-2">
+<h2 id="references"><a id="orgb7586f6"></a>参考</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
@@ -622,7 +624,7 @@ Do not display a splash screen during start-up.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 09:29</p>
+<p class="date">Created: 2018-02-26 Mon 11:15</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
