@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-26 Mon 02:30 -->
+<!-- 2018-02-26 Mon 03:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -201,6 +201,9 @@
 <meta property="og:description" content=" This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code. GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses everything other editors do, and it is easily extensible since its editing commands are written in Lisp. The primary documentation of GNU Emacs is in the GNU Emacs Manual, which you can read using Info, either from Emacs or as a standalone program. Please look there for complete and up-to-date documentation. This man page is updated only when someone volunteers to do so. Emacs has an extensive interactive help facility, but the facility assumes that you know how to manipulate Emacs windows and buffers. CTRL-h or F1 enters the Help facility. Help Tutorial (CTRL-h t) starts an interactive tutorial to quickly teach beginners the fundamentals of Emacs. Help Apropos (CTRL-h a) helps you find a command with a name matching a given pattern, Help Key (CTRL-h k) describes a given key sequence, and Help Function (CTRL-h f) describes a given Lisp function. GNU Emacs's many special packages handle mail reading (RMail) and sending (Mail), outline editing (Outline), compiling (Compile), running subshells within Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy (Doctor), and much more. ">
 <meta name="twitter:title" content="emacs - Linux Commands">
 <meta name="twitter:description" content=" This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code. GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses everything other editors do, and it is easily extensible since its editing commands are written in Lisp. The primary documentation of GNU Emacs is in the GNU Emacs Manual, which you can read using Info, either from Emacs or as a standalone program. Please look there for complete and up-to-date documentation. This man page is updated only when someone volunteers to do so. Emacs has an extensive interactive help facility, but the facility assumes that you know how to manipulate Emacs windows and buffers. CTRL-h or F1 enters the Help facility. Help Tutorial (CTRL-h t) starts an interactive tutorial to quickly teach beginners the fundamentals of Emacs. Help Apropos (CTRL-h a) helps you find a command with a name matching a given pattern, Help Key (CTRL-h k) describes a given key sequence, and Help Function (CTRL-h f) describes a given Lisp function. GNU Emacs's many special packages handle mail reading (RMail) and sending (Mail), outline editing (Outline), compiling (Compile), running subshells within Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy (Doctor), and much more. ">
+<meta name="twitter:image" content="http://linux-command.org/dist/assets/images/emacs/main.png">
+<meta property="twitter:image" content="http://linux-command.org/dist/assets/images/emacs/main.png">
+<meta property="og:image" content="http://linux-command.org/dist/assets/images/emacs/main.png">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -264,18 +267,18 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#prerequisites">Prerequisites</a>
 <ul>
-<li><a href="#org07508cf">Ubuntu</a></li>
-<li><a href="#orgebabbc9">Mac OS</a></li>
+<li><a href="#orgf066535">Ubuntu</a></li>
+<li><a href="#org8f70e4a">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#install">Install</a>
 <ul>
-<li><a href="#org9b7af86">Ubuntu</a>
+<li><a href="#org14e852a">Ubuntu</a>
 <ul>
-<li><a href="#org2b5c080">Emacs 25</a></li>
+<li><a href="#orgabf2b0e">Emacs 25</a></li>
 </ul>
 </li>
-<li><a href="#org0da1316">Mac OS</a></li>
+<li><a href="#org3919e7d">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#packages">Installed Packages</a></li>
@@ -283,10 +286,10 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">Syntax</a></li>
 <li><a href="#options">Options</a>
 <ul>
-<li><a href="#org908999b">General</a></li>
-<li><a href="#orge8235c6">Emacs Lisp</a></li>
-<li><a href="#orgadab181">Batch mode</a></li>
-<li><a href="#orgd6fd273">with X</a></li>
+<li><a href="#org935c6e6">General</a></li>
+<li><a href="#org480198b">Emacs Lisp</a></li>
+<li><a href="#org6c12837">Batch mode</a></li>
+<li><a href="#orgb9f2338">with X</a></li>
 </ul>
 </li>
 <li><a href="#examples">Examples</a></li>
@@ -296,17 +299,20 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+<p>
+<img class="org-img main" src="http://linux-command.org/dist/assets/images/emacs/main.png" alt="main" align="right">
+</p>
 
-<div id="outline-container-orgc72c881" class="outline-2">
-<h2 id="overview"><a id="orgc72c881"></a>Overview</h2>
+<div id="outline-container-orgb06f96c" class="outline-2">
+<h2 id="overview"><a id="orgb06f96c"></a>Overview</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code.
 </p>
 </div>
 
-<div id="outline-container-orgf42dd2f" class="outline-3">
-<h3 id="introduction"><a id="orgf42dd2f"></a>Introduction</h3>
+<div id="outline-container-org65e03fe" class="outline-3">
+<h3 id="introduction"><a id="org65e03fe"></a>Introduction</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses
@@ -333,28 +339,28 @@ Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mod
 </div>
 </div>
 
-<div id="outline-container-orgbea6e05" class="outline-2">
-<h2 id="how-to-install"><a id="orgbea6e05"></a>How to Install</h2>
+<div id="outline-container-orgd363e11" class="outline-2">
+<h2 id="how-to-install"><a id="orgd363e11"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orge92456d" class="outline-3">
-<h3 id="prerequisites"><a id="orge92456d"></a>Prerequisites</h3>
+<div id="outline-container-org1c8303a" class="outline-3">
+<h3 id="prerequisites"><a id="org1c8303a"></a>Prerequisites</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-org07508cf" class="outline-4">
-<h4 id="org07508cf">Ubuntu</h4>
-<div class="outline-text-4" id="text-org07508cf">
+<div id="outline-container-orgf066535" class="outline-4">
+<h4 id="orgf066535">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgf066535">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgebabbc9" class="outline-4">
-<h4 id="orgebabbc9">Mac OS</h4>
-<div class="outline-text-4" id="text-orgebabbc9">
+<div id="outline-container-org8f70e4a" class="outline-4">
+<h4 id="org8f70e4a">Mac OS</h4>
+<div class="outline-text-4" id="text-org8f70e4a">
 <ul class="org-ul">
 <li><a href="./brew.html">brew</a></li>
 </ul>
@@ -362,19 +368,19 @@ Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mod
 </div>
 </div>
 
-<div id="outline-container-org38e1b9c" class="outline-3">
-<h3 id="install"><a id="org38e1b9c"></a>Install</h3>
+<div id="outline-container-orgd3258c2" class="outline-3">
+<h3 id="install"><a id="orgd3258c2"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org9b7af86" class="outline-4">
-<h4 id="org9b7af86">Ubuntu</h4>
-<div class="outline-text-4" id="text-org9b7af86">
-</div><div id="outline-container-org2b5c080" class="outline-5">
-<h5 id="org2b5c080">Emacs 25</h5>
-<div class="outline-text-5" id="text-org2b5c080">
+<div id="outline-container-org14e852a" class="outline-4">
+<h4 id="org14e852a">Ubuntu</h4>
+<div class="outline-text-4" id="text-org14e852a">
+</div><div id="outline-container-orgabf2b0e" class="outline-5">
+<h5 id="orgabf2b0e">Emacs 25</h5>
+<div class="outline-text-5" id="text-orgabf2b0e">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb67eff1">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+<pre class="src src-sh" id="orgd77444b">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
 $ sudo apt update
 $ sudo apt install emacs25
 </pre>
@@ -383,19 +389,19 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org0da1316" class="outline-4">
-<h4 id="org0da1316">Mac OS</h4>
-<div class="outline-text-4" id="text-org0da1316">
+<div id="outline-container-org3919e7d" class="outline-4">
+<h4 id="org3919e7d">Mac OS</h4>
+<div class="outline-text-4" id="text-org3919e7d">
 <div class="org-src-container">
-<pre class="src src-sh" id="org68017ac">$ brew install emacs
+<pre class="src src-sh" id="org7d1396a">$ brew install emacs
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org94d2eda" class="outline-3">
-<h3 id="packages"><a id="org94d2eda"></a>Installed Packages</h3>
+<div id="outline-container-org0335768" class="outline-3">
+<h3 id="packages"><a id="org0335768"></a>Installed Packages</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>aspell</li>
@@ -486,8 +492,8 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org83a3d0c" class="outline-3">
-<h3 id="check"><a id="org83a3d0c"></a>Check</h3>
+<div id="outline-container-org9174e86" class="outline-3">
+<h3 id="check"><a id="org9174e86"></a>Check</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ emacs --version
@@ -497,8 +503,8 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-orgc2c192a" class="outline-3">
-<h3 id="syntax"><a id="orgc2c192a"></a>Syntax</h3>
+<div id="outline-container-orgd71038b" class="outline-3">
+<h3 id="syntax"><a id="orgd71038b"></a>Syntax</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
@@ -507,17 +513,17 @@ $ sudo apt install emacs25
 </div>
 </div>
 
-<div id="outline-container-org24dde07" class="outline-3">
-<h3 id="options"><a id="org24dde07"></a>Options</h3>
+<div id="outline-container-org25d1782" class="outline-3">
+<h3 id="options"><a id="org25d1782"></a>Options</h3>
 <div class="outline-text-3" id="text-options">
 <p>
 This is updated for version <span class="org-programming-version">25.3</span>.
 </p>
 </div>
 
-<div id="outline-container-org908999b" class="outline-4">
-<h4 id="org908999b">General</h4>
-<div class="outline-text-4" id="text-org908999b">
+<div id="outline-container-org935c6e6" class="outline-4">
+<h4 id="org935c6e6">General</h4>
+<div class="outline-text-4" id="text-org935c6e6">
 <ul class="org-ul">
 <li><span class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :
 The same as specifying file directly as an argument.</li>
@@ -566,9 +572,9 @@ Display this help and exit.</li>
 </div>
 </div>
 
-<div id="outline-container-orge8235c6" class="outline-4">
-<h4 id="orge8235c6">Emacs Lisp</h4>
-<div class="outline-text-4" id="text-orge8235c6">
+<div id="outline-container-org480198b" class="outline-4">
+<h4 id="org480198b">Emacs Lisp</h4>
+<div class="outline-text-4" id="text-org480198b">
 <ul class="org-ul">
 <li><span class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :
 Execute the lisp function function.</li>
@@ -580,9 +586,9 @@ Evaluate the Lisp expression expr.</li>
 </div>
 </div>
 
-<div id="outline-container-orgadab181" class="outline-4">
-<h4 id="orgadab181">Batch mode</h4>
-<div class="outline-text-4" id="text-orgadab181">
+<div id="outline-container-org6c12837" class="outline-4">
+<h4 id="org6c12837">Batch mode</h4>
+<div class="outline-text-4" id="text-org6c12837">
 <ul class="org-ul">
 <li><span class="org-programming-option">--batch</span> :
 Edit in batch mode. The editor will send messages to stderr. You must use -l and -f options to specify files to execute and functions to call.</li>
@@ -598,9 +604,9 @@ Add dir to the list of directories Emacs searches for Lisp files</li>
 </div>
 </div>
 
-<div id="outline-container-orgd6fd273" class="outline-4">
-<h4 id="orgd6fd273">with X</h4>
-<div class="outline-text-4" id="text-orgd6fd273">
+<div id="outline-container-orgb9f2338" class="outline-4">
+<h4 id="orgb9f2338">with X</h4>
+<div class="outline-text-4" id="text-orgb9f2338">
 <ul class="org-ul">
 <li><span class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :
 Specify the name which should be assigned to the initial Emacs window.  This controls looking up X resources as well as the window title.</li>
@@ -661,8 +667,8 @@ This option disables many display features; use it for debugging Emacs.</li>
 </div>
 </div>
 
-<div id="outline-container-org5b54e3a" class="outline-3">
-<h3 id="examples"><a id="org5b54e3a"></a>Examples</h3>
+<div id="outline-container-org75e6b27" class="outline-3">
+<h3 id="examples"><a id="org75e6b27"></a>Examples</h3>
 <div class="outline-text-3" id="text-examples">
 <ul class="org-ul">
 <li>emacs -Q --batch file.org -f org-html-export-to-html :</li>
@@ -672,8 +678,8 @@ This option disables many display features; use it for debugging Emacs.</li>
 </div>
 </div>
 
-<div id="outline-container-orga73173e" class="outline-2">
-<h2 id="references"><a id="orga73173e"></a>References</h2>
+<div id="outline-container-org8f69552" class="outline-2">
+<h2 id="references"><a id="org8f69552"></a>References</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
@@ -684,7 +690,7 @@ This option disables many display features; use it for debugging Emacs.</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 02:30</p>
+<p class="date">Created: 2018-02-26 Mon 03:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
