@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-26 Mon 09:11 -->
+<!-- 2018-02-26 Mon 09:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>fsck</title>
@@ -201,11 +201,11 @@
 <meta property="og:description" content="리눅스 파일 시스템을 점검하고 고칩니다. ">
 <meta name="twitter:title" content="fsck - 리눅스 명령어">
 <meta name="twitter:description" content="리눅스 파일 시스템을 점검하고 고칩니다. ">
-<link rel="alternate" href="http://linux-command.org/ko/" hreflang="ko" />
-<link rel="alternate" href="http://linux-command.org/en/" hreflang="en" />
-<link rel="alternate" href="http://linux-command.org/ja/" hreflang="ja" />
-<link rel="alternate" href="http://linux-command.org/es/" hreflang="es" />
-<link rel="alternate" href="http://linux-command.org/zh/" hreflang="zh" />
+<link rel="alternate" href="http://linux-command.org/ko/fsck.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/en/fsck.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/ja/fsck.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/es/fsck.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/zh/fsck.html" hreflang="zh" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -278,8 +278,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org64b88f3" class="outline-2">
-<h2 id="overview"><a id="org64b88f3"></a>개요</h2>
+<div id="outline-container-orgcdd6aaf" class="outline-2">
+<h2 id="overview"><a id="orgcdd6aaf"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 리눅스 파일 시스템을 점검하고 고칩니다.
@@ -287,13 +287,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org1fc8fc5" class="outline-2">
-<h2 id="how-to-install"><a id="org1fc8fc5"></a>설치 방법</h2>
+<div id="outline-container-orge660055" class="outline-2">
+<h2 id="how-to-install"><a id="orge660055"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org0e2d76d" class="outline-3">
-<h3 id="install"><a id="org0e2d76d"></a>설치</h3>
+<div id="outline-container-org7990ed1" class="outline-3">
+<h3 id="install"><a id="org7990ed1"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 <p>
 기본으로 내장되어 있는 명령어입니다.
@@ -302,13 +302,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org53cdf9c" class="outline-2">
-<h2 id="usage"><a id="org53cdf9c"></a>사용법</h2>
+<div id="outline-container-org86b67e2" class="outline-2">
+<h2 id="usage"><a id="org86b67e2"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org32553a2" class="outline-3">
-<h3 id="syntax"><a id="org32553a2"></a>구조</h3>
+<div id="outline-container-org7d0c055" class="outline-3">
+<h3 id="syntax"><a id="org7d0c055"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">fsck [-lrsAVRTMNP] [-C [fd]] [-t fstype] [filesystem ... ] [--] [fs-specific-options]
@@ -317,8 +317,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf48fb59" class="outline-3">
-<h3 id="description"><a id="orgf48fb59"></a>설명</h3>
+<div id="outline-container-orgffdcfa4" class="outline-3">
+<h3 id="description"><a id="orgffdcfa4"></a>설명</h3>
 <div class="outline-text-3" id="text-description">
 <ul class="org-ul">
 <li>하나 이상의 리눅스 파일 시스템을 점검하거나 선택적으로 고칠 수 있습니다.</li>
@@ -392,8 +392,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org1cc1539" class="outline-3">
-<h3 id="configuration"><a id="org1cc1539"></a>설정</h3>
+<div id="outline-container-orgf55ae41" class="outline-3">
+<h3 id="configuration"><a id="orgf55ae41"></a>설정</h3>
 <div class="outline-text-3" id="text-configuration">
 <p>
 <span class="org-programming-file">/etc/fstab</span>
@@ -409,8 +409,8 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org8ae96df" class="outline-3">
-<h3 id="options"><a id="org8ae96df"></a>옵션</h3>
+<div id="outline-container-org5399c98" class="outline-3">
+<h3 id="options"><a id="org5399c98"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">-l</span> [<span class="org-programming-argument">fd</span>] : 전체 디스크에 독점적인 flock 잠금 파일 (<i>run/fsck</i>.lock) 을 생성합니다.
@@ -479,7 +479,7 @@ fs-specific-options
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 09:11</p>
+<p class="date">Created: 2018-02-26 Mon 09:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
