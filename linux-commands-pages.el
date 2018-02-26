@@ -100,6 +100,7 @@
   (let ((langs (pages-support-languages))
 		(orig-dir (expand-file-name "original" PUBLISH_TARGET_DIR))
 		)
+	(setq lc-core/support-languages langs)
 	(mapcar
 	 (lambda (lang)
 	   (setq lang (org-multilingual-normalize-code lang))
