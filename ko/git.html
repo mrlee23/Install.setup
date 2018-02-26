@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-26 Mon 06:54 -->
+<!-- 2018-02-26 Mon 07:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git</title>
@@ -272,12 +272,12 @@ for the JavaScript code in this tag.
 <li><a href="#prerequisites">필요 사항</a></li>
 <li><a href="#install">설치</a>
 <ul>
-<li><a href="#org29f69e7">Ubuntu</a></li>
-<li><a href="#org72c5138">CentOS</a></li>
-<li><a href="#org63e2869">Fedora</a></li>
-<li><a href="#org5839e78">Arch Linux</a></li>
-<li><a href="#orga0a262b">Gentoo</a></li>
-<li><a href="#org0e9a6d9">macOS</a></li>
+<li><a href="#org84ca571">Ubuntu</a></li>
+<li><a href="#org49ce36e">CentOS</a></li>
+<li><a href="#orgd11478b">Fedora</a></li>
+<li><a href="#orgdc084a6">Arch Linux</a></li>
+<li><a href="#org339b200">Gentoo</a></li>
+<li><a href="#org347a77a">macOS</a></li>
 </ul>
 </li>
 <li><a href="#packages">설치된 패키지</a></li>
@@ -290,34 +290,34 @@ for the JavaScript code in this tag.
 <li><a href="#options">옵션</a></li>
 <li><a href="#commands">명령어</a>
 <ul>
-<li><a href="#orga6516ed">clone</a></li>
-<li><a href="#org118e94e">init</a></li>
-<li><a href="#org25d3d9a">add</a></li>
-<li><a href="#orgbff5704">mv</a></li>
-<li><a href="#org29ef6f6">reset</a></li>
-<li><a href="#org5932438">rm</a></li>
-<li><a href="#orga357e4d">bisect</a></li>
-<li><a href="#org91e13dc">grep</a></li>
-<li><a href="#org79a352b">log</a></li>
-<li><a href="#org953bbf4">show</a></li>
-<li><a href="#org1821e8a">status</a></li>
-<li><a href="#org9b3c09a">branch</a></li>
-<li><a href="#org73e04a8">checkout</a></li>
-<li><a href="#org85c59d2">commit</a></li>
-<li><a href="#orgbd05457">diff</a></li>
-<li><a href="#orgf39112b">merge</a></li>
-<li><a href="#org8237ee3">rebase</a></li>
-<li><a href="#orgc1be8fb">tag</a></li>
-<li><a href="#org928695f">fetch</a></li>
-<li><a href="#orgf45fe93">pull</a></li>
-<li><a href="#org9f1b958">push</a></li>
+<li><a href="#org64823b0">clone</a></li>
+<li><a href="#org881c553">init</a></li>
+<li><a href="#orgc309299">add</a></li>
+<li><a href="#orgdcf1a49">mv</a></li>
+<li><a href="#org94c6baa">reset</a></li>
+<li><a href="#org188a247">rm</a></li>
+<li><a href="#orgae3c5c4">bisect</a></li>
+<li><a href="#org20acf83">grep</a></li>
+<li><a href="#orgca5b0d6">log</a></li>
+<li><a href="#orgab1e0a2">show</a></li>
+<li><a href="#org8769eca">status</a></li>
+<li><a href="#org31a7e8e">branch</a></li>
+<li><a href="#org34cb942">checkout</a></li>
+<li><a href="#org4e61c6d">commit</a></li>
+<li><a href="#org432bc7d">diff</a></li>
+<li><a href="#org515fad6">merge</a></li>
+<li><a href="#orgedc326b">rebase</a></li>
+<li><a href="#orga0f4d72">tag</a></li>
+<li><a href="#org17f27ba">fetch</a></li>
+<li><a href="#org9f475c2">pull</a></li>
+<li><a href="#orgec4a32e">push</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#references">참고자료</a>
 <ul>
-<li><a href="#orgc191f3b">입문할 때 보면 좋은 사이트들</a></li>
+<li><a href="#org31c0309">입문할 때 보면 좋은 사이트들</a></li>
 <li><a href="#references">Git 웹 호스팅 서비스</a></li>
 </ul>
 </li>
@@ -331,16 +331,16 @@ for the JavaScript code in this tag.
 <img class="org-img main" src="http://linux-command.org/dist/assets/images/git/main.jpg" alt="main" align="right">
 </p>
 
-<div id="outline-container-org1c35c05" class="outline-2">
-<h2 id="overview"><a id="org1c35c05"></a>개요</h2>
+<div id="outline-container-org77fe4d7" class="outline-2">
+<h2 id="overview"><a id="org77fe4d7"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 The stupid content tracker
 </p>
 </div>
 
-<div id="outline-container-org4697457" class="outline-3">
-<h3 id="introduction"><a id="org4697457"></a>소개</h3>
+<div id="outline-container-org7e8d399" class="outline-3">
+<h3 id="introduction"><a id="org7e8d399"></a>소개</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다.
@@ -352,8 +352,8 @@ Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 �
 </div>
 </div>
 
-<div id="outline-container-org94f4ae9" class="outline-3">
-<h3 id="releases"><a id="org94f4ae9"></a>릴리즈</h3>
+<div id="outline-container-org1aaffb2" class="outline-3">
+<h3 id="releases"><a id="org1aaffb2"></a>릴리즈</h3>
 <div class="outline-text-3" id="text-releases">
 <p>
 현재 최신 버전은 <span class="org-programming-version">2.16.2</span> 입니다.
@@ -581,13 +581,13 @@ Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 �
 </div>
 </div>
 
-<div id="outline-container-org824a680" class="outline-2">
-<h2 id="how-to-install"><a id="org824a680"></a>설치 방법</h2>
+<div id="outline-container-orgf6a4d0c" class="outline-2">
+<h2 id="how-to-install"><a id="orgf6a4d0c"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orga1bd591" class="outline-3">
-<h3 id="prerequisites"><a id="orga1bd591"></a>필요 사항</h3>
+<div id="outline-container-orgdb7cdc4" class="outline-3">
+<h3 id="prerequisites"><a id="orgdb7cdc4"></a>필요 사항</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
@@ -596,16 +596,16 @@ Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 �
 </div>
 </div>
 
-<div id="outline-container-org426e041" class="outline-3">
-<h3 id="install"><a id="org426e041"></a>설치</h3>
+<div id="outline-container-org3e01395" class="outline-3">
+<h3 id="install"><a id="org3e01395"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org29f69e7" class="outline-4">
-<h4 id="org29f69e7">Ubuntu</h4>
-<div class="outline-text-4" id="text-org29f69e7">
+<div id="outline-container-org84ca571" class="outline-4">
+<h4 id="org84ca571">Ubuntu</h4>
+<div class="outline-text-4" id="text-org84ca571">
 <div class="org-src-container">
-<pre class="src src-sh" id="org2e2f970">$ sudo apt-add-repository ppa:git-core/ppa
+<pre class="src src-sh" id="org2d4d91f">$ sudo apt-add-repository ppa:git-core/ppa
 $ sudo apt-get update
 $ sudo apt-get install git
 </pre>
@@ -613,51 +613,51 @@ $ sudo apt-get install git
 </div>
 </div>
 
-<div id="outline-container-org72c5138" class="outline-4">
-<h4 id="org72c5138">CentOS</h4>
-<div class="outline-text-4" id="text-org72c5138">
+<div id="outline-container-org49ce36e" class="outline-4">
+<h4 id="org49ce36e">CentOS</h4>
+<div class="outline-text-4" id="text-org49ce36e">
 <div class="org-src-container">
-<pre class="src src-sh" id="org2e4e71d">$ sudo yum install git
+<pre class="src src-sh" id="orgf212867">$ sudo yum install git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org63e2869" class="outline-4">
-<h4 id="org63e2869">Fedora</h4>
-<div class="outline-text-4" id="text-org63e2869">
+<div id="outline-container-orgd11478b" class="outline-4">
+<h4 id="orgd11478b">Fedora</h4>
+<div class="outline-text-4" id="text-orgd11478b">
 <div class="org-src-container">
-<pre class="src src-sh" id="org600ca77">$ sudo yum install git-core
+<pre class="src src-sh" id="orga9c286d">$ sudo yum install git-core
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5839e78" class="outline-4">
-<h4 id="org5839e78">Arch Linux</h4>
-<div class="outline-text-4" id="text-org5839e78">
+<div id="outline-container-orgdc084a6" class="outline-4">
+<h4 id="orgdc084a6">Arch Linux</h4>
+<div class="outline-text-4" id="text-orgdc084a6">
 <div class="org-src-container">
-<pre class="src src-sh" id="org14bfd20">$ sudo pacman -Sy git
+<pre class="src src-sh" id="orgd7763dd">$ sudo pacman -Sy git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga0a262b" class="outline-4">
-<h4 id="orga0a262b">Gentoo</h4>
-<div class="outline-text-4" id="text-orga0a262b">
+<div id="outline-container-org339b200" class="outline-4">
+<h4 id="org339b200">Gentoo</h4>
+<div class="outline-text-4" id="text-org339b200">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgd5324be">$ sudo emerge --ask --verbose dev-vcs/git
+<pre class="src src-sh" id="orgde0cef2">$ sudo emerge --ask --verbose dev-vcs/git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0e9a6d9" class="outline-4">
-<h4 id="org0e9a6d9">macOS</h4>
-<div class="outline-text-4" id="text-org0e9a6d9">
+<div id="outline-container-org347a77a" class="outline-4">
+<h4 id="org347a77a">macOS</h4>
+<div class="outline-text-4" id="text-org347a77a">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgaefc6c8">$ brew install git
+<pre class="src src-sh" id="org32d7ae6">$ brew install git
 </pre>
 </div>
 </div>
@@ -665,14 +665,14 @@ $ sudo apt-get install git
 </div>
 
 
-<div id="outline-container-orgc242f5e" class="outline-3">
-<h3 id="packages"><a id="orgc242f5e"></a>설치된 패키지</h3>
+<div id="outline-container-org22466b7" class="outline-3">
+<h3 id="packages"><a id="org22466b7"></a>설치된 패키지</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-orgc12ff13" class="outline-3">
-<h3 id="check"><a id="orgc12ff13"></a>확인</h3>
+<div id="outline-container-orgad5adfb" class="outline-3">
+<h3 id="check"><a id="orgad5adfb"></a>확인</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ git --version
@@ -683,13 +683,13 @@ git version 2.16.2
 </div>
 </div>
 
-<div id="outline-container-orgcb8759f" class="outline-2">
-<h2 id="usage"><a id="orgcb8759f"></a>사용법</h2>
+<div id="outline-container-org31ccdc7" class="outline-2">
+<h2 id="usage"><a id="org31ccdc7"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org2be4651" class="outline-3">
-<h3 id="syntax"><a id="org2be4651"></a>구조</h3>
+<div id="outline-container-org897ed68" class="outline-3">
+<h3 id="syntax"><a id="org897ed68"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
@@ -703,8 +703,8 @@ git version 2.16.2
 </div>
 </div>
 
-<div id="outline-container-org3acb984" class="outline-3">
-<h3 id="options"><a id="org3acb984"></a>옵션</h3>
+<div id="outline-container-orgda305b6" class="outline-3">
+<h3 id="options"><a id="orgda305b6"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
 <p>
 <span class="org-programming-version">2.16.2</span> 버전을 기준으로 작성되었습니다.
@@ -790,194 +790,194 @@ Do not perform optional operations that require locks. This is equivalent to set
 </div>
 </div>
 
-<div id="outline-container-org13a694e" class="outline-3">
-<h3 id="commands"><a id="org13a694e"></a>명령어</h3>
+<div id="outline-container-org672bc88" class="outline-3">
+<h3 id="commands"><a id="org672bc88"></a>명령어</h3>
 <div class="outline-text-3" id="text-commands">
 </div>
 
-<div id="outline-container-orga6516ed" class="outline-4">
-<h4 id="orga6516ed">clone</h4>
-<div class="outline-text-4" id="text-orga6516ed">
+<div id="outline-container-org64823b0" class="outline-4">
+<h4 id="org64823b0">clone</h4>
+<div class="outline-text-4" id="text-org64823b0">
 <p>
 Clone a repository into a new directory
 </p>
 </div>
 </div>
 
-<div id="outline-container-org118e94e" class="outline-4">
-<h4 id="org118e94e">init</h4>
-<div class="outline-text-4" id="text-org118e94e">
+<div id="outline-container-org881c553" class="outline-4">
+<h4 id="org881c553">init</h4>
+<div class="outline-text-4" id="text-org881c553">
 <p>
 Create an empty Git repository or reinitialize an existing one
 </p>
 </div>
 </div>
 
-<div id="outline-container-org25d3d9a" class="outline-4">
-<h4 id="org25d3d9a">add</h4>
-<div class="outline-text-4" id="text-org25d3d9a">
+<div id="outline-container-orgc309299" class="outline-4">
+<h4 id="orgc309299">add</h4>
+<div class="outline-text-4" id="text-orgc309299">
 <p>
 Add file contents to the index
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbff5704" class="outline-4">
-<h4 id="orgbff5704">mv</h4>
-<div class="outline-text-4" id="text-orgbff5704">
+<div id="outline-container-orgdcf1a49" class="outline-4">
+<h4 id="orgdcf1a49">mv</h4>
+<div class="outline-text-4" id="text-orgdcf1a49">
 <p>
 Move or rename a file, a directory, or a symlink
 </p>
 </div>
 </div>
 
-<div id="outline-container-org29ef6f6" class="outline-4">
-<h4 id="org29ef6f6">reset</h4>
-<div class="outline-text-4" id="text-org29ef6f6">
+<div id="outline-container-org94c6baa" class="outline-4">
+<h4 id="org94c6baa">reset</h4>
+<div class="outline-text-4" id="text-org94c6baa">
 <p>
 Reset current HEAD to the specified state
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5932438" class="outline-4">
-<h4 id="org5932438">rm</h4>
-<div class="outline-text-4" id="text-org5932438">
+<div id="outline-container-org188a247" class="outline-4">
+<h4 id="org188a247">rm</h4>
+<div class="outline-text-4" id="text-org188a247">
 <p>
 Remove files from the working tree and from the index
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga357e4d" class="outline-4">
-<h4 id="orga357e4d">bisect</h4>
-<div class="outline-text-4" id="text-orga357e4d">
+<div id="outline-container-orgae3c5c4" class="outline-4">
+<h4 id="orgae3c5c4">bisect</h4>
+<div class="outline-text-4" id="text-orgae3c5c4">
 <p>
 Use binary search to find the commit that introduced a bug
 </p>
 </div>
 </div>
 
-<div id="outline-container-org91e13dc" class="outline-4">
-<h4 id="org91e13dc">grep</h4>
-<div class="outline-text-4" id="text-org91e13dc">
+<div id="outline-container-org20acf83" class="outline-4">
+<h4 id="org20acf83">grep</h4>
+<div class="outline-text-4" id="text-org20acf83">
 <p>
 Print lines matching a pattern
 </p>
 </div>
 </div>
 
-<div id="outline-container-org79a352b" class="outline-4">
-<h4 id="org79a352b">log</h4>
-<div class="outline-text-4" id="text-org79a352b">
+<div id="outline-container-orgca5b0d6" class="outline-4">
+<h4 id="orgca5b0d6">log</h4>
+<div class="outline-text-4" id="text-orgca5b0d6">
 <p>
 Show commit logs
 </p>
 </div>
 </div>
 
-<div id="outline-container-org953bbf4" class="outline-4">
-<h4 id="org953bbf4">show</h4>
-<div class="outline-text-4" id="text-org953bbf4">
+<div id="outline-container-orgab1e0a2" class="outline-4">
+<h4 id="orgab1e0a2">show</h4>
+<div class="outline-text-4" id="text-orgab1e0a2">
 <p>
 Show various types of objects
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1821e8a" class="outline-4">
-<h4 id="org1821e8a">status</h4>
-<div class="outline-text-4" id="text-org1821e8a">
+<div id="outline-container-org8769eca" class="outline-4">
+<h4 id="org8769eca">status</h4>
+<div class="outline-text-4" id="text-org8769eca">
 <p>
 Show the working tree status
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9b3c09a" class="outline-4">
-<h4 id="org9b3c09a">branch</h4>
-<div class="outline-text-4" id="text-org9b3c09a">
+<div id="outline-container-org31a7e8e" class="outline-4">
+<h4 id="org31a7e8e">branch</h4>
+<div class="outline-text-4" id="text-org31a7e8e">
 <p>
 List, create, or delete branches
 </p>
 </div>
 </div>
 
-<div id="outline-container-org73e04a8" class="outline-4">
-<h4 id="org73e04a8">checkout</h4>
-<div class="outline-text-4" id="text-org73e04a8">
+<div id="outline-container-org34cb942" class="outline-4">
+<h4 id="org34cb942">checkout</h4>
+<div class="outline-text-4" id="text-org34cb942">
 <p>
 Switch branches or restore working tree files
 </p>
 </div>
 </div>
 
-<div id="outline-container-org85c59d2" class="outline-4">
-<h4 id="org85c59d2">commit</h4>
-<div class="outline-text-4" id="text-org85c59d2">
+<div id="outline-container-org4e61c6d" class="outline-4">
+<h4 id="org4e61c6d">commit</h4>
+<div class="outline-text-4" id="text-org4e61c6d">
 <p>
 Record changes to the repository
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbd05457" class="outline-4">
-<h4 id="orgbd05457">diff</h4>
-<div class="outline-text-4" id="text-orgbd05457">
+<div id="outline-container-org432bc7d" class="outline-4">
+<h4 id="org432bc7d">diff</h4>
+<div class="outline-text-4" id="text-org432bc7d">
 <p>
 Show changes between commits, commit and working tree, etc
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf39112b" class="outline-4">
-<h4 id="orgf39112b">merge</h4>
-<div class="outline-text-4" id="text-orgf39112b">
+<div id="outline-container-org515fad6" class="outline-4">
+<h4 id="org515fad6">merge</h4>
+<div class="outline-text-4" id="text-org515fad6">
 <p>
 Join two or more development histories together
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8237ee3" class="outline-4">
-<h4 id="org8237ee3">rebase</h4>
-<div class="outline-text-4" id="text-org8237ee3">
+<div id="outline-container-orgedc326b" class="outline-4">
+<h4 id="orgedc326b">rebase</h4>
+<div class="outline-text-4" id="text-orgedc326b">
 <p>
 Reapply commits on top of another base tip
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc1be8fb" class="outline-4">
-<h4 id="orgc1be8fb">tag</h4>
-<div class="outline-text-4" id="text-orgc1be8fb">
+<div id="outline-container-orga0f4d72" class="outline-4">
+<h4 id="orga0f4d72">tag</h4>
+<div class="outline-text-4" id="text-orga0f4d72">
 <p>
 Create, list, delete or verify a tag object signed with GPG
 </p>
 </div>
 </div>
 
-<div id="outline-container-org928695f" class="outline-4">
-<h4 id="org928695f">fetch</h4>
-<div class="outline-text-4" id="text-org928695f">
+<div id="outline-container-org17f27ba" class="outline-4">
+<h4 id="org17f27ba">fetch</h4>
+<div class="outline-text-4" id="text-org17f27ba">
 <p>
 Download objects and refs from another repository
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf45fe93" class="outline-4">
-<h4 id="orgf45fe93">pull</h4>
-<div class="outline-text-4" id="text-orgf45fe93">
+<div id="outline-container-org9f475c2" class="outline-4">
+<h4 id="org9f475c2">pull</h4>
+<div class="outline-text-4" id="text-org9f475c2">
 <p>
 Fetch from and integrate with another repository or a local branch
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9f1b958" class="outline-4">
-<h4 id="org9f1b958">push</h4>
-<div class="outline-text-4" id="text-org9f1b958">
+<div id="outline-container-orgec4a32e" class="outline-4">
+<h4 id="orgec4a32e">push</h4>
+<div class="outline-text-4" id="text-orgec4a32e">
 <p>
 Update remote refs along with associated objects
 </p>
@@ -986,17 +986,17 @@ Update remote refs along with associated objects
 </div>
 </div>
 
-<div id="outline-container-orgcbe3e1c" class="outline-2">
-<h2 id="references"><a id="orgcbe3e1c"></a>참고자료</h2>
+<div id="outline-container-orgf4bac7d" class="outline-2">
+<h2 id="references"><a id="orgf4bac7d"></a>참고자료</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
 </ul>
 </div>
 
-<div id="outline-container-orgc191f3b" class="outline-3">
-<h3 id="orgc191f3b">입문할 때 보면 좋은 사이트들</h3>
-<div class="outline-text-3" id="text-orgc191f3b">
+<div id="outline-container-org31c0309" class="outline-3">
+<h3 id="org31c0309">입문할 때 보면 좋은 사이트들</h3>
+<div class="outline-text-3" id="text-org31c0309">
 <ul class="org-ul">
 <li><a href="https://rogerdudler.github.io/git-guide/index.ko.html">Git 간편 안내서</a></li>
 <li><a href="https://backlog.com/git-tutorial/kr/intro/intro1_1.html">누구나 쉽게 이해할 수 있는 Git 입문</a></li>
@@ -1005,8 +1005,8 @@ Update remote refs along with associated objects
 </div>
 </div>
 
-<div id="outline-container-org299eaaa" class="outline-3">
-<h3 id="references"><a id="org299eaaa"></a>Git 웹 호스팅 서비스</h3>
+<div id="outline-container-org703f4ac" class="outline-3">
+<h3 id="references"><a id="org703f4ac"></a>Git 웹 호스팅 서비스</h3>
 <div class="outline-text-3" id="text-references">
 <ul class="org-ul">
 <li><a href="https://www.assembla.com">Assembla</a></li>
@@ -1025,7 +1025,7 @@ Update remote refs along with associated objects
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-24</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 06:54</p>
+<p class="date">Created: 2018-02-26 Mon 07:21</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
