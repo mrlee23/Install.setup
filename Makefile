@@ -7,6 +7,7 @@ PUBLISH_PAGES_DIR=.publish
 PUBLISH_ORIGINAL_DIR=.publish/original
 EMACS_DEPS_DIR=.emacs-dependencies
 DIST_DIR=dist
+ASSETS_DIR=assets
 
 install: setup-git mkdirs get-deps
 
@@ -62,11 +63,12 @@ pages: mkdirs pages-deps
 	for lang in `cat .supportLanguages`; \
 	do \
 		echo "$$lang" > "$(PUBLISH_PAGES_DIR)/$${lang}/.language"; \
+		rm -rf "$(GH_PAGES_DIR)/$(DIST_DIR)/$${lang}/$(ASSETS_DIR)"; \
 	done;
 	find . -type d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 
 pages-deps:
-	mv -f assets "$(DIST_DIR)/assets"
+	cp -rf "$(ASSETS_DIR)" "$(DIST_DIR)/$(ASSETS_DIR)"
 	git clone https://github.com/mrlee23/org-html-themes.git $(DIST_DIR)/org-html-themes
 	rm -rf dist/org-html-themes/.git
 
