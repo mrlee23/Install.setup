@@ -289,10 +289,12 @@
   (let ((jpg (lc-macro/image--get-local-path "main.jpg"))
 		(png (lc-macro/image--get-local-path "main.png"))
 		path)
+	(message "%s" jpg)
 	(if (file-exists-p jpg)
 		(setq path jpg)
 	  (if (file-exists-p png)
 		  (setq path png)))
+	(message "%s" path)
 	(if (and (stringp path) (file-exists-p path))
 		(lc-macro/image (file-name-nondirectory path) "main" "main" "right" t) "")))
 
