@@ -22,6 +22,7 @@
 (defvar lc-core/support-languages nil)
 
 (defvar lc-core/current-filename nil)
+(defvar lc-core/current-relative-filename nil)
 (defvar lc-core/current-contents nil)
 (defvar lc-core/current-contents-filename nil)
 
@@ -57,6 +58,7 @@
 (defun lc-core/init-contents (filename)
   (setq filename (expand-file-name filename))
   (setq lc-core/current-filename filename)
+  (setq lc-core/current-relative-filename (file-relative-name lc-core/current-filename lc-core/base-dir))
   (ignore-errors
 	(setq lc-core/current-contents
 		  (with-temp-buffer
