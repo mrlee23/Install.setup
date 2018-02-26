@@ -85,7 +85,8 @@
 		(desc '())
 		(author '())
 		(meta '()))
-	(when contents
+	(if (not contents)
+		""
 	  (org-element-map contents 'keyword
 		(lambda (keyword)
 		  (let ((key (org-element-property :key keyword))
@@ -265,12 +266,13 @@
 			  (format "@@html:<a href=\"%s\">@@%s@@html:</a>@@" name img-tag)
 			img-tag))
 	(when with-meta
-	  (push (format "<meta name=\"og:image\" content=\"%s\">" img-path) meta)
+	  (push (format "<meta property=\"og:image\" content=\"%s\">" img-path) meta)
 	  (push (format "<meta property=\"twitter:image\" content=\"%s\">" img-path) meta)
+	  (push (format "<meta name=\"twitter:image\" content=\"%s\">" img-path) meta)
 	  (setq ret (format "\n%s\n\n%s"
 						(mapconcat (lambda (str) (format "#+HTML_HEAD: %s" str)) meta "\n")
 						ret)))
-	ret
+	(or ret "")
 	))
 
 (defun lc-macro/inline-image (path &optional name)
