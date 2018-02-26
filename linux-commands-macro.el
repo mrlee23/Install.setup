@@ -151,18 +151,24 @@
 			  "\n")
 	  )))
 
+(defun lc-macro/make-hreflang (lang)
+  (if (string-match "README\\|index" (file-name-base lc-core/current-filename))
+	  (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/\" hreflang=\"%s\" />" lc-core/url lang lang)
+	(format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/%s\" hreflang=\"%s\" />"
+			lc-core/url
+			lang
+			(file-name-sans-extension lc-core/current-relative-filename)
+			lang)))
+
 (defun lc-macro/hreflang ()
   (concat
    "\n"
-   (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/\" hreflang=\"x-default\" />\n" lc-core/url)
-   (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/en/\" hreflang=\"x-default\" />\n" lc-core/url)
    (mapconcat
 	(lambda (lang)
-	  (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/\" hreflang=\"%s\" />" lc-core/url lang lang))
+	  (lc-macro/make-hreflang lang))
 	lc-core/support-languages
 	"\n")
-   "\n")
-  )
+   "\n"))
 
 (defun lc-macro/builtin ()
   (case (lc-core/get-current-language)
