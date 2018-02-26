@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-25 Sun 17:14 -->
+<!-- 2018-02-26 Mon 01:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker</title>
@@ -201,6 +201,8 @@
 <meta property="og:description" content="이미지와 컨테이너를 이용한 가상화 컴퓨팅 도커는 가상화된 이미지를 이용해 컨테이너를 실행하는 소프트웨어입니다. 간편한 사용법과 도커 허브에서 공유되고 있는 다양한 가상화 이미지 덕분에 필요한 서비스를 컨테이너 단위로 실행하거나 제거할 수 있습니다. 그리고 Dockerfile 을 이용해서 새로운 이미지를 빌드하면 언제나 동일한 사용환경을 가진 자신만의 개발 환경을 구축할 수 있습니다. ">
 <meta name="twitter:title" content="docker - 리눅스 명령어">
 <meta name="twitter:description" content="이미지와 컨테이너를 이용한 가상화 컴퓨팅 도커는 가상화된 이미지를 이용해 컨테이너를 실행하는 소프트웨어입니다. 간편한 사용법과 도커 허브에서 공유되고 있는 다양한 가상화 이미지 덕분에 필요한 서비스를 컨테이너 단위로 실행하거나 제거할 수 있습니다. 그리고 Dockerfile 을 이용해서 새로운 이미지를 빌드하면 언제나 동일한 사용환경을 가진 자신만의 개발 환경을 구축할 수 있습니다. ">
+<meta property="twitter:image" content="http://linux-command.org/dist/assets/images/docker/main.jpg">
+<meta name="og:image" content="http://linux-command.org/dist/assets/images/docker/main.jpg">
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -265,10 +267,10 @@ for the JavaScript code in this tag.
 <li><a href="#prerequisites">필요 사항</a></li>
 <li><a href="#install">설치</a>
 <ul>
-<li><a href="#orgb184706">우분투 16.04 ~</a></li>
-<li><a href="#orge2f20f3">페도라</a></li>
-<li><a href="#org6589687">레드햇</a></li>
-<li><a href="#org7cbc0f4">Mac</a></li>
+<li><a href="#orgbdf3da6">우분투 16.04 ~</a></li>
+<li><a href="#orgbd91b12">페도라</a></li>
+<li><a href="#org3157ec3">레드햇</a></li>
+<li><a href="#org62db3eb">Mac</a></li>
 </ul>
 </li>
 <li><a href="#packages">설치된 패키지</a></li>
@@ -291,8 +293,8 @@ for the JavaScript code in this tag.
 <img class="org-img main" src="http://linux-command.org/dist/assets/images/docker/main.jpg" alt="main" align="right">
 </p>
 
-<div id="outline-container-org79ec91c" class="outline-2">
-<h2 id="overview"><a id="org79ec91c"></a>개요</h2>
+<div id="outline-container-orgdb664c8" class="outline-2">
+<h2 id="overview"><a id="orgdb664c8"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 현재 최신 버전은 <span class="org-programming-version">17.12.0-ce</span> 입니다.
@@ -303,8 +305,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 
-<div id="outline-container-org9a1f798" class="outline-3">
-<h3 id="introduction"><a id="org9a1f798"></a>소개</h3>
+<div id="outline-container-orgf3971eb" class="outline-3">
+<h3 id="introduction"><a id="orgf3971eb"></a>소개</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 도커는 가상화된 이미지를 이용해 컨테이너를 실행하는 소프트웨어입니다.
@@ -315,13 +317,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgbc03e41" class="outline-2">
-<h2 id="how-to-install"><a id="orgbc03e41"></a>설치 방법</h2>
+<div id="outline-container-org538b314" class="outline-2">
+<h2 id="how-to-install"><a id="org538b314"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org6b9522b" class="outline-3">
-<h3 id="prerequisites"><a id="org6b9522b"></a>필요 사항</h3>
+<div id="outline-container-orgc8e07a8" class="outline-3">
+<h3 id="prerequisites"><a id="orgc8e07a8"></a>필요 사항</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -332,16 +334,16 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga8ff4d3" class="outline-3">
-<h3 id="install"><a id="orga8ff4d3"></a>설치</h3>
+<div id="outline-container-org00f2e39" class="outline-3">
+<h3 id="install"><a id="org00f2e39"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-orgb184706" class="outline-4">
-<h4 id="orgb184706">우분투 16.04 ~</h4>
-<div class="outline-text-4" id="text-orgb184706">
+<div id="outline-container-orgbdf3da6" class="outline-4">
+<h4 id="orgbdf3da6">우분투 16.04 ~</h4>
+<div class="outline-text-4" id="text-orgbdf3da6">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgca782d9"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+<pre class="src src-sh" id="orgb0bd18b"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
 $ sudo apt-get remove docker docker-engine docker.io
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
@@ -408,9 +410,9 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-orge2f20f3" class="outline-4">
-<h4 id="orge2f20f3">페도라</h4>
-<div class="outline-text-4" id="text-orge2f20f3">
+<div id="outline-container-orgbd91b12" class="outline-4">
+<h4 id="orgbd91b12">페도라</h4>
+<div class="outline-text-4" id="text-orgbd91b12">
 <div class="org-src-container">
 <pre class="src src-sh">$ yum update
 $ yum install docker
@@ -422,9 +424,9 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-org6589687" class="outline-4">
-<h4 id="org6589687">레드햇</h4>
-<div class="outline-text-4" id="text-org6589687">
+<div id="outline-container-org3157ec3" class="outline-4">
+<h4 id="org3157ec3">레드햇</h4>
+<div class="outline-text-4" id="text-org3157ec3">
 <div class="org-src-container">
 <pre class="src src-sh">$ subscription-manager register &#8211;<span style="font-weight: bold; font-style: italic;">username</span>=&lt;username&gt; &#8211;auto-attach
 $ subscription-manager repos &#8211;<span style="font-weight: bold; font-style: italic;">enable</span>=rhel-7-server-extras-rpms
@@ -440,9 +442,9 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-org7cbc0f4" class="outline-4">
-<h4 id="org7cbc0f4">Mac</h4>
-<div class="outline-text-4" id="text-org7cbc0f4">
+<div id="outline-container-org62db3eb" class="outline-4">
+<h4 id="org62db3eb">Mac</h4>
+<div class="outline-text-4" id="text-org62db3eb">
 <ul class="org-ul">
 <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
 </ul>
@@ -450,14 +452,14 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-orgec21325" class="outline-3">
-<h3 id="packages"><a id="orgec21325"></a>설치된 패키지</h3>
+<div id="outline-container-orgfa2df4e" class="outline-3">
+<h3 id="packages"><a id="orgfa2df4e"></a>설치된 패키지</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-org558390f" class="outline-3">
-<h3 id="check"><a id="org558390f"></a>확인</h3>
+<div id="outline-container-org5032cfa" class="outline-3">
+<h3 id="check"><a id="org5032cfa"></a>확인</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo docker run hello-world
@@ -502,13 +504,13 @@ Docker version 17.12.0-ce, build c97c6d6
 </div>
 </div>
 
-<div id="outline-container-org97743f7" class="outline-2">
-<h2 id="usage"><a id="org97743f7"></a>사용법</h2>
+<div id="outline-container-orgbc2151c" class="outline-2">
+<h2 id="usage"><a id="orgbc2151c"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org5e0d61e" class="outline-3">
-<h3 id="syntax"><a id="org5e0d61e"></a>구조</h3>
+<div id="outline-container-orgde211a7" class="outline-3">
+<h3 id="syntax"><a id="orgde211a7"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">docker [OPTIONS] COMMAND [ARG...]
@@ -519,8 +521,8 @@ docker [ --help | -v | --version ]
 </div>
 </div>
 
-<div id="outline-container-org7cc330e" class="outline-3">
-<h3 id="options"><a id="org7cc330e"></a>옵션</h3>
+<div id="outline-container-org59a28e1" class="outline-3">
+<h3 id="options"><a id="org59a28e1"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">--config</span> <span class="org-programming-argument">string</span> :</li>
@@ -591,8 +593,8 @@ Print version information and quit
 </div>
 </div>
 
-<div id="outline-container-orgc180722" class="outline-3">
-<h3 id="environment-variables"><a id="orgc180722"></a>환경 변수</h3>
+<div id="outline-container-orgac1e7f2" class="outline-3">
+<h3 id="environment-variables"><a id="orgac1e7f2"></a>환경 변수</h3>
 <div class="outline-text-3" id="text-environment-variables">
 <ul class="org-ul">
 <li><span class="org-programming-variable">DOCKER_API_VERSION</span> :</li>
@@ -673,8 +675,8 @@ Location for temporary Docker files.
 </ul>
 </div>
 </div>
-<div id="outline-container-org12b2e89" class="outline-3">
-<h3 id="commands"><a id="org12b2e89"></a>명령어</h3>
+<div id="outline-container-org1675607" class="outline-3">
+<h3 id="commands"><a id="org1675607"></a>명령어</h3>
 <div class="outline-text-3" id="text-commands">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -971,8 +973,8 @@ Location for temporary Docker files.
 </div>
 </div>
 
-<div id="outline-container-org1fc7fe9" class="outline-2">
-<h2 id="references"><a id="org1fc7fe9"></a>참고자료</h2>
+<div id="outline-container-orgbd4942e" class="outline-2">
+<h2 id="references"><a id="orgbd4942e"></a>참고자료</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
@@ -984,7 +986,7 @@ Location for temporary Docker files.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-25 Sun 17:14</p>
+<p class="date">Created: 2018-02-26 Mon 01:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
