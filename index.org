@@ -1,4 +1,4 @@
-# Created 2018-02-25 Sun 17:16
+# Created 2018-02-26 Mon 01:21
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -29,11 +29,11 @@
 #+MACRO: BUILTIN (eval (lc-macro/builtin))
 #+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
 #+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
-#+MACRO: META (eval (lc-macro/meta))
+#+MACRO: META (eval (format "%s\n%s" (lc-macro/meta) (lc-macro/main-image)))
 #+MACRO: IMAGE (eval (lc-macro/image "$1" "$2" "$3"))
 #+MACRO: IMAGE_CENTER (eval (lc-macro/image "$1" "$2" "$3" "center"))
 #+MACRO: IMAGE_RIGHT (eval (lc-macro/image "$1" "$2" "$3" "right"))
-#+MACRO: IMAGE_MAIN (eval (lc-macro/image "main.jpg" "$1" "main" "right"))
+#+MACRO: IMAGE_MAIN (eval (lc-macro/image "main.jpg" "$1" "main" "right" t))
 #+MACRO: IMAGE_LINK (eval (lc-macro/image-link "$1" "$2" "$3"))
 #+MACRO: IMAGE_LINK_CENTER (eval (lc-macro/image-link "$1" "$2" "$3" "center"))
 #+MACRO: IMAGE_LINK_RIGHT (eval (lc-macro/image-link "$1" "$2" "$3" "right"))
@@ -57,6 +57,8 @@
 #+HTML_HEAD: <script type="text/javascript" src="/dist/assets/js.js"></script>
 
 #+HTML_HEAD: <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+nil
 
 [[https://travis-ci.org/mrlee23/LinuxCommands][https://travis-ci.org/mrlee23/LinuxCommands.svg]]
 [[https://github.com/mrlee23/LinuxCommands/blob/master/LICENSE][https://img.shields.io/github/license/mrlee23/LinuxCommands.svg]]
