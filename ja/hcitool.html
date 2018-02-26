@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<!-- 2018-02-26 Mon 07:23 -->
+<!-- 2018-02-26 Mon 08:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>hcitool</title>
@@ -201,6 +201,13 @@
 <meta property="og:description" content="Configure Bluetooth connections hcitool is used to configure Bluetooth connections and send some special command to Bluetooth devices. If no command is given, or if the option -h is used, hcitool prints some usage information and exits. ">
 <meta name="twitter:title" content="hcitool - Linuxコマンド">
 <meta name="twitter:description" content="Configure Bluetooth connections hcitool is used to configure Bluetooth connections and send some special command to Bluetooth devices. If no command is given, or if the option -h is used, hcitool prints some usage information and exits. ">
+<link rel="alternate" href="http://linux-command.org/" hreflang="x-default" />
+<link rel="alternate" href="http://linux-command.org/en/" hreflang="x-default" />
+<link rel="alternate" href="http://linux-command.org/ko/" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/en/" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/ja/" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/es/" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/zh/" hreflang="zh" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -266,151 +273,151 @@ for the JavaScript code in this tag.
 <li><a href="#options">オプション</a></li>
 <li><a href="#commands">コマンド</a>
 <ul>
-<li><a href="#orgf0892c6">dev</a></li>
-<li><a href="#org2f125b2">inq</a></li>
-<li><a href="#org0c55df6">scan</a></li>
-<li><a href="#org2b3fb93">name &lt;bdaddr&gt;</a>
+<li><a href="#org52c216f">dev</a></li>
+<li><a href="#org8e281e2">inq</a></li>
+<li><a href="#org4e4bdb4">scan</a></li>
+<li><a href="#org610bfc3">name</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org9f0b811">構造</a></li>
 </ul>
 </li>
-<li><a href="#org6b16928">info &lt;bdaddr&gt;</a>
+<li><a href="#orgb034d15">info</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org024f3dd">構造</a></li>
 </ul>
 </li>
-<li><a href="#orga05b676">spinq</a></li>
-<li><a href="#org5146f36">epinq</a></li>
-<li><a href="#orgf84fac0">cmd</a>
+<li><a href="#org2e4c32a">spinq</a></li>
+<li><a href="#org78b6a89">epinq</a></li>
+<li><a href="#org540b45a">cmd</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org57cc99a">構造</a></li>
 </ul>
 </li>
-<li><a href="#org176deb4">con</a></li>
-<li><a href="#org6dbe56b">cc</a>
+<li><a href="#orgce40a0e">con</a></li>
+<li><a href="#org8728276">cc</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org00b8b64">構造</a></li>
 </ul>
 </li>
-<li><a href="#org8fb4bce">dc</a>
+<li><a href="#org57c1e60">dc</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#orga4a1cef">構造</a></li>
 </ul>
 </li>
-<li><a href="#org37006af">sr</a>
+<li><a href="#orgaf2995b">sr</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org4c82e32">構造</a></li>
 </ul>
 </li>
-<li><a href="#org2bb254c">cpt</a>
+<li><a href="#org313de55">cpt</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#orgf84cea8">構造</a></li>
 </ul>
 </li>
-<li><a href="#org669f100">rssi</a>
+<li><a href="#org7816dab">rssi</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org06ab82a">構造</a></li>
 </ul>
 </li>
-<li><a href="#org2145c7c">lq</a>
+<li><a href="#org83359b1">lq</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org4c585d8">構造</a></li>
 </ul>
 </li>
-<li><a href="#org009b32c">tpl</a>
+<li><a href="#orgf6a45df">tpl</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org4c06c6d">構造</a></li>
 </ul>
 </li>
-<li><a href="#org15441b8">afh</a>
+<li><a href="#org1004f86">afh</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#orgdc55355">構造</a></li>
 </ul>
 </li>
-<li><a href="#org9c69ce4">lp</a>
+<li><a href="#org5cac912">lp</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org4e99879">構造</a></li>
 </ul>
 </li>
-<li><a href="#org14f8d8c">lst</a>
+<li><a href="#org422b6c8">lst</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org79492e1">構造</a></li>
 </ul>
 </li>
-<li><a href="#org9513219">auth</a>
+<li><a href="#orgee3b990">auth</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org651ef3e">構造</a></li>
 </ul>
 </li>
-<li><a href="#org90aef4e">enc</a>
+<li><a href="#orgd788804">enc</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org3923c5f">構造</a></li>
 </ul>
 </li>
-<li><a href="#orge6d1aea">key</a>
+<li><a href="#org46cf39f">key</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org4e77580">構造</a></li>
 </ul>
 </li>
-<li><a href="#orgc6d45b4">clkoff</a>
+<li><a href="#org2e73fa8">clkoff</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org03da222">構造</a></li>
 </ul>
 </li>
-<li><a href="#org24c3480">clock</a>
+<li><a href="#org74db3a5">clock</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org176bc9e">構造</a></li>
 </ul>
 </li>
-<li><a href="#org2f303bb">lescan</a>
+<li><a href="#orgd4787cc">lescan</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#orge8aa9fd">構造</a></li>
 </ul>
 </li>
-<li><a href="#org16132ec">leinfo</a>
+<li><a href="#org52ab7fa">leinfo</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org7d964bf">構造</a></li>
 </ul>
 </li>
-<li><a href="#org4b0e17c">lewladd</a>
+<li><a href="#orgefae45f">lewladd</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org3b504c7">構造</a></li>
 </ul>
 </li>
-<li><a href="#orga4c5e9b">lewlrm</a>
+<li><a href="#org38f880e">lewlrm</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org4281c71">構造</a></li>
 </ul>
 </li>
-<li><a href="#orgca42295">lewlsz</a></li>
-<li><a href="#orgdcba865">lewlclr</a></li>
-<li><a href="#org1b89cc0">lerladd</a>
+<li><a href="#org1c79fd4">lewlsz</a></li>
+<li><a href="#org1e697cc">lewlclr</a></li>
+<li><a href="#orgcccd6ac">lerladd</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org85f536d">構造</a></li>
 </ul>
 </li>
-<li><a href="#orgddb2f1c">lerlrm</a>
+<li><a href="#org5e59f3b">lerlrm</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org1a64510">構造</a></li>
 </ul>
 </li>
-<li><a href="#orgbebdbfc">lerlclr</a></li>
-<li><a href="#org7c9e438">lerlsz</a></li>
-<li><a href="#org31c84f5">lerlon</a></li>
-<li><a href="#org629ea41">lerloff</a></li>
-<li><a href="#org11564fb">lecc</a>
+<li><a href="#org9a0c329">lerlclr</a></li>
+<li><a href="#org6c05d28">lerlsz</a></li>
+<li><a href="#orga5584c5">lerlon</a></li>
+<li><a href="#org2b53e4f">lerloff</a></li>
+<li><a href="#org278449b">lecc</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org8027897">構造</a></li>
 </ul>
 </li>
-<li><a href="#org05e5817">ledc</a>
+<li><a href="#org8b84560">ledc</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#orgced795d">構造</a></li>
 </ul>
 </li>
-<li><a href="#org7d6c2f9">lecup</a>
+<li><a href="#org37f7c09">lecup</a>
 <ul>
-<li><a href="#syntax">構造</a></li>
+<li><a href="#org08c6dd5">構造</a></li>
 </ul>
 </li>
 </ul>
@@ -421,16 +428,16 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org8d2123b" class="outline-2">
-<h2 id="overview"><a id="org8d2123b"></a>概要</h2>
+<div id="outline-container-orga79483b" class="outline-2">
+<h2 id="overview"><a id="orga79483b"></a>概要</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 Configure Bluetooth connections
 </p>
 </div>
 
-<div id="outline-container-org89743d2" class="outline-3">
-<h3 id="introduction"><a id="org89743d2"></a>はじめに</h3>
+<div id="outline-container-org741492e" class="outline-3">
+<h3 id="introduction"><a id="org741492e"></a>はじめに</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 hcitool is used to configure Bluetooth connections and send some special command to Bluetooth devices.
@@ -440,13 +447,13 @@ If no command is given, or if the option -h is used, hcitool prints some usage i
 </div>
 </div>
 
-<div id="outline-container-org4b711fa" class="outline-2">
-<h2 id="usage"><a id="org4b711fa"></a>命令説明</h2>
+<div id="outline-container-orgde357fc" class="outline-2">
+<h2 id="usage"><a id="orgde357fc"></a>命令説明</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org798bb91" class="outline-3">
-<h3 id="syntax"><a id="org798bb91"></a>構造</h3>
+<div id="outline-container-orgb179a3f" class="outline-3">
+<h3 id="syntax"><a id="orgb179a3f"></a>構造</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">hcitool [-h]
@@ -456,8 +463,8 @@ hcitool [-i &lt;hciX&gt;] [command [command parameters]]
 </div>
 </div>
 
-<div id="outline-container-org1a75327" class="outline-3">
-<h3 id="options"><a id="org1a75327"></a>オプション</h3>
+<div id="outline-container-org3f8da4b" class="outline-3">
+<h3 id="options"><a id="org3f8da4b"></a>オプション</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">-h</span> :</li>
@@ -466,41 +473,41 @@ hcitool [-i &lt;hciX&gt;] [command [command parameters]]
 </div>
 </div>
 
-<div id="outline-container-org4c9eade" class="outline-3">
-<h3 id="commands"><a id="org4c9eade"></a>コマンド</h3>
+<div id="outline-container-orgcd37d0f" class="outline-3">
+<h3 id="commands"><a id="orgcd37d0f"></a>コマンド</h3>
 <div class="outline-text-3" id="text-commands">
 </div>
 
-<div id="outline-container-orgf0892c6" class="outline-4">
-<h4 id="orgf0892c6">dev</h4>
-<div class="outline-text-4" id="text-orgf0892c6">
+<div id="outline-container-org52c216f" class="outline-4">
+<h4 id="org52c216f">dev</h4>
+<div class="outline-text-4" id="text-org52c216f">
 <p>
 Display local devices
 </p>
 </div>
 </div>
-<div id="outline-container-org2f125b2" class="outline-4">
-<h4 id="org2f125b2">inq</h4>
-<div class="outline-text-4" id="text-org2f125b2">
+<div id="outline-container-org8e281e2" class="outline-4">
+<h4 id="org8e281e2">inq</h4>
+<div class="outline-text-4" id="text-org8e281e2">
 <p>
 Inquire remote devices. For each discovered device, Bluetooth device address, clock offset and class are printed.
 </p>
 </div>
 </div>
-<div id="outline-container-org0c55df6" class="outline-4">
-<h4 id="org0c55df6">scan</h4>
-<div class="outline-text-4" id="text-org0c55df6">
+<div id="outline-container-org4e4bdb4" class="outline-4">
+<h4 id="org4e4bdb4">scan</h4>
+<div class="outline-text-4" id="text-org4e4bdb4">
 <p>
 Inquire remote devices. For each discovered device, device name are printed.
 </p>
 </div>
 </div>
-<div id="outline-container-org2b3fb93" class="outline-4">
-<h4 id="org2b3fb93">name &lt;bdaddr&gt;</h4>
-<div class="outline-text-4" id="text-org2b3fb93">
-</div><div id="outline-container-orgf56c881" class="outline-5">
-<h5 id="syntax"><a id="orgf56c881"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org610bfc3" class="outline-4">
+<h4 id="org610bfc3">name</h4>
+<div class="outline-text-4" id="text-org610bfc3">
+</div><div id="outline-container-org9f0b811" class="outline-5">
+<h5 id="org9f0b811">構造</h5>
+<div class="outline-text-5" id="text-org9f0b811">
 <div class="org-src-container">
 <pre class="src src-sh">name &lt;bdaddr&gt;
 </pre>
@@ -513,12 +520,12 @@ Print device name of remote device with Bluetooth address bdaddr.
 </div>
 </div>
 </div>
-<div id="outline-container-org6b16928" class="outline-4">
-<h4 id="org6b16928">info &lt;bdaddr&gt;</h4>
-<div class="outline-text-4" id="text-org6b16928">
-</div><div id="outline-container-orgfb43015" class="outline-5">
-<h5 id="syntax"><a id="orgfb43015"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgb034d15" class="outline-4">
+<h4 id="orgb034d15">info</h4>
+<div class="outline-text-4" id="text-orgb034d15">
+</div><div id="outline-container-org024f3dd" class="outline-5">
+<h5 id="org024f3dd">構造</h5>
+<div class="outline-text-5" id="text-org024f3dd">
 <div class="org-src-container">
 <pre class="src src-sh">info &lt;bdaddr&gt;
 </pre>
@@ -530,28 +537,28 @@ Print device name, version and supported features of remote device with Bluetoot
 </div>
 </div>
 </div>
-<div id="outline-container-orga05b676" class="outline-4">
-<h4 id="orga05b676">spinq</h4>
-<div class="outline-text-4" id="text-orga05b676">
+<div id="outline-container-org2e4c32a" class="outline-4">
+<h4 id="org2e4c32a">spinq</h4>
+<div class="outline-text-4" id="text-org2e4c32a">
 <p>
 Start periodic inquiry process. No inquiry results are printed.
 </p>
 </div>
 </div>
-<div id="outline-container-org5146f36" class="outline-4">
-<h4 id="org5146f36">epinq</h4>
-<div class="outline-text-4" id="text-org5146f36">
+<div id="outline-container-org78b6a89" class="outline-4">
+<h4 id="org78b6a89">epinq</h4>
+<div class="outline-text-4" id="text-org78b6a89">
 <p>
 Exit periodic inquiry process.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf84fac0" class="outline-4">
-<h4 id="orgf84fac0">cmd</h4>
-<div class="outline-text-4" id="text-orgf84fac0">
-</div><div id="outline-container-org0775430" class="outline-5">
-<h5 id="syntax"><a id="org0775430"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org540b45a" class="outline-4">
+<h4 id="org540b45a">cmd</h4>
+<div class="outline-text-4" id="text-org540b45a">
+</div><div id="outline-container-org57cc99a" class="outline-5">
+<h5 id="org57cc99a">構造</h5>
+<div class="outline-text-5" id="text-org57cc99a">
 <div class="org-src-container">
 <pre class="src src-sh">cmd &lt;ogf&gt; &lt;ocf&gt; [parameters]
 </pre>
@@ -563,20 +570,20 @@ Submit an arbitrary HCI command to local device. ogf, ocf and parameters are hex
 </div>
 </div>
 </div>
-<div id="outline-container-org176deb4" class="outline-4">
-<h4 id="org176deb4">con</h4>
-<div class="outline-text-4" id="text-org176deb4">
+<div id="outline-container-orgce40a0e" class="outline-4">
+<h4 id="orgce40a0e">con</h4>
+<div class="outline-text-4" id="text-orgce40a0e">
 <p>
 Display active baseband connections
 </p>
 </div>
 </div>
-<div id="outline-container-org6dbe56b" class="outline-4">
-<h4 id="org6dbe56b">cc</h4>
-<div class="outline-text-4" id="text-org6dbe56b">
-</div><div id="outline-container-orgd354a19" class="outline-5">
-<h5 id="syntax"><a id="orgd354a19"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org8728276" class="outline-4">
+<h4 id="org8728276">cc</h4>
+<div class="outline-text-4" id="text-org8728276">
+</div><div id="outline-container-org00b8b64" class="outline-5">
+<h5 id="org00b8b64">構造</h5>
+<div class="outline-text-5" id="text-org00b8b64">
 <div class="org-src-container">
 <pre class="src src-sh">cc [--role=m|s] [--pkt-type=&lt;ptype&gt;] &lt;bdaddr&gt;
 </pre>
@@ -590,12 +597,12 @@ can have value m (do not allow role switch, stay master) or s (allow role switch
 </div>
 </div>
 </div>
-<div id="outline-container-org8fb4bce" class="outline-4">
-<h4 id="org8fb4bce">dc</h4>
-<div class="outline-text-4" id="text-org8fb4bce">
-</div><div id="outline-container-org1a76b75" class="outline-5">
-<h5 id="syntax"><a id="org1a76b75"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org57c1e60" class="outline-4">
+<h4 id="org57c1e60">dc</h4>
+<div class="outline-text-4" id="text-org57c1e60">
+</div><div id="outline-container-orga4a1cef" class="outline-5">
+<h5 id="orga4a1cef">構造</h5>
+<div class="outline-text-5" id="text-orga4a1cef">
 <div class="org-src-container">
 <pre class="src src-sh">dc &lt;bdaddr&gt; [reason]
 </pre>
@@ -608,12 +615,12 @@ connections. The value must be given in decimal.
 </div>
 </div>
 </div>
-<div id="outline-container-org37006af" class="outline-4">
-<h4 id="org37006af">sr</h4>
-<div class="outline-text-4" id="text-org37006af">
-</div><div id="outline-container-org9a89933" class="outline-5">
-<h5 id="syntax"><a id="org9a89933"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgaf2995b" class="outline-4">
+<h4 id="orgaf2995b">sr</h4>
+<div class="outline-text-4" id="text-orgaf2995b">
+</div><div id="outline-container-org4c82e32" class="outline-5">
+<h5 id="org4c82e32">構造</h5>
+<div class="outline-text-5" id="text-org4c82e32">
 <div class="org-src-container">
 <pre class="src src-sh">sr &lt;bdaddr&gt; &lt;role&gt;
 </pre>
@@ -625,12 +632,12 @@ Switch role for the baseband connection from the remote device to master or slav
 </div>
 </div>
 </div>
-<div id="outline-container-org2bb254c" class="outline-4">
-<h4 id="org2bb254c">cpt</h4>
-<div class="outline-text-4" id="text-org2bb254c">
-</div><div id="outline-container-org132610d" class="outline-5">
-<h5 id="syntax"><a id="org132610d"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org313de55" class="outline-4">
+<h4 id="org313de55">cpt</h4>
+<div class="outline-text-4" id="text-org313de55">
+</div><div id="outline-container-orgf84cea8" class="outline-5">
+<h5 id="orgf84cea8">構造</h5>
+<div class="outline-text-5" id="text-orgf84cea8">
 <div class="org-src-container">
 <pre class="src src-sh">cpt &lt;bdaddr&gt; &lt;packet types&gt;
 </pre>
@@ -643,12 +650,12 @@ packet types are DM1, DM3, DM5, DH1, DH3, DH5, HV1, HV2, HV3.
 </div>
 </div>
 </div>
-<div id="outline-container-org669f100" class="outline-4">
-<h4 id="org669f100">rssi</h4>
-<div class="outline-text-4" id="text-org669f100">
-</div><div id="outline-container-orga75117b" class="outline-5">
-<h5 id="syntax"><a id="orga75117b"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org7816dab" class="outline-4">
+<h4 id="org7816dab">rssi</h4>
+<div class="outline-text-4" id="text-org7816dab">
+</div><div id="outline-container-org06ab82a" class="outline-5">
+<h5 id="org06ab82a">構造</h5>
+<div class="outline-text-5" id="text-org06ab82a">
 <div class="org-src-container">
 <pre class="src src-sh">rssi &lt;bdaddr&gt;
 </pre>
@@ -660,12 +667,12 @@ Display received signal strength information for the connection to the device wi
 </div>
 </div>
 </div>
-<div id="outline-container-org2145c7c" class="outline-4">
-<h4 id="org2145c7c">lq</h4>
-<div class="outline-text-4" id="text-org2145c7c">
-</div><div id="outline-container-orgbbfe6a6" class="outline-5">
-<h5 id="syntax"><a id="orgbbfe6a6"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org83359b1" class="outline-4">
+<h4 id="org83359b1">lq</h4>
+<div class="outline-text-4" id="text-org83359b1">
+</div><div id="outline-container-org4c585d8" class="outline-5">
+<h5 id="org4c585d8">構造</h5>
+<div class="outline-text-5" id="text-org4c585d8">
 <div class="org-src-container">
 <pre class="src src-sh">lq &lt;bdaddr&gt;
 </pre>
@@ -677,12 +684,12 @@ Display link quality for the connection to the device with Bluetooth address bda
 </div>
 </div>
 </div>
-<div id="outline-container-org009b32c" class="outline-4">
-<h4 id="org009b32c">tpl</h4>
-<div class="outline-text-4" id="text-org009b32c">
-</div><div id="outline-container-orgd787368" class="outline-5">
-<h5 id="syntax"><a id="orgd787368"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgf6a45df" class="outline-4">
+<h4 id="orgf6a45df">tpl</h4>
+<div class="outline-text-4" id="text-orgf6a45df">
+</div><div id="outline-container-org4c06c6d" class="outline-5">
+<h5 id="org4c06c6d">構造</h5>
+<div class="outline-text-5" id="text-org4c06c6d">
 <div class="org-src-container">
 <pre class="src src-sh">tpl &lt;bdaddr&gt; [type]
 </pre>
@@ -695,12 +702,12 @@ default) or 1 for the maximum transmit power level.
 </div>
 </div>
 </div>
-<div id="outline-container-org15441b8" class="outline-4">
-<h4 id="org15441b8">afh</h4>
-<div class="outline-text-4" id="text-org15441b8">
-</div><div id="outline-container-org497708b" class="outline-5">
-<h5 id="syntax"><a id="org497708b"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org1004f86" class="outline-4">
+<h4 id="org1004f86">afh</h4>
+<div class="outline-text-4" id="text-org1004f86">
+</div><div id="outline-container-orgdc55355" class="outline-5">
+<h5 id="orgdc55355">構造</h5>
+<div class="outline-text-5" id="text-orgdc55355">
 <div class="org-src-container">
 <pre class="src src-sh">afh &lt;bdaddr&gt;
 </pre>
@@ -712,12 +719,12 @@ Display AFH channel map for the connection to the device with Bluetooth address 
 </div>
 </div>
 </div>
-<div id="outline-container-org9c69ce4" class="outline-4">
-<h4 id="org9c69ce4">lp</h4>
-<div class="outline-text-4" id="text-org9c69ce4">
-</div><div id="outline-container-orga83c41b" class="outline-5">
-<h5 id="syntax"><a id="orga83c41b"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org5cac912" class="outline-4">
+<h4 id="org5cac912">lp</h4>
+<div class="outline-text-4" id="text-org5cac912">
+</div><div id="outline-container-org4e99879" class="outline-5">
+<h5 id="org4e99879">構造</h5>
+<div class="outline-text-5" id="text-org4e99879">
 <div class="org-src-container">
 <pre class="src src-sh">lp &lt;bdaddr&gt; [value]
 </pre>
@@ -730,12 +737,12 @@ that connection to value. Possible values are RSWITCH, HOLD, SNIFF and PARK.
 </div>
 </div>
 </div>
-<div id="outline-container-org14f8d8c" class="outline-4">
-<h4 id="org14f8d8c">lst</h4>
-<div class="outline-text-4" id="text-org14f8d8c">
-</div><div id="outline-container-orgac55d29" class="outline-5">
-<h5 id="syntax"><a id="orgac55d29"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org422b6c8" class="outline-4">
+<h4 id="org422b6c8">lst</h4>
+<div class="outline-text-4" id="text-org422b6c8">
+</div><div id="outline-container-org79492e1" class="outline-5">
+<h5 id="org79492e1">構造</h5>
+<div class="outline-text-5" id="text-org79492e1">
 <div class="org-src-container">
 <pre class="src src-sh">lst &lt;bdaddr&gt; [value]
 </pre>
@@ -748,12 +755,12 @@ timeout for that connection to value slots, or to infinite if value is 0.
 </div>
 </div>
 </div>
-<div id="outline-container-org9513219" class="outline-4">
-<h4 id="org9513219">auth</h4>
-<div class="outline-text-4" id="text-org9513219">
-</div><div id="outline-container-org8fb0ec6" class="outline-5">
-<h5 id="syntax"><a id="org8fb0ec6"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgee3b990" class="outline-4">
+<h4 id="orgee3b990">auth</h4>
+<div class="outline-text-4" id="text-orgee3b990">
+</div><div id="outline-container-org651ef3e" class="outline-5">
+<h5 id="org651ef3e">構造</h5>
+<div class="outline-text-5" id="text-org651ef3e">
 <div class="org-src-container">
 <pre class="src src-sh">auth &lt;bdaddr&gt;
 </pre>
@@ -765,12 +772,12 @@ Request authentication for the device with Bluetooth address bdaddr.
 </div>
 </div>
 </div>
-<div id="outline-container-org90aef4e" class="outline-4">
-<h4 id="org90aef4e">enc</h4>
-<div class="outline-text-4" id="text-org90aef4e">
-</div><div id="outline-container-orgc366f47" class="outline-5">
-<h5 id="syntax"><a id="orgc366f47"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgd788804" class="outline-4">
+<h4 id="orgd788804">enc</h4>
+<div class="outline-text-4" id="text-orgd788804">
+</div><div id="outline-container-org3923c5f" class="outline-5">
+<h5 id="org3923c5f">構造</h5>
+<div class="outline-text-5" id="text-org3923c5f">
 <div class="org-src-container">
 <pre class="src src-sh">enc &lt;bdaddr&gt; [encrypt enable]
 </pre>
@@ -782,12 +789,12 @@ Enable or disable the encryption for the device with Bluetooth address bdaddr.
 </div>
 </div>
 </div>
-<div id="outline-container-orge6d1aea" class="outline-4">
-<h4 id="orge6d1aea">key</h4>
-<div class="outline-text-4" id="text-orge6d1aea">
-</div><div id="outline-container-orgea6fc6d" class="outline-5">
-<h5 id="syntax"><a id="orgea6fc6d"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org46cf39f" class="outline-4">
+<h4 id="org46cf39f">key</h4>
+<div class="outline-text-4" id="text-org46cf39f">
+</div><div id="outline-container-org4e77580" class="outline-5">
+<h5 id="org4e77580">構造</h5>
+<div class="outline-text-5" id="text-org4e77580">
 <div class="org-src-container">
 <pre class="src src-sh">key &lt;bdaddr&gt;
 </pre>
@@ -799,12 +806,12 @@ Change the connection link key for the device with Bluetooth address bdaddr.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc6d45b4" class="outline-4">
-<h4 id="orgc6d45b4">clkoff</h4>
-<div class="outline-text-4" id="text-orgc6d45b4">
-</div><div id="outline-container-orgd772113" class="outline-5">
-<h5 id="syntax"><a id="orgd772113"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org2e73fa8" class="outline-4">
+<h4 id="org2e73fa8">clkoff</h4>
+<div class="outline-text-4" id="text-org2e73fa8">
+</div><div id="outline-container-org03da222" class="outline-5">
+<h5 id="org03da222">構造</h5>
+<div class="outline-text-5" id="text-org03da222">
 <div class="org-src-container">
 <pre class="src src-sh">clkoff &lt;bdaddr&gt;
 </pre>
@@ -816,12 +823,12 @@ Read the clock offset for the device with Bluetooth address bdaddr.
 </div>
 </div>
 </div>
-<div id="outline-container-org24c3480" class="outline-4">
-<h4 id="org24c3480">clock</h4>
-<div class="outline-text-4" id="text-org24c3480">
-</div><div id="outline-container-orgee2bfc3" class="outline-5">
-<h5 id="syntax"><a id="orgee2bfc3"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org74db3a5" class="outline-4">
+<h4 id="org74db3a5">clock</h4>
+<div class="outline-text-4" id="text-org74db3a5">
+</div><div id="outline-container-org176bc9e" class="outline-5">
+<h5 id="org176bc9e">構造</h5>
+<div class="outline-text-5" id="text-org176bc9e">
 <div class="org-src-container">
 <pre class="src src-sh">clock [bdaddr] [which clock]
 </pre>
@@ -833,12 +840,12 @@ Read the clock for the device with Bluetooth address bdaddr. The clock can be 0 
 </div>
 </div>
 </div>
-<div id="outline-container-org2f303bb" class="outline-4">
-<h4 id="org2f303bb">lescan</h4>
-<div class="outline-text-4" id="text-org2f303bb">
-</div><div id="outline-container-org548f0d3" class="outline-5">
-<h5 id="syntax"><a id="org548f0d3"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgd4787cc" class="outline-4">
+<h4 id="orgd4787cc">lescan</h4>
+<div class="outline-text-4" id="text-orgd4787cc">
+</div><div id="outline-container-orge8aa9fd" class="outline-5">
+<h5 id="orge8aa9fd">構造</h5>
+<div class="outline-text-5" id="text-orge8aa9fd">
 <div class="org-src-container">
 <pre class="src src-sh">lescan [--privacy] [--passive] [--whitelist] [--discovery=g|l] [--duplicates]
 </pre>
@@ -850,12 +857,12 @@ Start LE scan
 </div>
 </div>
 </div>
-<div id="outline-container-org16132ec" class="outline-4">
-<h4 id="org16132ec">leinfo</h4>
-<div class="outline-text-4" id="text-org16132ec">
-</div><div id="outline-container-orgbe59e9a" class="outline-5">
-<h5 id="syntax"><a id="orgbe59e9a"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org52ab7fa" class="outline-4">
+<h4 id="org52ab7fa">leinfo</h4>
+<div class="outline-text-4" id="text-org52ab7fa">
+</div><div id="outline-container-org7d964bf" class="outline-5">
+<h5 id="org7d964bf">構造</h5>
+<div class="outline-text-5" id="text-org7d964bf">
 <div class="org-src-container">
 <pre class="src src-sh">leinfo [--static] [--random] &lt;bdaddr&gt;
 </pre>
@@ -867,12 +874,12 @@ Get LE remote information
 </div>
 </div>
 </div>
-<div id="outline-container-org4b0e17c" class="outline-4">
-<h4 id="org4b0e17c">lewladd</h4>
-<div class="outline-text-4" id="text-org4b0e17c">
-</div><div id="outline-container-org9839218" class="outline-5">
-<h5 id="syntax"><a id="org9839218"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgefae45f" class="outline-4">
+<h4 id="orgefae45f">lewladd</h4>
+<div class="outline-text-4" id="text-orgefae45f">
+</div><div id="outline-container-org3b504c7" class="outline-5">
+<h5 id="org3b504c7">構造</h5>
+<div class="outline-text-5" id="text-org3b504c7">
 <div class="org-src-container">
 <pre class="src src-sh">lewladd [--random] &lt;bdaddr&gt;
 </pre>
@@ -884,12 +891,12 @@ Add device to LE White List
 </div>
 </div>
 </div>
-<div id="outline-container-orga4c5e9b" class="outline-4">
-<h4 id="orga4c5e9b">lewlrm</h4>
-<div class="outline-text-4" id="text-orga4c5e9b">
-</div><div id="outline-container-org4fa1f85" class="outline-5">
-<h5 id="syntax"><a id="org4fa1f85"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org38f880e" class="outline-4">
+<h4 id="org38f880e">lewlrm</h4>
+<div class="outline-text-4" id="text-org38f880e">
+</div><div id="outline-container-org4281c71" class="outline-5">
+<h5 id="org4281c71">構造</h5>
+<div class="outline-text-5" id="text-org4281c71">
 <div class="org-src-container">
 <pre class="src src-sh">lewlrm &lt;bdaddr&gt;
 </pre>
@@ -901,28 +908,28 @@ Remove device from LE White List
 </div>
 </div>
 </div>
-<div id="outline-container-orgca42295" class="outline-4">
-<h4 id="orgca42295">lewlsz</h4>
-<div class="outline-text-4" id="text-orgca42295">
+<div id="outline-container-org1c79fd4" class="outline-4">
+<h4 id="org1c79fd4">lewlsz</h4>
+<div class="outline-text-4" id="text-org1c79fd4">
 <p>
 Read size of LE White List
 </p>
 </div>
 </div>
-<div id="outline-container-orgdcba865" class="outline-4">
-<h4 id="orgdcba865">lewlclr</h4>
-<div class="outline-text-4" id="text-orgdcba865">
+<div id="outline-container-org1e697cc" class="outline-4">
+<h4 id="org1e697cc">lewlclr</h4>
+<div class="outline-text-4" id="text-org1e697cc">
 <p>
 Clear LE White List
 </p>
 </div>
 </div>
-<div id="outline-container-org1b89cc0" class="outline-4">
-<h4 id="org1b89cc0">lerladd</h4>
-<div class="outline-text-4" id="text-org1b89cc0">
-</div><div id="outline-container-orge713a3f" class="outline-5">
-<h5 id="syntax"><a id="orge713a3f"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-orgcccd6ac" class="outline-4">
+<h4 id="orgcccd6ac">lerladd</h4>
+<div class="outline-text-4" id="text-orgcccd6ac">
+</div><div id="outline-container-org85f536d" class="outline-5">
+<h5 id="org85f536d">構造</h5>
+<div class="outline-text-5" id="text-org85f536d">
 <div class="org-src-container">
 <pre class="src src-sh">lerladd [--local irk] [--peer irk] [--random] &lt;bdaddr&gt;
 </pre>
@@ -934,12 +941,12 @@ Add device to LE Resolving List
 </div>
 </div>
 </div>
-<div id="outline-container-orgddb2f1c" class="outline-4">
-<h4 id="orgddb2f1c">lerlrm</h4>
-<div class="outline-text-4" id="text-orgddb2f1c">
-</div><div id="outline-container-orgf05002f" class="outline-5">
-<h5 id="syntax"><a id="orgf05002f"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org5e59f3b" class="outline-4">
+<h4 id="org5e59f3b">lerlrm</h4>
+<div class="outline-text-4" id="text-org5e59f3b">
+</div><div id="outline-container-org1a64510" class="outline-5">
+<h5 id="org1a64510">構造</h5>
+<div class="outline-text-5" id="text-org1a64510">
 <div class="org-src-container">
 <pre class="src src-sh">lerlrm &lt;bdaddr&gt;
 </pre>
@@ -951,44 +958,44 @@ Remove device from LE Resolving List
 </div>
 </div>
 </div>
-<div id="outline-container-orgbebdbfc" class="outline-4">
-<h4 id="orgbebdbfc">lerlclr</h4>
-<div class="outline-text-4" id="text-orgbebdbfc">
+<div id="outline-container-org9a0c329" class="outline-4">
+<h4 id="org9a0c329">lerlclr</h4>
+<div class="outline-text-4" id="text-org9a0c329">
 <p>
 Clear LE Resolving List
 </p>
 </div>
 </div>
-<div id="outline-container-org7c9e438" class="outline-4">
-<h4 id="org7c9e438">lerlsz</h4>
-<div class="outline-text-4" id="text-org7c9e438">
+<div id="outline-container-org6c05d28" class="outline-4">
+<h4 id="org6c05d28">lerlsz</h4>
+<div class="outline-text-4" id="text-org6c05d28">
 <p>
 Read size of LE Resolving List
 </p>
 </div>
 </div>
-<div id="outline-container-org31c84f5" class="outline-4">
-<h4 id="org31c84f5">lerlon</h4>
-<div class="outline-text-4" id="text-org31c84f5">
+<div id="outline-container-orga5584c5" class="outline-4">
+<h4 id="orga5584c5">lerlon</h4>
+<div class="outline-text-4" id="text-orga5584c5">
 <p>
 Enable LE Address Resolution
 </p>
 </div>
 </div>
-<div id="outline-container-org629ea41" class="outline-4">
-<h4 id="org629ea41">lerloff</h4>
-<div class="outline-text-4" id="text-org629ea41">
+<div id="outline-container-org2b53e4f" class="outline-4">
+<h4 id="org2b53e4f">lerloff</h4>
+<div class="outline-text-4" id="text-org2b53e4f">
 <p>
 Disable LE Address Resolution
 </p>
 </div>
 </div>
-<div id="outline-container-org11564fb" class="outline-4">
-<h4 id="org11564fb">lecc</h4>
-<div class="outline-text-4" id="text-org11564fb">
-</div><div id="outline-container-orgba40b1f" class="outline-5">
-<h5 id="syntax"><a id="orgba40b1f"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org278449b" class="outline-4">
+<h4 id="org278449b">lecc</h4>
+<div class="outline-text-4" id="text-org278449b">
+</div><div id="outline-container-org8027897" class="outline-5">
+<h5 id="org8027897">構造</h5>
+<div class="outline-text-5" id="text-org8027897">
 <div class="org-src-container">
 <pre class="src src-sh">lecc [--static] [--random] &lt;bdaddr&gt; | [--whitelist]
 </pre>
@@ -1000,12 +1007,12 @@ Create a LE Connection
 </div>
 </div>
 </div>
-<div id="outline-container-org05e5817" class="outline-4">
-<h4 id="org05e5817">ledc</h4>
-<div class="outline-text-4" id="text-org05e5817">
-</div><div id="outline-container-org8ab083b" class="outline-5">
-<h5 id="syntax"><a id="org8ab083b"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org8b84560" class="outline-4">
+<h4 id="org8b84560">ledc</h4>
+<div class="outline-text-4" id="text-org8b84560">
+</div><div id="outline-container-orgced795d" class="outline-5">
+<h5 id="orgced795d">構造</h5>
+<div class="outline-text-5" id="text-orgced795d">
 <div class="org-src-container">
 <pre class="src src-sh">ledc &lt;handle&gt; [reason]
 </pre>
@@ -1017,12 +1024,12 @@ Disconnect a LE Connection
 </div>
 </div>
 </div>
-<div id="outline-container-org7d6c2f9" class="outline-4">
-<h4 id="org7d6c2f9">lecup</h4>
-<div class="outline-text-4" id="text-org7d6c2f9">
-</div><div id="outline-container-org08ed01d" class="outline-5">
-<h5 id="syntax"><a id="org08ed01d"></a>構造</h5>
-<div class="outline-text-5" id="text-syntax">
+<div id="outline-container-org37f7c09" class="outline-4">
+<h4 id="org37f7c09">lecup</h4>
+<div class="outline-text-4" id="text-org37f7c09">
+</div><div id="outline-container-org08c6dd5" class="outline-5">
+<h5 id="org08c6dd5">構造</h5>
+<div class="outline-text-5" id="text-org08c6dd5">
 <div class="org-src-container">
 <pre class="src src-sh">lecup &lt;handle&gt; &lt;min&gt; &lt;max&gt; &lt;latency&gt; &lt;timeout&gt;
 </pre>
@@ -1040,7 +1047,7 @@ LE Connection Update
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 07:23</p>
+<p class="date">Created: 2018-02-26 Mon 08:18</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

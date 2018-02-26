@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<!-- 2018-02-26 Mon 07:23 -->
+<!-- 2018-02-26 Mon 08:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker</title>
@@ -201,6 +201,13 @@
 <meta property="og:description" content="Docker image and container command line interface is a client for interacting with the daemon (see dockerd(8)) through the CLI. The Docker CLI has over 30 commands. The commands are listed below and each has its own man page which explain usage and arguments. To see the man page for a command run man docker <command>. ">
 <meta name="twitter:title" content="docker - Linuxコマンド">
 <meta name="twitter:description" content="Docker image and container command line interface is a client for interacting with the daemon (see dockerd(8)) through the CLI. The Docker CLI has over 30 commands. The commands are listed below and each has its own man page which explain usage and arguments. To see the man page for a command run man docker <command>. ">
+<link rel="alternate" href="http://linux-command.org/" hreflang="x-default" />
+<link rel="alternate" href="http://linux-command.org/en/" hreflang="x-default" />
+<link rel="alternate" href="http://linux-command.org/ko/" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/en/" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/ja/" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/es/" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/zh/" hreflang="zh" />
 <meta name="twitter:image" content="http://linux-command.org/dist/assets/images/docker/main.jpg">
 <meta property="twitter:image" content="http://linux-command.org/dist/assets/images/docker/main.jpg">
 <meta property="og:image" content="http://linux-command.org/dist/assets/images/docker/main.jpg">
@@ -271,10 +278,10 @@ for the JavaScript code in this tag.
 <li><a href="#prerequisites">前準備</a></li>
 <li><a href="#install">インストール</a>
 <ul>
-<li><a href="#org87aa77d">Ubuntu 16.04 ~</a></li>
-<li><a href="#org0e026f8">Fedora</a></li>
-<li><a href="#orgfe3cbe6">Redhat</a></li>
-<li><a href="#orgd2ab50f">Mac</a></li>
+<li><a href="#org805f97f">Ubuntu 16.04 ~</a></li>
+<li><a href="#org2917a25">Fedora</a></li>
+<li><a href="#org5cca4d6">Redhat</a></li>
+<li><a href="#org0ac6463">Mac</a></li>
 </ul>
 </li>
 <li><a href="#packages">インストールされたパッケージ</a></li>
@@ -300,8 +307,8 @@ for the JavaScript code in this tag.
 <img class="org-img main" src="http://linux-command.org/dist/assets/images/docker/main.jpg" alt="main" align="right">
 </p>
 
-<div id="outline-container-org4a31033" class="outline-2">
-<h2 id="overview"><a id="org4a31033"></a>概要</h2>
+<div id="outline-container-org5ebcc26" class="outline-2">
+<h2 id="overview"><a id="org5ebcc26"></a>概要</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 現在の最新バージョンは<span class="org-programming-version">17.12.0-ce</span>です。
@@ -312,8 +319,8 @@ Docker image and container command line interface
 </p>
 </div>
 
-<div id="outline-container-orgff53e7d" class="outline-3">
-<h3 id="introduction"><a id="orgff53e7d"></a>はじめに</h3>
+<div id="outline-container-org0a9507f" class="outline-3">
+<h3 id="introduction"><a id="org0a9507f"></a>はじめに</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 is a client for interacting with the daemon (see dockerd(8)) through the CLI.
@@ -331,13 +338,13 @@ To see the man page for a command run man docker &lt;command&gt;.
 </div>
 
 
-<div id="outline-container-org31b5567" class="outline-2">
-<h2 id="how-to-install"><a id="org31b5567"></a>インストール方法</h2>
+<div id="outline-container-org5ec58ba" class="outline-2">
+<h2 id="how-to-install"><a id="org5ec58ba"></a>インストール方法</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org15bcf43" class="outline-3">
-<h3 id="prerequisites"><a id="org15bcf43"></a>前準備</h3>
+<div id="outline-container-orgde4f1ee" class="outline-3">
+<h3 id="prerequisites"><a id="orgde4f1ee"></a>前準備</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -348,16 +355,16 @@ To see the man page for a command run man docker &lt;command&gt;.
 </div>
 </div>
 
-<div id="outline-container-orgd0ce847" class="outline-3">
-<h3 id="install"><a id="orgd0ce847"></a>インストール</h3>
+<div id="outline-container-org0f72d51" class="outline-3">
+<h3 id="install"><a id="org0f72d51"></a>インストール</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org87aa77d" class="outline-4">
-<h4 id="org87aa77d">Ubuntu 16.04 ~</h4>
-<div class="outline-text-4" id="text-org87aa77d">
+<div id="outline-container-org805f97f" class="outline-4">
+<h4 id="org805f97f">Ubuntu 16.04 ~</h4>
+<div class="outline-text-4" id="text-org805f97f">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgf5479ba"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
+<pre class="src src-sh" id="org55a90d1"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Remove old version</span>
 $ sudo apt-get remove docker docker-engine docker.io
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Install packages</span>
@@ -424,9 +431,9 @@ $ sudo apt-key fingerprint 0EBFCD88
 </div>
 </div>
 
-<div id="outline-container-org0e026f8" class="outline-4">
-<h4 id="org0e026f8">Fedora</h4>
-<div class="outline-text-4" id="text-org0e026f8">
+<div id="outline-container-org2917a25" class="outline-4">
+<h4 id="org2917a25">Fedora</h4>
+<div class="outline-text-4" id="text-org2917a25">
 <div class="org-src-container">
 <pre class="src src-sh">$ yum update
 $ yum install docker
@@ -438,9 +445,9 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-orgfe3cbe6" class="outline-4">
-<h4 id="orgfe3cbe6">Redhat</h4>
-<div class="outline-text-4" id="text-orgfe3cbe6">
+<div id="outline-container-org5cca4d6" class="outline-4">
+<h4 id="org5cca4d6">Redhat</h4>
+<div class="outline-text-4" id="text-org5cca4d6">
 <div class="org-src-container">
 <pre class="src src-sh">$ subscription-manager register &#8211;<span style="font-weight: bold; font-style: italic;">username</span>=&lt;username&gt; &#8211;auto-attach
 $ subscription-manager repos &#8211;<span style="font-weight: bold; font-style: italic;">enable</span>=rhel-7-server-extras-rpms
@@ -456,9 +463,9 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-orgd2ab50f" class="outline-4">
-<h4 id="orgd2ab50f">Mac</h4>
-<div class="outline-text-4" id="text-orgd2ab50f">
+<div id="outline-container-org0ac6463" class="outline-4">
+<h4 id="org0ac6463">Mac</h4>
+<div class="outline-text-4" id="text-org0ac6463">
 <ul class="org-ul">
 <li><a href="https://download.docker.com/mac/stable/Docker.dmg">Docker.dmg(Official)</a></li>
 </ul>
@@ -466,14 +473,14 @@ $ systemctl status docker.service
 </div>
 </div>
 
-<div id="outline-container-orgc8f693f" class="outline-3">
-<h3 id="packages"><a id="orgc8f693f"></a>インストールされたパッケージ</h3>
+<div id="outline-container-orga1cddb1" class="outline-3">
+<h3 id="packages"><a id="orga1cddb1"></a>インストールされたパッケージ</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-org27f3072" class="outline-3">
-<h3 id="check"><a id="org27f3072"></a>チェック</h3>
+<div id="outline-container-org35e4659" class="outline-3">
+<h3 id="check"><a id="org35e4659"></a>チェック</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo docker run hello-world
@@ -518,13 +525,13 @@ Docker version 17.12.0-ce, build c97c6d6
 </div>
 </div>
 
-<div id="outline-container-orgb674516" class="outline-2">
-<h2 id="usage"><a id="orgb674516"></a>命令説明</h2>
+<div id="outline-container-org38e0cb4" class="outline-2">
+<h2 id="usage"><a id="org38e0cb4"></a>命令説明</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org0842a05" class="outline-3">
-<h3 id="syntax"><a id="org0842a05"></a>構造</h3>
+<div id="outline-container-org26a29f5" class="outline-3">
+<h3 id="syntax"><a id="org26a29f5"></a>構造</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">docker [OPTIONS] COMMAND [ARG...]
@@ -535,8 +542,8 @@ docker [ --help | -v | --version ]
 </div>
 </div>
 
-<div id="outline-container-org32e8466" class="outline-3">
-<h3 id="options"><a id="org32e8466"></a>オプション</h3>
+<div id="outline-container-org1ffcce2" class="outline-3">
+<h3 id="options"><a id="org1ffcce2"></a>オプション</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span class="org-programming-option">--config</span> <span class="org-programming-argument">string</span> :</li>
@@ -607,8 +614,8 @@ Print version information and quit
 </div>
 </div>
 
-<div id="outline-container-org1d398d2" class="outline-3">
-<h3 id="environment-variables"><a id="org1d398d2"></a>環境変数</h3>
+<div id="outline-container-org08227d5" class="outline-3">
+<h3 id="environment-variables"><a id="org08227d5"></a>環境変数</h3>
 <div class="outline-text-3" id="text-environment-variables">
 <ul class="org-ul">
 <li><span class="org-programming-variable">DOCKER_API_VERSION</span> :</li>
@@ -689,8 +696,8 @@ Location for temporary Docker files.
 </ul>
 </div>
 </div>
-<div id="outline-container-orga95409e" class="outline-3">
-<h3 id="commands"><a id="orga95409e"></a>コマンド</h3>
+<div id="outline-container-orgb5099b0" class="outline-3">
+<h3 id="commands"><a id="orgb5099b0"></a>コマンド</h3>
 <div class="outline-text-3" id="text-commands">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -987,8 +994,8 @@ Location for temporary Docker files.
 </div>
 </div>
 
-<div id="outline-container-org6e10b77" class="outline-2">
-<h2 id="references"><a id="org6e10b77"></a>参考</h2>
+<div id="outline-container-org69b94ec" class="outline-2">
+<h2 id="references"><a id="org69b94ec"></a>参考</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker for Mac(Official)</a></li>
@@ -1000,7 +1007,7 @@ Location for temporary Docker files.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-26 Mon 07:23</p>
+<p class="date">Created: 2018-02-26 Mon 08:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
