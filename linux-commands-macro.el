@@ -230,11 +230,17 @@
 					 link))
   (format "[[%s][%s]]" link name))
 
-(defun lc-macro/image (path &optional name classes align)
+(defun lc-macro/image--get-local-path (path)
+  (expand-file-name
+   (concat (file-name-as-directory (file-relative-name (file-name-base (buffer-file-name)) lc-core/base-dir)) "/" path)
+   (expand-file-name "assets/images" lc-core/base-dir)))
+
+(defun lc-macro/image (path &optional name classes align with-meta)
   (setq path (lc-macro/arg-trim path))
   (setq name (or (lc-macro/arg-trim name) (file-name-base path)))
   (setq classes (lc-macro/arg-trim classes))
   (setq align (lc-macro/arg-trim align))
+  (setq with-meta (lc-macro/arg-trim with-meta))
   (when (stringp classes)
 	(setq classes (split-string classes "[\t ]+")))
   (unless (consp classes)
@@ -252,10 +258,19 @@
 						  img-path
 						  name
 						  (if align (format "align=\"%s\"" align) "")))
-		 )
-	(if (string-match "http[s]?://" name)
-		(format "@@html:<a href=\"%s\">@@%s@@html:</a>@@" name img-tag)
-	  img-tag)
+		 (meta '())
+		 ret)
+	(setq ret
+		  (if (string-match "http[s]?://" name)
+			  (format "@@html:<a href=\"%s\">@@%s@@html:</a>@@" name img-tag)
+			img-tag))
+	(when with-meta
+	  (push (format "<meta name=\"og:image\" content=\"%s\">" img-path) meta)
+	  (push (format "<meta property=\"twitter:image\" content=\"%s\">" img-path) meta)
+	  (setq ret (format "\n%s\n\n%s"
+						(mapconcat (lambda (str) (format "#+HTML_HEAD: %s" str)) meta "\n")
+						ret)))
+	ret
 	))
 
 (defun lc-macro/inline-image (path &optional name)
@@ -267,5 +282,16 @@
 
 (defun lc-macro/image-inline-link (path &optional name)
   (lc-macro/image-link path name "org-inline-img"))
+
+(defun lc-macro/main-image ()
+  (let ((jpg (lc-macro/image--get-local-path "main.jpg"))
+		(png (lc-macro/image--get-local-path "main.png"))
+		path)
+	(if (file-exists-p jpg)
+		(setq path jpg)
+	  (if (file-exists-p png)
+		  (setq path png)))
+	(if (and (stringp path) (file-exists-p path))
+		(lc-macro/image (file-name-nondirectory path) "main" "main" "right" t) "")))
 
 (provide 'linux-commands-macro)
