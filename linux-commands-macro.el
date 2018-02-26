@@ -152,9 +152,9 @@
 	  )))
 
 (defun lc-macro/make-hreflang (lang)
-  (if (string-match "README\\|index" (file-name-base lc-core/current-filename))
+  (if (or lc-core/current-filename (string-match "README\\|index" (file-name-base lc-core/current-filename)))
 	  (format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/\" hreflang=\"%s\" />" lc-core/url lang lang)
-	(format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/%s\" hreflang=\"%s\" />"
+	(format "#+HTML_HEAD: <link rel=\"alternate\" href=\"%s/%s/%s.html\" hreflang=\"%s\" />"
 			lc-core/url
 			lang
 			(file-name-sans-extension lc-core/current-relative-filename)
