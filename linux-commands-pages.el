@@ -32,6 +32,7 @@
 	(when (equal (file-name-base filename) "README") ;; README.org handling
 	  (let (tmp-readme tmp-index)
 		(setq tmp-readme (org-multilingual-publish plist filename (file-name-directory filename)))
+		(lc-core/init-contents tmp-readme)
 		(org-org-publish-to-org plist tmp-readme (file-name-directory tmp-readme))
 		(when (file-exists-p (concat tmp-readme ".org"))
 		  (shell-command-to-string (format "mv -f \"%s\" \"%s\"" (concat tmp-readme ".org") filename)))
