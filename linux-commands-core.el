@@ -20,6 +20,7 @@
 (defvar lc-core/base-url nil)
 (defvar lc-core/language nil)
 
+(defvar lc-core/current-filename nil)
 (defvar lc-core/current-contents nil)
 (defvar lc-core/current-contents-filename nil)
 
@@ -54,6 +55,7 @@
 
 (defun lc-core/init-contents (filename)
   (setq filename (expand-file-name filename))
+  (setq lc-core/current-filename filename)
   (ignore-errors
 	(setq lc-core/current-contents
 		  (with-temp-buffer
