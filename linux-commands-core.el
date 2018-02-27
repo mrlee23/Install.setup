@@ -15,6 +15,7 @@
 
 (defvar lc-core/url "http://linux-command.org")
 (defvar lc-core/site-name "Linux Commands")
+(defvar lc-core/site-desc "Provides a bunch of standardized documentation for various Linux commands, simple usage and detailed option descriptions, and actual usage examples.")
 
 (defvar lc-core/root-dir nil) ;; git root directory
 (defvar lc-core/base-dir nil)
@@ -38,7 +39,8 @@
 (defun lc-core/init-lang (lang)
   (setq lc-core/language (format "%s" lang))
   (setq lc-core/base-url (format "%s/%s" lc-core/url lc-core/language))
-  (lc-core/set-site-name lang))
+  (lc-core/set-site-name lang)
+  (lc-core/set-site-desc lang))
 
 (defun lc-core/set-site-name (lang)
   (setq lc-core/site-name
@@ -60,6 +62,27 @@
 		   )
 		  (t
 		   "Linux Commands"))))
+
+(defun lc-core/set-site-desc (lang)
+  (setq lc-core/site-desc
+		(case lang
+		  (en
+		   "Provides a bunch of standardized documentation for various Linux commands, simple usage and detailed option descriptions, and actual usage examples."
+		   )
+		  (es
+		   "Proporciona una gran cantidad de documentación estandarizada para varios comandos de Linux, uso simple y descripciones de opciones detalladas, y ejemplos de uso reales."
+		   )
+		  (ko
+		   "다양한 리눅스 명령어의 설치 방법, 간단한 사용법 및 자세한 옵션 설명, 다양한 사용예를 정형화된 문서로 제공합니다."
+		   )
+		  (zh
+		   "它为各种Linux命令提供了一组文档，简单的用法和详细的选项描述以及各种使用示例。"
+		   )
+		  (ja
+		   "様々なLinuxのコマンドのインストール方法、簡単な使い方とオプションの詳細な説明、様々な使用例を定型化された文書で提供します。"
+		   )
+		  (t
+		   "References for all of Linux commands."))))
 
 (defun lc-core/init-contents (filename)
   (setq filename (expand-file-name filename))

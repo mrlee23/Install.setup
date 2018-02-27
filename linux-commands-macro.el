@@ -199,6 +199,12 @@
 (defun lc-macro/header-language (&optional cons-flag)
   (lc-macro/make-header "LANGUAGE" lc-core/language cons-flag))
 
+(defun lc-macro/header-site-title ()
+  (lc-macro/make-header "TITLE" lc-core/site-name))
+
+(defun lc-macro/header-site-description ()
+  (lc-macro/make-header "DESCRIPTION" lc-core/site-name))
+
 (defun lc-macro/builtin ()
   (case (lc-core/get-current-language)
 	(en
