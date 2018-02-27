@@ -343,11 +343,13 @@
 
 (defun lc-macro/rss-generator ()
   (let ((files (lc-macro/collect-files t nil)))
-	(mapcar
+	(concat
+	 "\n"
+	 (mapconcat
 	 (lambda (file)
 	   (let ((heading (or (lc-core/get-contents-data file :title) (file-name-sans-extension file)))
 			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" %s" file))))
-		 (format "\n%s\n%s\n%s"
+		 (format "%s\n%s\n%s"
 				 (lc-macro/gen-heading heading)
 				 (lc-macro/gen-properties `((RSS_PERMLINK . ,(concat heading ".html"))
 											(PUBDATE . ,(replace-regexp-in-string "\n" "" pubdate))
@@ -356,6 +358,8 @@
 											(CATEGORY . ,(lc-core/get-contents-data file :category))))
 				 (or (lc-core/get-contents-data file :desc) ""))
 	   ))
-	 files)))
+	 files
+	 "\n")
+	 "\n")))
 
 (provide 'linux-commands-macro)
