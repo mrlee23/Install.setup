@@ -69,8 +69,8 @@ pages: mkdirs pages-deps
 
 pages-deps:
 	cp -rf "$(ASSETS_DIR)" "$(DIST_DIR)/$(ASSETS_DIR)"
-	git clone https://github.com/mrlee23/org-html-themes.git $(DIST_DIR)/org-html-themes
-	rm -rf dist/org-html-themes/.git
+	git clone https://github.com/mrlee23/readtheorg.git $(DIST_DIR)/readtheorg
+	rm -rf dist/readtheorg/.git
 
 define load_paths
 (add-to-list 'load-path "./")
