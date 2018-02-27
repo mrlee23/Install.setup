@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-27 Tue 11:07 -->
+<!-- 2018-02-27 Tue 13:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>docker-compose</title>
@@ -183,15 +183,15 @@
 <meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
-<link rel="stylesheet" type="text/css" href="/dist/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/org-html-themes/styles/readtheorg/css/rtd-full.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/org-html-themes/styles/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
 <link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
-<script type="text/javascript" src="/dist/org-html-themes/styles/lib/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="/dist/org-html-themes/styles/lib/js/bootstrap-3.3.4.min.js"></script>
-<script type="text/javascript" src="/dist/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="/dist/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="docker-compose - Linux Commands">
@@ -275,13 +275,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org47da1e9" class="outline-2">
-<h2 id="how-to-install"><a id="org47da1e9"></a>How to Install</h2>
+<div id="outline-container-orgc90e27d" class="outline-2">
+<h2 id="how-to-install"><a id="orgc90e27d"></a>How to Install</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org7f6c5e4" class="outline-3">
-<h3 id="prerequisites"><a id="org7f6c5e4"></a>Prerequisites</h3>
+<div id="outline-container-org626d762" class="outline-3">
+<h3 id="prerequisites"><a id="org626d762"></a>Prerequisites</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./docker.html">docker</a></li>
@@ -289,52 +289,52 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org88aa4a0" class="outline-3">
-<h3 id="install"><a id="org88aa4a0"></a>Install</h3>
+<div id="outline-container-orgd741a63" class="outline-3">
+<h3 id="install"><a id="orgd741a63"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
 <div class="org-src-container">
-<pre><code class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Download latest docker compose</span>
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-<span style="font-weight: bold;">`uname -s`</span>-<span style="font-weight: bold;">`uname -m`</span> -o /usr/local/bin/docker-compose
 
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Add execution permission</span>
 $ sudo chmod +x /usr/local/bin/docker-compose
-</code></pre>
+</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org45f723a" class="outline-3">
-<h3 id="uninstall"><a id="org45f723a"></a>Uninstall</h3>
+<div id="outline-container-org091727c" class="outline-3">
+<h3 id="uninstall"><a id="org091727c"></a>Uninstall</h3>
 <div class="outline-text-3" id="text-uninstall">
 <div class="org-src-container">
-<pre><code class="src src-sh">$ sudo rm /usr/local/bin/docker-compose
+<pre class="src src-sh">$ sudo rm /usr/local/bin/docker-compose
 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">or</span>
 $ pip uninstall docker-compose
-</code></pre>
+</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org05fea40" class="outline-3">
-<h3 id="packages"><a id="org05fea40"></a>Installed Packages</h3>
+<div id="outline-container-orgf984787" class="outline-3">
+<h3 id="packages"><a id="orgf984787"></a>Installed Packages</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-org9b8f76e" class="outline-3">
-<h3 id="check"><a id="org9b8f76e"></a>Check</h3>
+<div id="outline-container-orga44cfda" class="outline-3">
+<h3 id="check"><a id="orga44cfda"></a>Check</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
-<pre><code class="src src-sh">$ docker-compose --version
+<pre class="src src-sh">$ docker-compose --version
 docker-compose version 1.18.0, build 8dd22a9
-</code></pre>
+</pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge998f4f" class="outline-2">
-<h2 id="references"><a id="orge998f4f"></a>References</h2>
+<div id="outline-container-org2c2d427" class="outline-2">
+<h2 id="references"><a id="org2c2d427"></a>References</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="./docker-command-completion.html">docker-command-completion</a></li>
@@ -346,7 +346,7 @@ docker-compose version 1.18.0, build 8dd22a9
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-27 Tue 11:07</p>
+<p class="date">Created: 2018-02-27 Tue 13:28</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
