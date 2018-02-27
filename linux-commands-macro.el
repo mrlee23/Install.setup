@@ -348,7 +348,7 @@
 	 (mapconcat
 	 (lambda (file)
 	   (let ((heading (or (lc-core/get-contents-data file :title) (file-name-sans-extension file)))
-			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" %s" file))))
+			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" %s" (expand-file-name file lc-core/root-dir)))))
 		 (format "%s\n%s\n%s"
 				 (lc-macro/gen-heading heading)
 				 (lc-macro/gen-properties `((RSS_PERMLINK . ,(concat heading ".html"))

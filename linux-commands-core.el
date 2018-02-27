@@ -16,6 +16,7 @@
 (defvar lc-core/url "http://linux-command.org")
 (defvar lc-core/site-name "Linux Commands")
 
+(defvar lc-core/root-dir nil) ;; git root directory
 (defvar lc-core/base-dir nil)
 (defvar lc-core/base-url nil)
 (defvar lc-core/contents-data '())
@@ -29,6 +30,7 @@
 (defvar lc-core/current-contents-filename nil)
 
 (defun lc-core/init-base (base-dir)
+  (setq lc-core/root-dir (substring (shell-command-to-string "git rev-parse --show-toplevel") 0 -1))
   (setq lc-core/base-dir base-dir)
   (setq lc-core/special-files (split-string (shell-command-to-string "cat .specialFiles") "\n"))
   (setq lc-core/contents-data '()))
