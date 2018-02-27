@@ -27,11 +27,40 @@
   arg
   )
 
-(defun lc-macro/collect-files ()
-  (seq-filter
-   (lambda (file)
-	 (and (string-match "^\\([a-zA-Z0-9-_]+\\)\\.org$" file) (not (equal file "README.org"))))
-   (directory-files "./")))
+(defun lc-macro/gen-heading (name &optional level)
+  (unless (numberp level)
+	(setq level 1))
+  (format "%s %s" (make-string level ?*) name))
+
+(defun lc-macro/gen-properties (cons-data)
+  (concat
+   ":PROPERTIES:\n"
+   (string-join
+	(seq-filter
+	 (lambda (str) (stringp str))
+	 (mapcar
+	  (lambda (data)
+		(if (cdr data) (format ":%s: %s" (car data) (cdr data)) nil))
+	  cons-data))
+	"\n")
+	 "\n:END:"))
+
+(defun lc-macro/collect-files (&optional recursive with-special-files tracked-with-git)
+  (let ((cmd (format "find . %s -name \"*.org\" -not -path \"*/.*\""
+					 (if (not recursive) "-maxdepth 1" ""))
+			 ))
+	(seq-filter
+	 (lambda (arg)
+	   (and (not (eq arg nil))
+			(if with-special-files t
+			  (not (member arg lc-core/special-files)))
+			(and tracked-with-git (not (equal "" (shell-command-to-string (format "git log -1 -- \"%s\"" (expand-file-name arg lc-core/root-dir)))))
+			  )))
+	 (mapcar
+	  (lambda (file)
+		(when (> (length file) 0)
+		  (file-relative-name (expand-file-name file) lc-core/base-dir)))
+	  (split-string (shell-command-to-string cmd) "\n")))))
 
 (defun lc-macro/include-progress ()
   (concat
@@ -71,6 +100,7 @@
 
 (defun lc-macro/join-oneline (list-data)
   (setq list-data (reverse list-data)
+		list-data (seq-filter (lambda (str) (stringp str)) list-data)
 		list-data (mapconcat (lambda (str) str) list-data " ")
 		list-data (replace-regexp-in-string "\n" " " list-data)
 		list-data (replace-regexp-in-string "[ ]+" " " list-data)))
@@ -87,32 +117,10 @@
 		(meta '()))
 	(if (not contents)
 		""
-	  (org-element-map contents 'keyword
-		(lambda (keyword)
-		  (let ((key (org-element-property :key keyword))
-				(value (org-element-property :value keyword)))
-			(when (member key keywords)
-			  (case (intern key)
-				(TITLE
-				 (push value title)
-				 )
-				(DESCRIPTION
-				 (push value desc)
-				 )
-				(AUTHOR
-				 (push value author)))
-			  ))
-		  keyword))
-	  (org-element-map contents 'paragraph
-		(lambda (paragraph)
-		  (let* ((parent (org-element-property :parent paragraph))
-				 (custom-id (ignore-errors (org-element-property :CUSTOM_ID (org-element-property :parent parent))))
-				 )
-			(and (eq (org-element-type parent) 'section)
-				 (and (stringp custom-id) (string-match "\\(overview\\|introduction\\)" custom-id))
-				 (and (stringp (caddr paragraph)) (push (caddr paragraph) desc))
-				 ))
-		  paragraph))
+	  (push (lc-core/get-current-contents-data :title) title)
+	  (push (lc-core/get-current-contents-data :author) author)
+	  (push (lc-core/get-current-contents-data :desc) desc)
+	  
 	  (push "-" title)
 	  (push lc-core/site-name title)
 	  (setq title (lc-macro/join-oneline title))
@@ -169,6 +177,26 @@
 	lc-core/support-languages
 	"\n")
    "\n"))
+
+(defun lc-macro/make-header (name value &optional cons-flag)
+  (if cons-flag
+	  `(,name . ,value)
+	(format "#+%s: %s" name value)))
+
+(defun lc-macro/header ()
+  (let ((headers '()))
+	(push (lc-macro/header-language t) headers)
+	(concat
+	 "\n"
+	 (mapconcat
+	  (lambda (header)
+		(lc-macro/make-header (car header) (cdr header)))
+	  (reverse headers)
+	  "\n")
+	 "\n")))
+
+(defun lc-macro/header-language (&optional cons-flag)
+  (lc-macro/make-header "LANGUAGE" lc-core/language cons-flag))
 
 (defun lc-macro/builtin ()
   (case (lc-core/get-current-language)
@@ -314,5 +342,39 @@
 		  (setq path png)))
 	(if (and (stringp path) (file-exists-p path))
 		(lc-macro/image (file-name-nondirectory path) "main" "main" "right" t) "")))
+
+(defun lc-macro/rss-generator ()
+  (let ((files (lc-macro/collect-files t nil t)))
+	(setq files
+		  (mapcar
+		   (lambda (file)
+			 (let ((unixtime (shell-command-to-string (format "git log -1 --pretty=\"%%ct\" -- \"%s\"" (expand-file-name file lc-core/root-dir)))))
+			   `(,file . ,(string-to-number (replace-regexp-in-string "\n" "" unixtime)))))
+		  files))
+	(setq files (seq-filter 'consp files))
+	(setq files
+		  (seq-sort
+		   (lambda (a b)
+			 (> (cdr a) (cdr b)))
+		   files))
+	(setq files (mapcar 'car files))
+	(concat
+	 "\n"
+	 (mapconcat
+	 (lambda (file)
+	   (let ((heading (or (lc-core/get-contents-data file :title) (file-name-sans-extension file)))
+			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" -- \"%s\"" (expand-file-name file lc-core/root-dir)))))
+		 (format "%s\n%s\n%s"
+				 (lc-macro/gen-heading heading)
+				 (lc-macro/gen-properties `((RSS_PERMALINK . ,(concat heading ".html"))
+											(PUBDATE . ,(replace-regexp-in-string "\n" "" pubdate))
+											(AUTHOR . ,(lc-core/get-contents-data file :author))
+											(EMAIL . ,(lc-core/get-contents-data file :email))
+											(CATEGORY . ,(lc-core/get-contents-data file :category))))
+				 (or (lc-core/get-contents-data file :desc) ""))
+	   ))
+	 files
+	 "\n")
+	 "\n")))
 
 (provide 'linux-commands-macro)
