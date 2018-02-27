@@ -93,6 +93,7 @@
 		   :base-extension "org"
 		   :publishing-directory ,TARGET_DIR
 		   :publishing-function org-rss-publish-to-rss
+		   :html-link-home ,lc-core/base-url
 		   :rss-extension "xml"
 		   :include ("rss.org")
 		   :exclude ".*"

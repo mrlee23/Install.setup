@@ -367,7 +367,7 @@
 			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" -- \"%s\"" (expand-file-name file lc-core/root-dir)))))
 		 (format "%s\n%s\n%s"
 				 (lc-macro/gen-heading heading)
-				 (lc-macro/gen-properties `((RSS_PERMALINK . ,(concat heading ".html"))
+				 (lc-macro/gen-properties `((RSS_PERMALINK . ,(concat (file-name-sans-extension file) ".html"))
 											(PUBDATE . ,(replace-regexp-in-string "\n" "" pubdate))
 											(AUTHOR . ,(lc-core/get-contents-data file :author))
 											(EMAIL . ,(lc-core/get-contents-data file :email))
