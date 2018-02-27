@@ -54,7 +54,8 @@
 	   (and (not (eq arg nil))
 			(if with-special-files t
 			  (not (member arg lc-core/special-files)))
-			(and tracked-with-git (not (equal "" (shell-command-to-string (format "git log -1 -- \"%s\"" (expand-file-name arg lc-core/root-dir)))))
+			(if (not tracked-with-git) t
+			  (not (equal "" (shell-command-to-string (format "git log -1 -- \"%s\"" (expand-file-name arg lc-core/root-dir)))))
 			  )))
 	 (mapcar
 	  (lambda (file)
@@ -67,7 +68,7 @@
    "|Name|Overview|Install|Usage|Options|See also|
 |-+-+-+-+-+-|\n"
    (mapconcat (lambda (file-name)
-				(let ((name (substring file-name 0 -4))
+				(let ((name (file-name-sans-extension file-name))
 					  (flags '())
 					  contents)
 				  (with-temp-buffer
