@@ -54,7 +54,7 @@
 	   (and (not (eq arg nil))
 			(if with-special-files t
 			  (not (member arg lc-core/special-files)))
-			(and tracked-with-git (not (equal "" (format "git log -1 -- \"%s\"" (expand-file-name file lc-core/root-dir))))
+			(and tracked-with-git (not (equal "" (format "git log -1 -- \"%s\"" (expand-file-name arg lc-core/root-dir))))
 			  )))
 	 (mapcar
 	  (lambda (file)
