@@ -46,7 +46,7 @@
 	 "\n:END:"))
 
 (defun lc-macro/collect-files (&optional recursive with-special-files tracked-with-git)
-  (let ((cmd (format "find . %s -name \"*.org\" -not -path \"*/.*\""
+  (let ((cmd (format "find . %s -name \"*.org\" -not -path \"*/.*\" | sort -d"
 					 (if (not recursive) "-maxdepth 1" ""))
 			 ))
 	(seq-filter
