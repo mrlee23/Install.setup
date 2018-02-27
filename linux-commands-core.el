@@ -82,7 +82,7 @@
 		   "様々なLinuxのコマンドのインストール方法、簡単な使い方とオプションの詳細な説明、様々な使用例を定型化された文書で提供します。"
 		   )
 		  (t
-		   "References for all of Linux commands."))))
+		   "Provides a bunch of standardized documentation for various Linux commands, simple usage and detailed option descriptions, and actual usage examples."))))
 
 (defun lc-core/init-contents (filename)
   (setq filename (expand-file-name filename))
