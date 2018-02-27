@@ -32,7 +32,7 @@ get-deps:
 	sudo apt-get install -y texinfo
 	git clone https://github.com/hniksic/emacs-htmlize.git "$(EMACS_DEPS_DIR)/emacs-htmlize"
 	git clone https://github.com/mrlee23/org-multilingual.git "$(EMACS_DEPS_DIR)/org-multilingual"
-	git clone -b release_9.1 https://code.orgmode.org/bzg/org-mode.git "$(EMACS_DEPS_DIR)/org-mode"
+	git clone -b release_9.1.6 https://code.orgmode.org/bzg/org-mode.git "$(EMACS_DEPS_DIR)/org-mode"
 	cd "$(EMACS_DEPS_DIR)/org-mode" && make
 	cd "$(EMACS_DEPS_DIR)/org-mode/lisp" && find . -name "*.el" | sed 's/.el$$//g' | sed 's/.\///g' | sed '/^requirements$$/d'| sed "s/\(.*\)/(require '\1)/g" > requirements.el
 
@@ -69,8 +69,8 @@ pages: mkdirs pages-deps
 
 pages-deps:
 	cp -rf "$(ASSETS_DIR)" "$(DIST_DIR)/$(ASSETS_DIR)"
-	git clone https://github.com/mrlee23/org-html-themes.git $(DIST_DIR)/org-html-themes
-	rm -rf dist/org-html-themes/.git
+	git clone https://github.com/mrlee23/readtheorg.git $(DIST_DIR)/readtheorg
+	rm -rf dist/readtheorg/.git
 
 define load_paths
 (add-to-list 'load-path "./")
