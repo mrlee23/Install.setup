@@ -94,7 +94,7 @@
 		   :publishing-directory ,TARGET_DIR
 		   :publishing-function org-rss-publish-to-rss
 		   :rss-extension "xml"
-		   :include ("sitemap.org")
+		   :include ("rss.org")
 		   :exclude ".*"
 		   )
 		  ("LinuxCommands"
