@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-02-27 Tue 10:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux Command RSS</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<meta name="description" content="References for all of Linux commands."
+ />
+<meta name="keywords" content="Linux, Commands, Reference, Manual" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linux Command RSS</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2d2bb64">1. docker</a></li>
+<li><a href="#orgebfbce8">2. git</a></li>
+<li><a href="#org43cc760">3. org-mode</a></li>
+<li><a href="#org44d8dca">4. hcitool</a></li>
+<li><a href="#orge061cf8">5. groupadd</a></li>
+<li><a href="#org54d2664">6. Linux Commands</a></li>
+<li><a href="#orga59985e">7. docker build</a></li>
+<li><a href="#orgb25cd37">8. docker run</a></li>
+<li><a href="#orge50ee5f">9. chsh</a></li>
+<li><a href="#orgb546f79">10. insmod</a></li>
+<li><a href="#orgfcbf746">11. addbib</a></li>
+<li><a href="#org1a1fd4f">12. node</a></li>
+<li><a href="#org4bec609">13. samba</a></li>
+<li><a href="#org7d307ef">14. iperf</a></li>
+<li><a href="#org7bb3d4c">15. lsof</a></li>
+<li><a href="#org71a90d6">16. NIS</a></li>
+<li><a href="#orgc029cca">17. postfix</a></li>
+<li><a href="#orgf3a33eb">18. build-essential</a></li>
+<li><a href="#orgb55f939">19. wget</a></li>
+<li><a href="#org7a50087">20. finger</a></li>
+<li><a href="#org20b4b9e">21. find</a></li>
+<li><a href="#orgfe59bc4">22. chgrp</a></li>
+<li><a href="#org3748e63">23. brew</a></li>
+<li><a href="#org64535b4">24. userdel</a></li>
+<li><a href="#orge084225">25. autoconf</a></li>
+<li><a href="#org240b56e">26. update-rc.d</a></li>
+<li><a href="#orgcb7dafe">27. tar</a></li>
+<li><a href="#orgc7c7d1d">28. lsattr</a></li>
+<li><a href="#orgc9c95b4">29. chfn</a></li>
+<li><a href="#orgbc4e37c">30. ca-certificates</a></li>
+<li><a href="#orgbbd0ab7">31. update</a></li>
+<li><a href="#org2fb2018">32. diff</a></li>
+<li><a href="#orgeefe4e2">33. rpm</a></li>
+<li><a href="#org4832428">34. chatter</a></li>
+<li><a href="#orgcc2ca10">35. lprm</a></li>
+<li><a href="#org6ca391b">36. pip</a></li>
+<li><a href="#org8063b8e">37. squid</a></li>
+<li><a href="#orgebbd704">38. curl</a></li>
+<li><a href="#org823389e">39. tail</a></li>
+<li><a href="#orgd3fd7bb">40. fsck</a></li>
+<li><a href="#org953fd0d">41. useradd</a></li>
+<li><a href="#orgebd35a8">42. tripwire</a></li>
+<li><a href="#org00b4f2e">43. ruby</a></li>
+<li><a href="#org4ab68d3">44. lpc</a></li>
+<li><a href="#orgf63e700">45. chmod</a></li>
+<li><a href="#orgc4dfcd3">46. usermod</a></li>
+<li><a href="#orga3beb43">47. xinetd</a></li>
+<li><a href="#orgaea2865">48. Linux Commands</a></li>
+<li><a href="#orga717cc6">49. apt</a></li>
+<li><a href="#orge7a3a33">50. hdparm</a></li>
+<li><a href="#orgd0ee05f">51. vim</a></li>
+<li><a href="#org4bfbaf3">52. passwd</a></li>
+<li><a href="#orgd41ea0d">53. javac</a></li>
+<li><a href="#org86d1896">54. dh-autoreconf</a></li>
+<li><a href="#orgbe2be37">55. gcc</a></li>
+<li><a href="#orge8e570d">56. dpkg</a></li>
+<li><a href="#org078de52">57. apt-add-repository</a></li>
+<li><a href="#orga12aa0c">58. SELinux</a></li>
+<li><a href="#orgac84147">59. chown</a></li>
+<li><a href="#org432d73b">60. DNS</a></li>
+<li><a href="#orge6eda49">61. lp</a></li>
+<li><a href="#orge280778">62. travis</a></li>
+<li><a href="#orga02b58b">63. chrome</a></li>
+<li><a href="#org59424e2">64. lpr</a></li>
+<li><a href="#org422e947">65. alias</a></li>
+<li><a href="#org27cee15">66. echo</a></li>
+<li><a href="#org38243c5">67. docker-compose</a></li>
+<li><a href="#org2266ca1">68. lpq</a></li>
+<li><a href="#org3b84c24">69. shutdown</a></li>
+<li><a href="#org47dd755">70. make</a></li>
+<li><a href="#org9a2cc57">71. ssh</a></li>
+<li><a href="#org52ecf36">72. iptables</a></li>
+<li><a href="#orga9c3ef0">73. gem</a></li>
+<li><a href="#org81e24c9">74. bash</a></li>
+<li><a href="#orgea0f0b6">75. rsync</a></li>
+<li><a href="#org0a13579">76. java</a></li>
+<li><a href="#orgd647310">77. emacs</a></li>
+<li><a href="#orgc4cd76c">78. cat</a></li>
+<li><a href="#org7f94ded">79. npm</a></li>
+<li><a href="#org6c81b6a">80. sendmail</a></li>
+<li><a href="#org7b26bc9">81. sudo</a></li>
+<li><a href="#orge094921">82. lilo</a></li>
+<li><a href="#orga127ca2">83. modprobe</a></li>
+<li><a href="#org8b25778">84. xmodmap</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2d2bb64" class="outline-2">
+<h2 id="org2d2bb64"><span class="section-number-2">1</span> docker</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+To see the man page for a command run man docker &lt;command&gt;.
+</p>
+
+<p>
+The Docker CLI has over 30 commands. The commands are listed below and each has its own man page which explain usage and arguments.
+</p>
+
+<p>
+is a client for interacting with the daemon (see dockerd(8)) through the CLI.
+</p>
+
+<p>
+Docker image and container command line interface
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgebfbce8" class="outline-2">
+<h2 id="orgebfbce8"><span class="section-number-2">2</span> git</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+A formatted and hyperlinked copy of the latest Git documentation can be viewed at 
+After you mastered the basic concepts, you can come back to this page to learn what commands Git offers. You can learn more about individual Git commands with "git help
+command". gitcli(7) manual page gives you an overview of the command-line command syntax.
+</p>
+
+<p>
+See gittutorial(7) to get started, then see giteveryday(7) for a useful minimum set of commands. The Git User's Manual has a more in-depth introduction.
+</p>
+
+<p>
+Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+</p>
+
+<p>
+The stupid content tracker
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43cc760" class="outline-2">
+<h2 id="org43cc760"><span class="section-number-2">3</span> org-mode</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</div>
+
+<div id="outline-container-org44d8dca" class="outline-2">
+<h2 id="org44d8dca"><span class="section-number-2">4</span> hcitool</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+hcitool is used to configure Bluetooth connections and send some special command to Bluetooth devices.
+If no command is given, or if the option -h is used, hcitool prints some usage information and exits.
+</p>
+
+<p>
+Configure Bluetooth connections
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge061cf8" class="outline-2">
+<h2 id="orge061cf8"><span class="section-number-2">5</span> groupadd</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Create a new user group.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org54d2664" class="outline-2">
+<h2 id="org54d2664"><span class="section-number-2">6</span> Linux Commands</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</div>
+
+<div id="outline-container-orga59985e" class="outline-2">
+<h2 id="orga59985e"><span class="section-number-2">7</span> docker build</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Build an image from a Dockerfile
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb25cd37" class="outline-2">
+<h2 id="orgb25cd37"><span class="section-number-2">8</span> docker run</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Run a command in a new container
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge50ee5f" class="outline-2">
+<h2 id="orge50ee5f"><span class="section-number-2">9</span> chsh</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Change the login shell.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb546f79" class="outline-2">
+<h2 id="orgb546f79"><span class="section-number-2">10</span> insmod</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+</div>
+
+<div id="outline-container-orgfcbf746" class="outline-2">
+<h2 id="orgfcbf746"><span class="section-number-2">11</span> addbib</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+</div>
+
+<div id="outline-container-org1a1fd4f" class="outline-2">
+<h2 id="org1a1fd4f"><span class="section-number-2">12</span> node</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+</div>
+
+<div id="outline-container-org4bec609" class="outline-2">
+<h2 id="org4bec609"><span class="section-number-2">13</span> samba</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+</div>
+
+<div id="outline-container-org7d307ef" class="outline-2">
+<h2 id="org7d307ef"><span class="section-number-2">14</span> iperf</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+</div>
+
+<div id="outline-container-org7bb3d4c" class="outline-2">
+<h2 id="org7bb3d4c"><span class="section-number-2">15</span> lsof</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+</div>
+
+<div id="outline-container-org71a90d6" class="outline-2">
+<h2 id="org71a90d6"><span class="section-number-2">16</span> NIS</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+</div>
+
+<div id="outline-container-orgc029cca" class="outline-2">
+<h2 id="orgc029cca"><span class="section-number-2">17</span> postfix</h2>
+<div class="outline-text-2" id="text-17">
+</div>
+</div>
+
+<div id="outline-container-orgf3a33eb" class="outline-2">
+<h2 id="orgf3a33eb"><span class="section-number-2">18</span> build-essential</h2>
+<div class="outline-text-2" id="text-18">
+</div>
+</div>
+
+<div id="outline-container-orgb55f939" class="outline-2">
+<h2 id="orgb55f939"><span class="section-number-2">19</span> wget</h2>
+<div class="outline-text-2" id="text-19">
+</div>
+</div>
+
+<div id="outline-container-org7a50087" class="outline-2">
+<h2 id="org7a50087"><span class="section-number-2">20</span> finger</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+Display user's information.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20b4b9e" class="outline-2">
+<h2 id="org20b4b9e"><span class="section-number-2">21</span> find</h2>
+<div class="outline-text-2" id="text-21">
+</div>
+</div>
+
+<div id="outline-container-orgfe59bc4" class="outline-2">
+<h2 id="orgfe59bc4"><span class="section-number-2">22</span> chgrp</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+Change the ownership group of file or directory.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3748e63" class="outline-2">
+<h2 id="org3748e63"><span class="section-number-2">23</span> brew</h2>
+<div class="outline-text-2" id="text-23">
+</div>
+</div>
+
+<div id="outline-container-org64535b4" class="outline-2">
+<h2 id="org64535b4"><span class="section-number-2">24</span> userdel</h2>
+<div class="outline-text-2" id="text-24">
+</div>
+</div>
+
+<div id="outline-container-orge084225" class="outline-2">
+<h2 id="orge084225"><span class="section-number-2">25</span> autoconf</h2>
+<div class="outline-text-2" id="text-25">
+</div>
+</div>
+
+<div id="outline-container-org240b56e" class="outline-2">
+<h2 id="org240b56e"><span class="section-number-2">26</span> update-rc.d</h2>
+<div class="outline-text-2" id="text-26">
+</div>
+</div>
+
+<div id="outline-container-orgcb7dafe" class="outline-2">
+<h2 id="orgcb7dafe"><span class="section-number-2">27</span> tar</h2>
+<div class="outline-text-2" id="text-27">
+</div>
+</div>
+
+<div id="outline-container-orgc7c7d1d" class="outline-2">
+<h2 id="orgc7c7d1d"><span class="section-number-2">28</span> lsattr</h2>
+<div class="outline-text-2" id="text-28">
+</div>
+</div>
+
+<div id="outline-container-orgc9c95b4" class="outline-2">
+<h2 id="orgc9c95b4"><span class="section-number-2">29</span> chfn</h2>
+<div class="outline-text-2" id="text-29">
+</div>
+</div>
+
+<div id="outline-container-orgbc4e37c" class="outline-2">
+<h2 id="orgbc4e37c"><span class="section-number-2">30</span> ca-certificates</h2>
+<div class="outline-text-2" id="text-30">
+</div>
+</div>
+
+<div id="outline-container-orgbbd0ab7" class="outline-2">
+<h2 id="orgbbd0ab7"><span class="section-number-2">31</span> update</h2>
+<div class="outline-text-2" id="text-31">
+</div>
+</div>
+
+<div id="outline-container-org2fb2018" class="outline-2">
+<h2 id="org2fb2018"><span class="section-number-2">32</span> diff</h2>
+<div class="outline-text-2" id="text-32">
+<p>
+Compare files by line.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeefe4e2" class="outline-2">
+<h2 id="orgeefe4e2"><span class="section-number-2">33</span> rpm</h2>
+<div class="outline-text-2" id="text-33">
+</div>
+</div>
+
+<div id="outline-container-org4832428" class="outline-2">
+<h2 id="org4832428"><span class="section-number-2">34</span> chatter</h2>
+<div class="outline-text-2" id="text-34">
+<p>
+Change file attributes in Linux system.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcc2ca10" class="outline-2">
+<h2 id="orgcc2ca10"><span class="section-number-2">35</span> lprm</h2>
+<div class="outline-text-2" id="text-35">
+</div>
+</div>
+
+<div id="outline-container-org6ca391b" class="outline-2">
+<h2 id="org6ca391b"><span class="section-number-2">36</span> pip</h2>
+<div class="outline-text-2" id="text-36">
+</div>
+</div>
+
+<div id="outline-container-org8063b8e" class="outline-2">
+<h2 id="org8063b8e"><span class="section-number-2">37</span> squid</h2>
+<div class="outline-text-2" id="text-37">
+</div>
+</div>
+
+<div id="outline-container-orgebbd704" class="outline-2">
+<h2 id="orgebbd704"><span class="section-number-2">38</span> curl</h2>
+<div class="outline-text-2" id="text-38">
+</div>
+</div>
+
+<div id="outline-container-org823389e" class="outline-2">
+<h2 id="org823389e"><span class="section-number-2">39</span> tail</h2>
+<div class="outline-text-2" id="text-39">
+</div>
+</div>
+
+<div id="outline-container-orgd3fd7bb" class="outline-2">
+<h2 id="orgd3fd7bb"><span class="section-number-2">40</span> fsck</h2>
+<div class="outline-text-2" id="text-40">
+<p>
+Check and repair a Linux filesystem.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org953fd0d" class="outline-2">
+<h2 id="org953fd0d"><span class="section-number-2">41</span> useradd</h2>
+<div class="outline-text-2" id="text-41">
+</div>
+</div>
+
+<div id="outline-container-orgebd35a8" class="outline-2">
+<h2 id="orgebd35a8"><span class="section-number-2">42</span> tripwire</h2>
+<div class="outline-text-2" id="text-42">
+</div>
+</div>
+
+<div id="outline-container-org00b4f2e" class="outline-2">
+<h2 id="org00b4f2e"><span class="section-number-2">43</span> ruby</h2>
+<div class="outline-text-2" id="text-43">
+</div>
+</div>
+
+<div id="outline-container-org4ab68d3" class="outline-2">
+<h2 id="org4ab68d3"><span class="section-number-2">44</span> lpc</h2>
+<div class="outline-text-2" id="text-44">
+</div>
+</div>
+
+<div id="outline-container-orgf63e700" class="outline-2">
+<h2 id="orgf63e700"><span class="section-number-2">45</span> chmod</h2>
+<div class="outline-text-2" id="text-45">
+<p>
+Change the permission of file or directory.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc4dfcd3" class="outline-2">
+<h2 id="orgc4dfcd3"><span class="section-number-2">46</span> usermod</h2>
+<div class="outline-text-2" id="text-46">
+</div>
+</div>
+
+<div id="outline-container-orga3beb43" class="outline-2">
+<h2 id="orga3beb43"><span class="section-number-2">47</span> xinetd</h2>
+<div class="outline-text-2" id="text-47">
+</div>
+</div>
+
+<div id="outline-container-orgaea2865" class="outline-2">
+<h2 id="orgaea2865"><span class="section-number-2">48</span> Linux Commands</h2>
+<div class="outline-text-2" id="text-48">
+</div>
+</div>
+
+<div id="outline-container-orga717cc6" class="outline-2">
+<h2 id="orga717cc6"><span class="section-number-2">49</span> apt</h2>
+<div class="outline-text-2" id="text-49">
+</div>
+</div>
+
+<div id="outline-container-orge7a3a33" class="outline-2">
+<h2 id="orge7a3a33"><span class="section-number-2">50</span> hdparm</h2>
+<div class="outline-text-2" id="text-50">
+</div>
+</div>
+
+<div id="outline-container-orgd0ee05f" class="outline-2">
+<h2 id="orgd0ee05f"><span class="section-number-2">51</span> vim</h2>
+<div class="outline-text-2" id="text-51">
+</div>
+</div>
+
+<div id="outline-container-org4bfbaf3" class="outline-2">
+<h2 id="org4bfbaf3"><span class="section-number-2">52</span> passwd</h2>
+<div class="outline-text-2" id="text-52">
+</div>
+</div>
+
+<div id="outline-container-orgd41ea0d" class="outline-2">
+<h2 id="orgd41ea0d"><span class="section-number-2">53</span> javac</h2>
+<div class="outline-text-2" id="text-53">
+</div>
+</div>
+
+<div id="outline-container-org86d1896" class="outline-2">
+<h2 id="org86d1896"><span class="section-number-2">54</span> dh-autoreconf</h2>
+<div class="outline-text-2" id="text-54">
+</div>
+</div>
+
+<div id="outline-container-orgbe2be37" class="outline-2">
+<h2 id="orgbe2be37"><span class="section-number-2">55</span> gcc</h2>
+<div class="outline-text-2" id="text-55">
+</div>
+</div>
+
+<div id="outline-container-orge8e570d" class="outline-2">
+<h2 id="orge8e570d"><span class="section-number-2">56</span> dpkg</h2>
+<div class="outline-text-2" id="text-56">
+<p>
+Apptitude, Synaptic, etc. are much more popular than dpkg itself, because they have more ways to deal with package dependencies and have a more intuitive interface.
+</p>
+
+<p>
+It is a low-level tool, and advanced tools like APT do things such as getting complex package relationships and packages remotely.
+</p>
+
+<p>
+It is used to install, remove, and provide information about .deb packages.
+</p>
+
+<p>
+It is the underlying software of the Debian package management system.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org078de52" class="outline-2">
+<h2 id="org078de52"><span class="section-number-2">57</span> apt-add-repository</h2>
+<div class="outline-text-2" id="text-57">
+</div>
+</div>
+
+<div id="outline-container-orga12aa0c" class="outline-2">
+<h2 id="orga12aa0c"><span class="section-number-2">58</span> SELinux</h2>
+<div class="outline-text-2" id="text-58">
+</div>
+</div>
+
+<div id="outline-container-orgac84147" class="outline-2">
+<h2 id="orgac84147"><span class="section-number-2">59</span> chown</h2>
+<div class="outline-text-2" id="text-59">
+</div>
+</div>
+
+<div id="outline-container-org432d73b" class="outline-2">
+<h2 id="org432d73b"><span class="section-number-2">60</span> DNS</h2>
+<div class="outline-text-2" id="text-60">
+</div>
+</div>
+
+<div id="outline-container-orge6eda49" class="outline-2">
+<h2 id="orge6eda49"><span class="section-number-2">61</span> lp</h2>
+<div class="outline-text-2" id="text-61">
+</div>
+</div>
+
+<div id="outline-container-orge280778" class="outline-2">
+<h2 id="orge280778"><span class="section-number-2">62</span> travis</h2>
+<div class="outline-text-2" id="text-62">
+</div>
+</div>
+
+<div id="outline-container-orga02b58b" class="outline-2">
+<h2 id="orga02b58b"><span class="section-number-2">63</span> chrome</h2>
+<div class="outline-text-2" id="text-63">
+</div>
+</div>
+
+<div id="outline-container-org59424e2" class="outline-2">
+<h2 id="org59424e2"><span class="section-number-2">64</span> lpr</h2>
+<div class="outline-text-2" id="text-64">
+</div>
+</div>
+
+<div id="outline-container-org422e947" class="outline-2">
+<h2 id="org422e947"><span class="section-number-2">65</span> alias</h2>
+<div class="outline-text-2" id="text-65">
+</div>
+</div>
+
+<div id="outline-container-org27cee15" class="outline-2">
+<h2 id="org27cee15"><span class="section-number-2">66</span> echo</h2>
+<div class="outline-text-2" id="text-66">
+</div>
+</div>
+
+<div id="outline-container-org38243c5" class="outline-2">
+<h2 id="org38243c5"><span class="section-number-2">67</span> docker-compose</h2>
+<div class="outline-text-2" id="text-67">
+</div>
+</div>
+
+<div id="outline-container-org2266ca1" class="outline-2">
+<h2 id="org2266ca1"><span class="section-number-2">68</span> lpq</h2>
+<div class="outline-text-2" id="text-68">
+</div>
+</div>
+
+<div id="outline-container-org3b84c24" class="outline-2">
+<h2 id="org3b84c24"><span class="section-number-2">69</span> shutdown</h2>
+<div class="outline-text-2" id="text-69">
+</div>
+</div>
+
+<div id="outline-container-org47dd755" class="outline-2">
+<h2 id="org47dd755"><span class="section-number-2">70</span> make</h2>
+<div class="outline-text-2" id="text-70">
+</div>
+</div>
+
+<div id="outline-container-org9a2cc57" class="outline-2">
+<h2 id="org9a2cc57"><span class="section-number-2">71</span> ssh</h2>
+<div class="outline-text-2" id="text-71">
+</div>
+</div>
+
+<div id="outline-container-org52ecf36" class="outline-2">
+<h2 id="org52ecf36"><span class="section-number-2">72</span> iptables</h2>
+<div class="outline-text-2" id="text-72">
+</div>
+</div>
+
+<div id="outline-container-orga9c3ef0" class="outline-2">
+<h2 id="orga9c3ef0"><span class="section-number-2">73</span> gem</h2>
+<div class="outline-text-2" id="text-73">
+</div>
+</div>
+
+<div id="outline-container-org81e24c9" class="outline-2">
+<h2 id="org81e24c9"><span class="section-number-2">74</span> bash</h2>
+<div class="outline-text-2" id="text-74">
+</div>
+</div>
+
+<div id="outline-container-orgea0f0b6" class="outline-2">
+<h2 id="orgea0f0b6"><span class="section-number-2">75</span> rsync</h2>
+<div class="outline-text-2" id="text-75">
+</div>
+</div>
+
+<div id="outline-container-org0a13579" class="outline-2">
+<h2 id="org0a13579"><span class="section-number-2">76</span> java</h2>
+<div class="outline-text-2" id="text-76">
+</div>
+</div>
+
+<div id="outline-container-orgd647310" class="outline-2">
+<h2 id="orgd647310"><span class="section-number-2">77</span> emacs</h2>
+<div class="outline-text-2" id="text-77">
+<p>
+GNU Emacs's many special packages handle mail reading (RMail) and sending (Mail), outline editing (Outline), compiling (Compile), running subshells within
+Emacs windows (Shell), running a Lisp read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy (Doctor), and much more.
+</p>
+
+<p>
+Emacs has an extensive interactive help facility, but the facility assumes that you know how to manipulate Emacs windows and buffers. CTRL-h or F1 enters
+the Help facility. Help Tutorial (CTRL-h t) starts an interactive tutorial to quickly teach beginners the fundamentals of Emacs. Help Apropos (CTRL-h a)
+helps you find a command with a name matching a given pattern, Help Key (CTRL-h k) describes a given key sequence, and Help Function (CTRL-h f) describes a
+given Lisp function.
+</p>
+
+<p>
+The primary documentation of GNU Emacs is in the GNU Emacs Manual, which you can read using Info, either from Emacs or as a standalone program.  Please
+look there for complete and up-to-date documentation. This man page is updated only when someone volunteers to do so.
+</p>
+
+<p>
+GNU Emacs is a version of Emacs, written by the author of the original (PDP-10) Emacs, Richard Stallman. The user functionality of GNU Emacs encompasses
+everything other editors do, and it is easily extensible since its editing commands are written in Lisp.
+</p>
+
+<p>
+This is programmable editor written in Lisp. It has not only editor functionality but also supporting bunch of programming languages, plugins and extension by user defined Lisp code.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc4cd76c" class="outline-2">
+<h2 id="orgc4cd76c"><span class="section-number-2">78</span> cat</h2>
+<div class="outline-text-2" id="text-78">
+</div>
+</div>
+
+<div id="outline-container-org7f94ded" class="outline-2">
+<h2 id="org7f94ded"><span class="section-number-2">79</span> npm</h2>
+<div class="outline-text-2" id="text-79">
+</div>
+</div>
+
+<div id="outline-container-org6c81b6a" class="outline-2">
+<h2 id="org6c81b6a"><span class="section-number-2">80</span> sendmail</h2>
+<div class="outline-text-2" id="text-80">
+</div>
+</div>
+
+<div id="outline-container-org7b26bc9" class="outline-2">
+<h2 id="org7b26bc9"><span class="section-number-2">81</span> sudo</h2>
+<div class="outline-text-2" id="text-81">
+</div>
+</div>
+
+<div id="outline-container-orge094921" class="outline-2">
+<h2 id="orge094921"><span class="section-number-2">82</span> lilo</h2>
+<div class="outline-text-2" id="text-82">
+</div>
+</div>
+
+<div id="outline-container-orga127ca2" class="outline-2">
+<h2 id="orga127ca2"><span class="section-number-2">83</span> modprobe</h2>
+<div class="outline-text-2" id="text-83">
+</div>
+</div>
+
+<div id="outline-container-org8b25778" class="outline-2">
+<h2 id="org8b25778"><span class="section-number-2">84</span> xmodmap</h2>
+<div class="outline-text-2" id="text-84">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-02-27 Tue 10:04</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
