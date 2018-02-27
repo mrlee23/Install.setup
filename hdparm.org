@@ -4,105 +4,530 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+#+NAME: infobox
+| Developer    | Mark Lord              |
+| Version      | {{{ver(9.53)}}}        |
+| Release Date | {{{date(2018-01-05)}}} |
+| Size         | {{{size(284KB)}}}      |
+| License      | {{{license(BSD)}}}     |
+| Type         | Utility                |
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
 
-# ** Prerequisites
-#    :PROPERTIES: 
-#    :CUSTOM_ID: prerequisites
-#    :LANG_EN:  Prerequisites
-#    :LANG_ES:  Requisitos previos
-#    :LANG_KO:  필요 사항
-#    :LANG_ZH:  先决条件
-#    :LANG_JA:  前準備
-#    :END:      
+#+BEGIN_LANG en es ja zh
+get/set SATA/IDE device parameters
+#+END_LANG
+#+LANG_KO:SATA/IDE 장치의 변수를 가져오거나 변경합니다.
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** Introduction
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG_EN:  Introduction
+  :LANG_ES:  Introducción
+  :LANG_KO:  소개
+  :LANG_ZH:  介绍
+  :LANG_JA:  はじめに
+  :END:    
 
-# ** Installed Packages
-#    :PROPERTIES: 
-#    :CUSTOM_ID: packages
-#    :LANG_EN:  Installed Packages
-#    :LANG_ES:  Paquetes instalados
-#    :LANG_KO:  설치된 패키지
-#    :LANG_ZH:  安装的软件包
-#    :LANG_JA:  インストールされたパッケージ
-#    :END:      
+#+BEGIN_LANG en es ja zh
+hdparm provides a command line interface to various kernel interfaces supported by the Linux SATA/PATA/SAS "libata" subsystem and the older IDE driver subsystem. 
+Many newer (2008 and later) USB drive enclosures now also support "SAT" (SCSI-ATA Command Translation) and therefore may also work with hdparm. 
+E.g. recent WD "Passport" models and recent NexStar-3 enclosures. Some options may work correctly only with the latest kernels.
+#+END_LANG
+#+BEGIN_LANG ko
+hdparm은 CLI 명령어로써, 리눅스 SATA/PATA/SAS "libata" 시스템, IDE 드라이브와 같이 다양한 커널 인터페이스를 제공합니다.
 
-# ** Check
-#    :PROPERTIES: 
-#    :CUSTOM_ID: check
-#    :LANG_EN:  Check
-#    :LANG_ES:  Comprobar
-#    :LANG_KO:  확인
-#    :LANG_ZH:  检查
-#    :LANG_JA:  チェック
-#    :END:      
+2008년 이후 출시된 USB 드라이버는 SAT(SCSI-ATA Command Translation)을 이용해서 지원합니다.
+#+END_LANG
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG_EN:  Prerequisites
+   :LANG_ES:  Requisitos previos
+   :LANG_KO:  필요 사항
+   :LANG_ZH:  先决条件
+   :LANG_JA:  前準備
+   :END:      
 
-# ** Configuration
-#    :PROPERTIES: 
-#    :CUSTOM_ID: configuration
-#    :LANG_EN:  Configuration
-#    :LANG_ES:  Configuración
-#    :LANG_KO:  설정
-#    :LANG_ZH:  组态
-#    :LANG_JA:  設定
-#    :END:      
+- {{{link(update)}}}
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install hdparm
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install hdparm -y
+#+END_SRC
+
+*** using RPM
+
+- 32 bit
+#+BEGIN_SRC sh
+$ sudo rpm -Uvh http://mirrors.hostemo.com/CentOS/6.3/os/i386/Packages/hdparm-9.16-3.4.el6.i686.rpm
+#+END_SRC
+- 64 bit
+#+BEGIN_SRC sh
+$ sudo rpm -Uvh http://mirrors.hostemo.com/CentOS/6.3/os/x86_64/Packages/hdparm-9.16-3.4.el6.x86_64.rpm
+#+END_SRC
+
+*** from Source
+
+- Download from [[https://sourceforge.net/projects/hdparm/]]
+#+BEGIN_SRC sh
+$ make
+$ sudo make install
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG_EN:  Installed Packages
+   :LANG_ES:  Paquetes instalados
+   :LANG_KO:  설치된 패키지
+   :LANG_ZH:  安装的软件包
+   :LANG_JA:  インストールされたパッケージ
+   :END:      
+
+- hdparm
+- powermgmt-base
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG_EN:  Check
+   :LANG_ES:  Comprobar
+   :LANG_KO:  확인
+   :LANG_ZH:  检查
+   :LANG_JA:  チェック
+   :END:      
+
+#+BEGIN_SRC sh
+$ hdparm -V
+hdparm v9.51
+#+END_SRC
+
+*** with RPM
+
+#+BEGIN_SRC sh
+$ rpm -qa | grep hdparm
+hdparm-9.16-3.4.el6.i686
+#+END_SRC
+
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
+
+#+BEGIN_SRC sh
+#+BEGIN_LANG en es ja zh
+hdparm [options] [device ...]
+#+END_LANG
+#+LANG_KO:hdparm [옵션] [장치 ...]
+#+END_SRC
+
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG_EN:  Configuration
+   :LANG_ES:  Configuración
+   :LANG_KO:  설정
+   :LANG_ZH:  组态
+   :LANG_JA:  設定
+   :END:      
+
+- {{{file(/etc/hdparm.conf)}}}
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+{{{VERSION(9.51, 2017-01)}}}
+
+- {{{option(-a)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set fs readahead
+#+END_LANG
+- {{{option(-A)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set the drive look-ahead flag (0/1)
+#+END_LANG
+- {{{option(-b)}}} :
+#+BEGIN_LANG en es ja zh
+Get/set bus state (0 == off, 1 == on, 2 == tristate)
+#+END_LANG
+#+LANG_KO: 버스 상태 값을 출력하거나 설정합니다. (0 == 꺼짐, 1 == 켜짐, 2 == tristate)
+- {{{option(-B)}}} :
+#+BEGIN_LANG en es ja zh
+Set Advanced Power Management setting (1-255)
+#+END_LANG
+#+LANG_KO: Advanced Power Management 값을 설정합니다. (1-255 선택 가능)
+- {{{option(-c)}}} :
+#+BEGIN_LANG en es ja zh
+Get/set IDE 32-bit IO setting
+#+END_LANG
+#+LANG_KO: IDE 32비트 입출력을 가져오거나 설정합니다.
+- {{{option(-C)}}} :
+#+BEGIN_LANG en es ja zh
+Check drive power mode status
+#+END_LANG
+#+LANG_KO: 드라이브 파워 모드 상태를 확인합니다.
+- {{{option(-d)}}} :
+#+BEGIN_LANG en es ja zh
+Get/set using_dma flag
+#+END_LANG
+#+LANG_KO: using_dma 플래그를 가져오거나 설정합니다.
+- {{{option(-D)}}} :
+#+BEGIN_LANG en es ja zh
+Enable/disable drive defect management
+#+END_LANG
+#+LANG_KO: 드라이브 결함을 관리 기능을 켜거나 끕니다.
+- {{{option(-E)}}} :
+#+BEGIN_LANG en es ja zh
+Set cd/dvd drive speed
+#+END_LANG
+#+LANG_KO: CD 혹은 DVD 드라이브 속도를 설정합니다.
+- {{{option(-f)}}} :
+#+BEGIN_LANG en es ja zh
+Flush buffer cache for device on exit
+#+END_LANG
+#+LANG_KO: 장치를 종료할 때 버퍼 캐시를 지웁니다.
+- {{{option(-F)}}} :
+#+BEGIN_LANG en es ja zh
+Flush drive write cache
+#+END_LANG
+#+LANG_KO: 드라이브 입력 캐시를 지웁니다.
+- {{{option(-g)}}} :
+#+BEGIN_LANG en es ja zh
+Display drive geometry
+#+END_LANG
+#+LANG_KO: 드라이브 구조를 보여줍니다.
+- {{{option(-h)}}} :
+#+BEGIN_LANG en es ja zh ko
+Display terse usage information
+#+END_LANG
+- {{{option(-H)}}} :
+#+BEGIN_LANG en es ja zh ko
+Read temperature from drive (Hitachi only)
+#+END_LANG
+- {{{option(-i)}}} :
+#+BEGIN_LANG en es ja zh ko
+Display drive identification
+#+END_LANG
+- {{{option(-I)}}} :
+#+BEGIN_LANG en es ja zh ko
+Detailed/current information directly from drive
+#+END_LANG
+- {{{option(-J)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set Western DIgital "Idle3" timeout for a WDC "Green" drive (DANGEROUS)
+#+END_LANG
+- {{{option(-k)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set keep_settings_over_reset flag (0/1)
+#+END_LANG
+- {{{option(-K)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set drive keep_features_over_reset flag (0/1)
+#+END_LANG
+- {{{option(-L)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set drive doorlock (0/1) (removable harddisks only)
+#+END_LANG
+- {{{option(-m)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set multiple sector count
+#+END_LANG
+- {{{option(-M)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set acoustic management (0-254, 128: quiet, 254: fast)
+#+END_LANG
+- {{{option(-n)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set ignore-write-errors flag (0/1)
+#+END_LANG
+- {{{option(-N)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set max visible number of sectors (HPA) (VERY DANGEROUS)
+#+END_LANG
+- {{{option(-p)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set PIO mode on IDE interface chipset (0,1,2,3,4,...)
+#+END_LANG
+- {{{option(-P)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set drive prefetch count
+#+END_LANG
+- {{{option(-q)}}} :
+#+BEGIN_LANG en es ja zh ko
+Change next setting quietly
+#+END_LANG
+- {{{option(-Q)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set DMA queue_depth (if supported)
+#+END_LANG
+- {{{option(-r)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set device readonly flag (DANGEROUS to set)
+#+END_LANG
+- {{{option(-R)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set device write-read-verify flag
+#+END_LANG
+- {{{option(-s)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set power-up in standby flag (0/1) (DANGEROUS)
+#+END_LANG
+- {{{option(-S)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set standby (spindown) timeout
+#+END_LANG
+- {{{option(-t)}}} :
+#+BEGIN_LANG en es ja zh ko
+Perform device read timings
+#+END_LANG
+- {{{option(-T)}}} :
+#+BEGIN_LANG en es ja zh ko
+Perform cache read timings
+#+END_LANG
+- {{{option(-u)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set unmaskirq flag (0/1)
+#+END_LANG
+- {{{option(-U)}}} :
+#+BEGIN_LANG en es ja zh ko
+Obsolete
+#+END_LANG
+- {{{option(-v)}}} :
+#+BEGIN_LANG en es ja zh ko
+Use defaults; same as -acdgkmur for IDE drives
+#+END_LANG
+- {{{option(-V)}}} :
+#+BEGIN_LANG en es ja zh ko
+Display program version and exit immediately
+#+END_LANG
+- {{{option(-w)}}} :
+#+BEGIN_LANG en es ja zh ko
+Perform device reset (DANGEROUS)
+#+END_LANG
+- {{{option(-W)}}} :
+#+BEGIN_LANG en es ja zh ko
+Get/set drive write-caching flag (0/1)
+#+END_LANG
+- {{{option(-x)}}} :
+#+BEGIN_LANG en es ja zh ko
+Obsolete
+#+END_LANG
+- {{{option(-X)}}} :
+#+BEGIN_LANG en es ja zh ko
+Set IDE xfer mode (DANGEROUS)
+#+END_LANG
+- {{{option(-y)}}} :
+#+BEGIN_LANG en es ja zh ko
+Put drive in standby mode
+#+END_LANG
+- {{{option(-Y)}}} :
+#+BEGIN_LANG en es ja zh ko
+Put drive to sleep
+#+END_LANG
+- {{{option(-z)}}} :
+#+BEGIN_LANG en es ja zh ko
+Re-read partition table
+#+END_LANG
+- {{{option(-Z)}}} :
+#+BEGIN_LANG en es ja zh ko
+Disable Seagate auto-powersaving mode
+#+END_LANG
+- {{{option(--dco-freeze)}}} :
+#+BEGIN_LANG en es ja zh ko
+Freeze/lock current device configuration until next power cycle
+#+END_LANG
+- {{{option(--dco-identify)}}} :
+#+BEGIN_LANG en es ja zh ko
+Read/dump device configuration identify data
+#+END_LANG
+- {{{option(--dco-restore)}}} :
+#+BEGIN_LANG en es ja zh ko
+Reset device configuration back to factory defaults
+#+END_LANG
+- {{{option(--dco-setmax)}}} :
+#+BEGIN_LANG en es ja zh ko
+Use DCO to set maximum addressable sectors
+#+END_LANG
+- {{{option(--direct)}}} :
+#+BEGIN_LANG en es ja zh ko
+Use O_DIRECT to bypass page cache for timings
+#+END_LANG
+- {{{option(--drq-hsm-error)}}} :
+#+BEGIN_LANG en es ja zh ko
+Crash system with a "stuck DRQ" error (VERY DANGEROUS)
+#+END_LANG
+- {{{option(--fallocate)}}} :
+#+BEGIN_LANG en es ja zh ko
+Create a file without writing data to disk
+#+END_LANG
+- {{{option(--fibmap)}}} :
+#+BEGIN_LANG en es ja zh ko
+Show device extents (and fragmentation) for a file
+#+END_LANG
+- {{{option(--fwdownload)}}} :
+#+BEGIN_LANG en es ja zh ko
+Download firmware file to drive (EXTREMELY DANGEROUS)
+#+END_LANG
+- {{{option(--fwdownload-mode3)}}} :
+#+BEGIN_LANG en es ja zh ko
+Download firmware using min-size segments (EXTREMELY DANGEROUS)
+#+END_LANG
+- {{{option(--fwdownload-mode3-max)}}} :
+#+BEGIN_LANG en es ja zh ko
+Download firmware using max-size segments (EXTREMELY DANGEROUS)
+#+END_LANG
+- {{{option(--fwdownload-mode7)}}} :
+#+BEGIN_LANG en es ja zh ko
+Download firmware using a single segment (EXTREMELY DANGEROUS)
+#+END_LANG
+- {{{option(--fwdownload-modee)}}} :
+#+BEGIN_LANG en es ja zh ko
+Download firmware using mode E (min-size segments) (EXTREMELY DANGEROUS)
+#+END_LANG
+- {{{option(--fwdownload-modee-max)}}} :
+#+BEGIN_LANG en es ja zh ko
+Download firmware using mode E (max-size segments) (EXTREMELY DANGEROUS)
+#+END_LANG
+- {{{option(--idle-immediate)}}} :
+#+BEGIN_LANG en es ja zh ko
+Idle drive immediately
+#+END_LANG
+- {{{option(--idle-unload)}}} :
+#+BEGIN_LANG en es ja zh ko
+Idle immediately and unload heads
+#+END_LANG
+- {{{option(--Istdin)}}} :
+#+BEGIN_LANG en es ja zh ko
+Read identify data from stdin as ASCII hex
+#+END_LANG
+- {{{option(--Istdout)}}} :
+#+BEGIN_LANG en es ja zh ko
+Write identify data to stdout as ASCII hex
+#+END_LANG
+- {{{option(--make-bad-sector)}}} :
+#+BEGIN_LANG en es ja zh ko
+Deliberately corrupt a sector directly on the media (VERY DANGEROUS)
+#+END_LANG
+- {{{option(--offset)}}} :
+#+BEGIN_LANG en es ja zh ko
+use with -t, to begin timings at given offset (in GiB) from start of drive
+#+END_LANG
+- {{{option(--prefer-ata12)}}} :
+#+BEGIN_LANG en es ja zh ko
+Use 12-byte (instead of 16-byte) SAT commands when possible
+#+END_LANG
+- {{{option(--read-sector)}}} :
+#+BEGIN_LANG en es ja zh ko
+Read and dump (in hex) a sector directly from the media
+#+END_LANG
+- {{{option(--repair-sector)}}} :
+#+BEGIN_LANG en es ja zh ko
+Alias for the --write-sector option (VERY DANGEROUS)
+#+END_LANG
+- {{{option(--sanitize-antifreeze-lock)}}} :
+#+BEGIN_LANG en es ja zh ko
+Block sanitize-freeze-lock command until next power cycle
+#+END_LANG
+- {{{option(--sanitize-block-erase)}}} :
+#+BEGIN_LANG en es ja zh ko
+Start block erase operation
+#+END_LANG
+- {{{option(--sanitize-crypto-scramble)}}} :
+#+BEGIN_LANG en es ja zh ko
+Change the internal encryption keys that used for used data
+#+END_LANG
+- {{{option(--sanitize-freeze-lock)}}} :
+#+BEGIN_LANG en es ja zh ko
+Lock drive's sanitize features until next power cycle
+#+END_LANG
+- {{{option(--sanitize-overwrite)}}} :
+#+BEGIN_LANG en es ja zh ko
+PATTERN Overwrite the internal media with constant PATTERN
+#+END_LANG
+- {{{option(--sanitize-status)}}} :
+#+BEGIN_LANG en es ja zh ko
+Show sanitize status information
+#+END_LANG
+- {{{option(--security-help)}}} :
+#+BEGIN_LANG en es ja zh ko
+Display help for ATA security commands
+#+END_LANG
+- {{{option(--trim-sector-ranges)}}} :
+#+BEGIN_LANG en es ja zh ko
+Tell SSD firmware to discard unneeded data sectors: lba:count ..
+#+END_LANG
+- {{{option(--trim-sector-ranges-stdin)}}} :
+#+BEGIN_LANG en es ja zh ko
+Same as above, but reads lba:count pairs from stdin
+#+END_LANG
+- {{{option(--verbose)}}} :
+#+BEGIN_LANG en es ja zh ko
+Display extra diagnostics from some commands
+#+END_LANG
+- {{{option(--write-sector)}}} :
+#+BEGIN_LANG en es ja zh ko
+Repair/overwrite a (possibly bad) sector directly on the media (VERY DANGEROUS)
+#+END_LANG
 
 # ** Examples
 #    :PROPERTIES: 
@@ -124,12 +549,24 @@
 #   :LANG_JA:  関連項目
 #   :END:      
 
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG_EN:  References
+  :LANG_ES:  Referencias
+  :LANG_KO:  참고자료
+  :LANG_ZH:  参考
+  :LANG_JA:  参考
+  :END:      
+
+#+BEGIN_LANG en es ja zh
+- [[https://en.wikipedia.org/wiki/Hdparm][Wikipedia]]
+- [[https://sourceforge.net/projects/hdparm/][Download on Sourceforge]]
+- [[http://www.linuxfromscratch.org/blfs/view/cvs/general/hdparm.html][Linux from scratch]]
+- [[https://www.ehowstuff.com/how-to-fix-bash-hdparm-command-not-found-on-linux-centos-6-3/][Fix hdparm command not found on Linux CentOS 6.3]]
+#+END_LANG
+#+BEGIN_LANG ko
+- [[https://en.wikipedia.org/wiki/Hdparm][위키피디아]]
+- [[https://sourceforge.net/projects/hdparm/][Sourceforge에서 다운로드]]
+- [[https://www.ehowstuff.com/how-to-fix-bash-hdparm-command-not-found-on-linux-centos-6-3/][CentOS 6.3에서 hdparm 명령어가 없을 때 해결방법]]
+#+END_LANG
