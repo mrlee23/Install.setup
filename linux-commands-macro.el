@@ -203,7 +203,7 @@
   (lc-macro/make-header "TITLE" lc-core/site-name))
 
 (defun lc-macro/header-site-description ()
-  (lc-macro/make-header "DESCRIPTION" lc-core/site-name))
+  (lc-macro/make-header "DESCRIPTION" lc-core/site-desc))
 
 (defun lc-macro/builtin ()
   (case (lc-core/get-current-language)
