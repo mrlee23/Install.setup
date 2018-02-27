@@ -45,7 +45,7 @@
 	"\n")
 	 "\n:END:"))
 
-(defun lc-macro/collect-files (&optional recursive with-special-files)
+(defun lc-macro/collect-files (&optional recursive with-special-files tracked-with-git)
   (let ((cmd (format "find . %s -name \"*.org\" -not -path \"*/.*\""
 					 (if (not recursive) "-maxdepth 1" ""))
 			 ))
@@ -53,7 +53,9 @@
 	 (lambda (arg)
 	   (and (not (eq arg nil))
 			(if with-special-files t
-			  (not (member arg lc-core/special-files)))))
+			  (not (member arg lc-core/special-files)))
+			(and tracked-with-git (not (equal "" (format "git log -1 -- \"%s\"" (expand-file-name file lc-core/root-dir))))
+			  )))
 	 (mapcar
 	  (lambda (file)
 		(when (> (length file) 0)
@@ -342,12 +344,14 @@
 		(lc-macro/image (file-name-nondirectory path) "main" "main" "right" t) "")))
 
 (defun lc-macro/rss-generator ()
-  (let ((files (lc-macro/collect-files t nil)))
+  (let ((files (lc-macro/collect-files t nil t)))
 	(setq files
 		  (mapcar
 		   (lambda (file)
-			 `(,file . ,(string-to-number (replace-regexp-in-string "\n" "" (shell-command-to-string (format "git log -1 --pretty=\"%%ct\" \"%s\"" (expand-file-name file lc-core/root-dir)))))))
-		   files))
+			 (let ((unixtime (shell-command-to-string (format "git log -1 --pretty=\"%%ct\" -- \"%s\"" (expand-file-name file lc-core/root-dir)))))
+			   `(,file . ,(string-to-number (replace-regexp-in-string "\n" "" unixtime)))))
+		  files))
+	(setq files (seq-filter 'consp files))
 	(setq files
 		  (seq-sort
 		   (lambda (a b)
@@ -359,7 +363,7 @@
 	 (mapconcat
 	 (lambda (file)
 	   (let ((heading (or (lc-core/get-contents-data file :title) (file-name-sans-extension file)))
-			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" \"%s\"" (expand-file-name file lc-core/root-dir)))))
+			 (pubdate (shell-command-to-string (format "git log -1 --pretty=\"<%%ci>\" -- \"%s\"" (expand-file-name file lc-core/root-dir)))))
 		 (format "%s\n%s\n%s"
 				 (lc-macro/gen-heading heading)
 				 (lc-macro/gen-properties `((RSS_PERMALINK . ,(concat heading ".html"))
