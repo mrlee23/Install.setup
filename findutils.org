@@ -1,0 +1,157 @@
+#+INCLUDE: ./main.setup
+#+TITLE: findutils
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-28
+
+#+NAME: infobox
+| Developer      | GNU Project                     |
+| Version        | {{{ver(4.6.0+git+20170828-2)}}} |
+| Release Date   | {{{date(2017-08-28)}}}          |
+| Package Size   | {{{size(284KB)}}}               |
+| Installed Size | {{{size(580KB)}}}               |
+| Written in     | C                               |
+| License        | {{{license(GNU GPL)}}}          |
+| Type           | Utility                         |
+
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
+
+The GNU Find Utilities or findutils is a GNU package which offers basic file searching utilities to search the systems directories of GNU and Unix based computers.
+It contains implementations of the tools find, locate, updatedb, and xargs.
+However, locate and updatedb has been split off into a separate package in latest versions in various Linux distributions.
+
+# ** History
+#    :PROPERTIES: 
+#    :CUSTOM_ID: history
+#    :LANG_EN:  History
+#    :LANG_ES:  Historia
+#    :LANG_KO:  역사
+#    :LANG_ZH:  历史
+#    :LANG_JA:  歴史
+#    :END:      
+
+# ** Releases
+#    :PROPERTIES: 
+#    :CUSTOM_ID: releases
+#    :LANG_EN:  Releases
+#    :LANG_ES:  Lanzamientos
+#    :LANG_KO:  릴리즈
+#    :LANG_ZH:  发布
+#    :LANG_JA:  リリース
+#    :END:      
+
+# ** Introduction
+#    :PROPERTIES: 
+#    :CUSTOM_ID: introduction
+#    :LANG_EN:  Introduction
+#    :LANG_ES:  Introducción
+#    :LANG_KO:  소개
+#    :LANG_ZH:  介绍
+#    :LANG_JA:  はじめに
+#    :END:      
+
+# ** Characteristic
+#    :PROPERTIES: 
+#    :CUSTOM_ID: characteristic
+#    :LANG_EN:  Characteristic
+#    :LANG_ES:  Característica
+#    :LANG_KO:  특징
+#    :LANG_ZH:  特点
+#    :LANG_JA:  特徴
+#    :END:      
+
+* インストール方法
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ja
+  :END:      
+
+** 前準備
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ja
+   :END:      
+
+- {{{link(update)}}}
+
+** 依存関係
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: ja
+   :END:      
+
+- libc6 ({{{version(>= 2.17)}}})
+  - GNU C Library
+- libselinux1 ({{{version(>= 1.32)}}})
+  - SELinux runtime shared libraries
+
+** インストール
+   :PROPERTIES: 
+   :CUSTOM_ID: install
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install findutils
+#+END_SRC
+
+** インストールされたパッケージ
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ja
+   :END:      
+
+{{{VERSION(4.6.0)}}}
+
+- {{{link(find)}}} :
+- {{{link(xargs)}}} :
+
+** チェック
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ja
+   :END:      
+
+*** find
+{{{see(find#check)}}}
+
+*** xargs
+{{{see(xargs#check)}}}
+
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
+
+*** find
+{{{see(find#usage)}}}
+
+*** xargs
+{{{see(xargs#usage)}}}
+
+* 関連項目
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ja
+  :END:      
+
+- {{{link(find)}}}
+- {{{link(xargs)}}}
+- {{{link(locate)}}}
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ja
+  :END:      
+
+- [[https://en.wikipedia.org/wiki/GNU_Find_Utilities][Wikipedia]]
+- [[https://www.gnu.org/software/findutils/][GNU findtuils]]
+- [[https://packages.ubuntu.com/xenial/utils/findutils][findutils - Ubuntu]]
+- [[https://packages.debian.org/en/findutils][findutils - Debian]]
+- [[http://git.savannah.gnu.org/cgit/findutils.git][Git repository]]
