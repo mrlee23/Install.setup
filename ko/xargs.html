@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-02-28 Wed 01:38 -->
+<!-- 2018-02-28 Wed 02:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>xargs</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="xargs - 리눅스 명령어">
-<meta name="description" content="#+BEGIN">
+<meta name="description" content=" 표준 입력에서 명령행 라인을 실행합니다. ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xargs - 리눅스 명령어">
-<meta property="og:description" content="#+BEGIN">
+<meta property="og:description" content=" 표준 입력에서 명령행 라인을 실행합니다. ">
 <meta name="twitter:title" content="xargs - 리눅스 명령어">
-<meta name="twitter:description" content="#+BEGIN">
+<meta name="twitter:description" content=" 표준 입력에서 명령행 라인을 실행합니다. ">
 <link rel="alternate" href="http://linux-command.org/ko/xargs.html" hreflang="ko" />
 <link rel="alternate" href="http://linux-command.org/en/xargs.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/ja/xargs.html" hreflang="ja" />
@@ -287,49 +287,46 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org476a38d" class="outline-2">
-<h2 id="overview"><a id="org476a38d"></a>개요</h2>
+<div id="outline-container-orgc7e408a" class="outline-2">
+<h2 id="overview"><a id="orgc7e408a"></a>개요</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
-#+BEGIN_LANG: en es ja
-build and execute command lines from standard input
-#+END_LANG
- 표준 입력에서 명령행 라인을 실행합니다.
+표준 입력에서 명령행 라인을 실행합니다.
 </p>
 </div>
 
-<div id="outline-container-orga6df90d" class="outline-3">
-<h3 id="history"><a id="orga6df90d"></a>역사</h3>
+<div id="outline-container-org1aa1ed3" class="outline-3">
+<h3 id="history"><a id="org1aa1ed3"></a>역사</h3>
 <div class="outline-text-3" id="text-history">
 </div>
 </div>
 
-<div id="outline-container-org2dfdf0f" class="outline-3">
-<h3 id="releases"><a id="org2dfdf0f"></a>릴리즈</h3>
+<div id="outline-container-org059cc17" class="outline-3">
+<h3 id="releases"><a id="org059cc17"></a>릴리즈</h3>
 <div class="outline-text-3" id="text-releases">
 </div>
 </div>
 
-<div id="outline-container-orge2a240c" class="outline-3">
-<h3 id="introduction"><a id="orge2a240c"></a>소개</h3>
+<div id="outline-container-orgb3df0bc" class="outline-3">
+<h3 id="introduction"><a id="orgb3df0bc"></a>소개</h3>
 <div class="outline-text-3" id="text-introduction">
 </div>
 </div>
 
-<div id="outline-container-orgff84732" class="outline-3">
-<h3 id="characteristic"><a id="orgff84732"></a>특징</h3>
+<div id="outline-container-org6955b09" class="outline-3">
+<h3 id="characteristic"><a id="org6955b09"></a>특징</h3>
 <div class="outline-text-3" id="text-characteristic">
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgbfff1e2" class="outline-2">
-<h2 id="how-to-install"><a id="orgbfff1e2"></a>설치 방법</h2>
+<div id="outline-container-orgdb732b1" class="outline-2">
+<h2 id="how-to-install"><a id="orgdb732b1"></a>설치 방법</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-orgdbb931f" class="outline-3">
-<h3 id="install"><a id="orgdbb931f"></a>설치</h3>
+<div id="outline-container-org7b632ba" class="outline-3">
+<h3 id="install"><a id="org7b632ba"></a>설치</h3>
 <div class="outline-text-3" id="text-install">
 <p>
 <a href="./findutils.html#install">findutils</a> 문서를 참조하세요.
@@ -337,8 +334,8 @@ build and execute command lines from standard input
 </div>
 </div>
 
-<div id="outline-container-org0dd769c" class="outline-3">
-<h3 id="check"><a id="org0dd769c"></a>확인</h3>
+<div id="outline-container-org37952bf" class="outline-3">
+<h3 id="check"><a id="org37952bf"></a>확인</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ xargs --version
@@ -357,13 +354,13 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org2ed1f6d" class="outline-2">
-<h2 id="usage"><a id="org2ed1f6d"></a>사용법</h2>
+<div id="outline-container-orgf323a9e" class="outline-2">
+<h2 id="usage"><a id="orgf323a9e"></a>사용법</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-orgf5b41af" class="outline-3">
-<h3 id="syntax"><a id="orgf5b41af"></a>구조</h3>
+<div id="outline-container-orgaddaa6b" class="outline-3">
+<h3 id="syntax"><a id="orgaddaa6b"></a>구조</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">xargs  [-0prtx] [-E eof-str] [-e[eof-str]] [--eof[=eof-str]] [--null] [-d delimiter] [--delimiter delimiter] [-I replace-str] [-i[replace-str]] [--replace[=replace-str]]
@@ -375,15 +372,15 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org76dce8b" class="outline-3">
-<h3 id="options"><a id="org76dce8b"></a>옵션</h3>
+<div id="outline-container-orgb7a34df" class="outline-3">
+<h3 id="options"><a id="orgb7a34df"></a>옵션</h3>
 <div class="outline-text-3" id="text-options">
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc8d1d72" class="outline-2">
-<h2 id="seealso"><a id="orgc8d1d72"></a>관련 항목</h2>
+<div id="outline-container-org98a0365" class="outline-2">
+<h2 id="seealso"><a id="org98a0365"></a>관련 항목</h2>
 <div class="outline-text-2" id="text-seealso">
 <ul class="org-ul">
 <li><a href="./findutils.html">findutils</a></li>
@@ -393,8 +390,8 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org0223159" class="outline-2">
-<h2 id="references"><a id="org0223159"></a>참고자료</h2>
+<div id="outline-container-org55ec54d" class="outline-2">
+<h2 id="references"><a id="org55ec54d"></a>참고자료</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="./findutils.html#references">findutils</a> 문서를 참조하세요.</li>
@@ -405,7 +402,7 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-28</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-28 Wed 01:38</p>
+<p class="date">Created: 2018-02-28 Wed 02:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

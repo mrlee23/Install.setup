@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<!-- 2018-02-28 Wed 01:41 -->
+<!-- 2018-02-28 Wed 02:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>xargs</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="xargs - Linuxコマンド">
-<meta name="description" content="#+BEGIN">
+<meta name="description" content="build and execute command lines from standard input ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xargs - Linuxコマンド">
-<meta property="og:description" content="#+BEGIN">
+<meta property="og:description" content="build and execute command lines from standard input ">
 <meta name="twitter:title" content="xargs - Linuxコマンド">
-<meta name="twitter:description" content="#+BEGIN">
+<meta name="twitter:description" content="build and execute command lines from standard input ">
 <link rel="alternate" href="http://linux-command.org/ko/xargs.html" hreflang="ko" />
 <link rel="alternate" href="http://linux-command.org/en/xargs.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/ja/xargs.html" hreflang="ja" />
@@ -287,48 +287,46 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org92ac95e" class="outline-2">
-<h2 id="overview"><a id="org92ac95e"></a>概要</h2>
+<div id="outline-container-org4de1d02" class="outline-2">
+<h2 id="overview"><a id="org4de1d02"></a>概要</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
-#+BEGIN_LANG: en es ja
 build and execute command lines from standard input
-#+END_LANG
 </p>
 </div>
 
-<div id="outline-container-org7e8e677" class="outline-3">
-<h3 id="history"><a id="org7e8e677"></a>歴史</h3>
+<div id="outline-container-org6669eaf" class="outline-3">
+<h3 id="history"><a id="org6669eaf"></a>歴史</h3>
 <div class="outline-text-3" id="text-history">
 </div>
 </div>
 
-<div id="outline-container-org7a4f0f0" class="outline-3">
-<h3 id="releases"><a id="org7a4f0f0"></a>リリース</h3>
+<div id="outline-container-org30f18ba" class="outline-3">
+<h3 id="releases"><a id="org30f18ba"></a>リリース</h3>
 <div class="outline-text-3" id="text-releases">
 </div>
 </div>
 
-<div id="outline-container-org759a03e" class="outline-3">
-<h3 id="introduction"><a id="org759a03e"></a>はじめに</h3>
+<div id="outline-container-org5478058" class="outline-3">
+<h3 id="introduction"><a id="org5478058"></a>はじめに</h3>
 <div class="outline-text-3" id="text-introduction">
 </div>
 </div>
 
-<div id="outline-container-orgfd31a04" class="outline-3">
-<h3 id="characteristic"><a id="orgfd31a04"></a>特徴</h3>
+<div id="outline-container-org4988c9e" class="outline-3">
+<h3 id="characteristic"><a id="org4988c9e"></a>特徴</h3>
 <div class="outline-text-3" id="text-characteristic">
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5cc6fad" class="outline-2">
-<h2 id="how-to-install"><a id="org5cc6fad"></a>インストール方法</h2>
+<div id="outline-container-org2403ef1" class="outline-2">
+<h2 id="how-to-install"><a id="org2403ef1"></a>インストール方法</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org99dde78" class="outline-3">
-<h3 id="install"><a id="org99dde78"></a>インストール</h3>
+<div id="outline-container-orgb6168aa" class="outline-3">
+<h3 id="install"><a id="orgb6168aa"></a>インストール</h3>
 <div class="outline-text-3" id="text-install">
 <p>
 <a href="./findutils.html#install">findutils</a>ドキュメントを参照してください。
@@ -336,8 +334,8 @@ build and execute command lines from standard input
 </div>
 </div>
 
-<div id="outline-container-org2186cc8" class="outline-3">
-<h3 id="check"><a id="org2186cc8"></a>チェック</h3>
+<div id="outline-container-org2d5d1b3" class="outline-3">
+<h3 id="check"><a id="org2d5d1b3"></a>チェック</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ xargs --version
@@ -356,13 +354,13 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org7faa8b7" class="outline-2">
-<h2 id="usage"><a id="org7faa8b7"></a>命令説明</h2>
+<div id="outline-container-org7f1a5b7" class="outline-2">
+<h2 id="usage"><a id="org7f1a5b7"></a>命令説明</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org3ffee70" class="outline-3">
-<h3 id="syntax"><a id="org3ffee70"></a>構造</h3>
+<div id="outline-container-org8cbbac4" class="outline-3">
+<h3 id="syntax"><a id="org8cbbac4"></a>構造</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">xargs  [-0prtx] [-E eof-str] [-e[eof-str]] [--eof[=eof-str]] [--null] [-d delimiter] [--delimiter delimiter] [-I replace-str] [-i[replace-str]] [--replace[=replace-str]]
@@ -374,15 +372,15 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org8d9c8ae" class="outline-3">
-<h3 id="options"><a id="org8d9c8ae"></a>オプション</h3>
+<div id="outline-container-orgbd73efd" class="outline-3">
+<h3 id="options"><a id="orgbd73efd"></a>オプション</h3>
 <div class="outline-text-3" id="text-options">
 </div>
 </div>
 </div>
 
-<div id="outline-container-org19e24d4" class="outline-2">
-<h2 id="seealso"><a id="org19e24d4"></a>関連項目</h2>
+<div id="outline-container-org45c7323" class="outline-2">
+<h2 id="seealso"><a id="org45c7323"></a>関連項目</h2>
 <div class="outline-text-2" id="text-seealso">
 <ul class="org-ul">
 <li><a href="./findutils.html">findutils</a></li>
@@ -392,8 +390,8 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org0b5013e" class="outline-2">
-<h2 id="references"><a id="org0b5013e"></a>参考</h2>
+<div id="outline-container-org8f1d145" class="outline-2">
+<h2 id="references"><a id="org8f1d145"></a>参考</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="./findutils.html#references">findutils</a>ドキュメントを参照してください。</li>
@@ -404,7 +402,7 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-28</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-28 Wed 01:41</p>
+<p class="date">Created: 2018-02-28 Wed 02:28</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
