@@ -4,85 +4,71 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+리눅스 커널에 모듈을 추가하는 간단한 프로그램 입니다.
 
-# ** Prerequisites
-#    :PROPERTIES: 
-#    :CUSTOM_ID: prerequisites
-#    :LANG_EN:  Prerequisites
-#    :LANG_ES:  Requisitos previos
-#    :LANG_KO:  필요 사항
-#    :LANG_ZH:  先决条件
-#    :LANG_JA:  前準備
-#    :END:      
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+커널에 모듈을 집어넣기 위한 간단한 프로그램으로, 대부분 사용자들은 이 프로그램 대신 {{{link(modprobe)}}}를 주로 사용하고 있습니다.
+{{{link(modprobe)}}}는 모듈 의존성을 해결하면서 똑똑하게 동작하기 때문에 해당 모듈을 사용할 것을 추천드립니다.
 
-# ** Installed Packages
-#    :PROPERTIES: 
-#    :CUSTOM_ID: packages
-#    :LANG_EN:  Installed Packages
-#    :LANG_ES:  Paquetes instalados
-#    :LANG_KO:  설치된 패키지
-#    :LANG_ZH:  安装的软件包
-#    :LANG_JA:  インストールされたパッケージ
-#    :END:      
+현재 리눅스 커널은 모듈을 연결하는데 커널 내부에서 동작하기 때문에 일반적인 에러 메시지만 보여주므로, 자세한 에러 정보는 {{{link(dmesg)}}}로 얻을 수 있습니다.
 
-# ** Check
-#    :PROPERTIES: 
-#    :CUSTOM_ID: check
-#    :LANG_EN:  Check
-#    :LANG_ES:  Comprobar
-#    :LANG_KO:  확인
-#    :LANG_ZH:  检查
-#    :LANG_JA:  チェック
-#    :END:      
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+{{{see(kmod#install)}}}
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ insmod -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+insmod [옵션] 파일명 [인자]
+
+insmod [파일명] [모듈 옵션...]
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -114,22 +100,23 @@
 #    :LANG_JA:  例
 #    :END:      
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
 
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+- {{{link(kmod)}}}
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+{{{see(kmod#references)}}}

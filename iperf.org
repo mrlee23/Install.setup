@@ -4,85 +4,120 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+#+NAME: infobox
+| Maintainer     | Ubuntu MOTU Developers             |
+| Version        | {{{ver(2.0.5)}}}                   |
+| Package Size   | {{{size(49KB)}}}                   |
+| Installed Size | {{{size(180KB)}}}                  |
+| Homepage       | [[https://github.com/esnet/iperf]] |
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
 
-# ** Prerequisites
-#    :PROPERTIES: 
-#    :CUSTOM_ID: prerequisites
-#    :LANG_EN:  Prerequisites
-#    :LANG_ES:  Requisitos previos
-#    :LANG_KO:  필요 사항
-#    :LANG_ZH:  先决条件
-#    :LANG_JA:  前準備
-#    :END:      
+네트워크 처리량 관리 툴
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
 
-# ** Installed Packages
-#    :PROPERTIES: 
-#    :CUSTOM_ID: packages
-#    :LANG_EN:  Installed Packages
-#    :LANG_ES:  Paquetes instalados
-#    :LANG_KO:  설치된 패키지
-#    :LANG_ZH:  安装的软件包
-#    :LANG_JA:  インストールされたパッケージ
-#    :END:      
+iperf는 네트워크 처리량 측정을 위한 툴입니다.
+TCP 혹은 UDP의 처리량을 테스트 할 수 있습니다.
 
-# ** Check
-#    :PROPERTIES: 
-#    :CUSTOM_ID: check
-#    :LANG_EN:  Check
-#    :LANG_ES:  Comprobar
-#    :LANG_KO:  확인
-#    :LANG_ZH:  检查
-#    :LANG_JA:  チェック
-#    :END:      
+iperf로 테스트 하기 위해서 두개의 서버와 하나의 클라이언트가 있어야 합니다. (서버는 트래픽을 처리하기 위한 용도, 클라이언트는 트래픽을 생성하기 위한 용도)
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
+- {{{link(update)}}}
+
+** 의존성
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: ko
+   :END:      
+
+- libc6
+  - [not arm64, ppc64el] (>= {{{ver(2.15)}}})
+	- GNU C Library: Shared libraries also a virtual package provided by libc6-udeb
+  - [arm64, ppc64el] (>= {{{ver(2.17)}}})
+- libgcc1
+  - [not arm64, armhf, powerpc] (>= {{{ver(1:4.1.1)}}})
+	- GCC support library
+  - [powerpc] (>= {{{ver(1:4.2.1)}}})
+  - [armhf] (>= {{{ver(1:4.4.0)}}})
+  - [arm64] (>= {{{ver(1:4.7)}}})
+- libstdc++6
+  - [not armhf] (>= {{{ver(4.1.1)}}})
+	- GNU Standard C++ Library v3
+  - libstdc++6 [armhf] (>= {{{ver(4.3.0)}}})
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install iperf
+#+END_SRC
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+- iperf
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ iperf -v
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+iperf version 2.0.5 (08 Jul 2010) pthreads
+#+END_EXAMPLE
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+iperf -s [ 옵션 ]
+
+iperf -c 서버 [ 옵션 ]
+
+iperf -u -s [ 옵션 ]
+
+iperf -u -c 서버 [ 옵션 ]
+#+END_SRC
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +129,126 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(-f)}}}, {{{option(--format)}}} {{{argument([kmKM])}}}
+ format to report: Kbits, Mbits, KBytes, MBytes
+
+- {{{option(-h)}}}, {{{option(--help)}}}
+ print a help synopsis
+
+- {{{option(-i)}}}, {{{option(--interval)}}} {{{argument(n)}}}
+ pause n seconds between periodic bandwidth reports
+
+- {{{option(-l)}}}, {{{option(--len)}}} {{{argument(n[KM])}}}
+ set length read/write buffer to n (default 8 KB)
+
+- {{{option(-m)}}}, {{{option(--print_mss)}}}
+ print TCP maximum segment size (MTU - TCP/IP header)
+
+- {{{option(-o)}}}, {{{option(--output)}}} {{{argument(<filename>)}}}
+ output the report or error message to this specified file
+
+- {{{option(-p)}}}, {{{option(--port)}}} {{{argument(n)}}}
+ set server port to listen on/connect to to n (default 5001)
+
+- {{{option(-u)}}}, {{{option(--udp)}}}
+ use UDP rather than TCP
+
+- {{{option(-w)}}}, {{{option(--window)}}}
+ TCP window size (socket buffer size)
+
+- {{{option(-B)}}}, {{{option(--bind)}}} {{{argument(<host>)}}}
+ bind to <host>, an interface or multicast address
+
+- {{{option(-C)}}}, {{{option(--compatibility)}}}
+ for use with older versions does not sent extra msgs
+
+- {{{option(-M)}}}, {{{option(--mss)}}} {{{argument(n)}}}
+ set TCP maximum segment size (MTU - 40 bytes)
+
+- {{{option(-N)}}}, {{{option(--nodelay)}}}
+ set TCP no delay, disabling Nagle's Algorithm
+
+- {{{option(-v)}}}, {{{option(--version)}}}
+ print version information and quit
+
+- {{{option(-V)}}}, {{{option(--IPv6Version)}}}
+ Set the domain to IPv6
+
+- {{{option(-x)}}}, {{{option(--reportexclude)}}}
+ [CDMSV] exclude C(connection) D(data) M(multicast) S(settings) V(server) reports
+
+- {{{option(-y)}}}, {{{option(--reportstyle)}}} {{{argument(C|c)}}}
+ if set to C or c report results as CSV (comma separated values)
+
+*** 서버 전용 옵션
+   :PROPERTIES: 
+   :LANG: ko
+   :END:      
+
+- {{{option(-s)}}}, {{{option(--server)}}}
+ run in server mode
+
+- {{{option(-U)}}}, {{{option(--single_udp)}}}
+ run in single threaded UDP mode
+
+- {{{option(-D)}}}, {{{option(--daemon)}}}
+ run the server as a daemon
+
+*** 클라이언트 전용 옵션
+   :PROPERTIES: 
+   :LANG: ko
+   :END:      
+
+- {{{option(-b)}}}, {{{option(--bandwidth)}}} {{{argument(n[KM])}}}
+ set target bandwidth to n bits/sec (default 1 Mbit/sec). This setting requires UDP (-u).
+
+- {{{option(-c)}}}, {{{option(--client)}}} {{{argument(<host>)}}}
+ run in client mode, connecting to <host>
+
+- {{{option(-d)}}}, {{{option(--dualtest)}}}
+ Do a bidirectional test simultaneously
+
+- {{{option(-n)}}}, {{{option(--num)}}} {{{argument(n[KM])}}}
+ number of bytes to transmit (instead of -t)
+
+- {{{option(-r)}}}, {{{option(--tradeoff)}}}
+ Do a bidirectional test individually
+
+- {{{option(-t)}}}, {{{option(--time)}}} {{{argument(n)}}}
+ time in seconds to transmit for (default 10 secs)
+
+- {{{option(-F)}}}, {{{option(--fileinput)}}} {{{argument(<name>)}}}
+ input the data to be transmitted from a file
+
+- {{{option(-I)}}}, {{{option(--stdin)}}}
+ input the data to be transmitted from stdin
+
+- {{{option(-L)}}}, {{{option(--listenport)}}} {{{argument(n)}}}
+ port to receive bidirectional tests back on
+
+- {{{option(-P)}}}, {{{option(--parallel)}}} {{{argument(n)}}}
+ number of parallel client threads to run
+
+- {{{option(-T)}}}, {{{option(--ttl)}}} {{{argument(n)}}}
+ time-to-live, for multicast (default 1)
+
+- {{{option(-Z)}}}, {{{option(--linux-congestion)}}} {{{argument(<algo>)}}}
+ set TCP congestion control algorithm (Linux only)
+
+** 환경 변수
+   :PROPERTIES: 
+   :CUSTOM_ID: environment-variables
+   :LANG: ko
+   :END:      
+
+- {{{variable(TCP_WINDOW_SIZE)}}} :
+ TCP 버퍼 사이즈를 조절합니다.
 
 # ** Examples
 #    :PROPERTIES: 
@@ -124,12 +270,11 @@
 #   :LANG_JA:  関連項目
 #   :END:      
 
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+- [[http://iperf.sourceforge.net/]]
+- [[https://packages.ubuntu.com/xenial/iperf][iperf - Ubuntu Packages]]
