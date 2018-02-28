@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2018-02-28 Wed 02:31 -->
+<!-- 2018-02-28 Wed 11:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>xargs</title>
@@ -202,10 +202,10 @@
 <meta property="og:description" content="build and execute command lines from standard input ">
 <meta name="twitter:title" content="xargs - Comandos de Linux">
 <meta name="twitter:description" content="build and execute command lines from standard input ">
-<link rel="alternate" href="http://linux-command.org/ko/xargs.html" hreflang="ko" />
 <link rel="alternate" href="http://linux-command.org/en/xargs.html" hreflang="en" />
-<link rel="alternate" href="http://linux-command.org/ja/xargs.html" hreflang="ja" />
 <link rel="alternate" href="http://linux-command.org/es/xargs.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/xargs.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/xargs.html" hreflang="ko" />
 <link rel="alternate" href="http://linux-command.org/zh/xargs.html" hreflang="zh" />
 <script type="text/javascript">
 /*
@@ -287,46 +287,46 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org0e1cf52" class="outline-2">
-<h2 id="overview"><a id="org0e1cf52"></a>Visión de conjunto</h2>
+<div id="outline-container-orgbea55a6" class="outline-2">
+<h2 id="overview"><a id="orgbea55a6"></a>Visión de conjunto</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 build and execute command lines from standard input
 </p>
 </div>
 
-<div id="outline-container-orgc40ab77" class="outline-3">
-<h3 id="history"><a id="orgc40ab77"></a>Historia</h3>
+<div id="outline-container-org8b4c293" class="outline-3">
+<h3 id="history"><a id="org8b4c293"></a>Historia</h3>
 <div class="outline-text-3" id="text-history">
 </div>
 </div>
 
-<div id="outline-container-org177427a" class="outline-3">
-<h3 id="releases"><a id="org177427a"></a>Lanzamientos</h3>
+<div id="outline-container-org0e7370e" class="outline-3">
+<h3 id="releases"><a id="org0e7370e"></a>Lanzamientos</h3>
 <div class="outline-text-3" id="text-releases">
 </div>
 </div>
 
-<div id="outline-container-org51ef33e" class="outline-3">
-<h3 id="introduction"><a id="org51ef33e"></a>Introducción</h3>
+<div id="outline-container-orgd993128" class="outline-3">
+<h3 id="introduction"><a id="orgd993128"></a>Introducción</h3>
 <div class="outline-text-3" id="text-introduction">
 </div>
 </div>
 
-<div id="outline-container-org727f156" class="outline-3">
-<h3 id="characteristic"><a id="org727f156"></a>Característica</h3>
+<div id="outline-container-org9680e16" class="outline-3">
+<h3 id="characteristic"><a id="org9680e16"></a>Característica</h3>
 <div class="outline-text-3" id="text-characteristic">
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2fa44de" class="outline-2">
-<h2 id="how-to-install"><a id="org2fa44de"></a>Cómo instalar</h2>
+<div id="outline-container-orgb61645d" class="outline-2">
+<h2 id="how-to-install"><a id="orgb61645d"></a>Cómo instalar</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org17b1407" class="outline-3">
-<h3 id="install"><a id="org17b1407"></a>Instalar</h3>
+<div id="outline-container-org28127b8" class="outline-3">
+<h3 id="install"><a id="org28127b8"></a>Instalar</h3>
 <div class="outline-text-3" id="text-install">
 <p>
 Ver <a href="./findutils.html#install">findutils</a>.
@@ -334,8 +334,8 @@ Ver <a href="./findutils.html#install">findutils</a>.
 </div>
 </div>
 
-<div id="outline-container-org50227bc" class="outline-3">
-<h3 id="check"><a id="org50227bc"></a>Comprobar</h3>
+<div id="outline-container-org24c17f9" class="outline-3">
+<h3 id="check"><a id="org24c17f9"></a>Comprobar</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ xargs --version
@@ -354,13 +354,13 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org5d41c66" class="outline-2">
-<h2 id="usage"><a id="org5d41c66"></a>Uso</h2>
+<div id="outline-container-org2ce9bd0" class="outline-2">
+<h2 id="usage"><a id="org2ce9bd0"></a>Uso</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org9048273" class="outline-3">
-<h3 id="syntax"><a id="org9048273"></a>Sintaxis</h3>
+<div id="outline-container-org325bbfe" class="outline-3">
+<h3 id="syntax"><a id="org325bbfe"></a>Sintaxis</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">xargs  [-0prtx] [-E eof-str] [-e[eof-str]] [--eof[=eof-str]] [--null] [-d delimiter] [--delimiter delimiter] [-I replace-str] [-i[replace-str]] [--replace[=replace-str]]
@@ -372,15 +372,15 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-orgf6b495e" class="outline-3">
-<h3 id="options"><a id="orgf6b495e"></a>Opciones</h3>
+<div id="outline-container-orgc56119a" class="outline-3">
+<h3 id="options"><a id="orgc56119a"></a>Opciones</h3>
 <div class="outline-text-3" id="text-options">
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfc152e0" class="outline-2">
-<h2 id="seealso"><a id="orgfc152e0"></a>Ver también</h2>
+<div id="outline-container-org107148f" class="outline-2">
+<h2 id="seealso"><a id="org107148f"></a>Ver también</h2>
 <div class="outline-text-2" id="text-seealso">
 <ul class="org-ul">
 <li><a href="./findutils.html">findutils</a></li>
@@ -390,8 +390,8 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 </div>
 </div>
 
-<div id="outline-container-org929e5b5" class="outline-2">
-<h2 id="references"><a id="org929e5b5"></a>Referencias</h2>
+<div id="outline-container-org4fbbf00" class="outline-2">
+<h2 id="references"><a id="org4fbbf00"></a>Referencias</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li>Ver <a href="./findutils.html#references">findutils</a>.</li>
@@ -402,7 +402,7 @@ Written by Eric B. Decker, James Youngman, and Kevin Dalley.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-28</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-28 Wed 02:31</p>
+<p class="date">Created: 2018-02-28 Wed 11:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

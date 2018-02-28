@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<!-- 2018-02-28 Wed 02:27 -->
+<!-- 2018-02-28 Wed 11:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>insmod</title>
@@ -195,17 +195,17 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="insmod - Linuxコマンド">
-<meta name="description" content="">
+<meta name="description" content="Only the most general of error messages are reported: as the work of trying to link the module is now done inside the kernel, the dmesg usually gives more information about errors. insmod is a trivial program to insert a module into the kernel. Most users will want to use modprobe(8) instead, which is more clever and can handle module dependencies. Linuxカーネルにモジュールを追加する簡単なプログラムです。 ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="insmod - Linuxコマンド">
-<meta property="og:description" content="">
+<meta property="og:description" content="Only the most general of error messages are reported: as the work of trying to link the module is now done inside the kernel, the dmesg usually gives more information about errors. insmod is a trivial program to insert a module into the kernel. Most users will want to use modprobe(8) instead, which is more clever and can handle module dependencies. Linuxカーネルにモジュールを追加する簡単なプログラムです。 ">
 <meta name="twitter:title" content="insmod - Linuxコマンド">
-<meta name="twitter:description" content="">
-<link rel="alternate" href="http://linux-command.org/ko/insmod.html" hreflang="ko" />
+<meta name="twitter:description" content="Only the most general of error messages are reported: as the work of trying to link the module is now done inside the kernel, the dmesg usually gives more information about errors. insmod is a trivial program to insert a module into the kernel. Most users will want to use modprobe(8) instead, which is more clever and can handle module dependencies. Linuxカーネルにモジュールを追加する簡単なプログラムです。 ">
 <link rel="alternate" href="http://linux-command.org/en/insmod.html" hreflang="en" />
-<link rel="alternate" href="http://linux-command.org/ja/insmod.html" hreflang="ja" />
 <link rel="alternate" href="http://linux-command.org/es/insmod.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/insmod.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/insmod.html" hreflang="ko" />
 <link rel="alternate" href="http://linux-command.org/zh/insmod.html" hreflang="zh" />
 <script type="text/javascript">
 /*
@@ -257,11 +257,127 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">insmod</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">概要</a>
+<ul>
+<li><a href="#introduction">はじめに</a></li>
+</ul>
+</li>
+<li><a href="#how-to-install">インストール方法</a>
+<ul>
+<li><a href="#install">インストール</a></li>
+<li><a href="#check">チェック</a></li>
+</ul>
+</li>
+<li><a href="#usage">命令説明</a>
+<ul>
+<li><a href="#syntax">構造</a></li>
+</ul>
+</li>
+<li><a href="#seealso">関連項目</a></li>
+<li><a href="#references">参考</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb217203" class="outline-2">
+<h2 id="overview"><a id="orgb217203"></a>概要</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Linuxカーネルにモジュールを追加する簡単なプログラムです。
+</p>
+</div>
+
+<div id="outline-container-org4b1be80" class="outline-3">
+<h3 id="introduction"><a id="org4b1be80"></a>はじめに</h3>
+<div class="outline-text-3" id="text-introduction">
+<p>
+insmod is a trivial program to insert a module into the kernel. Most users will want to use modprobe(8) instead, which is more clever and can handle module dependencies.
+</p>
+
+<p>
+Only the most general of error messages are reported: as the work of trying to link the module is now done inside the kernel, the dmesg usually gives more information about errors.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3e01f3d" class="outline-2">
+<h2 id="how-to-install"><a id="org3e01f3d"></a>インストール方法</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgb771b14" class="outline-3">
+<h3 id="install"><a id="orgb771b14"></a>インストール</h3>
+<div class="outline-text-3" id="text-install">
+<p>
+<a href="./kmod.html#install">kmod</a>ドキュメントを参照してください。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org172ca5c" class="outline-3">
+<h3 id="check"><a id="org172ca5c"></a>チェック</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ insmod -V
+</pre>
+</div>
+
+<pre class="example">
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgff8a921" class="outline-2">
+<h2 id="usage"><a id="orgff8a921"></a>命令説明</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org4492b5d" class="outline-3">
+<h3 id="syntax"><a id="org4492b5d"></a>構造</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">insmod [filename] [module options...]
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org226a5ae" class="outline-2">
+<h2 id="seealso"><a id="org226a5ae"></a>関連項目</h2>
+<div class="outline-text-2" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./kmod.html">kmod</a></li>
+<li><a href="./lsmod.html">lsmod</a></li>
+<li><a href="./rmmod.html">rmmod</a></li>
+<li><a href="./modinfo.html">modinfo</a></li>
+<li><a href="./modprobe.html">modprobe</a></li>
+<li><a href="./depmod.html">depmod</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcd8e134" class="outline-2">
+<h2 id="references"><a id="orgcd8e134"></a>参考</h2>
+<div class="outline-text-2" id="text-references">
+<p>
+<a href="./kmod.html#references">kmod</a>ドキュメントを参照してください。
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-02-28 Wed 02:27</p>
+<p class="date">Created: 2018-02-28 Wed 11:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
