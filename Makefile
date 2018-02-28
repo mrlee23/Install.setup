@@ -62,8 +62,8 @@ pages: mkdirs pages-deps
 	)"
 	for lang in `cat .supportLanguages`; \
 	do \
-		echo "$$lang" > "$(PUBLISH_PAGES_DIR)/$${lang}/.language"; \
-		rm -rf "$(GH_PAGES_DIR)/$(DIST_DIR)/$${lang}/$(ASSETS_DIR)"; \
+		if [ -d "$(PUBLISH_PAGES_DIR)/$${lang}" ]; then echo "$$lang" > "$(PUBLISH_PAGES_DIR)/$${lang}/.language"; fi; \
+		if [ -d "$(GH_PAGES_DIR)/$(DIST_DIR)/$${lang}/$(ASSETS_DIR)" ]; then rm -rf "$(GH_PAGES_DIR)/$(DIST_DIR)/$${lang}/$(ASSETS_DIR)"; fi; \
 	done;
 	find . -type d -path "*/$(DIST_DIR)/*/.git" -prune -exec rm -rf {} \;
 

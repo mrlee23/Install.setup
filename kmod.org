@@ -1,0 +1,214 @@
+#+INCLUDE: ./main.setup
+#+TITLE: kmod
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-28
+
+#+NAME: infobox
+| Package Size | {{{size(87KB)}}} |
+| Installed Size | {{{size(241KB)}}} |
+
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+用于处理Linux内核模块的程序
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+** 介绍
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: zh
+  :END:    
+
+kmod is a multi-call binary which implements the programs used to control Linux Kernel modules. Most users will only run it using its other names.
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+** 先决条件
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: zh
+   :END:      
+
+- {{{link(update)}}}
+
+** 依赖
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: zh
+   :END:      
+
+- libc6 (>= {{{ver(2.17)}}})
+- libkmod2 (= {{{ver(22-1ubuntu4)}}})
+- lsb-base (>= {{{ver(4.1+Debian11ubuntu7)}}})
+
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install module-init-tools
+#+END_SRC
+
+** 安装的软件包
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: zh
+   :END:      
+
+- kmod
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(insmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+$ kmod -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+kmod [options] command [command_options]
+#+END_SRC
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
+
+- {{{option(-V)}}}, {{{option(--version)}}} :
+- {{{option(-h)}}}, {{{option(--help)}}} :
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Environment Variables
+#    :PROPERTIES: 
+#    :CUSTOM_ID: environment-variables
+#    :LANG_EN:  Variables
+#    :LANG_ES:  Variables de entorno
+#    :LANG_KO:  환경 변수
+#    :LANG_ZH:  环境变量
+#    :LANG_JA:  環境変数
+#    :END:      
+
+** 命令
+   :PROPERTIES: 
+   :CUSTOM_ID: commands
+   :LANG: zh
+   :END:      
+
+- help : Show help message
+- list : list currently loaded modules
+- static-nodes : outputs the static-node information installed with the currently running kernel
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 相关主题
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: zh
+  :END:      
+
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(insmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: zh
+  :END:      
+
+- [[https://packages.ubuntu.com/xenial/kmod][kmod - Ubuntu Packages]]
