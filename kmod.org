@@ -1,0 +1,289 @@
+#+INCLUDE: ./main.setup
+#+TITLE: kmod
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-28
+
+#+NAME: infobox
+| Package Size | {{{size(87KB)}}} |
+| Installed Size | {{{size(241KB)}}} |
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_JA:  概要
+  :LANG_ZH:  摘要
+  :END:      
+
+#+LANG_EN:Program to manage Linux Kernel modules
+#+LANG_ES:programa para gestionar los módulos del kernel de Linux
+#+LANG_JA:Linuxカーネルモジュールを扱うためのプログラム
+#+LANG_KO:리눅스 커널 모듈을 다루기 위한 프로그램
+#+LANG_ZH:用于处理Linux内核模块的程序
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+** Introduction
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG_EN:  Introduction
+  :LANG_ES:  Introducción
+  :LANG_KO:  소개
+  :LANG_ZH:  介绍
+  :LANG_JA:  はじめに
+  :END:    
+
+#+BEGIN_LANG en es ja zh
+kmod is a multi-call binary which implements the programs used to control Linux Kernel modules. Most users will only run it using its other names.
+#+END_LANG
+#+BEGIN_LANG ko
+kmod는 리눅스 커널 모듈을 제어하는데 쓰이는 프로그램을 구현한 여러 명령어들로 구성되어 있습니다.
+일반적으로 사용할 때 kmod가 아닌 다른 이름으로 만들어진 {{{link(insmod)}}}, {{{link(lsmod)}}} 등을 명령어로 사용합니다.
+#+END_LANG
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
+
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG_EN:  Prerequisites
+   :LANG_ES:  Requisitos previos
+   :LANG_KO:  필요 사항
+   :LANG_ZH:  先决条件
+   :LANG_JA:  前準備
+   :END:      
+
+- {{{link(update)}}}
+
+** Dependencies
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG_EN:  Dependencies
+   :LANG_ES:  Dependencias
+   :LANG_KO:  의존성
+   :LANG_ZH:  依赖
+   :LANG_JA:  依存関係
+   :END:      
+
+- libc6 (>= {{{ver(2.17)}}})
+- libkmod2 (= {{{ver(22-1ubuntu4)}}})
+- lsb-base (>= {{{ver(4.1+Debian11ubuntu7)}}})
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install module-init-tools
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG_EN:  Installed Packages
+   :LANG_ES:  Paquetes instalados
+   :LANG_KO:  설치된 패키지
+   :LANG_ZH:  安装的软件包
+   :LANG_JA:  インストールされたパッケージ
+   :END:      
+
+- kmod
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(insmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG_EN:  Check
+   :LANG_ES:  Comprobar
+   :LANG_KO:  확인
+   :LANG_ZH:  检查
+   :LANG_JA:  チェック
+   :END:      
+
+#+BEGIN_SRC sh
+$ kmod -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
+
+#+BEGIN_SRC sh
+#+BEGIN_LANG en es ja zh
+kmod [options] command [command_options]
+#+END_LANG
+#+BEGIN_LANG ko
+kmod [옵션] 명령어 [명령어_옵션]
+#+END_LANG
+#+END_SRC
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+- {{{option(-V)}}}, {{{option(--version)}}} :
+#+LANG_EN: show version
+#+LANG_KO: 버전을 보여줍니다.
+- {{{option(-h)}}}, {{{option(--help)}}} :
+#+LANG_EN: show help
+#+LANG_EN: 도움말을 보여줍니다.
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Environment Variables
+#    :PROPERTIES: 
+#    :CUSTOM_ID: environment-variables
+#    :LANG_EN:  Variables
+#    :LANG_ES:  Variables de entorno
+#    :LANG_KO:  환경 변수
+#    :LANG_ZH:  环境变量
+#    :LANG_JA:  環境変数
+#    :END:      
+
+** Commands
+   :PROPERTIES: 
+   :CUSTOM_ID: commands
+   :LANG_EN:  Commands
+   :LANG_ES:  Comandos
+   :LANG_KO:  명령어
+   :LANG_ZH:  命令
+   :LANG_JA:  コマンド
+   :END:      
+
+- help : Show help message
+- list : list currently loaded modules
+- static-nodes : outputs the static-node information installed with the currently running kernel
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* See also
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG_EN:  See also
+  :LANG_ES:  Ver también
+  :LANG_KO:  관련 항목
+  :LANG_ZH:  相关主题
+  :LANG_JA:  関連項目
+  :END:      
+
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(insmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG_EN:  References
+  :LANG_ES:  Referencias
+  :LANG_KO:  참고자료
+  :LANG_ZH:  参考
+  :LANG_JA:  参考
+  :END:      
+
+- [[https://packages.ubuntu.com/xenial/kmod][kmod - Ubuntu Packages]]
