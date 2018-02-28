@@ -4,65 +4,48 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+Search for files in a directory hierarchy
 
-# ** Prerequisites
-#    :PROPERTIES: 
-#    :CUSTOM_ID: prerequisites
-#    :LANG_EN:  Prerequisites
-#    :LANG_ES:  Requisitos previos
-#    :LANG_KO:  필요 사항
-#    :LANG_ZH:  先决条件
-#    :LANG_JA:  前準備
-#    :END:      
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
 
-# ** Installed Packages
-#    :PROPERTIES: 
-#    :CUSTOM_ID: packages
-#    :LANG_EN:  Installed Packages
-#    :LANG_ES:  Paquetes instalados
-#    :LANG_KO:  설치된 패키지
-#    :LANG_ZH:  安装的软件包
-#    :LANG_JA:  インストールされたパッケージ
-#    :END:      
+{{{see(findutils#install)}}}
 
-# ** Check
-#    :PROPERTIES: 
-#    :CUSTOM_ID: check
-#    :LANG_EN:  Check
-#    :LANG_ES:  Comprobar
-#    :LANG_KO:  확인
-#    :LANG_ZH:  检查
-#    :LANG_JA:  チェック
-#    :END:      
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+$ find -version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+find (GNU findutils) 4.7.0-git
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Eric B. Decker, James Youngman, and Kevin Dalley.
+Features enabled: D_TYPE O_NOFOLLOW(enabled) LEAF_OPTIMISATION FTS(FTS_CWDFD) CBO(level=2)
+#+END_EXAMPLE
 
 * Usage
   :PROPERTIES: 
@@ -76,17 +59,19 @@
    :LANG: en
    :END:      
 
-** Configuration
-   :PROPERTIES: 
-   :CUSTOM_ID: configuration
-   :LANG: en
-   :END:      
+	#+BEGIN_SRC sh
+find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
+	#+END_SRC
 
-** Options
-   :PROPERTIES: 
-   :CUSTOM_ID: options
-   :LANG: en
-   :END:      
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
 
 ** Examples
    :PROPERTIES: 
@@ -114,22 +99,20 @@
 - find . -name core -size +2048 -print
 - find . -mtime -7 -print
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* See also
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: en
+  :END:      
 
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: preferences
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+- {{{link(findutils)}}}
+- {{{link(xargs)}}}
+- {{{link(locate)}}}
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: preferences
+  :LANG: en
+  :END:      
+
+- {{{see(findutils#references)}}}
