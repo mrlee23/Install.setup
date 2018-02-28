@@ -278,12 +278,18 @@
 		  name))
 
 (defun lc-macro/link (link &optional name)
-  (setq link (lc-macro/arg-trim link))
-  (setq name (or (lc-macro/arg-trim name) (replace-regexp-in-string "/" "-" link)))
-  (setq link (format "%s/%s.org"
-					 (file-relative-name lc-core/base-dir (file-name-directory lc-core/current-filename))
-					 link))
-  (format "[[%s][%s]]" link name))
+  (let (splited-link id)
+	(setq link (lc-macro/arg-trim link))
+	(setq splited-link (split-string link "#"))
+	(setq link (nth 0 splited-link))
+	(setq id (nth 1 splited-link))
+	(setq name (or (lc-macro/arg-trim name) (replace-regexp-in-string "/" "-" link)))
+	(setq link (format "%s/%s.org"
+					   (file-relative-name lc-core/base-dir (file-name-directory lc-core/current-filename))
+					   link))
+	(if (stringp id)
+		(format "[[%s::#%s][%s]]" link id name)
+	  (format "[[%s][%s]]" link name))))
 
 (defun lc-macro/image--get-local-path (path)
   (expand-file-name

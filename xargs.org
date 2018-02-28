@@ -1,0 +1,166 @@
+#+INCLUDE: ./main.setup
+#+TITLE: xargs
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-28
+
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+#+BEGIN_LANG: en es ja
+build and execute command lines from standard input
+#+END_LANG
+ 从标准输入构建并执行命令
+
+** 历史
+  :PROPERTIES: 
+  :CUSTOM_ID: history
+  :LANG: zh
+  :END:    
+
+** 发布
+  :PROPERTIES: 
+  :CUSTOM_ID: releases
+  :LANG: zh
+  :END:    
+
+** 介绍
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: zh
+  :END:    
+
+** 特点
+  :PROPERTIES: 
+  :CUSTOM_ID: characteristic
+  :LANG: zh
+  :END:    
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+{{{see(findutils#install)}}}
+
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+$ xargs --version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Eric B. Decker, James Youngman, and Kevin Dalley.
+#+END_EXAMPLE
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+xargs  [-0prtx] [-E eof-str] [-e[eof-str]] [--eof[=eof-str]] [--null] [-d delimiter] [--delimiter delimiter] [-I replace-str] [-i[replace-str]] [--replace[=replace-str]]
+       [-l[max-lines]] [-L max-lines] [--max-lines[=max-lines]] [-n max-args] [--max-args=max-args] [-s  max-chars]  [--max-chars=max-chars]  [-P  max-procs]  [--max-procs=max-
+       procs]  [--process-slot-var=name]  [--interactive]  [--verbose]  [--exit]  [--no-run-if-empty]  [--arg-file=file] [--show-limits] [--version] [--help] [command [initial-
+       arguments]]
+#+END_SRC
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Environment Variables
+#    :PROPERTIES: 
+#    :CUSTOM_ID: environment-variables
+#    :LANG_EN:  Variables
+#    :LANG_ES:  Variables de entorno
+#    :LANG_KO:  환경 변수
+#    :LANG_ZH:  环境变量
+#    :LANG_JA:  環境変数
+#    :END:      
+
+# ** Commands
+#    :PROPERTIES: 
+#    :CUSTOM_ID: commands
+#    :LANG_EN:  Commands
+#    :LANG_ES:  Comandos
+#    :LANG_KO:  명령어
+#    :LANG_ZH:  命令
+#    :LANG_JA:  コマンド
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 相关主题
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: zh
+  :END:      
+
+- {{{link(findutils)}}}
+- {{{link(find)}}}
+- {{{link(locate)}}}
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: zh
+  :END:      
+
+- {{{see(findutils#references)}}}
