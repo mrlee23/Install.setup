@@ -48,13 +48,16 @@
 	))
 
 (defun pages-support-languages ()
-  (if (file-exists-p ".supportLanguages")
-	  (with-temp-buffer
-		(insert-file-contents ".supportLanguages")
-		(let (contents data)
-		  (setq contents (buffer-substring-no-properties 1 (point-max)))
-		  (setq data (split-string contents "\n"))))
-	'()))
+  (let ((langs (if (file-exists-p ".supportLanguages")
+					  (with-temp-buffer
+						(insert-file-contents ".supportLanguages")
+						(let (contents data)
+						  (setq contents (buffer-substring-no-properties 1 (point-max)))
+						  (setq data (split-string contents "\n"))))
+					'())))
+	(setq langs (mapcar 'string-trim langs))
+	(setq langs (seq-filter 'org-multilingual-exists-code langs))
+	langs))
 
 (defvar pages--multilingual-static-extensions '(html css js png jpg gif mp3 m4a mp4 woff2 woff svg eot ttf otf vcf))
 (defun pages--multilingual-init (BASE_DIR TARGET_DIR &optional EXCLUDE_DIR LANG)
