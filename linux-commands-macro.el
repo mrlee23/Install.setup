@@ -260,6 +260,11 @@
 			 "Currently latest version is %s."))
 		  ver))
 
+(defun lc-macro/opt (name)
+  (setq name (lc-macro/arg-trim name))
+  (format "@@html:<a href=\"#opt-%s\"><span class=\"org-programming-option\">%s</span></a>@@" name name)
+  )
+
 (defun lc-macro/see (name)
   (setq name (lc-macro/link name))
   (format (case (lc-core/get-current-language)
@@ -275,6 +280,23 @@
 			 "%sドキュメントを参照してください。")
 			(t
 			 "See %s."))
+		  name))
+
+(defun lc-macro/see-option (name)
+  (setq name (lc-macro/opt name))
+  (format (case (lc-core/get-current-language)
+			(en
+			 "See option %s.")
+			(es
+			 "Ver opción% %s.")
+			(ko
+			 "%s 옵션을 참조하세요.")
+			(zh
+			 "请参阅%s选项。")
+			(ja
+			 "%sオプションを参照してください。")
+			(t
+			 "See option %s."))
 		  name))
 
 (defun lc-macro/link (link &optional name)
