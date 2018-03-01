@@ -12,7 +12,7 @@
 #+MACRO: const @@html:<span class="org-programming-constant">$1</span>@@
 #+MACRO: path @@html:<span class="org-programming-path">$1</span>@@
 #+MACRO: file @@html:<span class="org-programming-file">$1</span>@@
-#+MACRO: opt @@html:<a href="#opt-$1"><span class="org-programming-option">$1</span></a>@@
+#+MACRO: opt (eval (lc-macro/opt "$1"))
 #+MACRO: option @@html:<span id="opt-$1" class="org-programming-option">$1</span>@@
 #+MACRO: ver @@html:<span class="org-programming-version">$1</span>@@
 #+MACRO: size @@html:<span class="org-programming-size">$1</span>@@
@@ -20,6 +20,7 @@
 #+MACRO: license @@html:<span class="org-programming-license">$1</span>@@
 
 #+MACRO: see (eval (lc-macro/see "$1"))
+#+MACRO: see-opt (eval (lc-macro/see-option "$1"))
 #+MACRO: link (eval (lc-macro/link "$1" "$2"))
 #+MACRO: img (eval (lc-macro/inline-image "$1" "$2"))
 #+MACRO: img-link (eval (lc-macro/inline-image-link "$1" "$2"))
