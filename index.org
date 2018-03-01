@@ -1,4 +1,4 @@
-# Created 2018-03-01 Thu 01:25
+# Created 2018-03-01 Thu 02:34
 #+OPTIONS: -:nil --:nil tex:t ^:nil num:nil
 #+TITLE: Linux Commands
 #+DATE: 2018-02-11
@@ -15,14 +15,15 @@
 #+MACRO: const @@html:<span class="org-programming-constant">$1</span>@@
 #+MACRO: path @@html:<span class="org-programming-path">$1</span>@@
 #+MACRO: file @@html:<span class="org-programming-file">$1</span>@@
-#+MACRO: opt @@html:<span class="org-programming-option">$1</span>@@
-#+MACRO: option @@html:<span class="org-programming-option">$1</span>@@
+#+MACRO: opt (eval (lc-macro/opt "$1"))
+#+MACRO: option @@html:<span id="opt-$1" class="org-programming-option">$1</span>@@
 #+MACRO: ver @@html:<span class="org-programming-version">$1</span>@@
 #+MACRO: size @@html:<span class="org-programming-size">$1</span>@@
 #+MACRO: date @@html:<span class="org-programming-date">$1</span>@@
 #+MACRO: license @@html:<span class="org-programming-license">$1</span>@@
 
 #+MACRO: see (eval (lc-macro/see "$1"))
+#+MACRO: see-opt (eval (lc-macro/see-option "$1"))
 #+MACRO: link (eval (lc-macro/link "$1" "$2"))
 #+MACRO: img (eval (lc-macro/inline-image "$1" "$2"))
 #+MACRO: img-link (eval (lc-macro/inline-image-link "$1" "$2"))
@@ -125,6 +126,7 @@
 | [[file:./chown.org][chown]]                           | No                                           | No                                             | No                                  | No                                   | No                                    |
 | [[file:./chrome.org][chrome]]                         | No                                           | [[file:chrome.org::#install][Yes]]             | No                                  | No                                   | No                                    |
 | [[file:./chsh.org][chsh]]                             | [[file:chsh.org::#overview][Yes]]            | [[file:chsh.org::#install][Yes]]               | [[file:chsh.org::#usage][Yes]]      | [[file:chsh.org::#options][Yes]]     | [[file:chsh.org::#seealso][Yes]]      |
+| [[file:./cloc.org][cloc]]                             | [[file:cloc.org::#overview][Yes]]            | [[file:cloc.org::#install][Yes]]               | [[file:cloc.org::#usage][Yes]]      | [[file:cloc.org::#options][Yes]]     | No                                    |
 | [[file:./curl.org][curl]]                             | No                                           | [[file:curl.org::#install][Yes]]               | No                                  | No                                   | No                                    |
 | [[file:./dh-autoreconf.org][dh-autoreconf]]           | No                                           | [[file:dh-autoreconf.org::#install][Yes]]      | No                                  | No                                   | No                                    |
 | [[file:./diff.org][diff]]                             | [[file:diff.org::#overview][Yes]]            | [[file:diff.org::#install][Yes]]               | [[file:diff.org::#usage][Yes]]      | [[file:diff.org::#options][Yes]]     | [[file:diff.org::#seealso][Yes]]      |
