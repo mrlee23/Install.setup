@@ -217,17 +217,14 @@ to figure out how to extract the contents of
 the input file(s) by itself.
 Use CMD to extract binary archive files (e.g.:
 .tar.gz, .zip, .Z). Use the literal '>FILE<' as
-a stand{{{opt(-in)}}} for the actual file(s) to be
+a stand-in for the actual file(s) to be
 extracted. For example, to count lines of code
 in the input files
 gcc-4.2.tar.gz perl-5.8.8.tar.gz
-on Unix use
-{{{opt(--extract-with)}}}='gzip -dc >FILE< | tar xf -'
-or, if you have GNU tar,
-{{{opt(--extract-with)}}}='tar zxf >FILE<'
-and on Windows use, for example:
-{{{opt(--extract-with)}}}="\"c:\Program Files\WinZip\WinZip32.exe\" -e -o >FILE< ."
-(if WinZip is installed there).
+
+  - on Unix use :: {{{opt(--extract-with)}}}='gzip -dc >FILE< | tar xf -'
+  - or, if you have GNU tar, :: {{{opt(--extract-with)}}}='tar zxf >FILE<'
+  - and on Windows use, for example(if WinZip is installed there) :: {{{opt(--extract-with)}}}="\"c:\Program Files\WinZip\WinZip32.exe\" -e -o >FILE< ."
 
 - {{{option(--list-file)}}}={{{argument(FILE)}}}
 Take the list of file and/or directory names to
@@ -240,7 +237,7 @@ See also {{{opt(--exclude-list-file)}}}.
 - {{{option(--vcs)}}}={{{argument(VCS)}}}
 Invoke a system call to VCS to obtain a list of
 files to work on. If VCS is 'git', then will
-invoke 'git ls{{{opt(-files)}}}' to get a file list and
+invoke 'git ls-files' to get a file list and
 'git submodule status' to get a list of submodules
 whose contents will be ignored. See also {{{opt(--git)}}}
 which accepts git commit hashes and branch names.
@@ -277,7 +274,7 @@ Report results for every source file encountered.
 Report results for every source file encountered
 in addition to reporting by language.
 
-- {{{option(--count-and-diff)}}} SET1 SET2
+- {{{option(--count-and-diff)}}} {{{argument(SET1)}}} {{{argument(SET2)}}}
 First perform direct code counts of source file(s)
 of SET1 and SET2 separately, then perform a diff
 of these. Inputs may be pairs of files, directories,
@@ -287,7 +284,7 @@ of the two counts and one for the diff. See also
 {{{opt(--diff)}}}, {{{opt(--diff-alignment)}}}, {{{opt(--diff-timeout)}}},
 {{{opt(--ignore-case)}}}, {{{opt(--ignore-whitespace)}}}.
 
-- {{{option(--diff)}}} SET1 SET2
+- {{{option(--diff)}}} {{{argument(SET1)}}} {{{argument(SET2)}}}
 Compute differences in code and comments between
 source file(s) of SET1 and SET2. The inputs
 may be any mix of files, directories, archives,
@@ -297,7 +294,7 @@ which file pairs where compared. See also
 {{{opt(--count-and-diff)}}}, {{{opt(--diff-alignment)}}}, {{{opt(--diff-timeout)}}},
 {{{opt(--ignore-case)}}}, {{{opt(--ignore-whitespace)}}}.
 
-- {{{option(--diff-timeout)}}} N
+- {{{option(--diff-timeout)}}} {{{argument(N)}}}
 Ignore files which take more than N seconds
 to process. Default is 10 seconds.
 (Large files with many repeated lines can cause
@@ -307,14 +304,14 @@ Algorithm::Diff::sdiff() to take hours.)
 [Unix only] Follow symbolic links to directories
 (sym links to files are always followed).
 
-- {{{option(--force-lang)}}}={{{argument(LANG,EXT)}}}
+- {{{option(--force-lang)}}}={{{argument(LANG)}}},{{{argument(EXT)}}}
 Process all files that have a EXT extension
 with the counter for language LANG. For
 example, to count all .f files with the
 Fortran 90 counter (which expects files to
 end with .f90) instead of the default Fortran 77
 counter, use
-{{{opt(--force-lang)}}}={{{argument("Fortran 90",f)}}}
+{{{opt(--force-lang)}}}={{{argument("Fortran 90")}}},{{{argument(f)}}}
 If EXT is omitted, every file will be counted
 with the LANG counter. This option can be
 specified multiple times (but that is only
@@ -331,7 +328,7 @@ Pascal/PHP; Lisp/OpenCL; Lisp/Julia; Perl/Prolog)
 will be ignored as these require additional
 processing that is not expressed in language
 definition files. Use {{{opt(--read-lang-def)}}} to define
-new language filters without replacing built{{{opt(-in)}}}
+new language filters without replacing built-in
 filters (see also {{{opt(--write-lang-def)}}}).
 
 - {{{option(--git)}}}
@@ -397,10 +394,10 @@ Load new language processing filters from FILE
 and merge them with those already known to cloc.
 If FILE defines a language cloc already knows
 about, cloc's definition will take precedence.
-Use {{{opt(--force-lang-def)}}} to over{{{opt(-ride)}}} cloc's
+Use {{{opt(--force-lang-def)}}} to override cloc's
 definitions (see also {{{opt(--write-lang-def)}}} ).
 
-- {{{option(--script-lang)}}}={{{argument(LANG,S)}}}
+- {{{option(--script-lang)}}}={{{argument(LANG)}}},{{{argument(S)}}}
 Process all files that invoke S as a #!
 scripting language with the counter for language
 LANG. For example, files that begin with
@@ -433,7 +430,7 @@ receive source code via STDIN.)
 - {{{option(--strip-comments)}}}={{{argument(EXT)}}}
 For each file processed, write to the current
 directory a version of the file which has blank
-and commented lines removed (in{{{opt(-line)}}} comments
+and commented lines removed inline comments
 persist). The name of each stripped file is the
 original file name with .EXT appended to it.
 It is written to the current directory unless
@@ -464,7 +461,7 @@ php_count, and xml_count instead of cloc's
 counters. SLOCCount's compiled counters are
 substantially faster than cloc's and may give
 a performance improvement when counting projects
-with large files. However, these cloc{{{opt(-specific)}}}
+with large files. However, these cloc-specific
 features will not be available: {{{opt(--diff)}}},
 {{{opt(--count-and-diff)}}}, {{{opt(--strip-comments)}}}, {{{opt(--unicode)}}}.
 
@@ -475,7 +472,7 @@ See also {{{opt(--unix)}}}, {{{opt(--show-os)}}}.
 
 *** Filter Options
 
-- {{{option(--exclude-dir)}}}={{{argument(D1[,D2,] )}}}
+- {{{option(--exclude-dir)}}}={{{argument(D1)}}}[,{{{argument(D2)}}},]
 Exclude the given comma separated directories
 D1, D2, D3, et cetera, from being scanned. For
 example {{{opt(--exclude-dir)}}}=.cache,test will skip
@@ -488,11 +485,11 @@ names so including file path separators is not
 allowed. Use {{{opt(--fullpath)}}} and {{{opt(--not-match-d)}}}=REGEX
 to supply a regex matching multiple subdirectories.
 
-- {{{option(--exclude-ext)}}}={{{argument(EXT1[,EXT2[...]])}}}
+- {{{option(--exclude-ext)}}}={{{argument(EXT1)}}}[,{{{argument(EXT2)}}}[...]]
 Do not count files having the given file name
 extensions.
 
-- {{{option(--exclude-lang)}}}={{{argument(L1[,L2,] )}}}
+- {{{option(--exclude-lang)}}}={{{argument(L1)}}}[,{{{argument(L2)}}},]
 Exclude the given comma separated languages
 L1, L2, L3, et cetera, from being counted.
 
@@ -514,7 +511,7 @@ the path as is passed in to cloc.)
 Note: {{{opt(--match-d)}}} always looks at the full
 path and therefore is unaffected by {{{opt(--fullpath)}}}.
 
-- {{{option(--include-lang)}}}={{{argument(L1[,L2,])}}}
+- {{{option(--include-lang)}}}={{{argument(L1)}}},[,{{{argument(L2)}}},]
 Count only the given comma separated languages
 L1, L2, L3, et cetera.
 
@@ -629,12 +626,12 @@ custom language definitions (see also
 *** Output Options
 
 - {{{option(--3)}}}
-Print third{{{opt(-generation)}}} language output.
+Print third-generation language output.
 (This option can cause report summation to fail
 if some reports were produced with this option
 while others were produced without it.)
 
-- {{{option(--by-percent)}}} X
+- {{{option(--by-percent)}}} {{{argument(X)}}}
 Instead of comment and blank line counts, show
 these values as percentages based on the value
 of X in the denominator:
@@ -659,7 +656,7 @@ Write the results as JavaScript Object Notation
 (JSON) formatted output.
 
 - {{{option(--md)}}}
-Write the results as Markdown{{{opt(-formatted)}}} text.
+Write the results as Markdown-formatted text.
 
 - {{{option(--out)}}}={{{argument(FILE)}}}
 Synonym for {{{opt(--report-file)}}}=FILE.
