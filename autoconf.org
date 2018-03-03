@@ -4,15 +4,29 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+| Version        | {{{ver(2.69)}}}    |
+| Package Size   | {{{size(871KB)}}}  |
+| Installed Size | {{{size(3589KB)}}} |
+
+* Visión de conjunto
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: es
+  :END:      
+
+** Introducción
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: es
+  :END:    
+
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
+
+Producing configuration scripts using Autoconf requires GNU M4.
+You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it.
+The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4).
 
 * Cómo instalar
   :PROPERTIES: 
@@ -20,11 +34,18 @@
   :LANG: es
   :END:      
 
-** Requisitos previos
+** Dependencias
    :PROPERTIES: 
-   :CUSTOM_ID: prerequisites
+   :CUSTOM_ID: dependencies
    :LANG: es
    :END:      
+
+- debianutils (>= {{{ver(1.8)}}})
+  - Miscellaneous utilities specific to Debian
+- {{{link(m4)}}} (>= {{{ver(1.4.13)}}})
+  - macro processing language
+- {{{link(perl)}}} (>> {{{ver(5.005)}}})
+  - Larry Wall's Practical Extraction and Report Language
 
 ** Instalar
   :PROPERTIES: 
@@ -32,8 +53,16 @@
   :LANG: es
   :END:      
 
+*** Ubuntu
+
 #+BEGIN_SRC sh
 $ sudo apt-get install autoconf
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install autoconf
 #+END_SRC
 
 ** Paquetes instalados
@@ -42,11 +71,30 @@ $ sudo apt-get install autoconf
    :LANG: es
    :END:      
 
+- autoconf
+- {{{link(automake)}}}
+- autotools-dev
+
 ** Comprobar
    :PROPERTIES: 
    :CUSTOM_ID: check
    :LANG: es
    :END:      
+
+#+BEGIN_SRC sh
+$ autoconf --version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+autoconf (GNU Autoconf) 2.69
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+/Autoconf: GNU GPL version 3 or later
+<http://gnu.org/licenses/gpl.html>, <http://gnu.org/licenses/exceptions.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David J. MacKenzie and Akim Demaille.
+#+END_EXAMPLE
 
 # * Usage
 #   :PROPERTIES: 
@@ -97,22 +145,19 @@ $ sudo apt-get install autoconf
 #    :LANG_JA:  例
 #    :END:      
 
-# * See also
-#   :PROPERTIES: 
-#   :CUSTOM_ID: seealso
-#   :LANG_EN:  See also
-#   :LANG_ES:  Ver también
-#   :LANG_KO:  관련 항목
-#   :LANG_ZH:  相关主题
-#   :LANG_JA:  関連項目
-#   :END:      
+* Ver también
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: es
+  :END:      
 
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+- {{{link(automake)}}}
+- {{{link(m4)}}}
+
+* Referencias
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: es
+  :END:      
+
+- {{{official(https://www.gnu.org/software/autoconf/autoconf.html)}}}
