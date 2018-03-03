@@ -316,6 +316,21 @@
 			 "[[%s][Offical Homepage]]"))
 		  name))
 
+(defun lc-macro/note-dependency ()
+  (case (lc-core/get-current-language)
+	(en
+	 "Dependency libraries are required.")
+	(es
+	 "Se requieren bibliotecas de dependencia.")
+	(ko
+	 "의존성 라이브러리가 필요합니다.")
+	(zh
+	 "依赖库是必需的。")
+	(ja
+	 "依存関係ライブラリが必要です。")
+	(t
+	 "[[%s][Offical Homepage]]")))
+
 (defun lc-macro/link (link &optional name)
   (let (splited-link id)
 	(setq link (lc-macro/arg-trim link))
