@@ -299,6 +299,23 @@
 			 "See option %s."))
 		  name))
 
+(defun lc-macro/official (name)
+  (setq name (lc-macro/arg-trim name))
+  (format (case (lc-core/get-current-language)
+			(en
+			 "[[%s][Offical Homepage]]")
+			(es
+			 "[[%s][Página de inicio oficial]]")
+			(ko
+			 "[[%s][공식 홈페이지]]")
+			(zh
+			 "[[%s][官方主页]]")
+			(ja
+			 "[[%s][公式ホームページ]")
+			(t
+			 "[[%s][Offical Homepage]]"))
+		  name))
+
 (defun lc-macro/link (link &optional name)
   (let (splited-link id)
 	(setq link (lc-macro/arg-trim link))
