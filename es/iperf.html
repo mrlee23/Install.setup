@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2018-03-03 Sat 02:41 -->
+<!-- 2018-03-03 Sat 02:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>iperf</title>
@@ -280,8 +280,8 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">Sintaxis</a></li>
 <li><a href="#options">Opciones</a>
 <ul>
-<li><a href="#orgefa086b">Server Specific Options</a></li>
-<li><a href="#orgbd76228">Client Specific Options</a></li>
+<li><a href="#org07c1adb">Server Specific Options</a></li>
+<li><a href="#org292a574">Client Specific Options</a></li>
 </ul>
 </li>
 <li><a href="#environment-variables">Variables de entorno</a></li>
@@ -291,7 +291,7 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<table id="orgaf1b979" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org50a8dd4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -327,16 +327,16 @@ for the JavaScript code in this tag.
 </tbody>
 </table>
 
-<div id="outline-container-org88889c8" class="outline-2">
-<h2 id="overview"><a id="org88889c8"></a>Visión de conjunto</h2>
+<div id="outline-container-org914cfde" class="outline-2">
+<h2 id="overview"><a id="org914cfde"></a>Visión de conjunto</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 Realizar pruebas de rendimiento de la red
 </p>
 </div>
 
-<div id="outline-container-org332db6a" class="outline-3">
-<h3 id="introduction"><a id="org332db6a"></a>Introducción</h3>
+<div id="outline-container-orgf1db337" class="outline-3">
+<h3 id="introduction"><a id="orgf1db337"></a>Introducción</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 iperf is a tool for performing network throughput measurements.
@@ -347,13 +347,13 @@ To perform an iperf test the user must establish both a server (to discard traff
 </div>
 </div>
 
-<div id="outline-container-org2f370ba" class="outline-2">
-<h2 id="how-to-install"><a id="org2f370ba"></a>Cómo instalar</h2>
+<div id="outline-container-org5d2e6bc" class="outline-2">
+<h2 id="how-to-install"><a id="org5d2e6bc"></a>Cómo instalar</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org9320fcb" class="outline-3">
-<h3 id="prerequisites"><a id="org9320fcb"></a>Requisitos previos</h3>
+<div id="outline-container-orgfb2a94a" class="outline-3">
+<h3 id="prerequisites"><a id="orgfb2a94a"></a>Requisitos previos</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -361,8 +361,8 @@ To perform an iperf test the user must establish both a server (to discard traff
 </div>
 </div>
 
-<div id="outline-container-orgeda1a5d" class="outline-3">
-<h3 id="dependencies"><a id="orgeda1a5d"></a>Dependencias</h3>
+<div id="outline-container-org3a185b2" class="outline-3">
+<h3 id="dependencies"><a id="org3a185b2"></a>Dependencias</h3>
 <div class="outline-text-3" id="text-dependencies">
 <ul class="org-ul">
 <li>libc6
@@ -395,8 +395,8 @@ To perform an iperf test the user must establish both a server (to discard traff
 </div>
 </div>
 
-<div id="outline-container-org70a320d" class="outline-3">
-<h3 id="install"><a id="org70a320d"></a>Instalar</h3>
+<div id="outline-container-orgeaead9f" class="outline-3">
+<h3 id="install"><a id="orgeaead9f"></a>Instalar</h3>
 <div class="outline-text-3" id="text-install">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo apt-get install iperf
@@ -405,8 +405,8 @@ To perform an iperf test the user must establish both a server (to discard traff
 </div>
 </div>
 
-<div id="outline-container-orge70841b" class="outline-3">
-<h3 id="packages"><a id="orge70841b"></a>Paquetes instalados</h3>
+<div id="outline-container-org66f4afa" class="outline-3">
+<h3 id="packages"><a id="org66f4afa"></a>Paquetes instalados</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>iperf</li>
@@ -414,8 +414,8 @@ To perform an iperf test the user must establish both a server (to discard traff
 </div>
 </div>
 
-<div id="outline-container-orgecb3b0c" class="outline-3">
-<h3 id="check"><a id="orgecb3b0c"></a>Comprobar</h3>
+<div id="outline-container-org6642d06" class="outline-3">
+<h3 id="check"><a id="org6642d06"></a>Comprobar</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ iperf -v
@@ -429,13 +429,13 @@ iperf version 2.0.5 (08 Jul 2010) pthreads
 </div>
 </div>
 
-<div id="outline-container-org2073cf7" class="outline-2">
-<h2 id="usage"><a id="org2073cf7"></a>Uso</h2>
+<div id="outline-container-org1223107" class="outline-2">
+<h2 id="usage"><a id="org1223107"></a>Uso</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org8aac637" class="outline-3">
-<h3 id="syntax"><a id="org8aac637"></a>Sintaxis</h3>
+<div id="outline-container-orgbaa2ef8" class="outline-3">
+<h3 id="syntax"><a id="orgbaa2ef8"></a>Sintaxis</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">iperf -s [ options ]
@@ -450,8 +450,8 @@ iperf -u -c server [ options ]
 </div>
 </div>
 
-<div id="outline-container-orge4187c4" class="outline-3">
-<h3 id="options"><a id="orge4187c4"></a>Opciones</h3>
+<div id="outline-container-orgedca58e" class="outline-3">
+<h3 id="options"><a id="orgedca58e"></a>Opciones</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span id="opt--f" class="org-programming-option">-f</span>, <span id="opt---format" class="org-programming-option">--format</span> <span class="org-programming-argument">[kmKM]</span>
@@ -507,9 +507,9 @@ if set to C or c report results as CSV (comma separated values)</li>
 </ul>
 </div>
 
-<div id="outline-container-orgefa086b" class="outline-4">
-<h4 id="orgefa086b">Server Specific Options</h4>
-<div class="outline-text-4" id="text-orgefa086b">
+<div id="outline-container-org07c1adb" class="outline-4">
+<h4 id="org07c1adb">Server Specific Options</h4>
+<div class="outline-text-4" id="text-org07c1adb">
 <ul class="org-ul">
 <li><span id="opt--s" class="org-programming-option">-s</span>, <span id="opt---server" class="org-programming-option">--server</span>
 run in server mode</li>
@@ -523,9 +523,9 @@ run the server as a daemon</li>
 </div>
 </div>
 
-<div id="outline-container-orgbd76228" class="outline-4">
-<h4 id="orgbd76228">Client Specific Options</h4>
-<div class="outline-text-4" id="text-orgbd76228">
+<div id="outline-container-org292a574" class="outline-4">
+<h4 id="org292a574">Client Specific Options</h4>
+<div class="outline-text-4" id="text-org292a574">
 <ul class="org-ul">
 <li><span id="opt--b" class="org-programming-option">-b</span>, <span id="opt---bandwidth" class="org-programming-option">--bandwidth</span> <span class="org-programming-argument">n[KM]</span>
 set target bandwidth to n bits/sec (default 1 Mbit/sec). This setting requires UDP (-u).</li>
@@ -567,8 +567,8 @@ set TCP congestion control algorithm (Linux only)</li>
 </div>
 </div>
 
-<div id="outline-container-org6bf2cb5" class="outline-3">
-<h3 id="environment-variables"><a id="org6bf2cb5"></a>Variables de entorno</h3>
+<div id="outline-container-org4bfb110" class="outline-3">
+<h3 id="environment-variables"><a id="org4bfb110"></a>Variables de entorno</h3>
 <div class="outline-text-3" id="text-environment-variables">
 <ul class="org-ul">
 <li><span class="org-programming-variable">TCP_WINDOW_SIZE</span> :</li>
@@ -577,8 +577,8 @@ set TCP congestion control algorithm (Linux only)</li>
 </div>
 </div>
 
-<div id="outline-container-orgc0cee7b" class="outline-2">
-<h2 id="references"><a id="orgc0cee7b"></a>Referencias</h2>
+<div id="outline-container-orge56969f" class="outline-2">
+<h2 id="references"><a id="orge56969f"></a>Referencias</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://iperf.sourceforge.net/">http://iperf.sourceforge.net/</a></li>
@@ -590,7 +590,7 @@ set TCP congestion control algorithm (Linux only)</li>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-03 Sat 02:41</p>
+<p class="date">Created: 2018-03-03 Sat 02:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
