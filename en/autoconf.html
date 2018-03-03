@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-03-02 Fri 11:14 -->
+<!-- 2018-03-03 Sat 02:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>autoconf</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="autoconf - Linux Commands">
-<meta name="description" content="">
+<meta name="description" content="Producing configuration scripts using Autoconf requires GNU M4. You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it. The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4). Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages. These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention. Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls. ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="autoconf - Linux Commands">
-<meta property="og:description" content="">
+<meta property="og:description" content="Producing configuration scripts using Autoconf requires GNU M4. You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it. The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4). Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages. These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention. Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls. ">
 <meta name="twitter:title" content="autoconf - Linux Commands">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Producing configuration scripts using Autoconf requires GNU M4. You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it. The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4). Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages. These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention. Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls. ">
 <link rel="alternate" href="http://linux-command.org/en/autoconf.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/es/autoconf.html" hreflang="es" />
 <link rel="alternate" href="http://linux-command.org/ja/autoconf.html" hreflang="ja" />
@@ -261,32 +261,111 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#overview">Overview</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+</ul>
+</li>
 <li><a href="#how-to-install">How to Install</a>
 <ul>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#install">Install</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#install">Install</a>
+<ul>
+<li><a href="#org5afa438">Ubuntu</a></li>
+<li><a href="#org28954f3">CentOS</a></li>
+</ul>
+</li>
 <li><a href="#packages">Installed Packages</a></li>
 <li><a href="#check">Check</a></li>
 </ul>
 </li>
+<li><a href="#seealso">See also</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Version</td>
+<td class="org-left"><span class="org-programming-version">2.69</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Package Size</td>
+<td class="org-left"><span class="org-programming-size">871KB</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Installed Size</td>
+<td class="org-left"><span class="org-programming-size">3589KB</span></td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-org8018e42" class="outline-2">
+<h2 id="overview"><a id="org8018e42"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+
+<div id="outline-container-org4a082d6" class="outline-3">
+<h3 id="introduction"><a id="org4a082d6"></a>Introduction</h3>
+<div class="outline-text-3" id="text-introduction">
+<p>
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
+</p>
+
+<p>
+Producing configuration scripts using Autoconf requires GNU M4.
+You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it.
+The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org21abeba" class="outline-2">
+<h2 id="how-to-install"><a id="org21abeba"></a>How to Install</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgd9f4b1b" class="outline-3">
+<h3 id="dependencies"><a id="orgd9f4b1b"></a>Dependencies</h3>
+<div class="outline-text-3" id="text-dependencies">
+<ul class="org-ul">
+<li>debianutils (&gt;= <span class="org-programming-version">1.8</span>)
+<ul class="org-ul">
+<li>Miscellaneous utilities specific to Debian</li>
+</ul></li>
+<li><a href="./m4.html">m4</a> (&gt;= <span class="org-programming-version">1.4.13</span>)
+<ul class="org-ul">
+<li>macro processing language</li>
+</ul></li>
+<li><a href="./perl.html">perl</a> (&gt;&gt; <span class="org-programming-version">5.005</span>)
+<ul class="org-ul">
+<li>Larry Wall's Practical Extraction and Report Language</li>
+</ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org83513ea" class="outline-2">
-<h2 id="how-to-install"><a id="org83513ea"></a>How to Install</h2>
-<div class="outline-text-2" id="text-how-to-install">
-</div>
-
-<div id="outline-container-org9a70893" class="outline-3">
-<h3 id="prerequisites"><a id="org9a70893"></a>Prerequisites</h3>
-<div class="outline-text-3" id="text-prerequisites">
-</div>
-</div>
-
-<div id="outline-container-org8c139e7" class="outline-3">
-<h3 id="install"><a id="org8c139e7"></a>Install</h3>
+<div id="outline-container-org467b349" class="outline-3">
+<h3 id="install"><a id="org467b349"></a>Install</h3>
 <div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-org5afa438" class="outline-4">
+<h4 id="org5afa438">Ubuntu</h4>
+<div class="outline-text-4" id="text-org5afa438">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo apt-get install autoconf
 </pre>
@@ -294,23 +373,73 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc542956" class="outline-3">
-<h3 id="packages"><a id="orgc542956"></a>Installed Packages</h3>
-<div class="outline-text-3" id="text-packages">
+<div id="outline-container-org28954f3" class="outline-4">
+<h4 id="org28954f3">CentOS</h4>
+<div class="outline-text-4" id="text-org28954f3">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo yum install autoconf
+</pre>
+</div>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org0c3721e" class="outline-3">
-<h3 id="check"><a id="org0c3721e"></a>Check</h3>
-<div class="outline-text-3" id="text-check">
+<div id="outline-container-org9cd4bfe" class="outline-3">
+<h3 id="packages"><a id="org9cd4bfe"></a>Installed Packages</h3>
+<div class="outline-text-3" id="text-packages">
+<ul class="org-ul">
+<li>autoconf</li>
+<li><a href="./automake.html">automake</a></li>
+<li>autotools-dev</li>
+</ul>
 </div>
+</div>
+
+<div id="outline-container-orgfcbd307" class="outline-3">
+<h3 id="check"><a id="orgfcbd307"></a>Check</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ autoconf --version
+</pre>
+</div>
+
+<pre class="example">
+autoconf (GNU Autoconf) 2.69
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+/Autoconf: GNU GPL version 3 or later
+&lt;http://gnu.org/licenses/gpl.html&gt;, &lt;http://gnu.org/licenses/exceptions.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David J. MacKenzie and Akim Demaille.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c41ab5" class="outline-2">
+<h2 id="seealso"><a id="org6c41ab5"></a>See also</h2>
+<div class="outline-text-2" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./automake.html">automake</a></li>
+<li><a href="./m4.html">m4</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga5b7125" class="outline-2">
+<h2 id="references"><a id="orga5b7125"></a>References</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/autoconf/autoconf.html">Offical Homepage</a></li>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-02 Fri 11:14</p>
+<p class="date">Created: 2018-03-03 Sat 02:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

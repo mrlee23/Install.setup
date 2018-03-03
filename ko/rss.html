@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-03-02 Fri 11:22 -->
+<!-- 2018-03-03 Sat 02:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>리눅스 명령어</title>
@@ -237,111 +237,152 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfb51bfb">1. LICENSE</a></li>
-<li><a href="#org373e034">2. cloc</a></li>
-<li><a href="#org2d1507c">3. docker</a></li>
-<li><a href="#org1cc6199">4. iperf</a></li>
-<li><a href="#org27a3210">5. insmod</a></li>
-<li><a href="#org7cdd11e">6. kmod</a></li>
-<li><a href="#orgde2b783">7. xargs</a></li>
-<li><a href="#orgf1786cb">8. Linux Commands</a></li>
-<li><a href="#orgb0c5105">9. findutils</a></li>
-<li><a href="#org8aa688e">10. find</a></li>
-<li><a href="#org9477fed">11. docker attach</a></li>
-<li><a href="#orga9e6d17">12. docker commit</a></li>
-<li><a href="#org1bcac4a">13. docker cp</a></li>
-<li><a href="#org2835b32">14. hdparm</a></li>
-<li><a href="#orgdbbc3cb">15. git</a></li>
-<li><a href="#org6444ed1">16. org-mode</a></li>
-<li><a href="#orgf4a6850">17. hcitool</a></li>
-<li><a href="#org9eb85d3">18. groupadd</a></li>
-<li><a href="#orgf0ac590">19. DNS</a></li>
-<li><a href="#orgb72045a">20. NIS</a></li>
-<li><a href="#orga35b83d">21. SELinux</a></li>
-<li><a href="#org7afd670">22. addbib</a></li>
-<li><a href="#org6fc42d9">23. alias</a></li>
-<li><a href="#org58b7102">24. apt-add-repository</a></li>
-<li><a href="#orga1e625f">25. apt</a></li>
-<li><a href="#orgfc7f977">26. autoconf</a></li>
-<li><a href="#org2666d21">27. bash</a></li>
-<li><a href="#orgba16566">28. brew</a></li>
-<li><a href="#org95ea95a">29. build-essential</a></li>
-<li><a href="#org5201a88">30. ca-certificates</a></li>
-<li><a href="#org94cf9b6">31. cat</a></li>
-<li><a href="#orgab1730b">32. chatter</a></li>
-<li><a href="#org96d3737">33. chfn</a></li>
-<li><a href="#org30828d5">34. chgrp</a></li>
-<li><a href="#org91d991e">35. chmod</a></li>
-<li><a href="#orgff2f666">36. chown</a></li>
-<li><a href="#org5f8c2be">37. chrome</a></li>
-<li><a href="#orgb9157d4">38. chsh</a></li>
-<li><a href="#orgf0a8540">39. curl</a></li>
-<li><a href="#org035b06d">40. dh-autoreconf</a></li>
-<li><a href="#orgdf9deca">41. diff</a></li>
-<li><a href="#org2d3e9bb">42. docker build</a></li>
-<li><a href="#org05aaf92">43. docker-compose</a></li>
-<li><a href="#org829b1d6">44. docker run</a></li>
-<li><a href="#org7127ab0">45. dpkg</a></li>
-<li><a href="#org5dc34e1">46. echo</a></li>
-<li><a href="#orgb9ccbb2">47. emacs</a></li>
-<li><a href="#org437eeef">48. finger</a></li>
-<li><a href="#org51386ce">49. fsck</a></li>
-<li><a href="#orgf1060bd">50. gcc</a></li>
-<li><a href="#orgcd450fe">51. gem</a></li>
-<li><a href="#org1d818ce">52. iptables</a></li>
-<li><a href="#org736438a">53. javac</a></li>
-<li><a href="#orgf811359">54. java</a></li>
-<li><a href="#orgd1ed0e9">55. lilo</a></li>
-<li><a href="#org37be741">56. lpc</a></li>
-<li><a href="#orgf7c68f0">57. lp</a></li>
-<li><a href="#org18b2f8d">58. lpq</a></li>
-<li><a href="#orgc6d579e">59. lprm</a></li>
-<li><a href="#orgac77ac5">60. lpr</a></li>
-<li><a href="#orgd48f6aa">61. lsattr</a></li>
-<li><a href="#org11ca385">62. lsof</a></li>
-<li><a href="#org97d978e">63. make</a></li>
-<li><a href="#org2fed467">64. modprobe</a></li>
-<li><a href="#org419c22e">65. node</a></li>
-<li><a href="#orga272a70">66. npm</a></li>
-<li><a href="#org1da616b">67. passwd</a></li>
-<li><a href="#org90967f2">68. pip</a></li>
-<li><a href="#orgd061639">69. postfix</a></li>
-<li><a href="#org0f8bdea">70. rpm</a></li>
-<li><a href="#org63973ab">71. rsync</a></li>
-<li><a href="#orgc10fcd6">72. ruby</a></li>
-<li><a href="#orgc88791d">73. samba</a></li>
-<li><a href="#orgc98cdf8">74. sendmail</a></li>
-<li><a href="#org128e8ea">75. shutdown</a></li>
-<li><a href="#orgd651c50">76. squid</a></li>
-<li><a href="#org2d10b17">77. ssh</a></li>
-<li><a href="#org74412a9">78. sudo</a></li>
-<li><a href="#org70ba189">79. tail</a></li>
-<li><a href="#org092a654">80. tar</a></li>
-<li><a href="#org2e70f60">81. travis</a></li>
-<li><a href="#org6fb6d1a">82. tripwire</a></li>
-<li><a href="#org694efb4">83. update</a></li>
-<li><a href="#org767bdfe">84. update-rc.d</a></li>
-<li><a href="#orga681f16">85. useradd</a></li>
-<li><a href="#org4a69625">86. userdel</a></li>
-<li><a href="#org8fd1d6d">87. usermod</a></li>
-<li><a href="#orgd73d696">88. vim</a></li>
-<li><a href="#org216c142">89. wget</a></li>
-<li><a href="#orgcf3c275">90. xinetd</a></li>
-<li><a href="#orgeac1287">91. xmodmap</a></li>
+<li><a href="#orgdc26c62">1. iptables</a></li>
+<li><a href="#orgb15e8a9">2. update</a></li>
+<li><a href="#org6a01ea5">3. autoconf</a></li>
+<li><a href="#org2cd87c4">4. perl</a></li>
+<li><a href="#org2d2704e">5. m4</a></li>
+<li><a href="#orgbb11048">6. cloc</a></li>
+<li><a href="#org5cd6c8c">7. docker</a></li>
+<li><a href="#org7fe8917">8. iperf</a></li>
+<li><a href="#orgee0891f">9. insmod</a></li>
+<li><a href="#org4ccacf4">10. kmod</a></li>
+<li><a href="#orgd0e0d4f">11. xargs</a></li>
+<li><a href="#org2b5ad64">12. Linux Commands</a></li>
+<li><a href="#org96b4eb5">13. findutils</a></li>
+<li><a href="#org87f8e86">14. find</a></li>
+<li><a href="#orga01bde2">15. docker attach</a></li>
+<li><a href="#orgbbf8420">16. docker commit</a></li>
+<li><a href="#orgbdcb614">17. docker cp</a></li>
+<li><a href="#org7388f1c">18. hdparm</a></li>
+<li><a href="#org4b1b3ce">19. DNS</a></li>
+<li><a href="#org1bf0c39">20. NIS</a></li>
+<li><a href="#orga4da166">21. SELinux</a></li>
+<li><a href="#orgc079377">22. addbib</a></li>
+<li><a href="#orge36760a">23. alias</a></li>
+<li><a href="#orgc02175c">24. apt-add-repository</a></li>
+<li><a href="#org978a1b4">25. apt</a></li>
+<li><a href="#org726de90">26. bash</a></li>
+<li><a href="#org60872e8">27. brew</a></li>
+<li><a href="#orgd2a35e6">28. build-essential</a></li>
+<li><a href="#org8d63f9f">29. ca-certificates</a></li>
+<li><a href="#orgc17adbb">30. cat</a></li>
+<li><a href="#org0dbbc36">31. chatter</a></li>
+<li><a href="#org2178854">32. chfn</a></li>
+<li><a href="#orgc4dcd7f">33. chgrp</a></li>
+<li><a href="#org9f2b5bf">34. chmod</a></li>
+<li><a href="#org6bf2df8">35. chown</a></li>
+<li><a href="#org2ef9074">36. chrome</a></li>
+<li><a href="#org131f7f6">37. chsh</a></li>
+<li><a href="#orga4f5508">38. curl</a></li>
+<li><a href="#org8592761">39. dh-autoreconf</a></li>
+<li><a href="#orgf542238">40. diff</a></li>
+<li><a href="#orga06b595">41. docker build</a></li>
+<li><a href="#orgcf63706">42. docker-compose</a></li>
+<li><a href="#org9b726b3">43. docker run</a></li>
+<li><a href="#org7aa4d32">44. dpkg</a></li>
+<li><a href="#org91a09d9">45. echo</a></li>
+<li><a href="#org40ec97e">46. emacs</a></li>
+<li><a href="#org616086e">47. finger</a></li>
+<li><a href="#org374c526">48. fsck</a></li>
+<li><a href="#orgf01f7f2">49. gcc</a></li>
+<li><a href="#org2d64143">50. gem</a></li>
+<li><a href="#org03a5990">51. git</a></li>
+<li><a href="#org2b0a568">52. groupadd</a></li>
+<li><a href="#org11ff3b6">53. hcitool</a></li>
+<li><a href="#org807cf7d">54. javac</a></li>
+<li><a href="#org9f4159f">55. java</a></li>
+<li><a href="#org88530a9">56. lilo</a></li>
+<li><a href="#org97874ea">57. lpc</a></li>
+<li><a href="#orgbf11875">58. lp</a></li>
+<li><a href="#orgece935c">59. lpq</a></li>
+<li><a href="#org72fbcf3">60. lprm</a></li>
+<li><a href="#org6104559">61. lpr</a></li>
+<li><a href="#orgc5bc368">62. lsattr</a></li>
+<li><a href="#orgb0a6d0b">63. lsof</a></li>
+<li><a href="#org237a8f0">64. make</a></li>
+<li><a href="#orgd40d4d7">65. modprobe</a></li>
+<li><a href="#org3b913a2">66. node</a></li>
+<li><a href="#orgfe79f02">67. npm</a></li>
+<li><a href="#org445fc03">68. org-mode</a></li>
+<li><a href="#org6f58ab7">69. passwd</a></li>
+<li><a href="#org3968dcf">70. pip</a></li>
+<li><a href="#org11e083a">71. postfix</a></li>
+<li><a href="#orgf7ac119">72. rpm</a></li>
+<li><a href="#orgf0eafb3">73. rsync</a></li>
+<li><a href="#org8104131">74. ruby</a></li>
+<li><a href="#orgede7b3d">75. samba</a></li>
+<li><a href="#orgeaebb61">76. sendmail</a></li>
+<li><a href="#org24731d1">77. shutdown</a></li>
+<li><a href="#org384eaf1">78. squid</a></li>
+<li><a href="#org50846f5">79. ssh</a></li>
+<li><a href="#org3556ed1">80. sudo</a></li>
+<li><a href="#org7b9793c">81. tail</a></li>
+<li><a href="#org4f2ffa9">82. tar</a></li>
+<li><a href="#org0f6a2dc">83. travis</a></li>
+<li><a href="#org6ac2ffd">84. tripwire</a></li>
+<li><a href="#org474c7de">85. update-rc.d</a></li>
+<li><a href="#org6c5ae82">86. useradd</a></li>
+<li><a href="#org4067088">87. userdel</a></li>
+<li><a href="#org74b877c">88. usermod</a></li>
+<li><a href="#orgdc70465">89. vim</a></li>
+<li><a href="#org0cbb39a">90. wget</a></li>
+<li><a href="#orgf97b4f2">91. xinetd</a></li>
+<li><a href="#orga0da552">92. xmodmap</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgfb51bfb" class="outline-2">
-<h2 id="orgfb51bfb"><span class="section-number-2">1</span> LICENSE</h2>
+<div id="outline-container-orgdc26c62" class="outline-2">
+<h2 id="orgdc26c62"><span class="section-number-2">1</span> iptables</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org373e034" class="outline-2">
-<h2 id="org373e034"><span class="section-number-2">2</span> cloc</h2>
+<div id="outline-container-orgb15e8a9" class="outline-2">
+<h2 id="orgb15e8a9"><span class="section-number-2">2</span> update</h2>
 <div class="outline-text-2" id="text-2">
+</div>
+</div>
+
+<div id="outline-container-org6a01ea5" class="outline-2">
+<h2 id="org6a01ea5"><span class="section-number-2">3</span> autoconf</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Producing configuration scripts using Autoconf requires GNU M4.
+You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it.
+The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4).
+</p>
+
+<p>
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2cd87c4" class="outline-2">
+<h2 id="org2cd87c4"><span class="section-number-2">4</span> perl</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
+
+<div id="outline-container-org2d2704e" class="outline-2">
+<h2 id="org2d2704e"><span class="section-number-2">5</span> m4</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+</div>
+
+<div id="outline-container-orgbb11048" class="outline-2">
+<h2 id="orgbb11048"><span class="section-number-2">6</span> cloc</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 이 명령어는 Perl의 표준 배포판에 있는 모듈들만을 사용해서 구현되었습니다.
 </p>
@@ -357,9 +398,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org2d1507c" class="outline-2">
-<h2 id="org2d1507c"><span class="section-number-2">3</span> docker</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org5cd6c8c" class="outline-2">
+<h2 id="org5cd6c8c"><span class="section-number-2">7</span> docker</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 도커는 가상화된 이미지를 이용해 컨테이너를 실행하는 소프트웨어입니다.
 간편한 사용법과 도커 허브에서 공유되고 있는 다양한 가상화 이미지 덕분에 필요한 서비스를 컨테이너 단위로 실행하거나 제거할 수 있습니다.
@@ -372,9 +413,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org1cc6199" class="outline-2">
-<h2 id="org1cc6199"><span class="section-number-2">4</span> iperf</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org7fe8917" class="outline-2">
+<h2 id="org7fe8917"><span class="section-number-2">8</span> iperf</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 iperf로 테스트 하기 위해서 두개의 서버와 하나의 클라이언트가 있어야 합니다. (서버는 트래픽을 처리하기 위한 용도, 클라이언트는 트래픽을 생성하기 위한 용도)
 </p>
@@ -390,9 +431,9 @@ TCP 혹은 UDP의 처리량을 테스트 할 수 있습니다.
 </div>
 </div>
 
-<div id="outline-container-org27a3210" class="outline-2">
-<h2 id="org27a3210"><span class="section-number-2">5</span> insmod</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgee0891f" class="outline-2">
+<h2 id="orgee0891f"><span class="section-number-2">9</span> insmod</h2>
+<div class="outline-text-2" id="text-9">
 <p>
 현재 리눅스 커널은 모듈을 연결하는데 커널 내부에서 동작하기 때문에 일반적인 에러 메시지만 보여주므로, 자세한 에러 정보는 
 커널에 모듈을 집어넣기 위한 간단한 프로그램으로, 대부분 사용자들은 이 프로그램 대신 
@@ -401,9 +442,9 @@ TCP 혹은 UDP의 처리량을 테스트 할 수 있습니다.
 </div>
 </div>
 
-<div id="outline-container-org7cdd11e" class="outline-2">
-<h2 id="org7cdd11e"><span class="section-number-2">6</span> kmod</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org4ccacf4" class="outline-2">
+<h2 id="org4ccacf4"><span class="section-number-2">10</span> kmod</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 kmod는 리눅스 커널 모듈을 제어하는데 쓰이는 프로그램을 구현한 여러 명령어들로 구성되어 있습니다.
 일반적으로 사용할 때 kmod가 아닌 다른 이름으로 만들어진 
@@ -412,66 +453,66 @@ kmod는 리눅스 커널 모듈을 제어하는데 쓰이는 프로그램을 구
 </div>
 </div>
 
-<div id="outline-container-orgde2b783" class="outline-2">
-<h2 id="orgde2b783"><span class="section-number-2">7</span> xargs</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgd0e0d4f" class="outline-2">
+<h2 id="orgd0e0d4f"><span class="section-number-2">11</span> xargs</h2>
+<div class="outline-text-2" id="text-11">
 </div>
 </div>
 
-<div id="outline-container-orgf1786cb" class="outline-2">
-<h2 id="orgf1786cb"><span class="section-number-2">8</span> Linux Commands</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org2b5ad64" class="outline-2">
+<h2 id="org2b5ad64"><span class="section-number-2">12</span> Linux Commands</h2>
+<div class="outline-text-2" id="text-12">
 </div>
 </div>
 
-<div id="outline-container-orgb0c5105" class="outline-2">
-<h2 id="orgb0c5105"><span class="section-number-2">9</span> findutils</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-org96b4eb5" class="outline-2">
+<h2 id="org96b4eb5"><span class="section-number-2">13</span> findutils</h2>
+<div class="outline-text-2" id="text-13">
 <p>
 GNU Find 유틸리티는 GNU와 리눅스 시스템의 파일 시스템에서 기본적인 파일 검색 유틸리티 패키지를 제공합니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8aa688e" class="outline-2">
-<h2 id="org8aa688e"><span class="section-number-2">10</span> find</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org87f8e86" class="outline-2">
+<h2 id="org87f8e86"><span class="section-number-2">14</span> find</h2>
+<div class="outline-text-2" id="text-14">
 <p>
 디렉토리 구조 내에서 파일을 찾습니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9477fed" class="outline-2">
-<h2 id="org9477fed"><span class="section-number-2">11</span> docker attach</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-orga01bde2" class="outline-2">
+<h2 id="orga01bde2"><span class="section-number-2">15</span> docker attach</h2>
+<div class="outline-text-2" id="text-15">
 <p>
 Attach local standard input, output, and error streams to a running container
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga9e6d17" class="outline-2">
-<h2 id="orga9e6d17"><span class="section-number-2">12</span> docker commit</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-orgbbf8420" class="outline-2">
+<h2 id="orgbbf8420"><span class="section-number-2">16</span> docker commit</h2>
+<div class="outline-text-2" id="text-16">
 <p>
 Create a new image from a container’s changes
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1bcac4a" class="outline-2">
-<h2 id="org1bcac4a"><span class="section-number-2">13</span> docker cp</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-orgbdcb614" class="outline-2">
+<h2 id="orgbdcb614"><span class="section-number-2">17</span> docker cp</h2>
+<div class="outline-text-2" id="text-17">
 <p>
 Copy files/folders between a container and the local filesystem
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2835b32" class="outline-2">
-<h2 id="org2835b32"><span class="section-number-2">14</span> hdparm</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-org7388f1c" class="outline-2">
+<h2 id="org7388f1c"><span class="section-number-2">18</span> hdparm</h2>
+<div class="outline-text-2" id="text-18">
 <p>
 2008년 이후 출시된 USB 드라이버는 SAT(SCSI-ATA Command Translation)을 이용해서 지원합니다.
 </p>
@@ -486,51 +527,8 @@ SATA/IDE 장치의 변수를 가져오거나 변경합니다.
 </div>
 </div>
 
-<div id="outline-container-orgdbbc3cb" class="outline-2">
-<h2 id="orgdbbc3cb"><span class="section-number-2">15</span> git</h2>
-<div class="outline-text-2" id="text-15">
-<p>
-현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다.
-</p>
-
-<p>
-Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다.
-</p>
-
-<p>
-The stupid content tracker
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6444ed1" class="outline-2">
-<h2 id="org6444ed1"><span class="section-number-2">16</span> org-mode</h2>
-<div class="outline-text-2" id="text-16">
-</div>
-</div>
-
-<div id="outline-container-orgf4a6850" class="outline-2">
-<h2 id="orgf4a6850"><span class="section-number-2">17</span> hcitool</h2>
-<div class="outline-text-2" id="text-17">
-<p>
-블루투스 연결을 설정하고 블루투스 기기에 특정 명령어를 전달하기 위해서 사용됩니다.
-만약 명령어가 설정되지 않거나 
-블루투스 연결을 설정합니다.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org9eb85d3" class="outline-2">
-<h2 id="org9eb85d3"><span class="section-number-2">18</span> groupadd</h2>
-<div class="outline-text-2" id="text-18">
-<p>
-새로운 그룹을 만듭니다.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf0ac590" class="outline-2">
-<h2 id="orgf0ac590"><span class="section-number-2">19</span> DNS</h2>
+<div id="outline-container-org4b1b3ce" class="outline-2">
+<h2 id="org4b1b3ce"><span class="section-number-2">19</span> DNS</h2>
 <div class="outline-text-2" id="text-19">
 <p>
 역방향: 문자 -&gt; IP
@@ -543,26 +541,26 @@ The stupid content tracker
 </div>
 </div>
 
-<div id="outline-container-orgb72045a" class="outline-2">
-<h2 id="orgb72045a"><span class="section-number-2">20</span> NIS</h2>
+<div id="outline-container-org1bf0c39" class="outline-2">
+<h2 id="org1bf0c39"><span class="section-number-2">20</span> NIS</h2>
 <div class="outline-text-2" id="text-20">
 </div>
 </div>
 
-<div id="outline-container-orga35b83d" class="outline-2">
-<h2 id="orga35b83d"><span class="section-number-2">21</span> SELinux</h2>
+<div id="outline-container-orga4da166" class="outline-2">
+<h2 id="orga4da166"><span class="section-number-2">21</span> SELinux</h2>
 <div class="outline-text-2" id="text-21">
 </div>
 </div>
 
-<div id="outline-container-org7afd670" class="outline-2">
-<h2 id="org7afd670"><span class="section-number-2">22</span> addbib</h2>
+<div id="outline-container-orgc079377" class="outline-2">
+<h2 id="orgc079377"><span class="section-number-2">22</span> addbib</h2>
 <div class="outline-text-2" id="text-22">
 </div>
 </div>
 
-<div id="outline-container-org6fc42d9" class="outline-2">
-<h2 id="org6fc42d9"><span class="section-number-2">23</span> alias</h2>
+<div id="outline-container-orge36760a" class="outline-2">
+<h2 id="orge36760a"><span class="section-number-2">23</span> alias</h2>
 <div class="outline-text-2" id="text-23">
 <p>
 명령어를 대신할 별명을 만들고 실행할 수 있도록 만든다.
@@ -570,14 +568,14 @@ The stupid content tracker
 </div>
 </div>
 
-<div id="outline-container-org58b7102" class="outline-2">
-<h2 id="org58b7102"><span class="section-number-2">24</span> apt-add-repository</h2>
+<div id="outline-container-orgc02175c" class="outline-2">
+<h2 id="orgc02175c"><span class="section-number-2">24</span> apt-add-repository</h2>
 <div class="outline-text-2" id="text-24">
 </div>
 </div>
 
-<div id="outline-container-orga1e625f" class="outline-2">
-<h2 id="orga1e625f"><span class="section-number-2">25</span> apt</h2>
+<div id="outline-container-org978a1b4" class="outline-2">
+<h2 id="org978a1b4"><span class="section-number-2">25</span> apt</h2>
 <div class="outline-text-2" id="text-25">
 <p>
 실질적으로는 APT는 dpkg와 함께 동작하지만, 데비안 시스템에서 필요한 소프트웨어 검색, 다운로드, 설치, 업그레이드 그리고 확인 등 대부분의 패키지 관리 작업은 APT 유틸리티만으로도 충분하다.
@@ -585,27 +583,21 @@ The stupid content tracker
 </div>
 </div>
 
-<div id="outline-container-orgfc7f977" class="outline-2">
-<h2 id="orgfc7f977"><span class="section-number-2">26</span> autoconf</h2>
+<div id="outline-container-org726de90" class="outline-2">
+<h2 id="org726de90"><span class="section-number-2">26</span> bash</h2>
 <div class="outline-text-2" id="text-26">
 </div>
 </div>
 
-<div id="outline-container-org2666d21" class="outline-2">
-<h2 id="org2666d21"><span class="section-number-2">27</span> bash</h2>
+<div id="outline-container-org60872e8" class="outline-2">
+<h2 id="org60872e8"><span class="section-number-2">27</span> brew</h2>
 <div class="outline-text-2" id="text-27">
 </div>
 </div>
 
-<div id="outline-container-orgba16566" class="outline-2">
-<h2 id="orgba16566"><span class="section-number-2">28</span> brew</h2>
+<div id="outline-container-orgd2a35e6" class="outline-2">
+<h2 id="orgd2a35e6"><span class="section-number-2">28</span> build-essential</h2>
 <div class="outline-text-2" id="text-28">
-</div>
-</div>
-
-<div id="outline-container-org95ea95a" class="outline-2">
-<h2 id="org95ea95a"><span class="section-number-2">29</span> build-essential</h2>
-<div class="outline-text-2" id="text-29">
 <p>
 설치되는 패키지는 아래 
 설치 후에는 gcc, g++, make, perl 등과 각종 라이브러리들이 설치됩니다.
@@ -613,126 +605,126 @@ The stupid content tracker
 </div>
 </div>
 
-<div id="outline-container-org5201a88" class="outline-2">
-<h2 id="org5201a88"><span class="section-number-2">30</span> ca-certificates</h2>
-<div class="outline-text-2" id="text-30">
+<div id="outline-container-org8d63f9f" class="outline-2">
+<h2 id="org8d63f9f"><span class="section-number-2">29</span> ca-certificates</h2>
+<div class="outline-text-2" id="text-29">
 </div>
 </div>
 
-<div id="outline-container-org94cf9b6" class="outline-2">
-<h2 id="org94cf9b6"><span class="section-number-2">31</span> cat</h2>
-<div class="outline-text-2" id="text-31">
+<div id="outline-container-orgc17adbb" class="outline-2">
+<h2 id="orgc17adbb"><span class="section-number-2">30</span> cat</h2>
+<div class="outline-text-2" id="text-30">
 <p>
 파일 텍스트를 결합하고 표준 출력으로 출력한다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgab1730b" class="outline-2">
-<h2 id="orgab1730b"><span class="section-number-2">32</span> chatter</h2>
-<div class="outline-text-2" id="text-32">
+<div id="outline-container-org0dbbc36" class="outline-2">
+<h2 id="org0dbbc36"><span class="section-number-2">31</span> chatter</h2>
+<div class="outline-text-2" id="text-31">
 <p>
 리눅스 시스템에서 파일 attribute를 변경한다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org96d3737" class="outline-2">
-<h2 id="org96d3737"><span class="section-number-2">33</span> chfn</h2>
-<div class="outline-text-2" id="text-33">
+<div id="outline-container-org2178854" class="outline-2">
+<h2 id="org2178854"><span class="section-number-2">32</span> chfn</h2>
+<div class="outline-text-2" id="text-32">
 <p>
 사용자의 실제 이름과 정보를 변경합니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org30828d5" class="outline-2">
-<h2 id="org30828d5"><span class="section-number-2">34</span> chgrp</h2>
-<div class="outline-text-2" id="text-34">
+<div id="outline-container-orgc4dcd7f" class="outline-2">
+<h2 id="orgc4dcd7f"><span class="section-number-2">33</span> chgrp</h2>
+<div class="outline-text-2" id="text-33">
 <p>
 파일 및 디렉토리의 소유 그룹을 변경합니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org91d991e" class="outline-2">
-<h2 id="org91d991e"><span class="section-number-2">35</span> chmod</h2>
-<div class="outline-text-2" id="text-35">
+<div id="outline-container-org9f2b5bf" class="outline-2">
+<h2 id="org9f2b5bf"><span class="section-number-2">34</span> chmod</h2>
+<div class="outline-text-2" id="text-34">
 <p>
 파일 및 디렉토리의 권한을 변경합니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgff2f666" class="outline-2">
-<h2 id="orgff2f666"><span class="section-number-2">36</span> chown</h2>
+<div id="outline-container-org6bf2df8" class="outline-2">
+<h2 id="org6bf2df8"><span class="section-number-2">35</span> chown</h2>
+<div class="outline-text-2" id="text-35">
+</div>
+</div>
+
+<div id="outline-container-org2ef9074" class="outline-2">
+<h2 id="org2ef9074"><span class="section-number-2">36</span> chrome</h2>
 <div class="outline-text-2" id="text-36">
 </div>
 </div>
 
-<div id="outline-container-org5f8c2be" class="outline-2">
-<h2 id="org5f8c2be"><span class="section-number-2">37</span> chrome</h2>
+<div id="outline-container-org131f7f6" class="outline-2">
+<h2 id="org131f7f6"><span class="section-number-2">37</span> chsh</h2>
 <div class="outline-text-2" id="text-37">
-</div>
-</div>
-
-<div id="outline-container-orgb9157d4" class="outline-2">
-<h2 id="orgb9157d4"><span class="section-number-2">38</span> chsh</h2>
-<div class="outline-text-2" id="text-38">
 <p>
 로그인 쉘을 변경합니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf0a8540" class="outline-2">
-<h2 id="orgf0a8540"><span class="section-number-2">39</span> curl</h2>
+<div id="outline-container-orga4f5508" class="outline-2">
+<h2 id="orga4f5508"><span class="section-number-2">38</span> curl</h2>
+<div class="outline-text-2" id="text-38">
+</div>
+</div>
+
+<div id="outline-container-org8592761" class="outline-2">
+<h2 id="org8592761"><span class="section-number-2">39</span> dh-autoreconf</h2>
 <div class="outline-text-2" id="text-39">
 </div>
 </div>
 
-<div id="outline-container-org035b06d" class="outline-2">
-<h2 id="org035b06d"><span class="section-number-2">40</span> dh-autoreconf</h2>
+<div id="outline-container-orgf542238" class="outline-2">
+<h2 id="orgf542238"><span class="section-number-2">40</span> diff</h2>
 <div class="outline-text-2" id="text-40">
-</div>
-</div>
-
-<div id="outline-container-orgdf9deca" class="outline-2">
-<h2 id="orgdf9deca"><span class="section-number-2">41</span> diff</h2>
-<div class="outline-text-2" id="text-41">
 <p>
 줄 단위로 파일들을 비교합니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2d3e9bb" class="outline-2">
-<h2 id="org2d3e9bb"><span class="section-number-2">42</span> docker build</h2>
-<div class="outline-text-2" id="text-42">
+<div id="outline-container-orga06b595" class="outline-2">
+<h2 id="orga06b595"><span class="section-number-2">41</span> docker build</h2>
+<div class="outline-text-2" id="text-41">
 <p>
 Build an image from a Dockerfile
 </p>
 </div>
 </div>
 
-<div id="outline-container-org05aaf92" class="outline-2">
-<h2 id="org05aaf92"><span class="section-number-2">43</span> docker-compose</h2>
-<div class="outline-text-2" id="text-43">
+<div id="outline-container-orgcf63706" class="outline-2">
+<h2 id="orgcf63706"><span class="section-number-2">42</span> docker-compose</h2>
+<div class="outline-text-2" id="text-42">
 </div>
 </div>
 
-<div id="outline-container-org829b1d6" class="outline-2">
-<h2 id="org829b1d6"><span class="section-number-2">44</span> docker run</h2>
-<div class="outline-text-2" id="text-44">
+<div id="outline-container-org9b726b3" class="outline-2">
+<h2 id="org9b726b3"><span class="section-number-2">43</span> docker run</h2>
+<div class="outline-text-2" id="text-43">
 <p>
 Run a command in a new container
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7127ab0" class="outline-2">
-<h2 id="org7127ab0"><span class="section-number-2">45</span> dpkg</h2>
-<div class="outline-text-2" id="text-45">
+<div id="outline-container-org7aa4d32" class="outline-2">
+<h2 id="org7aa4d32"><span class="section-number-2">44</span> dpkg</h2>
+<div class="outline-text-2" id="text-44">
 <p>
 앱티튜드(Apptitude), 시냅틱(Synaptic)등이 dpkg 자체보다 많이 쓰이는데, 패키지 의존성을 다루는 더 많은 방법과 더 이해하기 편한 인터페이스를 갖고 있기 때문이다.
 </p>
@@ -751,15 +743,15 @@ Run a command in a new container
 </div>
 </div>
 
-<div id="outline-container-org5dc34e1" class="outline-2">
-<h2 id="org5dc34e1"><span class="section-number-2">46</span> echo</h2>
-<div class="outline-text-2" id="text-46">
+<div id="outline-container-org91a09d9" class="outline-2">
+<h2 id="org91a09d9"><span class="section-number-2">45</span> echo</h2>
+<div class="outline-text-2" id="text-45">
 </div>
 </div>
 
-<div id="outline-container-orgb9ccbb2" class="outline-2">
-<h2 id="orgb9ccbb2"><span class="section-number-2">47</span> emacs</h2>
-<div class="outline-text-2" id="text-47">
+<div id="outline-container-org40ec97e" class="outline-2">
+<h2 id="org40ec97e"><span class="section-number-2">46</span> emacs</h2>
+<div class="outline-text-2" id="text-46">
 <p>
 사용자가 버퍼 및 윈도우를 사용할 수 있다면 이맥스의 광범위한 도움말 기능을 쉽게 사용할 수 있습니다.
 CTRL-h 혹은 F1 은 이맥스의 도움말 기능으로 들어갑니다.
@@ -776,279 +768,310 @@ Lisp을 기반으로 만들어진 프로그래밍 가능한 에디터로 기본�
 </div>
 </div>
 
-<div id="outline-container-org437eeef" class="outline-2">
-<h2 id="org437eeef"><span class="section-number-2">48</span> finger</h2>
-<div class="outline-text-2" id="text-48">
+<div id="outline-container-org616086e" class="outline-2">
+<h2 id="org616086e"><span class="section-number-2">47</span> finger</h2>
+<div class="outline-text-2" id="text-47">
 <p>
 사용자 정보를 보여주는 프로그램입니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org51386ce" class="outline-2">
-<h2 id="org51386ce"><span class="section-number-2">49</span> fsck</h2>
-<div class="outline-text-2" id="text-49">
+<div id="outline-container-org374c526" class="outline-2">
+<h2 id="org374c526"><span class="section-number-2">48</span> fsck</h2>
+<div class="outline-text-2" id="text-48">
 <p>
 리눅스 파일 시스템을 점검하고 고칩니다.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf1060bd" class="outline-2">
-<h2 id="orgf1060bd"><span class="section-number-2">50</span> gcc</h2>
+<div id="outline-container-orgf01f7f2" class="outline-2">
+<h2 id="orgf01f7f2"><span class="section-number-2">49</span> gcc</h2>
+<div class="outline-text-2" id="text-49">
+</div>
+</div>
+
+<div id="outline-container-org2d64143" class="outline-2">
+<h2 id="org2d64143"><span class="section-number-2">50</span> gem</h2>
 <div class="outline-text-2" id="text-50">
 </div>
 </div>
 
-<div id="outline-container-orgcd450fe" class="outline-2">
-<h2 id="orgcd450fe"><span class="section-number-2">51</span> gem</h2>
+<div id="outline-container-org03a5990" class="outline-2">
+<h2 id="org03a5990"><span class="section-number-2">51</span> git</h2>
 <div class="outline-text-2" id="text-51">
+<p>
+현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다.
+</p>
+
+<p>
+Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다.
+</p>
+
+<p>
+The stupid content tracker
+</p>
 </div>
 </div>
 
-<div id="outline-container-org1d818ce" class="outline-2">
-<h2 id="org1d818ce"><span class="section-number-2">52</span> iptables</h2>
+<div id="outline-container-org2b0a568" class="outline-2">
+<h2 id="org2b0a568"><span class="section-number-2">52</span> groupadd</h2>
 <div class="outline-text-2" id="text-52">
+<p>
+새로운 그룹을 만듭니다.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org736438a" class="outline-2">
-<h2 id="org736438a"><span class="section-number-2">53</span> javac</h2>
+<div id="outline-container-org11ff3b6" class="outline-2">
+<h2 id="org11ff3b6"><span class="section-number-2">53</span> hcitool</h2>
 <div class="outline-text-2" id="text-53">
+<p>
+블루투스 연결을 설정하고 블루투스 기기에 특정 명령어를 전달하기 위해서 사용됩니다.
+만약 명령어가 설정되지 않거나 
+블루투스 연결을 설정합니다.
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgf811359" class="outline-2">
-<h2 id="orgf811359"><span class="section-number-2">54</span> java</h2>
+<div id="outline-container-org807cf7d" class="outline-2">
+<h2 id="org807cf7d"><span class="section-number-2">54</span> javac</h2>
 <div class="outline-text-2" id="text-54">
 </div>
 </div>
 
-<div id="outline-container-orgd1ed0e9" class="outline-2">
-<h2 id="orgd1ed0e9"><span class="section-number-2">55</span> lilo</h2>
+<div id="outline-container-org9f4159f" class="outline-2">
+<h2 id="org9f4159f"><span class="section-number-2">55</span> java</h2>
 <div class="outline-text-2" id="text-55">
 </div>
 </div>
 
-<div id="outline-container-org37be741" class="outline-2">
-<h2 id="org37be741"><span class="section-number-2">56</span> lpc</h2>
+<div id="outline-container-org88530a9" class="outline-2">
+<h2 id="org88530a9"><span class="section-number-2">56</span> lilo</h2>
 <div class="outline-text-2" id="text-56">
 </div>
 </div>
 
-<div id="outline-container-orgf7c68f0" class="outline-2">
-<h2 id="orgf7c68f0"><span class="section-number-2">57</span> lp</h2>
+<div id="outline-container-org97874ea" class="outline-2">
+<h2 id="org97874ea"><span class="section-number-2">57</span> lpc</h2>
 <div class="outline-text-2" id="text-57">
 </div>
 </div>
 
-<div id="outline-container-org18b2f8d" class="outline-2">
-<h2 id="org18b2f8d"><span class="section-number-2">58</span> lpq</h2>
+<div id="outline-container-orgbf11875" class="outline-2">
+<h2 id="orgbf11875"><span class="section-number-2">58</span> lp</h2>
 <div class="outline-text-2" id="text-58">
 </div>
 </div>
 
-<div id="outline-container-orgc6d579e" class="outline-2">
-<h2 id="orgc6d579e"><span class="section-number-2">59</span> lprm</h2>
+<div id="outline-container-orgece935c" class="outline-2">
+<h2 id="orgece935c"><span class="section-number-2">59</span> lpq</h2>
 <div class="outline-text-2" id="text-59">
 </div>
 </div>
 
-<div id="outline-container-orgac77ac5" class="outline-2">
-<h2 id="orgac77ac5"><span class="section-number-2">60</span> lpr</h2>
+<div id="outline-container-org72fbcf3" class="outline-2">
+<h2 id="org72fbcf3"><span class="section-number-2">60</span> lprm</h2>
 <div class="outline-text-2" id="text-60">
 </div>
 </div>
 
-<div id="outline-container-orgd48f6aa" class="outline-2">
-<h2 id="orgd48f6aa"><span class="section-number-2">61</span> lsattr</h2>
+<div id="outline-container-org6104559" class="outline-2">
+<h2 id="org6104559"><span class="section-number-2">61</span> lpr</h2>
 <div class="outline-text-2" id="text-61">
 </div>
 </div>
 
-<div id="outline-container-org11ca385" class="outline-2">
-<h2 id="org11ca385"><span class="section-number-2">62</span> lsof</h2>
+<div id="outline-container-orgc5bc368" class="outline-2">
+<h2 id="orgc5bc368"><span class="section-number-2">62</span> lsattr</h2>
 <div class="outline-text-2" id="text-62">
 </div>
 </div>
 
-<div id="outline-container-org97d978e" class="outline-2">
-<h2 id="org97d978e"><span class="section-number-2">63</span> make</h2>
+<div id="outline-container-orgb0a6d0b" class="outline-2">
+<h2 id="orgb0a6d0b"><span class="section-number-2">63</span> lsof</h2>
 <div class="outline-text-2" id="text-63">
 </div>
 </div>
 
-<div id="outline-container-org2fed467" class="outline-2">
-<h2 id="org2fed467"><span class="section-number-2">64</span> modprobe</h2>
+<div id="outline-container-org237a8f0" class="outline-2">
+<h2 id="org237a8f0"><span class="section-number-2">64</span> make</h2>
 <div class="outline-text-2" id="text-64">
 </div>
 </div>
 
-<div id="outline-container-org419c22e" class="outline-2">
-<h2 id="org419c22e"><span class="section-number-2">65</span> node</h2>
+<div id="outline-container-orgd40d4d7" class="outline-2">
+<h2 id="orgd40d4d7"><span class="section-number-2">65</span> modprobe</h2>
 <div class="outline-text-2" id="text-65">
 </div>
 </div>
 
-<div id="outline-container-orga272a70" class="outline-2">
-<h2 id="orga272a70"><span class="section-number-2">66</span> npm</h2>
+<div id="outline-container-org3b913a2" class="outline-2">
+<h2 id="org3b913a2"><span class="section-number-2">66</span> node</h2>
 <div class="outline-text-2" id="text-66">
 </div>
 </div>
 
-<div id="outline-container-org1da616b" class="outline-2">
-<h2 id="org1da616b"><span class="section-number-2">67</span> passwd</h2>
+<div id="outline-container-orgfe79f02" class="outline-2">
+<h2 id="orgfe79f02"><span class="section-number-2">67</span> npm</h2>
 <div class="outline-text-2" id="text-67">
 </div>
 </div>
 
-<div id="outline-container-org90967f2" class="outline-2">
-<h2 id="org90967f2"><span class="section-number-2">68</span> pip</h2>
+<div id="outline-container-org445fc03" class="outline-2">
+<h2 id="org445fc03"><span class="section-number-2">68</span> org-mode</h2>
 <div class="outline-text-2" id="text-68">
 </div>
 </div>
 
-<div id="outline-container-orgd061639" class="outline-2">
-<h2 id="orgd061639"><span class="section-number-2">69</span> postfix</h2>
+<div id="outline-container-org6f58ab7" class="outline-2">
+<h2 id="org6f58ab7"><span class="section-number-2">69</span> passwd</h2>
 <div class="outline-text-2" id="text-69">
 </div>
 </div>
 
-<div id="outline-container-org0f8bdea" class="outline-2">
-<h2 id="org0f8bdea"><span class="section-number-2">70</span> rpm</h2>
+<div id="outline-container-org3968dcf" class="outline-2">
+<h2 id="org3968dcf"><span class="section-number-2">70</span> pip</h2>
 <div class="outline-text-2" id="text-70">
 </div>
 </div>
 
-<div id="outline-container-org63973ab" class="outline-2">
-<h2 id="org63973ab"><span class="section-number-2">71</span> rsync</h2>
+<div id="outline-container-org11e083a" class="outline-2">
+<h2 id="org11e083a"><span class="section-number-2">71</span> postfix</h2>
 <div class="outline-text-2" id="text-71">
 </div>
 </div>
 
-<div id="outline-container-orgc10fcd6" class="outline-2">
-<h2 id="orgc10fcd6"><span class="section-number-2">72</span> ruby</h2>
+<div id="outline-container-orgf7ac119" class="outline-2">
+<h2 id="orgf7ac119"><span class="section-number-2">72</span> rpm</h2>
 <div class="outline-text-2" id="text-72">
 </div>
 </div>
 
-<div id="outline-container-orgc88791d" class="outline-2">
-<h2 id="orgc88791d"><span class="section-number-2">73</span> samba</h2>
+<div id="outline-container-orgf0eafb3" class="outline-2">
+<h2 id="orgf0eafb3"><span class="section-number-2">73</span> rsync</h2>
 <div class="outline-text-2" id="text-73">
 </div>
 </div>
 
-<div id="outline-container-orgc98cdf8" class="outline-2">
-<h2 id="orgc98cdf8"><span class="section-number-2">74</span> sendmail</h2>
+<div id="outline-container-org8104131" class="outline-2">
+<h2 id="org8104131"><span class="section-number-2">74</span> ruby</h2>
 <div class="outline-text-2" id="text-74">
 </div>
 </div>
 
-<div id="outline-container-org128e8ea" class="outline-2">
-<h2 id="org128e8ea"><span class="section-number-2">75</span> shutdown</h2>
+<div id="outline-container-orgede7b3d" class="outline-2">
+<h2 id="orgede7b3d"><span class="section-number-2">75</span> samba</h2>
 <div class="outline-text-2" id="text-75">
 </div>
 </div>
 
-<div id="outline-container-orgd651c50" class="outline-2">
-<h2 id="orgd651c50"><span class="section-number-2">76</span> squid</h2>
+<div id="outline-container-orgeaebb61" class="outline-2">
+<h2 id="orgeaebb61"><span class="section-number-2">76</span> sendmail</h2>
 <div class="outline-text-2" id="text-76">
 </div>
 </div>
 
-<div id="outline-container-org2d10b17" class="outline-2">
-<h2 id="org2d10b17"><span class="section-number-2">77</span> ssh</h2>
+<div id="outline-container-org24731d1" class="outline-2">
+<h2 id="org24731d1"><span class="section-number-2">77</span> shutdown</h2>
 <div class="outline-text-2" id="text-77">
 </div>
 </div>
 
-<div id="outline-container-org74412a9" class="outline-2">
-<h2 id="org74412a9"><span class="section-number-2">78</span> sudo</h2>
+<div id="outline-container-org384eaf1" class="outline-2">
+<h2 id="org384eaf1"><span class="section-number-2">78</span> squid</h2>
 <div class="outline-text-2" id="text-78">
 </div>
 </div>
 
-<div id="outline-container-org70ba189" class="outline-2">
-<h2 id="org70ba189"><span class="section-number-2">79</span> tail</h2>
+<div id="outline-container-org50846f5" class="outline-2">
+<h2 id="org50846f5"><span class="section-number-2">79</span> ssh</h2>
 <div class="outline-text-2" id="text-79">
 </div>
 </div>
 
-<div id="outline-container-org092a654" class="outline-2">
-<h2 id="org092a654"><span class="section-number-2">80</span> tar</h2>
+<div id="outline-container-org3556ed1" class="outline-2">
+<h2 id="org3556ed1"><span class="section-number-2">80</span> sudo</h2>
 <div class="outline-text-2" id="text-80">
 </div>
 </div>
 
-<div id="outline-container-org2e70f60" class="outline-2">
-<h2 id="org2e70f60"><span class="section-number-2">81</span> travis</h2>
+<div id="outline-container-org7b9793c" class="outline-2">
+<h2 id="org7b9793c"><span class="section-number-2">81</span> tail</h2>
 <div class="outline-text-2" id="text-81">
 </div>
 </div>
 
-<div id="outline-container-org6fb6d1a" class="outline-2">
-<h2 id="org6fb6d1a"><span class="section-number-2">82</span> tripwire</h2>
+<div id="outline-container-org4f2ffa9" class="outline-2">
+<h2 id="org4f2ffa9"><span class="section-number-2">82</span> tar</h2>
 <div class="outline-text-2" id="text-82">
 </div>
 </div>
 
-<div id="outline-container-org694efb4" class="outline-2">
-<h2 id="org694efb4"><span class="section-number-2">83</span> update</h2>
+<div id="outline-container-org0f6a2dc" class="outline-2">
+<h2 id="org0f6a2dc"><span class="section-number-2">83</span> travis</h2>
 <div class="outline-text-2" id="text-83">
 </div>
 </div>
 
-<div id="outline-container-org767bdfe" class="outline-2">
-<h2 id="org767bdfe"><span class="section-number-2">84</span> update-rc.d</h2>
+<div id="outline-container-org6ac2ffd" class="outline-2">
+<h2 id="org6ac2ffd"><span class="section-number-2">84</span> tripwire</h2>
 <div class="outline-text-2" id="text-84">
 </div>
 </div>
 
-<div id="outline-container-orga681f16" class="outline-2">
-<h2 id="orga681f16"><span class="section-number-2">85</span> useradd</h2>
+<div id="outline-container-org474c7de" class="outline-2">
+<h2 id="org474c7de"><span class="section-number-2">85</span> update-rc.d</h2>
 <div class="outline-text-2" id="text-85">
 </div>
 </div>
 
-<div id="outline-container-org4a69625" class="outline-2">
-<h2 id="org4a69625"><span class="section-number-2">86</span> userdel</h2>
+<div id="outline-container-org6c5ae82" class="outline-2">
+<h2 id="org6c5ae82"><span class="section-number-2">86</span> useradd</h2>
 <div class="outline-text-2" id="text-86">
 </div>
 </div>
 
-<div id="outline-container-org8fd1d6d" class="outline-2">
-<h2 id="org8fd1d6d"><span class="section-number-2">87</span> usermod</h2>
+<div id="outline-container-org4067088" class="outline-2">
+<h2 id="org4067088"><span class="section-number-2">87</span> userdel</h2>
 <div class="outline-text-2" id="text-87">
 </div>
 </div>
 
-<div id="outline-container-orgd73d696" class="outline-2">
-<h2 id="orgd73d696"><span class="section-number-2">88</span> vim</h2>
+<div id="outline-container-org74b877c" class="outline-2">
+<h2 id="org74b877c"><span class="section-number-2">88</span> usermod</h2>
 <div class="outline-text-2" id="text-88">
 </div>
 </div>
 
-<div id="outline-container-org216c142" class="outline-2">
-<h2 id="org216c142"><span class="section-number-2">89</span> wget</h2>
+<div id="outline-container-orgdc70465" class="outline-2">
+<h2 id="orgdc70465"><span class="section-number-2">89</span> vim</h2>
 <div class="outline-text-2" id="text-89">
 </div>
 </div>
 
-<div id="outline-container-orgcf3c275" class="outline-2">
-<h2 id="orgcf3c275"><span class="section-number-2">90</span> xinetd</h2>
+<div id="outline-container-org0cbb39a" class="outline-2">
+<h2 id="org0cbb39a"><span class="section-number-2">90</span> wget</h2>
 <div class="outline-text-2" id="text-90">
 </div>
 </div>
 
-<div id="outline-container-orgeac1287" class="outline-2">
-<h2 id="orgeac1287"><span class="section-number-2">91</span> xmodmap</h2>
+<div id="outline-container-orgf97b4f2" class="outline-2">
+<h2 id="orgf97b4f2"><span class="section-number-2">91</span> xinetd</h2>
 <div class="outline-text-2" id="text-91">
+</div>
+</div>
+
+<div id="outline-container-orga0da552" class="outline-2">
+<h2 id="orga0da552"><span class="section-number-2">92</span> xmodmap</h2>
+<div class="outline-text-2" id="text-92">
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-02 Fri 11:22</p>
+<p class="date">Created: 2018-03-03 Sat 02:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
