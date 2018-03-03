@@ -4,65 +4,143 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+| Version        | {{{ver(1.6.2)}}}   |
+| Package Size   | {{{size(279KB)}}}  |
+| Installed Size | {{{size(1724KB)}}} |
+|                |                    |
 
-# * How to Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: how-to-install
-#   :LANG_EN:  How to Install
-#   :LANG_ES:  Cómo instalar
-#   :LANG_KO:  설치 방법
-#   :LANG_ZH:  如何安装
-#   :LANG_JA:  インストール方法
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
 
-# ** Prerequisites
-#    :PROPERTIES: 
-#    :CUSTOM_ID: prerequisites
-#    :LANG_EN:  Prerequisites
-#    :LANG_ES:  Requisitos previos
-#    :LANG_KO:  필요 사항
-#    :LANG_ZH:  先决条件
-#    :LANG_JA:  前準備
-#    :END:      
+** Introduction
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG_EN:  Introduction
+  :LANG_ES:  Introducción
+  :LANG_KO:  소개
+  :LANG_ZH:  介绍
+  :LANG_JA:  はじめに
+  :END:    
 
-# ** Install
-#   :PROPERTIES: 
-#   :CUSTOM_ID: install
-#   :LANG_EN:  Install
-#   :LANG_ES:  Instalar
-#   :LANG_KO:  설치
-#   :LANG_ZH:  安装
-#   :LANG_JA:  インストール
-#   :END:      
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
 
-# ** Installed Packages
-#    :PROPERTIES: 
-#    :CUSTOM_ID: packages
-#    :LANG_EN:  Installed Packages
-#    :LANG_ES:  Paquetes instalados
-#    :LANG_KO:  설치된 패키지
-#    :LANG_ZH:  安装的软件包
-#    :LANG_JA:  インストールされたパッケージ
-#    :END:      
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
 
-# ** Check
-#    :PROPERTIES: 
-#    :CUSTOM_ID: check
-#    :LANG_EN:  Check
-#    :LANG_ES:  Comprobar
-#    :LANG_KO:  확인
-#    :LANG_ZH:  检查
-#    :LANG_JA:  チェック
-#    :END:      
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG_EN:  Prerequisites
+   :LANG_ES:  Requisitos previos
+   :LANG_KO:  필요 사항
+   :LANG_ZH:  先决条件
+   :LANG_JA:  前準備
+   :END:      
+
+*** from Source code
+
+- {{{link(git)}}}
+- {{{link(autoconf)}}}
+
+** Dependencies
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG_EN:  Dependencies
+   :LANG_ES:  Dependencias
+   :LANG_KO:  의존성
+   :LANG_ZH:  依赖
+   :LANG_JA:  依存関係
+   :END:      
+
+- libc6 : GNU C Library: Shared libraries also a virtual package provided by libc6-udeb
+  - [amd64] (>= {{{ver(2.14)}}})
+  - [arm64, ppc64el] (>= {{{ver(2.17)}}})
+  - [not amd64, arm64, ppc64el] (>= {{{ver(>= 2.7)}}})
+- libnfnetlink0
+  - Netfilter netlink library
+- libxtables11 (= {{{ver(1.6.0-2ubuntu3)}}})
+  - netfilter xtables library
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install iptables
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo apt-get install iptables-services
+#+END_SRC
+
+*** from Source code
+
+{{{note-dependency}}}
+
+#+BEGIN_SRC sh
+$ git clone git://git.netfilter.org/iptables
+$ cd iptables
+$ autoreconf -i
+$ ./configure
+$ make
+$ sudo make install
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG_EN:  Installed Packages
+   :LANG_ES:  Paquetes instalados
+   :LANG_KO:  설치된 패키지
+   :LANG_ZH:  安装的软件包
+   :LANG_JA:  インストールされたパッケージ
+   :END:      
+
+- iptables
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG_EN:  Check
+   :LANG_ES:  Comprobar
+   :LANG_KO:  확인
+   :LANG_ZH:  检查
+   :LANG_JA:  チェック
+   :END:      
+
+#+BEGIN_SRC sh
+$ iptables --version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+iptables v1.6.0
+#+END_EXAMPLE
 
 # * Usage
 #   :PROPERTIES: 
@@ -124,12 +202,14 @@
 #   :LANG_JA:  関連項目
 #   :END:      
 
-# * References
-#   :PROPERTIES: 
-#   :CUSTOM_ID: references
-#   :LANG_EN:  References
-#   :LANG_ES:  Referencias
-#   :LANG_KO:  참고자료
-#   :LANG_ZH:  参考
-#   :LANG_JA:  参考
-#   :END:      
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG_EN:  References
+  :LANG_ES:  Referencias
+  :LANG_KO:  참고자료
+  :LANG_ZH:  参考
+  :LANG_JA:  参考
+  :END:      
+
+- {{{official(http://www.netfilter.org/)}}}
