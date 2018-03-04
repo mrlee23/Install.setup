@@ -316,6 +316,23 @@
 			 "[[%s][Offical Homepage]]"))
 		  name))
 
+(defun lc-macro/source-code (name)
+  (setq name (lc-macro/arg-trim name))
+  (format (case (lc-core/get-current-language)
+			(en
+			 "[[%s][Source code]]")
+			(es
+			 "[[%s][Código fuente]]")
+			(ko
+			 "[[%s][소스 코드]]")
+			(zh
+			 "[[%s][源代码]]")
+			(ja
+			 "[[%s][ソースコード]")
+			(t
+			 "[[%s][Source code]]"))
+		  name))
+
 (defun lc-macro/note-dependency ()
   (case (lc-core/get-current-language)
 	(en
