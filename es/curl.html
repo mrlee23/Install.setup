@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2018-03-03 Sat 02:43 -->
+<!-- 2018-03-04 Sun 11:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>curl</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="curl - Comandos de Linux">
-<meta name="description" content="">
+<meta name="description" content="Una herramienta de línea de comandos y una biblioteca para transferir datos con sintaxis de URL, compatible con HTTP, HTTPS, FTP, FTPS, GOPHER, TFTP, SCP, SFTP, SMB, TELNET, DICT, LDAP, LDAPS, ARCHIVO, IMAP, SMTP, POP3, RTSP y RTMP. libcurl ofrece una miríada de potentes funciones ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="curl - Comandos de Linux">
-<meta property="og:description" content="">
+<meta property="og:description" content="Una herramienta de línea de comandos y una biblioteca para transferir datos con sintaxis de URL, compatible con HTTP, HTTPS, FTP, FTPS, GOPHER, TFTP, SCP, SFTP, SMB, TELNET, DICT, LDAP, LDAPS, ARCHIVO, IMAP, SMTP, POP3, RTSP y RTMP. libcurl ofrece una miríada de potentes funciones ">
 <meta name="twitter:title" content="curl - Comandos de Linux">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Una herramienta de línea de comandos y una biblioteca para transferir datos con sintaxis de URL, compatible con HTTP, HTTPS, FTP, FTPS, GOPHER, TFTP, SCP, SFTP, SMB, TELNET, DICT, LDAP, LDAPS, ARCHIVO, IMAP, SMTP, POP3, RTSP y RTMP. libcurl ofrece una miríada de potentes funciones ">
 <link rel="alternate" href="http://linux-command.org/en/curl.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/es/curl.html" hreflang="es" />
 <link rel="alternate" href="http://linux-command.org/ja/curl.html" hreflang="ja" />
@@ -264,35 +264,103 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#overview">Visión de conjunto</a></li>
 <li><a href="#how-to-install">Cómo instalar</a>
 <ul>
-<li><a href="#prerequisites">Requisitos previos</a></li>
-<li><a href="#install">Instalar</a></li>
+<li><a href="#dependencies">Dependencias</a></li>
+<li><a href="#install">Instalar</a>
+<ul>
+<li><a href="#orgabf41d3">Ubuntu</a></li>
+<li><a href="#orge7b2237">CentOS</a></li>
+<li><a href="#org64afa5a">from Source code</a></li>
+</ul>
+</li>
 <li><a href="#packages">Paquetes instalados</a></li>
 <li><a href="#check">Comprobar</a></li>
 </ul>
 </li>
+<li><a href="#usage">Uso</a>
+<ul>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#options">Opciones</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
 </ul>
 </div>
 </div>
 <p>
 <img class="org-img main" src="http://linux-command.org/dist/assets/images/curl/main.jpg" alt="main" align="right">
 </p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<div id="outline-container-org200120f" class="outline-2">
-<h2 id="how-to-install"><a id="org200120f"></a>Cómo instalar</h2>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Version</td>
+<td class="org-left"><span class="org-programming-version">7.58.0</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Release Date</td>
+<td class="org-left"><span class="org-programming-date">2018-01-24</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Package Size</td>
+<td class="org-left"><span class="org-programming-size">135KB</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Installed Size</td>
+<td class="org-left"><span class="org-programming-size">331KB</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Programming Language</td>
+<td class="org-left">C</td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-org391f03b" class="outline-2">
+<h2 id="overview"><a id="org391f03b"></a>Visión de conjunto</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Una herramienta de línea de comandos y una biblioteca para transferir datos con sintaxis de URL, compatible con HTTP, HTTPS, FTP, FTPS, GOPHER, TFTP, SCP, SFTP, SMB, TELNET, DICT, LDAP, LDAPS, ARCHIVO, IMAP, SMTP, POP3, RTSP y RTMP. libcurl ofrece una miríada de potentes funciones
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3749410" class="outline-2">
+<h2 id="how-to-install"><a id="org3749410"></a>Cómo instalar</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org5122355" class="outline-3">
-<h3 id="prerequisites"><a id="org5122355"></a>Requisitos previos</h3>
-<div class="outline-text-3" id="text-prerequisites">
+<div id="outline-container-org6e8f028" class="outline-3">
+<h3 id="dependencies"><a id="org6e8f028"></a>Dependencias</h3>
+<div class="outline-text-3" id="text-dependencies">
+<ul class="org-ul">
+<li>libc6 (&gt;= <span class="org-programming-version">2.17</span>)</li>
+<li>libcurl3-gnutls (= <span class="org-programming-version">7.58.0</span>)</li>
+<li>zlib1g (&gt;= <span class="org-programming-version">1:1.1.4</span>)</li>
+</ul>
 </div>
 </div>
 
-<div id="outline-container-org282d0b4" class="outline-3">
-<h3 id="install"><a id="org282d0b4"></a>Instalar</h3>
+<div id="outline-container-org50ef83a" class="outline-3">
+<h3 id="install"><a id="org50ef83a"></a>Instalar</h3>
 <div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-orgabf41d3" class="outline-4">
+<h4 id="orgabf41d3">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgabf41d3">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo apt-get install curl
 </pre>
@@ -300,23 +368,1080 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgeee2381" class="outline-3">
-<h3 id="packages"><a id="orgeee2381"></a>Paquetes instalados</h3>
-<div class="outline-text-3" id="text-packages">
+<div id="outline-container-orge7b2237" class="outline-4">
+<h4 id="orge7b2237">CentOS</h4>
+<div class="outline-text-4" id="text-orge7b2237">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo yum install curl
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org451801e" class="outline-3">
-<h3 id="check"><a id="org451801e"></a>Comprobar</h3>
-<div class="outline-text-3" id="text-check">
+<div id="outline-container-org64afa5a" class="outline-4">
+<h4 id="org64afa5a">from Source code</h4>
+<div class="outline-text-4" id="text-org64afa5a">
+<div class="org-src-container">
+<pre class="src src-sh">$ git clone https://github.com/curl/curl.git
+$ ./configure
+$ make
+$ sudo make install
+</pre>
 </div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdb1f503" class="outline-3">
+<h3 id="packages"><a id="orgdb1f503"></a>Paquetes instalados</h3>
+<div class="outline-text-3" id="text-packages">
+<ul class="org-ul">
+<li>curl</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgada3596" class="outline-3">
+<h3 id="check"><a id="orgada3596"></a>Comprobar</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ curl --version
+</pre>
+</div>
+
+<pre class="example">
+curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp smb smbs smtp smtps telnet tftp
+Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP UnixSockets
+</pre>
+
+<p>
+Cuando comprueba la versión, las bibliotecas compatibles y los protocolos y características admitidos se envían juntos.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4451b49" class="outline-2">
+<h2 id="usage"><a id="org4451b49"></a>Uso</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-orga0d23a5" class="outline-3">
+<h3 id="syntax"><a id="orga0d23a5"></a>Sintaxis</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">curl [options] [URL...]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1a82f2" class="outline-3">
+<h3 id="options"><a id="orgd1a82f2"></a>Opciones</h3>
+<div class="outline-text-3" id="text-options">
+<p>
+Esto se actualiza para la versión <span class="org-programming-version">7.40.0</span>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--#" class="org-programming-option">-#</span>, <span id="opt---progress-bar" class="org-programming-option">--progress-bar</span>
+Make curl display progress as a simple progress bar instead of the standard, more informational, meter.</li>
+
+<li><span id="opt--:" class="org-programming-option">-:</span>, <span id="opt---next" class="org-programming-option">--next</span></li>
+</ul>
+<p>
+Tells curl to use a separate operation for the following URL and associated options. This allows you to send several URL requests, each with their own specific
+options, for example, such as different user names or custom requests for each. (Added in 7.36.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--0" class="org-programming-option">-0</span>, <span id="opt---http1.0" class="org-programming-option">--http1.0</span></li>
+</ul>
+<p>
+(HTTP) Tells curl to use HTTP version 1.0 instead of using its internally preferred: HTTP 1.1.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---http1.1" class="org-programming-option">--http1.1</span></li>
+</ul>
+<p>
+(HTTP) Tells curl to use HTTP version 1.1. This is the internal default version. (Added in 7.33.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---http2" class="org-programming-option">--http2</span></li>
+</ul>
+<p>
+(HTTP) Tells curl to issue its requests using HTTP 2. This requires that the underlying libcurl was built to support it. (Added in 7.33.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---no-npn" class="org-programming-option">--no-npn</span></li>
+</ul>
+<p>
+Disable the NPN TLS extension. NPN is enabled by default if libcurl was built with an SSL library that supports NPN. NPN is used by a libcurl that supports HTTP 2
+to negotiate HTTP 2 support with the server during https sessions.
+</p>
+
+<p>
+(Added in 7.36.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---no-alpn" class="org-programming-option">--no-alpn</span></li>
+</ul>
+<p>
+Disable the ALPN TLS extension. ALPN is enabled by default if libcurl was built with an SSL library that supports ALPN. ALPN is used by a libcurl that supports
+HTTP 2 to negotiate HTTP 2 support with the server during https sessions.
+</p>
+
+<p>
+(Added in 7.36.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--1" class="org-programming-option">-1</span>, <span id="opt---tlsv1" class="org-programming-option">--tlsv1</span></li>
+</ul>
+<p>
+(SSL) Forces curl to use TLS version 1.x when negotiating with a remote TLS server. You can use options <a href="#opt---tlsv1.0"><span class="org-programming-option">--tlsv1.0</span></a>, <a href="#opt---tlsv1.1"><span class="org-programming-option">--tlsv1.1</span></a>, and <a href="#opt---tlsv1.2"><span class="org-programming-option">--tlsv1.2</span></a> to control the TLS
+version more precisely (if the SSL backend in use supports such a level of control).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--2" class="org-programming-option">-2</span>, <span id="opt---sslv2" class="org-programming-option">--sslv2</span></li>
+</ul>
+<p>
+(SSL) Forces curl to use SSL version 2 when negotiating with a remote SSL server. Sometimes curl is built without SSLv2 support. SSLv2 is widely considered inse-
+cure (see RFC 6176).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--3" class="org-programming-option">-3</span>, <span id="opt---sslv3" class="org-programming-option">--sslv3</span></li>
+</ul>
+<p>
+(SSL) Forces curl to use SSL version 3 when negotiating with a remote SSL server. Sometimes curl is built without SSLv3 support. SSLv3 is widely considered inse-
+cure (see RFC 7568).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--4" class="org-programming-option">-4</span>, <span id="opt---ipv4" class="org-programming-option">--ipv4</span></li>
+</ul>
+<p>
+This option tells curl to resolve names to IPv4 addresses only, and not for example try IPv6.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--6" class="org-programming-option">-6</span>, <span id="opt---ipv6" class="org-programming-option">--ipv6</span></li>
+</ul>
+<p>
+This option tells curl to resolve names to IPv6 addresses only, and not for example try IPv4.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--a" class="org-programming-option">-a</span>, <span id="opt---append" class="org-programming-option">--append</span></li>
+</ul>
+<p>
+(FTP/SFTP) When used in an upload, this makes curl append to the target file instead of overwriting it. If the remote file doesn't exist, it will be created.
+Note that this flag is ignored by some SFTP servers (including OpenSSH).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--A" class="org-programming-option">-A</span>, <span id="opt---user-agent" class="org-programming-option">--user-agent</span> <span class="org-programming-argument"><agent string></span></li>
+</ul>
+<p>
+(HTTP) Specify the User-Agent string to send to the HTTP server. Some badly done CGIs fail if this field isn't set to "Mozilla/4.0". To encode blanks in the
+string, surround the string with single quote marks. This can also be set with the <a href="#opt--H"><span class="org-programming-option">-H</span></a>, <a href="#opt---header"><span class="org-programming-option">--header</span></a> option of course.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---anyauth" class="org-programming-option">--anyauth</span></li>
+</ul>
+<p>
+(HTTP) Tells curl to figure out authentication method by itself, and use the most secure one the remote site claims to support. This is done by first doing a
+request and checking the response-headers, thus possibly inducing an extra network round-trip. This is used instead of setting a specific authentication method,
+which you can do with <a href="#opt---basic"><span class="org-programming-option">--basic</span></a>, <a href="#opt---digest"><span class="org-programming-option">--digest</span></a>, <a href="#opt---ntlm"><span class="org-programming-option">--ntlm</span></a>, and <a href="#opt---negotiate."><span class="org-programming-option">--negotiate.</span></a>
+</p>
+
+<p>
+Note that using <a href="#opt---anyauth"><span class="org-programming-option">--anyauth</span></a> is not recommended if you do uploads from stdin, since it may require data to be sent twice and then the client must be able to rewind.
+If the need should arise when uploading from stdin, the upload operation will fail.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--b" class="org-programming-option">-b</span>, <span id="opt---cookie" class="org-programming-option">--cookie</span> &lt;<span class="org-programming-argument">name</span>=<span class="org-programming-argument">data</span>&gt;</li>
+</ul>
+<p>
+(HTTP) Pass the data to the HTTP server as a cookie. It is supposedly the data previously received from the server in a "Set-Cookie:" line. The data should be in
+the format "NAME1=VALUE1; NAME2=VALUE2".
+</p>
+
+<p>
+If no '=' symbol is used in the line, it is treated as a filename to use to read previously stored cookie lines from, which should be used in this session if they
+match. Using this method also activates the cookie engine which will make curl record incoming cookies too, which may be handy if you're using this in combination
+with the <a href="#opt--L"><span class="org-programming-option">-L</span></a>, <a href="#opt---location"><span class="org-programming-option">--location</span></a> option. The file format of the file to read cookies from should be plain HTTP headers or the Netscape/Mozilla cookie file format.
+</p>
+
+<p>
+The file specified with <a href="#opt--b"><span class="org-programming-option">-b</span></a>, <a href="#opt---cookie"><span class="org-programming-option">--cookie</span></a> is only used as input. No cookies will be written to the file. To store cookies, use the <a href="#opt--c"><span class="org-programming-option">-c</span></a>, <a href="#opt---cookie-jar"><span class="org-programming-option">--cookie-jar</span></a> option.
+</p>
+
+<p>
+Exercise caution if you are using this option and multiple transfers may occur. If you use the NAME1=VALUE1; format, or in a file use the Set-Cookie format and
+don't specify a domain, then the cookie is sent for any domain (even after redirects are followed) and cannot be modified by a server-set cookie. If the cookie
+engine is enabled and a server sets a cookie of the same name then both will be sent on a future transfer to that server, likely not what you intended. To
+address these issues set a domain in Set-Cookie (doing that will include sub-domains) or use the Netscape format.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--B" class="org-programming-option">-B</span>, <span id="opt---use-ascii" class="org-programming-option">--use-ascii</span></li>
+</ul>
+<p>
+(FTP/LDAP) Enable ASCII transfer. For FTP, this can also be enforced by using an URL that ends with ";type=A". This option causes data sent to stdout to be in
+text mode for win32 systems.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---basic" class="org-programming-option">--basic</span></li>
+</ul>
+<p>
+(HTTP) Tells curl to use HTTP Basic authentication with the remote host. This is the default and this option is usually pointless, unless you use it to override a
+previously set option that sets a different authentication method (such as <a href="#opt---ntlm"><span class="org-programming-option">--ntlm</span></a>, <a href="#opt---digest"><span class="org-programming-option">--digest</span></a>, or --negotiate).
+</p>
+
+<p>
+Used together with <a href="#opt--u"><span class="org-programming-option">-u</span></a>, <a href="#opt---user"><span class="org-programming-option">--user</span></a> and <a href="#opt--x"><span class="org-programming-option">-x</span></a>, <a href="#opt---proxy"><span class="org-programming-option">--proxy</span></a>.
+</p>
+
+<p>
+See also <a href="#opt---proxy-basic"><span class="org-programming-option">--proxy-basic</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt---cookie-jar" class="org-programming-option">--cookie-jar</span> <span class="org-programming-argument"><file name></span></li>
+</ul>
+<p>
+(HTTP) Specify to which file you want curl to write all cookies after a completed operation. Curl writes all cookies previously read from a specified file as well
+as all cookies received from remote server(s). If no cookies are known, no data will be written. The file will be written using the Netscape cookie file format.
+If you set the file name to a single dash, "-", the cookies will be written to stdout.
+</p>
+
+<p>
+This command line option will activate the cookie engine that makes curl record and use cookies. Another way to activate it is to use the <a href="#opt--b"><span class="org-programming-option">-b</span></a>, <a href="#opt---cookie"><span class="org-programming-option">--cookie</span></a> option.
+</p>
+
+<p>
+If the cookie jar can't be created or written to, the whole curl operation won't fail or even report an error clearly. Using <a href="#opt--v"><span class="org-programming-option">-v</span></a> will get a warning displayed, but
+that is the only visible feedback you get about this possibly lethal situation.
+</p>
+
+<p>
+Since 7.43.0 cookies that were imported in the Set-Cookie format without a domain name are not exported by this option.
+</p>
+
+<p>
+If this option is used several times, the last specified file name will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--C" class="org-programming-option">-C</span>, <span id="opt---continue-at" class="org-programming-option">--continue-at</span> <span class="org-programming-argument"><offset></span></li>
+</ul>
+<p>
+Continue/Resume a previous file transfer at the given offset. The given offset is the exact number of bytes that will be skipped, counting from the beginning of
+the source file before it is transferred to the destination. If used with uploads, the FTP server command SIZE will not be used by curl.
+</p>
+
+<p>
+Use "-C -" to tell curl to automatically find out where/how to resume the transfer. It then uses the given output/input files to figure that out.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ciphers" class="org-programming-option">--ciphers</span> <span class="org-programming-argument"><list of ciphers></span></li>
+</ul>
+<p>
+(SSL) Specifies which ciphers to use in the connection. The list of ciphers must specify valid ciphers. Read up on SSL cipher list details on this URL:
+<a href="https://www.openssl.org/docs/apps/ciphers.html">https://www.openssl.org/docs/apps/ciphers.html</a>
+</p>
+
+<p>
+NSS ciphers are done differently than OpenSSL and GnuTLS. The full list of NSS ciphers is in the NSSCipherSuite entry at this URL: <a href="https://git.fedora">https://git.fedora</a>-
+hosted.org/cgit/mod_nss.git/plain/docs/mod_nss.html#Directives
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---compressed" class="org-programming-option">--compressed</span></li>
+</ul>
+<p>
+(HTTP) Request a compressed response using one of the algorithms curl supports, and save the uncompressed document. If this option is used and the server sends
+an unsupported encoding, curl will report an error.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---connect-timeout" class="org-programming-option">--connect-timeout</span> <span class="org-programming-argument"><seconds></span></li>
+</ul>
+<p>
+Maximum time in seconds that you allow curl's connection to take. This only limits the connection phase, so if curl connects within the given period it will con-
+tinue - if not it will exit. Since version 7.32.0, this option accepts decimal values.
+</p>
+
+<p>
+See also the <a href="#opt--m"><span class="org-programming-option">-m</span></a>, <a href="#opt---max-time"><span class="org-programming-option">--max-time</span></a> option.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---create-dirs" class="org-programming-option">--create-dirs</span></li>
+</ul>
+<p>
+When used in conjunction with the <a href="#opt--o"><span class="org-programming-option">-o</span></a> option, curl will create the necessary local directory hierarchy as needed. This option creates the dirs mentioned with the
+</p>
+<ul class="org-ul">
+<li><a href="#opt--o"><span class="org-programming-option">-o</span></a> option, nothing else. If the <a href="#opt--o"><span class="org-programming-option">-o</span></a> file name uses no dir or if the dirs it mentions already exist, no dir will be created.</li>
+</ul>
+
+<p>
+To create remote directories when using FTP or SFTP, try <a href="#opt---ftp-create-dirs"><span class="org-programming-option">--ftp-create-dirs</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---crlf" class="org-programming-option">--crlf</span> Convert LF to CRLF in upload. Useful for MVS (OS/390).</li>
+</ul>
+
+<p>
+(SMTP added in 7.40.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---crlfile" class="org-programming-option">--crlfile</span> <span class="org-programming-argument"><file></span></li>
+</ul>
+<p>
+(HTTPS/FTPS) Provide a file using PEM format with a Certificate Revocation List that may specify peer certificates that are to be considered revoked.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<p>
+(Added in 7.19.7)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--d" class="org-programming-option">-d</span>, <span id="opt---data" class="org-programming-option">--data</span> <span class="org-programming-argument"><data></span></li>
+</ul>
+<p>
+(HTTP) Sends the specified data in a POST request to the HTTP server, in the same way that a browser does when a user has filled in an HTML form and presses the
+submit button. This will cause curl to pass the data to the server using the content-type application/x-www-form-urlencoded. Compare to <a href="#opt--F"><span class="org-programming-option">-F</span></a>, <a href="#opt---form"><span class="org-programming-option">--form</span></a>.
+</p>
+
+<p>
+<a href="#opt--d"><span class="org-programming-option">-d</span></a>, <a href="#opt---data"><span class="org-programming-option">--data</span></a> is the same as <a href="#opt---data-ascii"><span class="org-programming-option">--data-ascii</span></a>. <a href="#opt---data-raw"><span class="org-programming-option">--data-raw</span></a> is almost the same but does not have a special interpretation of the @ character. To post data purely binary,
+you should instead use the <a href="#opt---data-binary"><span class="org-programming-option">--data-binary</span></a> option. To URL-encode the value of a form field you may use <a href="#opt---data-urlencode."><span class="org-programming-option">--data-urlencode.</span></a>
+</p>
+
+<p>
+If any of these options is used more than once on the same command line, the data pieces specified will be merged together with a separating &amp;-symbol. Thus, using
+'-d name=daniel <a href="#opt--d"><span class="org-programming-option">-d</span></a> skill=lousy' would generate a post chunk that looks like 'name=daniel&amp;skill=lousy'.
+</p>
+
+<p>
+If you start the data with the letter @, the rest should be a file name to read the data from, or - if you want curl to read the data from stdin. Multiple files
+can also be specified. Posting data from a file named 'foobar' would thus be done with <a href="#opt---data"><span class="org-programming-option">--data</span></a> @foobar. When <a href="#opt---data"><span class="org-programming-option">--data</span></a> is told to read from a file like that, carriage
+returns and newlines will be stripped out. If you don't want the @ character to have a special interpretation use <a href="#opt---data-raw"><span class="org-programming-option">--data-raw</span></a> instead.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--D" class="org-programming-option">-D</span>, <span id="opt---dump-header" class="org-programming-option">--dump-header</span> <span class="org-programming-argument"><file></span></li>
+</ul>
+<p>
+Write the protocol headers to the specified file.
+</p>
+
+<p>
+This option is handy to use when you want to store the headers that an HTTP site sends to you. Cookies from the headers could then be read in a second curl invo-
+cation by using the <a href="#opt--b"><span class="org-programming-option">-b</span></a>, <a href="#opt---cookie"><span class="org-programming-option">--cookie</span></a> option! The <a href="#opt--c"><span class="org-programming-option">-c</span></a>, <a href="#opt---cookie-jar"><span class="org-programming-option">--cookie-jar</span></a> option is a better way to store cookies.
+</p>
+
+<p>
+When used in FTP, the FTP server response lines are considered being "headers" and thus are saved there.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---data-ascii" class="org-programming-option">--data-ascii</span> <span class="org-programming-argument"><data></span></li>
+</ul>
+<p>
+See <a href="#opt--d"><span class="org-programming-option">-d</span></a>, <a href="#opt---data"><span class="org-programming-option">--data</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---data-binary" class="org-programming-option">--data-binary</span> <span class="org-programming-argument"><data></span></li>
+</ul>
+<p>
+(HTTP) This posts data exactly as specified with no extra processing whatsoever.
+</p>
+
+<p>
+If you start the data with the letter @, the rest should be a filename. Data is posted in a similar manner as <a href="#opt---data-ascii"><span class="org-programming-option">--data-ascii</span></a> does, except that newlines and car-
+riage returns are preserved and conversions are never done.
+</p>
+
+<p>
+If this option is used several times, the ones following the first will append data as described in <a href="#opt--d"><span class="org-programming-option">-d</span></a>, <a href="#opt---data"><span class="org-programming-option">--data</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---data-raw" class="org-programming-option">--data-raw</span> <span class="org-programming-argument"><data></span></li>
+</ul>
+<p>
+(HTTP) This posts data similarly to <a href="#opt---data"><span class="org-programming-option">--data</span></a> but without the special interpretation of the @ character. See <a href="#opt--d"><span class="org-programming-option">-d</span></a>, <a href="#opt---data"><span class="org-programming-option">--data</span></a>. (Added in 7.43.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---data-urlencode" class="org-programming-option">--data-urlencode</span> <span class="org-programming-argument"><data></span></li>
+</ul>
+<p>
+(HTTP) This posts data, similar to the other <a href="#opt---data"><span class="org-programming-option">--data</span></a> options with the exception that this performs URL-encoding. (Added in 7.18.0)
+</p>
+
+<p>
+To be CGI-compliant, the &lt;data&gt; part should begin with a name followed by a separator and a content specification. The &lt;data&gt; part can be passed to curl using one
+of the following syntaxes:
+</p>
+
+<p>
+content
+This will make curl URL-encode the content and pass that on. Just be careful so that the content doesn't contain any = or @ symbols, as that will then make
+the syntax match one of the other cases below!
+</p>
+
+<p>
+=content
+This will make curl URL-encode the content and pass that on. The preceding = symbol is not included in the data.
+</p>
+
+<p>
+name=content
+This will make curl URL-encode the content part and pass that on. Note that the name part is expected to be URL-encoded already.
+</p>
+
+<p>
+@filename
+This will make curl load data from the given file (including any newlines), URL-encode that data and pass it on in the POST.
+</p>
+
+<p>
+name@filename
+This will make curl load data from the given file (including any newlines), URL-encode that data and pass it on in the POST. The name part gets an equal
+sign appended, resulting in name=urlencoded-file-content. Note that the name is expected to be URL-encoded already.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---delegation" class="org-programming-option">--delegation</span> <span class="org-programming-argument">LEVEL</span></li>
+</ul>
+<p>
+Set LEVEL to tell the server what it is allowed to delegate when it comes to user credentials. Used with GSS/kerberos.
+</p>
+
+<p>
+none Don't allow any delegation.
+</p>
+
+<p>
+policy Delegates if and only if the OK-AS-DELEGATE flag is set in the Kerberos service ticket, which is a matter of realm policy.
+</p>
+
+<p>
+always Unconditionally allow the server to delegate.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---digest" class="org-programming-option">--digest</span></li>
+</ul>
+<p>
+(HTTP) Enables HTTP Digest authentication. This is an authentication scheme that prevents the password from being sent over the wire in clear text. Use this in
+combination with the normal <a href="#opt--u"><span class="org-programming-option">-u</span></a>, <a href="#opt---user"><span class="org-programming-option">--user</span></a> option to set user name and password. See also <a href="#opt---ntlm"><span class="org-programming-option">--ntlm</span></a>, <a href="#opt---negotiate"><span class="org-programming-option">--negotiate</span></a> and <a href="#opt---anyauth"><span class="org-programming-option">--anyauth</span></a> for related options.
+</p>
+
+<p>
+If this option is used several times, only the first one is used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---disable-eprt" class="org-programming-option">--disable-eprt</span></li>
+</ul>
+<p>
+(FTP) Tell curl to disable the use of the EPRT and LPRT commands when doing active FTP transfers. Curl will normally always first attempt to use EPRT, then LPRT
+before using PORT, but with this option, it will use PORT right away. EPRT and LPRT are extensions to the original FTP protocol, and may not work on all servers,
+but they enable more functionality in a better way than the traditional PORT command.
+</p>
+
+<p>
+<a href="#opt---eprt"><span class="org-programming-option">--eprt</span></a> can be used to explicitly enable EPRT again and <a href="#opt---no-eprt"><span class="org-programming-option">--no-eprt</span></a> is an alias for <a href="#opt---disable-eprt"><span class="org-programming-option">--disable-eprt</span></a>.
+</p>
+
+<p>
+Disabling EPRT only changes the active behavior. If you want to switch to passive mode you need to not use <a href="#opt--P"><span class="org-programming-option">-P</span></a>, <a href="#opt---ftp-port"><span class="org-programming-option">--ftp-port</span></a> or force it with <a href="#opt---ftp-pasv"><span class="org-programming-option">--ftp-pasv</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---disable-epsv" class="org-programming-option">--disable-epsv</span></li>
+</ul>
+<p>
+(FTP) Tell curl to disable the use of the EPSV command when doing passive FTP transfers. Curl will normally always first attempt to use EPSV before PASV, but with
+this option, it will not try using EPSV.
+</p>
+
+<p>
+<a href="#opt---epsv"><span class="org-programming-option">--epsv</span></a> can be used to explicitly enable EPSV again and <a href="#opt---no-epsv"><span class="org-programming-option">--no-epsv</span></a> is an alias for <a href="#opt---disable-epsv"><span class="org-programming-option">--disable-epsv</span></a>.
+</p>
+
+<p>
+Disabling EPSV only changes the passive behavior. If you want to switch to active mode you need to use <a href="#opt--P"><span class="org-programming-option">-P</span></a>, <a href="#opt---ftp-port"><span class="org-programming-option">--ftp-port</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---dns-interface" class="org-programming-option">--dns-interface</span> <span class="org-programming-argument"><interface></span></li>
+</ul>
+<p>
+Tell curl to send outgoing DNS requests through &lt;interface&gt;. This option is a counterpart to <a href="#opt---interface"><span class="org-programming-option">--interface</span></a> (which does not affect DNS). The supplied string must be
+an interface name (not an address).
+</p>
+
+<p>
+This option requires that libcurl was built with a resolver backend that supports this operation. The c-ares backend is the only such one. (Added in 7.33.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---dns-ipv4-addr" class="org-programming-option">--dns-ipv4-addr</span> <span class="org-programming-argument"><ip-address></span></li>
+</ul>
+<p>
+Tell curl to bind to &lt;ip-address&gt; when making IPv4 DNS requests, so that the DNS requests originate from this address. The argument should be a single IPv4
+address.
+</p>
+
+<p>
+This option requires that libcurl was built with a resolver backend that supports this operation. The c-ares backend is the only such one. (Added in 7.33.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---dns-ipv6-addr" class="org-programming-option">--dns-ipv6-addr</span> <span class="org-programming-argument"><ip-address></span></li>
+</ul>
+<p>
+Tell curl to bind to &lt;ip-address&gt; when making IPv6 DNS requests, so that the DNS requests originate from this address. The argument should be a single IPv6
+address.
+</p>
+
+<p>
+This option requires that libcurl was built with a resolver backend that supports this operation. The c-ares backend is the only such one. (Added in 7.33.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---dns-servers" class="org-programming-option">--dns-servers</span> &lt;<span class="org-programming-argument">ip-address</span>,<span class="org-programming-argument">ip-address</span>&gt;</li>
+</ul>
+<p>
+Set the list of DNS servers to be used instead of the system default. The list of IP addresses should be separated with commas. Port numbers may also optionally
+be given as :&lt;port-number&gt; after each IP address.
+</p>
+
+<p>
+This option requires that libcurl was built with a resolver backend that supports this operation. The c-ares backend is the only such one. (Added in 7.33.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--e" class="org-programming-option">-e</span>, <span id="opt---referer" class="org-programming-option">--referer</span> <span class="org-programming-argument"><URL></span></li>
+</ul>
+<p>
+(HTTP) Sends the "Referrer Page" information to the HTTP server. This can also be set with the <a href="#opt--H"><span class="org-programming-option">-H</span></a>, <a href="#opt---header"><span class="org-programming-option">--header</span></a> flag of course. When used with <a href="#opt--L"><span class="org-programming-option">-L</span></a>, <a href="#opt---location"><span class="org-programming-option">--location</span></a> you can
+append ";auto" to the <a href="#opt---referer"><span class="org-programming-option">--referer</span></a> URL to make curl automatically set the previous URL when it follows a Location: header. The ";auto" string can be used alone, even
+if you don't set an initial <a href="#opt---referer"><span class="org-programming-option">--referer</span></a>.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--E" class="org-programming-option">-E</span>, <span id="opt---cert" class="org-programming-option">--cert</span> &lt;<span class="org-programming-argument">certificate</span>[:<span class="org-programming-argument">password</span>]&gt;</li>
+</ul>
+<p>
+(SSL) Tells curl to use the specified client certificate file when getting a file with HTTPS, FTPS or another SSL-based protocol. The certificate must be in
+PKCS#12 format if using Secure Transport, or PEM format if using any other engine. If the optional password isn't specified, it will be queried for on the termi-
+nal. Note that this option assumes a "certificate" file that is the private key and the client certificate concatenated! See <span id="opt---cert" class="org-programming-option">--cert</span> and <span id="opt---key" class="org-programming-option">--key</span> to specify them
+independently.
+</p>
+
+<p>
+If curl is built against the NSS SSL library then this option can tell curl the nickname of the certificate to use within the NSS database defined by the environ-
+ment variable SSL_DIR (or by default <i>etc/pki/nssdb). If the NSS PEM PKCS#11 module (libnsspem.so) is available then PEM files may be loaded. If you want to use a
+file from the current directory, please precede it with ".</i>" prefix, in order to avoid confusion with a nickname. If the nickname contains ":", it needs to be
+preceded by "\\" so that it is not recognized as password delimiter. If the nickname contains "\\", it needs to be escaped as "\\\\" so that it is not recognized as
+an escape character.
+</p>
+
+<p>
+(iOS and Mac OS X only) If curl is built against Secure Transport, then the certificate string can either be the name of a certificate/private key in the system
+or user keychain, or the path to a PKCS#12-encoded certificate and private key. If you want to use a file from the current directory, please precede it with "./"
+prefix, in order to avoid confusion with a nickname.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---engine" class="org-programming-option">--engine</span> <span class="org-programming-argument"><name></span></li>
+</ul>
+<p>
+Select the OpenSSL crypto engine to use for cipher operations. Use <a href="#opt---engine"><span class="org-programming-option">--engine</span></a> list to print a list of build-time supported engines. Note that not all (or none) of
+the engines may be available at run-time.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---environment" class="org-programming-option">--environment</span></li>
+</ul>
+<p>
+(RISC OS ONLY) Sets a range of environment variables, using the names the <a href="#opt--w"><span class="org-programming-option">-w</span></a> option supports, to allow easier extraction of useful information after having run
+curl.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---egd-file" class="org-programming-option">--egd-file</span> <span class="org-programming-argument"><file></span></li>
+</ul>
+<p>
+(SSL) Specify the path name to the Entropy Gathering Daemon socket. The socket is used to seed the random engine for SSL connections. See also the <a href="#opt---random-file"><span class="org-programming-option">--random-file</span></a>
+option.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---expect100-timeout" class="org-programming-option">--expect100-timeout</span> <span class="org-programming-argument"><seconds></span></li>
+</ul>
+<p>
+(HTTP) Maximum time in seconds that you allow curl to wait for a 100-continue response when curl emits an Expects: 100-continue header in its request. By default
+curl will wait one second. This option accepts decimal values! When curl stops waiting, it will continue as if the response has been received.
+</p>
+
+<p>
+(Added in 7.47.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---cert-type" class="org-programming-option">--cert-type</span> <span class="org-programming-argument"><type></span></li>
+</ul>
+<p>
+(SSL) Tells curl what certificate type the provided certificate is in. PEM, DER and ENG are recognized types. If not specified, PEM is assumed.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---cacert" class="org-programming-option">--cacert</span> <span class="org-programming-argument"><CA certificate></span></li>
+</ul>
+<p>
+(SSL) Tells curl to use the specified certificate file to verify the peer. The file may contain multiple CA certificates. The certificate(s) must be in PEM for-
+mat. Normally curl is built to use a default file for this, so this option is typically used to alter that default file.
+</p>
+
+<p>
+curl recognizes the environment variable named 'CURL_CA_BUNDLE' if it is set, and uses the given path as a path to a CA cert bundle. This option overrides that
+variable.
+</p>
+
+<p>
+The windows version of curl will automatically look for a CA certs file named 'curl-ca-bundle.crt', either in the same directory as curl.exe, or in the Current
+Working Directory, or in any folder along your PATH.
+</p>
+
+<p>
+If curl is built against the NSS SSL library, the NSS PEM PKCS#11 module (libnsspem.so) needs to be available for this option to work properly.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---capath" class="org-programming-option">--capath</span> <span class="org-programming-argument"><CA certificate directory></span></li>
+</ul>
+<p>
+(SSL) Tells curl to use the specified certificate directory to verify the peer. Multiple paths can be provided by separating them with ":" (e.g.
+"path1:path2:path3"). The certificates must be in PEM format, and if curl is built against OpenSSL, the directory must have been processed using the c_rehash
+utility supplied with OpenSSL. Using <a href="#opt---capath"><span class="org-programming-option">--capath</span></a> can allow OpenSSL-powered curl to make SSL-connections much more efficiently than using <a href="#opt---cacert"><span class="org-programming-option">--cacert</span></a> if the <a href="#opt---cacert"><span class="org-programming-option">--cacert</span></a>
+file contains many CA certificates.
+</p>
+
+<p>
+If this option is set, the default capath value will be ignored, and if it is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---pinnedpubkey" class="org-programming-option">--pinnedpubkey</span> <span class="org-programming-argument"><pinned public key (hashes)></span></li>
+</ul>
+<p>
+(SSL) Tells curl to use the specified public key file (or hashes) to verify the peer. This can be a path to a file which contains a single public key in PEM or
+DER format, or any number of base64 encoded sha256 hashes preceded by 'sha256//' and separated by ';'
+</p>
+
+<p>
+When negotiating a TLS or SSL connection, the server sends a certificate indicating its identity. A public key is extracted from this certificate and if it does
+not exactly match the public key provided to this option, curl will abort the connection before sending or receiving any data.
+</p>
+
+<p>
+Added in 7.39.0 for OpenSSL, GnuTLS and GSKit. Added in 7.43.0 for NSS and wolfSSL/CyaSSL. sha256 support added in 7.44.0 for OpenSSL, GnuTLS, NSS and wolf-
+SSL/CyaSSL. Other SSL backends not supported.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---cert-status" class="org-programming-option">--cert-status</span></li>
+</ul>
+<p>
+(SSL) Tells curl to verify the status of the server certificate by using the Certificate Status Request (aka. OCSP stapling) TLS extension.
+</p>
+
+<p>
+If this option is enabled and the server sends an invalid (e.g. expired) response, if the response suggests that the server certificate has been revoked, or no
+response at all is received, the verification fails.
+</p>
+
+<p>
+This is currently only implemented in the OpenSSL, GnuTLS and NSS backends. (Added in 7.41.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---false-start" class="org-programming-option">--false-start</span></li>
+</ul>
+
+<p>
+(SSL) Tells curl to use false start during the TLS handshake. False start is a mode where a TLS client will start sending application data before verifying the
+server's Finished message, thus saving a round trip when performing a full handshake.
+</p>
+
+<p>
+This is currently only implemented in the NSS and Secure Transport (on iOS 7.0 or later, or OS X 10.9 or later) backends. (Added in 7.42.0)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--f" class="org-programming-option">-f</span>, <span id="opt---fail" class="org-programming-option">--fail</span></li>
+</ul>
+<p>
+(HTTP) Fail silently (no output at all) on server errors. This is mostly done to better enable scripts etc to better deal with failed attempts. In normal cases
+when an HTTP server fails to deliver a document, it returns an HTML document stating so (which often also describes why and more). This flag will prevent curl
+from outputting that and return error 22.
+</p>
+
+<p>
+This method is not fail-safe and there are occasions where non-successful response codes will slip through, especially when authentication is involved (response
+codes 401 and 407).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--F" class="org-programming-option">-F</span>, <span id="opt---form" class="org-programming-option">--form</span> &lt;<span class="org-programming-argument">name</span>=<span class="org-programming-argument">content</span>&gt;</li>
+</ul>
+<p>
+(HTTP) This lets curl emulate a filled-in form in which a user has pressed the submit button. This causes curl to POST data using the Content-Type multipart/form-
+data according to RFC 2388. This enables uploading of binary files etc. To force the 'content' part to be a file, prefix the file name with an @ sign. To just get
+the content part from a file, prefix the file name with the symbol &lt;. The difference between @ and &lt; is then that @ makes a file get attached in the post as a
+file upload, while the &lt; makes a text field and just get the contents for that text field from a file.
+</p>
+
+<p>
+Example, to send your password file to the server, where 'password' is the name of the form-field to which /etc/passwd will be the input:
+</p>
+
+<p>
+curl <span id="opt--F" class="org-programming-option">-F</span> password=@/etc/passwd www.mypasswords.com
+</p>
+
+<p>
+To read content from stdin instead of a file, use - as the filename. This goes for both @ and &lt; constructs. Unfortunately it does not support reading the file
+from a named pipe or similar, as it needs the full size before the transfer starts.
+</p>
+
+<p>
+You can also tell curl what Content-Type to use by using 'type=', in a manner similar to:
+</p>
+
+<p>
+curl <a href="#opt--F"><span class="org-programming-option">-F</span></a> "web=@index.html;type=text/html" url.com
+</p>
+
+<p>
+or
+</p>
+
+<p>
+curl <a href="#opt--F"><span class="org-programming-option">-F</span></a> "name=daniel;type=text/foo" url.com
+</p>
+
+<p>
+You can also explicitly change the name field of a file upload part by setting filename=, like this:
+</p>
+
+<p>
+curl <a href="#opt--F"><span class="org-programming-option">-F</span></a> "file=@localfile;filename=nameinpost" url.com
+</p>
+
+<p>
+If filename/path contains ',' or ';', it must be quoted by double-quotes like:
+</p>
+
+<p>
+curl <a href="#opt--F"><span class="org-programming-option">-F</span></a> "file=@\\"localfile\\";filename=\\"nameinpost\\"" url.com
+</p>
+
+<p>
+or
+</p>
+
+<p>
+curl <a href="#opt--F"><span class="org-programming-option">-F</span></a> 'file=@"localfile";filename="nameinpost"' url.com
+</p>
+
+<p>
+Note that if a filename/path is quoted by double-quotes, any double-quote or backslash within the filename must be escaped by backslash.
+</p>
+
+<p>
+See further examples and details in the MANUAL.
+</p>
+
+<p>
+This option can be used multiple times.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-account" class="org-programming-option">--ftp-account</span> <span class="org-programming-argument">[data]</span></li>
+</ul>
+<p>
+(FTP) When an FTP server asks for "account data" after user name and password has been provided, this data is sent off using the ACCT command. (Added in 7.13.0)
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-alternative-to-user" class="org-programming-option">--ftp-alternative-to-user</span> <span class="org-programming-argument"><command></span></li>
+</ul>
+<p>
+(FTP) If authenticating with the USER and PASS commands fails, send this command. When connecting to Tumbleweed's Secure Transport server over FTPS using a
+client certificate, using "SITE AUTH" will tell the server to retrieve the username from the certificate. (Added in 7.15.5)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-create-dirs" class="org-programming-option">--ftp-create-dirs</span></li>
+</ul>
+<p>
+(FTP/SFTP) When an FTP or SFTP URL/operation uses a path that doesn't currently exist on the server, the standard behavior of curl is to fail. Using this option,
+curl will instead attempt to create missing directories.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-method" class="org-programming-option">--ftp-method</span> <span class="org-programming-argument">[method]</span></li>
+</ul>
+<p>
+(FTP) Control what method curl should use to reach a file on an FTP(S) server. The method argument should be one of the following alternatives:
+</p>
+
+<p>
+multicwd
+curl does a single CWD operation for each path part in the given URL. For deep hierarchies this means very many commands. This is how RFC 1738 says it
+should be done. This is the default but the slowest behavior.
+</p>
+
+<p>
+nocwd curl does no CWD at all. curl will do SIZE, RETR, STOR etc and give a full path to the server for all these commands. This is the fastest behavior.
+</p>
+
+<p>
+singlecwd
+curl does one CWD with the full target directory and then operates on the file "normally" (like in the multicwd case). This is somewhat more standards com-
+pliant than 'nocwd' but without the full penalty of 'multicwd'.
+</p>
+
+<p>
+(Added in 7.15.1)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-pasv" class="org-programming-option">--ftp-pasv</span></li>
+</ul>
+<p>
+(FTP) Use passive mode for the data connection. Passive is the internal default behavior, but using this option can be used to override a previous -P/-ftp-port
+option. (Added in 7.11.0)
+</p>
+
+<p>
+If this option is used several times, only the first one is used. Undoing an enforced passive really isn't doable but you must then instead enforce the correct
+<a href="#opt--P"><span class="org-programming-option">-P</span></a>, <a href="#opt---ftp-port"><span class="org-programming-option">--ftp-port</span></a> again.
+</p>
+
+<p>
+Passive mode means that curl will try the EPSV command first and then PASV, unless <a href="#opt---disable-epsv"><span class="org-programming-option">--disable-epsv</span></a> is used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-skip-pasv-ip" class="org-programming-option">--ftp-skip-pasv-ip</span></li>
+</ul>
+<p>
+(FTP) Tell curl to not use the IP address the server suggests in its response to curl's PASV command when curl connects the data connection. Instead curl will re-
+use the same IP address it already uses for the control connection. (Added in 7.14.2)
+</p>
+
+<p>
+This option has no effect if PORT, EPRT or EPSV is used instead of PASV.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-pret" class="org-programming-option">--ftp-pret</span></li>
+</ul>
+<p>
+(FTP) Tell curl to send a PRET command before PASV (and EPSV). Certain FTP servers, mainly drftpd, require this non-standard command for directory listings as
+well as up and downloads in PASV mode. (Added in 7.20.x)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-ssl-ccc" class="org-programming-option">--ftp-ssl-ccc</span></li>
+</ul>
+<p>
+(FTP) Use CCC (Clear Command Channel) Shuts down the SSL/TLS layer after authenticating. The rest of the control channel communication will be unencrypted. This
+allows NAT routers to follow the FTP transaction. The default mode is passive. See <a href="#opt---ftp-ssl-ccc-mode"><span class="org-programming-option">--ftp-ssl-ccc-mode</span></a> for other modes. (Added in 7.16.1)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-ssl-ccc-mode" class="org-programming-option">--ftp-ssl-ccc-mode</span> [<span class="org-programming-argument">active</span>/<span class="org-programming-argument">passive</span>]</li>
+</ul>
+<p>
+(FTP) Use CCC (Clear Command Channel) Sets the CCC mode. The passive mode will not initiate the shutdown, but instead wait for the server to do it, and will not
+reply to the shutdown from the server. The active mode initiates the shutdown and waits for a reply from the server. (Added in 7.16.2)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ftp-ssl-control" class="org-programming-option">--ftp-ssl-control</span></li>
+</ul>
+<p>
+(FTP) Require SSL/TLS for the FTP login, clear for transfer. Allows secure authentication, but non-encrypted data transfers for efficiency. Fails the transfer
+if the server doesn't support SSL/TLS. (Added in 7.16.0) that can still be used but will be removed in a future version.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---form-string" class="org-programming-option">--form-string</span> &lt;<span class="org-programming-argument">name</span>=<span class="org-programming-argument">string</span>&gt;</li>
+</ul>
+<p>
+(HTTP) Similar to <a href="#opt---form"><span class="org-programming-option">--form</span></a> except that the value string for the named parameter is used literally. Leading '@' and '&lt;' characters, and the ';type=' string in the
+value have no special meaning. Use this in preference to <a href="#opt---form"><span class="org-programming-option">--form</span></a> if there's any possibility that the string value may accidentally trigger the '@' or '&lt;' features
+of <span id="opt---form." class="org-programming-option">--form.</span>
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--g" class="org-programming-option">-g</span>, <span id="opt---globoff" class="org-programming-option">--globoff</span></li>
+</ul>
+<p>
+This option switches off the "URL globbing parser". When you set this option, you can specify URLs that contain the letters {}[] without having them being inter-
+preted by curl itself. Note that these letters are not normal legal URL contents but they should be encoded according to the URI standard.
+</p>
+
+<p>
+This option controls transfers and thus will not affect slow connects etc. If this is a concern for you, try the <a href="#opt---connect-timeout"><span class="org-programming-option">--connect-timeout</span></a> option.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--Y" class="org-programming-option">-Y</span>, <span id="opt---speed-limit" class="org-programming-option">--speed-limit</span> <span class="org-programming-argument"><speed></span></li>
+</ul>
+<p>
+If a download is slower than this given speed (in bytes per second) for speed-time seconds it gets aborted. speed-time is set with <a href="#opt--y"><span class="org-programming-option">-y</span></a> and is 30 if not set.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--z" class="org-programming-option">-z</span>, <span id="opt---time-cond" class="org-programming-option">--time-cond</span> <span class="org-programming-argument"><date expression></span>|<span class="org-programming-argument"><file></span></li>
+</ul>
+<p>
+(HTTP/FTP) Request a file that has been modified later than the given time and date, or one that has been modified before that time. The &lt;date expression&gt; can be
+all sorts of date strings or if it doesn't match any internal ones, it is taken as a filename and tries to get the modification date (mtime) from &lt;file&gt; instead.
+See the curl_getdate(3) man pages for date expression details.
+</p>
+
+<p>
+Start the date expression with a dash (-) to make it request for a document that is older than the given date/time, default is a document that is newer than the
+specified date/time.
+</p>
+
+<p>
+If this option is used several times, the last one will be used.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--h" class="org-programming-option">-h</span>, <span id="opt---help" class="org-programming-option">--help</span></li>
+</ul>
+<p>
+Usage help. This lists all current command line options with a short description.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--M" class="org-programming-option">-M</span>, <span id="opt---manual" class="org-programming-option">--manual</span></li>
+</ul>
+<p>
+Manual. Display the huge help text.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--V" class="org-programming-option">-V</span>, <span id="opt---version" class="org-programming-option">--version</span></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2b4f20c" class="outline-2">
+<h2 id="references"><a id="org2b4f20c"></a>Referencias</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="https://curl.haxx.se/">Página de inicio oficial</a></li>
+<li><a href="https://github.com/curl/curl">Código fuente</a></li>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-03 Sat 02:43</p>
+<p class="date">Created: 2018-03-04 Sun 11:49</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

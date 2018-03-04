@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2018-03-03 Sat 02:44 -->
+<!-- 2018-03-04 Sun 11:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git</title>
@@ -275,12 +275,12 @@ for the JavaScript code in this tag.
 <li><a href="#prerequisites">Requisitos previos</a></li>
 <li><a href="#install">Instalar</a>
 <ul>
-<li><a href="#org959df58">Ubuntu</a></li>
-<li><a href="#org49d0603">CentOS</a></li>
-<li><a href="#org3cc8e65">Fedora</a></li>
-<li><a href="#orga9e048a">Arch Linux</a></li>
-<li><a href="#orgd7ee73d">Gentoo</a></li>
-<li><a href="#orgf4070e5">macOS</a></li>
+<li><a href="#orgd5c5d70">Ubuntu</a></li>
+<li><a href="#org06b9ad8">CentOS</a></li>
+<li><a href="#org8a4cad3">Fedora</a></li>
+<li><a href="#orgef4e534">Arch Linux</a></li>
+<li><a href="#org8d35cb8">Gentoo</a></li>
+<li><a href="#org3e2b270">macOS</a></li>
 </ul>
 </li>
 <li><a href="#packages">Paquetes instalados</a></li>
@@ -293,27 +293,27 @@ for the JavaScript code in this tag.
 <li><a href="#options">Opciones</a></li>
 <li><a href="#commands">Comandos</a>
 <ul>
-<li><a href="#org5375e95">clone</a></li>
-<li><a href="#org160f8df">init</a></li>
-<li><a href="#orgd29bae6">add</a></li>
-<li><a href="#orga8eacf0">mv</a></li>
-<li><a href="#org6be18f5">reset</a></li>
-<li><a href="#orgac4ab33">rm</a></li>
-<li><a href="#org1e07882">bisect</a></li>
-<li><a href="#org71b597e">grep</a></li>
-<li><a href="#org39b7c16">log</a></li>
-<li><a href="#org37229e4">show</a></li>
-<li><a href="#org6e0b644">status</a></li>
-<li><a href="#orgc67f2a3">branch</a></li>
-<li><a href="#org4e1268b">checkout</a></li>
-<li><a href="#orga40e878">commit</a></li>
-<li><a href="#orga5ff6fe">diff</a></li>
-<li><a href="#orgc77709c">merge</a></li>
-<li><a href="#org004fd7e">rebase</a></li>
-<li><a href="#orgb09ea5a">tag</a></li>
-<li><a href="#orgdb5da1d">fetch</a></li>
-<li><a href="#org51e56cb">pull</a></li>
-<li><a href="#org486a907">push</a></li>
+<li><a href="#org83cbea1">clone</a></li>
+<li><a href="#orgb3522a4">init</a></li>
+<li><a href="#orga796542">add</a></li>
+<li><a href="#orgf9aaf06">mv</a></li>
+<li><a href="#orgddfe37d">reset</a></li>
+<li><a href="#orge751191">rm</a></li>
+<li><a href="#org4abf8d0">bisect</a></li>
+<li><a href="#org666f7ab">grep</a></li>
+<li><a href="#org093a1e7">log</a></li>
+<li><a href="#org7287dd3">show</a></li>
+<li><a href="#org85ed54e">status</a></li>
+<li><a href="#orgc6f09de">branch</a></li>
+<li><a href="#org1670337">checkout</a></li>
+<li><a href="#org1727128">commit</a></li>
+<li><a href="#org04e9c10">diff</a></li>
+<li><a href="#org9b4e51a">merge</a></li>
+<li><a href="#org70e65cc">rebase</a></li>
+<li><a href="#org85ea5a9">tag</a></li>
+<li><a href="#org5972b60">fetch</a></li>
+<li><a href="#orgfb90275">pull</a></li>
+<li><a href="#org974e8e1">push</a></li>
 </ul>
 </li>
 </ul>
@@ -330,16 +330,16 @@ for the JavaScript code in this tag.
 <img class="org-img main" src="http://linux-command.org/dist/assets/images/git/main.jpg" alt="main" align="right">
 </p>
 
-<div id="outline-container-org4d48410" class="outline-2">
-<h2 id="overview"><a id="org4d48410"></a>Visión de conjunto</h2>
+<div id="outline-container-orge8f4f15" class="outline-2">
+<h2 id="overview"><a id="orge8f4f15"></a>Visión de conjunto</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 The stupid content tracker
 </p>
 </div>
 
-<div id="outline-container-org6ad4f0f" class="outline-3">
-<h3 id="introduction"><a id="org6ad4f0f"></a>Introducción</h3>
+<div id="outline-container-orgf9d9848" class="outline-3">
+<h3 id="introduction"><a id="orgf9d9848"></a>Introducción</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
@@ -360,8 +360,8 @@ A formatted and hyperlinked copy of the latest Git documentation can be viewed a
 </div>
 </div>
 
-<div id="outline-container-orgc8d74d1" class="outline-3">
-<h3 id="releases"><a id="orgc8d74d1"></a>Lanzamientos</h3>
+<div id="outline-container-orgf1a5d50" class="outline-3">
+<h3 id="releases"><a id="orgf1a5d50"></a>Lanzamientos</h3>
 <div class="outline-text-3" id="text-releases">
 <p>
 Actualmente la última versión es <span class="org-programming-version">2.16.2</span>.
@@ -589,13 +589,13 @@ Actualmente la última versión es <span class="org-programming-version">2.16.2<
 </div>
 </div>
 
-<div id="outline-container-org3b4f57e" class="outline-2">
-<h2 id="how-to-install"><a id="org3b4f57e"></a>Cómo instalar</h2>
+<div id="outline-container-orgca15705" class="outline-2">
+<h2 id="how-to-install"><a id="orgca15705"></a>Cómo instalar</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org3aca40c" class="outline-3">
-<h3 id="prerequisites"><a id="org3aca40c"></a>Requisitos previos</h3>
+<div id="outline-container-org5a0919c" class="outline-3">
+<h3 id="prerequisites"><a id="org5a0919c"></a>Requisitos previos</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./apt-add-repository.html">apt-add-repository</a></li>
@@ -604,16 +604,16 @@ Actualmente la última versión es <span class="org-programming-version">2.16.2<
 </div>
 </div>
 
-<div id="outline-container-orgacf4925" class="outline-3">
-<h3 id="install"><a id="orgacf4925"></a>Instalar</h3>
+<div id="outline-container-orgbad5877" class="outline-3">
+<h3 id="install"><a id="orgbad5877"></a>Instalar</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-org959df58" class="outline-4">
-<h4 id="org959df58">Ubuntu</h4>
-<div class="outline-text-4" id="text-org959df58">
+<div id="outline-container-orgd5c5d70" class="outline-4">
+<h4 id="orgd5c5d70">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgd5c5d70">
 <div class="org-src-container">
-<pre class="src src-sh" id="orga103b7e">$ sudo apt-add-repository ppa:git-core/ppa
+<pre class="src src-sh" id="org74aa2b6">$ sudo apt-add-repository ppa:git-core/ppa
 $ sudo apt-get update
 $ sudo apt-get install git
 </pre>
@@ -621,51 +621,51 @@ $ sudo apt-get install git
 </div>
 </div>
 
-<div id="outline-container-org49d0603" class="outline-4">
-<h4 id="org49d0603">CentOS</h4>
-<div class="outline-text-4" id="text-org49d0603">
+<div id="outline-container-org06b9ad8" class="outline-4">
+<h4 id="org06b9ad8">CentOS</h4>
+<div class="outline-text-4" id="text-org06b9ad8">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb762deb">$ sudo yum install git
+<pre class="src src-sh" id="orgadbbcc0">$ sudo yum install git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3cc8e65" class="outline-4">
-<h4 id="org3cc8e65">Fedora</h4>
-<div class="outline-text-4" id="text-org3cc8e65">
+<div id="outline-container-org8a4cad3" class="outline-4">
+<h4 id="org8a4cad3">Fedora</h4>
+<div class="outline-text-4" id="text-org8a4cad3">
 <div class="org-src-container">
-<pre class="src src-sh" id="org3df1f37">$ sudo yum install git-core
+<pre class="src src-sh" id="org8267c7c">$ sudo yum install git-core
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga9e048a" class="outline-4">
-<h4 id="orga9e048a">Arch Linux</h4>
-<div class="outline-text-4" id="text-orga9e048a">
+<div id="outline-container-orgef4e534" class="outline-4">
+<h4 id="orgef4e534">Arch Linux</h4>
+<div class="outline-text-4" id="text-orgef4e534">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgb431c59">$ sudo pacman -Sy git
+<pre class="src src-sh" id="orgd0aa98c">$ sudo pacman -Sy git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd7ee73d" class="outline-4">
-<h4 id="orgd7ee73d">Gentoo</h4>
-<div class="outline-text-4" id="text-orgd7ee73d">
+<div id="outline-container-org8d35cb8" class="outline-4">
+<h4 id="org8d35cb8">Gentoo</h4>
+<div class="outline-text-4" id="text-org8d35cb8">
 <div class="org-src-container">
-<pre class="src src-sh" id="org281c568">$ sudo emerge --ask --verbose dev-vcs/git
+<pre class="src src-sh" id="org64a09c6">$ sudo emerge --ask --verbose dev-vcs/git
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf4070e5" class="outline-4">
-<h4 id="orgf4070e5">macOS</h4>
-<div class="outline-text-4" id="text-orgf4070e5">
+<div id="outline-container-org3e2b270" class="outline-4">
+<h4 id="org3e2b270">macOS</h4>
+<div class="outline-text-4" id="text-org3e2b270">
 <div class="org-src-container">
-<pre class="src src-sh" id="orgddfacd4">$ brew install git
+<pre class="src src-sh" id="org6aeee17">$ brew install git
 </pre>
 </div>
 </div>
@@ -673,14 +673,14 @@ $ sudo apt-get install git
 </div>
 
 
-<div id="outline-container-orgf06585b" class="outline-3">
-<h3 id="packages"><a id="orgf06585b"></a>Paquetes instalados</h3>
+<div id="outline-container-orga542c79" class="outline-3">
+<h3 id="packages"><a id="orga542c79"></a>Paquetes instalados</h3>
 <div class="outline-text-3" id="text-packages">
 </div>
 </div>
 
-<div id="outline-container-org978f8a1" class="outline-3">
-<h3 id="check"><a id="org978f8a1"></a>Comprobar</h3>
+<div id="outline-container-orga33775f" class="outline-3">
+<h3 id="check"><a id="orga33775f"></a>Comprobar</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ git --version
@@ -691,13 +691,13 @@ git version 2.16.2
 </div>
 </div>
 
-<div id="outline-container-orgdafc52e" class="outline-2">
-<h2 id="usage"><a id="orgdafc52e"></a>Uso</h2>
+<div id="outline-container-org3702229" class="outline-2">
+<h2 id="usage"><a id="org3702229"></a>Uso</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org1cc6035" class="outline-3">
-<h3 id="syntax"><a id="org1cc6035"></a>Sintaxis</h3>
+<div id="outline-container-org12dce00" class="outline-3">
+<h3 id="syntax"><a id="org12dce00"></a>Sintaxis</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
@@ -711,8 +711,8 @@ git version 2.16.2
 </div>
 </div>
 
-<div id="outline-container-org521d3ab" class="outline-3">
-<h3 id="options"><a id="org521d3ab"></a>Opciones</h3>
+<div id="outline-container-orge1fd3ef" class="outline-3">
+<h3 id="options"><a id="orge1fd3ef"></a>Opciones</h3>
 <div class="outline-text-3" id="text-options">
 <p>
 Esto se actualiza para la versión <span class="org-programming-version">2.16.2</span>.
@@ -798,194 +798,194 @@ Do not perform optional operations that require locks. This is equivalent to set
 </div>
 </div>
 
-<div id="outline-container-org1f7c464" class="outline-3">
-<h3 id="commands"><a id="org1f7c464"></a>Comandos</h3>
+<div id="outline-container-orge9d6fc5" class="outline-3">
+<h3 id="commands"><a id="orge9d6fc5"></a>Comandos</h3>
 <div class="outline-text-3" id="text-commands">
 </div>
 
-<div id="outline-container-org5375e95" class="outline-4">
-<h4 id="org5375e95">clone</h4>
-<div class="outline-text-4" id="text-org5375e95">
+<div id="outline-container-org83cbea1" class="outline-4">
+<h4 id="org83cbea1">clone</h4>
+<div class="outline-text-4" id="text-org83cbea1">
 <p>
 Clone a repository into a new directory
 </p>
 </div>
 </div>
 
-<div id="outline-container-org160f8df" class="outline-4">
-<h4 id="org160f8df">init</h4>
-<div class="outline-text-4" id="text-org160f8df">
+<div id="outline-container-orgb3522a4" class="outline-4">
+<h4 id="orgb3522a4">init</h4>
+<div class="outline-text-4" id="text-orgb3522a4">
 <p>
 Create an empty Git repository or reinitialize an existing one
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd29bae6" class="outline-4">
-<h4 id="orgd29bae6">add</h4>
-<div class="outline-text-4" id="text-orgd29bae6">
+<div id="outline-container-orga796542" class="outline-4">
+<h4 id="orga796542">add</h4>
+<div class="outline-text-4" id="text-orga796542">
 <p>
 Add file contents to the index
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga8eacf0" class="outline-4">
-<h4 id="orga8eacf0">mv</h4>
-<div class="outline-text-4" id="text-orga8eacf0">
+<div id="outline-container-orgf9aaf06" class="outline-4">
+<h4 id="orgf9aaf06">mv</h4>
+<div class="outline-text-4" id="text-orgf9aaf06">
 <p>
 Move or rename a file, a directory, or a symlink
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6be18f5" class="outline-4">
-<h4 id="org6be18f5">reset</h4>
-<div class="outline-text-4" id="text-org6be18f5">
+<div id="outline-container-orgddfe37d" class="outline-4">
+<h4 id="orgddfe37d">reset</h4>
+<div class="outline-text-4" id="text-orgddfe37d">
 <p>
 Reset current HEAD to the specified state
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgac4ab33" class="outline-4">
-<h4 id="orgac4ab33">rm</h4>
-<div class="outline-text-4" id="text-orgac4ab33">
+<div id="outline-container-orge751191" class="outline-4">
+<h4 id="orge751191">rm</h4>
+<div class="outline-text-4" id="text-orge751191">
 <p>
 Remove files from the working tree and from the index
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1e07882" class="outline-4">
-<h4 id="org1e07882">bisect</h4>
-<div class="outline-text-4" id="text-org1e07882">
+<div id="outline-container-org4abf8d0" class="outline-4">
+<h4 id="org4abf8d0">bisect</h4>
+<div class="outline-text-4" id="text-org4abf8d0">
 <p>
 Use binary search to find the commit that introduced a bug
 </p>
 </div>
 </div>
 
-<div id="outline-container-org71b597e" class="outline-4">
-<h4 id="org71b597e">grep</h4>
-<div class="outline-text-4" id="text-org71b597e">
+<div id="outline-container-org666f7ab" class="outline-4">
+<h4 id="org666f7ab">grep</h4>
+<div class="outline-text-4" id="text-org666f7ab">
 <p>
 Print lines matching a pattern
 </p>
 </div>
 </div>
 
-<div id="outline-container-org39b7c16" class="outline-4">
-<h4 id="org39b7c16">log</h4>
-<div class="outline-text-4" id="text-org39b7c16">
+<div id="outline-container-org093a1e7" class="outline-4">
+<h4 id="org093a1e7">log</h4>
+<div class="outline-text-4" id="text-org093a1e7">
 <p>
 Show commit logs
 </p>
 </div>
 </div>
 
-<div id="outline-container-org37229e4" class="outline-4">
-<h4 id="org37229e4">show</h4>
-<div class="outline-text-4" id="text-org37229e4">
+<div id="outline-container-org7287dd3" class="outline-4">
+<h4 id="org7287dd3">show</h4>
+<div class="outline-text-4" id="text-org7287dd3">
 <p>
 Show various types of objects
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6e0b644" class="outline-4">
-<h4 id="org6e0b644">status</h4>
-<div class="outline-text-4" id="text-org6e0b644">
+<div id="outline-container-org85ed54e" class="outline-4">
+<h4 id="org85ed54e">status</h4>
+<div class="outline-text-4" id="text-org85ed54e">
 <p>
 Show the working tree status
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc67f2a3" class="outline-4">
-<h4 id="orgc67f2a3">branch</h4>
-<div class="outline-text-4" id="text-orgc67f2a3">
+<div id="outline-container-orgc6f09de" class="outline-4">
+<h4 id="orgc6f09de">branch</h4>
+<div class="outline-text-4" id="text-orgc6f09de">
 <p>
 List, create, or delete branches
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4e1268b" class="outline-4">
-<h4 id="org4e1268b">checkout</h4>
-<div class="outline-text-4" id="text-org4e1268b">
+<div id="outline-container-org1670337" class="outline-4">
+<h4 id="org1670337">checkout</h4>
+<div class="outline-text-4" id="text-org1670337">
 <p>
 Switch branches or restore working tree files
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga40e878" class="outline-4">
-<h4 id="orga40e878">commit</h4>
-<div class="outline-text-4" id="text-orga40e878">
+<div id="outline-container-org1727128" class="outline-4">
+<h4 id="org1727128">commit</h4>
+<div class="outline-text-4" id="text-org1727128">
 <p>
 Record changes to the repository
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga5ff6fe" class="outline-4">
-<h4 id="orga5ff6fe">diff</h4>
-<div class="outline-text-4" id="text-orga5ff6fe">
+<div id="outline-container-org04e9c10" class="outline-4">
+<h4 id="org04e9c10">diff</h4>
+<div class="outline-text-4" id="text-org04e9c10">
 <p>
 Show changes between commits, commit and working tree, etc
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc77709c" class="outline-4">
-<h4 id="orgc77709c">merge</h4>
-<div class="outline-text-4" id="text-orgc77709c">
+<div id="outline-container-org9b4e51a" class="outline-4">
+<h4 id="org9b4e51a">merge</h4>
+<div class="outline-text-4" id="text-org9b4e51a">
 <p>
 Join two or more development histories together
 </p>
 </div>
 </div>
 
-<div id="outline-container-org004fd7e" class="outline-4">
-<h4 id="org004fd7e">rebase</h4>
-<div class="outline-text-4" id="text-org004fd7e">
+<div id="outline-container-org70e65cc" class="outline-4">
+<h4 id="org70e65cc">rebase</h4>
+<div class="outline-text-4" id="text-org70e65cc">
 <p>
 Reapply commits on top of another base tip
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgb09ea5a" class="outline-4">
-<h4 id="orgb09ea5a">tag</h4>
-<div class="outline-text-4" id="text-orgb09ea5a">
+<div id="outline-container-org85ea5a9" class="outline-4">
+<h4 id="org85ea5a9">tag</h4>
+<div class="outline-text-4" id="text-org85ea5a9">
 <p>
 Create, list, delete or verify a tag object signed with GPG
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgdb5da1d" class="outline-4">
-<h4 id="orgdb5da1d">fetch</h4>
-<div class="outline-text-4" id="text-orgdb5da1d">
+<div id="outline-container-org5972b60" class="outline-4">
+<h4 id="org5972b60">fetch</h4>
+<div class="outline-text-4" id="text-org5972b60">
 <p>
 Download objects and refs from another repository
 </p>
 </div>
 </div>
 
-<div id="outline-container-org51e56cb" class="outline-4">
-<h4 id="org51e56cb">pull</h4>
-<div class="outline-text-4" id="text-org51e56cb">
+<div id="outline-container-orgfb90275" class="outline-4">
+<h4 id="orgfb90275">pull</h4>
+<div class="outline-text-4" id="text-orgfb90275">
 <p>
 Fetch from and integrate with another repository or a local branch
 </p>
 </div>
 </div>
 
-<div id="outline-container-org486a907" class="outline-4">
-<h4 id="org486a907">push</h4>
-<div class="outline-text-4" id="text-org486a907">
+<div id="outline-container-org974e8e1" class="outline-4">
+<h4 id="org974e8e1">push</h4>
+<div class="outline-text-4" id="text-org974e8e1">
 <p>
 Update remote refs along with associated objects
 </p>
@@ -994,8 +994,8 @@ Update remote refs along with associated objects
 </div>
 </div>
 
-<div id="outline-container-org8c44667" class="outline-2">
-<h2 id="references"><a id="org8c44667"></a>Referencias</h2>
+<div id="outline-container-orgfb8dce3" class="outline-2">
+<h2 id="references"><a id="orgfb8dce3"></a>Referencias</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
@@ -1003,8 +1003,8 @@ Update remote refs along with associated objects
 </div>
 
 
-<div id="outline-container-org813e6b6" class="outline-3">
-<h3 id="references"><a id="org813e6b6"></a>Git web hosting services</h3>
+<div id="outline-container-org9133415" class="outline-3">
+<h3 id="references"><a id="org9133415"></a>Git web hosting services</h3>
 <div class="outline-text-3" id="text-references">
 <ul class="org-ul">
 <li><a href="https://www.assembla.com">Assembla</a></li>
@@ -1023,7 +1023,7 @@ Update remote refs along with associated objects
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-24</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-03 Sat 02:44</p>
+<p class="date">Created: 2018-03-04 Sun 11:50</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
