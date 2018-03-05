@@ -1,0 +1,358 @@
+#+INCLUDE: ./main.setup
+#+TITLE: e2fsprogs
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-03-05
+
+| Version              | {{{ver(1.43.9)}}}      |
+| Release Date         | {{{date(2018-02-08)}}} |
+| License              | GPL                    |
+| Programming Language | C                      |
+
+# * Overview
+#   :PROPERTIES: 
+#   :CUSTOM_ID: overview
+#   :LANG_EN:  Overview
+#   :LANG_ES:  Visión de conjunto
+#   :LANG_KO:  개요
+#   :LANG_ZH:  摘要
+#   :LANG_JA:  概要
+#   :END:      
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+# ** Introduction
+#   :PROPERTIES: 
+#   :CUSTOM_ID: introduction
+#   :LANG_EN:  Introduction
+#   :LANG_ES:  Introducción
+#   :LANG_KO:  소개
+#   :LANG_ZH:  介绍
+#   :LANG_JA:  はじめに
+#   :END:    
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG_EN:  How to Install
+  :LANG_ES:  Cómo instalar
+  :LANG_KO:  설치 방법
+  :LANG_ZH:  如何安装
+  :LANG_JA:  インストール方法
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG_EN:  Install
+  :LANG_ES:  Instalar
+  :LANG_KO:  설치
+  :LANG_ZH:  安装
+  :LANG_JA:  インストール
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install es2fsprogs
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install es2fsprogs
+#+END_SRC
+
+*** from Source code
+
+#+BEGIN_SRC sh
+$ git clone https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
+$ mkdir build
+$ cd build
+$ ../configure
+$ make
+$ make check
+$ sudo make install
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG_EN:  Installed Packages
+   :LANG_ES:  Paquetes instalados
+   :LANG_KO:  설치된 패키지
+   :LANG_ZH:  安装的软件包
+   :LANG_JA:  インストールされたパッケージ
+   :END:      
+
+- {{{link(badblocks)}}}
+#+LANG_EN:  search a device for bad blocks
+- {{{link(blkid)}}}
+#+LANG_EN:  locate/print block device attributes
+- {{{link(chattr)}}}
+#+LANG_EN:  change file attributes on a Linux file system
+- {{{link(debugfs)}}}
+#+LANG_EN:  used to manually view or modify internal structures of the file system
+- {{{link(dumpe2fs)}}}
+#+LANG_EN:  which prints superblock and block group information.
+- {{{link(e2freefrag)}}}
+#+LANG_EN:  report free space fragmentation information
+- {{{link(e2fsck)}}}
+#+LANG_EN:  an fsck program that checks for and corrects inconsistencies
+- {{{link(e2image)}}}
+#+LANG_EN:  save critical ext2/ext3/ext4 filesystem metadata to a file
+- {{{link(e2label)}}}
+#+LANG_EN:  change the label on an ext2/ext3/ext4 filesystem
+- {{{link(e2undo)}}}
+#+LANG_EN:  replay an undo log for an ext2/ext3/ext4 filesystem
+- {{{link(e4defrag)}}}
+#+LANG_EN:  online defragmenter for ext4 filesystem
+- {{{link(filefrag)}}}
+#+LANG_EN:  report on file fragmentation
+- {{{link(findfs)}}}
+#+LANG_EN:  find a filesystem by label or UUID
+- {{{link(findsuper)}}}
+#+LANG_EN:  quick hacked up program to find ext2 superblocks
+- {{{link(logsave)}}}
+#+LANG_EN:  save the output of a command in a logfile
+- {{{link(lsattr)}}}
+#+LANG_EN:  list file attributes on a Linux second extended file system
+- {{{link(mke2fs)}}}
+#+LANG_EN:  used for creating ext2, ext3 and ext4 file systems
+- {{{link(resize2fs)}}}
+#+LANG_EN:  which can expand and shrink ext2, ext3 and ext4 file systems
+- {{{link(tune2fs)}}}
+#+LANG_EN:  used to modify file system parameters
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG_EN:  Check
+   :LANG_ES:  Comprobar
+   :LANG_KO:  확인
+   :LANG_ZH:  检查
+   :LANG_JA:  チェック
+   :END:      
+
+*** badblocks
+
+# {{{see(badblocks)}}}
+
+*** blkid
+
+# {{{see(blkid)}}}
+
+*** chattr
+
+{{{see(chattr#check)}}}
+
+*** debugfs
+
+# {{{see(debugfs)}}}
+
+*** dumpe2fs
+
+# {{{see(dumpe2fs)}}}
+
+*** e2freefrag
+
+# {{{see(e2freefrag)}}}
+
+*** e2fsck
+
+# {{{see(e2fsck)}}}
+
+*** e2image
+
+# {{{see(e2image)}}}
+
+*** e2label
+
+# {{{see(e2label)}}}
+
+*** e2undo
+
+# {{{see(e2undo)}}}
+
+*** e4defrag
+
+# {{{see(e4defrag)}}}
+
+*** filefrag
+
+# {{{see(filefrag)}}}
+
+*** findfs
+
+# {{{see(findfs)}}}
+
+*** findsuper
+
+# {{{see(findsuper)}}}
+
+*** logsave
+
+# {{{see(logsave)}}}
+
+*** lsattr
+
+{{{see(lsattr#check)}}}
+
+*** mke2fs
+
+# {{{see(mke2fs)}}}
+
+*** resize2fs
+
+# {{{see(resize2fs)}}}
+
+*** tune2fs
+
+# {{{see(tune2fs)}}}
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
+
+*** badblocks
+
+# {{{see(badblocks)}}}
+
+*** blkid
+
+# {{{see(blkid)}}}
+
+*** chattr
+
+{{{see(chattr#usage)}}}
+
+*** debugfs
+
+# {{{see(debugfs)}}}
+
+*** dumpe2fs
+
+# {{{see(dumpe2fs)}}}
+
+*** e2freefrag
+
+# {{{see(e2freefrag)}}}
+
+*** e2fsck
+
+# {{{see(e2fsck)}}}
+
+*** e2image
+
+# {{{see(e2image)}}}
+
+*** e2label
+
+# {{{see(e2label)}}}
+
+*** e2undo
+
+# {{{see(e2undo)}}}
+
+*** e4defrag
+
+# {{{see(e4defrag)}}}
+
+*** filefrag
+
+# {{{see(filefrag)}}}
+
+*** findfs
+
+# {{{see(findfs)}}}
+
+*** findsuper
+
+# {{{see(findsuper)}}}
+
+*** logsave
+
+# {{{see(logsave)}}}
+
+*** lsattr
+
+{{{see(lsattr#usage)}}}
+
+*** mke2fs
+
+# {{{see(mke2fs)}}}
+
+*** resize2fs
+
+# {{{see(resize2fs)}}}
+
+*** tune2fs
+
+# {{{see(tune2fs)}}}
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG_EN:  References
+  :LANG_ES:  Referencias
+  :LANG_KO:  참고자료
+  :LANG_ZH:  参考
+  :LANG_JA:  参考
+  :END:      
+
+- {{{official(http://e2fsprogs.sourceforge.net/)}}}
+- {{{source-code(https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git)}}}
