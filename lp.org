@@ -4,15 +4,20 @@
 #+EMAIL: dongsoolee8@gmail.com
 #+DATE: 2018-02-20
 
-# * Overview
-#   :PROPERTIES: 
-#   :CUSTOM_ID: overview
-#   :LANG_EN:  Overview
-#   :LANG_ES:  Visión de conjunto
-#   :LANG_KO:  개요
-#   :LANG_ZH:  摘要
-#   :LANG_JA:  概要
-#   :END:      
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG_EN:  Overview
+  :LANG_ES:  Visión de conjunto
+  :LANG_KO:  개요
+  :LANG_ZH:  摘要
+  :LANG_JA:  概要
+  :END:      
+
+#+BEGIN_LANG en es ja zh
+print files
+#+END_LANG
+#+LANG_KO: 파일을 프린트합니다.
 
 # * How to Install
 #   :PROPERTIES: 
@@ -64,25 +69,33 @@
 #    :LANG_JA:  チェック
 #    :END:      
 
-# * Usage
-#   :PROPERTIES: 
-#   :CUSTOM_ID: usage
-#   :LANG_EN:  Usage
-#   :LANG_ES:  Uso
-#   :LANG_KO:  사용법
-#   :LANG_ZH:  如何使用
-#   :LANG_JA:  命令説明
-#   :END:      
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG_EN:  Usage
+  :LANG_ES:  Uso
+  :LANG_KO:  사용법
+  :LANG_ZH:  如何使用
+  :LANG_JA:  命令説明
+  :END:      
 
-# ** Syntax
-#    :PROPERTIES: 
-#    :CUSTOM_ID: syntax
-#    :LANG_EN:  Syntax
-#    :LANG_ES:  Sintaxis
-#    :LANG_KO:  구조
-#    :LANG_ZH:  结构
-#    :LANG_JA:  構造
-#    :END:      
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG_EN:  Syntax
+   :LANG_ES:  Sintaxis
+   :LANG_KO:  구조
+   :LANG_ZH:  结构
+   :LANG_JA:  構造
+   :END:      
+
+#+BEGIN_SRC sh
+lp [ -E ] [ -U username ] [ -c ] [ -d destination[/instance] ] [ -h hostname[:port] ] [ -m ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -s ]
+   [ -t title ] [ -H handling ] [ -P page-list ] [ -- ] [ file(s) ]
+lp [ -E ] [ -U username ] [ -c ] [ -h hostname[:port] ] [ -i job-id ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -t title ] [ -H handling  ]
+   [ -P page-list ]
+#+END_SRC
+
 
 # ** Configuration
 #    :PROPERTIES: 
@@ -94,15 +107,91 @@
 #    :LANG_JA:  設定
 #    :END:      
 
-# ** Options
-#    :PROPERTIES: 
-#    :CUSTOM_ID: options
-#    :LANG_EN:  Options
-#    :LANG_ES:  Opciones
-#    :LANG_KO:  옵션
-#    :LANG_ZH:  选项
-#    :LANG_JA:  オプション
-#    :END:      
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG_EN:  Options
+   :LANG_ES:  Opciones
+   :LANG_KO:  옵션
+   :LANG_ZH:  选项
+   :LANG_JA:  オプション
+   :END:      
+
+- {{{option(-E)}}} 
+#+LANG_EN:  Forces encryption when connecting to the server.
+- {{{option(-U)}}} {{{argument(username)}}}
+#+LANG_EN:  Specifies the username to use when connecting to the server.
+- {{{option(-c)}}}
+#+LANG_EN:  This option is provided for backwards-compatibility only. On systems that support it, this option forces the print file to be copied to the spool directory before printing. In CUPS, print files are always sent to the scheduler via IPP which has the same effect.
+- {{{option(-d)}}} {{{argument(destination)}}}
+#+LANG_EN:  Prints files to the named printer.
+- {{{option(-h)}}} {{{argument(hostname)}}}[:{{{argument(port)}}}]
+#+LANG_EN:  Chooses an alternate server.
+- {{{option(-i)}}} {{{argument(job-id)}}}
+#+LANG_EN:  Specifies an existing job to modify.
+- {{{option(-m)}}}
+#+LANG_EN:  Sends an email when the job is completed.
+- {{{option(-n)}}} {{{argument(copies)}}}
+#+LANG_EN:  Sets the number of copies to print.
+- {{{option(-o)}}} "name=value [ ... name=value ]"
+#+LANG_EN:  Sets one or more job options. See "COMMON JOB OPTIONS" below.
+- {{{option(-q)}}} {{{argument(priority)}}}
+#+LANG_EN:  Sets the job priority from 1 (lowest) to 100 (highest). The default priority is 50.
+- {{{option(-s)}}}
+#+LANG_EN:  Do not report the resulting job IDs (silent mode.)
+- {{{option(-t)}}} {{{argument(name)}}}
+#+LANG_EN:  Sets the job name.
+- {{{option(-H)}}} {{{argument(hh:mm)}}}
+- {{{option(-H)}}} {{{argument(hold)}}}
+- {{{option(-H)}}} {{{argument(immediate)}}}
+- {{{option(-H)}}} {{{argument(restart)}}}
+- {{{option(-H)}}} {{{argument(resume)}}}
+#+LANG_EN:  Specifies when the job should be printed. A value of immediate will print the file immediately, a value of hold will hold the job indefinitely, and a UTC time value (HH:MM) will hold the job until the specified UTC (not local) time. Use a value of resume with the {{{option(-i)}}} option to resume a held job. Use a value of restart with the {{{option(-i)}}} option to restart a completed job.
+- {{{option(-P)}}} {{{argument(page-list)}}}
+#+LANG_EN:  Specifies which pages to print in the document. The list can contain a list of numbers and ranges (#-#) separated by commas, e.g., "1,3-5,16". The page numbers refer to the output pages and not the document's original pages - options like "number-up" can affect the numbering of the pages.
+
+* COMMON JOB OPTIONS
+
+- {{{option(-o)}}} {{{argument(collate)}}}={{{argument(true)}}}
+#+LANG_EN:  Prints collated copies.
+- {{{option(-o)}}} {{{argument(fit-to-page)}}}
+#+LANG_EN:  Scales the print file to fit on the page.
+- {{{option(-o)}}} {{{argument(job-hold-until)}}}={{{argument(when)}}}
+#+LANG_EN:  Holds the job until the specified local time. "when" can be "indefinite" to hold the until released, "day-time" to print the job between 6am and 6pm local time, "night" to print the job between 6pm and 6am local time, "second-shift" to print the job between 4pm and 12am local time, "third-shift" to print the job between 12am and 8am local time, or "weekend" to print the job on Saturday or Sunday.
+- {{{option(-o)}}} {{{argument(job-hold-until)}}}={{{argument(hh:mm)}}}
+#+LANG_EN:  Holds the job until the specified time in hours and minutes UTC.
+- {{{option(-o)}}} {{{argument(job-priority)}}}={{{argument(priority)}}}
+#+LANG_EN:  Set the priority to a value from 1 (lowest) to 100 (highest), which influences when a job is scheduled for printing. The default priority is typi-cally 50.
+- {{{option(-o)}}} {{{argument(job-sheets)}}}={{{argument(name)}}}
+#+LANG_EN:  Prints a cover page (banner) with the document. The "name" can be "classified", "confidential", "secret", "standard", "topsecret", or "unclassified".
+- {{{option(-o)}}} {{{argument(job-sheets)}}}={{{argument(start-name)}}},{{{argument(end-name)}}}
+#+LANG_EN:  Prints cover pages (banners) with the document.
+- {{{option(-o)}}} {{{argument(media)}}}={{{argument(size)}}}
+#+LANG_EN:  Sets the page size to size. Most printers support at least the size names "a4", "letter", and "legal".
+- {{{option(-o)}}} {{{argument(mirror)}}}
+#+LANG_EN:  Mirrors each page.
+- {{{option(-o)}}} {{{argument(number-up)}}}={2|4|6|9|16}
+#+LANG_EN:  Prints 2, 4, 6, 9, or 16 document (input) pages on each output page.
+- {{{option(-o)}}} {{{argument(number-up-layout)}}}={{{argument(layout)}}}
+#+LANG_EN:  Specifies the layout of pages with the "number-up" option. The "layout" string can be "btlr", "btrl", "lrbt", "lrtb", "rlbt", "rltb", "tblr", or "tbrl" - the first two letters determine the column order while the second two letters determine the row order. "bt" is bottom-to-top, "lr" is left- to-right, "rl" is right-to-left, and "tb" is top-to-bottom.
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(4)}}}
+#+LANG_EN:  Prints the job in landscape (rotated 90 degrees counter-clockwise).
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(5)}}}
+#+LANG_EN:  Prints the job in landscape (rotated 90 degrees clockwise).
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(6)}}}
+#+LANG_EN:  Prints the job in reverse portrait (rotated 180 degrees).
+- {{{option(-o)}}} {{{argument(outputorder)}}}={{{argument(reverse)}}}
+#+LANG_EN:  Prints pages in reverse order.
+- {{{option(-o)}}} {{{argument(page-border)}}}={{{argument(border)}}}
+#+LANG_EN:  Prints a border around each document page. "border" is "double", "double-thick", "single", or "single-thick".
+- {{{option(-o)}}} {{{argument(page-ranges)}}}={{{argument(page-list)}}}
+#+LANG_EN:  Specifies which pages to print in the document. The list can contain a list of numbers and ranges (#-#) separated by commas, e.g., "1,3-5,16". The page numbers refer to the output pages and not the document's original pages - options like "number-up" can affect the numbering of the pages.
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(one-sided)}}}
+#+LANG_EN:  Prints on one side of the paper.
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(two-sided-long-edge)}}}
+#+LANG_EN:  Prints on both sides of the paper for portrait output.
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(two-sided-short-edge)}}}
+#+LANG_EN:  Prints on both sides of the paper for landscape output.
 
 # ** Examples
 #    :PROPERTIES: 
