@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-03-06 Tue 12:42 -->
+<!-- 2018-03-06 Tue 12:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lp</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="lp - 리눅스 명령어">
-<meta name="description" content="">
+<meta name="description" content=" 파일을 프린트합니다. ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lp - 리눅스 명령어">
-<meta property="og:description" content="">
+<meta property="og:description" content=" 파일을 프린트합니다. ">
 <meta name="twitter:title" content="lp - 리눅스 명령어">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content=" 파일을 프린트합니다. ">
 <link rel="alternate" href="http://linux-command.org/en/lp.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/es/lp.html" hreflang="es" />
 <link rel="alternate" href="http://linux-command.org/ja/lp.html" hreflang="ja" />
@@ -257,11 +257,108 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">lp</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">개요</a></li>
+<li><a href="#usage">사용법</a>
+<ul>
+<li><a href="#syntax">구조</a></li>
+<li><a href="#options">옵션</a></li>
+</ul>
+</li>
+<li><a href="#org164eb6c">COMMON JOB OPTIONS</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdea43ca" class="outline-2">
+<h2 id="overview"><a id="orgdea43ca"></a>개요</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+파일을 프린트합니다.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org978bab3" class="outline-2">
+<h2 id="usage"><a id="org978bab3"></a>사용법</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-orgb70fec2" class="outline-3">
+<h3 id="syntax"><a id="orgb70fec2"></a>구조</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">lp [ -E ] [ -U username ] [ -c ] [ -d destination[/instance] ] [ -h hostname[:port] ] [ -m ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -s ]
+   [ -t title ] [ -H handling ] [ -P page-list ] [ -- ] [ file(s) ]
+lp [ -E ] [ -U username ] [ -c ] [ -h hostname[:port] ] [ -i job-id ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -t title ] [ -H handling  ]
+   [ -P page-list ]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5af1f22" class="outline-3">
+<h3 id="options"><a id="org5af1f22"></a>옵션</h3>
+<div class="outline-text-3" id="text-options">
+<ul class="org-ul">
+<li><span id="opt--E" class="org-programming-option">-E</span></li>
+<li><span id="opt--U" class="org-programming-option">-U</span> <span class="org-programming-argument">username</span></li>
+<li><span id="opt--c" class="org-programming-option">-c</span></li>
+<li><span id="opt--d" class="org-programming-option">-d</span> <span class="org-programming-argument">destination</span></li>
+<li><span id="opt--h" class="org-programming-option">-h</span> <span class="org-programming-argument">hostname</span>[:<span class="org-programming-argument">port</span>]</li>
+<li><span id="opt--i" class="org-programming-option">-i</span> <span class="org-programming-argument">job-id</span></li>
+<li><span id="opt--m" class="org-programming-option">-m</span></li>
+<li><span id="opt--n" class="org-programming-option">-n</span> <span class="org-programming-argument">copies</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> "name=value [ ... name=value ]"</li>
+<li><span id="opt--q" class="org-programming-option">-q</span> <span class="org-programming-argument">priority</span></li>
+<li><span id="opt--s" class="org-programming-option">-s</span></li>
+<li><span id="opt--t" class="org-programming-option">-t</span> <span class="org-programming-argument">name</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">hh:mm</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">hold</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">immediate</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">restart</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">resume</span></li>
+<li><span id="opt--P" class="org-programming-option">-P</span> <span class="org-programming-argument">page-list</span></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org164eb6c" class="outline-2">
+<h2 id="org164eb6c">COMMON JOB OPTIONS</h2>
+<div class="outline-text-2" id="text-org164eb6c">
+<ul class="org-ul">
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">collate</span>=<span class="org-programming-argument">true</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">fit-to-page</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-hold-until</span>=<span class="org-programming-argument">when</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-hold-until</span>=<span class="org-programming-argument">hh:mm</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-priority</span>=<span class="org-programming-argument">priority</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-sheets</span>=<span class="org-programming-argument">name</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-sheets</span>=<span class="org-programming-argument">start-name</span>,<span class="org-programming-argument">end-name</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">media</span>=<span class="org-programming-argument">size</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">mirror</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">number-up</span>={2|4|6|9|16}</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">number-up-layout</span>=<span class="org-programming-argument">layout</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">orientation-requested</span>=<span class="org-programming-argument">4</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">orientation-requested</span>=<span class="org-programming-argument">5</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">orientation-requested</span>=<span class="org-programming-argument">6</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">outputorder</span>=<span class="org-programming-argument">reverse</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">page-border</span>=<span class="org-programming-argument">border</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">page-ranges</span>=<span class="org-programming-argument">page-list</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">sides</span>=<span class="org-programming-argument">one-sided</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">sides</span>=<span class="org-programming-argument">two-sided-long-edge</span></li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">sides</span>=<span class="org-programming-argument">two-sided-short-edge</span></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-06 Tue 12:42</p>
+<p class="date">Created: 2018-03-06 Tue 12:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

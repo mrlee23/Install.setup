@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-03-06 Tue 12:33 -->
+<!-- 2018-03-06 Tue 12:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lp</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="lp - Linux Commands">
-<meta name="description" content="">
+<meta name="description" content="print files ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lp - Linux Commands">
-<meta property="og:description" content="">
+<meta property="og:description" content="print files ">
 <meta name="twitter:title" content="lp - Linux Commands">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="print files ">
 <link rel="alternate" href="http://linux-command.org/en/lp.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/es/lp.html" hreflang="es" />
 <link rel="alternate" href="http://linux-command.org/ja/lp.html" hreflang="ja" />
@@ -257,11 +257,142 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">lp</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#options">Options</a></li>
+</ul>
+</li>
+<li><a href="#org0d7729c">COMMON JOB OPTIONS</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgda4470f" class="outline-2">
+<h2 id="overview"><a id="orgda4470f"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+print files
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43e0a51" class="outline-2">
+<h2 id="usage"><a id="org43e0a51"></a>Usage</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org3debb48" class="outline-3">
+<h3 id="syntax"><a id="org3debb48"></a>Syntax</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">lp [ -E ] [ -U username ] [ -c ] [ -d destination[/instance] ] [ -h hostname[:port] ] [ -m ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -s ]
+   [ -t title ] [ -H handling ] [ -P page-list ] [ -- ] [ file(s) ]
+lp [ -E ] [ -U username ] [ -c ] [ -h hostname[:port] ] [ -i job-id ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -t title ] [ -H handling  ]
+   [ -P page-list ]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org680bd75" class="outline-3">
+<h3 id="options"><a id="org680bd75"></a>Options</h3>
+<div class="outline-text-3" id="text-options">
+<ul class="org-ul">
+<li><span id="opt--E" class="org-programming-option">-E</span> 
+Forces encryption when connecting to the server.</li>
+<li><span id="opt--U" class="org-programming-option">-U</span> <span class="org-programming-argument">username</span>
+Specifies the username to use when connecting to the server.</li>
+<li><span id="opt--c" class="org-programming-option">-c</span>
+This option is provided for backwards-compatibility only. On systems that support it, this option forces the print file to be copied to the spool directory before printing. In CUPS, print files are always sent to the scheduler via IPP which has the same effect.</li>
+<li><span id="opt--d" class="org-programming-option">-d</span> <span class="org-programming-argument">destination</span>
+Prints files to the named printer.</li>
+<li><span id="opt--h" class="org-programming-option">-h</span> <span class="org-programming-argument">hostname</span>[:<span class="org-programming-argument">port</span>]
+Chooses an alternate server.</li>
+<li><span id="opt--i" class="org-programming-option">-i</span> <span class="org-programming-argument">job-id</span>
+Specifies an existing job to modify.</li>
+<li><span id="opt--m" class="org-programming-option">-m</span>
+Sends an email when the job is completed.</li>
+<li><span id="opt--n" class="org-programming-option">-n</span> <span class="org-programming-argument">copies</span>
+Sets the number of copies to print.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> "name=value [ ... name=value ]"
+Sets one or more job options. See "COMMON JOB OPTIONS" below.</li>
+<li><span id="opt--q" class="org-programming-option">-q</span> <span class="org-programming-argument">priority</span>
+Sets the job priority from 1 (lowest) to 100 (highest). The default priority is 50.</li>
+<li><span id="opt--s" class="org-programming-option">-s</span>
+Do not report the resulting job IDs (silent mode.)</li>
+<li><span id="opt--t" class="org-programming-option">-t</span> <span class="org-programming-argument">name</span>
+Sets the job name.</li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">hh:mm</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">hold</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">immediate</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">restart</span></li>
+<li><span id="opt--H" class="org-programming-option">-H</span> <span class="org-programming-argument">resume</span>
+Specifies when the job should be printed. A value of immediate will print the file immediately, a value of hold will hold the job indefinitely, and a UTC time value (HH:MM) will hold the job until the specified UTC (not local) time. Use a value of resume with the <span id="opt--i" class="org-programming-option">-i</span> option to resume a held job. Use a value of restart with the <span id="opt--i" class="org-programming-option">-i</span> option to restart a completed job.</li>
+<li><span id="opt--P" class="org-programming-option">-P</span> <span class="org-programming-argument">page-list</span>
+Specifies which pages to print in the document. The list can contain a list of numbers and ranges (#-#) separated by commas, e.g., "1,3-5,16". The page numbers refer to the output pages and not the document's original pages - options like "number-up" can affect the numbering of the pages.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d7729c" class="outline-2">
+<h2 id="org0d7729c">COMMON JOB OPTIONS</h2>
+<div class="outline-text-2" id="text-org0d7729c">
+<ul class="org-ul">
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">collate</span>=<span class="org-programming-argument">true</span>
+Prints collated copies.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">fit-to-page</span>
+Scales the print file to fit on the page.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-hold-until</span>=<span class="org-programming-argument">when</span>
+Holds the job until the specified local time. "when" can be "indefinite" to hold the until released, "day-time" to print the job between 6am and 6pm local time, "night" to print the job between 6pm and 6am local time, "second-shift" to print the job between 4pm and 12am local time, "third-shift" to print the job between 12am and 8am local time, or "weekend" to print the job on Saturday or Sunday.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-hold-until</span>=<span class="org-programming-argument">hh:mm</span>
+Holds the job until the specified time in hours and minutes UTC.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-priority</span>=<span class="org-programming-argument">priority</span>
+Set the priority to a value from 1 (lowest) to 100 (highest), which influences when a job is scheduled for printing. The default priority is typi-cally 50.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-sheets</span>=<span class="org-programming-argument">name</span>
+Prints a cover page (banner) with the document. The "name" can be "classified", "confidential", "secret", "standard", "topsecret", or "unclassified".</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">job-sheets</span>=<span class="org-programming-argument">start-name</span>,<span class="org-programming-argument">end-name</span>
+Prints cover pages (banners) with the document.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">media</span>=<span class="org-programming-argument">size</span>
+Sets the page size to size. Most printers support at least the size names "a4", "letter", and "legal".</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">mirror</span>
+Mirrors each page.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">number-up</span>={2|4|6|9|16}
+Prints 2, 4, 6, 9, or 16 document (input) pages on each output page.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">number-up-layout</span>=<span class="org-programming-argument">layout</span>
+Specifies the layout of pages with the "number-up" option. The "layout" string can be "btlr", "btrl", "lrbt", "lrtb", "rlbt", "rltb", "tblr", or "tbrl" - the first two letters determine the column order while the second two letters determine the row order. "bt" is bottom-to-top, "lr" is left- to-right, "rl" is right-to-left, and "tb" is top-to-bottom.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">orientation-requested</span>=<span class="org-programming-argument">4</span>
+Prints the job in landscape (rotated 90 degrees counter-clockwise).</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">orientation-requested</span>=<span class="org-programming-argument">5</span>
+Prints the job in landscape (rotated 90 degrees clockwise).</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">orientation-requested</span>=<span class="org-programming-argument">6</span>
+Prints the job in reverse portrait (rotated 180 degrees).</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">outputorder</span>=<span class="org-programming-argument">reverse</span>
+Prints pages in reverse order.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">page-border</span>=<span class="org-programming-argument">border</span>
+Prints a border around each document page. "border" is "double", "double-thick", "single", or "single-thick".</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">page-ranges</span>=<span class="org-programming-argument">page-list</span>
+Specifies which pages to print in the document. The list can contain a list of numbers and ranges (#-#) separated by commas, e.g., "1,3-5,16". The page numbers refer to the output pages and not the document's original pages - options like "number-up" can affect the numbering of the pages.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">sides</span>=<span class="org-programming-argument">one-sided</span>
+Prints on one side of the paper.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">sides</span>=<span class="org-programming-argument">two-sided-long-edge</span>
+Prints on both sides of the paper for portrait output.</li>
+<li><span id="opt--o" class="org-programming-option">-o</span> <span class="org-programming-argument">sides</span>=<span class="org-programming-argument">two-sided-short-edge</span>
+Prints on both sides of the paper for landscape output.</li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-06 Tue 12:33</p>
+<p class="date">Created: 2018-03-06 Tue 12:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
