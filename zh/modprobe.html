@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2018-03-05 Mon 11:27 -->
+<!-- 2018-03-06 Tue 12:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>modprobe</title>
@@ -195,13 +195,13 @@
 <script type="text/javascript" src="/dist/assets/js.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <meta name="title" content="modprobe - Linux命令">
-<meta name="description" content="">
+<meta name="description" content="Add and remove modules from the Linux Kernel ">
 <meta name="by" content="Dongsoo Lee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="modprobe - Linux命令">
-<meta property="og:description" content="">
+<meta property="og:description" content="Add and remove modules from the Linux Kernel ">
 <meta name="twitter:title" content="modprobe - Linux命令">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Add and remove modules from the Linux Kernel ">
 <link rel="alternate" href="http://linux-command.org/en/modprobe.html" hreflang="en" />
 <link rel="alternate" href="http://linux-command.org/es/modprobe.html" hreflang="es" />
 <link rel="alternate" href="http://linux-command.org/ja/modprobe.html" hreflang="ja" />
@@ -257,11 +257,254 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">modprobe</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">摘要</a></li>
+<li><a href="#how-to-install">如何安装</a>
+<ul>
+<li><a href="#install">安装</a></li>
+<li><a href="#check">检查</a></li>
+</ul>
+</li>
+<li><a href="#usage">如何使用</a>
+<ul>
+<li><a href="#syntax">结构</a></li>
+<li><a href="#options">选项</a>
+<ul>
+<li><a href="#orgc3ad208">Management Options</a></li>
+<li><a href="#org0c47841">Query Options</a></li>
+<li><a href="#org4d8527f">General Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#seealso">相关主题</a></li>
+<li><a href="#references">参考</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2beeee1" class="outline-2">
+<h2 id="overview"><a id="org2beeee1"></a>摘要</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Add and remove modules from the Linux Kernel
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9969e5" class="outline-2">
+<h2 id="how-to-install"><a id="orgd9969e5"></a>如何安装</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgcc00034" class="outline-3">
+<h3 id="install"><a id="orgcc00034"></a>安装</h3>
+<div class="outline-text-3" id="text-install">
+<p>
+请参阅<a href="./kmod.html#install">kmod</a>文章。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc650290" class="outline-3">
+<h3 id="check"><a id="orgc650290"></a>检查</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ modprobe -V
+</pre>
+</div>
+
+<pre class="example">
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org89c7e22" class="outline-2">
+<h2 id="usage"><a id="org89c7e22"></a>如何使用</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org0529851" class="outline-3">
+<h3 id="syntax"><a id="org0529851"></a>结构</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">modprobe [options] [-i] [-b] modulename
+modprobe [options] -a [-i] [-b] modulename [modulename...]
+modprobe [options] -r [-i] modulename
+modprobe [options] -r -a [-i] modulename [modulename...]
+modprobe [options] -c
+modprobe [options] --dump-modversions filename
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71059cf" class="outline-3">
+<h3 id="options"><a id="org71059cf"></a>选项</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+
+<div id="outline-container-orgc3ad208" class="outline-4">
+<h4 id="orgc3ad208">Management Options</h4>
+<div class="outline-text-4" id="text-orgc3ad208">
+<ul class="org-ul">
+<li><span id="opt--a" class="org-programming-option">-a</span>, <span id="opt---all" class="org-programming-option">--all</span> Consider every non-argument to be a module name to be inserted or removed (-r)</li>
+<li><span id="opt--r" class="org-programming-option">-r</span>, <span id="opt---remove" class="org-programming-option">--remove</span> Remove modules instead of inserting
+<ul class="org-ul">
+<li><span id="opt---remove-dependencies" class="org-programming-option">--remove-dependencies</span> Also remove modules depending on it</li>
+</ul></li>
+<li><span id="opt--R" class="org-programming-option">-R</span>, <span id="opt---resolve-alias" class="org-programming-option">--resolve-alias</span> Only lookup and print alias and exit
+<ul class="org-ul">
+<li><span id="opt---first-time" class="org-programming-option">--first-time</span> Fail if module already inserted or removed</li>
+</ul></li>
+<li><span id="opt--i" class="org-programming-option">-i</span>, <span id="opt---ignore-install" class="org-programming-option">--ignore-install</span> Ignore install commands</li>
+<li><span id="opt--i" class="org-programming-option">-i</span>, <span id="opt---ignore-remove" class="org-programming-option">--ignore-remove</span> Ignore remove commands</li>
+<li><span id="opt--b" class="org-programming-option">-b</span>, <span id="opt---use-blacklist" class="org-programming-option">--use-blacklist</span> Apply blacklist to resolved alias.</li>
+<li><span id="opt--f" class="org-programming-option">-f</span>, <span id="opt---force" class="org-programming-option">--force</span> Force module insertion or removal. implies <a href="#opt---force-modversions"><span class="org-programming-option">--force-modversions</span></a> and <a href="#opt---force-vermagic"><span class="org-programming-option">--force-vermagic</span></a>
+<ul class="org-ul">
+<li><span id="opt---force-modversion" class="org-programming-option">--force-modversion</span> Ignore module's version</li>
+<li><span id="opt---force-vermagic" class="org-programming-option">--force-vermagic</span> Ignore module's version magic</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0c47841" class="outline-4">
+<h4 id="org0c47841">Query Options</h4>
+<div class="outline-text-4" id="text-org0c47841">
+<ul class="org-ul">
+<li><span id="opt--D" class="org-programming-option">-D</span>, <span id="opt---show-depends" class="org-programming-option">--show-depends</span></li>
+</ul>
+<p>
+#+LANG_EN  Only print module dependencies and exit
+</p>
+<ul class="org-ul">
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt---showconfig" class="org-programming-option">--showconfig</span></li>
+</ul>
+<p>
+#+LANG_EN  Print out known configuration and exit
+</p>
+<ul class="org-ul">
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt---show-config" class="org-programming-option">--show-config</span></li>
+</ul>
+<p>
+#+LANG_EN  Same as <a href="#opt---showconfig"><span class="org-programming-option">--showconfig</span></a>
+</p>
+<ul class="org-ul">
+<li><span id="opt---show-modversions" class="org-programming-option">--show-modversions</span></li>
+</ul>
+<p>
+#+LANG_EN  Dump module symbol version and exit
+</p>
+<ul class="org-ul">
+<li><span id="opt---dump-modversions" class="org-programming-option">--dump-modversions</span></li>
+</ul>
+<p>
+#+LANG_EN  Same as --show-modversions
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4d8527f" class="outline-4">
+<h4 id="org4d8527f">General Options</h4>
+<div class="outline-text-4" id="text-org4d8527f">
+<ul class="org-ul">
+<li><span id="opt--n" class="org-programming-option">-n</span>, <span id="opt---dry-run" class="org-programming-option">--dry-run</span></li>
+</ul>
+<p>
+#+LANG_EN  Do not execute operations, just print out
+</p>
+<ul class="org-ul">
+<li><span id="opt--n" class="org-programming-option">-n</span>, <span id="opt---show" class="org-programming-option">--show</span></li>
+</ul>
+<p>
+#+LANG_EN  Same as <span id="opt---dry-run" class="org-programming-option">--dry-run</span>
+</p>
+<ul class="org-ul">
+<li><span id="opt--C" class="org-programming-option">-C</span>, <span id="opt---config" class="org-programming-option">--config</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+#+LANG_EN  Use FILE instead of default search paths
+</p>
+<ul class="org-ul">
+<li><span id="opt--d" class="org-programming-option">-d</span>, <span id="opt---dirname" class="org-programming-option">--dirname</span>=<span class="org-programming-argument">DIR</span></li>
+</ul>
+<p>
+#+LANG_EN  Use DIR as filesystem root for /lib/modules
+</p>
+<ul class="org-ul">
+<li><span id="opt--S" class="org-programming-option">-S</span>, <span id="opt---set-version" class="org-programming-option">--set-version</span>=<span class="org-programming-argument">VERSION</span></li>
+</ul>
+<p>
+#+LANG_EN  Use VERSION instead of `uname -r`
+</p>
+<ul class="org-ul">
+<li><span id="opt--s" class="org-programming-option">-s</span>, <span id="opt---syslog" class="org-programming-option">--syslog</span></li>
+</ul>
+<p>
+#+LANG_EN  print to syslog, not stderr
+</p>
+<ul class="org-ul">
+<li><span id="opt--q" class="org-programming-option">-q</span>, <span id="opt---quiet" class="org-programming-option">--quiet</span></li>
+</ul>
+<p>
+#+LANG_EN  disable messages
+</p>
+<ul class="org-ul">
+<li><span id="opt--v" class="org-programming-option">-v</span>, <span id="opt---verbose" class="org-programming-option">--verbose</span></li>
+</ul>
+<p>
+#+LANG_EN  enables more messages
+</p>
+<ul class="org-ul">
+<li><span id="opt--V" class="org-programming-option">-V</span>, <span id="opt---version" class="org-programming-option">--version</span></li>
+</ul>
+<p>
+#+LANG_EN  show version
+</p>
+<ul class="org-ul">
+<li><span id="opt--h" class="org-programming-option">-h</span>, <span id="opt---help" class="org-programming-option">--help</span></li>
+</ul>
+<p>
+#+LANG_EN  show this help
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8a9acdd" class="outline-2">
+<h2 id="seealso"><a id="org8a9acdd"></a>相关主题</h2>
+<div class="outline-text-2" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./kmod.html">kmod</a></li>
+<li><a href="./lsmod.html">lsmod</a></li>
+<li><a href="./rmmod.html">rmmod</a></li>
+<li><a href="./modinfo.html">modinfo</a></li>
+<li><a href="./depmod.html">depmod</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7f42c36" class="outline-2">
+<h2 id="references"><a id="org7f42c36"></a>参考</h2>
+<div class="outline-text-2" id="text-references">
+<p>
+请参阅<a href="./kmod.html#references">kmod</a>文章。
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-20</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-05 Mon 11:27</p>
+<p class="date">Created: 2018-03-06 Tue 12:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
