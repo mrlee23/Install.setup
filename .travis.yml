@@ -33,6 +33,7 @@ script:
     echo "This branch($TRAVIS_BRANCH) is not available";
     fi
   - if [ "$TRAVIS_BRANCH" == "dev" ]; then
+    cp -r assets contents/assets
     cd contents;
     DOCKER_RUN "ls";
     DOCKER_RUN "make index" && INDEX_NON_ERROR=TRUE;
