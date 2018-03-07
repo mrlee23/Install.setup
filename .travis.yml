@@ -46,6 +46,8 @@ script:
     export PUBLISH_DIR=".publish/$lang";
     sudo bash ../.Build.sh/build.sh publish;
     done;
+    export GH_PAGES_BRANCH="dev-gh-pages";
+    sudo bash ../.Build.sh/build.sh gh-pages;
     else
     echo "Error occured on make pages...";
     exit 1;
