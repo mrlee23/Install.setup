@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-03-07 Wed 13:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>modprobe</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="modprobe - Linux Commands">
+<meta name="description" content="Add and remove modules from the Linux Kernel ">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="modprobe - Linux Commands">
+<meta property="og:description" content="Add and remove modules from the Linux Kernel ">
+<meta name="twitter:title" content="modprobe - Linux Commands">
+<meta name="twitter:description" content="Add and remove modules from the Linux Kernel ">
+<link rel="alternate" href="http://linux-command.org/en/modprobe.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/modprobe.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/modprobe.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/modprobe.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/modprobe.html" hreflang="zh" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">modprobe</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#how-to-install">How to Install</a>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#check">Check</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#options">Options</a>
+<ul>
+<li><a href="#org703d020">Management Options</a></li>
+<li><a href="#orgdae3aa6">Query Options</a></li>
+<li><a href="#org881024e">General Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#seealso">See also</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org229f2c8" class="outline-2">
+<h2 id="overview"><a id="org229f2c8"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Add and remove modules from the Linux Kernel
+</p>
+</div>
+</div>
+
+<div id="outline-container-org728e90f" class="outline-2">
+<h2 id="how-to-install"><a id="org728e90f"></a>How to Install</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgb712c82" class="outline-3">
+<h3 id="install"><a id="orgb712c82"></a>Install</h3>
+<div class="outline-text-3" id="text-install">
+<p>
+See <a href="./kmod.html#install">kmod</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org29b2af2" class="outline-3">
+<h3 id="check"><a id="org29b2af2"></a>Check</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ modprobe -V
+</pre>
+</div>
+
+<pre class="example">
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org832bf14" class="outline-2">
+<h2 id="usage"><a id="org832bf14"></a>Usage</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org04d18ec" class="outline-3">
+<h3 id="syntax"><a id="org04d18ec"></a>Syntax</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">modprobe [options] [-i] [-b] modulename
+modprobe [options] -a [-i] [-b] modulename [modulename...]
+modprobe [options] -r [-i] modulename
+modprobe [options] -r -a [-i] modulename [modulename...]
+modprobe [options] -c
+modprobe [options] --dump-modversions filename
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org833fc5d" class="outline-3">
+<h3 id="options"><a id="org833fc5d"></a>Options</h3>
+<div class="outline-text-3" id="text-options">
+</div>
+
+<div id="outline-container-org703d020" class="outline-4">
+<h4 id="org703d020">Management Options</h4>
+<div class="outline-text-4" id="text-org703d020">
+<ul class="org-ul">
+<li><span id="opt--a" class="org-programming-option">-a</span>, <span id="opt---all" class="org-programming-option">--all</span> Consider every non-argument to be a module name to be inserted or removed (-r)</li>
+<li><span id="opt--r" class="org-programming-option">-r</span>, <span id="opt---remove" class="org-programming-option">--remove</span> Remove modules instead of inserting
+<ul class="org-ul">
+<li><span id="opt---remove-dependencies" class="org-programming-option">--remove-dependencies</span> Also remove modules depending on it</li>
+</ul></li>
+<li><span id="opt--R" class="org-programming-option">-R</span>, <span id="opt---resolve-alias" class="org-programming-option">--resolve-alias</span> Only lookup and print alias and exit
+<ul class="org-ul">
+<li><span id="opt---first-time" class="org-programming-option">--first-time</span> Fail if module already inserted or removed</li>
+</ul></li>
+<li><span id="opt--i" class="org-programming-option">-i</span>, <span id="opt---ignore-install" class="org-programming-option">--ignore-install</span> Ignore install commands</li>
+<li><span id="opt--i" class="org-programming-option">-i</span>, <span id="opt---ignore-remove" class="org-programming-option">--ignore-remove</span> Ignore remove commands</li>
+<li><span id="opt--b" class="org-programming-option">-b</span>, <span id="opt---use-blacklist" class="org-programming-option">--use-blacklist</span> Apply blacklist to resolved alias.</li>
+<li><span id="opt--f" class="org-programming-option">-f</span>, <span id="opt---force" class="org-programming-option">--force</span> Force module insertion or removal. implies <a href="#opt---force-modversions"><span class="org-programming-option">--force-modversions</span></a> and <a href="#opt---force-vermagic"><span class="org-programming-option">--force-vermagic</span></a>
+<ul class="org-ul">
+<li><span id="opt---force-modversion" class="org-programming-option">--force-modversion</span> Ignore module's version</li>
+<li><span id="opt---force-vermagic" class="org-programming-option">--force-vermagic</span> Ignore module's version magic</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdae3aa6" class="outline-4">
+<h4 id="orgdae3aa6">Query Options</h4>
+<div class="outline-text-4" id="text-orgdae3aa6">
+<ul class="org-ul">
+<li><span id="opt--D" class="org-programming-option">-D</span>, <span id="opt---show-depends" class="org-programming-option">--show-depends</span></li>
+</ul>
+<p>
+#+LANG_EN  Only print module dependencies and exit
+</p>
+<ul class="org-ul">
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt---showconfig" class="org-programming-option">--showconfig</span></li>
+</ul>
+<p>
+#+LANG_EN  Print out known configuration and exit
+</p>
+<ul class="org-ul">
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt---show-config" class="org-programming-option">--show-config</span></li>
+</ul>
+<p>
+#+LANG_EN  Same as <a href="#opt---showconfig"><span class="org-programming-option">--showconfig</span></a>
+</p>
+<ul class="org-ul">
+<li><span id="opt---show-modversions" class="org-programming-option">--show-modversions</span></li>
+</ul>
+<p>
+#+LANG_EN  Dump module symbol version and exit
+</p>
+<ul class="org-ul">
+<li><span id="opt---dump-modversions" class="org-programming-option">--dump-modversions</span></li>
+</ul>
+<p>
+#+LANG_EN  Same as --show-modversions
+</p>
+</div>
+</div>
+
+<div id="outline-container-org881024e" class="outline-4">
+<h4 id="org881024e">General Options</h4>
+<div class="outline-text-4" id="text-org881024e">
+<ul class="org-ul">
+<li><span id="opt--n" class="org-programming-option">-n</span>, <span id="opt---dry-run" class="org-programming-option">--dry-run</span></li>
+</ul>
+<p>
+#+LANG_EN  Do not execute operations, just print out
+</p>
+<ul class="org-ul">
+<li><span id="opt--n" class="org-programming-option">-n</span>, <span id="opt---show" class="org-programming-option">--show</span></li>
+</ul>
+<p>
+#+LANG_EN  Same as <span id="opt---dry-run" class="org-programming-option">--dry-run</span>
+</p>
+<ul class="org-ul">
+<li><span id="opt--C" class="org-programming-option">-C</span>, <span id="opt---config" class="org-programming-option">--config</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+#+LANG_EN  Use FILE instead of default search paths
+</p>
+<ul class="org-ul">
+<li><span id="opt--d" class="org-programming-option">-d</span>, <span id="opt---dirname" class="org-programming-option">--dirname</span>=<span class="org-programming-argument">DIR</span></li>
+</ul>
+<p>
+#+LANG_EN  Use DIR as filesystem root for /lib/modules
+</p>
+<ul class="org-ul">
+<li><span id="opt--S" class="org-programming-option">-S</span>, <span id="opt---set-version" class="org-programming-option">--set-version</span>=<span class="org-programming-argument">VERSION</span></li>
+</ul>
+<p>
+#+LANG_EN  Use VERSION instead of `uname -r`
+</p>
+<ul class="org-ul">
+<li><span id="opt--s" class="org-programming-option">-s</span>, <span id="opt---syslog" class="org-programming-option">--syslog</span></li>
+</ul>
+<p>
+#+LANG_EN  print to syslog, not stderr
+</p>
+<ul class="org-ul">
+<li><span id="opt--q" class="org-programming-option">-q</span>, <span id="opt---quiet" class="org-programming-option">--quiet</span></li>
+</ul>
+<p>
+#+LANG_EN  disable messages
+</p>
+<ul class="org-ul">
+<li><span id="opt--v" class="org-programming-option">-v</span>, <span id="opt---verbose" class="org-programming-option">--verbose</span></li>
+</ul>
+<p>
+#+LANG_EN  enables more messages
+</p>
+<ul class="org-ul">
+<li><span id="opt--V" class="org-programming-option">-V</span>, <span id="opt---version" class="org-programming-option">--version</span></li>
+</ul>
+<p>
+#+LANG_EN  show version
+</p>
+<ul class="org-ul">
+<li><span id="opt--h" class="org-programming-option">-h</span>, <span id="opt---help" class="org-programming-option">--help</span></li>
+</ul>
+<p>
+#+LANG_EN  show this help
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5b1f6fe" class="outline-2">
+<h2 id="seealso"><a id="org5b1f6fe"></a>See also</h2>
+<div class="outline-text-2" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./kmod.html">kmod</a></li>
+<li><a href="./lsmod.html">lsmod</a></li>
+<li><a href="./rmmod.html">rmmod</a></li>
+<li><a href="./modinfo.html">modinfo</a></li>
+<li><a href="./depmod.html">depmod</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org213ac09" class="outline-2">
+<h2 id="references"><a id="org213ac09"></a>References</h2>
+<div class="outline-text-2" id="text-references">
+<p>
+See <a href="./kmod.html#references">kmod</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-20</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:43</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

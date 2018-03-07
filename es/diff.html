@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2018-03-07 Wed 13:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>diff</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="diff - Comandos de Linux">
+<meta name="description" content="Compare archivos por línea. ">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="diff - Comandos de Linux">
+<meta property="og:description" content="Compare archivos por línea. ">
+<meta name="twitter:title" content="diff - Comandos de Linux">
+<meta name="twitter:description" content="Compare archivos por línea. ">
+<link rel="alternate" href="http://linux-command.org/en/diff.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/diff.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/diff.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/diff.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/diff.html" hreflang="zh" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">diff</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">Visión de conjunto</a></li>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#install">Instalar</a></li>
+</ul>
+</li>
+<li><a href="#usage">Uso</a>
+<ul>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#options">Opciones</a></li>
+</ul>
+</li>
+<li><a href="#seealso">Ver también</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org851ca62" class="outline-2">
+<h2 id="overview"><a id="org851ca62"></a>Visión de conjunto</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Compare archivos por línea.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8f8d74b" class="outline-2">
+<h2 id="how-to-install"><a id="org8f8d74b"></a>Cómo instalar</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org6eff35a" class="outline-3">
+<h3 id="install"><a id="org6eff35a"></a>Instalar</h3>
+<div class="outline-text-3" id="text-install">
+<p>
+Este es el comando integrado.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org217a481" class="outline-2">
+<h2 id="usage"><a id="org217a481"></a>Uso</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org7cb28a5" class="outline-3">
+<h3 id="syntax"><a id="org7cb28a5"></a>Sintaxis</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">diff [options]... files
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd6bb16c" class="outline-3">
+<h3 id="options"><a id="orgd6bb16c"></a>Opciones</h3>
+<div class="outline-text-3" id="text-options">
+<ul class="org-ul">
+<li><span id="opt---normal" class="org-programming-option">--normal</span> :</li>
+<li><span id="opt--q" class="org-programming-option">-q</span>, <span id="opt---brief" class="org-programming-option">--brief</span> :</li>
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt--C" class="org-programming-option">-C</span> <span class="org-programming-argument">NUM</span>, <span id="opt---context" class="org-programming-option">--context</span> <span class="org-programming-argument">[=NUM]</span> :</li>
+<li><span id="opt--u" class="org-programming-option">-u</span>, <span id="opt--U" class="org-programming-option">-U</span> <span class="org-programming-argument">NUM</span>, <span id="opt---unified" class="org-programming-option">--unified</span> <span class="org-programming-argument">[=NUM]</span> :</li>
+<li><span id="opt--e" class="org-programming-option">-e</span>, <span id="opt---ed" class="org-programming-option">--ed</span> :</li>
+<li><span id="opt--n" class="org-programming-option">-n</span>, <span id="opt---rcs" class="org-programming-option">--rcs</span> :</li>
+<li><span id="opt--y" class="org-programming-option">-y</span>, <span id="opt---side-by-side" class="org-programming-option">--side-by-side</span> :</li>
+<li><span id="opt--W" class="org-programming-option">-W</span>, <span id="opt---width" class="org-programming-option">--width</span> <span class="org-programming-argument">=NUM</span> :</li>
+<li><span id="opt---left-column" class="org-programming-option">--left-column</span> :</li>
+<li><span id="opt---supress-common-lines" class="org-programming-option">--supress-common-lines</span> :</li>
+<li><span id="opt--p" class="org-programming-option">-p</span>, <span id="opt---show-c-function" class="org-programming-option">--show-c-function</span> :</li>
+<li><span id="opt--F" class="org-programming-option">-F</span>, <span id="opt---show-function-line" class="org-programming-option">--show-function-line</span> <span class="org-programming-argument">=RE</span> :</li>
+<li><span id="opt---label" class="org-programming-option">--label</span> <span class="org-programming-argument">LABEL</span></li>
+<li><span id="opt--t" class="org-programming-option">-t</span>, <span id="opt---expand-tabs" class="org-programming-option">--expand-tabs</span></li>
+<li><span id="opt--T" class="org-programming-option">-T</span>, <span id="opt---initial-tab" class="org-programming-option">--initial-tab</span></li>
+<li><span id="opt---tabsize" class="org-programming-option">--tabsize</span> <span class="org-programming-argument">=NUM</span></li>
+<li><span id="opt---suppress-blank-empty" class="org-programming-option">--suppress-blank-empty</span></li>
+<li><span id="opt--l" class="org-programming-option">-l</span>, <span id="opt---paginate" class="org-programming-option">--paginate</span></li>
+<li><span id="opt--r" class="org-programming-option">-r</span>, <span id="opt---recursive" class="org-programming-option">--recursive</span></li>
+<li><span id="opt---no-dereference" class="org-programming-option">--no-dereference</span></li>
+<li><span id="opt--N" class="org-programming-option">-N</span>, <span id="opt---new-file" class="org-programming-option">--new-file</span></li>
+<li><span id="opt---unindirectional-new-file" class="org-programming-option">--unindirectional-new-file</span></li>
+<li><span id="opt---ignore-file-name-case" class="org-programming-option">--ignore-file-name-case</span></li>
+<li><span id="opt---no-ignore-file-name-case" class="org-programming-option">--no-ignore-file-name-case</span></li>
+<li><span id="opt--x" class="org-programming-option">-x</span>, <span id="opt---exclude" class="org-programming-option">--exclude</span> <span class="org-programming-argument">=PAT</span></li>
+<li><span id="opt--X" class="org-programming-option">-X</span>, <span id="opt---exclude-from" class="org-programming-option">--exclude-from</span> <span class="org-programming-argument">=FILE</span></li>
+<li><span id="opt--S" class="org-programming-option">-S</span>, <span id="opt---starting-file" class="org-programming-option">--starting-file</span> <span class="org-programming-argument">=FILE</span></li>
+<li><span id="opt---from-file" class="org-programming-option">--from-file</span> <span class="org-programming-argument">=FILE1</span></li>
+<li><span id="opt---to-file" class="org-programming-option">--to-file</span> <span class="org-programming-argument">=FILE2</span></li>
+<li><span id="opt--i" class="org-programming-option">-i</span>, <span id="opt---ignore-case" class="org-programming-option">--ignore-case</span></li>
+<li><span id="opt--E" class="org-programming-option">-E</span>, <span id="opt---ignore-tab-expansion" class="org-programming-option">--ignore-tab-expansion</span></li>
+<li><span id="opt--z" class="org-programming-option">-z</span>, <span id="opt---ignore-trailing-space" class="org-programming-option">--ignore-trailing-space</span></li>
+<li><span id="opt--b" class="org-programming-option">-b</span>, <span id="opt---ignore-space-change" class="org-programming-option">--ignore-space-change</span></li>
+<li><span id="opt--w" class="org-programming-option">-w</span>, <span id="opt---ignore-all-space" class="org-programming-option">--ignore-all-space</span></li>
+<li><span id="opt--B" class="org-programming-option">-B</span>, <span id="opt---ignore-blank-lines" class="org-programming-option">--ignore-blank-lines</span></li>
+<li><span id="opt--I" class="org-programming-option">-I</span>, <span id="opt---ignore-matching-lines" class="org-programming-option">--ignore-matching-lines</span> <span class="org-programming-argument">=RE</span></li>
+<li><span id="opt--a" class="org-programming-option">-a</span>, <span id="opt---text" class="org-programming-option">--text</span></li>
+<li><span id="opt---strip-trailing-cr" class="org-programming-option">--strip-trailing-cr</span></li>
+<li><span id="opt--D" class="org-programming-option">-D</span>, <span id="opt---ifdef" class="org-programming-option">--ifdef</span> <span class="org-programming-argument">=NAME</span></li>
+<li><span id="opt---GTYPE-group-format" class="org-programming-option">--GTYPE-group-format</span> <span class="org-programming-argument">=GFMT</span></li>
+<li><span id="opt---line-format" class="org-programming-option">--line-format</span> <span class="org-programming-argument">=LFMT</span></li>
+<li><span id="opt---LTYPE-line-format" class="org-programming-option">--LTYPE-line-format</span> <span class="org-programming-argument">=LFMT</span></li>
+<li><span id="opt--d" class="org-programming-option">-d</span>, <span id="opt---minimal" class="org-programming-option">--minimal</span></li>
+<li><span id="opt---horizon-lines" class="org-programming-option">--horizon-lines</span> <span class="org-programming-argument">=NUM</span></li>
+<li><span id="opt---speed-large-files" class="org-programming-option">--speed-large-files</span></li>
+<li><span id="opt---color" class="org-programming-option">--color</span> <span class="org-programming-argument">[=WHEN]</span></li>
+<li><span id="opt---palette" class="org-programming-option">--palette</span> <span class="org-programming-argument">=PALETTE</span></li>
+<li><span id="opt---help" class="org-programming-option">--help</span></li>
+<li><span id="opt--v" class="org-programming-option">-v</span>, <span id="opt---version" class="org-programming-option">--version</span></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org11e7c1f" class="outline-2">
+<h2 id="seealso"><a id="org11e7c1f"></a>Ver también</h2>
+<div class="outline-text-2" id="text-seealso">
+<ul class="org-ul">
+<li><a href="./wdiff.html">wdiff</a></li>
+<li><a href="./cmp.html">cmp</a></li>
+<li><a href="./sdiff.html">sdiff</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-20</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:44</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,1585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-03-07 Wed 13:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cloc</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="cloc - Linux Commands">
+<meta name="description" content="Count, or compute differences of, physical lines of source code in the given files (may be archives such as compressed tarballs or zip files) and/or recursively below the given directories. It is written entirely in Perl, using only modules from the standard distribution. Count, and compute differences of, lines of source code and comments. ">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cloc - Linux Commands">
+<meta property="og:description" content="Count, or compute differences of, physical lines of source code in the given files (may be archives such as compressed tarballs or zip files) and/or recursively below the given directories. It is written entirely in Perl, using only modules from the standard distribution. Count, and compute differences of, lines of source code and comments. ">
+<meta name="twitter:title" content="cloc - Linux Commands">
+<meta name="twitter:description" content="Count, or compute differences of, physical lines of source code in the given files (may be archives such as compressed tarballs or zip files) and/or recursively below the given directories. It is written entirely in Perl, using only modules from the standard distribution. Count, and compute differences of, lines of source code and comments. ">
+<link rel="alternate" href="http://linux-command.org/en/cloc.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/cloc.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/cloc.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/cloc.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/cloc.html" hreflang="zh" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">cloc</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">Overview</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#characteristic">Characteristic</a></li>
+</ul>
+</li>
+<li><a href="#how-to-install">How to Install</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a>
+<ul>
+<li><a href="#org34bd231">NPM</a></li>
+<li><a href="#orga14a31f">Mac OS</a></li>
+</ul>
+</li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#install">Install</a>
+<ul>
+<li><a href="#orgbc9eea2">NPM</a></li>
+<li><a href="#org7a44ec5">Debian, Ubuntu</a></li>
+<li><a href="#orga616b6f">Red Hat, Fedora</a></li>
+<li><a href="#orgc1e2ff2">Fedora 22 or later</a></li>
+<li><a href="#org47b2f0d">Arch</a></li>
+<li><a href="#org20248b9">Gentoo https://packages.gentoo.org/packages/dev-util/cloc</a></li>
+<li><a href="#org2cc855e">Alpine Linux</a></li>
+<li><a href="#orgf5ee824">FreeBSD</a></li>
+<li><a href="#org7be4adf">Mac OS X with MacPorts</a></li>
+<li><a href="#org0d7834d">Mac OS X with Homebrew</a></li>
+<li><a href="#org9569b97">Windows with Chocolatey</a></li>
+<li><a href="#orgc2d67d9">Windows with Scoop</a></li>
+</ul>
+</li>
+<li><a href="#packages">Installed Packages</a></li>
+<li><a href="#check">Check</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#options">Options</a>
+<ul>
+<li><a href="#org93be23d">Processing Options</a></li>
+<li><a href="#orgf2a696f">Filter Options</a></li>
+<li><a href="#org112e43a">Debug Options</a></li>
+<li><a href="#org5276872">Output Options</a></li>
+</ul>
+</li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#org0eaa1b7">Simply use</a></li>
+<li><a href="#org4e12919">Force set lang</a></li>
+<li><a href="#orgb619dbc">with Git hash</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</div>
+<table id="org45fae95" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Developer</td>
+<td class="org-left">Jari Aalto</td>
+</tr>
+
+<tr>
+<td class="org-left">Version</td>
+<td class="org-left"><span class="org-programming-version">1.76</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Release Date</td>
+<td class="org-left"><span class="org-programming-date">2018-02-09</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Package Size</td>
+<td class="org-left"><span class="org-programming-size">245KB</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Installed Size</td>
+<td class="org-left"><span class="org-programming-size">972KB</span></td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-org7f370de" class="outline-2">
+<h2 id="overview"><a id="org7f370de"></a>Overview</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Count, and compute differences of, lines of source code and comments.
+</p>
+</div>
+
+<div id="outline-container-org8d45daf" class="outline-3">
+<h3 id="introduction"><a id="org8d45daf"></a>Introduction</h3>
+<div class="outline-text-3" id="text-introduction">
+<p>
+Count, or compute differences of, physical lines of source code in the given files (may be archives such as compressed tarballs or zip files) and/or recursively below the given directories.
+It is written entirely in Perl, using only modules from the standard distribution.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga209566" class="outline-3">
+<h3 id="characteristic"><a id="orga209566"></a>Characteristic</h3>
+<div class="outline-text-3" id="text-characteristic">
+<ul class="org-ul">
+<li>Count all lines of source codes.</li>
+<li>Recognize the programming language by files extension.</li>
+<li>Seperate source codes and comments based on programming languages.</li>
+<li>Support various output formats like csv, sql xml, xsl and yaml.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcc6c734" class="outline-2">
+<h2 id="how-to-install"><a id="orgcc6c734"></a>How to Install</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org4029b8b" class="outline-3">
+<h3 id="prerequisites"><a id="org4029b8b"></a>Prerequisites</h3>
+<div class="outline-text-3" id="text-prerequisites">
+</div>
+
+<div id="outline-container-org34bd231" class="outline-4">
+<h4 id="org34bd231">NPM</h4>
+<div class="outline-text-4" id="text-org34bd231">
+<ul class="org-ul">
+<li><a href="./npm.html">npm</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga14a31f" class="outline-4">
+<h4 id="orga14a31f">Mac OS</h4>
+<div class="outline-text-4" id="text-orga14a31f">
+<ul class="org-ul">
+<li><a href="./brew.html">brew</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0416b31" class="outline-3">
+<h3 id="dependencies"><a id="org0416b31"></a>Dependencies</h3>
+<div class="outline-text-3" id="text-dependencies">
+<ul class="org-ul">
+<li>libalgorithm-diff-perl
+<ul class="org-ul">
+<li>module to find differences between files</li>
+</ul></li>
+<li>libregexp-common-perl
+<ul class="org-ul">
+<li>module with common regular expressions</li>
+</ul></li>
+<li><a href="./perl.html">perl</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org522f160" class="outline-3">
+<h3 id="install"><a id="org522f160"></a>Install</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-orgbc9eea2" class="outline-4">
+<h4 id="orgbc9eea2">NPM</h4>
+<div class="outline-text-4" id="text-orgbc9eea2">
+<div class="org-src-container">
+<pre class="src src-sh">$ npm install -g cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a44ec5" class="outline-4">
+<h4 id="org7a44ec5">Debian, Ubuntu</h4>
+<div class="outline-text-4" id="text-org7a44ec5">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga616b6f" class="outline-4">
+<h4 id="orga616b6f">Red Hat, Fedora</h4>
+<div class="outline-text-4" id="text-orga616b6f">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo yum install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc1e2ff2" class="outline-4">
+<h4 id="orgc1e2ff2">Fedora 22 or later</h4>
+<div class="outline-text-4" id="text-orgc1e2ff2">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo dnf install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org47b2f0d" class="outline-4">
+<h4 id="org47b2f0d">Arch</h4>
+<div class="outline-text-4" id="text-org47b2f0d">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo pacman -S cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org20248b9" class="outline-4">
+<h4 id="org20248b9">Gentoo <a href="https://packages.gentoo.org/packages/dev-util/cloc">https://packages.gentoo.org/packages/dev-util/cloc</a></h4>
+<div class="outline-text-4" id="text-org20248b9">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo emerge -av dev-util/cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2cc855e" class="outline-4">
+<h4 id="org2cc855e">Alpine Linux</h4>
+<div class="outline-text-4" id="text-org2cc855e">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apk add cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5ee824" class="outline-4">
+<h4 id="orgf5ee824">FreeBSD</h4>
+<div class="outline-text-4" id="text-orgf5ee824">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo pkg install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7be4adf" class="outline-4">
+<h4 id="org7be4adf">Mac OS X with MacPorts</h4>
+<div class="outline-text-4" id="text-org7be4adf">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo port install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d7834d" class="outline-4">
+<h4 id="org0d7834d">Mac OS X with Homebrew</h4>
+<div class="outline-text-4" id="text-org0d7834d">
+<div class="org-src-container">
+<pre class="src src-sh">$ brew install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9569b97" class="outline-4">
+<h4 id="org9569b97">Windows with Chocolatey</h4>
+<div class="outline-text-4" id="text-org9569b97">
+<div class="org-src-container">
+<pre class="src src-sh">$ choco install cloc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2d67d9" class="outline-4">
+<h4 id="orgc2d67d9">Windows with Scoop</h4>
+<div class="outline-text-4" id="text-orgc2d67d9">
+<div class="org-src-container">
+<pre class="src src-sh">$ scoop install cloc
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2440abc" class="outline-3">
+<h3 id="packages"><a id="org2440abc"></a>Installed Packages</h3>
+<div class="outline-text-3" id="text-packages">
+<ul class="org-ul">
+<li>cloc</li>
+<li>libregexp-common-perl</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org68eb8ee" class="outline-3">
+<h3 id="check"><a id="org68eb8ee"></a>Check</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ cloc --version
+1.60
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org13b3e41" class="outline-2">
+<h2 id="usage"><a id="org13b3e41"></a>Usage</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org4a2f3d5" class="outline-3">
+<h3 id="syntax"><a id="org4a2f3d5"></a>Syntax</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">cloc [options] &lt;file(s)/dir(s)/git hash(es)&gt; | &lt;set 1&gt; &lt;set 2&gt; | &lt;report files&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd520ecb" class="outline-3">
+<h3 id="options"><a id="orgd520ecb"></a>Options</h3>
+<div class="outline-text-3" id="text-options">
+<p>
+This is updated for version <span class="org-programming-version">1.76</span>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---extract-with" class="org-programming-option">--extract-with</span>=<span class="org-programming-argument">CMD</span></li>
+</ul>
+<p>
+This option is only needed if cloc is unable
+to figure out how to extract the contents of
+the input file(s) by itself.
+Use CMD to extract binary archive files (e.g.:
+.tar.gz, .zip, .Z). Use the literal '&gt;FILE&lt;' as
+a stand-in for the actual file(s) to be
+extracted. For example, to count lines of code
+in the input files
+gcc-4.2.tar.gz perl-5.8.8.tar.gz
+</p>
+
+<dl class="org-dl">
+<dt>on Unix use</dt><dd><a href="#opt---extract-with"><span class="org-programming-option">--extract-with</span></a>='gzip -dc &gt;FILE&lt; | tar xf -'</dd>
+<dt>or, if you have GNU tar,</dt><dd><a href="#opt---extract-with"><span class="org-programming-option">--extract-with</span></a>='tar zxf &gt;FILE&lt;'</dd>
+<dt>and on Windows use, for example(if WinZip is installed there)</dt><dd><a href="#opt---extract-with"><span class="org-programming-option">--extract-with</span></a>="\"c:\Program Files\WinZip\WinZip32.exe\" -e -o &gt;FILE&lt; ."</dd>
+</dl>
+<ul class="org-ul">
+<li><span id="opt---list-file" class="org-programming-option">--list-file</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Take the list of file and/or directory names to
+process from FILE, which has one file/directory
+name per line. Only exact matches are counted;
+relative path names will be resolved starting from
+the directory where cloc is invoked.
+See also <a href="#opt---exclude-list-file"><span class="org-programming-option">--exclude-list-file</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---vcs" class="org-programming-option">--vcs</span>=<span class="org-programming-argument">VCS</span></li>
+</ul>
+<p>
+Invoke a system call to VCS to obtain a list of
+files to work on. If VCS is 'git', then will
+invoke 'git ls-files' to get a file list and
+'git submodule status' to get a list of submodules
+whose contents will be ignored. See also <a href="#opt---git"><span class="org-programming-option">--git</span></a>
+which accepts git commit hashes and branch names.
+If VCS is 'svn' then will invoke 'svn list <a href="#opt--R"><span class="org-programming-option">-R</span></a>'.
+The primary benefit is that cloc will then skip
+files explicitly excluded by the versioning tool
+in question, ie, those in .gitignore or have the
+svn:ignore property.
+Alternatively VCS may be any system command
+that generates a list of files.
+Note: cloc must be in a directory which can read
+the files as they are returned by VCS. cloc will
+not download files from remote repositories.
+'svn list <a href="#opt--R"><span class="org-programming-option">-R</span></a>' may refer to a remote repository
+to obtain file names (and therefore may require
+authentication to the remote repository), but
+the files themselves must be local.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---unicode" class="org-programming-option">--unicode</span></li>
+</ul>
+<p>
+Check binary files to see if they contain Unicode
+expanded ASCII text. This causes performance to
+drop noticeably.
+</p>
+</div>
+
+<div id="outline-container-org93be23d" class="outline-4">
+<h4 id="org93be23d">Processing Options</h4>
+<div class="outline-text-4" id="text-org93be23d">
+<ul class="org-ul">
+<li><span id="opt---autoconf" class="org-programming-option">--autoconf</span></li>
+</ul>
+<p>
+Count .in files (as processed by GNU autoconf) of
+recognized languages. See also <a href="#opt---no-autogen"><span class="org-programming-option">--no-autogen</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---by-file" class="org-programming-option">--by-file</span></li>
+</ul>
+<p>
+Report results for every source file encountered.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---by-file-by-lang" class="org-programming-option">--by-file-by-lang</span></li>
+</ul>
+<p>
+Report results for every source file encountered
+in addition to reporting by language.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---count-and-diff" class="org-programming-option">--count-and-diff</span> <span class="org-programming-argument">SET1</span> <span class="org-programming-argument">SET2</span></li>
+</ul>
+<p>
+First perform direct code counts of source file(s)
+of SET1 and SET2 separately, then perform a diff
+of these. Inputs may be pairs of files, directories,
+or archives. If <a href="#opt---out"><span class="org-programming-option">--out</span></a> or <a href="#opt---report-file"><span class="org-programming-option">--report-file</span></a> is given,
+three output files will be created, one for each
+of the two counts and one for the diff. See also
+<a href="#opt---diff"><span class="org-programming-option">--diff</span></a>, <a href="#opt---diff-alignment"><span class="org-programming-option">--diff-alignment</span></a>, <a href="#opt---diff-timeout"><span class="org-programming-option">--diff-timeout</span></a>,
+<a href="#opt---ignore-case"><span class="org-programming-option">--ignore-case</span></a>, <a href="#opt---ignore-whitespace"><span class="org-programming-option">--ignore-whitespace</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---diff" class="org-programming-option">--diff</span> <span class="org-programming-argument">SET1</span> <span class="org-programming-argument">SET2</span></li>
+</ul>
+<p>
+Compute differences in code and comments between
+source file(s) of SET1 and SET2. The inputs
+may be any mix of files, directories, archives,
+or git commit hashes (Unix only).
+Use <a href="#opt---diff-alignment"><span class="org-programming-option">--diff-alignment</span></a> to generate a list showing
+which file pairs where compared. See also
+<a href="#opt---count-and-diff"><span class="org-programming-option">--count-and-diff</span></a>, <a href="#opt---diff-alignment"><span class="org-programming-option">--diff-alignment</span></a>, <a href="#opt---diff-timeout"><span class="org-programming-option">--diff-timeout</span></a>,
+<a href="#opt---ignore-case"><span class="org-programming-option">--ignore-case</span></a>, <a href="#opt---ignore-whitespace"><span class="org-programming-option">--ignore-whitespace</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---diff-timeout" class="org-programming-option">--diff-timeout</span> <span class="org-programming-argument">N</span></li>
+</ul>
+<p>
+Ignore files which take more than N seconds
+to process. Default is 10 seconds.
+(Large files with many repeated lines can cause
+Algorithm::Diff::sdiff() to take hours.)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---follow-links" class="org-programming-option">--follow-links</span></li>
+</ul>
+<p>
+[Unix only] Follow symbolic links to directories
+(sym links to files are always followed).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---force-lang" class="org-programming-option">--force-lang</span>=<span class="org-programming-argument">LANG</span>,<span class="org-programming-argument">EXT</span></li>
+</ul>
+<p>
+Process all files that have a EXT extension
+with the counter for language LANG. For
+example, to count all .f files with the
+Fortran 90 counter (which expects files to
+end with .f90) instead of the default Fortran 77
+counter, use
+<a href="#opt---force-lang"><span class="org-programming-option">--force-lang</span></a>=<span class="org-programming-argument">"Fortran 90"</span>,<span class="org-programming-argument">f</span>
+If EXT is omitted, every file will be counted
+with the LANG counter. This option can be
+specified multiple times (but that is only
+useful when EXT is given each time).
+See also <a href="#opt---script-lang"><span class="org-programming-option">--script-lang</span></a>, <a href="#opt---lang-no-ext"><span class="org-programming-option">--lang-no-ext</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---force-lang-def" class="org-programming-option">--force-lang-def</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Load language processing filters from FILE,
+then use these filters instead of the built<span id="opt--in" class="org-programming-option">-in</span>
+filters. Note: languages which map to the same
+file extension (for example:
+MATLAB/Mathematica/Objective C/MUMPS/Mercury;
+Pascal/PHP; Lisp/OpenCL; Lisp/Julia; Perl/Prolog)
+will be ignored as these require additional
+processing that is not expressed in language
+definition files. Use <a href="#opt---read-lang-def"><span class="org-programming-option">--read-lang-def</span></a> to define
+new language filters without replacing built-in
+filters (see also <a href="#opt---write-lang-def"><span class="org-programming-option">--write-lang-def</span></a>).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---git" class="org-programming-option">--git</span></li>
+</ul>
+<p>
+Forces the inputs to be interpreted as git targets
+(commit hashes, branch names, et cetera) if these
+are not first identified as file or directory
+names. This option overrides the <a href="#opt---vcs"><span class="org-programming-option">--vcs</span></a>=git logic
+if this is given; in other words, <a href="#opt---git"><span class="org-programming-option">--git</span></a> gets its
+list of files to work on directly from git using
+the hash or branch name rather than from
+'git ls<a href="#opt--files"><span class="org-programming-option">-files</span></a>'. This option can be used with
+<a href="#opt---diff"><span class="org-programming-option">--diff</span></a> to perform line count diffs between git
+commits, or between a git commit and a file,
+directory, or archive. Use <a href="#opt--v"><span class="org-programming-option">-v</span></a>/<a href="#opt---verbose"><span class="org-programming-option">--verbose</span></a> to see
+the git system commands cloc issues.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ignore-whitespace" class="org-programming-option">--ignore-whitespace</span></li>
+</ul>
+<p>
+Ignore horizontal white space when comparing files
+with <a href="#opt---diff"><span class="org-programming-option">--diff</span></a>. See also <a href="#opt---ignore-case"><span class="org-programming-option">--ignore-case</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ignore-case" class="org-programming-option">--ignore-case</span></li>
+</ul>
+<p>
+Ignore changes in case; consider upper- and lower-
+case letters equivalent when comparing files with
+<a href="#opt---diff"><span class="org-programming-option">--diff</span></a>. See also <a href="#opt---ignore-whitespace"><span class="org-programming-option">--ignore-whitespace</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---lang-no-ext" class="org-programming-option">--lang-no-ext</span>=<span class="org-programming-argument">LANG</span></li>
+</ul>
+<p>
+Count files without extensions using the LANG
+counter. This option overrides internal logic
+for files without extensions (where such files
+are checked against known scripting languages
+by examining the first line for #!). See also
+<a href="#opt---force-lang"><span class="org-programming-option">--force-lang</span></a>, <a href="#opt---script-lang"><span class="org-programming-option">--script-lang</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---max-file-size" class="org-programming-option">--max-file-size</span>=<span class="org-programming-argument">MB</span></li>
+</ul>
+<p>
+Skip files larger than MB megabytes when
+traversing directories. By default, MB=100.
+cloc's memory requirement is roughly twenty times
+larger than the largest file so running with
+files larger than 100 MB on a computer with less
+than 2 GB of memory will cause problems.
+Note: this check does not apply to files
+explicitly passed as command line arguments.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---no-autogen" class="org-programming-option">--no-autogen</span>[=<span class="org-programming-argument">list</span>]</li>
+</ul>
+<p>
+Ignore files generated by code<a href="#opt--production"><span class="org-programming-option">-production</span></a> systems
+such as GNU autoconf. To see a list of these files
+(then exit), run with <a href="#opt---no-autogen"><span class="org-programming-option">--no-autogen</span></a> list
+See also <a href="#opt---autoconf"><span class="org-programming-option">--autoconf</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---original-dir" class="org-programming-option">--original-dir</span></li>
+</ul>
+<p>
+[Only effective in combination with
+<a href="#opt---strip-comments"><span class="org-programming-option">--strip-comments</span></a>] Write the stripped files
+to the same directory as the original files.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---read-binary-files" class="org-programming-option">--read-binary-files</span></li>
+</ul>
+<p>
+Process binary files in addition to text files.
+This is usually a bad idea and should only be
+attempted with text files that have embedded
+binary data.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---read-lang-def" class="org-programming-option">--read-lang-def</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Load new language processing filters from FILE
+and merge them with those already known to cloc.
+If FILE defines a language cloc already knows
+about, cloc's definition will take precedence.
+Use <a href="#opt---force-lang-def"><span class="org-programming-option">--force-lang-def</span></a> to override cloc's
+definitions (see also <a href="#opt---write-lang-def"><span class="org-programming-option">--write-lang-def</span></a> ).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---script-lang" class="org-programming-option">--script-lang</span>=<span class="org-programming-argument">LANG</span>,<span class="org-programming-argument">S</span></li>
+</ul>
+<p>
+Process all files that invoke S as a #!
+scripting language with the counter for language
+LANG. For example, files that begin with
+#!/usr/local/bin/perl5.8.8
+will be counted with the Perl counter by using
+<a href="#opt---script-lang"><span class="org-programming-option">--script-lang</span></a>=<span class="org-programming-argument">Perl</span>
+The language name is case insensitive but the
+name of the script language executable, S,
+must have the right case. This option can be
+specified multiple times. See also <a href="#opt---force-lang"><span class="org-programming-option">--force-lang</span></a>,
+<a href="#opt---lang-no-ext"><span class="org-programming-option">--lang-no-ext</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sdir" class="org-programming-option">--sdir</span>=<span class="org-programming-argument">DIR</span></li>
+</ul>
+<p>
+Use DIR as the scratch directory instead of
+letting <a href=":Temp">:Temp</a> chose the location. Files
+written to this location are not removed at
+the end of the run (as they are with <a href=":Temp">:Temp</a>).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---skip-uniqueness" class="org-programming-option">--skip-uniqueness</span></li>
+</ul>
+<p>
+Skip the file uniqueness check. This will give
+a performance boost at the expense of counting
+files with identical contents multiple times
+(if such duplicates exist).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---stdin-name" class="org-programming-option">--stdin-name</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Give a file name to use to determine the language
+for standard input. (Use - as the input name to
+receive source code via STDIN.)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---strip-comments" class="org-programming-option">--strip-comments</span>=<span class="org-programming-argument">EXT</span></li>
+</ul>
+<p>
+For each file processed, write to the current
+directory a version of the file which has blank
+and commented lines removed inline comments
+persist). The name of each stripped file is the
+original file name with .EXT appended to it.
+It is written to the current directory unless
+<span id="opt---original-dir" class="org-programming-option">--original-dir</span> is on.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sum-reports" class="org-programming-option">--sum-reports</span></li>
+</ul>
+<p>
+Input arguments are report files previously
+created with the <a href="#opt---report-file"><span class="org-programming-option">--report-file</span></a> option. Makes
+a cumulative set of results containing the
+sum of data from the individual report files.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---processes" class="org-programming-option">--processes</span>=<span class="org-programming-argument">NUM</span></li>
+</ul>
+<p>
+[Available only on systems with a recent version
+of the Parallel::ForkManager module. Not
+available on Windows.] Sets the maximum number of
+cores that cloc uses. The default value of 0
+disables multiprocessing.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---unix" class="org-programming-option">--unix</span></li>
+</ul>
+<p>
+Override the operating system autodetection
+logic and run in UNIX mode. See also
+<a href="#opt---windows"><span class="org-programming-option">--windows</span></a>, <a href="#opt---show-os"><span class="org-programming-option">--show-os</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---use-sloccount" class="org-programming-option">--use-sloccount</span></li>
+</ul>
+<p>
+If SLOCCount is installed, use its compiled
+executables c_count, java_count, pascal_count,
+php_count, and xml_count instead of cloc's
+counters. SLOCCount's compiled counters are
+substantially faster than cloc's and may give
+a performance improvement when counting projects
+with large files. However, these cloc-specific
+features will not be available: <a href="#opt---diff"><span class="org-programming-option">--diff</span></a>,
+<a href="#opt---count-and-diff"><span class="org-programming-option">--count-and-diff</span></a>, <a href="#opt---strip-comments"><span class="org-programming-option">--strip-comments</span></a>, <a href="#opt---unicode"><span class="org-programming-option">--unicode</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---windows" class="org-programming-option">--windows</span></li>
+</ul>
+<p>
+Override the operating system autodetection
+logic and run in Microsoft Windows mode.
+See also <a href="#opt---unix"><span class="org-programming-option">--unix</span></a>, <a href="#opt---show-os"><span class="org-programming-option">--show-os</span></a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf2a696f" class="outline-4">
+<h4 id="orgf2a696f">Filter Options</h4>
+<div class="outline-text-4" id="text-orgf2a696f">
+<ul class="org-ul">
+<li><span id="opt---exclude-dir" class="org-programming-option">--exclude-dir</span>=<span class="org-programming-argument">D1</span>[,<span class="org-programming-argument">D2</span>,]</li>
+</ul>
+<p>
+Exclude the given comma separated directories
+D1, D2, D3, et cetera, from being scanned. For
+example <a href="#opt---exclude-dir"><span class="org-programming-option">--exclude-dir</span></a>=.cache,test will skip
+all files and subdirectories that have <i>.cache</i>
+or <i>test</i> as their parent directory.
+Directories named .bzr, .cvs, .hg, .git, .svn,
+and .snapshot are always excluded.
+This option only works with individual directory
+names so including file path separators is not
+allowed. Use <a href="#opt---fullpath"><span class="org-programming-option">--fullpath</span></a> and <a href="#opt---not-match-d"><span class="org-programming-option">--not-match-d</span></a>=REGEX
+to supply a regex matching multiple subdirectories.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---exclude-ext" class="org-programming-option">--exclude-ext</span>=<span class="org-programming-argument">EXT1</span>[,<span class="org-programming-argument">EXT2</span>[...]]</li>
+</ul>
+<p>
+Do not count files having the given file name
+extensions.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---exclude-lang" class="org-programming-option">--exclude-lang</span>=<span class="org-programming-argument">L1</span>[,<span class="org-programming-argument">L2</span>,]</li>
+</ul>
+<p>
+Exclude the given comma separated languages
+L1, L2, L3, et cetera, from being counted.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---exclude-list-file" class="org-programming-option">--exclude-list-file</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Ignore files and/or directories whose names
+appear in FILE. FILE should have one file
+name per line. Only exact matches are ignored;
+relative path names will be resolved starting from
+the directory where cloc is invoked.
+See also <a href="#opt---list-file"><span class="org-programming-option">--list-file</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---fullpath" class="org-programming-option">--fullpath</span></li>
+</ul>
+<p>
+Modifies the behavior of <a href="#opt---match-f"><span class="org-programming-option">--match-f</span></a>, <a href="#opt---not-match-f"><span class="org-programming-option">--not-match-f</span></a>,
+and <a href="#opt---not-match-d"><span class="org-programming-option">--not-match-d</span></a> to include the file's path
+in the regex, not just the file's basename.
+(This does not expand each file to include its
+absolute path, instead it uses as much of
+the path as is passed in to cloc.)
+Note: <a href="#opt---match-d"><span class="org-programming-option">--match-d</span></a> always looks at the full
+path and therefore is unaffected by <a href="#opt---fullpath"><span class="org-programming-option">--fullpath</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---include-lang" class="org-programming-option">--include-lang</span>=<span class="org-programming-argument">L1</span>,[,<span class="org-programming-argument">L2</span>,]</li>
+</ul>
+<p>
+Count only the given comma separated languages
+L1, L2, L3, et cetera.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---match-d" class="org-programming-option">--match-d</span>=<span class="org-programming-argument">REGEX</span></li>
+</ul>
+<p>
+Only count files in directories matching the Perl
+regex. For example
+<a href="#opt---match-d"><span class="org-programming-option">--match-d</span></a>='<i>(src|include)</i>'
+only counts files in directories containing
+<i>src</i> or <i>include</i>. Unlike <a href="#opt---not-match-d"><span class="org-programming-option">--not-match-d</span></a>,
+<a href="#opt---match-f"><span class="org-programming-option">--match-f</span></a>, and <a href="#opt---not-match-f"><span class="org-programming-option">--not-match-f</span></a>, <a href="#opt---match-d"><span class="org-programming-option">--match-d</span></a> always
+compares the fully qualified path against the
+regex.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---not-match-d" class="org-programming-option">--not-match-d</span>=<span class="org-programming-argument">REGEX</span></li>
+</ul>
+<p>
+Count all files except those in directories
+matching the Perl regex. Only the trailing
+directory name is compared, for example, when
+counting in /usr/local/lib, only 'lib' is
+compared to the regex.
+Add <a href="#opt---fullpath"><span class="org-programming-option">--fullpath</span></a> to compare parent directories to
+the regex.
+Do not include file path separators at the
+beginning or end of the regex.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---match-f" class="org-programming-option">--match-f</span>=<span class="org-programming-argument">REGEX</span></li>
+</ul>
+<p>
+Only count files whose basenames match the Perl
+regex. For example
+<a href="#opt---match-f"><span class="org-programming-option">--match-f</span></a>='^[Ww]idget'
+only counts files that start with Widget or widget.
+Add <a href="#opt---fullpath"><span class="org-programming-option">--fullpath</span></a> to include parent directories
+in the regex instead of just the basename.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---not-match-f" class="org-programming-option">--not-match-f</span>=<span class="org-programming-argument">REGEX</span></li>
+</ul>
+<p>
+Count all files except those whose basenames
+match the Perl regex. Add <a href="#opt---fullpath"><span class="org-programming-option">--fullpath</span></a> to include
+parent directories in the regex instead of just
+the basename.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---skip-archive" class="org-programming-option">--skip-archive</span>=<span class="org-programming-argument">REGEX</span></li>
+</ul>
+<p>
+Ignore files that end with the given Perl regular
+expression. For example, if given
+<a href="#opt---skip-archive"><span class="org-programming-option">--skip-archive</span></a>=(zip|tar(.(gz|Z|bz2|xz|7z))?)'
+the code will skip files that end with .zip,
+.tar, .tar.gz, .tar.Z, .tar.bz2, .tar.xz, and
+.tar.7z.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---skip-win-hidden" class="org-programming-option">--skip-win-hidden</span></li>
+</ul>
+<p>
+On Windows, ignore hidden files.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org112e43a" class="outline-4">
+<h4 id="org112e43a">Debug Options</h4>
+<div class="outline-text-4" id="text-org112e43a">
+<ul class="org-ul">
+<li><span id="opt---categorized" class="org-programming-option">--categorized</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Save names of categorized files to FILE.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---counted" class="org-programming-option">--counted</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Save names of processed source files to FILE.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---diff-alignment" class="org-programming-option">--diff-alignment</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Write to FILE a list of files and file pairs
+showing which files were added, removed, and/or
+compared during a run with <a href="#opt---diff"><span class="org-programming-option">--diff</span></a>. This switch
+forces the <a href="#opt---diff"><span class="org-programming-option">--diff</span></a> mode on.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---explain" class="org-programming-option">--explain</span>=<span class="org-programming-argument">LANG</span></li>
+</ul>
+<p>
+Print the filters used to remove comments for
+language LANG and exit. In some cases the
+filters refer to Perl subroutines rather than
+regular expressions. An examination of the
+source code may be needed for further explanation.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---help" class="org-programming-option">--help</span></li>
+</ul>
+<p>
+Print this usage information and exit.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---found" class="org-programming-option">--found</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Save names of every file found to FILE.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---ignored" class="org-programming-option">--ignored</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Save names of ignored files and the reason they
+were ignored to FILE.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---print-filter-stages" class="org-programming-option">--print-filter-stages</span></li>
+</ul>
+<p>
+Print processed source code before and after
+each filter is applied.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---show-ext" class="org-programming-option">--show-ext</span>[=<span class="org-programming-argument">EXT</span>]</li>
+</ul>
+<p>
+Print information about all known (or just the
+given) file extensions and exit.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---show-lang" class="org-programming-option">--show-lang</span>[=<span class="org-programming-argument">LANG</span>]</li>
+</ul>
+<p>
+Print information about all known (or just the
+given) languages and exit.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---show-os" class="org-programming-option">--show-os</span></li>
+</ul>
+<p>
+Print the value of the operating system mode
+and exit. See also <a href="#opt---unix"><span class="org-programming-option">--unix</span></a>, <a href="#opt---windows"><span class="org-programming-option">--windows</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--v" class="org-programming-option">-v</span>[=<span class="org-programming-argument">N</span>]</li>
+</ul>
+<p>
+Verbose switch (optional numeric value).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt--verbose" class="org-programming-option">-verbose</span>[=<span class="org-programming-argument">N</span>]</li>
+</ul>
+<p>
+Long form of <a href="#opt--v"><span class="org-programming-option">-v</span></a>.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---version" class="org-programming-option">--version</span></li>
+</ul>
+<p>
+Print the version of this program and exit.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---write-lang-def" class="org-programming-option">--write-lang-def</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Writes to FILE the language processing filters
+then exits. Useful as a first step to creating
+custom language definitions (see also
+<a href="#opt---force-lang-def"><span class="org-programming-option">--force-lang-def</span></a>, <a href="#opt---read-lang-def"><span class="org-programming-option">--read-lang-def</span></a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5276872" class="outline-4">
+<h4 id="org5276872">Output Options</h4>
+<div class="outline-text-4" id="text-org5276872">
+<ul class="org-ul">
+<li><span id="opt---3" class="org-programming-option">--3</span></li>
+</ul>
+<p>
+Print third-generation language output.
+(This option can cause report summation to fail
+if some reports were produced with this option
+while others were produced without it.)
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---by-percent" class="org-programming-option">--by-percent</span> <span class="org-programming-argument">X</span></li>
+</ul>
+<p>
+Instead of comment and blank line counts, show
+these values as percentages based on the value
+of X in the denominator:
+X = 'c' -&gt; # lines of code
+X = 'cm' -&gt; # lines of code + comments
+X = 'cb' -&gt; # lines of code + blanks
+X = 'cmb' -&gt; # lines of code + comments + blanks
+For example, if using method 'c' and your code
+has twice as many lines of comments as lines
+of code, the value in the comment column will
+be 200%. The code column remains a line count.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---csv" class="org-programming-option">--csv</span></li>
+</ul>
+<p>
+Write the results as comma separated values.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---csv-delimiter" class="org-programming-option">--csv-delimiter</span>=<span class="org-programming-argument">C</span></li>
+</ul>
+<p>
+Use the character C as the delimiter for comma
+separated files instead of ,. This switch forces
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---json" class="org-programming-option">--json</span></li>
+</ul>
+<p>
+Write the results as JavaScript Object Notation
+(JSON) formatted output.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---md" class="org-programming-option">--md</span></li>
+</ul>
+<p>
+Write the results as Markdown-formatted text.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---out" class="org-programming-option">--out</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Synonym for <a href="#opt---report-file"><span class="org-programming-option">--report-file</span></a>=FILE.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---progress-rate" class="org-programming-option">--progress-rate</span>=<span class="org-programming-argument">N</span></li>
+</ul>
+<p>
+Show progress update after every N files are
+processed (default N=100). Set N to 0 to
+suppress progress output (useful when redirecting
+output to STDOUT).
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---quiet" class="org-programming-option">--quiet</span></li>
+</ul>
+<p>
+Suppress all information messages except for
+the final report.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---report-file" class="org-programming-option">--report-file</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Write the results to FILE instead of STDOUT.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sql" class="org-programming-option">--sql</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Write results as SQL create and insert statements
+which can be read by a database program such as
+SQLite. If FILE is -, output is sent to STDOUT.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sql-append" class="org-programming-option">--sql-append</span></li>
+</ul>
+<p>
+Append SQL insert statements to the file specified
+by <a href="#opt---sql"><span class="org-programming-option">--sql</span></a> and do not generate table creation
+statements. Only valid with the <a href="#opt---sql"><span class="org-programming-option">--sql</span></a> option.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sql-project" class="org-programming-option">--sql-project</span>=<span class="org-programming-argument">NAME</span></li>
+</ul>
+<p>
+Use NAME as the project identifier for the
+current run. Only valid with the <a href="#opt---sql"><span class="org-programming-option">--sql</span></a> option.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sql-style" class="org-programming-option">--sql-style</span>=<span class="org-programming-argument">STYLE</span></li>
+</ul>
+<p>
+Write SQL statements in the given style instead
+of the default SQLite format. Currently, the
+only style option is Oracle.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---sum-one" class="org-programming-option">--sum-one</span></li>
+</ul>
+<p>
+For plain text reports, show the SUM: output line
+even if only one input file is processed.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---xml" class="org-programming-option">--xml</span></li>
+</ul>
+<p>
+Write the results in XML.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---xsl" class="org-programming-option">--xsl</span>=<span class="org-programming-argument">FILE</span></li>
+</ul>
+<p>
+Reference FILE as an XSL stylesheet within
+the XML output. If FILE is 1 (numeric one),
+writes a default stylesheet, cloc.xsl (or
+cloc<a href="#opt--diff"><span class="org-programming-option">-diff</span></a>.xsl if <a href="#opt---diff"><span class="org-programming-option">--diff</span></a> is also given).
+This switch forces <a href="#opt---xml"><span class="org-programming-option">--xml</span></a> on.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---yaml" class="org-programming-option">--yaml</span></li>
+</ul>
+<p>
+Write the results in YAML.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a1a26d" class="outline-3">
+<h3 id="examples"><a id="org5a1a26d"></a>Examples</h3>
+<div class="outline-text-3" id="text-examples">
+</div>
+
+<div id="outline-container-org0eaa1b7" class="outline-4">
+<h4 id="org0eaa1b7">Simply use</h4>
+<div class="outline-text-4" id="text-org0eaa1b7">
+<div class="org-src-container">
+<pre class="src src-sh">$ cloc Linux-Command.org
+</pre>
+</div>
+
+<pre class="example">
+     123 text files.
+     122 unique files.
+     110 files ignored.
+
+github.com/AlDanial/cloc v 1.74  T=0.42 s (35.5 files/s, 4450.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Lisp                             4             84             46            588
+HTML                             3             40            294            438
+Bourne Shell                     1             23              2            122
+make                             2             15              0             88
+YAML                             2              2              0             66
+Dockerfile                       1              4              2             32
+CSS                              1              1              0             24
+JavaScript                       1              0              0             11
+-------------------------------------------------------------------------------
+SUM:                            15            169            344           1369
+-------------------------------------------------------------------------------
+</pre>
+
+<p>
+Not classified org files.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4e12919" class="outline-4">
+<h4 id="org4e12919">Force set lang</h4>
+<div class="outline-text-4" id="text-org4e12919">
+<p>
+See option <a href="#opt---force-lang"><span class="org-programming-option">--force-lang</span></a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">$ cloc Linux-Command.org --force-lang=<span style="font-style: italic;">"Bourne Again Shell,org"</span>
+</pre>
+</div>
+
+<pre class="example">
+     123 text files.
+     122 unique files.
+      13 files ignored.
+
+github.com/AlDanial/cloc v 1.74  T=0.54 s (209.2 files/s, 37307.1 lines/s)
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+Bourne Again Shell               97           1976           9412           6703
+Lisp                              4             84             46            588
+HTML                              3             40            294            438
+Bourne Shell                      1             23              2            122
+make                              2             15              0             88
+YAML                              2              2              0             66
+Dockerfile                        1              4              2             32
+CSS                               1              1              0             24
+JavaScript                        1              0              0             11
+--------------------------------------------------------------------------------
+SUM:                            112           2145           9756           8072
+--------------------------------------------------------------------------------
+</pre>
+
+<p>
+Forced classification the org files as Bourne Again Shell(Because bash has same comment method).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb619dbc" class="outline-4">
+<h4 id="orgb619dbc">with Git hash</h4>
+<div class="outline-text-4" id="text-orgb619dbc">
+<p>
+See option <a href="#opt---git"><span class="org-programming-option">--git</span></a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">$ cloc Linux-Command.org --git 5e5512b --force-lang=<span style="font-style: italic;">"Bourne Again Shell,org"</span>
+</pre>
+</div>
+
+<pre class="example">
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.74  T=0.05 s (19.1 files/s, 19.1 lines/s)
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+Bourne Again Shell                1              0              1              0
+--------------------------------------------------------------------------------
+</pre>
+
+<p>
+Can classificate using git hash.
+</p>
+<ul class="org-ul">
+<li>Used first commit of Linux-Commands.org</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc7ca32" class="outline-2">
+<h2 id="references"><a id="orgbc7ca32"></a>References</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="http://cloc.sourceforge.net/">cloc on Sourceforge</a></li>
+<li><a href="https://github.com/AlDanial/cloc">cloc on GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-29</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:43</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

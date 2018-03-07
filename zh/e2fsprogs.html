@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2018-03-07 Wed 13:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>e2fsprogs</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="e2fsprogs - Linux命令">
+<meta name="description" content="">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="e2fsprogs - Linux命令">
+<meta property="og:description" content="">
+<meta name="twitter:title" content="e2fsprogs - Linux命令">
+<meta name="twitter:description" content="">
+<link rel="alternate" href="http://linux-command.org/en/e2fsprogs.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/e2fsprogs.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/e2fsprogs.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/e2fsprogs.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/e2fsprogs.html" hreflang="zh" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">e2fsprogs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#how-to-install">如何安装</a>
+<ul>
+<li><a href="#install">安装</a>
+<ul>
+<li><a href="#org41f4f76">Ubuntu</a></li>
+<li><a href="#org5ccc93a">CentOS</a></li>
+<li><a href="#orgd715855">from Source code</a></li>
+</ul>
+</li>
+<li><a href="#packages">安装的软件包</a></li>
+<li><a href="#check">检查</a>
+<ul>
+<li><a href="#orgc997ebe">badblocks</a></li>
+<li><a href="#org68bfc47">blkid</a></li>
+<li><a href="#orgeb97c47">chattr</a></li>
+<li><a href="#org9f2b40d">debugfs</a></li>
+<li><a href="#orgd0e4bca">dumpe2fs</a></li>
+<li><a href="#orgac73770">e2freefrag</a></li>
+<li><a href="#orgac6252b">e2fsck</a></li>
+<li><a href="#orgfeb349b">e2image</a></li>
+<li><a href="#org1b2c285">e2label</a></li>
+<li><a href="#org1db5a2b">e2undo</a></li>
+<li><a href="#orgea10d77">e4defrag</a></li>
+<li><a href="#orgbbdb9f6">filefrag</a></li>
+<li><a href="#org70b44f4">findfs</a></li>
+<li><a href="#orge62d34b">findsuper</a></li>
+<li><a href="#org642642e">logsave</a></li>
+<li><a href="#orgcc95b9a">lsattr</a></li>
+<li><a href="#org6e4d6e1">mke2fs</a></li>
+<li><a href="#org5f59387">resize2fs</a></li>
+<li><a href="#orge018ecd">tune2fs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#usage">如何使用</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org4e13fe3">badblocks</a></li>
+<li><a href="#org6d012a7">blkid</a></li>
+<li><a href="#org0a30f10">chattr</a></li>
+<li><a href="#org87b49fe">debugfs</a></li>
+<li><a href="#orged69486">dumpe2fs</a></li>
+<li><a href="#orga3ba0f9">e2freefrag</a></li>
+<li><a href="#org0afa8cb">e2fsck</a></li>
+<li><a href="#org0dcbdbe">e2image</a></li>
+<li><a href="#org49cf899">e2label</a></li>
+<li><a href="#org1dd5b67">e2undo</a></li>
+<li><a href="#org95e635b">e4defrag</a></li>
+<li><a href="#org18fadf9">filefrag</a></li>
+<li><a href="#org8edcf2b">findfs</a></li>
+<li><a href="#orge70f45d">findsuper</a></li>
+<li><a href="#org28ad08d">logsave</a></li>
+<li><a href="#org45cc0e6">lsattr</a></li>
+<li><a href="#org7ad77dc">mke2fs</a></li>
+<li><a href="#org7938fc4">resize2fs</a></li>
+<li><a href="#org6f5637c">tune2fs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#references">参考</a></li>
+</ul>
+</div>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Version</td>
+<td class="org-left"><span class="org-programming-version">1.43.9</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Release Date</td>
+<td class="org-left"><span class="org-programming-date">2018-02-08</span></td>
+</tr>
+
+<tr>
+<td class="org-left">License</td>
+<td class="org-left">GPL</td>
+</tr>
+
+<tr>
+<td class="org-left">Programming Language</td>
+<td class="org-left">C</td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-org19b0355" class="outline-2">
+<h2 id="how-to-install"><a id="org19b0355"></a>如何安装</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-orgdbbe228" class="outline-3">
+<h3 id="install"><a id="orgdbbe228"></a>安装</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-org41f4f76" class="outline-4">
+<h4 id="org41f4f76">Ubuntu</h4>
+<div class="outline-text-4" id="text-org41f4f76">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install es2fsprogs
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ccc93a" class="outline-4">
+<h4 id="org5ccc93a">CentOS</h4>
+<div class="outline-text-4" id="text-org5ccc93a">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo yum install es2fsprogs
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd715855" class="outline-4">
+<h4 id="orgd715855">from Source code</h4>
+<div class="outline-text-4" id="text-orgd715855">
+<div class="org-src-container">
+<pre class="src src-sh">$ git clone https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
+$ mkdir build
+$ cd build
+$ ../configure
+$ make
+$ make check
+$ sudo make install
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd8d4d31" class="outline-3">
+<h3 id="packages"><a id="orgd8d4d31"></a>安装的软件包</h3>
+<div class="outline-text-3" id="text-packages">
+<ul class="org-ul">
+<li><a href="./badblocks.html">badblocks</a></li>
+<li><a href="./blkid.html">blkid</a></li>
+<li><a href="./chattr.html">chattr</a></li>
+<li><a href="./debugfs.html">debugfs</a></li>
+<li><a href="./dumpe2fs.html">dumpe2fs</a></li>
+<li><a href="./e2freefrag.html">e2freefrag</a></li>
+<li><a href="./e2fsck.html">e2fsck</a></li>
+<li><a href="./e2image.html">e2image</a></li>
+<li><a href="./e2label.html">e2label</a></li>
+<li><a href="./e2undo.html">e2undo</a></li>
+<li><a href="./e4defrag.html">e4defrag</a></li>
+<li><a href="./filefrag.html">filefrag</a></li>
+<li><a href="./findfs.html">findfs</a></li>
+<li><a href="./findsuper.html">findsuper</a></li>
+<li><a href="./logsave.html">logsave</a></li>
+<li><a href="./lsattr.html">lsattr</a></li>
+<li><a href="./mke2fs.html">mke2fs</a></li>
+<li><a href="./resize2fs.html">resize2fs</a></li>
+<li><a href="./tune2fs.html">tune2fs</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org734134b" class="outline-3">
+<h3 id="check"><a id="org734134b"></a>检查</h3>
+<div class="outline-text-3" id="text-check">
+</div>
+
+<div id="outline-container-orgc997ebe" class="outline-4">
+<h4 id="orgc997ebe">badblocks</h4>
+<div class="outline-text-4" id="text-orgc997ebe">
+</div>
+</div>
+
+<div id="outline-container-org68bfc47" class="outline-4">
+<h4 id="org68bfc47">blkid</h4>
+<div class="outline-text-4" id="text-org68bfc47">
+</div>
+</div>
+
+<div id="outline-container-orgeb97c47" class="outline-4">
+<h4 id="orgeb97c47">chattr</h4>
+<div class="outline-text-4" id="text-orgeb97c47">
+<p>
+请参阅<a href="./chattr.html#check">chattr</a>文章。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f2b40d" class="outline-4">
+<h4 id="org9f2b40d">debugfs</h4>
+<div class="outline-text-4" id="text-org9f2b40d">
+</div>
+</div>
+
+<div id="outline-container-orgd0e4bca" class="outline-4">
+<h4 id="orgd0e4bca">dumpe2fs</h4>
+<div class="outline-text-4" id="text-orgd0e4bca">
+</div>
+</div>
+
+<div id="outline-container-orgac73770" class="outline-4">
+<h4 id="orgac73770">e2freefrag</h4>
+<div class="outline-text-4" id="text-orgac73770">
+</div>
+</div>
+
+<div id="outline-container-orgac6252b" class="outline-4">
+<h4 id="orgac6252b">e2fsck</h4>
+<div class="outline-text-4" id="text-orgac6252b">
+</div>
+</div>
+
+<div id="outline-container-orgfeb349b" class="outline-4">
+<h4 id="orgfeb349b">e2image</h4>
+<div class="outline-text-4" id="text-orgfeb349b">
+</div>
+</div>
+
+<div id="outline-container-org1b2c285" class="outline-4">
+<h4 id="org1b2c285">e2label</h4>
+<div class="outline-text-4" id="text-org1b2c285">
+</div>
+</div>
+
+<div id="outline-container-org1db5a2b" class="outline-4">
+<h4 id="org1db5a2b">e2undo</h4>
+<div class="outline-text-4" id="text-org1db5a2b">
+</div>
+</div>
+
+<div id="outline-container-orgea10d77" class="outline-4">
+<h4 id="orgea10d77">e4defrag</h4>
+<div class="outline-text-4" id="text-orgea10d77">
+</div>
+</div>
+
+<div id="outline-container-orgbbdb9f6" class="outline-4">
+<h4 id="orgbbdb9f6">filefrag</h4>
+<div class="outline-text-4" id="text-orgbbdb9f6">
+</div>
+</div>
+
+<div id="outline-container-org70b44f4" class="outline-4">
+<h4 id="org70b44f4">findfs</h4>
+<div class="outline-text-4" id="text-org70b44f4">
+</div>
+</div>
+
+<div id="outline-container-orge62d34b" class="outline-4">
+<h4 id="orge62d34b">findsuper</h4>
+<div class="outline-text-4" id="text-orge62d34b">
+</div>
+</div>
+
+<div id="outline-container-org642642e" class="outline-4">
+<h4 id="org642642e">logsave</h4>
+<div class="outline-text-4" id="text-org642642e">
+</div>
+</div>
+
+<div id="outline-container-orgcc95b9a" class="outline-4">
+<h4 id="orgcc95b9a">lsattr</h4>
+<div class="outline-text-4" id="text-orgcc95b9a">
+<p>
+请参阅<a href="./lsattr.html#check">lsattr</a>文章。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e4d6e1" class="outline-4">
+<h4 id="org6e4d6e1">mke2fs</h4>
+<div class="outline-text-4" id="text-org6e4d6e1">
+</div>
+</div>
+
+<div id="outline-container-org5f59387" class="outline-4">
+<h4 id="org5f59387">resize2fs</h4>
+<div class="outline-text-4" id="text-org5f59387">
+</div>
+</div>
+
+<div id="outline-container-orge018ecd" class="outline-4">
+<h4 id="orge018ecd">tune2fs</h4>
+<div class="outline-text-4" id="text-orge018ecd">
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org767be7f" class="outline-2">
+<h2 id="usage"><a id="org767be7f"></a>如何使用</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org4e13fe3" class="outline-4">
+<h4 id="org4e13fe3">badblocks</h4>
+<div class="outline-text-4" id="text-org4e13fe3">
+</div>
+</div>
+
+<div id="outline-container-org6d012a7" class="outline-4">
+<h4 id="org6d012a7">blkid</h4>
+<div class="outline-text-4" id="text-org6d012a7">
+</div>
+</div>
+
+<div id="outline-container-org0a30f10" class="outline-4">
+<h4 id="org0a30f10">chattr</h4>
+<div class="outline-text-4" id="text-org0a30f10">
+<p>
+请参阅<a href="./chattr.html#usage">chattr</a>文章。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org87b49fe" class="outline-4">
+<h4 id="org87b49fe">debugfs</h4>
+<div class="outline-text-4" id="text-org87b49fe">
+</div>
+</div>
+
+<div id="outline-container-orged69486" class="outline-4">
+<h4 id="orged69486">dumpe2fs</h4>
+<div class="outline-text-4" id="text-orged69486">
+</div>
+</div>
+
+<div id="outline-container-orga3ba0f9" class="outline-4">
+<h4 id="orga3ba0f9">e2freefrag</h4>
+<div class="outline-text-4" id="text-orga3ba0f9">
+</div>
+</div>
+
+<div id="outline-container-org0afa8cb" class="outline-4">
+<h4 id="org0afa8cb">e2fsck</h4>
+<div class="outline-text-4" id="text-org0afa8cb">
+</div>
+</div>
+
+<div id="outline-container-org0dcbdbe" class="outline-4">
+<h4 id="org0dcbdbe">e2image</h4>
+<div class="outline-text-4" id="text-org0dcbdbe">
+</div>
+</div>
+
+<div id="outline-container-org49cf899" class="outline-4">
+<h4 id="org49cf899">e2label</h4>
+<div class="outline-text-4" id="text-org49cf899">
+</div>
+</div>
+
+<div id="outline-container-org1dd5b67" class="outline-4">
+<h4 id="org1dd5b67">e2undo</h4>
+<div class="outline-text-4" id="text-org1dd5b67">
+</div>
+</div>
+
+<div id="outline-container-org95e635b" class="outline-4">
+<h4 id="org95e635b">e4defrag</h4>
+<div class="outline-text-4" id="text-org95e635b">
+</div>
+</div>
+
+<div id="outline-container-org18fadf9" class="outline-4">
+<h4 id="org18fadf9">filefrag</h4>
+<div class="outline-text-4" id="text-org18fadf9">
+</div>
+</div>
+
+<div id="outline-container-org8edcf2b" class="outline-4">
+<h4 id="org8edcf2b">findfs</h4>
+<div class="outline-text-4" id="text-org8edcf2b">
+</div>
+</div>
+
+<div id="outline-container-orge70f45d" class="outline-4">
+<h4 id="orge70f45d">findsuper</h4>
+<div class="outline-text-4" id="text-orge70f45d">
+</div>
+</div>
+
+<div id="outline-container-org28ad08d" class="outline-4">
+<h4 id="org28ad08d">logsave</h4>
+<div class="outline-text-4" id="text-org28ad08d">
+</div>
+</div>
+
+<div id="outline-container-org45cc0e6" class="outline-4">
+<h4 id="org45cc0e6">lsattr</h4>
+<div class="outline-text-4" id="text-org45cc0e6">
+<p>
+请参阅<a href="./lsattr.html#usage">lsattr</a>文章。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ad77dc" class="outline-4">
+<h4 id="org7ad77dc">mke2fs</h4>
+<div class="outline-text-4" id="text-org7ad77dc">
+</div>
+</div>
+
+<div id="outline-container-org7938fc4" class="outline-4">
+<h4 id="org7938fc4">resize2fs</h4>
+<div class="outline-text-4" id="text-org7938fc4">
+</div>
+</div>
+
+<div id="outline-container-org6f5637c" class="outline-4">
+<h4 id="org6f5637c">tune2fs</h4>
+<div class="outline-text-4" id="text-org6f5637c">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge023dc2" class="outline-2">
+<h2 id="references"><a id="orge023dc2"></a>参考</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="http://e2fsprogs.sourceforge.net/">官方主页</a></li>
+<li><a href="https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git">源代码</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-03-05</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:55</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

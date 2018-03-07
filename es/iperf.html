@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2018-03-07 Wed 13:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>iperf</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="iperf - Comandos de Linux">
+<meta name="description" content="iperf is a tool for performing network throughput measurements. It can test either TCP or UDP throughput. To perform an iperf test the user must establish both a server (to discard traffic) and a client (to generate traffic). Realizar pruebas de rendimiento de la red ">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iperf - Comandos de Linux">
+<meta property="og:description" content="iperf is a tool for performing network throughput measurements. It can test either TCP or UDP throughput. To perform an iperf test the user must establish both a server (to discard traffic) and a client (to generate traffic). Realizar pruebas de rendimiento de la red ">
+<meta name="twitter:title" content="iperf - Comandos de Linux">
+<meta name="twitter:description" content="iperf is a tool for performing network throughput measurements. It can test either TCP or UDP throughput. To perform an iperf test the user must establish both a server (to discard traffic) and a client (to generate traffic). Realizar pruebas de rendimiento de la red ">
+<link rel="alternate" href="http://linux-command.org/en/iperf.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/iperf.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/iperf.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/iperf.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/iperf.html" hreflang="zh" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">iperf</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">Visión de conjunto</a>
+<ul>
+<li><a href="#introduction">Introducción</a></li>
+</ul>
+</li>
+<li><a href="#how-to-install">Cómo instalar</a>
+<ul>
+<li><a href="#prerequisites">Requisitos previos</a></li>
+<li><a href="#dependencies">Dependencias</a></li>
+<li><a href="#install">Instalar</a></li>
+<li><a href="#packages">Paquetes instalados</a></li>
+<li><a href="#check">Comprobar</a></li>
+</ul>
+</li>
+<li><a href="#usage">Uso</a>
+<ul>
+<li><a href="#syntax">Sintaxis</a></li>
+<li><a href="#options">Opciones</a>
+<ul>
+<li><a href="#org5e60274">Server Specific Options</a></li>
+<li><a href="#org22bc813">Client Specific Options</a></li>
+</ul>
+</li>
+<li><a href="#environment-variables">Variables de entorno</a></li>
+</ul>
+</li>
+<li><a href="#references">Referencias</a></li>
+</ul>
+</div>
+</div>
+<table id="org4eba5a6" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Maintainer</td>
+<td class="org-left">Ubuntu MOTU Developers</td>
+</tr>
+
+<tr>
+<td class="org-left">Version</td>
+<td class="org-left"><span class="org-programming-version">2.0.5</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Package Size</td>
+<td class="org-left"><span class="org-programming-size">49KB</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Installed Size</td>
+<td class="org-left"><span class="org-programming-size">180KB</span></td>
+</tr>
+
+<tr>
+<td class="org-left">Homepage</td>
+<td class="org-left"><a href="https://github.com/esnet/iperf">https://github.com/esnet/iperf</a></td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-orga165635" class="outline-2">
+<h2 id="overview"><a id="orga165635"></a>Visión de conjunto</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+Realizar pruebas de rendimiento de la red
+</p>
+</div>
+
+<div id="outline-container-orgc7f70f6" class="outline-3">
+<h3 id="introduction"><a id="orgc7f70f6"></a>Introducción</h3>
+<div class="outline-text-3" id="text-introduction">
+<p>
+iperf is a tool for performing network throughput measurements.
+It can test either TCP or UDP throughput.
+To perform an iperf test the user must establish both a server (to discard traffic) and a client (to generate traffic).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga94b75e" class="outline-2">
+<h2 id="how-to-install"><a id="orga94b75e"></a>Cómo instalar</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org5d2f856" class="outline-3">
+<h3 id="prerequisites"><a id="org5d2f856"></a>Requisitos previos</h3>
+<div class="outline-text-3" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org367c018" class="outline-3">
+<h3 id="dependencies"><a id="org367c018"></a>Dependencias</h3>
+<div class="outline-text-3" id="text-dependencies">
+<ul class="org-ul">
+<li>libc6
+<ul class="org-ul">
+<li>[not arm64, ppc64el] (&gt;= <span class="org-programming-version">2.15</span>)
+<ul class="org-ul">
+<li>GNU C Library: Shared libraries also a virtual package provided by libc6-udeb</li>
+</ul></li>
+<li>[arm64, ppc64el] (&gt;= <span class="org-programming-version">2.17</span>)</li>
+</ul></li>
+<li>libgcc1
+<ul class="org-ul">
+<li>[not arm64, armhf, powerpc] (&gt;= <span class="org-programming-version">1:4.1.1</span>)
+<ul class="org-ul">
+<li>GCC support library</li>
+</ul></li>
+<li>[powerpc] (&gt;= <span class="org-programming-version">1:4.2.1</span>)</li>
+<li>[armhf] (&gt;= <span class="org-programming-version">1:4.4.0</span>)</li>
+<li>[arm64] (&gt;= <span class="org-programming-version">1:4.7</span>)</li>
+</ul></li>
+<li>libstdc++6
+<ul class="org-ul">
+<li>[not armhf] (&gt;= <span class="org-programming-version">4.1.1</span>)
+<ul class="org-ul">
+<li>GNU Standard C++ Library v3</li>
+</ul></li>
+<li>libstdc++6 [armhf] (&gt;= <span class="org-programming-version">4.3.0</span>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2d5f72" class="outline-3">
+<h3 id="install"><a id="orga2d5f72"></a>Instalar</h3>
+<div class="outline-text-3" id="text-install">
+<div class="org-src-container">
+<pre class="src src-sh">$ sudo apt-get install iperf
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2df599a" class="outline-3">
+<h3 id="packages"><a id="org2df599a"></a>Paquetes instalados</h3>
+<div class="outline-text-3" id="text-packages">
+<ul class="org-ul">
+<li>iperf</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org52c1567" class="outline-3">
+<h3 id="check"><a id="org52c1567"></a>Comprobar</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ iperf -v
+</pre>
+</div>
+
+<pre class="example">
+iperf version 2.0.5 (08 Jul 2010) pthreads
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92bc449" class="outline-2">
+<h2 id="usage"><a id="org92bc449"></a>Uso</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org623467b" class="outline-3">
+<h3 id="syntax"><a id="org623467b"></a>Sintaxis</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">iperf -s [ options ]
+
+iperf -c server [ options ]
+
+iperf -u -s [ options ]
+
+iperf -u -c server [ options ]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd451782" class="outline-3">
+<h3 id="options"><a id="orgd451782"></a>Opciones</h3>
+<div class="outline-text-3" id="text-options">
+<ul class="org-ul">
+<li><span id="opt--f" class="org-programming-option">-f</span>, <span id="opt---format" class="org-programming-option">--format</span> <span class="org-programming-argument">[kmKM]</span>
+format to report: Kbits, Mbits, KBytes, MBytes</li>
+
+<li><span id="opt--h" class="org-programming-option">-h</span>, <span id="opt---help" class="org-programming-option">--help</span>
+print a help synopsis</li>
+
+<li><span id="opt--i" class="org-programming-option">-i</span>, <span id="opt---interval" class="org-programming-option">--interval</span> <span class="org-programming-argument">n</span>
+pause n seconds between periodic bandwidth reports</li>
+
+<li><span id="opt--l" class="org-programming-option">-l</span>, <span id="opt---len" class="org-programming-option">--len</span> <span class="org-programming-argument">n[KM]</span>
+set length read/write buffer to n (default 8 KB)</li>
+
+<li><span id="opt--m" class="org-programming-option">-m</span>, <span id="opt---print_mss" class="org-programming-option">--print_mss</span>
+print TCP maximum segment size (MTU - TCP/IP header)</li>
+
+<li><span id="opt--o" class="org-programming-option">-o</span>, <span id="opt---output" class="org-programming-option">--output</span> <span class="org-programming-argument"><filename></span>
+output the report or error message to this specified file</li>
+
+<li><span id="opt--p" class="org-programming-option">-p</span>, <span id="opt---port" class="org-programming-option">--port</span> <span class="org-programming-argument">n</span>
+set server port to listen on/connect to to n (default 5001)</li>
+
+<li><span id="opt--u" class="org-programming-option">-u</span>, <span id="opt---udp" class="org-programming-option">--udp</span>
+use UDP rather than TCP</li>
+
+<li><span id="opt--w" class="org-programming-option">-w</span>, <span id="opt---window" class="org-programming-option">--window</span>
+TCP window size (socket buffer size)</li>
+
+<li><span id="opt--B" class="org-programming-option">-B</span>, <span id="opt---bind" class="org-programming-option">--bind</span> <span class="org-programming-argument"><host></span>
+bind to &lt;host&gt;, an interface or multicast address</li>
+
+<li><span id="opt--C" class="org-programming-option">-C</span>, <span id="opt---compatibility" class="org-programming-option">--compatibility</span>
+for use with older versions does not sent extra msgs</li>
+
+<li><span id="opt--M" class="org-programming-option">-M</span>, <span id="opt---mss" class="org-programming-option">--mss</span> <span class="org-programming-argument">n</span>
+set TCP maximum segment size (MTU - 40 bytes)</li>
+
+<li><span id="opt--N" class="org-programming-option">-N</span>, <span id="opt---nodelay" class="org-programming-option">--nodelay</span>
+set TCP no delay, disabling Nagle's Algorithm</li>
+
+<li><span id="opt--v" class="org-programming-option">-v</span>, <span id="opt---version" class="org-programming-option">--version</span>
+print version information and quit</li>
+
+<li><span id="opt--V" class="org-programming-option">-V</span>, <span id="opt---IPv6Version" class="org-programming-option">--IPv6Version</span>
+Set the domain to IPv6</li>
+
+<li><span id="opt--x" class="org-programming-option">-x</span>, <span id="opt---reportexclude" class="org-programming-option">--reportexclude</span>
+[CDMSV] exclude C(connection) D(data) M(multicast) S(settings) V(server) reports</li>
+
+<li><span id="opt--y" class="org-programming-option">-y</span>, <span id="opt---reportstyle" class="org-programming-option">--reportstyle</span> <span class="org-programming-argument">C|c</span>
+if set to C or c report results as CSV (comma separated values)</li>
+</ul>
+</div>
+
+<div id="outline-container-org5e60274" class="outline-4">
+<h4 id="org5e60274">Server Specific Options</h4>
+<div class="outline-text-4" id="text-org5e60274">
+<ul class="org-ul">
+<li><span id="opt--s" class="org-programming-option">-s</span>, <span id="opt---server" class="org-programming-option">--server</span>
+run in server mode</li>
+
+<li><span id="opt--U" class="org-programming-option">-U</span>, <span id="opt---single_udp" class="org-programming-option">--single_udp</span>
+run in single threaded UDP mode</li>
+
+<li><span id="opt--D" class="org-programming-option">-D</span>, <span id="opt---daemon" class="org-programming-option">--daemon</span>
+run the server as a daemon</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org22bc813" class="outline-4">
+<h4 id="org22bc813">Client Specific Options</h4>
+<div class="outline-text-4" id="text-org22bc813">
+<ul class="org-ul">
+<li><span id="opt--b" class="org-programming-option">-b</span>, <span id="opt---bandwidth" class="org-programming-option">--bandwidth</span> <span class="org-programming-argument">n[KM]</span>
+set target bandwidth to n bits/sec (default 1 Mbit/sec). This setting requires UDP (-u).</li>
+
+<li><span id="opt--c" class="org-programming-option">-c</span>, <span id="opt---client" class="org-programming-option">--client</span> <span class="org-programming-argument"><host></span>
+run in client mode, connecting to &lt;host&gt;</li>
+
+<li><span id="opt--d" class="org-programming-option">-d</span>, <span id="opt---dualtest" class="org-programming-option">--dualtest</span>
+Do a bidirectional test simultaneously</li>
+
+<li><span id="opt--n" class="org-programming-option">-n</span>, <span id="opt---num" class="org-programming-option">--num</span> <span class="org-programming-argument">n[KM]</span>
+number of bytes to transmit (instead of -t)</li>
+
+<li><span id="opt--r" class="org-programming-option">-r</span>, <span id="opt---tradeoff" class="org-programming-option">--tradeoff</span>
+Do a bidirectional test individually</li>
+
+<li><span id="opt--t" class="org-programming-option">-t</span>, <span id="opt---time" class="org-programming-option">--time</span> <span class="org-programming-argument">n</span>
+time in seconds to transmit for (default 10 secs)</li>
+
+<li><span id="opt--F" class="org-programming-option">-F</span>, <span id="opt---fileinput" class="org-programming-option">--fileinput</span> <span class="org-programming-argument"><name></span>
+input the data to be transmitted from a file</li>
+
+<li><span id="opt--I" class="org-programming-option">-I</span>, <span id="opt---stdin" class="org-programming-option">--stdin</span>
+input the data to be transmitted from stdin</li>
+
+<li><span id="opt--L" class="org-programming-option">-L</span>, <span id="opt---listenport" class="org-programming-option">--listenport</span> <span class="org-programming-argument">n</span>
+port to receive bidirectional tests back on</li>
+
+<li><span id="opt--P" class="org-programming-option">-P</span>, <span id="opt---parallel" class="org-programming-option">--parallel</span> <span class="org-programming-argument">n</span>
+number of parallel client threads to run</li>
+
+<li><span id="opt--T" class="org-programming-option">-T</span>, <span id="opt---ttl" class="org-programming-option">--ttl</span> <span class="org-programming-argument">n</span>
+time-to-live, for multicast (default 1)</li>
+
+<li><span id="opt--Z" class="org-programming-option">-Z</span>, <span id="opt---linux-congestion" class="org-programming-option">--linux-congestion</span> <span class="org-programming-argument"><algo></span>
+set TCP congestion control algorithm (Linux only)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeabf294" class="outline-3">
+<h3 id="environment-variables"><a id="orgeabf294"></a>Variables de entorno</h3>
+<div class="outline-text-3" id="text-environment-variables">
+<ul class="org-ul">
+<li><span class="org-programming-variable">TCP_WINDOW_SIZE</span> :</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org22befc8" class="outline-2">
+<h2 id="references"><a id="org22befc8"></a>Referencias</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="http://iperf.sourceforge.net/">http://iperf.sourceforge.net/</a></li>
+<li><a href="https://packages.ubuntu.com/xenial/iperf">iperf - Ubuntu Packages</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-20</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:45</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

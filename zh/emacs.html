@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2018-03-07 Wed 13:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>emacs</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="emacs - Linux命令">
+<meta name="description" content="">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="emacs - Linux命令">
+<meta property="og:description" content="">
+<meta name="twitter:title" content="emacs - Linux命令">
+<meta name="twitter:description" content="">
+<link rel="alternate" href="http://linux-command.org/en/emacs.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/emacs.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/emacs.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/emacs.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/emacs.html" hreflang="zh" />
+<meta name="twitter:image" content="http://linux-command.org/dist/assets/images/emacs/main.png">
+<meta property="twitter:image" content="http://linux-command.org/dist/assets/images/emacs/main.png">
+<meta property="og:image" content="http://linux-command.org/dist/assets/images/emacs/main.png">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">emacs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">摘要</a>
+<ul>
+<li><a href="#introduction">介绍</a></li>
+</ul>
+</li>
+<li><a href="#how-to-install">如何安装</a>
+<ul>
+<li><a href="#prerequisites">先决条件</a>
+<ul>
+<li><a href="#org1057988">Ubuntu</a></li>
+<li><a href="#orgc41c9f6">Mac OS</a></li>
+</ul>
+</li>
+<li><a href="#install">安装</a>
+<ul>
+<li><a href="#orge5aaa55">Ubuntu</a>
+<ul>
+<li><a href="#orga51e3e9">Emacs 25</a></li>
+</ul>
+</li>
+<li><a href="#org161da2b">Mac OS</a></li>
+</ul>
+</li>
+<li><a href="#packages">安装的软件包</a></li>
+<li><a href="#check">检查</a></li>
+<li><a href="#syntax">结构</a></li>
+<li><a href="#options">选项</a>
+<ul>
+<li><a href="#orgc1ff717">General</a></li>
+<li><a href="#orgb02ae6f">Emacs Lisp</a></li>
+<li><a href="#org2bdfe7c">Batch mode</a></li>
+<li><a href="#org6d9eba6">with X</a></li>
+</ul>
+</li>
+<li><a href="#examples">例子</a></li>
+</ul>
+</li>
+<li><a href="#references">参考</a></li>
+</ul>
+</div>
+</div>
+<p>
+<img class="org-img main" src="http://linux-command.org/dist/assets/images/emacs/main.png" alt="main" align="right">
+</p>
+
+<div id="outline-container-org1f843d9" class="outline-2">
+<h2 id="overview"><a id="org1f843d9"></a>摘要</h2>
+<div class="outline-text-2" id="text-overview">
+</div>
+
+
+<div id="outline-container-orgedd90f9" class="outline-3">
+<h3 id="introduction"><a id="orgedd90f9"></a>介绍</h3>
+<div class="outline-text-3" id="text-introduction">
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6d028f9" class="outline-2">
+<h2 id="how-to-install"><a id="org6d028f9"></a>如何安装</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org6f14fc3" class="outline-3">
+<h3 id="prerequisites"><a id="org6f14fc3"></a>先决条件</h3>
+<div class="outline-text-3" id="text-prerequisites">
+</div>
+
+<div id="outline-container-org1057988" class="outline-4">
+<h4 id="org1057988">Ubuntu</h4>
+<div class="outline-text-4" id="text-org1057988">
+<ul class="org-ul">
+<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc41c9f6" class="outline-4">
+<h4 id="orgc41c9f6">Mac OS</h4>
+<div class="outline-text-4" id="text-orgc41c9f6">
+<ul class="org-ul">
+<li><a href="./brew.html">brew</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf55e8f5" class="outline-3">
+<h3 id="install"><a id="orgf55e8f5"></a>安装</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-orge5aaa55" class="outline-4">
+<h4 id="orge5aaa55">Ubuntu</h4>
+<div class="outline-text-4" id="text-orge5aaa55">
+</div>
+<div id="outline-container-orga51e3e9" class="outline-5">
+<h5 id="orga51e3e9">Emacs 25</h5>
+<div class="outline-text-5" id="text-orga51e3e9">
+<div class="org-src-container">
+<pre class="src src-sh" id="org573a9a2">$ sudo apt-add-repository -y ppa:adrozdoff/emacs
+$ sudo apt update
+$ sudo apt install emacs25
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org161da2b" class="outline-4">
+<h4 id="org161da2b">Mac OS</h4>
+<div class="outline-text-4" id="text-org161da2b">
+<div class="org-src-container">
+<pre class="src src-sh" id="org8100f20">$ brew install emacs
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfc84f7b" class="outline-3">
+<h3 id="packages"><a id="orgfc84f7b"></a>安装的软件包</h3>
+<div class="outline-text-3" id="text-packages">
+<ul class="org-ul">
+<li>aspell</li>
+<li>aspell-en</li>
+<li>dictionaries-common</li>
+<li>emacs25-bin-common</li>
+<li>emacs25-common</li>
+<li>emacs25-el</li>
+<li>emacsen-common</li>
+<li>enchant</li>
+<li>ghostscript</li>
+<li>gsfonts</li>
+<li>gstreamer1.0-plugins-base</li>
+<li>gstreamer1.0-plugins-good</li>
+<li>gstreamer1.0-x</li>
+<li>hunspell-en-us</li>
+<li>imagemagick-common</li>
+<li>libaa1</li>
+<li>libasound2</li>
+<li>libasound2-data</li>
+<li>libaspell15</li>
+<li>libavc1394-0</li>
+<li>libcaca0</li>
+<li>libcdparanoia0</li>
+<li>libcupsfilters1</li>
+<li>libcupsimage2</li>
+<li>libdv4</li>
+<li>libenchant1c2a</li>
+<li>libfftw3-double3</li>
+<li>libflac8</li>
+<li>libfribidi0</li>
+<li>libgeoclue0</li>
+<li>libgif7</li>
+<li>libgl1-mesa-glx</li>
+<li>libgpm2</li>
+<li>libgs9</li>
+<li>libgs9-common</li>
+<li>libgstreamer-plugins-base1.0-0</li>
+<li>libgstreamer-plugins-good1.0-0</li>
+<li>libgstreamer1.0-0</li>
+<li>libharfbuzz-icu0</li>
+<li>libhunspell-1.3-0</li>
+<li>libice6</li>
+<li>libiec61883-0</li>
+<li>libijs-0.35</li>
+<li>libjack-jackd2-0</li>
+<li>libjavascriptcoregtk-3.0-0</li>
+<li>libjbig2dec0</li>
+<li>liblockfile-bin</li>
+<li>liblockfile1</li>
+<li>liblqr-1-0</li>
+<li>libm17n-0</li>
+<li>libmagickcore-6.q16-2</li>
+<li>libmagickwand-6.q16-2</li>
+<li>libogg0</li>
+<li>libopus0</li>
+<li>liborc-0.4-0</li>
+<li>libotf0</li>
+<li>libpaper-utils</li>
+<li>libpaper1</li>
+<li>libraw1394-11</li>
+<li>libsamplerate0</li>
+<li>libshout3</li>
+<li>libslang2</li>
+<li>libsm6</li>
+<li>libspeex1</li>
+<li>libtag1v5</li>
+<li>libtag1v5-vanilla</li>
+<li>libtext-iconv-perl</li>
+<li>libtheora0</li>
+<li>libv4l-0</li>
+<li>libv4lconvert0</li>
+<li>libvisual-0.4-0</li>
+<li>libvorbis0a</li>
+<li>libvorbisenc2</li>
+<li>libwavpack1</li>
+<li>libwebkitgtk-3.0-0</li>
+<li>libwebkitgtk-3.0-common</li>
+<li>libwebp5</li>
+<li>libxcb-glx0</li>
+<li>libxslt1.1</li>
+<li>libxt6</li>
+<li>libxv1</li>
+<li>libxxf86vm1</li>
+<li>m17n-db</li>
+<li>poppler-data</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga90131e" class="outline-3">
+<h3 id="check"><a id="orga90131e"></a>检查</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ emacs --version
+25.3
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb4d8e2e" class="outline-3">
+<h3 id="syntax"><a id="orgb4d8e2e"></a>结构</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">emacs [ command-line switches ] [ files ... ]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc6167ee" class="outline-3">
+<h3 id="options"><a id="orgc6167ee"></a>选项</h3>
+<div class="outline-text-3" id="text-options">
+<p>
+基于版本<span class="org-programming-version">25.3</span>创建。
+</p>
+</div>
+
+<div id="outline-container-orgc1ff717" class="outline-4">
+<h4 id="orgc1ff717">General</h4>
+<div class="outline-text-4" id="text-orgc1ff717">
+<ul class="org-ul">
+<li><span id="opt---file" class="org-programming-option">--file</span> <span class="org-programming-argument">file</span>, <span id="opt---find-file" class="org-programming-option">--find-file</span> <span class="org-programming-argument">file</span>, <span id="opt---visit" class="org-programming-option">--visit</span> <span class="org-programming-argument">file</span> :</li>
+<li>+number :</li>
+<li>+line:column :</li>
+<li><span id="opt---chdir" class="org-programming-option">--chdir</span> <span class="org-programming-argument">directory</span> :</li>
+<li><span id="opt--q" class="org-programming-option">-q</span>, <span id="opt---no-init-file" class="org-programming-option">--no-init-file</span> :</li>
+<li><span id="opt--nl" class="org-programming-option">-nl</span>, <span id="opt---no-shared-memory" class="org-programming-option">--no-shared-memory</span> :</li>
+<li><span id="opt---no-site-file" class="org-programming-option">--no-site-file</span> :</li>
+<li><span id="opt--nsl" class="org-programming-option">-nsl</span>, <span id="opt---no-site-lisp" class="org-programming-option">--no-site-lisp</span> :</li>
+<li><span id="opt---no-desktop" class="org-programming-option">--no-desktop</span> :</li>
+</ul>
+<p>
+Do not load a saved desktop.
+</p>
+<ul class="org-ul">
+<li><span id="opt--Q" class="org-programming-option">-Q</span>, <span id="opt---quick" class="org-programming-option">--quick</span> :</li>
+<li><span id="opt---no-splash" class="org-programming-option">--no-splash</span> :</li>
+</ul>
+<p>
+Do not display a splash screen during start-up.
+</p>
+<ul class="org-ul">
+<li><span id="opt---debug-init" class="org-programming-option">--debug-init</span> :</li>
+<li><span id="opt--u" class="org-programming-option">-u</span> <span class="org-programming-argument">user</span>, <span id="opt---user" class="org-programming-option">--user</span> <span class="org-programming-argument">user</span> :</li>
+<li><span id="opt--t" class="org-programming-option">-t</span> <span class="org-programming-argument">file</span>, <span id="opt---terminal" class="org-programming-option">--terminal</span> <span class="org-programming-argument">file</span> :</li>
+<li><span id="opt---daemon" class="org-programming-option">--daemon</span> :</li>
+<li><span id="opt---version" class="org-programming-option">--version</span> :</li>
+<li><span id="opt---help" class="org-programming-option">--help</span> :</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb02ae6f" class="outline-4">
+<h4 id="orgb02ae6f">Emacs Lisp</h4>
+<div class="outline-text-4" id="text-orgb02ae6f">
+<ul class="org-ul">
+<li><span id="opt--f" class="org-programming-option">-f</span> <span class="org-programming-argument">function</span>, <span id="opt---funcall" class="org-programming-option">--funcall</span> <span class="org-programming-argument">function</span> :</li>
+<li><span id="opt--l" class="org-programming-option">-l</span> <span class="org-programming-argument">file</span>, <span id="opt---load" class="org-programming-option">--load</span> <span class="org-programming-argument">file</span> :</li>
+<li><span id="opt---eval" class="org-programming-option">--eval</span> <span class="org-programming-argument">expr</span>, <span id="opt---execute" class="org-programming-option">--execute</span> <span class="org-programming-argument">expr</span> :</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2bdfe7c" class="outline-4">
+<h4 id="org2bdfe7c">Batch mode</h4>
+<div class="outline-text-4" id="text-org2bdfe7c">
+<ul class="org-ul">
+<li><span id="opt---batch" class="org-programming-option">--batch</span> :</li>
+<li><span id="opt---script" class="org-programming-option">--script</span> <span class="org-programming-argument">file</span> :</li>
+<li><span id="opt---insert" class="org-programming-option">--insert</span> <span class="org-programming-argument">file</span> :</li>
+<li><span id="opt---kill" class="org-programming-option">--kill</span> :</li>
+<li><span id="opt--L" class="org-programming-option">-L</span> <span class="org-programming-argument">dir</span>, <span id="opt---directory" class="org-programming-option">--directory</span> <span class="org-programming-argument">dir</span> :</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d9eba6" class="outline-4">
+<h4 id="org6d9eba6">with X</h4>
+<div class="outline-text-4" id="text-org6d9eba6">
+<ul class="org-ul">
+<li><span id="opt---name" class="org-programming-option">--name</span> <span class="org-programming-argument">name</span> :</li>
+<li><span id="opt--T" class="org-programming-option">-T</span> <span class="org-programming-argument">name</span>, --title <span class="org-programming-argument">name</span> :</li>
+<li><span id="opt--r" class="org-programming-option">-r</span>, <span id="opt--rv" class="org-programming-option">-rv</span>, <span id="opt---reverse-video" class="org-programming-option">--reverse-video</span> :</li>
+<li><span id="opt--fn" class="org-programming-option">-fn</span> <span class="org-programming-argument">font</span>, <span id="opt---font" class="org-programming-option">--font</span> <span class="org-programming-argument">font</span> :</li>
+<li><span id="opt---xrm" class="org-programming-option">--xrm</span> <span class="org-programming-argument">resources</span> :</li>
+<li><span id="opt---color" class="org-programming-option">--color</span>, <span id="opt---color" class="org-programming-option">--color</span>=<span class="org-programming-argument">mode</span> :</li>
+<li><span id="opt--bw" class="org-programming-option">-bw</span> <span class="org-programming-argument">pixels</span>, <span id="opt---border-width" class="org-programming-option">--border-width</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span id="opt--ib" class="org-programming-option">-ib</span> <span class="org-programming-argument">pixels</span>, <span id="opt---internal-border" class="org-programming-option">--internal-border</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span id="opt--g" class="org-programming-option">-g</span> <span class="org-programming-argument">geometry</span>, <span id="opt---geometry" class="org-programming-option">--geometry</span> <span class="org-programming-argument">geometry</span> :</li>
+<li><span id="opt--lsp" class="org-programming-option">-lsp</span> <span class="org-programming-argument">pixels</span>, <span id="opt---line-spacing" class="org-programming-option">--line-spacing</span> <span class="org-programming-argument">pixels</span> :</li>
+<li><span id="opt--vb" class="org-programming-option">-vb</span>, <span id="opt---vertical-scroll-bars" class="org-programming-option">--vertical-scroll-bars</span> :</li>
+<li><span id="opt--fh" class="org-programming-option">-fh</span>, <span id="opt---fullheight" class="org-programming-option">--fullheight</span> :</li>
+<li><span id="opt--fs" class="org-programming-option">-fs</span>, <span id="opt---fullscreen" class="org-programming-option">--fullscreen</span> :</li>
+<li><span id="opt--fw" class="org-programming-option">-fw</span>, <span id="opt---fullwidth" class="org-programming-option">--fullwidth</span> :</li>
+<li><span id="opt--mm" class="org-programming-option">-mm</span>, <span id="opt---maximized" class="org-programming-option">--maximized</span> :</li>
+<li><span id="opt--fg" class="org-programming-option">-fg</span> <span class="org-programming-argument">color</span>, <span id="opt---foreground-color" class="org-programming-option">--foreground-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span id="opt--bg" class="org-programming-option">-bg</span> <span class="org-programming-argument">color</span>, <span id="opt---background-color" class="org-programming-option">--background-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span id="opt--bd" class="org-programming-option">-bd</span> <span class="org-programming-argument">color</span>, <span id="opt---border-color" class="org-programming-option">--border-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span id="opt--cr" class="org-programming-option">-cr</span> <span class="org-programming-argument">color</span>, <span id="opt---cursor-color" class="org-programming-option">--cursor-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span id="opt--ms" class="org-programming-option">-ms</span> <span class="org-programming-argument">color</span>, <span id="opt---mouse-color" class="org-programming-option">--mouse-color</span> <span class="org-programming-argument">color</span> :</li>
+<li><span id="opt--d" class="org-programming-option">-d</span> <span class="org-programming-argument">displayname</span>, <span id="opt---display" class="org-programming-option">--display</span> <span class="org-programming-argument">displayname</span> :</li>
+<li><span id="opt--nbi" class="org-programming-option">-nbi</span>, <span id="opt---no-bitmap-icon" class="org-programming-option">--no-bitmap-icon</span> :</li>
+<li><span id="opt---iconic" class="org-programming-option">--iconic</span> :</li>
+<li><span id="opt--nbc" class="org-programming-option">-nbc</span>, <span id="opt---no-blinking-cursor" class="org-programming-option">--no-blinking-cursor</span> :</li>
+<li><span id="opt---parent-id" class="org-programming-option">--parent-id</span> <span class="org-programming-argument">xid</span> :</li>
+<li><span id="opt--nw" class="org-programming-option">-nw</span>, <span id="opt---no-window-system" class="org-programming-option">--no-window-system</span> :</li>
+<li><span id="opt--D" class="org-programming-option">-D</span>, <span id="opt---basic-display" class="org-programming-option">--basic-display</span> :</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2db4afc" class="outline-3">
+<h3 id="examples"><a id="org2db4afc"></a>例子</h3>
+<div class="outline-text-3" id="text-examples">
+<ul class="org-ul">
+<li>emacs -Q --batch file.org -f org-html-export-to-html :</li>
+<li>emacs -Q --batch --eval "(+ 1 2)" :</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbfc152c" class="outline-2">
+<h2 id="references"><a id="orgbfc152c"></a>参考</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux">Installing_Emacs_on_GNU/Linux</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-20</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:55</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

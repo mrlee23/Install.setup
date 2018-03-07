@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<!-- 2018-03-07 Wed 13:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>git</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dongsoo Lee" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
+<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="/dist/assets/js.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="title" content="git - 리눅스 명령어">
+<meta name="description" content="현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다. Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다. The stupid content tracker ">
+<meta name="by" content="Dongsoo Lee">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git - 리눅스 명령어">
+<meta property="og:description" content="현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다. Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다. The stupid content tracker ">
+<meta name="twitter:title" content="git - 리눅스 명령어">
+<meta name="twitter:description" content="현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다. Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다. The stupid content tracker ">
+<link rel="alternate" href="http://linux-command.org/en/git.html" hreflang="en" />
+<link rel="alternate" href="http://linux-command.org/es/git.html" hreflang="es" />
+<link rel="alternate" href="http://linux-command.org/ja/git.html" hreflang="ja" />
+<link rel="alternate" href="http://linux-command.org/ko/git.html" hreflang="ko" />
+<link rel="alternate" href="http://linux-command.org/zh/git.html" hreflang="zh" />
+<meta name="twitter:image" content="http://linux-command.org/dist/assets/images/git/main.jpg">
+<meta property="twitter:image" content="http://linux-command.org/dist/assets/images/git/main.jpg">
+<meta property="og:image" content="http://linux-command.org/dist/assets/images/git/main.jpg">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">git</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#overview">개요</a>
+<ul>
+<li><a href="#introduction">소개</a></li>
+<li><a href="#releases">릴리즈</a></li>
+</ul>
+</li>
+<li><a href="#how-to-install">설치 방법</a>
+<ul>
+<li><a href="#prerequisites">필요 사항</a></li>
+<li><a href="#install">설치</a>
+<ul>
+<li><a href="#org10cb98f">Ubuntu</a></li>
+<li><a href="#orgdfbe895">CentOS</a></li>
+<li><a href="#org2dbe25e">Fedora</a></li>
+<li><a href="#org31926f7">Arch Linux</a></li>
+<li><a href="#orgaa9dc3d">Gentoo</a></li>
+<li><a href="#orgfe8730c">macOS</a></li>
+</ul>
+</li>
+<li><a href="#packages">설치된 패키지</a></li>
+<li><a href="#check">확인</a></li>
+</ul>
+</li>
+<li><a href="#usage">사용법</a>
+<ul>
+<li><a href="#syntax">구조</a></li>
+<li><a href="#options">옵션</a></li>
+<li><a href="#commands">명령어</a>
+<ul>
+<li><a href="#org39e2288">clone</a></li>
+<li><a href="#orge2edfe7">init</a></li>
+<li><a href="#org6e75283">add</a></li>
+<li><a href="#org17808ef">mv</a></li>
+<li><a href="#org3bd70e9">reset</a></li>
+<li><a href="#orgb0d774a">rm</a></li>
+<li><a href="#org53aac9b">bisect</a></li>
+<li><a href="#org4487cf8">grep</a></li>
+<li><a href="#orgd7e1f9f">log</a></li>
+<li><a href="#org6405549">show</a></li>
+<li><a href="#org462ab3a">status</a></li>
+<li><a href="#orgc3eae51">branch</a></li>
+<li><a href="#org0d98b5d">checkout</a></li>
+<li><a href="#org8a670f6">commit</a></li>
+<li><a href="#orga006fa7">diff</a></li>
+<li><a href="#org9e733de">merge</a></li>
+<li><a href="#org95e88a7">rebase</a></li>
+<li><a href="#org52d9c10">tag</a></li>
+<li><a href="#org4646dc8">fetch</a></li>
+<li><a href="#org5440957">pull</a></li>
+<li><a href="#orge9efaf1">push</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#references">참고자료</a>
+<ul>
+<li><a href="#org68567af">입문할 때 보면 좋은 사이트들</a></li>
+<li><a href="#references">Git 웹 호스팅 서비스</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<img class="org-img main" src="http://linux-command.org/dist/assets/images/git/main.jpg" alt="main" align="right">
+</p>
+
+<div id="outline-container-orga00b3b8" class="outline-2">
+<h2 id="overview"><a id="orga00b3b8"></a>개요</h2>
+<div class="outline-text-2" id="text-overview">
+<p>
+The stupid content tracker
+</p>
+</div>
+
+<div id="outline-container-orge18b644" class="outline-3">
+<h3 id="introduction"><a id="orge18b644"></a>소개</h3>
+<div class="outline-text-3" id="text-introduction">
+<p>
+Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다.
+</p>
+
+<p>
+현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge29eb5b" class="outline-3">
+<h3 id="releases"><a id="orge29eb5b"></a>릴리즈</h3>
+<div class="outline-text-3" id="text-releases">
+<p>
+현재 최신 버전은 <span class="org-programming-version">2.16.2</span> 입니다.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">버전</th>
+<th scope="col" class="org-right">최초 버전 릴리즈 날짜</th>
+<th scope="col" class="org-right">최신 버전</th>
+<th scope="col" class="org-right">출시일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0.99</td>
+<td class="org-right">2005-07-11</td>
+<td class="org-right">0.99.9n</td>
+<td class="org-right">2005-12-15</td>
+</tr>
+
+<tr>
+<td class="org-right">1.0</td>
+<td class="org-right">2005-12-21</td>
+<td class="org-right">1.0.13</td>
+<td class="org-right">2006-01-27</td>
+</tr>
+
+<tr>
+<td class="org-right">1.1</td>
+<td class="org-right">2006-01-08</td>
+<td class="org-right">1.1.6</td>
+<td class="org-right">2006-01-30</td>
+</tr>
+
+<tr>
+<td class="org-right">1.2</td>
+<td class="org-right">2006-02-12</td>
+<td class="org-right">1.2.6</td>
+<td class="org-right">2006-04-08</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">2006-04-18</td>
+<td class="org-right">1.3.3</td>
+<td class="org-right">2006-05-16</td>
+</tr>
+
+<tr>
+<td class="org-right">1.4</td>
+<td class="org-right">2006-06-10</td>
+<td class="org-right">1.4.4.5</td>
+<td class="org-right">2008-07-16</td>
+</tr>
+
+<tr>
+<td class="org-right">1.5</td>
+<td class="org-right">2007-02-14</td>
+<td class="org-right">1.5.6.6</td>
+<td class="org-right">2008-12-17</td>
+</tr>
+
+<tr>
+<td class="org-right">1.6</td>
+<td class="org-right">2008-08-17</td>
+<td class="org-right">1.6.6.3</td>
+<td class="org-right">2010-12-15</td>
+</tr>
+
+<tr>
+<td class="org-right">1.7</td>
+<td class="org-right">2010-02-13</td>
+<td class="org-right">1.7.12.4</td>
+<td class="org-right">2012-10-17</td>
+</tr>
+
+<tr>
+<td class="org-right">1.8</td>
+<td class="org-right">2012-10-21</td>
+<td class="org-right">1.8.5.6</td>
+<td class="org-right">2014-12-17</td>
+</tr>
+
+<tr>
+<td class="org-right">1.9</td>
+<td class="org-right">2014-02-14</td>
+<td class="org-right">1.9.5</td>
+<td class="org-right">2014-12-17</td>
+</tr>
+
+<tr>
+<td class="org-right">2.0</td>
+<td class="org-right">2014-05-28</td>
+<td class="org-right">2.0.5</td>
+<td class="org-right">2014-12-17</td>
+</tr>
+
+<tr>
+<td class="org-right">2.1</td>
+<td class="org-right">2014-08-16</td>
+<td class="org-right">2.1.4</td>
+<td class="org-right">2014-12-17</td>
+</tr>
+
+<tr>
+<td class="org-right">2.2</td>
+<td class="org-right">2014-11-26</td>
+<td class="org-right">2.2.3</td>
+<td class="org-right">2015-09-04</td>
+</tr>
+
+<tr>
+<td class="org-right">2.3</td>
+<td class="org-right">2015-02-05</td>
+<td class="org-right">2.3.10</td>
+<td class="org-right">2015-09-29</td>
+</tr>
+
+<tr>
+<td class="org-right">2.4</td>
+<td class="org-right">2015-04-30</td>
+<td class="org-right">2.4.12</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.5</td>
+<td class="org-right">2015-07-27</td>
+<td class="org-right">2.5.6</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.6</td>
+<td class="org-right">2015-09-28</td>
+<td class="org-right">2.6.7</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.7</td>
+<td class="org-right">2015-10-04</td>
+<td class="org-right">2.7.5</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.8</td>
+<td class="org-right">2016-03-28</td>
+<td class="org-right">2.8.5</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.9</td>
+<td class="org-right">2016-06-13</td>
+<td class="org-right">2.9.4</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.10</td>
+<td class="org-right">2016-09-02</td>
+<td class="org-right">2.10.3</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.11</td>
+<td class="org-right">2016-11-29</td>
+<td class="org-right">2.11.2</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.12</td>
+<td class="org-right">2017-02-24</td>
+<td class="org-right">2.12.3</td>
+<td class="org-right">2017-05-05</td>
+</tr>
+
+<tr>
+<td class="org-right">2.13</td>
+<td class="org-right">2017-05-10</td>
+<td class="org-right">2.13.4</td>
+<td class="org-right">2017-08-01</td>
+</tr>
+
+<tr>
+<td class="org-right">2.14</td>
+<td class="org-right">2017-08-04</td>
+<td class="org-right">2.14.3</td>
+<td class="org-right">2017-10-24</td>
+</tr>
+
+<tr>
+<td class="org-right">2.15</td>
+<td class="org-right">2017-10-30</td>
+<td class="org-right">2.15.1</td>
+<td class="org-right">2017-11-28</td>
+</tr>
+
+<tr>
+<td class="org-right">2.16</td>
+<td class="org-right">2018-01-17</td>
+<td class="org-right">2.16.2</td>
+<td class="org-right">2018-02-15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a8c130" class="outline-2">
+<h2 id="how-to-install"><a id="org7a8c130"></a>설치 방법</h2>
+<div class="outline-text-2" id="text-how-to-install">
+</div>
+
+<div id="outline-container-org6314d97" class="outline-3">
+<h3 id="prerequisites"><a id="org6314d97"></a>필요 사항</h3>
+<div class="outline-text-3" id="text-prerequisites">
+<ul class="org-ul">
+<li><a href="./apt-add-repository.html">apt-add-repository</a></li>
+<li><a href="./update.html">update</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1b40222" class="outline-3">
+<h3 id="install"><a id="org1b40222"></a>설치</h3>
+<div class="outline-text-3" id="text-install">
+</div>
+
+<div id="outline-container-org10cb98f" class="outline-4">
+<h4 id="org10cb98f">Ubuntu</h4>
+<div class="outline-text-4" id="text-org10cb98f">
+<div class="org-src-container">
+<pre class="src src-sh" id="org1840e1d">$ sudo apt-add-repository ppa:git-core/ppa
+$ sudo apt-get update
+$ sudo apt-get install git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfbe895" class="outline-4">
+<h4 id="orgdfbe895">CentOS</h4>
+<div class="outline-text-4" id="text-orgdfbe895">
+<div class="org-src-container">
+<pre class="src src-sh" id="orge6743a9">$ sudo yum install git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2dbe25e" class="outline-4">
+<h4 id="org2dbe25e">Fedora</h4>
+<div class="outline-text-4" id="text-org2dbe25e">
+<div class="org-src-container">
+<pre class="src src-sh" id="org4e8ae4c">$ sudo yum install git-core
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org31926f7" class="outline-4">
+<h4 id="org31926f7">Arch Linux</h4>
+<div class="outline-text-4" id="text-org31926f7">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgdc95c55">$ sudo pacman -Sy git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa9dc3d" class="outline-4">
+<h4 id="orgaa9dc3d">Gentoo</h4>
+<div class="outline-text-4" id="text-orgaa9dc3d">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgdfab051">$ sudo emerge --ask --verbose dev-vcs/git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe8730c" class="outline-4">
+<h4 id="orgfe8730c">macOS</h4>
+<div class="outline-text-4" id="text-orgfe8730c">
+<div class="org-src-container">
+<pre class="src src-sh" id="orgfaf2d06">$ brew install git
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org467c2b8" class="outline-3">
+<h3 id="packages"><a id="org467c2b8"></a>설치된 패키지</h3>
+<div class="outline-text-3" id="text-packages">
+</div>
+</div>
+
+<div id="outline-container-orgb826f91" class="outline-3">
+<h3 id="check"><a id="orgb826f91"></a>확인</h3>
+<div class="outline-text-3" id="text-check">
+<div class="org-src-container">
+<pre class="src src-sh">$ git --version
+git version 2.16.2
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b3da4e" class="outline-2">
+<h2 id="usage"><a id="org8b3da4e"></a>사용법</h2>
+<div class="outline-text-2" id="text-usage">
+</div>
+
+<div id="outline-container-org0867db3" class="outline-3">
+<h3 id="syntax"><a id="org0867db3"></a>구조</h3>
+<div class="outline-text-3" id="text-syntax">
+<div class="org-src-container">
+<pre class="src src-sh">git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]
+    [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
+    [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+    [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+    [--super-prefix=&lt;path&gt;]
+    &lt;command&gt; [&lt;args&gt;]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org551f062" class="outline-3">
+<h3 id="options"><a id="org551f062"></a>옵션</h3>
+<div class="outline-text-3" id="text-options">
+<p>
+<span class="org-programming-version">2.16.2</span> 버전을 기준으로 작성되었습니다.
+</p>
+
+<ul class="org-ul">
+<li><span id="opt---version" class="org-programming-option">--version</span> :
+Prints the Git suite version that the git program came from.</li>
+<li><span id="opt---help" class="org-programming-option">--help</span> : 
+Prints the synopsis and a list of the most commonly used commands. If the option --all or -a is given then all available commands are printed. If a Git command is named this option will bring up the manual page for that command. Other options are available to control how the manual page is displayed. See git-help for more information, because git --help ... is converted internally into git help ....</li>
+<li><p>
+<span id="opt--C" class="org-programming-option">-C</span> <span class="org-programming-argument"><path></span> :
+Run as if git was started in &lt;path&gt; instead of the current working directory. When multiple -C options are given, each subsequent non-absolute -C &lt;path&gt; is interpreted relative to the preceding -C &lt;path&gt;.
+This option affects options that expect path name like --git-dir and --work-tree in that their interpretations of the path names would be made relative to the working directory caused by the -C option. For example the following invocations are equivalent:
+</p>
+
+<p>
+git --git-dir=a.git --work-tree=b -C c status
+</p>
+
+<p>
+git --git-dir=c/a.git --work-tree=c/b status
+</p></li>
+<li><p>
+<span id="opt--c" class="org-programming-option">-c</span> <span class="org-programming-argument"><name></span>=<span class="org-programming-argument"><value></span> :
+Pass a configuration parameter to the command. The value given will override values from configuration files. The &lt;name&gt; is expected in the same format as listed by git config (subkeys separated by dots).
+</p>
+
+<p>
+Note that omitting the = in git -c foo.bar ... is allowed and sets foo.bar to the boolean true value (just like [foo]bar would in a config file). Including the equals but with an empty value (like git -c foo.bar= ...) sets foo.bar to the empty string which git config --bool will convert to false.
+</p></li>
+
+<li><span id="opt---exec-path" class="org-programming-option">--exec-path</span>[=<span class="org-programming-argument"><path></span>] : 
+Path to wherever your core Git programs are installed. This can also be controlled by setting the GIT_EXEC_PATH environment variable. If no path is given, git will print the current setting and then exit.</li>
+<li><span id="opt---html-path" class="org-programming-option">--html-path</span> : 
+Print the path, without trailing slash, where Git’s HTML documentation is installed and exit.</li>
+
+<li><span id="opt---man-path" class="org-programming-option">--man-path</span> :
+Print the manpath (see man(1)) for the man pages for this version of Git and exit.</li>
+
+<li><span id="opt---info-path" class="org-programming-option">--info-path</span> : 
+Print the path where the Info files documenting this version of Git are installed and exit.</li>
+
+<li><span id="opt--p" class="org-programming-option">-p</span>, <span id="opt---paginate" class="org-programming-option">--paginate</span> : 
+Pipe all output into less (or if set, $PAGER) if standard output is a terminal. This overrides the pager.&lt;cmd&gt; configuration options (see the "Configuration Mechanism" section below).</li>
+
+<li><span id="opt---no-pager" class="org-programming-option">--no-pager</span> :
+Do not pipe Git output into a pager.</li>
+
+<li><span id="opt---git-dir" class="org-programming-option">--git-dir</span>=<span class="org-programming-argument"><path></span> : 
+Set the path to the repository. This can also be controlled by setting the GIT_DIR environment variable. It can be an absolute path or relative path to current working directory.</li>
+
+<li><span id="opt---work-tree" class="org-programming-option">--work-tree</span>=<span class="org-programming-argument"><path></span> :
+Set the path to the working tree. It can be an absolute path or a path relative to the current working directory. This can also be controlled by setting the GIT_WORK_TREE environment variable and the core.worktree configuration variable (see core.worktree in git-config for a more detailed discussion).</li>
+
+<li><span id="opt---namespace" class="org-programming-option">--namespace</span>=<span class="org-programming-argument"><path></span> : 
+Set the Git namespace. See gitnamespaces for more details. Equivalent to setting the GIT_NAMESPACE environment variable.</li>
+
+<li><span id="opt---super-prefix" class="org-programming-option">--super-prefix</span>=<span class="org-programming-argument"><path></span> :
+Currently for internal use only. Set a prefix which gives a path from above a repository down to its root. One use is to give submodules context about the superproject that invoked it.</li>
+
+<li><span id="opt---bare" class="org-programming-option">--bare</span> :
+Treat the repository as a bare repository. If GIT_DIR environment is not set, it is set to the current working directory.</li>
+
+<li><span id="opt---no-replace-objects" class="org-programming-option">--no-replace-objects</span> :
+Do not use replacement refs to replace Git objects. See git-replace for more information.</li>
+
+<li><span id="opt---literal-pathspecs" class="org-programming-option">--literal-pathspecs</span> :
+Treat pathspecs literally (i.e. no globbing, no pathspec magic). This is equivalent to setting the GIT_LITERAL_PATHSPECS environment variable to 1.</li>
+
+<li><span id="opt---glob-pathspecs" class="org-programming-option">--glob-pathspecs</span> :
+Add "glob" magic to all pathspec. This is equivalent to setting the GIT_GLOB_PATHSPECS environment variable to 1. Disabling globbing on individual pathspecs can be done using pathspec magic ":(literal)"</li>
+
+<li><span id="opt---noglob-pathspecs" class="org-programming-option">--noglob-pathspecs</span> : 
+Add "literal" magic to all pathspec. This is equivalent to setting the GIT_NOGLOB_PATHSPECS environment variable to 1. Enabling globbing on individual pathspecs can be done using pathspec magic ":(glob)"</li>
+
+<li><span id="opt---icase-pathspecs" class="org-programming-option">--icase-pathspecs</span> : 
+Add "icase" magic to all pathspec. This is equivalent to setting the GIT_ICASE_PATHSPECS environment variable to 1.</li>
+
+<li><span id="opt---no-optional-locks" class="org-programming-option">--no-optional-locks</span> :
+Do not perform optional operations that require locks. This is equivalent to setting the GIT_OPTIONAL_LOCKS to 0.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9cc95f9" class="outline-3">
+<h3 id="commands"><a id="org9cc95f9"></a>명령어</h3>
+<div class="outline-text-3" id="text-commands">
+</div>
+
+<div id="outline-container-org39e2288" class="outline-4">
+<h4 id="org39e2288">clone</h4>
+<div class="outline-text-4" id="text-org39e2288">
+<p>
+Clone a repository into a new directory
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge2edfe7" class="outline-4">
+<h4 id="orge2edfe7">init</h4>
+<div class="outline-text-4" id="text-orge2edfe7">
+<p>
+Create an empty Git repository or reinitialize an existing one
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e75283" class="outline-4">
+<h4 id="org6e75283">add</h4>
+<div class="outline-text-4" id="text-org6e75283">
+<p>
+Add file contents to the index
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17808ef" class="outline-4">
+<h4 id="org17808ef">mv</h4>
+<div class="outline-text-4" id="text-org17808ef">
+<p>
+Move or rename a file, a directory, or a symlink
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3bd70e9" class="outline-4">
+<h4 id="org3bd70e9">reset</h4>
+<div class="outline-text-4" id="text-org3bd70e9">
+<p>
+Reset current HEAD to the specified state
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb0d774a" class="outline-4">
+<h4 id="orgb0d774a">rm</h4>
+<div class="outline-text-4" id="text-orgb0d774a">
+<p>
+Remove files from the working tree and from the index
+</p>
+</div>
+</div>
+
+<div id="outline-container-org53aac9b" class="outline-4">
+<h4 id="org53aac9b">bisect</h4>
+<div class="outline-text-4" id="text-org53aac9b">
+<p>
+Use binary search to find the commit that introduced a bug
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4487cf8" class="outline-4">
+<h4 id="org4487cf8">grep</h4>
+<div class="outline-text-4" id="text-org4487cf8">
+<p>
+Print lines matching a pattern
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd7e1f9f" class="outline-4">
+<h4 id="orgd7e1f9f">log</h4>
+<div class="outline-text-4" id="text-orgd7e1f9f">
+<p>
+Show commit logs
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6405549" class="outline-4">
+<h4 id="org6405549">show</h4>
+<div class="outline-text-4" id="text-org6405549">
+<p>
+Show various types of objects
+</p>
+</div>
+</div>
+
+<div id="outline-container-org462ab3a" class="outline-4">
+<h4 id="org462ab3a">status</h4>
+<div class="outline-text-4" id="text-org462ab3a">
+<p>
+Show the working tree status
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc3eae51" class="outline-4">
+<h4 id="orgc3eae51">branch</h4>
+<div class="outline-text-4" id="text-orgc3eae51">
+<p>
+List, create, or delete branches
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d98b5d" class="outline-4">
+<h4 id="org0d98b5d">checkout</h4>
+<div class="outline-text-4" id="text-org0d98b5d">
+<p>
+Switch branches or restore working tree files
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a670f6" class="outline-4">
+<h4 id="org8a670f6">commit</h4>
+<div class="outline-text-4" id="text-org8a670f6">
+<p>
+Record changes to the repository
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga006fa7" class="outline-4">
+<h4 id="orga006fa7">diff</h4>
+<div class="outline-text-4" id="text-orga006fa7">
+<p>
+Show changes between commits, commit and working tree, etc
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e733de" class="outline-4">
+<h4 id="org9e733de">merge</h4>
+<div class="outline-text-4" id="text-org9e733de">
+<p>
+Join two or more development histories together
+</p>
+</div>
+</div>
+
+<div id="outline-container-org95e88a7" class="outline-4">
+<h4 id="org95e88a7">rebase</h4>
+<div class="outline-text-4" id="text-org95e88a7">
+<p>
+Reapply commits on top of another base tip
+</p>
+</div>
+</div>
+
+<div id="outline-container-org52d9c10" class="outline-4">
+<h4 id="org52d9c10">tag</h4>
+<div class="outline-text-4" id="text-org52d9c10">
+<p>
+Create, list, delete or verify a tag object signed with GPG
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4646dc8" class="outline-4">
+<h4 id="org4646dc8">fetch</h4>
+<div class="outline-text-4" id="text-org4646dc8">
+<p>
+Download objects and refs from another repository
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5440957" class="outline-4">
+<h4 id="org5440957">pull</h4>
+<div class="outline-text-4" id="text-org5440957">
+<p>
+Fetch from and integrate with another repository or a local branch
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge9efaf1" class="outline-4">
+<h4 id="orge9efaf1">push</h4>
+<div class="outline-text-4" id="text-orge9efaf1">
+<p>
+Update remote refs along with associated objects
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge7b9dc2" class="outline-2">
+<h2 id="references"><a id="orge7b9dc2"></a>참고자료</h2>
+<div class="outline-text-2" id="text-references">
+<ul class="org-ul">
+<li><a href="https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/">how-to-install-git-on-linux-mac-and-windows</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org68567af" class="outline-3">
+<h3 id="org68567af">입문할 때 보면 좋은 사이트들</h3>
+<div class="outline-text-3" id="text-org68567af">
+<ul class="org-ul">
+<li><a href="https://rogerdudler.github.io/git-guide/index.ko.html">Git 간편 안내서</a></li>
+<li><a href="https://backlog.com/git-tutorial/kr/intro/intro1_1.html">누구나 쉽게 이해할 수 있는 Git 입문</a></li>
+<li><a href="https://git-scm.com/book/ko/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0">Git 시작하기</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgced22f4" class="outline-3">
+<h3 id="references"><a id="orgced22f4"></a>Git 웹 호스팅 서비스</h3>
+<div class="outline-text-3" id="text-references">
+<ul class="org-ul">
+<li><a href="https://www.assembla.com">Assembla</a></li>
+<li><a href="https://beanstalkapp.com/">beanstalk</a></li>
+<li><a href="https://bitbucket.org">Bitbucket</a></li>
+<li><a href="http://www.cloudforge.com/">CloudForge</a></li>
+<li><a href="https://www.codebasehq.com/">Codebase</a></li>
+<li><a href="https://github.com">GitHub</a></li>
+<li><a href="https://gitlab.com">GitLab</a></li>
+<li><a href="https://www.visualstudio.com/products/visual-studio-team-services-vs">Microsofe Visual Studio Team Services</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2018-02-24</p>
+<p class="author">Author: Dongsoo Lee</p>
+<p class="date">Created: 2018-03-07 Wed 13:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
