@@ -33,11 +33,7 @@ script:
     echo "This branch($TRAVIS_BRANCH) is not available";
     fi
   - if [ "$TRAVIS_BRANCH" == "dev" ]; then
-    cp -r "assets" "contents/assets";
-    cp -r "elisp" "contents/";
-    ls;
     cd contents;
-    ls;
     DOCKER_RUN "ls";
     DOCKER_RUN "make index" && INDEX_NON_ERROR=TRUE;
     if [ "$INDEX_NON_ERROR" != TRUE ]; then echo "Error occured on make index..."; exit 1; fi;
