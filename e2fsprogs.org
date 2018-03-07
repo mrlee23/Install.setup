@@ -1,0 +1,315 @@
+#+INCLUDE: ./main.setup
+#+TITLE: e2fsprogs
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-03-05
+
+| Version              | {{{ver(1.43.9)}}}      |
+| Release Date         | {{{date(2018-02-08)}}} |
+| License              | GPL                    |
+| Programming Language | C                      |
+
+# * Overview
+#   :PROPERTIES: 
+#   :CUSTOM_ID: overview
+#   :LANG_EN:  Overview
+#   :LANG_ES:  Visión de conjunto
+#   :LANG_KO:  개요
+#   :LANG_ZH:  摘要
+#   :LANG_JA:  概要
+#   :END:      
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+# ** Introduction
+#   :PROPERTIES: 
+#   :CUSTOM_ID: introduction
+#   :LANG_EN:  Introduction
+#   :LANG_ES:  Introducción
+#   :LANG_KO:  소개
+#   :LANG_ZH:  介绍
+#   :LANG_JA:  はじめに
+#   :END:    
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install es2fsprogs
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install es2fsprogs
+#+END_SRC
+
+*** from Source code
+
+#+BEGIN_SRC sh
+$ git clone https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
+$ mkdir build
+$ cd build
+$ ../configure
+$ make
+$ make check
+$ sudo make install
+#+END_SRC
+
+** 安装的软件包
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: zh
+   :END:      
+
+- {{{link(badblocks)}}}
+- {{{link(blkid)}}}
+- {{{link(chattr)}}}
+- {{{link(debugfs)}}}
+- {{{link(dumpe2fs)}}}
+- {{{link(e2freefrag)}}}
+- {{{link(e2fsck)}}}
+- {{{link(e2image)}}}
+- {{{link(e2label)}}}
+- {{{link(e2undo)}}}
+- {{{link(e4defrag)}}}
+- {{{link(filefrag)}}}
+- {{{link(findfs)}}}
+- {{{link(findsuper)}}}
+- {{{link(logsave)}}}
+- {{{link(lsattr)}}}
+- {{{link(mke2fs)}}}
+- {{{link(resize2fs)}}}
+- {{{link(tune2fs)}}}
+
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
+*** badblocks
+
+# {{{see(badblocks)}}}
+
+*** blkid
+
+# {{{see(blkid)}}}
+
+*** chattr
+
+{{{see(chattr#check)}}}
+
+*** debugfs
+
+# {{{see(debugfs)}}}
+
+*** dumpe2fs
+
+# {{{see(dumpe2fs)}}}
+
+*** e2freefrag
+
+# {{{see(e2freefrag)}}}
+
+*** e2fsck
+
+# {{{see(e2fsck)}}}
+
+*** e2image
+
+# {{{see(e2image)}}}
+
+*** e2label
+
+# {{{see(e2label)}}}
+
+*** e2undo
+
+# {{{see(e2undo)}}}
+
+*** e4defrag
+
+# {{{see(e4defrag)}}}
+
+*** filefrag
+
+# {{{see(filefrag)}}}
+
+*** findfs
+
+# {{{see(findfs)}}}
+
+*** findsuper
+
+# {{{see(findsuper)}}}
+
+*** logsave
+
+# {{{see(logsave)}}}
+
+*** lsattr
+
+{{{see(lsattr#check)}}}
+
+*** mke2fs
+
+# {{{see(mke2fs)}}}
+
+*** resize2fs
+
+# {{{see(resize2fs)}}}
+
+*** tune2fs
+
+# {{{see(tune2fs)}}}
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+*** badblocks
+
+# {{{see(badblocks)}}}
+
+*** blkid
+
+# {{{see(blkid)}}}
+
+*** chattr
+
+{{{see(chattr#usage)}}}
+
+*** debugfs
+
+# {{{see(debugfs)}}}
+
+*** dumpe2fs
+
+# {{{see(dumpe2fs)}}}
+
+*** e2freefrag
+
+# {{{see(e2freefrag)}}}
+
+*** e2fsck
+
+# {{{see(e2fsck)}}}
+
+*** e2image
+
+# {{{see(e2image)}}}
+
+*** e2label
+
+# {{{see(e2label)}}}
+
+*** e2undo
+
+# {{{see(e2undo)}}}
+
+*** e4defrag
+
+# {{{see(e4defrag)}}}
+
+*** filefrag
+
+# {{{see(filefrag)}}}
+
+*** findfs
+
+# {{{see(findfs)}}}
+
+*** findsuper
+
+# {{{see(findsuper)}}}
+
+*** logsave
+
+# {{{see(logsave)}}}
+
+*** lsattr
+
+{{{see(lsattr#usage)}}}
+
+*** mke2fs
+
+# {{{see(mke2fs)}}}
+
+*** resize2fs
+
+# {{{see(resize2fs)}}}
+
+*** tune2fs
+
+# {{{see(tune2fs)}}}
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: zh
+  :END:      
+
+- {{{official(http://e2fsprogs.sourceforge.net/)}}}
+- {{{source-code(https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git)}}}

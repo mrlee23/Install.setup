@@ -1,0 +1,171 @@
+#+INCLUDE: ./main.setup
+#+TITLE: lp
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+print files
+
+# * How to Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: how-to-install
+#   :LANG_EN:  How to Install
+#   :LANG_ES:  Cómo instalar
+#   :LANG_KO:  설치 방법
+#   :LANG_ZH:  如何安装
+#   :LANG_JA:  インストール方法
+#   :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+# ** Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: install
+#   :LANG_EN:  Install
+#   :LANG_ES:  Instalar
+#   :LANG_KO:  설치
+#   :LANG_ZH:  安装
+#   :LANG_JA:  インストール
+#   :END:      
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+lp [ -E ] [ -U username ] [ -c ] [ -d destination[/instance] ] [ -h hostname[:port] ] [ -m ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -s ]
+   [ -t title ] [ -H handling ] [ -P page-list ] [ -- ] [ file(s) ]
+lp [ -E ] [ -U username ] [ -c ] [ -h hostname[:port] ] [ -i job-id ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -t title ] [ -H handling  ]
+   [ -P page-list ]
+#+END_SRC
+
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
+
+- {{{option(-E)}}} 
+- {{{option(-U)}}} {{{argument(username)}}}
+- {{{option(-c)}}}
+- {{{option(-d)}}} {{{argument(destination)}}}
+- {{{option(-h)}}} {{{argument(hostname)}}}[:{{{argument(port)}}}]
+- {{{option(-i)}}} {{{argument(job-id)}}}
+- {{{option(-m)}}}
+- {{{option(-n)}}} {{{argument(copies)}}}
+- {{{option(-o)}}} "name=value [ ... name=value ]"
+- {{{option(-q)}}} {{{argument(priority)}}}
+- {{{option(-s)}}}
+- {{{option(-t)}}} {{{argument(name)}}}
+- {{{option(-H)}}} {{{argument(hh:mm)}}}
+- {{{option(-H)}}} {{{argument(hold)}}}
+- {{{option(-H)}}} {{{argument(immediate)}}}
+- {{{option(-H)}}} {{{argument(restart)}}}
+- {{{option(-H)}}} {{{argument(resume)}}}
+- {{{option(-P)}}} {{{argument(page-list)}}}
+
+* COMMON JOB OPTIONS
+
+- {{{option(-o)}}} {{{argument(collate)}}}={{{argument(true)}}}
+- {{{option(-o)}}} {{{argument(fit-to-page)}}}
+- {{{option(-o)}}} {{{argument(job-hold-until)}}}={{{argument(when)}}}
+- {{{option(-o)}}} {{{argument(job-hold-until)}}}={{{argument(hh:mm)}}}
+- {{{option(-o)}}} {{{argument(job-priority)}}}={{{argument(priority)}}}
+- {{{option(-o)}}} {{{argument(job-sheets)}}}={{{argument(name)}}}
+- {{{option(-o)}}} {{{argument(job-sheets)}}}={{{argument(start-name)}}},{{{argument(end-name)}}}
+- {{{option(-o)}}} {{{argument(media)}}}={{{argument(size)}}}
+- {{{option(-o)}}} {{{argument(mirror)}}}
+- {{{option(-o)}}} {{{argument(number-up)}}}={2|4|6|9|16}
+- {{{option(-o)}}} {{{argument(number-up-layout)}}}={{{argument(layout)}}}
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(4)}}}
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(5)}}}
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(6)}}}
+- {{{option(-o)}}} {{{argument(outputorder)}}}={{{argument(reverse)}}}
+- {{{option(-o)}}} {{{argument(page-border)}}}={{{argument(border)}}}
+- {{{option(-o)}}} {{{argument(page-ranges)}}}={{{argument(page-list)}}}
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(one-sided)}}}
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(two-sided-long-edge)}}}
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(two-sided-short-edge)}}}
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

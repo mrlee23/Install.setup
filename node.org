@@ -1,0 +1,158 @@
+#+INCLUDE: ./main.setup
+#+TITLE: node
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+# * Overview
+#   :PROPERTIES: 
+#   :CUSTOM_ID: overview
+#   :LANG_EN:  Overview
+#   :LANG_ES:  Visión de conjunto
+#   :LANG_KO:  개요
+#   :LANG_ZH:  摘要
+#   :LANG_JA:  概要
+#   :END:      
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+** 先决条件
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: zh
+   :END:      
+
+- [[./sudo.org][sudo]]
+- [[./curl.org][curl]]
+
+*** 4.x
+#+NAME: prepare-node_4_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+#+END_SRC
+
+*** 6.x
+#+NAME: prepare-node_6_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+#+END_SRC
+
+*** 7.x
+#+NAME: prepare-node_7_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+#+END_SRC
+
+*** 9.x
+#+NAME: prepare-node_9_x_version
+#+BEGIN_SRC sh
+$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+#+END_SRC
+
+
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install nodejs
+$ sudo apt-get install build-essential
+#+END_SRC
+
+** 安装的软件包
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: zh
+   :END:      
+
+- node
+- [[./npm.org][npm]]
+
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+$ node -v
+v9.5.0
+$ npm -v
+5.6.0
+#+END_SRC
+
+# * Usage
+#   :PROPERTIES: 
+#   :CUSTOM_ID: usage
+#   :LANG_EN:  Usage
+#   :LANG_ES:  Uso
+#   :LANG_KO:  사용법
+#   :LANG_ZH:  如何使用
+#   :LANG_JA:  命令説明
+#   :END:      
+
+# ** Syntax
+#    :PROPERTIES: 
+#    :CUSTOM_ID: syntax
+#    :LANG_EN:  Syntax
+#    :LANG_ES:  Sintaxis
+#    :LANG_KO:  구조
+#    :LANG_ZH:  结构
+#    :LANG_JA:  構造
+#    :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: zh
+  :END:      
+
+- [[https://kr.godaddy.com/help/install-nodejs-ubuntu-17395]]

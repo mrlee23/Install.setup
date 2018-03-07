@@ -1,0 +1,165 @@
+#+INCLUDE: ./main.setup
+#+TITLE: modprobe
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+Add and remove modules from the Linux Kernel
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+{{{see(kmod#install)}}}
+
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+$ modprobe -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+modprobe [options] [-i] [-b] modulename
+modprobe [options] -a [-i] [-b] modulename [modulename...]
+modprobe [options] -r [-i] modulename
+modprobe [options] -r -a [-i] modulename [modulename...]
+modprobe [options] -c
+modprobe [options] --dump-modversions filename
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** 选项
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: zh
+   :END:      
+
+*** Management Options
+	:PROPERTIES:
+	:END:
+
+- {{{option(-a)}}}, {{{option(--all)}}} Consider every non-argument to be a module name to be inserted or removed (-r)
+- {{{option(-r)}}}, {{{option(--remove)}}} Remove modules instead of inserting
+  - {{{option(--remove-dependencies)}}} Also remove modules depending on it
+- {{{option(-R)}}}, {{{option(--resolve-alias)}}} Only lookup and print alias and exit
+  - {{{option(--first-time)}}} Fail if module already inserted or removed
+- {{{option(-i)}}}, {{{option(--ignore-install)}}} Ignore install commands
+- {{{option(-i)}}}, {{{option(--ignore-remove)}}} Ignore remove commands
+- {{{option(-b)}}}, {{{option(--use-blacklist)}}} Apply blacklist to resolved alias.
+- {{{option(-f)}}}, {{{option(--force)}}} Force module insertion or removal. implies {{{opt(--force-modversions)}}} and {{{opt(--force-vermagic)}}}
+  - {{{option(--force-modversion)}}} Ignore module's version
+  - {{{option(--force-vermagic)}}} Ignore module's version magic
+
+*** Query Options
+	:PROPERTIES:
+	:END:
+
+- {{{option(-D)}}}, {{{option(--show-depends)}}}
+#+LANG_EN  Only print module dependencies and exit
+- {{{option(-c)}}}, {{{option(--showconfig)}}}
+#+LANG_EN  Print out known configuration and exit
+- {{{option(-c)}}}, {{{option(--show-config)}}}
+#+LANG_EN  Same as {{{opt(--showconfig)}}}
+  - {{{option(--show-modversions)}}}
+#+LANG_EN  Dump module symbol version and exit
+  - {{{option(--dump-modversions)}}}
+#+LANG_EN  Same as --show-modversions
+
+*** General Options
+	:PROPERTIES:
+	:END:
+
+- {{{option(-n)}}}, {{{option(--dry-run)}}}
+#+LANG_EN  Do not execute operations, just print out
+- {{{option(-n)}}}, {{{option(--show)}}}
+#+LANG_EN  Same as {{{option(--dry-run)}}}
+- {{{option(-C)}}}, {{{option(--config)}}}={{{argument(FILE)}}}
+#+LANG_EN  Use FILE instead of default search paths
+- {{{option(-d)}}}, {{{option(--dirname)}}}={{{argument(DIR)}}}
+#+LANG_EN  Use DIR as filesystem root for /lib/modules
+- {{{option(-S)}}}, {{{option(--set-version)}}}={{{argument(VERSION)}}}
+#+LANG_EN  Use VERSION instead of `uname -r`
+- {{{option(-s)}}}, {{{option(--syslog)}}}
+#+LANG_EN  print to syslog, not stderr
+- {{{option(-q)}}}, {{{option(--quiet)}}}
+#+LANG_EN  disable messages
+- {{{option(-v)}}}, {{{option(--verbose)}}}
+#+LANG_EN  enables more messages
+- {{{option(-V)}}}, {{{option(--version)}}}
+#+LANG_EN  show version
+- {{{option(-h)}}}, {{{option(--help)}}}
+#+LANG_EN  show this help
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 相关主题
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: zh
+  :END:      
+
+- {{{link(kmod)}}}
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(depmod)}}}
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: zh
+  :END:      
+
+{{{see(kmod#references)}}}

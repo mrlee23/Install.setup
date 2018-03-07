@@ -1,0 +1,119 @@
+#+INCLUDE: ./main.setup
+#+TITLE: insmod
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 摘要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: zh
+  :END:      
+
+一个将模块添加到Linux内核的简单程序。
+
+** 介绍
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: zh
+  :END:    
+
+insmod is a trivial program to insert a module into the kernel. Most users will want to use modprobe(8) instead, which is more clever and can handle module dependencies.
+
+Only the most general of error messages are reported: as the work of trying to link the module is now done inside the kernel, the dmesg usually gives more information about errors.
+
+* 如何安装
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: zh
+  :END:      
+
+** 安装
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: zh
+  :END:      
+
+{{{see(kmod#install)}}}
+
+** 检查
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+$ insmod -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* 如何使用
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: zh
+  :END:      
+
+** 结构
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: zh
+   :END:      
+
+#+BEGIN_SRC sh
+insmod [filename] [module options...]
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 相关主题
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: zh
+  :END:      
+
+- {{{link(kmod)}}}
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: zh
+  :END:      
+
+{{{see(kmod#references)}}}
