@@ -1,0 +1,53 @@
+# -*- mode: org -*-
+
+#+MACRO: class @@html:<span class="org-programming-class">$1</span>@@
+#+MACRO: func @@html:<span class="org-programming-function">$1</span>@@
+#+MACRO: ret @@html:<span class="org-programming-return">$1</span>@@
+#+MACRO: arg @@html:<span class="org-programming-argument">$1</span>@@
+#+MACRO: argument @@html:<span class="org-programming-argument">$1</span>@@
+#+MACRO: kwd @@html:<span class="org-programming-keyword">$1</span>@@
+#+MACRO: type @@html:<span class="org-programming-type">$1</span>@@
+#+MACRO: var @@html:<span class="org-programming-variable">$1</span>@@
+#+MACRO: variable @@html:<span class="org-programming-variable">$1</span>@@
+#+MACRO: const @@html:<span class="org-programming-constant">$1</span>@@
+#+MACRO: path @@html:<span class="org-programming-path">$1</span>@@
+#+MACRO: file @@html:<span class="org-programming-file">$1</span>@@
+#+MACRO: opt (eval (lc-macro/opt "$1"))
+#+MACRO: option @@html:<span id="opt-$1" class="org-programming-option">$1</span>@@
+#+MACRO: ver @@html:<span class="org-programming-version">$1</span>@@
+#+MACRO: size @@html:<span class="org-programming-size">$1</span>@@
+#+MACRO: date @@html:<span class="org-programming-date">$1</span>@@
+#+MACRO: license @@html:<span class="org-programming-license">$1</span>@@
+#+MACRO: official (eval (lc-macro/official "$1"))
+#+MACRO: source-code (eval (lc-macro/source-code "$1"))
+
+#+MACRO: note-dependency (eval (lc-macro/note-dependency))
+
+#+MACRO: see (eval (lc-macro/see "$1"))
+#+MACRO: see-opt (eval (lc-macro/see-option "$1"))
+#+MACRO: link (eval (lc-macro/link "$1" "$2"))
+#+MACRO: img (eval (lc-macro/inline-image "$1" "$2"))
+#+MACRO: img-link (eval (lc-macro/inline-image-link "$1" "$2"))
+
+#+MACRO: REDIRECT @@html:<script type="javascript">location.href = "$1"</script>@@
+#+MACRO: VERSION (eval (lc-macro/version "$1"))
+#+MACRO: LATEST_VERSION (eval (lc-macro/latest-version "$1"))
+#+MACRO: BUILTIN (eval (lc-macro/builtin))
+#+MACRO: INCLUDE_PROGRESS (eval (lc-macro/include-progress))
+#+MACRO: INCLUDE_DOCS (eval (lc-macro/include-docs))
+#+MACRO: META (eval (format "%s\n%s\n%s" (lc-macro/meta) (lc-macro/hreflang) (lc-macro/main-image)))
+#+MACRO: IMAGE (eval (lc-macro/image "$1" "$2" "$3"))
+#+MACRO: IMAGE_CENTER (eval (lc-macro/image "$1" "$2" "$3" "center"))
+#+MACRO: IMAGE_RIGHT (eval (lc-macro/image "$1" "$2" "$3" "right"))
+#+MACRO: IMAGE_MAIN (eval (lc-macro/image "main.jpg" "$1" "main" "right" t))
+#+MACRO: IMAGE_LINK (eval (lc-macro/image-link "$1" "$2" "$3"))
+#+MACRO: IMAGE_LINK_CENTER (eval (lc-macro/image-link "$1" "$2" "$3" "center"))
+#+MACRO: IMAGE_LINK_RIGHT (eval (lc-macro/image-link "$1" "$2" "$3" "right"))
+#+MACRO: CURRENT_LANG (eval (format "%s" lc-core/language))
+
+#+MACRO: HEADER (eval (lc-macro/header))
+#+MACRO: HEADER_LANGUAGE (eval (lc-macro/header-language))
+#+MACRO: HEADER_SITE_TITLE (eval (lc-macro/header-site-title))
+#+MACRO: HEADER_SITE_DESCRIPTION (eval (lc-macro/header-site-description))
+
+#+MACRO: RSS_GENERATOR (eval (lc-macro/rss-generator))

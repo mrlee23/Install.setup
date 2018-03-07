@@ -1,0 +1,159 @@
+#+INCLUDE: ./main.setup
+#+TITLE: findutils
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-28
+
+#+NAME: infobox
+| Developer      | GNU Project                     |
+| Version        | {{{ver(4.6.0+git+20170828-2)}}} |
+| Release Date   | {{{date(2017-08-28)}}}          |
+| Package Size   | {{{size(284KB)}}}               |
+| Installed Size | {{{size(580KB)}}}               |
+| Written in     | C                               |
+| License        | {{{license(GNU GPL)}}}          |
+| Type           | Utility                         |
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+GNU Find 유틸리티는 GNU와 리눅스 시스템의 파일 시스템에서 기본적인 파일 검색 유틸리티 패키지를 제공합니다.
+{{{link(find)}}}, {{{link(locate)}}}, {{{link(updatedb)}}}, {{{link(xargs)}}} 등의 명령어가 포함되어 있습니다.
+그러나 최신 리눅스 배포판에서는 {{{link(locate)}}}, {{{link(updatedb)}}} 명령어는 따로 분리되어 더 이상 포함되지 않습니다.
+
+# ** History
+#    :PROPERTIES: 
+#    :CUSTOM_ID: history
+#    :LANG_EN:  History
+#    :LANG_ES:  Historia
+#    :LANG_KO:  역사
+#    :LANG_ZH:  历史
+#    :LANG_JA:  歴史
+#    :END:      
+
+# ** Releases
+#    :PROPERTIES: 
+#    :CUSTOM_ID: releases
+#    :LANG_EN:  Releases
+#    :LANG_ES:  Lanzamientos
+#    :LANG_KO:  릴리즈
+#    :LANG_ZH:  发布
+#    :LANG_JA:  リリース
+#    :END:      
+
+# ** Introduction
+#    :PROPERTIES: 
+#    :CUSTOM_ID: introduction
+#    :LANG_EN:  Introduction
+#    :LANG_ES:  Introducción
+#    :LANG_KO:  소개
+#    :LANG_ZH:  介绍
+#    :LANG_JA:  はじめに
+#    :END:      
+
+# ** Characteristic
+#    :PROPERTIES: 
+#    :CUSTOM_ID: characteristic
+#    :LANG_EN:  Characteristic
+#    :LANG_ES:  Característica
+#    :LANG_KO:  특징
+#    :LANG_ZH:  特点
+#    :LANG_JA:  特徴
+#    :END:      
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
+- {{{link(update)}}}
+
+** 의존성
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: ko
+   :END:      
+
+- libc6 ({{{ver(>= 2.17)}}})
+  - GNU C Library
+- libselinux1 ({{{ver(>= 1.32)}}})
+  - SELinux runtime shared libraries
+
+** 설치
+   :PROPERTIES: 
+   :CUSTOM_ID: install
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install findutils
+#+END_SRC
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+{{{VERSION(4.6.0)}}}
+
+- {{{link(find)}}} :
+ 디렉토리 구조 내에서 파일을 찾습니다.
+- {{{link(xargs)}}} :
+ 표준 입력에서 명령행 라인을 실행합니다.
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+*** find
+{{{see(find#check)}}}
+
+*** xargs
+{{{see(xargs#check)}}}
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+*** find
+{{{see(find#usage)}}}
+
+*** xargs
+{{{see(xargs#usage)}}}
+
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(find)}}}
+- {{{link(xargs)}}}
+- {{{link(locate)}}}
+
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+- [[https://en.wikipedia.org/wiki/GNU_Find_Utilities][위키피디아]]
+- [[https://www.gnu.org/software/findutils/][GNU findtuils]]
+- [[https://packages.ubuntu.com/xenial/utils/findutils][findutils - Ubuntu]]
+- [[https://packages.debian.org/en/findutils][findutils - Debian]]
+- [[http://git.savannah.gnu.org/cgit/findutils.git][Git repository]]

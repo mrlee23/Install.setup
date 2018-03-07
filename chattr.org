@@ -1,0 +1,170 @@
+#+INCLUDE: ./main.setup
+#+TITLE: chatter
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+리눅스 시스템에서 파일 attribute를 변경한다.
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+{{{see(e2fsprogs#install)}}}
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+chattr [옵션] [+-= 속성] [파일명]
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(-R)}}} :
+  하위 디렉토리와 파일의 속성을 변경한다.
+- {{{option(-V)}}} :
+  프로그램 버전을 프린트한다.
+- {{{option(-f)}}} :
+  most 에러 메세지를 나오지 않게 한다.
+- {{{option(-v)}}} version :
+  파일의 버전/생성 번호를 설정한다.
+- - :
+  속성을 제거한다.
+- + :
+  속성을 추가한다.
+- = :
+  현재의 속성을 제거한다.
+
+*** Basic attributes
+- a :
+  쓰기시에 오로지 추가모드로만 열 수 있다.
+- c :
+  커널에 의해 디스크 상에 압축 상태로 저장
+- d :
+  dump(8)명령 수행시 백업 되지 않는다. (덤프 방지)
+- i :
+  삭제, 이름변경, 링크등 어떤 자료도 변경 불가. (root 조차 변경 불가)
+- j :
+  데이터 저널링
+- s :
+  지워질 때 블록들이 모두 0으로 되고 다시 디스크상에 씌여짐(안전한 삭제)
+- t :
+  하단 결합 불가
+- u :
+  삭제가 되었을 경우에는 그 내용이 저장 (데이터로 복구 가능)
+- A :
+  접근시간(atime) 갱신 안함
+- D :
+  동기화된 디렉토리 업데이트
+- S :
+  수정될 때 그 변화가 디스크 상에 동기화 (동기화된 업데이트)
+- T :
+  디렉토리 계층구조의 최상위
+
+*** Readonly attributes
+- h :
+  큰 파일(huge file)
+- E :
+  압축 오류(compression error)
+- I :
+  색인 디렉토리(indexed directory)
+- X :
+  압축 로우 엑세스(compression raw access)
+- Z :
+  compressed dirty file
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(lsattr)}}}
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

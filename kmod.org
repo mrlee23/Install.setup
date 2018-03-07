@@ -1,0 +1,216 @@
+#+INCLUDE: ./main.setup
+#+TITLE: kmod
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-28
+
+#+NAME: infobox
+| Package Size | {{{size(87KB)}}} |
+| Installed Size | {{{size(241KB)}}} |
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+리눅스 커널 모듈을 다루기 위한 프로그램
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
+
+kmod는 리눅스 커널 모듈을 제어하는데 쓰이는 프로그램을 구현한 여러 명령어들로 구성되어 있습니다.
+일반적으로 사용할 때 kmod가 아닌 다른 이름으로 만들어진 {{{link(insmod)}}}, {{{link(lsmod)}}} 등을 명령어로 사용합니다.
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
+- {{{link(update)}}}
+
+** 의존성
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: ko
+   :END:      
+
+- libc6 (>= {{{ver(2.17)}}})
+- libkmod2 (= {{{ver(22-1ubuntu4)}}})
+- lsb-base (>= {{{ver(4.1+Debian11ubuntu7)}}})
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+#+BEGIN_SRC sh
+$ sudo apt-get install module-init-tools
+#+END_SRC
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+- kmod
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(insmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ kmod -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+kmod [옵션] 명령어 [명령어_옵션]
+#+END_SRC
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(-V)}}}, {{{option(--version)}}} :
+ 버전을 보여줍니다.
+- {{{option(-h)}}}, {{{option(--help)}}} :
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Environment Variables
+#    :PROPERTIES: 
+#    :CUSTOM_ID: environment-variables
+#    :LANG_EN:  Variables
+#    :LANG_ES:  Variables de entorno
+#    :LANG_KO:  환경 변수
+#    :LANG_ZH:  环境变量
+#    :LANG_JA:  環境変数
+#    :END:      
+
+** 명령어
+   :PROPERTIES: 
+   :CUSTOM_ID: commands
+   :LANG: ko
+   :END:      
+
+- help : Show help message
+- list : list currently loaded modules
+- static-nodes : outputs the static-node information installed with the currently running kernel
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(insmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+- [[https://packages.ubuntu.com/xenial/kmod][kmod - Ubuntu Packages]]

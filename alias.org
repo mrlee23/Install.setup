@@ -1,0 +1,160 @@
+#+INCLUDE: ./main.setup
+#+TITLE: alias
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
+
+명령어를 대신할 별명을 만들고 실행할 수 있도록 만든다.
+
+** 특징
+  :PROPERTIES: 
+  :LANG: ko
+  :END:    
+
+- 쉘 내장 명령어
+- 명령어 축약                                                                                                  
+- 자주 사용하는 명령어를 줄여서 실행 가능하게 해준다.                                                          
+- 실행시 =PATH= 변수의 디렉토리 내 실행파일보다 먼저 실행되므로 만약 cd = clear 로 설정되었을 경우 cd 명령을 치면 clear가 실행된다.
+# * How to Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: how-to-install
+#   :LANG_EN:  How to Install
+#   :LANG_ES:  Cómo instalar
+#   :LANG_KO:  설치 방법
+#   :LANG_ZH:  如何安装
+#   :LANG_JA:  インストール方法
+#   :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+# ** Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: install
+#   :LANG_EN:  Install
+#   :LANG_ES:  Instalar
+#   :LANG_KO:  설치
+#   :LANG_ZH:  安装
+#   :LANG_JA:  インストール
+#   :END:      
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+	#+BEGIN_SRC sh
+alias [-p] [이름[=값] ...]
+	#+END_SRC
+
+** 설정
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: ko
+   :END:      
+
+{{{file(~/.bash_profile)}}}이나 {{{file(~/.bashrc)}}}에서 alias 설정을 할 수 있습니다.
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(-p)}}}
+  - 현재 쉘에 설정된 alias를 모두 보여준다.
+
+** 사용 예
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ko
+   :END:      
+
+alias로 설정한 이름을 명령어 처럼 사용할 수 있습니다.
+
+	#+BEGIN_SRC sh
+$ alias cl='clear'
+$ alias ll='ls -l'
+$ alias rm='rm -i'
+	#+END_SRC
+
+	#+BEGIN_SRC sh
+$ ll
+	#+END_SRC
+
+#+BEGIN_EXAMPLE
+-rw-r--r--  1 dongsoolee  wheel     17  2 21 12:43 CNAME
+-rw-r--r--  1 dongsoolee  wheel   2870  2 21 12:43 DNS.org
+-rw-r--r--  1 dongsoolee  wheel    984  2 21 12:43 Dockerfile
+-rw-r--r--  1 dongsoolee  wheel   2821  2 21 12:43 Makefile
+-rw-r--r--  1 dongsoolee  wheel   2870  2 21 12:43 NIS.org
+-rw-r--r--  1 dongsoolee  wheel    278  2 21 12:48 README.en.org
+-rw-r--r--  1 dongsoolee  wheel    578  2 21 12:49 README.ko.org
+-rw-r--r--  1 dongsoolee  wheel    814  2 21 12:43 README.org
+-rw-r--r--  1 dongsoolee  wheel  11259  2 21 12:46 README.org.org
+-rw-r--r--  1 dongsoolee  wheel   2874  2 21 12:43 SELinux.org
+#+END_EXAMPLE
+
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(bash)}}}
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

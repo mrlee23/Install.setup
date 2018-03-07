@@ -1,0 +1,163 @@
+#+INCLUDE: ./main.setup
+#+TITLE: autoconf
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+| Version        | {{{ver(2.69)}}}    |
+| Package Size   | {{{size(871KB)}}}  |
+| Installed Size | {{{size(3589KB)}}} |
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
+
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
+
+Producing configuration scripts using Autoconf requires GNU M4.
+You should install GNU M4 (at least version 1.4.6, although 1.4.13 or later is recommended) before configuring Autoconf, so that Autoconf's configure script can find it.
+The configuration scripts produced by Autoconf are self-contained, so their users do not need to have Autoconf (or GNU M4).
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 의존성
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: ko
+   :END:      
+
+- debianutils (>= {{{ver(1.8)}}})
+  - Miscellaneous utilities specific to Debian
+- {{{link(m4)}}} (>= {{{ver(1.4.13)}}})
+  - macro processing language
+- {{{link(perl)}}} (>> {{{ver(5.005)}}})
+  - Larry Wall's Practical Extraction and Report Language
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install autoconf
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install autoconf
+#+END_SRC
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+- autoconf
+- {{{link(automake)}}}
+- autotools-dev
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ autoconf --version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+autoconf (GNU Autoconf) 2.69
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+/Autoconf: GNU GPL version 3 or later
+<http://gnu.org/licenses/gpl.html>, <http://gnu.org/licenses/exceptions.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David J. MacKenzie and Akim Demaille.
+#+END_EXAMPLE
+
+# * Usage
+#   :PROPERTIES: 
+#   :LANG_EN:  Usage
+#   :LANG_ES:  Uso
+#   :LANG_KO:  사용법
+#   :LANG_ZH:  如何使用
+#   :LANG_JA:  命令説明
+#   :END:      
+
+# ** Syntax
+#    :PROPERTIES: 
+#    :CUSTOM_ID: syntax
+#    :LANG_EN:  Syntax
+#    :LANG_ES:  Sintaxis
+#    :LANG_KO:  구조
+#    :LANG_ZH:  结构
+#    :LANG_JA:  構造
+#    :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(automake)}}}
+- {{{link(m4)}}}
+
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+- {{{official(https://www.gnu.org/software/autoconf/autoconf.html)}}}

@@ -1,0 +1,169 @@
+#+INCLUDE: ./main.setup
+#+TITLE: apt
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+ 실질적으로는 APT는 dpkg와 함께 동작하지만, 데비안 시스템에서 필요한 소프트웨어 검색, 다운로드, 설치, 업그레이드 그리고 확인 등 대부분의 패키지 관리 작업은 APT 유틸리티만으로도 충분하다.
+# * How to Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: how-to-install
+#   :LANG_EN:  How to Install
+#   :LANG_ES:  Cómo instalar
+#   :LANG_KO:  설치 방법
+#   :LANG_ZH:  如何安装
+#   :LANG_JA:  インストール方法
+#   :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+# ** Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: install
+#   :LANG_EN:  Install
+#   :LANG_ES:  Instalar
+#   :LANG_KO:  설치
+#   :LANG_ZH:  安装
+#   :LANG_JA:  インストール
+#   :END:      
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+# ** Syntax
+#    :PROPERTIES: 
+#    :CUSTOM_ID: syntax
+#    :LANG_EN:  Syntax
+#    :LANG_ES:  Sintaxis
+#    :LANG_KO:  구조
+#    :LANG_ZH:  结构
+#    :LANG_JA:  構造
+#    :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+** 사용 예
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: ko
+   :END:      
+
+- apt-get update:
+  /etc/apt/sources.list 를 참조해 사용할 수 있는 패키지 데이터베이스를 업데이트한다.(source.list 파일을 변경했다면 반드시 이 명령을 실행)
+- apt-get check:
+  시스템 무결성 검사.
+- sudo apt-get install <package>:
+  주어진 패키지명을 데이터베이스에서 찾을 수 있다면, 해당 패키지를 다운로드받아 설치.(APT 버전 0.6부터 이 명령어는 자동적으로 GPG 키를 사용해 패키지의 신뢰성을 검증)
+- sudo apt-get -f install:
+  깨진 패키지를 위해 정상여부를 검사(이 명령어는 의존성 문제애 대한 메시지 수정을 시도)
+- sudo apt-get -d install <package>:
+  패키지를 설치하지 않고 /var/cache/apt/archives 디렉토리에 다운로드만 받음.
+- sudo apt-get clean:
+  디스크 공간확보를 위해 /var/cache/apt/archives 디렉토리에 캐시되어 있는 패키지들을 모두 삭제.
+- sudo apt-get autoclean:
+  불완전하게 다운로드된 패키지나 오래된 패키지를 삭제하고자 할 때 실행.(부분적으로 디스크 공간을 절약할 수 있다.)
+- sudo apt-get upgrade:
+  설치되어 있는 모든 패키지에 대한 최신 업데이트를 검사한 후, 다운로드 받아 설치.
+- sudo apt-get dist-upgrade:
+  전체 시스템을 새로운 버전으로 업그레이드한다. 여기에는 패키지 삭제도 포함되어 있다.(이 방법은 시스템을 업데이트하는 방법으로는 잘 사용되지 않음)
+- sudo apt-get --purge remove <package>:
+  주어진 패키지와 그 설정파일을 삭제( --purge 옵션을 사용하면 설정파일까지 삭제)
+- apt-cache search <keyword>:
+  패키지 데이터베이스에서 주어진 키워드를 대소문자 구분없이 검색.(결과로 키워드를 포함하고 있는 패키지명과 설명이 출력)
+- apt-cache showpkg <package>:
+  단일 패키지에 대한 일반적인 정보 출력.
+- apt-cache show <package>:
+  주어진 패키지명에 해야하는 소프트웨어에 대한 정보 출력.
+- apt-cache stats:
+  설치된 모든 패키지에 대한 상태정보를 출력.
+- apt-cache dump:
+  캐시에 있는 모든 패키지를 간단한 형식으로 출력.
+- apt-cache dumpvall:
+  표준출력으로 유효한 파일들을 출력.
+- apt-cache depends:
+  패키지가 설치되어 있는지 여부에 관계없이, 패키지에 대한 의존성을 출력.
+- apt-cache pkgnames:
+  시스템에 설치되어 있는 모든 패키지 목록을 보여줌.
+- apt-config -v:
+  설치된 APT 유틸리티의 버전정보 출력.
+- sudo apt-key list:
+  APT가 알고 있는 gpg 키 목록을 출력.
+- sudo apt-key add <file>:
+  APT에 서명키 등록.
+- sudo apt-key del <keyid>:
+  신뢰할 수 있는 키 리스트에서 키를 제거.
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

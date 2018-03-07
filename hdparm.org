@@ -1,0 +1,333 @@
+#+INCLUDE: ./main.setup
+#+TITLE: hdparm
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+#+NAME: infobox
+| Developer    | Mark Lord              |
+| Version      | {{{ver(9.53)}}}        |
+| Release Date | {{{date(2018-01-05)}}} |
+| Size         | {{{size(284KB)}}}      |
+| License      | {{{license(BSD)}}}     |
+| Type         | Utility                |
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+SATA/IDE 장치의 변수를 가져오거나 변경합니다.
+
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
+
+hdparm은 CLI 명령어로써, 리눅스 SATA/PATA/SAS "libata" 시스템, IDE 드라이브와 같이 다양한 커널 인터페이스를 제공합니다.
+
+2008년 이후 출시된 USB 드라이버는 SAT(SCSI-ATA Command Translation)을 이용해서 지원합니다.
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
+- {{{link(update)}}}
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install hdparm
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install hdparm -y
+#+END_SRC
+
+*** using RPM
+
+- 32 bit
+#+BEGIN_SRC sh
+$ sudo rpm -Uvh http://mirrors.hostemo.com/CentOS/6.3/os/i386/Packages/hdparm-9.16-3.4.el6.i686.rpm
+#+END_SRC
+- 64 bit
+#+BEGIN_SRC sh
+$ sudo rpm -Uvh http://mirrors.hostemo.com/CentOS/6.3/os/x86_64/Packages/hdparm-9.16-3.4.el6.x86_64.rpm
+#+END_SRC
+
+*** from Source
+
+- Download from [[https://sourceforge.net/projects/hdparm/]]
+#+BEGIN_SRC sh
+$ make
+$ sudo make install
+#+END_SRC
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+- hdparm
+- powermgmt-base
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ hdparm -V
+hdparm v9.51
+#+END_SRC
+
+*** with RPM
+
+#+BEGIN_SRC sh
+$ rpm -qa | grep hdparm
+hdparm-9.16-3.4.el6.i686
+#+END_SRC
+
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+hdparm [옵션] [장치 ...]
+#+END_SRC
+
+** 설정
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: ko
+   :END:      
+
+- {{{file(/etc/hdparm.conf)}}}
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+{{{VERSION(9.51, 2017-01)}}}
+
+- {{{option(-a)}}} :
+Get/set fs readahead
+- {{{option(-A)}}} :
+Get/set the drive look-ahead flag (0/1)
+- {{{option(-b)}}} :
+ 버스 상태 값을 출력하거나 설정합니다. (0 == 꺼짐, 1 == 켜짐, 2 == tristate)
+- {{{option(-B)}}} :
+ Advanced Power Management 값을 설정합니다. (1-255 선택 가능)
+- {{{option(-c)}}} :
+ IDE 32비트 입출력을 가져오거나 설정합니다.
+- {{{option(-C)}}} :
+ 드라이브 파워 모드 상태를 확인합니다.
+- {{{option(-d)}}} :
+ using_dma 플래그를 가져오거나 설정합니다.
+- {{{option(-D)}}} :
+ 드라이브 결함을 관리 기능을 켜거나 끕니다.
+- {{{option(-E)}}} :
+ CD 혹은 DVD 드라이브 속도를 설정합니다.
+- {{{option(-f)}}} :
+ 장치를 종료할 때 버퍼 캐시를 지웁니다.
+- {{{option(-F)}}} :
+ 드라이브 입력 캐시를 지웁니다.
+- {{{option(-g)}}} :
+ 드라이브 구조를 보여줍니다.
+- {{{option(-h)}}} :
+Display terse usage information
+- {{{option(-H)}}} :
+Read temperature from drive (Hitachi only)
+- {{{option(-i)}}} :
+Display drive identification
+- {{{option(-I)}}} :
+Detailed/current information directly from drive
+- {{{option(-J)}}} :
+Get/set Western DIgital "Idle3" timeout for a WDC "Green" drive (DANGEROUS)
+- {{{option(-k)}}} :
+Get/set keep_settings_over_reset flag (0/1)
+- {{{option(-K)}}} :
+Set drive keep_features_over_reset flag (0/1)
+- {{{option(-L)}}} :
+Set drive doorlock (0/1) (removable harddisks only)
+- {{{option(-m)}}} :
+Get/set multiple sector count
+- {{{option(-M)}}} :
+Get/set acoustic management (0-254, 128: quiet, 254: fast)
+- {{{option(-n)}}} :
+Get/set ignore-write-errors flag (0/1)
+- {{{option(-N)}}} :
+Get/set max visible number of sectors (HPA) (VERY DANGEROUS)
+- {{{option(-p)}}} :
+Set PIO mode on IDE interface chipset (0,1,2,3,4,...)
+- {{{option(-P)}}} :
+Set drive prefetch count
+- {{{option(-q)}}} :
+Change next setting quietly
+- {{{option(-Q)}}} :
+Get/set DMA queue_depth (if supported)
+- {{{option(-r)}}} :
+Get/set device readonly flag (DANGEROUS to set)
+- {{{option(-R)}}} :
+Get/set device write-read-verify flag
+- {{{option(-s)}}} :
+Set power-up in standby flag (0/1) (DANGEROUS)
+- {{{option(-S)}}} :
+Set standby (spindown) timeout
+- {{{option(-t)}}} :
+Perform device read timings
+- {{{option(-T)}}} :
+Perform cache read timings
+- {{{option(-u)}}} :
+Get/set unmaskirq flag (0/1)
+- {{{option(-U)}}} :
+Obsolete
+- {{{option(-v)}}} :
+Use defaults; same as -acdgkmur for IDE drives
+- {{{option(-V)}}} :
+Display program version and exit immediately
+- {{{option(-w)}}} :
+Perform device reset (DANGEROUS)
+- {{{option(-W)}}} :
+Get/set drive write-caching flag (0/1)
+- {{{option(-x)}}} :
+Obsolete
+- {{{option(-X)}}} :
+Set IDE xfer mode (DANGEROUS)
+- {{{option(-y)}}} :
+Put drive in standby mode
+- {{{option(-Y)}}} :
+Put drive to sleep
+- {{{option(-z)}}} :
+Re-read partition table
+- {{{option(-Z)}}} :
+Disable Seagate auto-powersaving mode
+- {{{option(--dco-freeze)}}} :
+Freeze/lock current device configuration until next power cycle
+- {{{option(--dco-identify)}}} :
+Read/dump device configuration identify data
+- {{{option(--dco-restore)}}} :
+Reset device configuration back to factory defaults
+- {{{option(--dco-setmax)}}} :
+Use DCO to set maximum addressable sectors
+- {{{option(--direct)}}} :
+Use O_DIRECT to bypass page cache for timings
+- {{{option(--drq-hsm-error)}}} :
+Crash system with a "stuck DRQ" error (VERY DANGEROUS)
+- {{{option(--fallocate)}}} :
+Create a file without writing data to disk
+- {{{option(--fibmap)}}} :
+Show device extents (and fragmentation) for a file
+- {{{option(--fwdownload)}}} :
+Download firmware file to drive (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-mode3)}}} :
+Download firmware using min-size segments (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-mode3-max)}}} :
+Download firmware using max-size segments (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-mode7)}}} :
+Download firmware using a single segment (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-modee)}}} :
+Download firmware using mode E (min-size segments) (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-modee-max)}}} :
+Download firmware using mode E (max-size segments) (EXTREMELY DANGEROUS)
+- {{{option(--idle-immediate)}}} :
+Idle drive immediately
+- {{{option(--idle-unload)}}} :
+Idle immediately and unload heads
+- {{{option(--Istdin)}}} :
+Read identify data from stdin as ASCII hex
+- {{{option(--Istdout)}}} :
+Write identify data to stdout as ASCII hex
+- {{{option(--make-bad-sector)}}} :
+Deliberately corrupt a sector directly on the media (VERY DANGEROUS)
+- {{{option(--offset)}}} :
+use with -t, to begin timings at given offset (in GiB) from start of drive
+- {{{option(--prefer-ata12)}}} :
+Use 12-byte (instead of 16-byte) SAT commands when possible
+- {{{option(--read-sector)}}} :
+Read and dump (in hex) a sector directly from the media
+- {{{option(--repair-sector)}}} :
+Alias for the --write-sector option (VERY DANGEROUS)
+- {{{option(--sanitize-antifreeze-lock)}}} :
+Block sanitize-freeze-lock command until next power cycle
+- {{{option(--sanitize-block-erase)}}} :
+Start block erase operation
+- {{{option(--sanitize-crypto-scramble)}}} :
+Change the internal encryption keys that used for used data
+- {{{option(--sanitize-freeze-lock)}}} :
+Lock drive's sanitize features until next power cycle
+- {{{option(--sanitize-overwrite)}}} :
+PATTERN Overwrite the internal media with constant PATTERN
+- {{{option(--sanitize-status)}}} :
+Show sanitize status information
+- {{{option(--security-help)}}} :
+Display help for ATA security commands
+- {{{option(--trim-sector-ranges)}}} :
+Tell SSD firmware to discard unneeded data sectors: lba:count ..
+- {{{option(--trim-sector-ranges-stdin)}}} :
+Same as above, but reads lba:count pairs from stdin
+- {{{option(--verbose)}}} :
+Display extra diagnostics from some commands
+- {{{option(--write-sector)}}} :
+Repair/overwrite a (possibly bad) sector directly on the media (VERY DANGEROUS)
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+- [[https://en.wikipedia.org/wiki/Hdparm][위키피디아]]
+- [[https://sourceforge.net/projects/hdparm/][Sourceforge에서 다운로드]]
+- [[https://www.ehowstuff.com/how-to-fix-bash-hdparm-command-not-found-on-linux-centos-6-3/][CentOS 6.3에서 hdparm 명령어가 없을 때 해결방법]]

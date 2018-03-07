@@ -1,0 +1,366 @@
+#+INCLUDE: ./main.setup
+#+TITLE: git
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-24
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+The stupid content tracker
+
+** 소개
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: ko
+  :END:    
+
+Git은 빠르고 확장가능하며 강력하면서도 고수준의 다양한 명령어를 제공하는 분산 버전 관리 시스템입니다.
+
+현존하는 대부분의 오픈소스 프로젝트들은 Git으로 관리되고 있으며, 구글ㆍ마이크로소프트ㆍ애플ㆍIBMㆍ페이스북 등 거대 IT 기업들도 자신들의 프로젝트 관리를 위해 Git을 적극적으로 사용하고 있습니다.
+
+** 릴리즈
+  :PROPERTIES: 
+  :CUSTOM_ID: releases
+  :LANG: ko
+  :END:    
+
+{{{LATEST_VERSION(2.16.2)}}}
+
+| 버전 | 최초 버전 릴리즈 날짜 | 최신 버전 | 출시일 |
+|---------+-----------------------+----------------+--------------|
+|    0.99 |            2005-07-11 |        0.99.9n |   2005-12-15 |
+|     1.0 |            2005-12-21 |         1.0.13 |   2006-01-27 |
+|     1.1 |            2006-01-08 |          1.1.6 |   2006-01-30 |
+|     1.2 |            2006-02-12 |          1.2.6 |   2006-04-08 |
+|     1.3 |            2006-04-18 |          1.3.3 |   2006-05-16 |
+|     1.4 |            2006-06-10 |        1.4.4.5 |   2008-07-16 |
+|     1.5 |            2007-02-14 |        1.5.6.6 |   2008-12-17 |
+|     1.6 |            2008-08-17 |        1.6.6.3 |   2010-12-15 |
+|     1.7 |            2010-02-13 |       1.7.12.4 |   2012-10-17 |
+|     1.8 |            2012-10-21 |        1.8.5.6 |   2014-12-17 |
+|     1.9 |            2014-02-14 |          1.9.5 |   2014-12-17 |
+|     2.0 |            2014-05-28 |          2.0.5 |   2014-12-17 |
+|     2.1 |            2014-08-16 |          2.1.4 |   2014-12-17 |
+|     2.2 |            2014-11-26 |          2.2.3 |   2015-09-04 |
+|     2.3 |            2015-02-05 |         2.3.10 |   2015-09-29 |
+|     2.4 |            2015-04-30 |         2.4.12 |   2017-05-05 |
+|     2.5 |            2015-07-27 |          2.5.6 |   2017-05-05 |
+|     2.6 |            2015-09-28 |          2.6.7 |   2017-05-05 |
+|     2.7 |            2015-10-04 |          2.7.5 |   2017-05-05 |
+|     2.8 |            2016-03-28 |          2.8.5 |   2017-05-05 |
+|     2.9 |            2016-06-13 |          2.9.4 |   2017-05-05 |
+|    2.10 |            2016-09-02 |         2.10.3 |   2017-05-05 |
+|    2.11 |            2016-11-29 |         2.11.2 |   2017-05-05 |
+|    2.12 |            2017-02-24 |         2.12.3 |   2017-05-05 |
+|    2.13 |            2017-05-10 |         2.13.4 |   2017-08-01 |
+|    2.14 |            2017-08-04 |         2.14.3 |   2017-10-24 |
+|    2.15 |            2017-10-30 |         2.15.1 |   2017-11-28 |
+|    2.16 |            2018-01-17 |         2.16.2 |   2018-02-15 |
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+** 필요 사항
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: ko
+   :END:      
+
+- [[./apt-add-repository.org][apt-add-repository]]
+- [[./update.org][update]]
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+*** Ubuntu
+
+#+NAME: ubuntu-install_git
+#+BEGIN_SRC sh
+$ sudo apt-add-repository ppa:git-core/ppa
+$ sudo apt-get update
+$ sudo apt-get install git
+#+END_SRC
+
+*** CentOS
+#+NAME: centos-install_git
+#+BEGIN_SRC sh
+$ sudo yum install git
+#+END_SRC
+
+*** Fedora
+#+NAME: fedora-install_git
+#+BEGIN_SRC sh
+$ sudo yum install git-core
+#+END_SRC
+
+*** Arch Linux
+#+NAME: archlinux-install_git
+#+BEGIN_SRC sh
+$ sudo pacman -Sy git
+#+END_SRC
+
+*** Gentoo
+#+NAME: gentoo-install_git
+#+BEGIN_SRC sh
+$ sudo emerge --ask --verbose dev-vcs/git
+#+END_SRC
+
+*** macOS
+#+NAME: macos-install_git
+#+BEGIN_SRC sh
+$ brew install git
+#+END_SRC
+
+
+** 설치된 패키지
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ko
+   :END:      
+
+** 확인
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+$ git --version
+git version 2.16.2
+#+END_SRC
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+git [--version] [--help] [-C <path>] [-c <name>=<value>]
+    [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+    [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+    [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+    [--super-prefix=<path>]
+    <command> [<args>]
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+{{{VERSION(2.16.2)}}}
+
+- {{{option(--version)}}} :
+  Prints the Git suite version that the git program came from.
+- {{{option(--help)}}} : 
+  Prints the synopsis and a list of the most commonly used commands. If the option --all or -a is given then all available commands are printed. If a Git command is named this option will bring up the manual page for that command. Other options are available to control how the manual page is displayed. See git-help for more information, because git --help ... is converted internally into git help ....
+- {{{option(-C)}}} {{{argument(<path>)}}} :
+  Run as if git was started in <path> instead of the current working directory. When multiple -C options are given, each subsequent non-absolute -C <path> is interpreted relative to the preceding -C <path>.
+  This option affects options that expect path name like --git-dir and --work-tree in that their interpretations of the path names would be made relative to the working directory caused by the -C option. For example the following invocations are equivalent:
+  
+  git --git-dir=a.git --work-tree=b -C c status
+  
+  git --git-dir=c/a.git --work-tree=c/b status
+- {{{option(-c)}}} {{{argument(<name>)}}}={{{argument(<value>)}}} :
+  Pass a configuration parameter to the command. The value given will override values from configuration files. The <name> is expected in the same format as listed by git config (subkeys separated by dots).
+  
+  Note that omitting the = in git -c foo.bar ... is allowed and sets foo.bar to the boolean true value (just like [foo]bar would in a config file). Including the equals but with an empty value (like git -c foo.bar= ...) sets foo.bar to the empty string which git config --bool will convert to false.
+
+- {{{option(--exec-path)}}}[={{{argument(<path>)}}}] : 
+  Path to wherever your core Git programs are installed. This can also be controlled by setting the GIT_EXEC_PATH environment variable. If no path is given, git will print the current setting and then exit.
+- {{{option(--html-path)}}} : 
+  Print the path, without trailing slash, where Git’s HTML documentation is installed and exit.
+
+- {{{option(--man-path)}}} :
+  Print the manpath (see man(1)) for the man pages for this version of Git and exit.
+
+- {{{option(--info-path)}}} : 
+  Print the path where the Info files documenting this version of Git are installed and exit.
+
+- {{{option(-p)}}}, {{{option(--paginate)}}} : 
+  Pipe all output into less (or if set, $PAGER) if standard output is a terminal. This overrides the pager.<cmd> configuration options (see the "Configuration Mechanism" section below).
+
+- {{{option(--no-pager)}}} :
+  Do not pipe Git output into a pager.
+
+- {{{option(--git-dir)}}}={{{argument(<path>)}}} : 
+  Set the path to the repository. This can also be controlled by setting the GIT_DIR environment variable. It can be an absolute path or relative path to current working directory.
+
+- {{{option(--work-tree)}}}={{{argument(<path>)}}} :
+  Set the path to the working tree. It can be an absolute path or a path relative to the current working directory. This can also be controlled by setting the GIT_WORK_TREE environment variable and the core.worktree configuration variable (see core.worktree in git-config for a more detailed discussion).
+
+- {{{option(--namespace)}}}={{{argument(<path>)}}} : 
+  Set the Git namespace. See gitnamespaces for more details. Equivalent to setting the GIT_NAMESPACE environment variable.
+
+- {{{option(--super-prefix)}}}={{{argument(<path>)}}} :
+  Currently for internal use only. Set a prefix which gives a path from above a repository down to its root. One use is to give submodules context about the superproject that invoked it.
+
+- {{{option(--bare)}}} :
+  Treat the repository as a bare repository. If GIT_DIR environment is not set, it is set to the current working directory.
+
+- {{{option(--no-replace-objects)}}} :
+  Do not use replacement refs to replace Git objects. See git-replace for more information.
+
+- {{{option(--literal-pathspecs)}}} :
+  Treat pathspecs literally (i.e. no globbing, no pathspec magic). This is equivalent to setting the GIT_LITERAL_PATHSPECS environment variable to 1.
+
+- {{{option(--glob-pathspecs)}}} :
+  Add "glob" magic to all pathspec. This is equivalent to setting the GIT_GLOB_PATHSPECS environment variable to 1. Disabling globbing on individual pathspecs can be done using pathspec magic ":(literal)"
+
+- {{{option(--noglob-pathspecs)}}} : 
+  Add "literal" magic to all pathspec. This is equivalent to setting the GIT_NOGLOB_PATHSPECS environment variable to 1. Enabling globbing on individual pathspecs can be done using pathspec magic ":(glob)"
+
+- {{{option(--icase-pathspecs)}}} : 
+  Add "icase" magic to all pathspec. This is equivalent to setting the GIT_ICASE_PATHSPECS environment variable to 1.
+
+- {{{option(--no-optional-locks)}}} :
+  Do not perform optional operations that require locks. This is equivalent to setting the GIT_OPTIONAL_LOCKS to 0.
+
+** 명령어
+   :PROPERTIES: 
+   :CUSTOM_ID: commands
+   :LANG: ko
+   :END:      
+
+*** clone
+Clone a repository into a new directory
+
+*** init
+Create an empty Git repository or reinitialize an existing one
+
+*** add
+Add file contents to the index
+
+*** mv
+Move or rename a file, a directory, or a symlink
+
+*** reset
+Reset current HEAD to the specified state
+
+*** rm
+Remove files from the working tree and from the index
+
+*** bisect
+Use binary search to find the commit that introduced a bug
+
+*** grep
+Print lines matching a pattern
+
+*** log
+Show commit logs
+
+*** show
+Show various types of objects
+
+*** status
+Show the working tree status
+
+*** branch
+List, create, or delete branches
+
+*** checkout
+Switch branches or restore working tree files
+
+*** commit
+Record changes to the repository
+
+*** diff
+Show changes between commits, commit and working tree, etc
+
+*** merge
+Join two or more development histories together
+
+*** rebase
+Reapply commits on top of another base tip
+
+*** tag
+Create, list, delete or verify a tag object signed with GPG
+
+*** fetch
+Download objects and refs from another repository
+
+*** pull
+Fetch from and integrate with another repository or a local branch
+
+*** push
+Update remote refs along with associated objects
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* 참고자료
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:      
+
+- [[https://linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/][how-to-install-git-on-linux-mac-and-windows]]
+
+** 입문할 때 보면 좋은 사이트들
+- [[https://rogerdudler.github.io/git-guide/index.ko.html][Git 간편 안내서]]
+- [[https://backlog.com/git-tutorial/kr/intro/intro1_1.html][누구나 쉽게 이해할 수 있는 Git 입문]]
+- [[https://git-scm.com/book/ko/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0][Git 시작하기]]
+
+** Git 웹 호스팅 서비스
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ko
+  :END:     
+- [[https://www.assembla.com][Assembla]]
+- [[https://beanstalkapp.com/][beanstalk]]
+- [[https://bitbucket.org][Bitbucket]]
+- [[http://www.cloudforge.com/][CloudForge]]
+- [[https://www.codebasehq.com/][Codebase]]
+- [[https://github.com][GitHub]]
+- [[https://gitlab.com][GitLab]]
+- [[https://www.visualstudio.com/products/visual-studio-team-services-vs][Microsofe Visual Studio Team Services]]
+
+* Footnotes
+
+[fn:1] [[https://en.wikipedia.org/wiki/Git#Releases]]
+

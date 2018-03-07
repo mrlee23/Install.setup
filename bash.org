@@ -1,0 +1,271 @@
+#+INCLUDE: ./main.setup
+#+TITLE: bash
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+** 예약 변수
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
+- {{{var(HOME)}}}:
+  사용자의 홈 디렉토리                                       
+- {{{var(PATH)}}}:
+  실행 파일을 찾을 경로                                      
+- {{{var(LANG)}}}:
+  프로그램 사용시 기본 지원되는 언어                         
+- {{{var(PWD)}}}:
+  사용자의 현재 작업중인 디렉토리                            
+- {{{var(FUNCNAME)}}}:
+  현재 함수 이름                                             
+- {{{var(SECONDS)}}}:
+  스크립트가 실행된 초 단위 시간                             
+- {{{var(SHLVL)}}}:
+  쉘 레벨(중첩된 깊이를 나타냄)                              
+- {{{var(SHELL)}}}:
+  로그인해서 사용하는 쉘                                     
+- {{{var(PPID)}}}:
+  부모 프로세스의 PID                                        
+- {{{var(BASH)}}}:
+  BASH 실행 파일 경로                                        
+- {{{var(BASH_ENV)}}}:
+  스크립트 실행시 BASH 시작 파일을 읽을 위치 변수            
+- {{{var(BASH_VERSION)}}}:
+  설치된 BASH 버전                                           
+- {{{var(BASH_VERSINFO)}}}:
+  BASH_VERSINFO[0 ] ~ BASH_VERSINFO[5 ]배열로 상세정보 제공  
+- {{{var(MAIL)}}}:
+  메일 보관 경로                                             
+- {{{var(MAILCHECK)}}}:
+  메일 확인 시간                                             
+- {{{var(OSTYPE)}}}:
+  운영체제 종류                                              
+- {{{var(TERM)}}}:
+  로긴 터미널 타입                                           
+- {{{var(HOSTNAME)}}}:
+  호스트 이름                                                
+- {{{var(HOSTTYPE)}}}:
+  시스템 하드웨어 종류                                       
+- {{{var(MACHTYPE)}}}:
+  머신 종류(HOSTTYPE과 같은 정보지만 조금더 상세하게 표시됨) 
+- {{{var(LOGNAME)}}}:
+  로그인 이름                                                
+- {{{var(UID)}}}:
+  사용자 UID                                                 
+- {{{var(EUID)}}}:
+  su 명령에서 사용하는 사용자의 유효 아이디 값(UID와 EUID 값은 다를 수 있음) 
+- {{{var(USER)}}}:
+  사용자의 이름                                              
+- {{{var(USERNAME)}}}:
+  사용자 이름                                                
+- {{{var(GROUPS)}}}:
+  사용자 그룹(/etc/passwd 값을 출력)                         
+- {{{var(HISTFILE)}}}:
+  history 파일 경로                                          
+- {{{var(HISTFILESIZE)}}}:
+  history 파일 크기                                          
+- {{{var(HISTSIZE)}}}:
+  history 저장되는 개수                                      
+- {{{var(HISTCONTROL)}}}:
+  중복되는 명령에 대한 기록 유무                             
+- {{{var(DISPLAY)}}}:
+  X 디스플레이 이름                                          
+- {{{var(IFS)}}}:
+  입력 필드 구분자(기본값:   - 빈칸)                         
+- {{{var(VISUAL)}}}:
+  VISUAL 편집기 이름                                         
+- {{{var(EDITOR)}}}:
+  기본 편집기 이름                                           
+- {{{var(COLUMNS)}}}:
+  현재 터미널이나 윈도우 터미널의 컬럼 수                    
+- {{{var(LINES)}}}:
+  터미널의 라인 수                                           
+- {{{var(LS_COLORS)}}}:
+  ls 명령의 색상 관련 옵션                                   
+- {{{var(PS1)}}}:
+  기본 프롬프트 변수(기본값: bash\$)                         
+- {{{var(PS2)}}}:
+  보조 프롬프트 변수(기본값: >), 명령을 "\"를 사용하여 명령 행을 연장시 사용됨 
+- {{{var(PS3)}}}:
+  쉘 스크립트에서 select 사용시 프롬프트 변수(기본값: #?)    
+- {{{var(PS4)}}}:
+  쉘 스크립트 디버깅 모드의 프롬프트 변수(기본값: +)         
+- {{{var(TMOUT)}}}:
+  0이면 제한이 없으며 time시간 지정시 지정한 시간 이후 로그아웃 
+** 다른 쉘과 비교
+  :PROPERTIES: 
+  :LANG: ko
+  :END:      
+
+|                                     | sh   | csh  | ksh           | bash | tcsh    | zsh | rc | es |
+|-------------------------------------+------+------+---------------+------+---------+-----+----+----|
+| Job control                         |      | Y    | Y             | Y    | Y       | Y   |    |    |
+| Aliases                             |      | Y    | Y             | Y    | Y       | Y   |    |    |
+| Shell functions                     | Y(1) |      | Y             | Y    |         | Y   | Y  | Y  |
+| "Sensible" Input/Output redirection | Y    |      | Y             | Y    |         | Y   | Y  | Y  |
+| Directory stack                     |      | Y    | Y             | Y    | Y       | Y   | F  | F  |
+| Command history                     |      | Y    | Y             | Y    | Y       | Y   | L  | L  |
+| Command line editing                |      |      | Y             | Y    | Y       | Y   | L  | L  |
+| Vi Command line editing             |      |      | Y             | Y    | Y(3)    | Y   | L  | L  |
+| Emacs Command line editing          |      |      | Y             | Y    | Y       | Y   | L  | L  |
+| Rebindable Command line editing     |      |      |               | Y    | Y       | Y   | L  | L  |
+| User name look up                   |      | Y    | Y             | Y    | Y       | Y   | L  | L  |
+| Login/Logout watching               |      |      |               |      | Y       | Y   | F  | F  |
+| Filename completion                 |      | Y(1) | Y             | Y    | Y       | Y   | L  | L  |
+| Username completion                 |      | Y(2) | Y             | Y    | Y       | Y   | L  | L  |
+| Hostname completion                 |      | Y(2) | Y             | Y    | Y       | Y   | L  | L  |
+| History completion                  |      |      |               | Y    | Y       | Y   | L  | L  |
+| Fully programmable Completion       |      |      |               |      | Y       | Y   |    |    |
+| Mh Mailbox completion               |      |      |               | (4)  | (6)     | (6) |    |    |
+| Co Processes                        |      |      | Y             |      |         | Y   |    |    |
+| Builtin artithmetic evaluation      |      | Y    | Y             | Y    | Y       | Y   |    |    |
+| Can follow symbolic links invisibly |      |      | Y             | Y    | Y       | Y   |    |    |
+| Periodic command execution          |      |      |               |      | Y       | Y   |    |    |
+| Custom Prompt (easily)              |      |      | Y             | Y    | Y       | Y   | Y  | Y  |
+| Sun Keyboard Hack                   |      |      |               |      |         | Y   |    |    |
+| Spelling Correction                 |      |      |               |      | Y       | Y   |    |    |
+| Process Substitution                |      |      |               | Y(2) | Y       | Y   | Y  |    |
+| Underlying Syntax                   | sh   | csh  | sh            | sh   | csh  sh | rc  | rc |    |
+| Freely Available                    |      |      | (5)  Y        | Y    | Y       | Y   | Y  |    |
+| Checks Mailbox                      |      | Y    | Y             | Y    | Y       | Y   | F  | F  |
+| Tty Sanity Checking                 |      |      |               |      | Y       | Y   |    |    |
+| Can cope with large argument lists  | Y    |      | Y             | Y    | Y       | Y   | Y  | Y  |
+| Has non-interactive startup file    |      | Y    | Y(7)  Y(7)  Y | Y    |         |     |    |    |
+| Has non-login startup file          |      | Y    | Y(7)  Y       | Y    | Y       |     |    |    |
+| Can avoid user startup files        |      | Y    |               | Y    |         | Y   | Y  | Y  |
+| Can specify startup file            |      |      | Y             | Y    |         |     |    |    |
+| Low level command redefinition      |      |      |               |      |         |     |    | Y  |
+| Has anonymous functions             |      |      |               |      |         |     | Y  | Y  |
+| List Variables                      |      | Y    | Y             |      | Y       | Y   | Y  | Y  |
+| Full signal trap handling           | Y    |      | Y             | Y    |         | Y   | Y  | Y  |
+| File no clobber ability             |      | Y    | Y             | Y    | Y       | Y   |    | F  |
+| Local variables                     |      |      | Y             | Y    |         | Y   | Y  | Y  |
+| Lexically scoped variables          |      |      |               |      |         |     |    | Y  |
+| Exceptions                          |      |      |               |      |         |     |    | Y  |
+
+
+# * How to Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: how-to-install
+#   :LANG_EN:  How to Install
+#   :LANG_ES:  Cómo instalar
+#   :LANG_KO:  설치 방법
+#   :LANG_ZH:  如何安装
+#   :LANG_JA:  インストール方法
+#   :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+# ** Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: install
+#   :LANG_EN:  Install
+#   :LANG_ES:  Instalar
+#   :LANG_KO:  설치
+#   :LANG_ZH:  安装
+#   :LANG_JA:  インストール
+#   :END:      
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+# * Usage
+#   :PROPERTIES: 
+#   :CUSTOM_ID: usage
+#   :LANG_EN:  Usage
+#   :LANG_ES:  Uso
+#   :LANG_KO:  사용법
+#   :LANG_ZH:  如何使用
+#   :LANG_JA:  命令説明
+#   :END:      
+
+# ** Syntax
+#    :PROPERTIES: 
+#    :CUSTOM_ID: syntax
+#    :LANG_EN:  Syntax
+#    :LANG_ES:  Sintaxis
+#    :LANG_KO:  구조
+#    :LANG_ZH:  结构
+#    :LANG_JA:  構造
+#    :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

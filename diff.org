@@ -1,0 +1,181 @@
+#+INCLUDE: ./main.setup
+#+TITLE: diff
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 개요
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ko
+  :END:      
+
+줄 단위로 파일들을 비교합니다.
+
+* 설치 방법
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ko
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** 설치
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ko
+  :END:      
+
+{{{BUILTIN}}}
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* 사용법
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ko
+  :END:      
+
+** 구조
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ko
+   :END:      
+
+#+BEGIN_SRC sh
+diff [options]... files
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** 옵션
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ko
+   :END:      
+
+- {{{option(--normal)}}} :
+  (기본값) 일반적인 출력으로 보여줍니다.
+- {{{option(-q)}}}, {{{option(--brief)}}} :
+  파일이 다를 경우만 기록합니다.
+- {{{option(-c)}}}, {{{option(-C)}}} {{{argument(NUM)}}}, {{{option(--context)}}} {{{argument([=NUM])}}} :
+  복사된 문맥을 {{{arg(NUM)}}} 수(기본 값 3)만 큼 출력합니다.
+- {{{option(-u)}}}, {{{option(-U)}}} {{{argument(NUM)}}}, {{{option(--unified)}}} {{{argument([=NUM])}}} :
+  통일된 문맥을 {{{arg(NUM)}}} 수(기본 값 3)만 큼 출력합니다.
+- {{{option(-e)}}}, {{{option(--ed)}}} :
+  ed 스크립트로 출력합니다.
+- {{{option(-n)}}}, {{{option(--rcs)}}} :
+  RCS 포맷으로 출력합니다.
+- {{{option(-y)}}}, {{{option(--side-by-side)}}} :
+  2개의 열로 출력합니다.
+- {{{option(-W)}}}, {{{option(--width)}}} {{{argument(=NUM)}}} :
+  {{{arg(NUM)}}}으로 최대 출력 열 수를 정합니다. (기본값 130)
+- {{{option(--left-column)}}} :
+  같은 줄의 왼쪽 열만 출력합니다.
+- {{{option(--supress-common-lines)}}} :
+  같은 줄은 출력하지 않습니다.
+- {{{option(-p)}}}, {{{option(--show-c-function)}}} :
+  각 차이를 포함하는 C 함수를 출력합니다.
+- {{{option(-F)}}}, {{{option(--show-function-line)}}} {{{argument(=RE)}}} :
+  {{{arg(RE)}}}와 가장 최근에 매칭된 줄을 출력합니다.
+- {{{option(--label)}}} {{{argument(LABEL)}}}
+- {{{option(-t)}}}, {{{option(--expand-tabs)}}}
+- {{{option(-T)}}}, {{{option(--initial-tab)}}}
+- {{{option(--tabsize)}}} {{{argument(=NUM)}}}
+- {{{option(--suppress-blank-empty)}}}
+- {{{option(-l)}}}, {{{option(--paginate)}}}
+- {{{option(-r)}}}, {{{option(--recursive)}}}
+- {{{option(--no-dereference)}}}
+- {{{option(-N)}}}, {{{option(--new-file)}}}
+- {{{option(--unindirectional-new-file)}}}
+- {{{option(--ignore-file-name-case)}}}
+- {{{option(--no-ignore-file-name-case)}}}
+- {{{option(-x)}}}, {{{option(--exclude)}}} {{{argument(=PAT)}}}
+- {{{option(-X)}}}, {{{option(--exclude-from)}}} {{{argument(=FILE)}}}
+- {{{option(-S)}}}, {{{option(--starting-file)}}} {{{argument(=FILE)}}}
+- {{{option(--from-file)}}} {{{argument(=FILE1)}}}
+- {{{option(--to-file)}}} {{{argument(=FILE2)}}}
+- {{{option(-i)}}}, {{{option(--ignore-case)}}}
+- {{{option(-E)}}}, {{{option(--ignore-tab-expansion)}}}
+- {{{option(-z)}}}, {{{option(--ignore-trailing-space)}}}
+- {{{option(-b)}}}, {{{option(--ignore-space-change)}}}
+- {{{option(-w)}}}, {{{option(--ignore-all-space)}}}
+- {{{option(-B)}}}, {{{option(--ignore-blank-lines)}}}
+- {{{option(-I)}}}, {{{option(--ignore-matching-lines)}}} {{{argument(=RE)}}}
+- {{{option(-a)}}}, {{{option(--text)}}}
+- {{{option(--strip-trailing-cr)}}}
+- {{{option(-D)}}}, {{{option(--ifdef)}}} {{{argument(=NAME)}}}
+- {{{option(--GTYPE-group-format)}}} {{{argument(=GFMT)}}}
+- {{{option(--line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(--LTYPE-line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(-d)}}}, {{{option(--minimal)}}}
+- {{{option(--horizon-lines)}}} {{{argument(=NUM)}}}
+- {{{option(--speed-large-files)}}}
+- {{{option(--color)}}} {{{argument([=WHEN])}}}
+- {{{option(--palette)}}} {{{argument(=PALETTE)}}}
+- {{{option(--help)}}}
+- {{{option(-v)}}}, {{{option(--version)}}}
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 관련 항목
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ko
+  :END:      
+
+- {{{link(wdiff)}}}
+- {{{link(cmp)}}}
+- {{{link(sdiff)}}}
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      
