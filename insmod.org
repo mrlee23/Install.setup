@@ -1,0 +1,119 @@
+#+INCLUDE: ./main.setup
+#+TITLE: insmod
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* Visión de conjunto
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: es
+  :END:      
+
+Programa simple para insertar un módulo en el kernel de Linux
+
+** Introducción
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: es
+  :END:    
+
+insmod is a trivial program to insert a module into the kernel. Most users will want to use modprobe(8) instead, which is more clever and can handle module dependencies.
+
+Only the most general of error messages are reported: as the work of trying to link the module is now done inside the kernel, the dmesg usually gives more information about errors.
+
+* Cómo instalar
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: es
+  :END:      
+
+** Instalar
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: es
+  :END:      
+
+{{{see(kmod#install)}}}
+
+** Comprobar
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: es
+   :END:      
+
+#+BEGIN_SRC sh
+$ insmod -V
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+kmod version 22
+-XZ -ZLIB -EXPERIMENTAL
+#+END_EXAMPLE
+
+* Uso
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: es
+  :END:      
+
+** Sintaxis
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: es
+   :END:      
+
+#+BEGIN_SRC sh
+insmod [filename] [module options...]
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* Ver también
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: es
+  :END:      
+
+- {{{link(kmod)}}}
+- {{{link(lsmod)}}}
+- {{{link(rmmod)}}}
+- {{{link(modinfo)}}}
+- {{{link(modprobe)}}}
+- {{{link(depmod)}}}
+
+* Referencias
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: es
+  :END:      
+
+{{{see(kmod#references)}}}
