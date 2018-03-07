@@ -1,0 +1,232 @@
+#+INCLUDE: ../main.setup
+#+TITLE: docker build
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-25
+
+{{{IMAGE_LINK_RIGHT(../main.jpg, docker)}}}
+
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
+
+Build an image from a Dockerfile
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+# ** Introduction
+#   :PROPERTIES: 
+#   :CUSTOM_ID: introduction
+#   :LANG_EN:  Introduction
+#   :LANG_ES:  Introducción
+#   :LANG_KO:  소개
+#   :LANG_ZH:  介绍
+#   :LANG_JA:  はじめに
+#   :END:    
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+# * How to Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: how-to-install
+#   :LANG_EN:  How to Install
+#   :LANG_ES:  Cómo instalar
+#   :LANG_KO:  설치 방법
+#   :LANG_ZH:  如何安装
+#   :LANG_JA:  インストール方法
+#   :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+# ** Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: install
+#   :LANG_EN:  Install
+#   :LANG_ES:  Instalar
+#   :LANG_KO:  설치
+#   :LANG_ZH:  安装
+#   :LANG_JA:  インストール
+#   :END:      
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
+
+** 構造
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+docker build [OPTIONS] PATH | URL | -
+#+END_SRC
+
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+** オプション
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ja
+   :END:      
+
+- --add-host		Add a custom host-to-IP mapping (host:ip)
+- --build-arg		Set build-time variables
+- --cache-from		Images to consider as cache sources
+- --cgroup-parent		Optional parent cgroup for the container
+- --compress		Compress the build context using gzip
+- --cpu-period		Limit the CPU CFS (Completely Fair Scheduler) period
+- --cpu-quota		Limit the CPU CFS (Completely Fair Scheduler) quota
+- --cpu-shares , -c		CPU shares (relative weight)
+- --cpuset-cpus		CPUs in which to allow execution (0-3, 0,1)
+- --cpuset-mems		MEMs in which to allow execution (0-3, 0,1)
+- --disable-content-trust	true	Skip image verification
+- --file , -f		Name of the Dockerfile (Default is ‘PATH/Dockerfile’)
+- --force-rm		Always remove intermediate containers
+- --iidfile		Write the image ID to the file
+- --isolation		Container isolation technology
+- --label		Set metadata for an image
+- --memory , -m		Memory limit
+- --memory-swap		Swap limit equal to memory plus swap: ‘-1’ to enable unlimited swap
+- --network		API 1.25+
+- Set the networking mode for the RUN instructions during build
+- --no-cache		Do not use cache when building the image
+- --platform		experimental (daemon)API 1.32+
+- Set platform if server is multi-platform capable
+- --pull		Always attempt to pull a newer version of the image
+- --quiet , -q		Suppress the build output and print image ID on success
+- --rm	true	Remove intermediate containers after a successful build
+- --security-opt		Security options
+- --shm-size		Size of /dev/shm
+- --squash		experimental (daemon)API 1.25+
+- Squash newly built layers into a single new layer
+- --stream		experimental (daemon)API 1.31+
+- Stream attaches to server to negotiate build context
+- --tag , -t		Name and optionally a tag in the ‘name:tag’ format
+- --target		Set the target build stage to build.
+- --ulimit		Ulimit options
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Environment Variables
+#    :PROPERTIES: 
+#    :CUSTOM_ID: environment-variables
+#    :LANG_EN:  Variables
+#    :LANG_ES:  Variables de entorno
+#    :LANG_KO:  환경 변수
+#    :LANG_ZH:  环境变量
+#    :LANG_JA:  環境変数
+#    :END:      
+
+# ** Commands
+#    :PROPERTIES: 
+#    :CUSTOM_ID: commands
+#    :LANG_EN:  Commands
+#    :LANG_ES:  Comandos
+#    :LANG_KO:  명령어
+#    :LANG_ZH:  命令
+#    :LANG_JA:  コマンド
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ja
+  :END:      
+
+- [[https://docs.docker.com/engine/reference/commandline/build/][Official Reference]]

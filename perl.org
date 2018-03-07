@@ -1,0 +1,255 @@
+#+INCLUDE: ./main.setup
+#+TITLE: perl
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-03-03
+
+| Version        | {{{ver(5.24.1)}}} |
+| Package Size   | {{{size(12MB)}}} |
+| Installed Size | {{{size(40MB)}}} |
+
+# * Overview
+#   :PROPERTIES: 
+#   :CUSTOM_ID: overview
+#   :LANG_EN:  Overview
+#   :LANG_ES:  Visión de conjunto
+#   :LANG_KO:  개요
+#   :LANG_ZH:  摘要
+#   :LANG_JA:  概要
+#   :END:      
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+# ** Introduction
+#   :PROPERTIES: 
+#   :CUSTOM_ID: introduction
+#   :LANG_EN:  Introduction
+#   :LANG_ES:  Introducción
+#   :LANG_KO:  소개
+#   :LANG_ZH:  介绍
+#   :LANG_JA:  はじめに
+#   :END:    
+
+# ** Characteristic
+#   :PROPERTIES: 
+#   :CUSTOM_ID: characteristic
+#   :LANG_EN:  Characteristic
+#   :LANG_ES:  Característica
+#   :LANG_KO:  특징
+#   :LANG_ZH:  特点
+#   :LANG_JA:  特徴
+#   :END:    
+
+* インストール方法
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ja
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** 依存関係
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: ja
+   :END:      
+
+- groff-base
+- perl-Carp
+- perl-Encode
+- perl-Exporter
+- perl-File-Path
+- perl-File-Temp
+- perl-Filter
+- perl-Getopt-Long
+- perl-HTTP-Tiny
+- perl-PathTools
+- perl-Pod-Escapes
+- perl-Pod-Perldoc
+- perl-Pod-Simple
+- perl-Pod-Usage
+- perl-Scalar-List-Utils
+- perl-Socket
+- perl-Storable
+- perl-Text-ParseWords
+- perl-Time-HiRes
+- perl-Time-Local
+- perl-constant
+- perl-libs
+- perl-macros
+- perl-parent
+- perl-podlators
+- perl-threads
+- perl-threads-shared
+
+** インストール
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ja
+  :END:      
+
+*** Ubuntu
+#+BEGIN_SRC sh
+$ sudo apt-get install perl
+#+END_SRC
+
+*** CentOS
+#+BEGIN_SRC sh
+$ sudo yum install perl
+#+END_SRC
+
+** インストールされたパッケージ
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: ja
+   :END:      
+
+- perl
+
+** チェック
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+$ perl -v
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+This is perl 5, version 24, subversion 1 (v5.24.1) built for x86_64-linux-gnu-thread-multi
+(with 60 registered patches, see perl -V for more detail)
+
+Copyright 1987-2017, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+#+END_EXAMPLE
+
+# * Usage
+#   :PROPERTIES: 
+#   :CUSTOM_ID: usage
+#   :LANG_EN:  Usage
+#   :LANG_ES:  Uso
+#   :LANG_KO:  사용법
+#   :LANG_ZH:  如何使用
+#   :LANG_JA:  命令説明
+#   :END:      
+
+# ** Syntax
+#    :PROPERTIES: 
+#    :CUSTOM_ID: syntax
+#    :LANG_EN:  Syntax
+#    :LANG_ES:  Sintaxis
+#    :LANG_KO:  구조
+#    :LANG_ZH:  结构
+#    :LANG_JA:  構造
+#    :END:      
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Environment Variables
+#    :PROPERTIES: 
+#    :CUSTOM_ID: environment-variables
+#    :LANG_EN:  Variables
+#    :LANG_ES:  Variables de entorno
+#    :LANG_KO:  환경 변수
+#    :LANG_ZH:  环境变量
+#    :LANG_JA:  環境変数
+#    :END:      
+
+# ** Commands
+#    :PROPERTIES: 
+#    :CUSTOM_ID: commands
+#    :LANG_EN:  Commands
+#    :LANG_ES:  Comandos
+#    :LANG_KO:  명령어
+#    :LANG_ZH:  命令
+#    :LANG_JA:  コマンド
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* 参考
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: ja
+  :END:      
+
+- {{{official(http://dev.perl.org/perl5)}}}

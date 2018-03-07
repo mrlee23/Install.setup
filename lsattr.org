@@ -1,0 +1,104 @@
+#+INCLUDE: ./main.setup
+#+TITLE: lsattr
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* 概要
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: ja
+  :END:      
+
+list file attributes on a Linux second extended file system
+
+* インストール方法
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: ja
+  :END:      
+
+** インストール
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: ja
+  :END:      
+
+{{{see(e2fsprogs#install)}}}
+
+** チェック
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+$ lsattr -V
+lsattr 1.43.4 (31-Jan-2017)
+#+END_SRC
+
+* 命令説明
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: ja
+  :END:      
+
+** 構造
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: ja
+   :END:      
+
+#+BEGIN_SRC sh
+lsattr [ -RVadv ] [ files...  ]
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** オプション
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: ja
+   :END:      
+
+- {{{option(-R)}}}
+- {{{option(-V)}}}
+- {{{option(-a)}}}
+- {{{option(-d)}}}
+- {{{option(-v)}}}
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* 関連項目
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: ja
+  :END:      
+
+- {{{link(chattr)}}}
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      
