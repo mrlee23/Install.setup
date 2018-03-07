@@ -1,0 +1,169 @@
+#+INCLUDE: ./main.setup
+#+TITLE: diff
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+Compare files by line.
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+{{{BUILTIN}}}
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+diff [options]... files
+#+END_SRC
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+- {{{option(--normal)}}} :
+- {{{option(-q)}}}, {{{option(--brief)}}} :
+- {{{option(-c)}}}, {{{option(-C)}}} {{{argument(NUM)}}}, {{{option(--context)}}} {{{argument([=NUM])}}} :
+- {{{option(-u)}}}, {{{option(-U)}}} {{{argument(NUM)}}}, {{{option(--unified)}}} {{{argument([=NUM])}}} :
+- {{{option(-e)}}}, {{{option(--ed)}}} :
+- {{{option(-n)}}}, {{{option(--rcs)}}} :
+- {{{option(-y)}}}, {{{option(--side-by-side)}}} :
+- {{{option(-W)}}}, {{{option(--width)}}} {{{argument(=NUM)}}} :
+- {{{option(--left-column)}}} :
+- {{{option(--supress-common-lines)}}} :
+- {{{option(-p)}}}, {{{option(--show-c-function)}}} :
+- {{{option(-F)}}}, {{{option(--show-function-line)}}} {{{argument(=RE)}}} :
+- {{{option(--label)}}} {{{argument(LABEL)}}}
+- {{{option(-t)}}}, {{{option(--expand-tabs)}}}
+- {{{option(-T)}}}, {{{option(--initial-tab)}}}
+- {{{option(--tabsize)}}} {{{argument(=NUM)}}}
+- {{{option(--suppress-blank-empty)}}}
+- {{{option(-l)}}}, {{{option(--paginate)}}}
+- {{{option(-r)}}}, {{{option(--recursive)}}}
+- {{{option(--no-dereference)}}}
+- {{{option(-N)}}}, {{{option(--new-file)}}}
+- {{{option(--unindirectional-new-file)}}}
+- {{{option(--ignore-file-name-case)}}}
+- {{{option(--no-ignore-file-name-case)}}}
+- {{{option(-x)}}}, {{{option(--exclude)}}} {{{argument(=PAT)}}}
+- {{{option(-X)}}}, {{{option(--exclude-from)}}} {{{argument(=FILE)}}}
+- {{{option(-S)}}}, {{{option(--starting-file)}}} {{{argument(=FILE)}}}
+- {{{option(--from-file)}}} {{{argument(=FILE1)}}}
+- {{{option(--to-file)}}} {{{argument(=FILE2)}}}
+- {{{option(-i)}}}, {{{option(--ignore-case)}}}
+- {{{option(-E)}}}, {{{option(--ignore-tab-expansion)}}}
+- {{{option(-z)}}}, {{{option(--ignore-trailing-space)}}}
+- {{{option(-b)}}}, {{{option(--ignore-space-change)}}}
+- {{{option(-w)}}}, {{{option(--ignore-all-space)}}}
+- {{{option(-B)}}}, {{{option(--ignore-blank-lines)}}}
+- {{{option(-I)}}}, {{{option(--ignore-matching-lines)}}} {{{argument(=RE)}}}
+- {{{option(-a)}}}, {{{option(--text)}}}
+- {{{option(--strip-trailing-cr)}}}
+- {{{option(-D)}}}, {{{option(--ifdef)}}} {{{argument(=NAME)}}}
+- {{{option(--GTYPE-group-format)}}} {{{argument(=GFMT)}}}
+- {{{option(--line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(--LTYPE-line-format)}}} {{{argument(=LFMT)}}}
+- {{{option(-d)}}}, {{{option(--minimal)}}}
+- {{{option(--horizon-lines)}}} {{{argument(=NUM)}}}
+- {{{option(--speed-large-files)}}}
+- {{{option(--color)}}} {{{argument([=WHEN])}}}
+- {{{option(--palette)}}} {{{argument(=PALETTE)}}}
+- {{{option(--help)}}}
+- {{{option(-v)}}}, {{{option(--version)}}}
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+* See also
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: en
+  :END:      
+
+- {{{link(wdiff)}}}
+- {{{link(cmp)}}}
+- {{{link(sdiff)}}}
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

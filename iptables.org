@@ -1,0 +1,179 @@
+#+INCLUDE: ./main.setup
+#+TITLE: iptables
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+| Version        | {{{ver(1.6.2)}}}   |
+| Package Size   | {{{size(279KB)}}}  |
+| Installed Size | {{{size(1724KB)}}} |
+|                |                    |
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+** Introduction
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: en
+  :END:    
+
+Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+These scripts can adapt the packages to many kinds of UNIX-like systems without manual user intervention.
+Autoconf creates a configuration script for a package from a template file that lists the operating system features that the package can use, in the form of M4 macro calls.
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: en
+   :END:      
+
+*** from Source code
+
+- {{{link(git)}}}
+- {{{link(autoconf)}}}
+
+** Dependencies
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: en
+   :END:      
+
+- libc6 : GNU C Library: Shared libraries also a virtual package provided by libc6-udeb
+  - [amd64] (>= {{{ver(2.14)}}})
+  - [arm64, ppc64el] (>= {{{ver(2.17)}}})
+  - [not amd64, arm64, ppc64el] (>= {{{ver(>= 2.7)}}})
+- libnfnetlink0
+  - Netfilter netlink library
+- libxtables11 (= {{{ver(1.6.0-2ubuntu3)}}})
+  - netfilter xtables library
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install iptables
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo apt-get install iptables-services
+#+END_SRC
+
+*** from Source code
+
+{{{note-dependency}}}
+
+#+BEGIN_SRC sh
+$ git clone git://git.netfilter.org/iptables
+$ cd iptables
+$ autoreconf -i
+$ ./configure
+$ make
+$ sudo make install
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: en
+   :END:      
+
+- iptables
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+$ iptables --version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+iptables v1.6.0
+#+END_EXAMPLE
+
+# * Usage
+#   :PROPERTIES: 
+#   :CUSTOM_ID: usage
+#   :LANG_EN:  Usage
+#   :LANG_ES:  Uso
+#   :LANG_KO:  사용법
+#   :LANG_ZH:  如何使用
+#   :LANG_JA:  命令説明
+#   :END:      
+
+# ** Syntax
+#    :PROPERTIES: 
+#    :CUSTOM_ID: syntax
+#    :LANG_EN:  Syntax
+#    :LANG_ES:  Sintaxis
+#    :LANG_KO:  구조
+#    :LANG_ZH:  结构
+#    :LANG_JA:  構造
+#    :END:      
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: en
+  :END:      
+
+- {{{official(http://www.netfilter.org/)}}}

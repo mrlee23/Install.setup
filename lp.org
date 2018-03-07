@@ -1,0 +1,205 @@
+#+INCLUDE: ./main.setup
+#+TITLE: lp
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+print files
+
+# * How to Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: how-to-install
+#   :LANG_EN:  How to Install
+#   :LANG_ES:  Cómo instalar
+#   :LANG_KO:  설치 방법
+#   :LANG_ZH:  如何安装
+#   :LANG_JA:  インストール方法
+#   :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+# ** Install
+#   :PROPERTIES: 
+#   :CUSTOM_ID: install
+#   :LANG_EN:  Install
+#   :LANG_ES:  Instalar
+#   :LANG_KO:  설치
+#   :LANG_ZH:  安装
+#   :LANG_JA:  インストール
+#   :END:      
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+lp [ -E ] [ -U username ] [ -c ] [ -d destination[/instance] ] [ -h hostname[:port] ] [ -m ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -s ]
+   [ -t title ] [ -H handling ] [ -P page-list ] [ -- ] [ file(s) ]
+lp [ -E ] [ -U username ] [ -c ] [ -h hostname[:port] ] [ -i job-id ] [ -n num-copies ] [ -o option[=value] ] [ -q priority ] [ -t title ] [ -H handling  ]
+   [ -P page-list ]
+#+END_SRC
+
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+- {{{option(-E)}}} 
+  Forces encryption when connecting to the server.
+- {{{option(-U)}}} {{{argument(username)}}}
+  Specifies the username to use when connecting to the server.
+- {{{option(-c)}}}
+  This option is provided for backwards-compatibility only. On systems that support it, this option forces the print file to be copied to the spool directory before printing. In CUPS, print files are always sent to the scheduler via IPP which has the same effect.
+- {{{option(-d)}}} {{{argument(destination)}}}
+  Prints files to the named printer.
+- {{{option(-h)}}} {{{argument(hostname)}}}[:{{{argument(port)}}}]
+  Chooses an alternate server.
+- {{{option(-i)}}} {{{argument(job-id)}}}
+  Specifies an existing job to modify.
+- {{{option(-m)}}}
+  Sends an email when the job is completed.
+- {{{option(-n)}}} {{{argument(copies)}}}
+  Sets the number of copies to print.
+- {{{option(-o)}}} "name=value [ ... name=value ]"
+  Sets one or more job options. See "COMMON JOB OPTIONS" below.
+- {{{option(-q)}}} {{{argument(priority)}}}
+  Sets the job priority from 1 (lowest) to 100 (highest). The default priority is 50.
+- {{{option(-s)}}}
+  Do not report the resulting job IDs (silent mode.)
+- {{{option(-t)}}} {{{argument(name)}}}
+  Sets the job name.
+- {{{option(-H)}}} {{{argument(hh:mm)}}}
+- {{{option(-H)}}} {{{argument(hold)}}}
+- {{{option(-H)}}} {{{argument(immediate)}}}
+- {{{option(-H)}}} {{{argument(restart)}}}
+- {{{option(-H)}}} {{{argument(resume)}}}
+  Specifies when the job should be printed. A value of immediate will print the file immediately, a value of hold will hold the job indefinitely, and a UTC time value (HH:MM) will hold the job until the specified UTC (not local) time. Use a value of resume with the {{{option(-i)}}} option to resume a held job. Use a value of restart with the {{{option(-i)}}} option to restart a completed job.
+- {{{option(-P)}}} {{{argument(page-list)}}}
+  Specifies which pages to print in the document. The list can contain a list of numbers and ranges (#-#) separated by commas, e.g., "1,3-5,16". The page numbers refer to the output pages and not the document's original pages - options like "number-up" can affect the numbering of the pages.
+
+* COMMON JOB OPTIONS
+
+- {{{option(-o)}}} {{{argument(collate)}}}={{{argument(true)}}}
+  Prints collated copies.
+- {{{option(-o)}}} {{{argument(fit-to-page)}}}
+  Scales the print file to fit on the page.
+- {{{option(-o)}}} {{{argument(job-hold-until)}}}={{{argument(when)}}}
+  Holds the job until the specified local time. "when" can be "indefinite" to hold the until released, "day-time" to print the job between 6am and 6pm local time, "night" to print the job between 6pm and 6am local time, "second-shift" to print the job between 4pm and 12am local time, "third-shift" to print the job between 12am and 8am local time, or "weekend" to print the job on Saturday or Sunday.
+- {{{option(-o)}}} {{{argument(job-hold-until)}}}={{{argument(hh:mm)}}}
+  Holds the job until the specified time in hours and minutes UTC.
+- {{{option(-o)}}} {{{argument(job-priority)}}}={{{argument(priority)}}}
+  Set the priority to a value from 1 (lowest) to 100 (highest), which influences when a job is scheduled for printing. The default priority is typi-cally 50.
+- {{{option(-o)}}} {{{argument(job-sheets)}}}={{{argument(name)}}}
+  Prints a cover page (banner) with the document. The "name" can be "classified", "confidential", "secret", "standard", "topsecret", or "unclassified".
+- {{{option(-o)}}} {{{argument(job-sheets)}}}={{{argument(start-name)}}},{{{argument(end-name)}}}
+  Prints cover pages (banners) with the document.
+- {{{option(-o)}}} {{{argument(media)}}}={{{argument(size)}}}
+  Sets the page size to size. Most printers support at least the size names "a4", "letter", and "legal".
+- {{{option(-o)}}} {{{argument(mirror)}}}
+  Mirrors each page.
+- {{{option(-o)}}} {{{argument(number-up)}}}={2|4|6|9|16}
+  Prints 2, 4, 6, 9, or 16 document (input) pages on each output page.
+- {{{option(-o)}}} {{{argument(number-up-layout)}}}={{{argument(layout)}}}
+  Specifies the layout of pages with the "number-up" option. The "layout" string can be "btlr", "btrl", "lrbt", "lrtb", "rlbt", "rltb", "tblr", or "tbrl" - the first two letters determine the column order while the second two letters determine the row order. "bt" is bottom-to-top, "lr" is left- to-right, "rl" is right-to-left, and "tb" is top-to-bottom.
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(4)}}}
+  Prints the job in landscape (rotated 90 degrees counter-clockwise).
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(5)}}}
+  Prints the job in landscape (rotated 90 degrees clockwise).
+- {{{option(-o)}}} {{{argument(orientation-requested)}}}={{{argument(6)}}}
+  Prints the job in reverse portrait (rotated 180 degrees).
+- {{{option(-o)}}} {{{argument(outputorder)}}}={{{argument(reverse)}}}
+  Prints pages in reverse order.
+- {{{option(-o)}}} {{{argument(page-border)}}}={{{argument(border)}}}
+  Prints a border around each document page. "border" is "double", "double-thick", "single", or "single-thick".
+- {{{option(-o)}}} {{{argument(page-ranges)}}}={{{argument(page-list)}}}
+  Specifies which pages to print in the document. The list can contain a list of numbers and ranges (#-#) separated by commas, e.g., "1,3-5,16". The page numbers refer to the output pages and not the document's original pages - options like "number-up" can affect the numbering of the pages.
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(one-sided)}}}
+  Prints on one side of the paper.
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(two-sided-long-edge)}}}
+  Prints on both sides of the paper for portrait output.
+- {{{option(-o)}}} {{{argument(sides)}}}={{{argument(two-sided-short-edge)}}}
+  Prints on both sides of the paper for landscape output.
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

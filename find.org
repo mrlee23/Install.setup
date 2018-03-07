@@ -1,0 +1,118 @@
+#+INCLUDE: ./main.setup
+#+TITLE: find
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+Search for files in a directory hierarchy
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+{{{see(findutils#install)}}}
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+$ find -version
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+find (GNU findutils) 4.7.0-git
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Eric B. Decker, James Youngman, and Kevin Dalley.
+Features enabled: D_TYPE O_NOFOLLOW(enabled) LEAF_OPTIMISATION FTS(FTS_CWDFD) CBO(level=2)
+#+END_EXAMPLE
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+	#+BEGIN_SRC sh
+find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
+	#+END_SRC
+
+# ** Options
+#    :PROPERTIES: 
+#    :CUSTOM_ID: options
+#    :LANG_EN:  Options
+#    :LANG_ES:  Opciones
+#    :LANG_KO:  옵션
+#    :LANG_ZH:  选项
+#    :LANG_JA:  オプション
+#    :END:      
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: en
+   :END:      
+
+- find . -type f -name *jpg -exec cp {} . \;
+- find . -type f -size +10000 -exec ls -alh {} \;
+- find . -atime +1 -type f -exec mv {} imsi\;
+- find . -name "-F" -exec rm {} \;
+- find . -exec grep -i "찾는 문자열" {} \;
+- find . \! -name "*.Z" -exec compress -f {} \;
+- find . -type f \! -name "*.Z" \! -name "제외할파일명" -print | tee -a /tmp/list
+- find . -name "*.ini"
+- find . -exec chmod 755 {} \; or chmod -R 755 ./;
+- find . -user xuser1 -exec chown -R user2 {} \; or chown -R user2 ./
+- find . -atime +6
+- find . -atime +30 -exec ls \; | wc -l
+- find /raid -type d -name "디렉토리명" -ok cp /복사할경로 {} \;
+- find . -name "찾을 파일" -print 2 > /dev/null
+- find . -perm 700 -print
+- find . \ ( -perm 400 -o -perm 200 \) -print
+- find . -size +1024 -print
+- find . -name core -size +2048 -print
+- find . -mtime -7 -print
+
+* See also
+  :PROPERTIES: 
+  :CUSTOM_ID: seealso
+  :LANG: en
+  :END:      
+
+- {{{link(findutils)}}}
+- {{{link(xargs)}}}
+- {{{link(locate)}}}
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: preferences
+  :LANG: en
+  :END:      
+
+- {{{see(findutils#references)}}}

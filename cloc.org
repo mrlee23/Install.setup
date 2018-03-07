@@ -1,0 +1,821 @@
+#+INCLUDE: ./main.setup
+#+TITLE: cloc
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-29
+
+#+NAME: infobox
+| Developer      | Jari Aalto             |
+| Version        | {{{ver(1.76)}}}        |
+| Release Date   | {{{date(2018-02-09)}}} |
+| Package Size   | {{{size(245KB)}}}      |
+| Installed Size | {{{size(972KB)}}}      |
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+ Count, and compute differences of, lines of source code and comments.
+
+# ** History
+#   :PROPERTIES: 
+#   :CUSTOM_ID: history
+#   :LANG_EN:  History
+#   :LANG_ES:  Historia
+#   :LANG_KO:  역사
+#   :LANG_ZH:  历史
+#   :LANG_JA:  歴史
+#   :END:    
+
+# ** Releases
+#   :PROPERTIES: 
+#   :CUSTOM_ID: releases
+#   :LANG_EN:  Releases
+#   :LANG_ES:  Lanzamientos
+#   :LANG_KO:  릴리즈
+#   :LANG_ZH:  发布
+#   :LANG_JA:  リリース
+#   :END:    
+
+** Introduction
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: en
+  :END:    
+
+Count, or compute differences of, physical lines of source code in the given files (may be archives such as compressed tarballs or zip files) and/or recursively below the given directories.
+It is written entirely in Perl, using only modules from the standard distribution.
+
+** Characteristic
+  :PROPERTIES: 
+  :CUSTOM_ID: characteristic
+  :LANG: en
+  :END:    
+
+- Count all lines of source codes.
+- Recognize the programming language by files extension.
+- Seperate source codes and comments based on programming languages.
+- Support various output formats like csv, sql xml, xsl and yaml.
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: en
+   :END:      
+
+*** NPM
+- {{{link(npm)}}}
+
+*** Mac OS
+- {{{link(brew)}}}
+
+** Dependencies
+   :PROPERTIES: 
+   :CUSTOM_ID: dependencies
+   :LANG: en
+   :END:      
+
+- libalgorithm-diff-perl
+  - module to find differences between files
+- libregexp-common-perl
+  - module with common regular expressions
+- {{{link(perl)}}}
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+*** NPM
+#+BEGIN_SRC sh
+$ npm install -g cloc
+#+END_SRC
+
+*** Debian, Ubuntu
+#+BEGIN_SRC sh
+$ sudo apt install cloc
+#+END_SRC
+
+*** Red Hat, Fedora
+#+BEGIN_SRC sh
+$ sudo yum install cloc
+#+END_SRC
+
+*** Fedora 22 or later
+#+BEGIN_SRC sh
+$ sudo dnf install cloc
+#+END_SRC
+
+*** Arch
+#+BEGIN_SRC sh
+$ sudo pacman -S cloc
+#+END_SRC
+
+*** Gentoo https://packages.gentoo.org/packages/dev-util/cloc
+#+BEGIN_SRC sh
+$ sudo emerge -av dev-util/cloc
+#+END_SRC
+
+*** Alpine Linux
+#+BEGIN_SRC sh
+$ sudo apk add cloc
+#+END_SRC
+
+*** FreeBSD
+#+BEGIN_SRC sh
+$ sudo pkg install cloc
+#+END_SRC
+
+*** Mac OS X with MacPorts
+#+BEGIN_SRC sh
+$ sudo port install cloc
+#+END_SRC
+
+*** Mac OS X with Homebrew
+#+BEGIN_SRC sh
+$ brew install cloc
+#+END_SRC
+
+*** Windows with Chocolatey
+#+BEGIN_SRC sh
+$ choco install cloc
+#+END_SRC
+
+*** Windows with Scoop
+#+BEGIN_SRC sh
+$ scoop install cloc
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: en
+   :END:      
+
+- cloc
+- libregexp-common-perl
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+$ cloc --version
+1.60
+#+END_SRC
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+cloc [options] <file(s)/dir(s)/git hash(es)> | <set 1> <set 2> | <report files>
+#+END_SRC
+
+# ** Description
+#    :PROPERTIES: 
+#    :CUSTOM_ID: description
+#    :LANG_EN:  Description
+#    :LANG_ES:  Descripción
+#    :LANG_KO:  설명
+#    :LANG_ZH:  详情
+#    :LANG_JA:  说明
+#    :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+{{{VERSION(1.76)}}}
+
+- {{{option(--extract-with)}}}={{{argument(CMD)}}}
+This option is only needed if cloc is unable
+to figure out how to extract the contents of
+the input file(s) by itself.
+Use CMD to extract binary archive files (e.g.:
+.tar.gz, .zip, .Z). Use the literal '>FILE<' as
+a stand-in for the actual file(s) to be
+extracted. For example, to count lines of code
+in the input files
+gcc-4.2.tar.gz perl-5.8.8.tar.gz
+
+  - on Unix use :: {{{opt(--extract-with)}}}='gzip -dc >FILE< | tar xf -'
+  - or, if you have GNU tar, :: {{{opt(--extract-with)}}}='tar zxf >FILE<'
+  - and on Windows use, for example(if WinZip is installed there) :: {{{opt(--extract-with)}}}="\"c:\Program Files\WinZip\WinZip32.exe\" -e -o >FILE< ."
+
+- {{{option(--list-file)}}}={{{argument(FILE)}}}
+Take the list of file and/or directory names to
+process from FILE, which has one file/directory
+name per line. Only exact matches are counted;
+relative path names will be resolved starting from
+the directory where cloc is invoked.
+See also {{{opt(--exclude-list-file)}}}.
+
+- {{{option(--vcs)}}}={{{argument(VCS)}}}
+Invoke a system call to VCS to obtain a list of
+files to work on. If VCS is 'git', then will
+invoke 'git ls-files' to get a file list and
+'git submodule status' to get a list of submodules
+whose contents will be ignored. See also {{{opt(--git)}}}
+which accepts git commit hashes and branch names.
+If VCS is 'svn' then will invoke 'svn list {{{opt(-R)}}}'.
+The primary benefit is that cloc will then skip
+files explicitly excluded by the versioning tool
+in question, ie, those in .gitignore or have the
+svn:ignore property.
+Alternatively VCS may be any system command
+that generates a list of files.
+Note: cloc must be in a directory which can read
+the files as they are returned by VCS. cloc will
+not download files from remote repositories.
+'svn list {{{opt(-R)}}}' may refer to a remote repository
+to obtain file names (and therefore may require
+authentication to the remote repository), but
+the files themselves must be local.
+
+- {{{option(--unicode)}}}
+Check binary files to see if they contain Unicode
+expanded ASCII text. This causes performance to
+drop noticeably.
+
+*** Processing Options
+
+- {{{option(--autoconf)}}}
+Count .in files (as processed by GNU autoconf) of
+recognized languages. See also {{{opt(--no-autogen)}}}.
+
+- {{{option(--by-file)}}}
+Report results for every source file encountered.
+
+- {{{option(--by-file-by-lang)}}}
+Report results for every source file encountered
+in addition to reporting by language.
+
+- {{{option(--count-and-diff)}}} {{{argument(SET1)}}} {{{argument(SET2)}}}
+First perform direct code counts of source file(s)
+of SET1 and SET2 separately, then perform a diff
+of these. Inputs may be pairs of files, directories,
+or archives. If {{{opt(--out)}}} or {{{opt(--report-file)}}} is given,
+three output files will be created, one for each
+of the two counts and one for the diff. See also
+{{{opt(--diff)}}}, {{{opt(--diff-alignment)}}}, {{{opt(--diff-timeout)}}},
+{{{opt(--ignore-case)}}}, {{{opt(--ignore-whitespace)}}}.
+
+- {{{option(--diff)}}} {{{argument(SET1)}}} {{{argument(SET2)}}}
+Compute differences in code and comments between
+source file(s) of SET1 and SET2. The inputs
+may be any mix of files, directories, archives,
+or git commit hashes (Unix only).
+Use {{{opt(--diff-alignment)}}} to generate a list showing
+which file pairs where compared. See also
+{{{opt(--count-and-diff)}}}, {{{opt(--diff-alignment)}}}, {{{opt(--diff-timeout)}}},
+{{{opt(--ignore-case)}}}, {{{opt(--ignore-whitespace)}}}.
+
+- {{{option(--diff-timeout)}}} {{{argument(N)}}}
+Ignore files which take more than N seconds
+to process. Default is 10 seconds.
+(Large files with many repeated lines can cause
+Algorithm::Diff::sdiff() to take hours.)
+
+- {{{option(--follow-links)}}}
+[Unix only] Follow symbolic links to directories
+(sym links to files are always followed).
+
+- {{{option(--force-lang)}}}={{{argument(LANG)}}},{{{argument(EXT)}}}
+Process all files that have a EXT extension
+with the counter for language LANG. For
+example, to count all .f files with the
+Fortran 90 counter (which expects files to
+end with .f90) instead of the default Fortran 77
+counter, use
+{{{opt(--force-lang)}}}={{{argument("Fortran 90")}}},{{{argument(f)}}}
+If EXT is omitted, every file will be counted
+with the LANG counter. This option can be
+specified multiple times (but that is only
+useful when EXT is given each time).
+See also {{{opt(--script-lang)}}}, {{{opt(--lang-no-ext)}}}.
+
+- {{{option(--force-lang-def)}}}={{{argument(FILE)}}}
+Load language processing filters from FILE,
+then use these filters instead of the built{{{option(-in)}}}
+filters. Note: languages which map to the same
+file extension (for example:
+MATLAB/Mathematica/Objective C/MUMPS/Mercury;
+Pascal/PHP; Lisp/OpenCL; Lisp/Julia; Perl/Prolog)
+will be ignored as these require additional
+processing that is not expressed in language
+definition files. Use {{{opt(--read-lang-def)}}} to define
+new language filters without replacing built-in
+filters (see also {{{opt(--write-lang-def)}}}).
+
+- {{{option(--git)}}}
+Forces the inputs to be interpreted as git targets
+(commit hashes, branch names, et cetera) if these
+are not first identified as file or directory
+names. This option overrides the {{{opt(--vcs)}}}=git logic
+if this is given; in other words, {{{opt(--git)}}} gets its
+list of files to work on directly from git using
+the hash or branch name rather than from
+'git ls{{{opt(-files)}}}'. This option can be used with
+{{{opt(--diff)}}} to perform line count diffs between git
+commits, or between a git commit and a file,
+directory, or archive. Use {{{opt(-v)}}}/{{{opt(--verbose)}}} to see
+the git system commands cloc issues.
+
+- {{{option(--ignore-whitespace)}}}
+Ignore horizontal white space when comparing files
+with {{{opt(--diff)}}}. See also {{{opt(--ignore-case)}}}.
+
+- {{{option(--ignore-case)}}}
+Ignore changes in case; consider upper- and lower-
+case letters equivalent when comparing files with
+{{{opt(--diff)}}}. See also {{{opt(--ignore-whitespace)}}}.
+
+- {{{option(--lang-no-ext)}}}={{{argument(LANG)}}}
+Count files without extensions using the LANG
+counter. This option overrides internal logic
+for files without extensions (where such files
+are checked against known scripting languages
+by examining the first line for #!). See also
+{{{opt(--force-lang)}}}, {{{opt(--script-lang)}}}.
+
+- {{{option(--max-file-size)}}}={{{argument(MB)}}}
+Skip files larger than MB megabytes when
+traversing directories. By default, MB=100.
+cloc's memory requirement is roughly twenty times
+larger than the largest file so running with
+files larger than 100 MB on a computer with less
+than 2 GB of memory will cause problems.
+Note: this check does not apply to files
+explicitly passed as command line arguments.
+
+- {{{option(--no-autogen)}}}[={{{argument(list)}}}]
+Ignore files generated by code{{{opt(-production)}}} systems
+such as GNU autoconf. To see a list of these files
+(then exit), run with {{{opt(--no-autogen)}}} list
+See also {{{opt(--autoconf)}}}.
+
+- {{{option(--original-dir)}}}
+[Only effective in combination with
+{{{opt(--strip-comments)}}}] Write the stripped files
+to the same directory as the original files.
+
+- {{{option(--read-binary-files)}}}
+Process binary files in addition to text files.
+This is usually a bad idea and should only be
+attempted with text files that have embedded
+binary data.
+
+- {{{option(--read-lang-def)}}}={{{argument(FILE)}}}
+Load new language processing filters from FILE
+and merge them with those already known to cloc.
+If FILE defines a language cloc already knows
+about, cloc's definition will take precedence.
+Use {{{opt(--force-lang-def)}}} to override cloc's
+definitions (see also {{{opt(--write-lang-def)}}} ).
+
+- {{{option(--script-lang)}}}={{{argument(LANG)}}},{{{argument(S)}}}
+Process all files that invoke S as a #!
+scripting language with the counter for language
+LANG. For example, files that begin with
+#!/usr/local/bin/perl5.8.8
+will be counted with the Perl counter by using
+{{{opt(--script-lang)}}}={{{arg(Perl,perl5.8.8)}}}
+The language name is case insensitive but the
+name of the script language executable, S,
+must have the right case. This option can be
+specified multiple times. See also {{{opt(--force-lang)}}},
+{{{opt(--lang-no-ext)}}}.
+
+- {{{option(--sdir)}}}={{{argument(DIR)}}}
+Use DIR as the scratch directory instead of
+letting File::Temp chose the location. Files
+written to this location are not removed at
+the end of the run (as they are with File::Temp).
+
+- {{{option(--skip-uniqueness)}}}
+Skip the file uniqueness check. This will give
+a performance boost at the expense of counting
+files with identical contents multiple times
+(if such duplicates exist).
+
+- {{{option(--stdin-name)}}}={{{argument(FILE)}}}
+Give a file name to use to determine the language
+for standard input. (Use - as the input name to
+receive source code via STDIN.)
+
+- {{{option(--strip-comments)}}}={{{argument(EXT)}}}
+For each file processed, write to the current
+directory a version of the file which has blank
+and commented lines removed inline comments
+persist). The name of each stripped file is the
+original file name with .EXT appended to it.
+It is written to the current directory unless
+{{{option(--original-dir)}}} is on.
+
+- {{{option(--sum-reports)}}}
+Input arguments are report files previously
+created with the {{{opt(--report-file)}}} option. Makes
+a cumulative set of results containing the
+sum of data from the individual report files.
+
+- {{{option(--processes)}}}={{{argument(NUM)}}}
+[Available only on systems with a recent version
+of the Parallel::ForkManager module. Not
+available on Windows.] Sets the maximum number of
+cores that cloc uses. The default value of 0
+disables multiprocessing.
+
+- {{{option(--unix)}}}
+Override the operating system autodetection
+logic and run in UNIX mode. See also
+{{{opt(--windows)}}}, {{{opt(--show-os)}}}.
+
+- {{{option(--use-sloccount)}}}
+If SLOCCount is installed, use its compiled
+executables c_count, java_count, pascal_count,
+php_count, and xml_count instead of cloc's
+counters. SLOCCount's compiled counters are
+substantially faster than cloc's and may give
+a performance improvement when counting projects
+with large files. However, these cloc-specific
+features will not be available: {{{opt(--diff)}}},
+{{{opt(--count-and-diff)}}}, {{{opt(--strip-comments)}}}, {{{opt(--unicode)}}}.
+
+- {{{option(--windows)}}}
+Override the operating system autodetection
+logic and run in Microsoft Windows mode.
+See also {{{opt(--unix)}}}, {{{opt(--show-os)}}}.
+
+*** Filter Options
+
+- {{{option(--exclude-dir)}}}={{{argument(D1)}}}[,{{{argument(D2)}}},]
+Exclude the given comma separated directories
+D1, D2, D3, et cetera, from being scanned. For
+example {{{opt(--exclude-dir)}}}=.cache,test will skip
+all files and subdirectories that have /.cache/
+or /test/ as their parent directory.
+Directories named .bzr, .cvs, .hg, .git, .svn,
+and .snapshot are always excluded.
+This option only works with individual directory
+names so including file path separators is not
+allowed. Use {{{opt(--fullpath)}}} and {{{opt(--not-match-d)}}}=REGEX
+to supply a regex matching multiple subdirectories.
+
+- {{{option(--exclude-ext)}}}={{{argument(EXT1)}}}[,{{{argument(EXT2)}}}[...]]
+Do not count files having the given file name
+extensions.
+
+- {{{option(--exclude-lang)}}}={{{argument(L1)}}}[,{{{argument(L2)}}},]
+Exclude the given comma separated languages
+L1, L2, L3, et cetera, from being counted.
+
+- {{{option(--exclude-list-file)}}}={{{argument(FILE)}}}
+Ignore files and/or directories whose names
+appear in FILE. FILE should have one file
+name per line. Only exact matches are ignored;
+relative path names will be resolved starting from
+the directory where cloc is invoked.
+See also {{{opt(--list-file)}}}.
+
+- {{{option(--fullpath)}}}
+Modifies the behavior of {{{opt(--match-f)}}}, {{{opt(--not-match-f)}}},
+and {{{opt(--not-match-d)}}} to include the file's path
+in the regex, not just the file's basename.
+(This does not expand each file to include its
+absolute path, instead it uses as much of
+the path as is passed in to cloc.)
+Note: {{{opt(--match-d)}}} always looks at the full
+path and therefore is unaffected by {{{opt(--fullpath)}}}.
+
+- {{{option(--include-lang)}}}={{{argument(L1)}}},[,{{{argument(L2)}}},]
+Count only the given comma separated languages
+L1, L2, L3, et cetera.
+
+- {{{option(--match-d)}}}={{{argument(REGEX)}}}
+Only count files in directories matching the Perl
+regex. For example
+{{{opt(--match-d)}}}='/(src|include)/'
+only counts files in directories containing
+/src/ or /include/. Unlike {{{opt(--not-match-d)}}},
+{{{opt(--match-f)}}}, and {{{opt(--not-match-f)}}}, {{{opt(--match-d)}}} always
+compares the fully qualified path against the
+regex.
+
+- {{{option(--not-match-d)}}}={{{argument(REGEX)}}}
+Count all files except those in directories
+matching the Perl regex. Only the trailing
+directory name is compared, for example, when
+counting in /usr/local/lib, only 'lib' is
+compared to the regex.
+Add {{{opt(--fullpath)}}} to compare parent directories to
+the regex.
+Do not include file path separators at the
+beginning or end of the regex.
+
+- {{{option(--match-f)}}}={{{argument(REGEX)}}}
+Only count files whose basenames match the Perl
+regex. For example
+{{{opt(--match-f)}}}='^[Ww]idget'
+only counts files that start with Widget or widget.
+Add {{{opt(--fullpath)}}} to include parent directories
+in the regex instead of just the basename.
+
+- {{{option(--not-match-f)}}}={{{argument(REGEX)}}}
+Count all files except those whose basenames
+match the Perl regex. Add {{{opt(--fullpath)}}} to include
+parent directories in the regex instead of just
+the basename.
+
+- {{{option(--skip-archive)}}}={{{argument(REGEX)}}}
+Ignore files that end with the given Perl regular
+expression. For example, if given
+{{{opt(--skip-archive)}}}=(zip|tar(.(gz|Z|bz2|xz|7z))?)'
+the code will skip files that end with .zip,
+.tar, .tar.gz, .tar.Z, .tar.bz2, .tar.xz, and
+.tar.7z.
+
+- {{{option(--skip-win-hidden)}}}
+On Windows, ignore hidden files.
+
+*** Debug Options
+
+- {{{option(--categorized)}}}={{{argument(FILE)}}}
+Save names of categorized files to FILE.
+
+- {{{option(--counted)}}}={{{argument(FILE)}}}
+Save names of processed source files to FILE.
+
+- {{{option(--diff-alignment)}}}={{{argument(FILE)}}}
+Write to FILE a list of files and file pairs
+showing which files were added, removed, and/or
+compared during a run with {{{opt(--diff)}}}. This switch
+forces the {{{opt(--diff)}}} mode on.
+
+- {{{option(--explain)}}}={{{argument(LANG)}}}
+Print the filters used to remove comments for
+language LANG and exit. In some cases the
+filters refer to Perl subroutines rather than
+regular expressions. An examination of the
+source code may be needed for further explanation.
+
+- {{{option(--help)}}}
+Print this usage information and exit.
+
+- {{{option(--found)}}}={{{argument(FILE)}}}
+Save names of every file found to FILE.
+
+- {{{option(--ignored)}}}={{{argument(FILE)}}}
+Save names of ignored files and the reason they
+were ignored to FILE.
+
+- {{{option(--print-filter-stages)}}}
+Print processed source code before and after
+each filter is applied.
+
+- {{{option(--show-ext)}}}[={{{argument(EXT)}}}]
+Print information about all known (or just the
+given) file extensions and exit.
+
+- {{{option(--show-lang)}}}[={{{argument(LANG)}}}]
+Print information about all known (or just the
+given) languages and exit.
+
+- {{{option(--show-os)}}}
+Print the value of the operating system mode
+and exit. See also {{{opt(--unix)}}}, {{{opt(--windows)}}}.
+
+- {{{option(-v)}}}[={{{argument(N)}}}]
+Verbose switch (optional numeric value).
+
+- {{{option(-verbose)}}}[={{{argument(N)}}}]
+Long form of {{{opt(-v)}}}.
+
+- {{{option(--version)}}}
+Print the version of this program and exit.
+
+- {{{option(--write-lang-def)}}}={{{argument(FILE)}}}
+Writes to FILE the language processing filters
+then exits. Useful as a first step to creating
+custom language definitions (see also
+{{{opt(--force-lang-def)}}}, {{{opt(--read-lang-def)}}}).
+
+*** Output Options
+
+- {{{option(--3)}}}
+Print third-generation language output.
+(This option can cause report summation to fail
+if some reports were produced with this option
+while others were produced without it.)
+
+- {{{option(--by-percent)}}} {{{argument(X)}}}
+Instead of comment and blank line counts, show
+these values as percentages based on the value
+of X in the denominator:
+X = 'c' -> # lines of code
+X = 'cm' -> # lines of code + comments
+X = 'cb' -> # lines of code + blanks
+X = 'cmb' -> # lines of code + comments + blanks
+For example, if using method 'c' and your code
+has twice as many lines of comments as lines
+of code, the value in the comment column will
+be 200%. The code column remains a line count.
+
+- {{{option(--csv)}}}
+Write the results as comma separated values.
+
+- {{{option(--csv-delimiter)}}}={{{argument(C)}}}
+Use the character C as the delimiter for comma
+separated files instead of ,. This switch forces
+
+- {{{option(--json)}}}
+Write the results as JavaScript Object Notation
+(JSON) formatted output.
+
+- {{{option(--md)}}}
+Write the results as Markdown-formatted text.
+
+- {{{option(--out)}}}={{{argument(FILE)}}}
+Synonym for {{{opt(--report-file)}}}=FILE.
+
+- {{{option(--progress-rate)}}}={{{argument(N)}}}
+Show progress update after every N files are
+processed (default N=100). Set N to 0 to
+suppress progress output (useful when redirecting
+output to STDOUT).
+
+- {{{option(--quiet)}}}
+Suppress all information messages except for
+the final report.
+
+- {{{option(--report-file)}}}={{{argument(FILE)}}}
+Write the results to FILE instead of STDOUT.
+
+- {{{option(--sql)}}}={{{argument(FILE)}}}
+Write results as SQL create and insert statements
+which can be read by a database program such as
+SQLite. If FILE is -, output is sent to STDOUT.
+
+- {{{option(--sql-append)}}}
+Append SQL insert statements to the file specified
+by {{{opt(--sql)}}} and do not generate table creation
+statements. Only valid with the {{{opt(--sql)}}} option.
+
+- {{{option(--sql-project)}}}={{{argument(NAME)}}}
+Use NAME as the project identifier for the
+current run. Only valid with the {{{opt(--sql)}}} option.
+
+- {{{option(--sql-style)}}}={{{argument(STYLE)}}}
+Write SQL statements in the given style instead
+of the default SQLite format. Currently, the
+only style option is Oracle.
+
+- {{{option(--sum-one)}}}
+For plain text reports, show the SUM: output line
+even if only one input file is processed.
+
+- {{{option(--xml)}}}
+Write the results in XML.
+
+- {{{option(--xsl)}}}={{{argument(FILE)}}}
+Reference FILE as an XSL stylesheet within
+the XML output. If FILE is 1 (numeric one),
+writes a default stylesheet, cloc.xsl (or
+cloc{{{opt(-diff)}}}.xsl if {{{opt(--diff)}}} is also given).
+This switch forces {{{opt(--xml)}}} on.
+
+- {{{option(--yaml)}}}
+Write the results in YAML.
+
+** Examples
+   :PROPERTIES: 
+   :CUSTOM_ID: examples
+   :LANG: en
+   :END:      
+
+*** Simply use
+
+#+BEGIN_SRC sh
+$ cloc Linux-Command.org
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+     123 text files.
+     122 unique files.
+     110 files ignored.
+
+github.com/AlDanial/cloc v 1.74  T=0.42 s (35.5 files/s, 4450.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Lisp                             4             84             46            588
+HTML                             3             40            294            438
+Bourne Shell                     1             23              2            122
+make                             2             15              0             88
+YAML                             2              2              0             66
+Dockerfile                       1              4              2             32
+CSS                              1              1              0             24
+JavaScript                       1              0              0             11
+-------------------------------------------------------------------------------
+SUM:                            15            169            344           1369
+-------------------------------------------------------------------------------
+#+END_EXAMPLE
+
+Not classified org files.
+
+*** Force set lang
+
+{{{see-opt(--force-lang)}}}
+
+#+BEGIN_SRC sh
+$ cloc Linux-Command.org --force-lang="Bourne Again Shell,org"
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+     123 text files.
+     122 unique files.
+      13 files ignored.
+
+github.com/AlDanial/cloc v 1.74  T=0.54 s (209.2 files/s, 37307.1 lines/s)
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+Bourne Again Shell               97           1976           9412           6703
+Lisp                              4             84             46            588
+HTML                              3             40            294            438
+Bourne Shell                      1             23              2            122
+make                              2             15              0             88
+YAML                              2              2              0             66
+Dockerfile                        1              4              2             32
+CSS                               1              1              0             24
+JavaScript                        1              0              0             11
+--------------------------------------------------------------------------------
+SUM:                            112           2145           9756           8072
+--------------------------------------------------------------------------------
+#+END_EXAMPLE
+
+Forced classification the org files as Bourne Again Shell(Because bash has same comment method).
+
+*** with Git hash
+
+{{{see-opt(--git)}}}
+
+#+BEGIN_SRC sh
+$ cloc Linux-Command.org --git 5e5512b --force-lang="Bourne Again Shell,org"
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.74  T=0.05 s (19.1 files/s, 19.1 lines/s)
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+Bourne Again Shell                1              0              1              0
+--------------------------------------------------------------------------------
+#+END_EXAMPLE
+
+Can classificate using git hash.
+- Used first commit of Linux-Commands.org
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: en
+  :END:      
+
+- [[http://cloc.sourceforge.net/][cloc on Sourceforge]]
+- [[https://github.com/AlDanial/cloc][cloc on GitHub]]

@@ -1,0 +1,135 @@
+#+INCLUDE: ./main.setup
+#+TITLE: chgrp
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+Change the ownership group of file or directory.
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+# ** Prerequisites
+#    :PROPERTIES: 
+#    :CUSTOM_ID: prerequisites
+#    :LANG_EN:  Prerequisites
+#    :LANG_ES:  Requisitos previos
+#    :LANG_KO:  필요 사항
+#    :LANG_ZH:  先决条件
+#    :LANG_JA:  前準備
+#    :END:      
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+{{{BUILTIN}}}
+
+# ** Installed Packages
+#    :PROPERTIES: 
+#    :CUSTOM_ID: packages
+#    :LANG_EN:  Installed Packages
+#    :LANG_ES:  Paquetes instalados
+#    :LANG_KO:  설치된 패키지
+#    :LANG_ZH:  安装的软件包
+#    :LANG_JA:  インストールされたパッケージ
+#    :END:      
+
+# ** Check
+#    :PROPERTIES: 
+#    :CUSTOM_ID: check
+#    :LANG_EN:  Check
+#    :LANG_ES:  Comprobar
+#    :LANG_KO:  확인
+#    :LANG_ZH:  检查
+#    :LANG_JA:  チェック
+#    :END:      
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+	#+BEGIN_SRC sh
+chgrp [OPTION]... GROUP FILE...
+chgrp [OPTION]... --reference=RFILE FILE...
+	#+END_SRC
+
+Change file's group. If use --reference option, change file's group that identical group with the refered file.
+
+# ** Configuration
+#    :PROPERTIES: 
+#    :CUSTOM_ID: configuration
+#    :LANG_EN:  Configuration
+#    :LANG_ES:  Configuración
+#    :LANG_KO:  설정
+#    :LANG_ZH:  组态
+#    :LANG_JA:  設定
+#    :END:      
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+- {{{option(-c)}}}, {{{option(--changes)}}}
+- {{{option(--dereference)}}}
+- {{{option(-h)}}}, {{{option(--no-dereference)}}}
+- {{{option(--no-preserve-root)}}}
+- {{{option(--preserve-root)}}}
+- {{{option(-f)}}}, {{{option(--silent)}}}, {{{option(--quiet)}}}
+- {{{option(--reference)}}} {{{argument(=REFILE)}}}
+- {{{option(-R)}}}, {{{option(--recursive)}}}
+- {{{option(-v)}}}, {{{option(--verbose)}}}
+- {{{option(-H)}}}
+- {{{option(-L)}}}
+- {{{option(-P)}}}
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+# * References
+#   :PROPERTIES: 
+#   :CUSTOM_ID: references
+#   :LANG_EN:  References
+#   :LANG_ES:  Referencias
+#   :LANG_KO:  참고자료
+#   :LANG_ZH:  参考
+#   :LANG_JA:  参考
+#   :END:      

@@ -1,0 +1,334 @@
+#+INCLUDE: ./main.setup
+#+TITLE: hdparm
+#+AUTHOR: Dongsoo Lee
+#+EMAIL: dongsoolee8@gmail.com
+#+DATE: 2018-02-20
+
+#+NAME: infobox
+| Developer    | Mark Lord              |
+| Version      | {{{ver(9.53)}}}        |
+| Release Date | {{{date(2018-01-05)}}} |
+| Size         | {{{size(284KB)}}}      |
+| License      | {{{license(BSD)}}}     |
+| Type         | Utility                |
+
+* Overview
+  :PROPERTIES: 
+  :CUSTOM_ID: overview
+  :LANG: en
+  :END:      
+
+get/set SATA/IDE device parameters
+
+** Introduction
+  :PROPERTIES: 
+  :CUSTOM_ID: introduction
+  :LANG: en
+  :END:    
+
+hdparm provides a command line interface to various kernel interfaces supported by the Linux SATA/PATA/SAS "libata" subsystem and the older IDE driver subsystem. 
+Many newer (2008 and later) USB drive enclosures now also support "SAT" (SCSI-ATA Command Translation) and therefore may also work with hdparm. 
+E.g. recent WD "Passport" models and recent NexStar-3 enclosures. Some options may work correctly only with the latest kernels.
+
+* How to Install
+  :PROPERTIES: 
+  :CUSTOM_ID: how-to-install
+  :LANG: en
+  :END:      
+
+** Prerequisites
+   :PROPERTIES: 
+   :CUSTOM_ID: prerequisites
+   :LANG: en
+   :END:      
+
+- {{{link(update)}}}
+
+** Install
+  :PROPERTIES: 
+  :CUSTOM_ID: install
+  :LANG: en
+  :END:      
+
+*** Ubuntu
+
+#+BEGIN_SRC sh
+$ sudo apt-get install hdparm
+#+END_SRC
+
+*** CentOS
+
+#+BEGIN_SRC sh
+$ sudo yum install hdparm -y
+#+END_SRC
+
+*** using RPM
+
+- 32 bit
+#+BEGIN_SRC sh
+$ sudo rpm -Uvh http://mirrors.hostemo.com/CentOS/6.3/os/i386/Packages/hdparm-9.16-3.4.el6.i686.rpm
+#+END_SRC
+- 64 bit
+#+BEGIN_SRC sh
+$ sudo rpm -Uvh http://mirrors.hostemo.com/CentOS/6.3/os/x86_64/Packages/hdparm-9.16-3.4.el6.x86_64.rpm
+#+END_SRC
+
+*** from Source
+
+- Download from [[https://sourceforge.net/projects/hdparm/]]
+#+BEGIN_SRC sh
+$ make
+$ sudo make install
+#+END_SRC
+
+** Installed Packages
+   :PROPERTIES: 
+   :CUSTOM_ID: packages
+   :LANG: en
+   :END:      
+
+- hdparm
+- powermgmt-base
+
+** Check
+   :PROPERTIES: 
+   :CUSTOM_ID: check
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+$ hdparm -V
+hdparm v9.51
+#+END_SRC
+
+*** with RPM
+
+#+BEGIN_SRC sh
+$ rpm -qa | grep hdparm
+hdparm-9.16-3.4.el6.i686
+#+END_SRC
+
+
+* Usage
+  :PROPERTIES: 
+  :CUSTOM_ID: usage
+  :LANG: en
+  :END:      
+
+** Syntax
+   :PROPERTIES: 
+   :CUSTOM_ID: syntax
+   :LANG: en
+   :END:      
+
+#+BEGIN_SRC sh
+hdparm [options] [device ...]
+#+END_SRC
+
+** Configuration
+   :PROPERTIES: 
+   :CUSTOM_ID: configuration
+   :LANG: en
+   :END:      
+
+- {{{file(/etc/hdparm.conf)}}}
+
+** Options
+   :PROPERTIES: 
+   :CUSTOM_ID: options
+   :LANG: en
+   :END:      
+
+{{{VERSION(9.51, 2017-01)}}}
+
+- {{{option(-a)}}} :
+Get/set fs readahead
+- {{{option(-A)}}} :
+Get/set the drive look-ahead flag (0/1)
+- {{{option(-b)}}} :
+Get/set bus state (0 == off, 1 == on, 2 == tristate)
+- {{{option(-B)}}} :
+Set Advanced Power Management setting (1-255)
+- {{{option(-c)}}} :
+Get/set IDE 32-bit IO setting
+- {{{option(-C)}}} :
+Check drive power mode status
+- {{{option(-d)}}} :
+Get/set using_dma flag
+- {{{option(-D)}}} :
+Enable/disable drive defect management
+- {{{option(-E)}}} :
+Set cd/dvd drive speed
+- {{{option(-f)}}} :
+Flush buffer cache for device on exit
+- {{{option(-F)}}} :
+Flush drive write cache
+- {{{option(-g)}}} :
+Display drive geometry
+- {{{option(-h)}}} :
+Display terse usage information
+- {{{option(-H)}}} :
+Read temperature from drive (Hitachi only)
+- {{{option(-i)}}} :
+Display drive identification
+- {{{option(-I)}}} :
+Detailed/current information directly from drive
+- {{{option(-J)}}} :
+Get/set Western DIgital "Idle3" timeout for a WDC "Green" drive (DANGEROUS)
+- {{{option(-k)}}} :
+Get/set keep_settings_over_reset flag (0/1)
+- {{{option(-K)}}} :
+Set drive keep_features_over_reset flag (0/1)
+- {{{option(-L)}}} :
+Set drive doorlock (0/1) (removable harddisks only)
+- {{{option(-m)}}} :
+Get/set multiple sector count
+- {{{option(-M)}}} :
+Get/set acoustic management (0-254, 128: quiet, 254: fast)
+- {{{option(-n)}}} :
+Get/set ignore-write-errors flag (0/1)
+- {{{option(-N)}}} :
+Get/set max visible number of sectors (HPA) (VERY DANGEROUS)
+- {{{option(-p)}}} :
+Set PIO mode on IDE interface chipset (0,1,2,3,4,...)
+- {{{option(-P)}}} :
+Set drive prefetch count
+- {{{option(-q)}}} :
+Change next setting quietly
+- {{{option(-Q)}}} :
+Get/set DMA queue_depth (if supported)
+- {{{option(-r)}}} :
+Get/set device readonly flag (DANGEROUS to set)
+- {{{option(-R)}}} :
+Get/set device write-read-verify flag
+- {{{option(-s)}}} :
+Set power-up in standby flag (0/1) (DANGEROUS)
+- {{{option(-S)}}} :
+Set standby (spindown) timeout
+- {{{option(-t)}}} :
+Perform device read timings
+- {{{option(-T)}}} :
+Perform cache read timings
+- {{{option(-u)}}} :
+Get/set unmaskirq flag (0/1)
+- {{{option(-U)}}} :
+Obsolete
+- {{{option(-v)}}} :
+Use defaults; same as -acdgkmur for IDE drives
+- {{{option(-V)}}} :
+Display program version and exit immediately
+- {{{option(-w)}}} :
+Perform device reset (DANGEROUS)
+- {{{option(-W)}}} :
+Get/set drive write-caching flag (0/1)
+- {{{option(-x)}}} :
+Obsolete
+- {{{option(-X)}}} :
+Set IDE xfer mode (DANGEROUS)
+- {{{option(-y)}}} :
+Put drive in standby mode
+- {{{option(-Y)}}} :
+Put drive to sleep
+- {{{option(-z)}}} :
+Re-read partition table
+- {{{option(-Z)}}} :
+Disable Seagate auto-powersaving mode
+- {{{option(--dco-freeze)}}} :
+Freeze/lock current device configuration until next power cycle
+- {{{option(--dco-identify)}}} :
+Read/dump device configuration identify data
+- {{{option(--dco-restore)}}} :
+Reset device configuration back to factory defaults
+- {{{option(--dco-setmax)}}} :
+Use DCO to set maximum addressable sectors
+- {{{option(--direct)}}} :
+Use O_DIRECT to bypass page cache for timings
+- {{{option(--drq-hsm-error)}}} :
+Crash system with a "stuck DRQ" error (VERY DANGEROUS)
+- {{{option(--fallocate)}}} :
+Create a file without writing data to disk
+- {{{option(--fibmap)}}} :
+Show device extents (and fragmentation) for a file
+- {{{option(--fwdownload)}}} :
+Download firmware file to drive (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-mode3)}}} :
+Download firmware using min-size segments (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-mode3-max)}}} :
+Download firmware using max-size segments (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-mode7)}}} :
+Download firmware using a single segment (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-modee)}}} :
+Download firmware using mode E (min-size segments) (EXTREMELY DANGEROUS)
+- {{{option(--fwdownload-modee-max)}}} :
+Download firmware using mode E (max-size segments) (EXTREMELY DANGEROUS)
+- {{{option(--idle-immediate)}}} :
+Idle drive immediately
+- {{{option(--idle-unload)}}} :
+Idle immediately and unload heads
+- {{{option(--Istdin)}}} :
+Read identify data from stdin as ASCII hex
+- {{{option(--Istdout)}}} :
+Write identify data to stdout as ASCII hex
+- {{{option(--make-bad-sector)}}} :
+Deliberately corrupt a sector directly on the media (VERY DANGEROUS)
+- {{{option(--offset)}}} :
+use with -t, to begin timings at given offset (in GiB) from start of drive
+- {{{option(--prefer-ata12)}}} :
+Use 12-byte (instead of 16-byte) SAT commands when possible
+- {{{option(--read-sector)}}} :
+Read and dump (in hex) a sector directly from the media
+- {{{option(--repair-sector)}}} :
+Alias for the --write-sector option (VERY DANGEROUS)
+- {{{option(--sanitize-antifreeze-lock)}}} :
+Block sanitize-freeze-lock command until next power cycle
+- {{{option(--sanitize-block-erase)}}} :
+Start block erase operation
+- {{{option(--sanitize-crypto-scramble)}}} :
+Change the internal encryption keys that used for used data
+- {{{option(--sanitize-freeze-lock)}}} :
+Lock drive's sanitize features until next power cycle
+- {{{option(--sanitize-overwrite)}}} :
+PATTERN Overwrite the internal media with constant PATTERN
+- {{{option(--sanitize-status)}}} :
+Show sanitize status information
+- {{{option(--security-help)}}} :
+Display help for ATA security commands
+- {{{option(--trim-sector-ranges)}}} :
+Tell SSD firmware to discard unneeded data sectors: lba:count ..
+- {{{option(--trim-sector-ranges-stdin)}}} :
+Same as above, but reads lba:count pairs from stdin
+- {{{option(--verbose)}}} :
+Display extra diagnostics from some commands
+- {{{option(--write-sector)}}} :
+Repair/overwrite a (possibly bad) sector directly on the media (VERY DANGEROUS)
+
+# ** Examples
+#    :PROPERTIES: 
+#    :CUSTOM_ID: examples
+#    :LANG_EN:  Examples
+#    :LANG_ES:  Ejemplos
+#    :LANG_KO:  사용 예
+#    :LANG_ZH:  例子
+#    :LANG_JA:  例
+#    :END:      
+
+# * See also
+#   :PROPERTIES: 
+#   :CUSTOM_ID: seealso
+#   :LANG_EN:  See also
+#   :LANG_ES:  Ver también
+#   :LANG_KO:  관련 항목
+#   :LANG_ZH:  相关主题
+#   :LANG_JA:  関連項目
+#   :END:      
+
+* References
+  :PROPERTIES: 
+  :CUSTOM_ID: references
+  :LANG: en
+  :END:      
+
+- [[https://en.wikipedia.org/wiki/Hdparm][Wikipedia]]
+- [[https://sourceforge.net/projects/hdparm/][Download on Sourceforge]]
+- [[http://www.linuxfromscratch.org/blfs/view/cvs/general/hdparm.html][Linux from scratch]]
+- [[https://www.ehowstuff.com/how-to-fix-bash-hdparm-command-not-found-on-linux-centos-6-3/][Fix hdparm command not found on Linux CentOS 6.3]]
