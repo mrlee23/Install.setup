@@ -7,7 +7,7 @@ PUBLISH_PAGES_DIR=.publish
 PUBLISH_ORIGINAL_DIR=.publish/original
 EMACS_DEPS_DIR=.emacs-dependencies
 DIST_DIR=dist
-ASSETS_DIR=../assets
+ASSETS_DIR=assets
 
 install: setup-git mkdirs get-deps
 
@@ -73,8 +73,8 @@ pages-deps:
 	rm -rf dist/readtheorg/.git
 
 define load_paths
-(add-to-list 'load-path "../elisp")
 (add-to-list 'load-path "./")
+(add-to-list 'load-path "./elisp")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
