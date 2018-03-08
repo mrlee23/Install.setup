@@ -1,0 +1,28 @@
+
+* for Options
+
+** Add option macro
+*** Before
+
+#+BEGIN_EXAMPLE
+\( \)\(--?[a-zA-Z0-9-\.]+\)\([ ,
+]\)
+#+END_EXAMPLE
+
+*** After
+
+#+BEGIN_EXAMPLE
+\1{{{option(\2)}}}\3
+#+END_EXAMPLE
+
+** Change option to opt
+*** Before
+
+#+BEGIN_EXAMPLE
+{{{option(\(--?[a-zA-Z0-9-\.]+\))}}}
+#+END_EXAMPLE
+*** After
+
+#+BEGIN_EXAMPLE
+{{{opt(\1)}}}
+#+END_EXAMPLE
