@@ -73,8 +73,8 @@ pages-deps:
 	rm -rf dist/readtheorg/.git
 
 define load_paths
-(add-to-list 'load-path "../elisp")
 (add-to-list 'load-path "./")
+(add-to-list 'load-path "./elisp")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
