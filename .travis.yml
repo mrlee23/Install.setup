@@ -59,6 +59,11 @@ script:
     echo "This branch($TRAVIS_BRANCH) is not available";
     fi
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    mv assets contents/assets;
+    mv elisp contents/elisp;
+    mv docs contents/docs;
+    cd contents;
+    DOCKER_RUN "ls";
     DOCKER_RUN "make index" && INDEX_NON_ERROR=TRUE;
     if [ "$INDEX_NON_ERROR" != TRUE ]; then echo "Error occured on make index..."; exit 1; fi;
     DOCKER_RUN "make pages" && PAGES_NON_ERROR=TRUE;
@@ -68,9 +73,10 @@ script:
     export PUBLISH_LABEL="Publish-$lang";
     export PUBLISH_BRANCH="$lang";
     export PUBLISH_DIR=".publish/$lang";
-    sudo bash .Build.sh/build.sh publish;
+    sudo bash ../.Build.sh/build.sh publish;
     done;
-    sudo bash .Build.sh/build.sh gh-pages;
+    export GH_PAGES_BRANCH="gh-pages";
+    sudo bash ../.Build.sh/build.sh gh-pages;
     else
     echo "Error occured on make pages...";
     exit 1;
