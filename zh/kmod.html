@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2018-03-06 Tue 13:01 -->
+<!-- 2018-12-10 Mon 03:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>kmod</title>
@@ -287,7 +287,7 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<table id="org30a11c5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org4f7b991" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -308,16 +308,16 @@ for the JavaScript code in this tag.
 </tbody>
 </table>
 
-<div id="outline-container-org8fd5bb5" class="outline-2">
-<h2 id="overview"><a id="org8fd5bb5"></a>摘要</h2>
+<div id="outline-container-orgd23b759" class="outline-2">
+<h2 id="overview"><a id="orgd23b759"></a>摘要</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 用于处理Linux内核模块的程序
 </p>
 </div>
 
-<div id="outline-container-org827e01c" class="outline-3">
-<h3 id="introduction"><a id="org827e01c"></a>介绍</h3>
+<div id="outline-container-orgb0762af" class="outline-3">
+<h3 id="introduction"><a id="orgb0762af"></a>介绍</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 kmod is a multi-call binary which implements the programs used to control Linux Kernel modules. Most users will only run it using its other names.
@@ -326,13 +326,13 @@ kmod is a multi-call binary which implements the programs used to control Linux 
 </div>
 </div>
 
-<div id="outline-container-org9de5fc3" class="outline-2">
-<h2 id="how-to-install"><a id="org9de5fc3"></a>如何安装</h2>
+<div id="outline-container-org94e4152" class="outline-2">
+<h2 id="how-to-install"><a id="org94e4152"></a>如何安装</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org6e1b793" class="outline-3">
-<h3 id="prerequisites"><a id="org6e1b793"></a>先决条件</h3>
+<div id="outline-container-orgfd99d4c" class="outline-3">
+<h3 id="prerequisites"><a id="orgfd99d4c"></a>先决条件</h3>
 <div class="outline-text-3" id="text-prerequisites">
 <ul class="org-ul">
 <li><a href="./update.html">update</a></li>
@@ -340,8 +340,8 @@ kmod is a multi-call binary which implements the programs used to control Linux 
 </div>
 </div>
 
-<div id="outline-container-orge8ab8a1" class="outline-3">
-<h3 id="dependencies"><a id="orge8ab8a1"></a>依赖</h3>
+<div id="outline-container-org80ada77" class="outline-3">
+<h3 id="dependencies"><a id="org80ada77"></a>依赖</h3>
 <div class="outline-text-3" id="text-dependencies">
 <ul class="org-ul">
 <li>libc6 (&gt;= <span class="org-programming-version">2.17</span>)</li>
@@ -351,8 +351,8 @@ kmod is a multi-call binary which implements the programs used to control Linux 
 </div>
 </div>
 
-<div id="outline-container-org7e7c314" class="outline-3">
-<h3 id="install"><a id="org7e7c314"></a>安装</h3>
+<div id="outline-container-org8952ad2" class="outline-3">
+<h3 id="install"><a id="org8952ad2"></a>安装</h3>
 <div class="outline-text-3" id="text-install">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo apt-get install module-init-tools
@@ -361,8 +361,8 @@ kmod is a multi-call binary which implements the programs used to control Linux 
 </div>
 </div>
 
-<div id="outline-container-org390637d" class="outline-3">
-<h3 id="packages"><a id="org390637d"></a>安装的软件包</h3>
+<div id="outline-container-org6a3f88a" class="outline-3">
+<h3 id="packages"><a id="org6a3f88a"></a>安装的软件包</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>kmod</li>
@@ -376,8 +376,8 @@ kmod is a multi-call binary which implements the programs used to control Linux 
 </div>
 </div>
 
-<div id="outline-container-org59302e0" class="outline-3">
-<h3 id="check"><a id="org59302e0"></a>检查</h3>
+<div id="outline-container-org7d6266a" class="outline-3">
+<h3 id="check"><a id="org7d6266a"></a>检查</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ kmod -V
@@ -392,13 +392,13 @@ kmod version 22
 </div>
 </div>
 
-<div id="outline-container-org173e4ca" class="outline-2">
-<h2 id="usage"><a id="org173e4ca"></a>如何使用</h2>
+<div id="outline-container-orgafd123e" class="outline-2">
+<h2 id="usage"><a id="orgafd123e"></a>如何使用</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-org1434a1e" class="outline-3">
-<h3 id="syntax"><a id="org1434a1e"></a>结构</h3>
+<div id="outline-container-org5808b2d" class="outline-3">
+<h3 id="syntax"><a id="org5808b2d"></a>结构</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">kmod [options] command [command_options]
@@ -407,8 +407,8 @@ kmod version 22
 </div>
 </div>
 
-<div id="outline-container-org0d54501" class="outline-3">
-<h3 id="options"><a id="org0d54501"></a>选项</h3>
+<div id="outline-container-org745573e" class="outline-3">
+<h3 id="options"><a id="org745573e"></a>选项</h3>
 <div class="outline-text-3" id="text-options">
 <ul class="org-ul">
 <li><span id="opt--V" class="org-programming-option">-V</span>, <span id="opt---version" class="org-programming-option">--version</span> :</li>
@@ -417,8 +417,8 @@ kmod version 22
 </div>
 </div>
 
-<div id="outline-container-org1383a8c" class="outline-3">
-<h3 id="commands"><a id="org1383a8c"></a>命令</h3>
+<div id="outline-container-org3182045" class="outline-3">
+<h3 id="commands"><a id="org3182045"></a>命令</h3>
 <div class="outline-text-3" id="text-commands">
 <ul class="org-ul">
 <li>help : Show help message</li>
@@ -429,8 +429,8 @@ kmod version 22
 </div>
 </div>
 
-<div id="outline-container-orgd39e418" class="outline-2">
-<h2 id="seealso"><a id="orgd39e418"></a>相关主题</h2>
+<div id="outline-container-org55abe45" class="outline-2">
+<h2 id="seealso"><a id="org55abe45"></a>相关主题</h2>
 <div class="outline-text-2" id="text-seealso">
 <ul class="org-ul">
 <li><a href="./lsmod.html">lsmod</a></li>
@@ -443,8 +443,8 @@ kmod version 22
 </div>
 </div>
 
-<div id="outline-container-org31df4a5" class="outline-2">
-<h2 id="references"><a id="org31df4a5"></a>参考</h2>
+<div id="outline-container-org306d4d9" class="outline-2">
+<h2 id="references"><a id="org306d4d9"></a>参考</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="https://packages.ubuntu.com/xenial/kmod">kmod - Ubuntu Packages</a></li>
@@ -455,7 +455,7 @@ kmod version 22
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-28</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-06 Tue 13:01</p>
+<p class="date">Created: 2018-12-10 Mon 03:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

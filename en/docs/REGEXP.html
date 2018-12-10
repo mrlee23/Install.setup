@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-03-06 Tue 12:51 -->
+<!-- 2018-12-10 Mon 03:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>docker build</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Dongsoo Lee" />
+<meta name="author" content="root" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -180,33 +180,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
-<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
-<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
-<script type="text/javascript" src="/dist/assets/js.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<meta name="title" content="docker build - Comandos de Linux">
-<meta name="description" content="">
-<meta name="by" content="Dongsoo Lee">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker build - Comandos de Linux">
-<meta property="og:description" content="">
-<meta name="twitter:title" content="docker build - Comandos de Linux">
-<meta name="twitter:description" content="">
-<link rel="alternate" href="http://linux-command.org/en/CHANGELOG.html" hreflang="en" />
-<link rel="alternate" href="http://linux-command.org/es/CHANGELOG.html" hreflang="es" />
-<link rel="alternate" href="http://linux-command.org/ja/CHANGELOG.html" hreflang="ja" />
-<link rel="alternate" href="http://linux-command.org/ko/CHANGELOG.html" hreflang="ko" />
-<link rel="alternate" href="http://linux-command.org/zh/CHANGELOG.html" hreflang="zh" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -256,80 +229,83 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">docker build</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7ddf983">2018-02-28</a></li>
-<li><a href="#orgca03101">2018-02-27</a></li>
-<li><a href="#orgb315c74">2018-02-26</a></li>
-<li><a href="#org5f8e4ab">2018-02-25</a></li>
-<li><a href="#org7103352">2018-02-11</a></li>
-<li><a href="#orge9f323a">2018-02-02</a></li>
+<li><a href="#org2cb777b">1. for Options</a>
+<ul>
+<li><a href="#orgdc02cee">1.1. Add option macro</a>
+<ul>
+<li><a href="#org7538175">1.1.1. Before</a></li>
+<li><a href="#org2d91ef5">1.1.2. After</a></li>
 </ul>
+</li>
+<li><a href="#org4b39388">1.2. Change option to opt</a>
+<ul>
+<li><a href="#org923818f">1.2.1. Before</a></li>
+<li><a href="#org76f7680">1.2.2. After</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2cb777b" class="outline-2">
+<h2 id="org2cb777b"><span class="section-number-2">1</span> for Options</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgdc02cee" class="outline-3">
+<h3 id="orgdc02cee"><span class="section-number-3">1.1</span> Add option macro</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org7538175" class="outline-4">
+<h4 id="org7538175"><span class="section-number-4">1.1.1</span> Before</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<pre class="example">
+\( \)\(--?[a-zA-Z0-9-\.]+\)\([ ,
+]\)
+</pre>
 </div>
 </div>
 
-<div id="outline-container-org7ddf983" class="outline-2">
-<h2 id="org7ddf983">2018-02-28</h2>
-<div class="outline-text-2" id="text-org7ddf983">
-<ul class="org-ul">
-<li>Add <code>findutils.org</code>, <code>xargs.org</code></li>
-</ul>
+<div id="outline-container-org2d91ef5" class="outline-4">
+<h4 id="org2d91ef5"><span class="section-number-4">1.1.2</span> After</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<pre class="example">
+\1{{{option(\2)}}}\3
+</pre>
 </div>
-</div>
-<div id="outline-container-orgca03101" class="outline-2">
-<h2 id="orgca03101">2018-02-27</h2>
-<div class="outline-text-2" id="text-orgca03101">
-<ul class="org-ul">
-<li>Implement #8</li>
-<li>Add <code>.supportLanguages</code></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgb315c74" class="outline-2">
-<h2 id="orgb315c74">2018-02-26</h2>
-<div class="outline-text-2" id="text-orgb315c74">
-<ul class="org-ul">
-<li>Add <code>docker/build.org</code></li>
-<li>Add main images</li>
-<li>Implemented #4</li>
-</ul>
 </div>
 </div>
 
-<div id="outline-container-org5f8e4ab" class="outline-2">
-<h2 id="org5f8e4ab">2018-02-25</h2>
-<div class="outline-text-2" id="text-org5f8e4ab">
-<ul class="org-ul">
-<li>Implement #3</li>
-</ul>
+<div id="outline-container-org4b39388" class="outline-3">
+<h3 id="org4b39388"><span class="section-number-3">1.2</span> Change option to opt</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org923818f" class="outline-4">
+<h4 id="org923818f"><span class="section-number-4">1.2.1</span> Before</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<pre class="example">
+{{{option(\(--?[a-zA-Z0-9-\.]+\))}}}
+</pre>
 </div>
 </div>
-
-<div id="outline-container-org7103352" class="outline-2">
-<h2 id="org7103352">2018-02-11</h2>
-<div class="outline-text-2" id="text-org7103352">
-<ul class="org-ul">
-<li>Implement #1</li>
-</ul>
+<div id="outline-container-org76f7680" class="outline-4">
+<h4 id="org76f7680"><span class="section-number-4">1.2.2</span> After</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<pre class="example">
+{{{opt(\1)}}}
+</pre>
 </div>
 </div>
-
-<div id="outline-container-orge9f323a" class="outline-2">
-<h2 id="orge9f323a">2018-02-02</h2>
-<div class="outline-text-2" id="text-orge9f323a">
-<ul class="org-ul">
-<li>Initialize</li>
-</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-26</p>
-<p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-06 Tue 12:51</p>
+<p class="author">Author: root</p>
+<p class="date">Created: 2018-12-10 Mon 03:07</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

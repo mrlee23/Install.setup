@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
-<!-- 2018-03-06 Tue 12:53 -->
+<!-- 2018-12-10 Mon 03:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>How to contribute to Linux Commands</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Dongsoo Lee" />
+<meta name="author" content="root" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -180,33 +180,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<meta name="google-site-verification" content="T-NdGYU-tk3BMWg0ULx4wIHD18IFoyrzEEcOoyz4xis" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113933734-1"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113933734-1');</script>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/readtheorg.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/rtd-full.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/readtheorg/css/emphasis.css"/>
-<link rel="stylesheet" type="text/css" href="/dist/assets/css.css"/>
-<script type="text/javascript" src="/dist/readtheorg/dist/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="/dist/readtheorg/dist/bootstrap-3.3.4.min.js"></script>
-<script type="text/javascript" src="/dist/readtheorg/dist/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="/dist/readtheorg/js/readtheorg.js"></script>
-<script type="text/javascript" src="/dist/assets/js.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<meta name="title" content="How to contribute to Linux Commands - Linuxコマンド">
-<meta name="description" content="">
-<meta name="by" content="Dongsoo Lee">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How to contribute to Linux Commands - Linuxコマンド">
-<meta property="og:description" content="">
-<meta name="twitter:title" content="How to contribute to Linux Commands - Linuxコマンド">
-<meta name="twitter:description" content="">
-<link rel="alternate" href="http://linux-command.org/en/CONTRIBUTING.html" hreflang="en" />
-<link rel="alternate" href="http://linux-command.org/es/CONTRIBUTING.html" hreflang="es" />
-<link rel="alternate" href="http://linux-command.org/ja/CONTRIBUTING.html" hreflang="ja" />
-<link rel="alternate" href="http://linux-command.org/ko/CONTRIBUTING.html" hreflang="ko" />
-<link rel="alternate" href="http://linux-command.org/zh/CONTRIBUTING.html" hreflang="zh" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -256,26 +229,22 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">How to contribute to Linux Commands</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge2922cd">What is benefit of this project?</a></li>
-<li><a href="#orgfd44444">Please share your knowledge</a></li>
-<li><a href="#orgdf560fb">What should I know to contribute?</a></li>
-<li><a href="#orgc3bf733">Contributing with your native language</a></li>
-<li><a href="#org76f9c1b">Writing document</a></li>
-<li><a href="#org4afaa4f">Commit rules</a>
+<li><a href="#orgc1ca1fa">1. for Options</a>
 <ul>
-<li><a href="#org0e22610">prefixes</a></li>
+<li><a href="#orgcf0173b">1.1. Add option macro</a>
+<ul>
+<li><a href="#org54f9f52">1.1.1. Before</a></li>
+<li><a href="#org205f4cf">1.1.2. After</a></li>
 </ul>
 </li>
-<li><a href="#orga6c3c86">Macros</a>
+<li><a href="#orgf0b155a">1.2. Change option to opt</a>
 <ul>
-<li><a href="#orgde2ee34">Inline</a>
-<ul>
-<li><a href="#orgc60052d">Related image</a></li>
+<li><a href="#org9c19e2e">1.2.1. Before</a></li>
+<li><a href="#orgbc6f2dd">1.2.2. After</a></li>
 </ul>
 </li>
 </ul>
@@ -283,177 +252,60 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orge2922cd" class="outline-2">
-<h2 id="orge2922cd">What is benefit of this project?</h2>
-<div class="outline-text-2" id="text-orge2922cd">
-<p>
-This project is made for documentation of all programs we use.
-And all of documents are <a href="./STANDARD.html">standardized</a> and have a clearfied sections.
-</p>
-
-<p>
-Think about when you search for the information of Linux commands.
-Your needs are just simple, but maybe you should be searching the internet for wasting times.
-It will reduce your productivility and concentration.
-</p>
-
-<p>
-This project focused on improving your productivility and preserving concentration.
-You don't need to search for another web sites to get an information and don't have to confuse because of new sections or UI.
-Only you need is familiar about one unified sections and UI!
-</p>
-
-<p>
-And it is opensource, that means, all of docs are yours!
-</p>
+<div id="outline-container-orgc1ca1fa" class="outline-2">
+<h2 id="orgc1ca1fa"><span class="section-number-2">1</span> for Options</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgcf0173b" class="outline-3">
+<h3 id="orgcf0173b"><span class="section-number-3">1.1</span> Add option macro</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org54f9f52" class="outline-4">
+<h4 id="org54f9f52"><span class="section-number-4">1.1.1</span> Before</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<pre class="example">
+\( \)\(--?[a-zA-Z0-9-\.]+\)\([ ,
+]\)
+</pre>
 </div>
 </div>
 
-<div id="outline-container-orgfd44444" class="outline-2">
-<h2 id="orgfd44444">Please share your knowledge</h2>
-<div class="outline-text-2" id="text-orgfd44444">
-<p>
-This project need your help to grow up.
-Meaning of contributing on this project is that creating your own knowledge base and share your wisdom with community.
-Your name will be recorded in what you contributed documents if you want, and people will thank of your contributions.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgdf560fb" class="outline-2">
-<h2 id="orgdf560fb">What should I know to contribute?</h2>
-<div class="outline-text-2" id="text-orgdf560fb">
-<p>
-First of all, you should know about <b>Org Mode</b>.
-If you know about the Markdown syntax, It will be easier.
-Or not, also easy to use and if you will be accustomed, you maybe love it.
-</p>
-
-<p>
-It is builtin mode of Emacs, but it isn't that means only Emacs users can be use it.
-You can use with your favorite editor, evenif text editor or github file editor.
-</p>
-
-<p>
-Here is tutorial for Org Mode. Don't be afraid, I think, It might be the editor what you look for.
-</p>
-<ul class="org-ul">
-<li><a href="https://orgmode.org/manual/index.html">Offical manual</a></li>
-<li><a href="https://github.com/fniessen/refcard-org-mode">refcard-org-mode</a></li>
-</ul>
-
-<p>
-Also see <a href="./org-mode.html">org-mode document</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgc3bf733" class="outline-2">
-<h2 id="orgc3bf733">Contributing with your native language</h2>
-<div class="outline-text-2" id="text-orgc3bf733">
-<p>
-You shouldn't have to use only English. It's up to you.
-In fact, we need more contribution of your native language.
-</p>
-
-<p>
-This project deploys the contents automatically splited by languages.
-Only contributing one file, It will be split 5 files with English, Spanish, Korean, Chinese and Japanese(currently support).
-</p>
-
-<p>
-And here is the distributed contents currently working.
-</p>
-<ul class="org-ul">
-<li><a href="http://linux-command.org/en">English</a></li>
-<li><a href="http://linux-command.org/es">Español</a></li>
-<li><a href="http://linux-command.org/ko">한국어</a></li>
-<li><a href="http://linux-command.org/zh">中文</a></li>
-<li><a href="http://linux-command.org/ja">日本語</a></li>
-</ul>
-
-<p>
-You want to new language? It's a piece of cake.
-Just add lang code with newline in the <a href="./.supportLanguages">supportLanguages</a> file.
-</p>
-
-<p>
-You can add your language simply using "#+LANG_XX:" keyword.
-Also section type, block type or emphasis type are currently supported.
-Here is detail usage of the multilingual keywords on <a href="https://github.com/mrlee23/org-multilingual">here</a>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org76f9c1b" class="outline-2">
-<h2 id="org76f9c1b">Writing document</h2>
-<div class="outline-text-2" id="text-org76f9c1b">
-<p>
-All of documents sections are standardized depending on <a href="./STANDARD.html">STANDARD template</a>.
-Only the section which exists in the standard file, should be used for keeping the unity.
-And some sections have static form for more clearfy the meaning. (eg. Syntax - only use the code block to be shown quick usage)
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4afaa4f" class="outline-2">
-<h2 id="org4afaa4f">Commit rules</h2>
-<div class="outline-text-2" id="text-org4afaa4f">
-</div>
-<div id="outline-container-org0e22610" class="outline-3">
-<h3 id="org0e22610">prefixes</h3>
-<div class="outline-text-3" id="text-org0e22610">
-<ul class="org-ul">
-<li>Macro : Relate org macros.</li>
-<li>Elisp : Relate linux-commands.el</li>
-<li>En, Es, Ko, Zh, Ja, ... : Relate language with org document of Linux Commands.</li>
-<li>CI/CD : Modified .travis.yml, Makefile and linux-commands-pages.el</li>
-<li>Pages : Modifications of assets.</li>
-</ul>
+<div id="outline-container-org205f4cf" class="outline-4">
+<h4 id="org205f4cf"><span class="section-number-4">1.1.2</span> After</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<pre class="example">
+\1{{{option(\2)}}}\3
+</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga6c3c86" class="outline-2">
-<h2 id="orga6c3c86">Macros</h2>
-<div class="outline-text-2" id="text-orga6c3c86">
+<div id="outline-container-orgf0b155a" class="outline-3">
+<h3 id="orgf0b155a"><span class="section-number-3">1.2</span> Change option to opt</h3>
+<div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orgde2ee34" class="outline-3">
-<h3 id="orgde2ee34">Inline</h3>
-<div class="outline-text-3" id="text-orgde2ee34">
-<ul class="org-ul">
-<li>REDIRECT(string location)</li>
-<li>VERSION(string version)</li>
-<li>LATEST_VERSION(string version)</li>
-<li>BUILTIN</li>
-<li>INCLUDE_PROGRESS</li>
-<li>INCLUDE_DOCS</li>
-<li>META</li>
-</ul>
+<div id="outline-container-org9c19e2e" class="outline-4">
+<h4 id="org9c19e2e"><span class="section-number-4">1.2.1</span> Before</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<pre class="example">
+{{{option(\(--?[a-zA-Z0-9-\.]+\))}}}
+</pre>
 </div>
-
-<div id="outline-container-orgc60052d" class="outline-4">
-<h4 id="orgc60052d">Related image</h4>
-<div class="outline-text-4" id="text-orgc60052d">
-<ul class="org-ul">
-<li>IMAGE(string path, string name, string classes)</li>
-<li>IMAGE_CENTER(string path, string name, string classes)</li>
-<li>IMAGE_RIGHT(string path, string name, string classes)</li>
-<li>IMAGE_MAIN(string name)</li>
-<li>IMAGE_LINK(string path, string name, string classes)</li>
-<li>IMAGE_LINK_CENTER(string path, string name, string classes)</li>
-<li>IMAGE_LINK_RIGHT(string path, string name, string classes)</li>
-</ul>
+</div>
+<div id="outline-container-orgbc6f2dd" class="outline-4">
+<h4 id="orgbc6f2dd"><span class="section-number-4">1.2.2</span> After</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<pre class="example">
+{{{opt(\1)}}}
+</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2018-02-26</p>
-<p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-06 Tue 12:53</p>
+<p class="author">Author: root</p>
+<p class="date">Created: 2018-12-10 Mon 03:12</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

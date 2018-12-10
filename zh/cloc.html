@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2018-03-06 Tue 12:59 -->
+<!-- 2018-12-10 Mon 03:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cloc</title>
@@ -293,25 +293,25 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#prerequisites">先决条件</a>
 <ul>
-<li><a href="#orgfb535be">NPM</a></li>
-<li><a href="#org56392bb">Mac OS</a></li>
+<li><a href="#org812d3aa">NPM</a></li>
+<li><a href="#org0051f79">Mac OS</a></li>
 </ul>
 </li>
 <li><a href="#dependencies">依赖</a></li>
 <li><a href="#install">安装</a>
 <ul>
-<li><a href="#orgc52bef6">NPM</a></li>
-<li><a href="#org3555764">Debian, Ubuntu</a></li>
-<li><a href="#orgff1b69d">Red Hat, Fedora</a></li>
-<li><a href="#org13a2ca3">Fedora 22 or later</a></li>
-<li><a href="#orgcf85d91">Arch</a></li>
-<li><a href="#org38e0a15">Gentoo https://packages.gentoo.org/packages/dev-util/cloc</a></li>
-<li><a href="#org0bd6007">Alpine Linux</a></li>
-<li><a href="#org44190c7">FreeBSD</a></li>
-<li><a href="#org68e8ab6">Mac OS X with MacPorts</a></li>
-<li><a href="#orgf6e9c36">Mac OS X with Homebrew</a></li>
-<li><a href="#org307e329">Windows with Chocolatey</a></li>
-<li><a href="#org2e89328">Windows with Scoop</a></li>
+<li><a href="#org43e6274">NPM</a></li>
+<li><a href="#org9c1c305">Debian, Ubuntu</a></li>
+<li><a href="#orgd3e1ad2">Red Hat, Fedora</a></li>
+<li><a href="#org42f2d6b">Fedora 22 or later</a></li>
+<li><a href="#orgbfd29d6">Arch</a></li>
+<li><a href="#org3fb9992">Gentoo https://packages.gentoo.org/packages/dev-util/cloc</a></li>
+<li><a href="#orgd35983c">Alpine Linux</a></li>
+<li><a href="#org5983e11">FreeBSD</a></li>
+<li><a href="#orgb1c19e4">Mac OS X with MacPorts</a></li>
+<li><a href="#orga5cada6">Mac OS X with Homebrew</a></li>
+<li><a href="#org896ba6b">Windows with Chocolatey</a></li>
+<li><a href="#orgb6980cd">Windows with Scoop</a></li>
 </ul>
 </li>
 <li><a href="#packages">安装的软件包</a></li>
@@ -323,17 +323,17 @@ for the JavaScript code in this tag.
 <li><a href="#syntax">结构</a></li>
 <li><a href="#options">选项</a>
 <ul>
-<li><a href="#org34397c4">Processing Options</a></li>
-<li><a href="#org4c6cb99">Filter Options</a></li>
-<li><a href="#orgd1460e2">Debug Options</a></li>
-<li><a href="#org8b0c4c2">Output Options</a></li>
+<li><a href="#org89df669">Processing Options</a></li>
+<li><a href="#org91a6bde">Filter Options</a></li>
+<li><a href="#org83f1986">Debug Options</a></li>
+<li><a href="#org8b8b591">Output Options</a></li>
 </ul>
 </li>
 <li><a href="#examples">例子</a>
 <ul>
-<li><a href="#orgc8bbb5f">Simply use</a></li>
-<li><a href="#orgcf23ebf">Force set lang</a></li>
-<li><a href="#orga3408d8">with Git hash</a></li>
+<li><a href="#org9668005">Simply use</a></li>
+<li><a href="#org32a5516">Force set lang</a></li>
+<li><a href="#orgc870a83">with Git hash</a></li>
 </ul>
 </li>
 </ul>
@@ -342,7 +342,7 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<table id="orgf3d692b" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org159ae26" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -378,16 +378,16 @@ for the JavaScript code in this tag.
 </tbody>
 </table>
 
-<div id="outline-container-org010119c" class="outline-2">
-<h2 id="overview"><a id="org010119c"></a>摘要</h2>
+<div id="outline-container-orgab8b73b" class="outline-2">
+<h2 id="overview"><a id="orgab8b73b"></a>摘要</h2>
 <div class="outline-text-2" id="text-overview">
 <p>
 计算每种语言的源代码和评论的行数。
 </p>
 </div>
 
-<div id="outline-container-org152c1f1" class="outline-3">
-<h3 id="introduction"><a id="org152c1f1"></a>介绍</h3>
+<div id="outline-container-org7ceb325" class="outline-3">
+<h3 id="introduction"><a id="org7ceb325"></a>介绍</h3>
 <div class="outline-text-3" id="text-introduction">
 <p>
 Count, or compute differences of, physical lines of source code in the given files (may be archives such as compressed tarballs or zip files) and/or recursively below the given directories.
@@ -396,8 +396,8 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-orga1e423f" class="outline-3">
-<h3 id="characteristic"><a id="orga1e423f"></a>特点</h3>
+<div id="outline-container-org5c69efd" class="outline-3">
+<h3 id="characteristic"><a id="org5c69efd"></a>特点</h3>
 <div class="outline-text-3" id="text-characteristic">
 <ul class="org-ul">
 <li>Count all lines of source codes.</li>
@@ -409,28 +409,28 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org95669d0" class="outline-2">
-<h2 id="how-to-install"><a id="org95669d0"></a>如何安装</h2>
+<div id="outline-container-org9ccc7df" class="outline-2">
+<h2 id="how-to-install"><a id="org9ccc7df"></a>如何安装</h2>
 <div class="outline-text-2" id="text-how-to-install">
 </div>
 
-<div id="outline-container-org59c29b8" class="outline-3">
-<h3 id="prerequisites"><a id="org59c29b8"></a>先决条件</h3>
+<div id="outline-container-org581a80e" class="outline-3">
+<h3 id="prerequisites"><a id="org581a80e"></a>先决条件</h3>
 <div class="outline-text-3" id="text-prerequisites">
 </div>
 
-<div id="outline-container-orgfb535be" class="outline-4">
-<h4 id="orgfb535be">NPM</h4>
-<div class="outline-text-4" id="text-orgfb535be">
+<div id="outline-container-org812d3aa" class="outline-4">
+<h4 id="org812d3aa">NPM</h4>
+<div class="outline-text-4" id="text-org812d3aa">
 <ul class="org-ul">
 <li><a href="./npm.html">npm</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org56392bb" class="outline-4">
-<h4 id="org56392bb">Mac OS</h4>
-<div class="outline-text-4" id="text-org56392bb">
+<div id="outline-container-org0051f79" class="outline-4">
+<h4 id="org0051f79">Mac OS</h4>
+<div class="outline-text-4" id="text-org0051f79">
 <ul class="org-ul">
 <li><a href="./brew.html">brew</a></li>
 </ul>
@@ -438,8 +438,8 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-orgfb212f6" class="outline-3">
-<h3 id="dependencies"><a id="orgfb212f6"></a>依赖</h3>
+<div id="outline-container-org3731ae5" class="outline-3">
+<h3 id="dependencies"><a id="org3731ae5"></a>依赖</h3>
 <div class="outline-text-3" id="text-dependencies">
 <ul class="org-ul">
 <li>libalgorithm-diff-perl
@@ -455,14 +455,14 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-orgc97a180" class="outline-3">
-<h3 id="install"><a id="orgc97a180"></a>安装</h3>
+<div id="outline-container-orge9afa89" class="outline-3">
+<h3 id="install"><a id="orge9afa89"></a>安装</h3>
 <div class="outline-text-3" id="text-install">
 </div>
 
-<div id="outline-container-orgc52bef6" class="outline-4">
-<h4 id="orgc52bef6">NPM</h4>
-<div class="outline-text-4" id="text-orgc52bef6">
+<div id="outline-container-org43e6274" class="outline-4">
+<h4 id="org43e6274">NPM</h4>
+<div class="outline-text-4" id="text-org43e6274">
 <div class="org-src-container">
 <pre class="src src-sh">$ npm install -g cloc
 </pre>
@@ -470,9 +470,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org3555764" class="outline-4">
-<h4 id="org3555764">Debian, Ubuntu</h4>
-<div class="outline-text-4" id="text-org3555764">
+<div id="outline-container-org9c1c305" class="outline-4">
+<h4 id="org9c1c305">Debian, Ubuntu</h4>
+<div class="outline-text-4" id="text-org9c1c305">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo apt install cloc
 </pre>
@@ -480,9 +480,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-orgff1b69d" class="outline-4">
-<h4 id="orgff1b69d">Red Hat, Fedora</h4>
-<div class="outline-text-4" id="text-orgff1b69d">
+<div id="outline-container-orgd3e1ad2" class="outline-4">
+<h4 id="orgd3e1ad2">Red Hat, Fedora</h4>
+<div class="outline-text-4" id="text-orgd3e1ad2">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo yum install cloc
 </pre>
@@ -490,9 +490,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org13a2ca3" class="outline-4">
-<h4 id="org13a2ca3">Fedora 22 or later</h4>
-<div class="outline-text-4" id="text-org13a2ca3">
+<div id="outline-container-org42f2d6b" class="outline-4">
+<h4 id="org42f2d6b">Fedora 22 or later</h4>
+<div class="outline-text-4" id="text-org42f2d6b">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo dnf install cloc
 </pre>
@@ -500,9 +500,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-orgcf85d91" class="outline-4">
-<h4 id="orgcf85d91">Arch</h4>
-<div class="outline-text-4" id="text-orgcf85d91">
+<div id="outline-container-orgbfd29d6" class="outline-4">
+<h4 id="orgbfd29d6">Arch</h4>
+<div class="outline-text-4" id="text-orgbfd29d6">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo pacman -S cloc
 </pre>
@@ -510,9 +510,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org38e0a15" class="outline-4">
-<h4 id="org38e0a15">Gentoo <a href="https://packages.gentoo.org/packages/dev-util/cloc">https://packages.gentoo.org/packages/dev-util/cloc</a></h4>
-<div class="outline-text-4" id="text-org38e0a15">
+<div id="outline-container-org3fb9992" class="outline-4">
+<h4 id="org3fb9992">Gentoo <a href="https://packages.gentoo.org/packages/dev-util/cloc">https://packages.gentoo.org/packages/dev-util/cloc</a></h4>
+<div class="outline-text-4" id="text-org3fb9992">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo emerge -av dev-util/cloc
 </pre>
@@ -520,9 +520,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org0bd6007" class="outline-4">
-<h4 id="org0bd6007">Alpine Linux</h4>
-<div class="outline-text-4" id="text-org0bd6007">
+<div id="outline-container-orgd35983c" class="outline-4">
+<h4 id="orgd35983c">Alpine Linux</h4>
+<div class="outline-text-4" id="text-orgd35983c">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo apk add cloc
 </pre>
@@ -530,9 +530,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org44190c7" class="outline-4">
-<h4 id="org44190c7">FreeBSD</h4>
-<div class="outline-text-4" id="text-org44190c7">
+<div id="outline-container-org5983e11" class="outline-4">
+<h4 id="org5983e11">FreeBSD</h4>
+<div class="outline-text-4" id="text-org5983e11">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo pkg install cloc
 </pre>
@@ -540,9 +540,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org68e8ab6" class="outline-4">
-<h4 id="org68e8ab6">Mac OS X with MacPorts</h4>
-<div class="outline-text-4" id="text-org68e8ab6">
+<div id="outline-container-orgb1c19e4" class="outline-4">
+<h4 id="orgb1c19e4">Mac OS X with MacPorts</h4>
+<div class="outline-text-4" id="text-orgb1c19e4">
 <div class="org-src-container">
 <pre class="src src-sh">$ sudo port install cloc
 </pre>
@@ -550,9 +550,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-orgf6e9c36" class="outline-4">
-<h4 id="orgf6e9c36">Mac OS X with Homebrew</h4>
-<div class="outline-text-4" id="text-orgf6e9c36">
+<div id="outline-container-orga5cada6" class="outline-4">
+<h4 id="orga5cada6">Mac OS X with Homebrew</h4>
+<div class="outline-text-4" id="text-orga5cada6">
 <div class="org-src-container">
 <pre class="src src-sh">$ brew install cloc
 </pre>
@@ -560,9 +560,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org307e329" class="outline-4">
-<h4 id="org307e329">Windows with Chocolatey</h4>
-<div class="outline-text-4" id="text-org307e329">
+<div id="outline-container-org896ba6b" class="outline-4">
+<h4 id="org896ba6b">Windows with Chocolatey</h4>
+<div class="outline-text-4" id="text-org896ba6b">
 <div class="org-src-container">
 <pre class="src src-sh">$ choco install cloc
 </pre>
@@ -570,9 +570,9 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org2e89328" class="outline-4">
-<h4 id="org2e89328">Windows with Scoop</h4>
-<div class="outline-text-4" id="text-org2e89328">
+<div id="outline-container-orgb6980cd" class="outline-4">
+<h4 id="orgb6980cd">Windows with Scoop</h4>
+<div class="outline-text-4" id="text-orgb6980cd">
 <div class="org-src-container">
 <pre class="src src-sh">$ scoop install cloc
 </pre>
@@ -581,8 +581,8 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org43dc511" class="outline-3">
-<h3 id="packages"><a id="org43dc511"></a>安装的软件包</h3>
+<div id="outline-container-org4670550" class="outline-3">
+<h3 id="packages"><a id="org4670550"></a>安装的软件包</h3>
 <div class="outline-text-3" id="text-packages">
 <ul class="org-ul">
 <li>cloc</li>
@@ -591,8 +591,8 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org4d099cf" class="outline-3">
-<h3 id="check"><a id="org4d099cf"></a>检查</h3>
+<div id="outline-container-org94636de" class="outline-3">
+<h3 id="check"><a id="org94636de"></a>检查</h3>
 <div class="outline-text-3" id="text-check">
 <div class="org-src-container">
 <pre class="src src-sh">$ cloc --version
@@ -603,13 +603,13 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org37515b0" class="outline-2">
-<h2 id="usage"><a id="org37515b0"></a>如何使用</h2>
+<div id="outline-container-orgd2aff8d" class="outline-2">
+<h2 id="usage"><a id="orgd2aff8d"></a>如何使用</h2>
 <div class="outline-text-2" id="text-usage">
 </div>
 
-<div id="outline-container-orge13bcec" class="outline-3">
-<h3 id="syntax"><a id="orge13bcec"></a>结构</h3>
+<div id="outline-container-org4574031" class="outline-3">
+<h3 id="syntax"><a id="org4574031"></a>结构</h3>
 <div class="outline-text-3" id="text-syntax">
 <div class="org-src-container">
 <pre class="src src-sh">cloc [&#36873;&#39033;] &lt;&#25991;&#20214;|&#30446;&#24405;|Git hash(es)&gt; | &lt;set 1&gt; &lt;set 2&gt; | &lt;&#35201;&#20445;&#23384;&#30340;&#25991;&#20214;&gt;
@@ -618,8 +618,8 @@ It is written entirely in Perl, using only modules from the standard distributio
 </div>
 </div>
 
-<div id="outline-container-org79d7d94" class="outline-3">
-<h3 id="options"><a id="org79d7d94"></a>选项</h3>
+<div id="outline-container-org13fa841" class="outline-3">
+<h3 id="options"><a id="org13fa841"></a>选项</h3>
 <div class="outline-text-3" id="text-options">
 <p>
 基于版本<span class="org-programming-version">1.76</span>创建。
@@ -693,9 +693,9 @@ drop noticeably.
 </p>
 </div>
 
-<div id="outline-container-org34397c4" class="outline-4">
-<h4 id="org34397c4">Processing Options</h4>
-<div class="outline-text-4" id="text-org34397c4">
+<div id="outline-container-org89df669" class="outline-4">
+<h4 id="org89df669">Processing Options</h4>
+<div class="outline-text-4" id="text-org89df669">
 <ul class="org-ul">
 <li><span id="opt---autoconf" class="org-programming-option">--autoconf</span></li>
 </ul>
@@ -1017,9 +1017,9 @@ See also <a href="#opt---unix"><span class="org-programming-option">--unix</span
 </div>
 </div>
 
-<div id="outline-container-org4c6cb99" class="outline-4">
-<h4 id="org4c6cb99">Filter Options</h4>
-<div class="outline-text-4" id="text-org4c6cb99">
+<div id="outline-container-org91a6bde" class="outline-4">
+<h4 id="org91a6bde">Filter Options</h4>
+<div class="outline-text-4" id="text-org91a6bde">
 <ul class="org-ul">
 <li><span id="opt---exclude-dir" class="org-programming-option">--exclude-dir</span>=<span class="org-programming-argument">D1</span>[,<span class="org-programming-argument">D2</span>,]</li>
 </ul>
@@ -1159,9 +1159,9 @@ On Windows, ignore hidden files.
 </div>
 </div>
 
-<div id="outline-container-orgd1460e2" class="outline-4">
-<h4 id="orgd1460e2">Debug Options</h4>
-<div class="outline-text-4" id="text-orgd1460e2">
+<div id="outline-container-org83f1986" class="outline-4">
+<h4 id="org83f1986">Debug Options</h4>
+<div class="outline-text-4" id="text-org83f1986">
 <ul class="org-ul">
 <li><span id="opt---categorized" class="org-programming-option">--categorized</span>=<span class="org-programming-argument">FILE</span></li>
 </ul>
@@ -1284,9 +1284,9 @@ custom language definitions (see also
 </div>
 </div>
 
-<div id="outline-container-org8b0c4c2" class="outline-4">
-<h4 id="org8b0c4c2">Output Options</h4>
-<div class="outline-text-4" id="text-org8b0c4c2">
+<div id="outline-container-org8b8b591" class="outline-4">
+<h4 id="org8b8b591">Output Options</h4>
+<div class="outline-text-4" id="text-org8b8b591">
 <ul class="org-ul">
 <li><span id="opt---3" class="org-programming-option">--3</span></li>
 </ul>
@@ -1447,14 +1447,14 @@ Write the results in YAML.
 </div>
 </div>
 
-<div id="outline-container-org7aceb69" class="outline-3">
-<h3 id="examples"><a id="org7aceb69"></a>例子</h3>
+<div id="outline-container-org1750faf" class="outline-3">
+<h3 id="examples"><a id="org1750faf"></a>例子</h3>
 <div class="outline-text-3" id="text-examples">
 </div>
 
-<div id="outline-container-orgc8bbb5f" class="outline-4">
-<h4 id="orgc8bbb5f">Simply use</h4>
-<div class="outline-text-4" id="text-orgc8bbb5f">
+<div id="outline-container-org9668005" class="outline-4">
+<h4 id="org9668005">Simply use</h4>
+<div class="outline-text-4" id="text-org9668005">
 <div class="org-src-container">
 <pre class="src src-sh">$ cloc Linux-Command.org
 </pre>
@@ -1488,9 +1488,9 @@ Not classified org files.
 </div>
 </div>
 
-<div id="outline-container-orgcf23ebf" class="outline-4">
-<h4 id="orgcf23ebf">Force set lang</h4>
-<div class="outline-text-4" id="text-orgcf23ebf">
+<div id="outline-container-org32a5516" class="outline-4">
+<h4 id="org32a5516">Force set lang</h4>
+<div class="outline-text-4" id="text-org32a5516">
 <p>
 请参阅<a href="#opt---force-lang"><span class="org-programming-option">--force-lang</span></a>选项。
 </p>
@@ -1529,9 +1529,9 @@ Forced classification the org files as Bourne Again Shell(Because bash has same 
 </div>
 </div>
 
-<div id="outline-container-orga3408d8" class="outline-4">
-<h4 id="orga3408d8">with Git hash</h4>
-<div class="outline-text-4" id="text-orga3408d8">
+<div id="outline-container-orgc870a83" class="outline-4">
+<h4 id="orgc870a83">with Git hash</h4>
+<div class="outline-text-4" id="text-orgc870a83">
 <p>
 请参阅<a href="#opt---git"><span class="org-programming-option">--git</span></a>选项。
 </p>
@@ -1565,8 +1565,8 @@ Can classificate using git hash.
 </div>
 </div>
 
-<div id="outline-container-orgb90d364" class="outline-2">
-<h2 id="references"><a id="orgb90d364"></a>参考</h2>
+<div id="outline-container-orgc6db953" class="outline-2">
+<h2 id="references"><a id="orgc6db953"></a>参考</h2>
 <div class="outline-text-2" id="text-references">
 <ul class="org-ul">
 <li><a href="http://cloc.sourceforge.net/">cloc on Sourceforge</a></li>
@@ -1578,7 +1578,7 @@ Can classificate using git hash.
 <div id="postamble" class="status">
 <p class="date">Date: 2018-02-29</p>
 <p class="author">Author: Dongsoo Lee</p>
-<p class="date">Created: 2018-03-06 Tue 12:59</p>
+<p class="date">Created: 2018-12-10 Mon 03:15</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
