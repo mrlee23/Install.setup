@@ -43,7 +43,7 @@ test:
 index: mkdirs
 	if [ -f "index.org" ]; \
 	then \
-		emacs -Q --batch index.org -l ./linux-commands-macro.el -f org-html-export-to-html; \
+		emacs -Q --batch index.org -l ./elisp/linux-commands-macro.el -L elisp -f org-html-export-to-html; \
 		mv -f index.html "$(GH_PAGES_DIR)/index.html"; \
 		rm -f index.org; \
 	fi;
@@ -74,6 +74,7 @@ pages-deps:
 
 define load_paths
 (add-to-list 'load-path "./")
+(add-to-list 'load-path "./elisp")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/emacs-htmlize")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-multilingual")
 (add-to-list 'load-path "$(EMACS_DEPS_DIR)/org-mode/lisp")
