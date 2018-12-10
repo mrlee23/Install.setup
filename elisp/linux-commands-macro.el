@@ -108,7 +108,7 @@
 
 (defun lc-macro/meta ()
   (unless (fboundp 'lc-core/get-current-contents)
-	(load-file "./linux-commands-core.el"))
+	  (require 'linux-commands-core))
   (let ((contents (lc-core/get-current-contents)
 				  )
 		(keywords '("TITLE" "AUTHOR" "DATE" "DESCRIPTION"))

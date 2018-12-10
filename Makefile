@@ -43,7 +43,7 @@ test:
 index: mkdirs
 	if [ -f "index.org" ]; \
 	then \
-		emacs -Q --batch index.org -l ./linux-commands-macro.el -f org-html-export-to-html; \
+		emacs -Q --batch index.org -l ./elisp/linux-commands-macro.el -L elisp -f org-html-export-to-html; \
 		mv -f index.html "$(GH_PAGES_DIR)/index.html"; \
 		rm -f index.org; \
 	fi;
